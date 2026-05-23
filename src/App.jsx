@@ -58,6 +58,8 @@ const mapLocations = taiwanMap.locations.map((location) => ({
   city: cityNameByMapId[location.id],
 }));
 
+const offshoreCities = new Set(["澎湖縣", "金門縣", "連江縣"]);
+
 function getSvgMapBounds(locations, padding = 96) {
   const points = [];
 
@@ -92,7 +94,8 @@ function getSvgMapBounds(locations, padding = 96) {
   ];
 }
 
-const fullMapBounds = getSvgMapBounds(mapLocations);
+const mainlandMapLocations = mapLocations.filter((location) => !offshoreCities.has(location.city));
+const defaultMapBounds = getSvgMapBounds(mainlandMapLocations);
 const iconMap = { death: "☠️", injury: "🩼" };
 
 function toMonthLabel(month) {
@@ -120,8 +123,8 @@ function clampNumber(value, min, max) {
   return Math.min(max, Math.max(min, value));
 }
 
-function clampMapPan(zoom, pan) {
-  const [, , width, height] = fullMapBounds;
+function clampMapPan(zoom, pan, bounds = defaultMapBounds) {
+  const [, , width, height] = bounds;
   const nextWidth = width / zoom;
   const nextHeight = height / zoom;
   const maxPanX = Math.max(0, (width - nextWidth) / 2);
@@ -133,11 +136,11 @@ function clampMapPan(zoom, pan) {
   };
 }
 
-function zoomedViewBox(zoom, pan = { x: 0, y: 0 }) {
-  const [x, y, width, height] = fullMapBounds;
+function zoomedViewBox(zoom, pan = { x: 0, y: 0 }, bounds = defaultMapBounds) {
+  const [x, y, width, height] = bounds;
   const nextWidth = width / zoom;
   const nextHeight = height / zoom;
-  const clampedPan = clampMapPan(zoom, pan);
+  const clampedPan = clampMapPan(zoom, pan, bounds);
 
   return `${x + (width - nextWidth) / 2 + clampedPan.x} ${y + (height - nextHeight) / 2 + clampedPan.y} ${nextWidth} ${nextHeight}`;
 }
@@ -283,6 +286,15 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
 
+  const mapBounds = useMemo(() => {
+    const incidentCities = new Set(incidents.map((incident) => incident.city));
+    const includedLocations = mapLocations.filter((location) => {
+      return !offshoreCities.has(location.city) || incidentCities.has(location.city);
+    });
+
+    return getSvgMapBounds(includedLocations.length ? includedLocations : mainlandMapLocations);
+  }, [incidents]);
+
   useEffect(() => {
     const nextPositions = {};
 
@@ -300,15 +312,20 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   }, []);
 
   useEffect(() => {
+    setZoom(1);
+    setPan({ x: 0, y: 0 });
+  }, [mapBounds]);
+
+  useEffect(() => {
     if (zoom === 1) {
       setPan({ x: 0, y: 0 });
       return;
     }
 
-    setPan((current) => clampMapPan(zoom, current));
-  }, [zoom]);
+    setPan((current) => clampMapPan(zoom, current, mapBounds));
+  }, [zoom, mapBounds]);
 
-  const viewBox = useMemo(() => zoomedViewBox(zoom, pan), [zoom, pan]);
+  const viewBox = useMemo(() => zoomedViewBox(zoom, pan, mapBounds), [zoom, pan, mapBounds]);
 
   const cityBadges = useMemo(() => {
     const grouped = new Map();
@@ -410,7 +427,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
       y: dragState.startPan.y - deltaY * (dragState.viewHeight / dragState.rectHeight),
     };
 
-    setPan(clampMapPan(zoom, nextPan));
+    setPan(clampMapPan(zoom, nextPan, mapBounds));
     event.preventDefault();
   };
 
@@ -754,7 +771,7 @@ function MapLegend({ activeView }) {
   );
 }
 
-function CurrentFilterSummary({ selectedCity, selectedMonths, selectedSources, visibleTypes, metrics }) {
+function CurrentFilterSummary({ selectedCity, selectedMonths, metrics }) {
   return (
     <section className="tool-section filter-summary">
       <h3>目前篩選</h3>
@@ -769,21 +786,12 @@ function CurrentFilterSummary({ selectedCity, selectedMonths, selectedSources, v
           <dd>{selectedMonths.length} 個</dd>
         </div>
         <div>
-          <dt>來源</dt>
-          <dd>{selectedSources.length} 個</dd>
-        </div>
-        <div>
-          <dt>圖示</dt>
-          <dd>
-            {visibleTypes.deaths ? "死亡" : ""}
-            {visibleTypes.deaths && visibleTypes.injuries ? "＋" : ""}
-            {visibleTypes.injuries ? "受傷" : ""}
-            {!visibleTypes.deaths && !visibleTypes.injuries ? "未顯示" : ""}
-          </dd>
-        </div>
-        <div>
           <dt>事件</dt>
           <dd>{metrics.events} 筆</dd>
+        </div>
+        <div>
+          <dt>死傷</dt>
+          <dd>死亡 {metrics.deaths}｜受傷 {metrics.injuries}</dd>
         </div>
       </dl>
     </section>
@@ -816,7 +824,7 @@ function ControlPanel({
       <div className="tool-panel-head">
         <span>工具面板</span>
         <h2>{activeView === "map" ? "地圖控制" : activeView === "trend" ? "趨勢篩選" : "新聞篩選"}</h2>
-        <p>調整月份、新聞來源與縣市後，地圖、趨勢圖與新聞列表會同步更新。</p>
+        <p>調整月份與縣市後，地圖、趨勢圖與新聞列表會同步更新。</p>
       </div>
 
       <section className="tool-section focus-card">
@@ -840,27 +848,28 @@ function ControlPanel({
       <CurrentFilterSummary
         selectedCity={selectedCity}
         selectedMonths={selectedMonths}
-        selectedSources={selectedSources}
-        visibleTypes={visibleTypes}
         metrics={metrics}
       />
 
-      <section className="tool-section filter-group">
-        <div className="filter-title">
+      <section className="tool-section filter-group month-filter">
+        <div className="filter-title compact">
           <h3>資料月份</h3>
-          <div>
-            <button type="button" onClick={() => setSelectedMonths(months)}>
-              全選
+          <div className="quick-month-actions">
+            <button type="button" onClick={() => setSelectedMonths(months.slice(0, 3))}>
+              近3月
             </button>
-            <button type="button" onClick={() => setSelectedMonths([])}>
-              全不選
+            <button type="button" onClick={() => setSelectedMonths(months.slice(0, 6))}>
+              近6月
+            </button>
+            <button type="button" onClick={() => setSelectedMonths(months)}>
+              全部
             </button>
           </div>
         </div>
 
-        <div className="chip-grid">
+        <div className="month-scroll" role="list" aria-label="月份篩選">
           {months.map((month) => (
-            <label key={month} className={`chip ${selectedMonths.includes(month) ? "checked" : ""}`}>
+            <label key={month} className={`month-chip ${selectedMonths.includes(month) ? "checked" : ""}`} role="listitem">
               <input
                 type="checkbox"
                 checked={selectedMonths.includes(month)}
@@ -872,52 +881,6 @@ function ControlPanel({
         </div>
       </section>
 
-      <section className="tool-section filter-group">
-        <div className="filter-title">
-          <h3>新聞來源</h3>
-          <div>
-            <button type="button" onClick={() => setSelectedSources(sources)}>
-              全選
-            </button>
-            <button type="button" onClick={() => setSelectedSources([])}>
-              全不選
-            </button>
-          </div>
-        </div>
-
-        <div className="chip-grid source-grid">
-          {sources.map((source) => (
-            <label key={source} className={`chip ${selectedSources.includes(source) ? "checked" : ""}`}>
-              <input
-                type="checkbox"
-                checked={selectedSources.includes(source)}
-                onChange={() => toggleSet(source, selectedSources, setSelectedSources)}
-              />
-              {source}
-            </label>
-          ))}
-        </div>
-      </section>
-
-      <section className="tool-section filter-group">
-        <h3>地圖顯示</h3>
-        <label className="switch-row">
-          <input
-            type="checkbox"
-            checked={visibleTypes.deaths}
-            onChange={() => setVisibleTypes((current) => ({ ...current, deaths: !current.deaths }))}
-          />
-          <span>☠️ 死亡人數</span>
-        </label>
-        <label className="switch-row">
-          <input
-            type="checkbox"
-            checked={visibleTypes.injuries}
-            onChange={() => setVisibleTypes((current) => ({ ...current, injuries: !current.injuries }))}
-          />
-          <span>🩼 受傷人數</span>
-        </label>
-      </section>
 
       <MapLegend activeView={activeView} />
 
@@ -1178,7 +1141,7 @@ export default function App() {
 
   useEffect(() => {
     if (months.length && !didInitMonths.current) {
-      setSelectedMonths(months.slice(0, 4));
+      setSelectedMonths(months);
       didInitMonths.current = true;
     }
   }, [months]);
