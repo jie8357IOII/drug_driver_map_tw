@@ -98,9 +98,10 @@ function useDashboardData() {
 
   useEffect(() => {
     let alive = true;
+    const baseUrl = import.meta.env.BASE_URL;
     Promise.all([
-      loadJson("/data/incidents.json", []),
-      loadJson("/data/drug_suspects_monthly.json", []),
+      loadJson(`${baseUrl}data/incidents.json`, []),
+      loadJson(`${baseUrl}data/drug_suspects_monthly.json`, []),
     ]).then(([incidents, suspects]) => {
       if (alive) setData({ incidents, suspects, loading: false });
     });
