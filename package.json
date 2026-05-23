@@ -1,0 +1,23 @@
+{
+  "name": "taiwan-drug-driving-map",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "data:excel": "python3 scripts/convert_excel.py public/data/q04010103_210702733.xlsx public/data/drug_suspects_monthly.json",
+    "data:news": "node scripts/scrape_news.mjs",
+    "data:clean": "node scripts/clean_incidents.mjs",
+    "data:forecast": "node scripts/build_forecast.mjs",
+    "data:all": "npm run data:excel && npm run data:forecast"
+  },
+  "dependencies": {
+    "@svg-maps/taiwan": "^2.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^6.0.7"
+  }
+}

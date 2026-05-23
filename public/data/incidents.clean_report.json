@@ -1,0 +1,976 @@
+{
+  "before": 241,
+  "after": 77,
+  "removedAsNonEvent": 138,
+  "mergedClusters": 14,
+  "removedTitles": [
+    {
+      "title": "彰化19天3毒駕釀4死8傷 網轟：彰化成毒駕大本營！",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-23",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5447307"
+    },
+    {
+      "title": "毒駕撞死父女！彰南路「禍」車搜出喪屍煙彈 駕駛收押",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-23",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5447205"
+    },
+    {
+      "title": "毒駕羈押新制首例 高雄男吸安撞死80歲翁收押",
+      "city": "高雄市",
+      "publishedAt": "2026-05-15",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5438628"
+    },
+    {
+      "title": "宜蘭毒駕撞死無辜女教師 檢溯源揪出喪屍煙彈藥頭起訴",
+      "city": "宜蘭縣",
+      "publishedAt": "2026-05-15",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5437605"
+    },
+    {
+      "title": "南投警方防毒駕 強化取締喪屍煙彈新措施上路",
+      "city": "南投縣",
+      "publishedAt": "2026-05-14",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5436876"
+    },
+    {
+      "title": "宜蘭23歲男毒駕闖紅燈釀1死3傷起訴 有逃亡之虞裁定續押",
+      "city": "宜蘭縣",
+      "publishedAt": "2026-05-11",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5433229"
+    },
+    {
+      "title": "毒駕闖紅燈撞死女老師 宜蘭23歲男子被起訴最重可判10年",
+      "city": "宜蘭縣",
+      "publishedAt": "2026-05-11",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5432711"
+    },
+    {
+      "title": "彰化毒駕飆撞汽機車釀2死2傷 BMW男收押",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-06",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5428195"
+    },
+    {
+      "title": "「毒駕就是故意殺人」新婚夫控時速恐飆180",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-06",
+      "url": "https://news.ltn.com.tw/news/society/paper/1753737"
+    },
+    {
+      "title": "彰化毒駕奪2命！新婚妻遭撞吐血慘死 夫心碎發聲：應該判死",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-05",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5426117"
+    },
+    {
+      "title": "最後身影曝光！彰化64歲翁清晨賣菜途中 遭毒駕撞飛斷手慘死",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-05",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5425648"
+    },
+    {
+      "title": "自由日日Shoot》毒駕滿街跑 平均1天查獲36件／警署擬推拒測即逮捕 連坐處罰",
+      "city": "新北市",
+      "publishedAt": "2026-05-05",
+      "url": "https://news.ltn.com.tw/news/society/paper/1753601"
+    },
+    {
+      "title": "自由日日Shoot》彰化毒駕2死 「跟家屬道歉很難嗎」／新婚夫求救妻 毒駕男稱頭暈拒絕",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-05",
+      "url": "https://news.ltn.com.tw/news/society/paper/1753603"
+    },
+    {
+      "title": "自由日日Shoot》彰化市區車速破百公里 毒駕狂飆 撞死騎士和新婚女",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-05",
+      "url": "https://news.ltn.com.tw/news/society/paper/1753570"
+    },
+    {
+      "title": "自由日日Shoot》又是毒駕！保時捷撞變電箱、7機車肇逃",
+      "city": "新北市",
+      "publishedAt": "2026-05-05",
+      "url": "https://news.ltn.com.tw/news/society/paper/1753604"
+    },
+    {
+      "title": "「為什麼又是彰化？」 近期毒駕已奪5命 網友諷「毒駕大縣」",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-04",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5425407"
+    },
+    {
+      "title": "毒駕連環爆！彰化2死、永和翻車 檢察官曝防制關鍵：不應僅靠重罰",
+      "city": "新北市",
+      "publishedAt": "2026-05-04",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5425322"
+    },
+    {
+      "title": "BMW男毒駕撞死女還拒救援 新婚夫痛批：一句道歉很難嗎？",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-04",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5425353"
+    },
+    {
+      "title": "毒駕釀悲劇引民怨 法務部：將廣納民意研議是否再修法",
+      "city": "新北市",
+      "publishedAt": "2026-05-04",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5425151"
+    },
+    {
+      "title": "毒駕零容忍！快篩首季攔截量增3倍 警政署擬修法推連坐罰與預防性羈押",
+      "city": "新北市",
+      "publishedAt": "2026-05-04",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5425082"
+    },
+    {
+      "title": "畫面曝光！彰化BMW高速連環撞釀2死 肇事駕駛昏迷將查有無毒駕",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-04",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5424564"
+    },
+    {
+      "title": "自由日日Shoot》去年釀11死、今年1月4死 毒駕肇禍列頭號交通威脅",
+      "city": "高雄市",
+      "publishedAt": "2026-04-27",
+      "url": "https://news.ltn.com.tw/news/life/paper/1752532"
+    },
+    {
+      "title": "毒駕專題2-1》1月毒駕奪命逼近去年半數！交通部列「頭號交通威脅」",
+      "city": "高雄市",
+      "publishedAt": "2026-04-26",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5416632"
+    },
+    {
+      "title": "才判刑又犯／毒駕拒檢撞車 害女童終身半癱",
+      "city": "臺南市",
+      "publishedAt": "2026-04-24",
+      "url": "https://news.ltn.com.tw/news/society/paper/1752138"
+    },
+    {
+      "title": "依托咪酯成毒駕新主因 南警盼建立「全國資料庫」精準打擊",
+      "city": "臺南市",
+      "publishedAt": "2026-04-23",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5413969"
+    },
+    {
+      "title": "無照毒駕拒檢狂飆！車上女童頭部重創半癱 男遭求重刑8年以上",
+      "city": "臺南市",
+      "publishedAt": "2026-04-23",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5413164"
+    },
+    {
+      "title": "毒駕撞人還輾壓逃逸！彰化男撞死女志工 檢依殺人罪起訴",
+      "city": "彰化縣",
+      "publishedAt": "2026-04-16",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5406133"
+    },
+    {
+      "title": "吞3種毒竟開車撞死騎士還肇逃 毒駕男被判5年8月",
+      "city": "彰化縣",
+      "publishedAt": "2026-04-16",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5406060"
+    },
+    {
+      "title": "女涉毒駕擊落台南3停紅燈機車3騎士傷 快篩毒品反應送辦",
+      "city": "臺南市",
+      "publishedAt": "2026-04-15",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5405271"
+    },
+    {
+      "title": "男子疑毒駕被搜出3把槍及毒品 檢方聲押獲准",
+      "city": "嘉義市",
+      "publishedAt": "2026-04-12",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5401227"
+    },
+    {
+      "title": "聯結車毒駕撞死國道工程緩撞車司機 二審維持8年5月",
+      "city": "新竹縣",
+      "publishedAt": "2026-04-08",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5396632"
+    },
+    {
+      "title": "撞死人沒錢賠還輕判！酒駕、毒駕犯有恃無恐 3000人連署修法嚴懲",
+      "city": "高雄市",
+      "publishedAt": "2026-04-05",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5394058"
+    },
+    {
+      "title": "毒駕撞死鹿港買菜嬤 闖紅燈拒檢菜販收押",
+      "city": "彰化縣",
+      "publishedAt": "2026-04-04",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5393550"
+    },
+    {
+      "title": "毒駕男撞死買菜嬤肇逃！家屬質疑警未追緝 警方：救人第一",
+      "city": "彰化縣",
+      "publishedAt": "2026-04-04",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5392916"
+    },
+    {
+      "title": "高雄三寶媽保母遭毒駕衝撞送醫不治 家屬告別式提三訴求",
+      "city": "高雄市",
+      "publishedAt": "2026-03-18",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5374071"
+    },
+    {
+      "title": "宜蘭毒駕撞死女老師 賓士男林益宏收押禁見",
+      "city": "宜蘭縣",
+      "publishedAt": "2026-03-13",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5369610"
+    },
+    {
+      "title": "毒駕男撞死三寶媽 高雄啟動大執法首日查獲15件",
+      "city": "高雄市",
+      "publishedAt": "2026-03-10",
+      "url": "https://news.ltn.com.tw/news/life/breakingnews/5365841"
+    },
+    {
+      "title": "高雄又見毒駕！警見汽車蛇行攔截 查獲K他命",
+      "city": "高雄市",
+      "publishedAt": "2026-03-10",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5364748"
+    },
+    {
+      "title": "高雄毒駕男撞死三寶媽 死者丈夫：法官要重判死刑",
+      "city": "高雄市",
+      "publishedAt": "2026-03-08",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5363189"
+    },
+    {
+      "title": "又見毒駕？男拒檢倒車衝撞警遭圍捕到案 查扣安毒、喪屍煙彈",
+      "city": "新竹市",
+      "publishedAt": "2026-03-07",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5362085"
+    },
+    {
+      "title": "國民法庭認定犯殺人罪 毒駕輾死人逃逸 判12年5月",
+      "city": "臺中市",
+      "publishedAt": "2026-03-07",
+      "url": "https://news.ltn.com.tw/news/society/paper/1745815"
+    },
+    {
+      "title": "13歲就開始無照駕駛!殯葬二代毒駕撞死退休公務員 殺人罪判12年5月",
+      "city": "臺中市",
+      "publishedAt": "2026-03-06",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5360996"
+    },
+    {
+      "title": "毒駕拒檢撞傷2警 逃10公里撞25車落網",
+      "city": "新北市",
+      "publishedAt": "2026-03-04",
+      "url": "https://news.ltn.com.tw/news/society/paper/1745447"
+    },
+    {
+      "title": "吸毒後騎電動自行車摔傷 酒駕累犯被依毒駕罪判刑7個月",
+      "city": "屏東縣",
+      "publishedAt": "2026-03-02",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5355582"
+    },
+    {
+      "title": "誇張畫面曝光！毒駕男自撞 轎車四輪朝天",
+      "city": "新北市",
+      "publishedAt": "2026-02-23",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5348958"
+    },
+    {
+      "title": "男毒駕拒絕受檢 倒車衝傷女警判2年2月又延押",
+      "city": "高雄市",
+      "publishedAt": "2026-02-13",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5342102"
+    },
+    {
+      "title": "女毒駕奪警命判死刑！郁方淚謝法官：感動到都哭了",
+      "city": "新北市",
+      "publishedAt": "2026-02-12",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5341110"
+    },
+    {
+      "title": "毒駕拒檢撞死警所長 國民法官判死",
+      "city": "新北市",
+      "publishedAt": "2026-02-12",
+      "url": "https://news.ltn.com.tw/news/society/paper/1743544"
+    },
+    {
+      "title": "新北2025年毒駕較前一年增1302件 侯友宜要求強力執法零容忍",
+      "city": "新北市",
+      "publishedAt": "2026-02-10",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5338833"
+    },
+    {
+      "title": "毒駕+酒駕撞死騎士 嘉義男子收押",
+      "city": "嘉義縣",
+      "publishedAt": "2026-02-08",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5336438"
+    },
+    {
+      "title": "嘉義25歲男酒駕、毒駕撞死騎士逃逸 檢察官複訊後聲押",
+      "city": "嘉義縣",
+      "publishedAt": "2026-02-07",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5336238"
+    },
+    {
+      "title": "毒駕釀死驗尿偷加水一審判8年 高院駁回上訴",
+      "city": "新北市",
+      "publishedAt": "2026-02-04",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5331995"
+    },
+    {
+      "title": "毒駕釀死驗尿偷加水 司機求高院交保：弟被通緝、父母吃老本",
+      "city": "新北市",
+      "publishedAt": "2026-01-06",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5301100"
+    },
+    {
+      "title": "二審首例！毒駕撞死新北警判18年半 高院今撤銷發回新北院更審",
+      "city": "新北市",
+      "publishedAt": "2025-12-30",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5293776"
+    },
+    {
+      "title": "基隆將強力取締毒駕 市警局：將建請檢方聲請羈押",
+      "city": "基隆市",
+      "publishedAt": "2025-12-16",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5279791"
+    },
+    {
+      "title": "自由日日shoot》基隆又見毒駕 6天奪2命",
+      "city": "基隆市",
+      "publishedAt": "2025-12-16",
+      "url": "https://news.ltn.com.tw/news/society/paper/1736132"
+    },
+    {
+      "title": "自由日日shoot》多次毒駕自撞 這回直接害命",
+      "city": "基隆市",
+      "publishedAt": "2025-12-16",
+      "url": "https://news.ltn.com.tw/news/society/paper/1736133"
+    },
+    {
+      "title": "1週2起毒駕釀2死 基警實施「威力掃蕩」強力防制",
+      "city": "基隆市",
+      "publishedAt": "2025-12-15",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5279310"
+    },
+    {
+      "title": "基隆毒駕男前科累累 毒駕紀錄還不只一次",
+      "city": "基隆市",
+      "publishedAt": "2025-12-15",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5279050"
+    },
+    {
+      "title": "基隆9個月4起毒駕肇事 綠營議員鄭文婷籲市府加強路檢",
+      "city": "基隆市",
+      "publishedAt": "2025-12-12",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5275853"
+    },
+    {
+      "title": "基隆翁捨身救人 家屬盼嚴懲毒駕／吸毒神智不清 撞進倒垃圾人潮",
+      "city": "基隆市",
+      "publishedAt": "2025-12-12",
+      "url": "https://news.ltn.com.tw/news/society/paper/1735559"
+    },
+    {
+      "title": "毒駕撞進倒垃圾人潮英勇救人老翁今晨不治 家屬要求嚴懲毒駕",
+      "city": "基隆市",
+      "publishedAt": "2025-12-11",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5275057"
+    },
+    {
+      "title": "無照還毒駕！新北男闖紅燈撞死騎士遭訴 轉國民法官庭審理",
+      "city": "新北市",
+      "publishedAt": "2025-12-01",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5263674"
+    },
+    {
+      "title": "全國毒駕快篩大執法前夕》毒駕害1死3傷 搜出5毒 殺人聲押",
+      "city": "彰化縣",
+      "publishedAt": "2025-11-21",
+      "url": "https://news.ltn.com.tw/news/society/paper/1732952"
+    },
+    {
+      "title": "冷血毒駕！撞死婦人肇逃疑車上開毒趴吸到茫 收押禁見",
+      "city": "彰化縣",
+      "publishedAt": "2025-11-20",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5252255"
+    },
+    {
+      "title": "台中18歲BMW男毒駕輾斃翁收押逾一年！ 第4度延押原因曝光",
+      "city": "臺中市",
+      "publishedAt": "2025-11-20",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5252193"
+    },
+    {
+      "title": "又見毒駕 撞死服務20年女志工",
+      "city": "彰化縣",
+      "publishedAt": "2025-11-20",
+      "url": "https://news.ltn.com.tw/news/society/paper/1732817"
+    },
+    {
+      "title": "毒駕快篩新制將上路 北市警訓練備戰",
+      "city": "臺北市",
+      "publishedAt": "2025-11-12",
+      "url": "https://news.ltn.com.tw/news/society/paper/1731750"
+    },
+    {
+      "title": "唾液毒品快篩試劑 警方打擊毒駕利器",
+      "city": "臺北市",
+      "publishedAt": "2025-11-11",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5241748"
+    },
+    {
+      "title": "桃園男施用喪屍煙彈毒駕害命 法院裁定羈押",
+      "city": "桃園市",
+      "publishedAt": "2025-11-05",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5235434"
+    },
+    {
+      "title": "聯結車毒駕撞國道工程緩撞車夾死司機 國民法官判刑8年5月",
+      "city": "桃園市",
+      "publishedAt": "2025-11-05",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5234872"
+    },
+    {
+      "title": "飛車衝茶行撞死老闆娘 BMW男涉毒駕收押",
+      "city": "臺中市",
+      "publishedAt": "2025-10-11",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5208124"
+    },
+    {
+      "title": "獨家》冷血毒駕男八里撞死騎士 醫院尿遁只想返回現場取毒",
+      "city": "新北市",
+      "publishedAt": "2025-10-11",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5207758"
+    },
+    {
+      "title": "BMW毒駕撞進茶行屋內老婦睡夢中慘死 監視器還原驚悚瞬間",
+      "city": "臺中市",
+      "publishedAt": "2025-10-09",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5205638"
+    },
+    {
+      "title": "驚險畫面曝光！ 無照毒駕男子逆向自撞燈桿 險撞到路人",
+      "city": "臺北市",
+      "publishedAt": "2025-10-06",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5202100"
+    },
+    {
+      "title": "向毒駕宣戰 ! 刑事局試辦唾液快篩檢測 待修法即可投入執法",
+      "city": "臺北市",
+      "publishedAt": "2025-09-26",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5191886"
+    },
+    {
+      "title": "男子持毒駕車撞傷行人逃逸 嘉院判刑2年",
+      "city": "嘉義縣",
+      "publishedAt": "2025-09-06",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5168986"
+    },
+    {
+      "title": "毒駕撞康橋生7傷 揪出販毒男判10年多",
+      "city": "新北市",
+      "publishedAt": "2025-09-04",
+      "url": "https://news.ltn.com.tw/news/society/paper/1722831"
+    },
+    {
+      "title": "毒駕超標1106倍逆向撞傷7康橋學生 駕駛一審判刑6年8個月",
+      "city": "新北市",
+      "publishedAt": "2025-09-03",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5165690"
+    },
+    {
+      "title": "毒駕撞康橋學生 駕駛判6年8月、藥頭判10年4月",
+      "city": "彰化縣",
+      "publishedAt": "2025-09-03",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5165348"
+    },
+    {
+      "title": "無照毒駕撞死人又肇逃 桃園慣犯被判11年徒刑",
+      "city": "桃園市",
+      "publishedAt": "2025-09-03",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5165050"
+    },
+    {
+      "title": "毒駕闖紅燈撞死騎士 國民法官審後判8年徒刑",
+      "city": "新北市",
+      "publishedAt": "2025-08-26",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5157466"
+    },
+    {
+      "title": "飲酒毒駕撞死婦竟心疼車壞 國民法官判舞小姐8年半",
+      "city": "臺南市",
+      "publishedAt": "2025-08-21",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5152058"
+    },
+    {
+      "title": "男子無照毒駕撞死人 國審判刑2年10月",
+      "city": "嘉義市",
+      "publishedAt": "2025-08-15",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5144909"
+    },
+    {
+      "title": "北市疑毒駕事故 曾獻瑩：市府應導入唾液快篩技術",
+      "city": "臺北市",
+      "publishedAt": "2025-08-10",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5138597"
+    },
+    {
+      "title": "北市男毒駕失控連撞8車奪1命 判刑4年定讞",
+      "city": "臺北市",
+      "publishedAt": "2025-08-01",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5128539"
+    },
+    {
+      "title": "毒駕撞死退休公務員逃逸 台中殯葬業二代稱患「糖尿病」仍延押",
+      "city": "臺中市",
+      "publishedAt": "2025-07-20",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5114151"
+    },
+    {
+      "title": "賓士男毒駕釀1死4傷 國民法官認累犯判處12年7月",
+      "city": "新竹市",
+      "publishedAt": "2025-06-27",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5088693"
+    },
+    {
+      "title": "毒駕男狂飆撞死三重警 國民法官重判18年6月",
+      "city": "新北市",
+      "publishedAt": "2025-06-26",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5087799"
+    },
+    {
+      "title": "拒檢中彈亡／通緝犯是詐團人頭 曾毒駕獲輕判免關",
+      "city": "臺北市",
+      "publishedAt": "2025-06-07",
+      "url": "https://news.ltn.com.tw/news/society/paper/1710398"
+    },
+    {
+      "title": "打人後 國道飆180撞亡／路怒症？駕駛驗無酒駕毒駕",
+      "city": "南投縣",
+      "publishedAt": "2025-06-05",
+      "url": "https://news.ltn.com.tw/news/society/paper/1710038"
+    },
+    {
+      "title": "路怒症？打老翁後國道追撞砂石車亡 駕駛驗血「無酒駕毒駕」",
+      "city": "南投縣",
+      "publishedAt": "2025-06-05",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5064859"
+    },
+    {
+      "title": "毒駕連環撞5人還肇逃 法官判刑1年10月",
+      "city": "基隆市",
+      "publishedAt": "2025-05-20",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5048885"
+    },
+    {
+      "title": "毒駕撞康橋車隊 累犯求處10年重刑 藥頭販賣一、二級毒品 求刑12年",
+      "city": "新北市",
+      "publishedAt": "2025-05-08",
+      "url": "https://news.ltn.com.tw/news/society/paper/1705671"
+    },
+    {
+      "title": "毒駕逆向撞傷康橋7學生 海洛因代謝物超標千倍遭起訴求刑10年",
+      "city": "新北市",
+      "publishedAt": "2025-05-07",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5035218"
+    },
+    {
+      "title": "毒駕撞康橋學生案延燒 藥頭落網羈押",
+      "city": "新北市",
+      "publishedAt": "2025-05-07",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5034976"
+    },
+    {
+      "title": "男子毒駕撞倒行人竟再次輾壓 檢依殺人未遂起訴",
+      "city": "雲林縣",
+      "publishedAt": "2025-04-28",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5025978"
+    },
+    {
+      "title": "賈永婕激動落淚！康橋學生遇毒駕衝撞 浴血歸來「全場哭一片」",
+      "city": "彰化縣",
+      "publishedAt": "2025-04-26",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5023938"
+    },
+    {
+      "title": "賈永婕籲重懲毒駕！ 康橋學生繫蝴蝶結集氣",
+      "city": "彰化縣",
+      "publishedAt": "2025-04-25",
+      "url": "https://ent.ltn.com.tw/news/paper/1703401"
+    },
+    {
+      "title": "自由日日Shoot》交通部：毒駕累犯罰鍰無上限",
+      "city": "新北市",
+      "publishedAt": "2025-04-25",
+      "url": "https://news.ltn.com.tw/news/society/paper/1703468"
+    },
+    {
+      "title": "自由日日Shoot》毒駕男一度人間蒸發 警方說法前後不一",
+      "city": "新北市",
+      "publishedAt": "2025-04-25",
+      "url": "https://news.ltn.com.tw/news/society/paper/1703470"
+    },
+    {
+      "title": "逆向衝撞康橋學生是「毒駕」！賈永婕呼籲嚴懲 曝團結一幕藏洋蔥",
+      "city": "彰化縣",
+      "publishedAt": "2025-04-24",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5021946"
+    },
+    {
+      "title": "鬼切男撞康橋7生 交通部：毒駕累犯罰鍰無上限",
+      "city": "新北市",
+      "publishedAt": "2025-04-24",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5021938"
+    },
+    {
+      "title": "「毒駕」逆向衝撞康橋學生釀7傷 肇事嫌犯羈押禁見",
+      "city": "新北市",
+      "publishedAt": "2025-04-24",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5021773"
+    },
+    {
+      "title": "詭異飄移還逆向！冷氣工撞傷康橋7學生 警方不排除毒駕急驗尿",
+      "city": "新北市",
+      "publishedAt": "2025-04-23",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5020830"
+    },
+    {
+      "title": "無照酒駕+毒駕 9分鐘連撞9車／包手刺青男釀1死3傷還在醉",
+      "city": "臺中市",
+      "publishedAt": "2025-04-21",
+      "url": "https://news.ltn.com.tw/news/society/paper/1702756"
+    },
+    {
+      "title": "台中包手男酒駕+毒駕狂飆 「9分鐘連撞9車」釀1死3傷起訴",
+      "city": "臺中市",
+      "publishedAt": "2025-04-20",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5017679"
+    },
+    {
+      "title": "18歲毒駕撞死人 殺人罪起訴殯二代",
+      "city": "臺中市",
+      "publishedAt": "2025-02-27",
+      "url": "https://news.ltn.com.tw/news/society/paper/1693833"
+    },
+    {
+      "title": "配送國小營養午餐毒駕撞死人！由國民法官承審",
+      "city": "臺北市",
+      "publishedAt": "2025-02-06",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4943489"
+    },
+    {
+      "title": "毒駕撞警亡判8年6月 案發前4天販毒......一審判6年5月",
+      "city": "彰化縣",
+      "publishedAt": "2024-12-13",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4892685"
+    },
+    {
+      "title": "適用國民法官審理 毒駕撞死警起訴 最重判無期",
+      "city": "新北市",
+      "publishedAt": "2024-12-02",
+      "url": "https://news.ltn.com.tw/news/society/paper/1679978"
+    },
+    {
+      "title": "賣喪屍菸彈害新北派出所長遭毒駕撞死 上游藥頭落網",
+      "city": "新北市",
+      "publishedAt": "2024-11-29",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4878909"
+    },
+    {
+      "title": "無照毒駕撞死無辜義消 男自首減刑判6年半定讞",
+      "city": "新竹市",
+      "publishedAt": "2024-11-22",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4871616"
+    },
+    {
+      "title": "賓士男吸7毒駕車害命起訴 藥頭收押／竹市虎林國中前1死4傷慘劇",
+      "city": "新竹市",
+      "publishedAt": "2024-11-14",
+      "url": "https://news.ltn.com.tw/news/society/paper/1677036"
+    },
+    {
+      "title": "竹市毒駕1死4傷慘劇 賓士男被起訴藥頭收押",
+      "city": "新竹市",
+      "publishedAt": "2024-11-13",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4861139"
+    },
+    {
+      "title": "自由日日Shoot》所長殉職 署長：推動修法加重毒駕刑責",
+      "city": "新北市",
+      "publishedAt": "2024-10-02",
+      "url": "https://news.ltn.com.tw/news/society/paper/1670020"
+    },
+    {
+      "title": "警政署長慰問殉職所長家屬 從優撫卹加速推動修法加重毒駕刑責",
+      "city": "新北市",
+      "publishedAt": "2024-10-01",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4817211"
+    },
+    {
+      "title": "吸喪屍煙彈害1死6傷 毒駕男羈押",
+      "city": "新竹市",
+      "publishedAt": "2024-09-18",
+      "url": "https://news.ltn.com.tw/news/society/paper/1667611"
+    },
+    {
+      "title": "新竹毒駕男撞死阿嬤 家屬淚控：兇手推說恍神卸責盼法官重判",
+      "city": "新竹市",
+      "publishedAt": "2024-09-17",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4802624"
+    },
+    {
+      "title": "一生無駕照男子毒駕撞死義消 高院仍判6年半",
+      "city": "新竹市",
+      "publishedAt": "2024-08-29",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4783636"
+    },
+    {
+      "title": "新竹毒蟲吸安毒駕 鬧區恍神逆向連撞4機車判刑9個月",
+      "city": "新竹市",
+      "publishedAt": "2024-08-20",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4774071"
+    },
+    {
+      "title": "毒駕男逆向撞死 挨撞女騎士違規在先 判刑",
+      "city": "南投縣",
+      "publishedAt": "2024-08-18",
+      "url": "https://news.ltn.com.tw/news/society/paper/1662329"
+    },
+    {
+      "title": "毒駕男逆向超速撞機車亡 女騎士反被判刑原因爆",
+      "city": "南投縣",
+      "publishedAt": "2024-08-17",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4772298"
+    },
+    {
+      "title": "恍神還開車上路 警盤查發現駕駛呆滯顫抖揪出毒駕送辦",
+      "city": "屏東縣",
+      "publishedAt": "2024-08-10",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4764634"
+    },
+    {
+      "title": "無照毒駕撞死騎士 判8年入獄",
+      "city": "臺中市",
+      "publishedAt": "2024-07-25",
+      "url": "https://news.ltn.com.tw/news/society/paper/1658376"
+    },
+    {
+      "title": "毒駕逆向撞死警察 吸「喪屍毒品」賓士男收押",
+      "city": "新北市",
+      "publishedAt": "2024-07-14",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4735913"
+    },
+    {
+      "title": "毒駕新法3月上路 黃國維可判10年",
+      "city": "新北市",
+      "publishedAt": "2024-07-14",
+      "url": "https://news.ltn.com.tw/news/society/paper/1656506"
+    },
+    {
+      "title": "涉吸毒駕車衝撞警致死 新北地院裁准羈押肇事黃嫌",
+      "city": "新北市",
+      "publishedAt": "2024-07-14",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4736037"
+    },
+    {
+      "title": "無照毒駕撞死義消 重判6年半",
+      "city": "新竹市",
+      "publishedAt": "2024-07-01",
+      "url": "https://news.ltn.com.tw/news/society/paper/1654184"
+    },
+    {
+      "title": "新竹無照男毒駕撞死義消 重判關6年半",
+      "city": "新竹市",
+      "publishedAt": "2024-06-30",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4721862"
+    },
+    {
+      "title": "毒駕狂飆撞死女老師 「毒趴男」賠償和解獲輕判2年6月",
+      "city": "臺中市",
+      "publishedAt": "2024-05-29",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4688258"
+    },
+    {
+      "title": "毒駕亂竄撞死2人 光頭佬確定關12年／首件三審定讞國民法官案",
+      "city": "臺中市",
+      "publishedAt": "2024-05-09",
+      "url": "https://news.ltn.com.tw/news/society/paper/1644999"
+    },
+    {
+      "title": "國民法官首件上訴三審定讞案件 台中毒駕光頭佬確定判囚12年",
+      "city": "臺中市",
+      "publishedAt": "2024-05-08",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4666499"
+    },
+    {
+      "title": "毒駕狂飆時速122公里撞死警察 毒蟲上訴喊判太重",
+      "city": "彰化縣",
+      "publishedAt": "2024-04-10",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4636509"
+    },
+    {
+      "title": "莽男毒駕撞6車還肇逃 二審改重判5年",
+      "city": "彰化縣",
+      "publishedAt": "2024-04-09",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4635719"
+    },
+    {
+      "title": "毒駕男開BMW狂飆闖紅燈撞死騎士 沒上香沒賠償判8年",
+      "city": "臺中市",
+      "publishedAt": "2024-03-22",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4616098"
+    },
+    {
+      "title": "台中光頭佬毒駕市區亂竄撞死2人 二審維持判12年",
+      "city": "臺中市",
+      "publishedAt": "2024-02-20",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4584407"
+    },
+    {
+      "title": "無照又毒駕撞死2工人 砂石車司機判刑6年",
+      "city": "苗栗縣",
+      "publishedAt": "2024-01-16",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/4554288"
+    }
+  ],
+  "clusters": [
+    {
+      "kept": "竹市虎林國中前1死車禍 毒駕男吸食「喪屍煙彈」移送竹檢",
+      "city": "新竹市",
+      "publishedAt": "2024-09-17",
+      "count": 4,
+      "merged": [
+        "竹市虎林國中前車禍阿嬤載孫遇死劫 男子疑毒駕坐屍體旁抽菸",
+        "竹市虎林國中前毒駕釀1死6傷車禍 市府調整路口交通號誌",
+        "《毒駕車禍釀1死6傷》竹市虎林國中前 閃黃燈改紅綠燈"
+      ]
+    },
+    {
+      "kept": "衝撞康橋車隊前 詭異飄移／毒駕？ 肇事男急驗血、尿",
+      "city": "新北市",
+      "publishedAt": "2025-04-24",
+      "count": 2,
+      "merged": [
+        "毒駕逆向撞傷康橋環台7學生 肇事嫌犯尿檢出3種毒品反應"
+      ]
+    },
+    {
+      "kept": "飛車衝茶行撞死老闆娘 BMW男已清醒將依毒駕、過失致死送辦",
+      "city": "臺中市",
+      "publishedAt": "2025-10-10",
+      "count": 5,
+      "merged": [
+        "BMW毒駕撞進茶行 兒泣訴「醫生說媽媽腰斷了救不回來 要我放手&hellip;」",
+        "飛車奪命！BMW撞進茶葉行釀母子死傷 肇事男疑毒駕",
+        "BMW失控 衝破大門直入臥室 毒駕半夜撞茶葉行 87歲婦冤死",
+        "飛車衝進茶行撞死老闆娘 BMW男今出院否認毒駕仍送辦"
+      ]
+    },
+    {
+      "kept": "毒駕奪命 2天2起 男逆向撞死單車騎士 趁就醫尿遁",
+      "city": "新北市",
+      "publishedAt": "2025-10-12",
+      "count": 3,
+      "merged": [
+        "新北八里逆向撞死單車騎士是毒駕！男子就醫逃逸 躲公園解癮",
+        "毒駕撞死人就醫 搭小黃溜回現場取毒"
+      ]
+    },
+    {
+      "kept": "疑又毒駕害命！基隆男駕車衝撞10輛汽機車 3人送醫1婦人送醫不治",
+      "city": "基隆市",
+      "publishedAt": "2025-12-15",
+      "count": 4,
+      "merged": [
+        "基隆毒駕男撞死倒垃圾老翁 謝國樑：零容忍強化查緝",
+        "基隆1日2命案！白日槍擊、毒駕暴衝 市議員：治安有嚴重漏洞",
+        "6天2起毒駕致死案 基隆檢警調聯手嚴打毒駕"
+      ]
+    },
+    {
+      "kept": "毒駕女撞死新北警所長 鑑定醫師：辨識能力正常",
+      "city": "新北市",
+      "publishedAt": "2026-02-09",
+      "count": 2,
+      "merged": [
+        "陳嘉瑩毒駕撞死警所長判死刑 侯友宜：謝謝司法正義"
+      ]
+    },
+    {
+      "kept": "23歲男載19歲妻飆車 毒駕闖紅燈 撞死女老師",
+      "city": "臺中市",
+      "publishedAt": "2026-03-07",
+      "count": 2,
+      "merged": [
+        "惡劣！殯葬二代13歲起無照上路 白翊辰毒駕撞死老翁還肇逃"
+      ]
+    },
+    {
+      "kept": "又是毒駕！宜蘭賓士男高速撞死返家女老師 波及7車釀1死3傷",
+      "city": "宜蘭縣",
+      "publishedAt": "2026-03-06",
+      "count": 2,
+      "merged": [
+        "撞死無辜女老師 宜蘭毒駕賓士男被起底有毒品、持刀砍人前科"
+      ]
+    },
+    {
+      "kept": "高雄毒駕撞死女騎士！陳其邁說話了",
+      "city": "高雄市",
+      "publishedAt": "2026-03-08",
+      "count": 2,
+      "merged": [
+        "高雄男毒駕連撞2機車 釀1死2傷"
+      ]
+    },
+    {
+      "kept": "BMW男撞安坑輕軌站牌及護欄 搜出喪屍煙彈涉毒駕",
+      "city": "新北市",
+      "publishedAt": "2026-03-19",
+      "count": 2,
+      "merged": [
+        "賓士男巷內竄出猛撞上班騎士 酒駕又涉毒駕扣車送辦"
+      ]
+    },
+    {
+      "kept": "無照又毒駕！高雄男開車自撞飲料店 先吞18萬罰單",
+      "city": "高雄市",
+      "publishedAt": "2026-03-19",
+      "count": 2,
+      "merged": [
+        "毒駕男精神恍惚自撞24機車 嚇壞路人"
+      ]
+    },
+    {
+      "kept": "毒駕連環爆！鹿港才奪命 溪湖又爆無照女吸毒駕Audi A7逆向撞3車",
+      "city": "彰化縣",
+      "publishedAt": "2026-04-04",
+      "count": 3,
+      "merged": [
+        "悚！彰化男毒駕闖紅燈躲警車攔查 衝撞機車75歲買菜嬤噴飛亡",
+        "彰化75歲買菜嬤被撞噴飛亡 躲警毒駕男剛好是菜販"
+      ]
+    },
+    {
+      "kept": "毒駕撞死2人、自己也受傷 BMW男背3大重罪及鉅額賠償",
+      "city": "彰化縣",
+      "publishedAt": "2026-05-05",
+      "count": 5,
+      "merged": [
+        "彰化毒駕釀2死2傷 縣警局5/4~5/8交通大執法",
+        "彰市BMW追撞機車、轎車釀2死2傷 BMW男證實毒駕釀禍",
+        "彰化毒駕2死警推5天大執法 網紅Cheap酸：公告時間史上最爆笑",
+        "彰化毒駕奪2命！肇事男IG炫富遭肉搜 惡霸行徑曝光"
+      ]
+    },
+    {
+      "kept": "岡山恐怖連環撞！ 轎車撞飛4機車釀5傷 駕駛身亡疑毒駕",
+      "city": "高雄市",
+      "publishedAt": "2026-05-17",
+      "count": 2,
+      "merged": [
+        "疑毒駕 連撞4機車衝進工廠 駕駛亡"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "targetMonth": "2026-06",
+  "model": "transparent-risk-index-v1",
+  "note": "風險指標依近期新聞死傷、縣市毒品嫌疑犯人數相對水位與近月趨勢計算，不代表精準事故機率。",
+  "cities": [
+    {
+      "city": "高雄市",
+      "deathRiskScore": 85,
+      "injuryRiskScore": 84,
+      "combinedRiskScore": 85,
+      "level": "high",
+      "factors": [
+        "近期死傷事件",
+        "近月上升"
+      ]
+    },
+    {
+      "city": "新北市",
+      "deathRiskScore": 69,
+      "injuryRiskScore": 64,
+      "combinedRiskScore": 67,
+      "level": "medium",
+      "factors": [
+        "近期死傷事件",
+        "嫌疑犯人數高"
+      ]
+    },
+    {
+      "city": "臺中市",
+      "deathRiskScore": 57,
+      "injuryRiskScore": 26,
+      "combinedRiskScore": 44,
+      "level": "medium",
+      "factors": [
+        "近期死傷事件"
+      ]
+    },
+    {
+      "city": "彰化縣",
+      "deathRiskScore": 47,
+      "injuryRiskScore": 33,
+      "combinedRiskScore": 41,
+      "level": "medium",
+      "factors": [
+        "近期死傷事件"
+      ]
+    },
+    {
+      "city": "桃園市",
+      "deathRiskScore": 25,
+      "injuryRiskScore": 25,
+      "combinedRiskScore": 25,
+      "level": "low",
+      "factors": [
+        "嫌疑犯人數高"
+      ]
+    },
+    {
+      "city": "臺南市",
+      "deathRiskScore": 22,
+      "injuryRiskScore": 25,
+      "combinedRiskScore": 23,
+      "level": "low",
+      "factors": [
+        "近月上升"
+      ]
+    },
+    {
+      "city": "基隆市",
+      "deathRiskScore": 20,
+      "injuryRiskScore": 20,
+      "combinedRiskScore": 20,
+      "level": "low",
+      "factors": [
+        "近月上升"
+      ]
+    },
+    {
+      "city": "臺北市",
+      "deathRiskScore": 21,
+      "injuryRiskScore": 17,
+      "combinedRiskScore": 19,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "屏東縣",
+      "deathRiskScore": 14,
+      "injuryRiskScore": 11,
+      "combinedRiskScore": 13,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "苗栗縣",
+      "deathRiskScore": 11,
+      "injuryRiskScore": 12,
+      "combinedRiskScore": 11,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "宜蘭縣",
+      "deathRiskScore": 12,
+      "injuryRiskScore": 8,
+      "combinedRiskScore": 10,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "新竹市",
+      "deathRiskScore": 6,
+      "injuryRiskScore": 6,
+      "combinedRiskScore": 6,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "嘉義縣",
+      "deathRiskScore": 4,
+      "injuryRiskScore": 4,
+      "combinedRiskScore": 4,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "新竹縣",
+      "deathRiskScore": 3,
+      "injuryRiskScore": 3,
+      "combinedRiskScore": 3,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "雲林縣",
+      "deathRiskScore": 3,
+      "injuryRiskScore": 4,
+      "combinedRiskScore": 3,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "嘉義市",
+      "deathRiskScore": 3,
+      "injuryRiskScore": 2,
+      "combinedRiskScore": 3,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "南投縣",
+      "deathRiskScore": 2,
+      "injuryRiskScore": 2,
+      "combinedRiskScore": 2,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "花蓮縣",
+      "deathRiskScore": 2,
+      "injuryRiskScore": 2,
+      "combinedRiskScore": 2,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "臺東縣",
+      "deathRiskScore": 1,
+      "injuryRiskScore": 2,
+      "combinedRiskScore": 1,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "澎湖縣",
+      "deathRiskScore": 1,
+      "injuryRiskScore": 1,
+      "combinedRiskScore": 1,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "金門縣",
+      "deathRiskScore": 1,
+      "injuryRiskScore": 1,
+      "combinedRiskScore": 1,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    },
+    {
+      "city": "連江縣",
+      "deathRiskScore": 0,
+      "injuryRiskScore": 0,
+      "combinedRiskScore": 0,
+      "level": "low",
+      "factors": [
+        "相對低量"
+      ]
+    }
+  ]
+}

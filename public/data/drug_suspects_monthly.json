@@ -1,0 +1,4292 @@
+[
+  {
+    "month": "2023-01",
+    "city": "新北市",
+    "suspects": 365
+  },
+  {
+    "month": "2023-01",
+    "city": "臺北市",
+    "suspects": 291
+  },
+  {
+    "month": "2023-01",
+    "city": "桃園市",
+    "suspects": 404
+  },
+  {
+    "month": "2023-01",
+    "city": "臺中市",
+    "suspects": 244
+  },
+  {
+    "month": "2023-01",
+    "city": "臺南市",
+    "suspects": 168
+  },
+  {
+    "month": "2023-01",
+    "city": "高雄市",
+    "suspects": 233
+  },
+  {
+    "month": "2023-01",
+    "city": "宜蘭縣",
+    "suspects": 32
+  },
+  {
+    "month": "2023-01",
+    "city": "新竹縣",
+    "suspects": 45
+  },
+  {
+    "month": "2023-01",
+    "city": "苗栗縣",
+    "suspects": 82
+  },
+  {
+    "month": "2023-01",
+    "city": "彰化縣",
+    "suspects": 131
+  },
+  {
+    "month": "2023-01",
+    "city": "南投縣",
+    "suspects": 46
+  },
+  {
+    "month": "2023-01",
+    "city": "雲林縣",
+    "suspects": 63
+  },
+  {
+    "month": "2023-01",
+    "city": "嘉義縣",
+    "suspects": 34
+  },
+  {
+    "month": "2023-01",
+    "city": "屏東縣",
+    "suspects": 83
+  },
+  {
+    "month": "2023-01",
+    "city": "臺東縣",
+    "suspects": 19
+  },
+  {
+    "month": "2023-01",
+    "city": "花蓮縣",
+    "suspects": 51
+  },
+  {
+    "month": "2023-01",
+    "city": "澎湖縣",
+    "suspects": 13
+  },
+  {
+    "month": "2023-01",
+    "city": "基隆市",
+    "suspects": 55
+  },
+  {
+    "month": "2023-01",
+    "city": "新竹市",
+    "suspects": 43
+  },
+  {
+    "month": "2023-01",
+    "city": "嘉義市",
+    "suspects": 48
+  },
+  {
+    "month": "2023-01",
+    "city": "金門縣",
+    "suspects": 4
+  },
+  {
+    "month": "2023-01",
+    "city": "連江縣",
+    "suspects": 1
+  },
+  {
+    "month": "2023-02",
+    "city": "新北市",
+    "suspects": 451
+  },
+  {
+    "month": "2023-02",
+    "city": "臺北市",
+    "suspects": 330
+  },
+  {
+    "month": "2023-02",
+    "city": "桃園市",
+    "suspects": 366
+  },
+  {
+    "month": "2023-02",
+    "city": "臺中市",
+    "suspects": 283
+  },
+  {
+    "month": "2023-02",
+    "city": "臺南市",
+    "suspects": 214
+  },
+  {
+    "month": "2023-02",
+    "city": "高雄市",
+    "suspects": 229
+  },
+  {
+    "month": "2023-02",
+    "city": "宜蘭縣",
+    "suspects": 47
+  },
+  {
+    "month": "2023-02",
+    "city": "新竹縣",
+    "suspects": 70
+  },
+  {
+    "month": "2023-02",
+    "city": "苗栗縣",
+    "suspects": 90
+  },
+  {
+    "month": "2023-02",
+    "city": "彰化縣",
+    "suspects": 108
+  },
+  {
+    "month": "2023-02",
+    "city": "南投縣",
+    "suspects": 46
+  },
+  {
+    "month": "2023-02",
+    "city": "雲林縣",
+    "suspects": 82
+  },
+  {
+    "month": "2023-02",
+    "city": "嘉義縣",
+    "suspects": 78
+  },
+  {
+    "month": "2023-02",
+    "city": "屏東縣",
+    "suspects": 111
+  },
+  {
+    "month": "2023-02",
+    "city": "臺東縣",
+    "suspects": 25
+  },
+  {
+    "month": "2023-02",
+    "city": "花蓮縣",
+    "suspects": 33
+  },
+  {
+    "month": "2023-02",
+    "city": "澎湖縣",
+    "suspects": 4
+  },
+  {
+    "month": "2023-02",
+    "city": "基隆市",
+    "suspects": 80
+  },
+  {
+    "month": "2023-02",
+    "city": "新竹市",
+    "suspects": 63
+  },
+  {
+    "month": "2023-02",
+    "city": "嘉義市",
+    "suspects": 45
+  },
+  {
+    "month": "2023-02",
+    "city": "金門縣",
+    "suspects": 4
+  },
+  {
+    "month": "2023-02",
+    "city": "連江縣",
+    "suspects": 1
+  },
+  {
+    "month": "2023-03",
+    "city": "新北市",
+    "suspects": 478
+  },
+  {
+    "month": "2023-03",
+    "city": "臺北市",
+    "suspects": 427
+  },
+  {
+    "month": "2023-03",
+    "city": "桃園市",
+    "suspects": 384
+  },
+  {
+    "month": "2023-03",
+    "city": "臺中市",
+    "suspects": 432
+  },
+  {
+    "month": "2023-03",
+    "city": "臺南市",
+    "suspects": 285
+  },
+  {
+    "month": "2023-03",
+    "city": "高雄市",
+    "suspects": 232
+  },
+  {
+    "month": "2023-03",
+    "city": "宜蘭縣",
+    "suspects": 77
+  },
+  {
+    "month": "2023-03",
+    "city": "新竹縣",
+    "suspects": 79
+  },
+  {
+    "month": "2023-03",
+    "city": "苗栗縣",
+    "suspects": 112
+  },
+  {
+    "month": "2023-03",
+    "city": "彰化縣",
+    "suspects": 179
+  },
+  {
+    "month": "2023-03",
+    "city": "南投縣",
+    "suspects": 82
+  },
+  {
+    "month": "2023-03",
+    "city": "雲林縣",
+    "suspects": 94
+  },
+  {
+    "month": "2023-03",
+    "city": "嘉義縣",
+    "suspects": 112
+  },
+  {
+    "month": "2023-03",
+    "city": "屏東縣",
+    "suspects": 142
+  },
+  {
+    "month": "2023-03",
+    "city": "臺東縣",
+    "suspects": 29
+  },
+  {
+    "month": "2023-03",
+    "city": "花蓮縣",
+    "suspects": 63
+  },
+  {
+    "month": "2023-03",
+    "city": "澎湖縣",
+    "suspects": 10
+  },
+  {
+    "month": "2023-03",
+    "city": "基隆市",
+    "suspects": 62
+  },
+  {
+    "month": "2023-03",
+    "city": "新竹市",
+    "suspects": 51
+  },
+  {
+    "month": "2023-03",
+    "city": "嘉義市",
+    "suspects": 76
+  },
+  {
+    "month": "2023-03",
+    "city": "金門縣",
+    "suspects": 10
+  },
+  {
+    "month": "2023-03",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2023-04",
+    "city": "新北市",
+    "suspects": 550
+  },
+  {
+    "month": "2023-04",
+    "city": "臺北市",
+    "suspects": 413
+  },
+  {
+    "month": "2023-04",
+    "city": "桃園市",
+    "suspects": 505
+  },
+  {
+    "month": "2023-04",
+    "city": "臺中市",
+    "suspects": 349
+  },
+  {
+    "month": "2023-04",
+    "city": "臺南市",
+    "suspects": 240
+  },
+  {
+    "month": "2023-04",
+    "city": "高雄市",
+    "suspects": 285
+  },
+  {
+    "month": "2023-04",
+    "city": "宜蘭縣",
+    "suspects": 76
+  },
+  {
+    "month": "2023-04",
+    "city": "新竹縣",
+    "suspects": 86
+  },
+  {
+    "month": "2023-04",
+    "city": "苗栗縣",
+    "suspects": 108
+  },
+  {
+    "month": "2023-04",
+    "city": "彰化縣",
+    "suspects": 121
+  },
+  {
+    "month": "2023-04",
+    "city": "南投縣",
+    "suspects": 56
+  },
+  {
+    "month": "2023-04",
+    "city": "雲林縣",
+    "suspects": 106
+  },
+  {
+    "month": "2023-04",
+    "city": "嘉義縣",
+    "suspects": 75
+  },
+  {
+    "month": "2023-04",
+    "city": "屏東縣",
+    "suspects": 167
+  },
+  {
+    "month": "2023-04",
+    "city": "臺東縣",
+    "suspects": 30
+  },
+  {
+    "month": "2023-04",
+    "city": "花蓮縣",
+    "suspects": 51
+  },
+  {
+    "month": "2023-04",
+    "city": "澎湖縣",
+    "suspects": 7
+  },
+  {
+    "month": "2023-04",
+    "city": "基隆市",
+    "suspects": 102
+  },
+  {
+    "month": "2023-04",
+    "city": "新竹市",
+    "suspects": 36
+  },
+  {
+    "month": "2023-04",
+    "city": "嘉義市",
+    "suspects": 61
+  },
+  {
+    "month": "2023-04",
+    "city": "金門縣",
+    "suspects": 3
+  },
+  {
+    "month": "2023-04",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2023-05",
+    "city": "新北市",
+    "suspects": 480
+  },
+  {
+    "month": "2023-05",
+    "city": "臺北市",
+    "suspects": 418
+  },
+  {
+    "month": "2023-05",
+    "city": "桃園市",
+    "suspects": 451
+  },
+  {
+    "month": "2023-05",
+    "city": "臺中市",
+    "suspects": 371
+  },
+  {
+    "month": "2023-05",
+    "city": "臺南市",
+    "suspects": 213
+  },
+  {
+    "month": "2023-05",
+    "city": "高雄市",
+    "suspects": 207
+  },
+  {
+    "month": "2023-05",
+    "city": "宜蘭縣",
+    "suspects": 84
+  },
+  {
+    "month": "2023-05",
+    "city": "新竹縣",
+    "suspects": 89
+  },
+  {
+    "month": "2023-05",
+    "city": "苗栗縣",
+    "suspects": 95
+  },
+  {
+    "month": "2023-05",
+    "city": "彰化縣",
+    "suspects": 125
+  },
+  {
+    "month": "2023-05",
+    "city": "南投縣",
+    "suspects": 68
+  },
+  {
+    "month": "2023-05",
+    "city": "雲林縣",
+    "suspects": 84
+  },
+  {
+    "month": "2023-05",
+    "city": "嘉義縣",
+    "suspects": 92
+  },
+  {
+    "month": "2023-05",
+    "city": "屏東縣",
+    "suspects": 160
+  },
+  {
+    "month": "2023-05",
+    "city": "臺東縣",
+    "suspects": 28
+  },
+  {
+    "month": "2023-05",
+    "city": "花蓮縣",
+    "suspects": 46
+  },
+  {
+    "month": "2023-05",
+    "city": "澎湖縣",
+    "suspects": 9
+  },
+  {
+    "month": "2023-05",
+    "city": "基隆市",
+    "suspects": 58
+  },
+  {
+    "month": "2023-05",
+    "city": "新竹市",
+    "suspects": 40
+  },
+  {
+    "month": "2023-05",
+    "city": "嘉義市",
+    "suspects": 52
+  },
+  {
+    "month": "2023-05",
+    "city": "金門縣",
+    "suspects": 5
+  },
+  {
+    "month": "2023-05",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2023-06",
+    "city": "新北市",
+    "suspects": 496
+  },
+  {
+    "month": "2023-06",
+    "city": "臺北市",
+    "suspects": 355
+  },
+  {
+    "month": "2023-06",
+    "city": "桃園市",
+    "suspects": 507
+  },
+  {
+    "month": "2023-06",
+    "city": "臺中市",
+    "suspects": 325
+  },
+  {
+    "month": "2023-06",
+    "city": "臺南市",
+    "suspects": 245
+  },
+  {
+    "month": "2023-06",
+    "city": "高雄市",
+    "suspects": 254
+  },
+  {
+    "month": "2023-06",
+    "city": "宜蘭縣",
+    "suspects": 50
+  },
+  {
+    "month": "2023-06",
+    "city": "新竹縣",
+    "suspects": 89
+  },
+  {
+    "month": "2023-06",
+    "city": "苗栗縣",
+    "suspects": 112
+  },
+  {
+    "month": "2023-06",
+    "city": "彰化縣",
+    "suspects": 125
+  },
+  {
+    "month": "2023-06",
+    "city": "南投縣",
+    "suspects": 58
+  },
+  {
+    "month": "2023-06",
+    "city": "雲林縣",
+    "suspects": 95
+  },
+  {
+    "month": "2023-06",
+    "city": "嘉義縣",
+    "suspects": 78
+  },
+  {
+    "month": "2023-06",
+    "city": "屏東縣",
+    "suspects": 144
+  },
+  {
+    "month": "2023-06",
+    "city": "臺東縣",
+    "suspects": 28
+  },
+  {
+    "month": "2023-06",
+    "city": "花蓮縣",
+    "suspects": 46
+  },
+  {
+    "month": "2023-06",
+    "city": "澎湖縣",
+    "suspects": 13
+  },
+  {
+    "month": "2023-06",
+    "city": "基隆市",
+    "suspects": 83
+  },
+  {
+    "month": "2023-06",
+    "city": "新竹市",
+    "suspects": 33
+  },
+  {
+    "month": "2023-06",
+    "city": "嘉義市",
+    "suspects": 49
+  },
+  {
+    "month": "2023-06",
+    "city": "金門縣",
+    "suspects": 0
+  },
+  {
+    "month": "2023-06",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2023-07",
+    "city": "新北市",
+    "suspects": 520
+  },
+  {
+    "month": "2023-07",
+    "city": "臺北市",
+    "suspects": 383
+  },
+  {
+    "month": "2023-07",
+    "city": "桃園市",
+    "suspects": 608
+  },
+  {
+    "month": "2023-07",
+    "city": "臺中市",
+    "suspects": 317
+  },
+  {
+    "month": "2023-07",
+    "city": "臺南市",
+    "suspects": 219
+  },
+  {
+    "month": "2023-07",
+    "city": "高雄市",
+    "suspects": 217
+  },
+  {
+    "month": "2023-07",
+    "city": "宜蘭縣",
+    "suspects": 46
+  },
+  {
+    "month": "2023-07",
+    "city": "新竹縣",
+    "suspects": 106
+  },
+  {
+    "month": "2023-07",
+    "city": "苗栗縣",
+    "suspects": 90
+  },
+  {
+    "month": "2023-07",
+    "city": "彰化縣",
+    "suspects": 160
+  },
+  {
+    "month": "2023-07",
+    "city": "南投縣",
+    "suspects": 67
+  },
+  {
+    "month": "2023-07",
+    "city": "雲林縣",
+    "suspects": 107
+  },
+  {
+    "month": "2023-07",
+    "city": "嘉義縣",
+    "suspects": 94
+  },
+  {
+    "month": "2023-07",
+    "city": "屏東縣",
+    "suspects": 132
+  },
+  {
+    "month": "2023-07",
+    "city": "臺東縣",
+    "suspects": 45
+  },
+  {
+    "month": "2023-07",
+    "city": "花蓮縣",
+    "suspects": 65
+  },
+  {
+    "month": "2023-07",
+    "city": "澎湖縣",
+    "suspects": 4
+  },
+  {
+    "month": "2023-07",
+    "city": "基隆市",
+    "suspects": 49
+  },
+  {
+    "month": "2023-07",
+    "city": "新竹市",
+    "suspects": 46
+  },
+  {
+    "month": "2023-07",
+    "city": "嘉義市",
+    "suspects": 40
+  },
+  {
+    "month": "2023-07",
+    "city": "金門縣",
+    "suspects": 4
+  },
+  {
+    "month": "2023-07",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2023-08",
+    "city": "新北市",
+    "suspects": 560
+  },
+  {
+    "month": "2023-08",
+    "city": "臺北市",
+    "suspects": 380
+  },
+  {
+    "month": "2023-08",
+    "city": "桃園市",
+    "suspects": 493
+  },
+  {
+    "month": "2023-08",
+    "city": "臺中市",
+    "suspects": 296
+  },
+  {
+    "month": "2023-08",
+    "city": "臺南市",
+    "suspects": 249
+  },
+  {
+    "month": "2023-08",
+    "city": "高雄市",
+    "suspects": 281
+  },
+  {
+    "month": "2023-08",
+    "city": "宜蘭縣",
+    "suspects": 42
+  },
+  {
+    "month": "2023-08",
+    "city": "新竹縣",
+    "suspects": 99
+  },
+  {
+    "month": "2023-08",
+    "city": "苗栗縣",
+    "suspects": 81
+  },
+  {
+    "month": "2023-08",
+    "city": "彰化縣",
+    "suspects": 186
+  },
+  {
+    "month": "2023-08",
+    "city": "南投縣",
+    "suspects": 74
+  },
+  {
+    "month": "2023-08",
+    "city": "雲林縣",
+    "suspects": 80
+  },
+  {
+    "month": "2023-08",
+    "city": "嘉義縣",
+    "suspects": 103
+  },
+  {
+    "month": "2023-08",
+    "city": "屏東縣",
+    "suspects": 164
+  },
+  {
+    "month": "2023-08",
+    "city": "臺東縣",
+    "suspects": 26
+  },
+  {
+    "month": "2023-08",
+    "city": "花蓮縣",
+    "suspects": 50
+  },
+  {
+    "month": "2023-08",
+    "city": "澎湖縣",
+    "suspects": 6
+  },
+  {
+    "month": "2023-08",
+    "city": "基隆市",
+    "suspects": 70
+  },
+  {
+    "month": "2023-08",
+    "city": "新竹市",
+    "suspects": 62
+  },
+  {
+    "month": "2023-08",
+    "city": "嘉義市",
+    "suspects": 50
+  },
+  {
+    "month": "2023-08",
+    "city": "金門縣",
+    "suspects": 2
+  },
+  {
+    "month": "2023-08",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2023-09",
+    "city": "新北市",
+    "suspects": 578
+  },
+  {
+    "month": "2023-09",
+    "city": "臺北市",
+    "suspects": 392
+  },
+  {
+    "month": "2023-09",
+    "city": "桃園市",
+    "suspects": 469
+  },
+  {
+    "month": "2023-09",
+    "city": "臺中市",
+    "suspects": 295
+  },
+  {
+    "month": "2023-09",
+    "city": "臺南市",
+    "suspects": 207
+  },
+  {
+    "month": "2023-09",
+    "city": "高雄市",
+    "suspects": 272
+  },
+  {
+    "month": "2023-09",
+    "city": "宜蘭縣",
+    "suspects": 52
+  },
+  {
+    "month": "2023-09",
+    "city": "新竹縣",
+    "suspects": 97
+  },
+  {
+    "month": "2023-09",
+    "city": "苗栗縣",
+    "suspects": 86
+  },
+  {
+    "month": "2023-09",
+    "city": "彰化縣",
+    "suspects": 138
+  },
+  {
+    "month": "2023-09",
+    "city": "南投縣",
+    "suspects": 67
+  },
+  {
+    "month": "2023-09",
+    "city": "雲林縣",
+    "suspects": 78
+  },
+  {
+    "month": "2023-09",
+    "city": "嘉義縣",
+    "suspects": 111
+  },
+  {
+    "month": "2023-09",
+    "city": "屏東縣",
+    "suspects": 148
+  },
+  {
+    "month": "2023-09",
+    "city": "臺東縣",
+    "suspects": 22
+  },
+  {
+    "month": "2023-09",
+    "city": "花蓮縣",
+    "suspects": 51
+  },
+  {
+    "month": "2023-09",
+    "city": "澎湖縣",
+    "suspects": 3
+  },
+  {
+    "month": "2023-09",
+    "city": "基隆市",
+    "suspects": 111
+  },
+  {
+    "month": "2023-09",
+    "city": "新竹市",
+    "suspects": 42
+  },
+  {
+    "month": "2023-09",
+    "city": "嘉義市",
+    "suspects": 59
+  },
+  {
+    "month": "2023-09",
+    "city": "金門縣",
+    "suspects": 5
+  },
+  {
+    "month": "2023-09",
+    "city": "連江縣",
+    "suspects": 1
+  },
+  {
+    "month": "2023-10",
+    "city": "新北市",
+    "suspects": 554
+  },
+  {
+    "month": "2023-10",
+    "city": "臺北市",
+    "suspects": 480
+  },
+  {
+    "month": "2023-10",
+    "city": "桃園市",
+    "suspects": 565
+  },
+  {
+    "month": "2023-10",
+    "city": "臺中市",
+    "suspects": 330
+  },
+  {
+    "month": "2023-10",
+    "city": "臺南市",
+    "suspects": 234
+  },
+  {
+    "month": "2023-10",
+    "city": "高雄市",
+    "suspects": 333
+  },
+  {
+    "month": "2023-10",
+    "city": "宜蘭縣",
+    "suspects": 75
+  },
+  {
+    "month": "2023-10",
+    "city": "新竹縣",
+    "suspects": 101
+  },
+  {
+    "month": "2023-10",
+    "city": "苗栗縣",
+    "suspects": 68
+  },
+  {
+    "month": "2023-10",
+    "city": "彰化縣",
+    "suspects": 162
+  },
+  {
+    "month": "2023-10",
+    "city": "南投縣",
+    "suspects": 69
+  },
+  {
+    "month": "2023-10",
+    "city": "雲林縣",
+    "suspects": 103
+  },
+  {
+    "month": "2023-10",
+    "city": "嘉義縣",
+    "suspects": 100
+  },
+  {
+    "month": "2023-10",
+    "city": "屏東縣",
+    "suspects": 173
+  },
+  {
+    "month": "2023-10",
+    "city": "臺東縣",
+    "suspects": 46
+  },
+  {
+    "month": "2023-10",
+    "city": "花蓮縣",
+    "suspects": 32
+  },
+  {
+    "month": "2023-10",
+    "city": "澎湖縣",
+    "suspects": 7
+  },
+  {
+    "month": "2023-10",
+    "city": "基隆市",
+    "suspects": 84
+  },
+  {
+    "month": "2023-10",
+    "city": "新竹市",
+    "suspects": 51
+  },
+  {
+    "month": "2023-10",
+    "city": "嘉義市",
+    "suspects": 56
+  },
+  {
+    "month": "2023-10",
+    "city": "金門縣",
+    "suspects": 15
+  },
+  {
+    "month": "2023-10",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2023-11",
+    "city": "新北市",
+    "suspects": 489
+  },
+  {
+    "month": "2023-11",
+    "city": "臺北市",
+    "suspects": 389
+  },
+  {
+    "month": "2023-11",
+    "city": "桃園市",
+    "suspects": 391
+  },
+  {
+    "month": "2023-11",
+    "city": "臺中市",
+    "suspects": 340
+  },
+  {
+    "month": "2023-11",
+    "city": "臺南市",
+    "suspects": 189
+  },
+  {
+    "month": "2023-11",
+    "city": "高雄市",
+    "suspects": 335
+  },
+  {
+    "month": "2023-11",
+    "city": "宜蘭縣",
+    "suspects": 61
+  },
+  {
+    "month": "2023-11",
+    "city": "新竹縣",
+    "suspects": 66
+  },
+  {
+    "month": "2023-11",
+    "city": "苗栗縣",
+    "suspects": 64
+  },
+  {
+    "month": "2023-11",
+    "city": "彰化縣",
+    "suspects": 135
+  },
+  {
+    "month": "2023-11",
+    "city": "南投縣",
+    "suspects": 58
+  },
+  {
+    "month": "2023-11",
+    "city": "雲林縣",
+    "suspects": 67
+  },
+  {
+    "month": "2023-11",
+    "city": "嘉義縣",
+    "suspects": 100
+  },
+  {
+    "month": "2023-11",
+    "city": "屏東縣",
+    "suspects": 150
+  },
+  {
+    "month": "2023-11",
+    "city": "臺東縣",
+    "suspects": 28
+  },
+  {
+    "month": "2023-11",
+    "city": "花蓮縣",
+    "suspects": 39
+  },
+  {
+    "month": "2023-11",
+    "city": "澎湖縣",
+    "suspects": 14
+  },
+  {
+    "month": "2023-11",
+    "city": "基隆市",
+    "suspects": 92
+  },
+  {
+    "month": "2023-11",
+    "city": "新竹市",
+    "suspects": 77
+  },
+  {
+    "month": "2023-11",
+    "city": "嘉義市",
+    "suspects": 55
+  },
+  {
+    "month": "2023-11",
+    "city": "金門縣",
+    "suspects": 6
+  },
+  {
+    "month": "2023-11",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2023-12",
+    "city": "新北市",
+    "suspects": 403
+  },
+  {
+    "month": "2023-12",
+    "city": "臺北市",
+    "suspects": 280
+  },
+  {
+    "month": "2023-12",
+    "city": "桃園市",
+    "suspects": 332
+  },
+  {
+    "month": "2023-12",
+    "city": "臺中市",
+    "suspects": 246
+  },
+  {
+    "month": "2023-12",
+    "city": "臺南市",
+    "suspects": 135
+  },
+  {
+    "month": "2023-12",
+    "city": "高雄市",
+    "suspects": 291
+  },
+  {
+    "month": "2023-12",
+    "city": "宜蘭縣",
+    "suspects": 33
+  },
+  {
+    "month": "2023-12",
+    "city": "新竹縣",
+    "suspects": 54
+  },
+  {
+    "month": "2023-12",
+    "city": "苗栗縣",
+    "suspects": 87
+  },
+  {
+    "month": "2023-12",
+    "city": "彰化縣",
+    "suspects": 100
+  },
+  {
+    "month": "2023-12",
+    "city": "南投縣",
+    "suspects": 35
+  },
+  {
+    "month": "2023-12",
+    "city": "雲林縣",
+    "suspects": 57
+  },
+  {
+    "month": "2023-12",
+    "city": "嘉義縣",
+    "suspects": 58
+  },
+  {
+    "month": "2023-12",
+    "city": "屏東縣",
+    "suspects": 130
+  },
+  {
+    "month": "2023-12",
+    "city": "臺東縣",
+    "suspects": 14
+  },
+  {
+    "month": "2023-12",
+    "city": "花蓮縣",
+    "suspects": 27
+  },
+  {
+    "month": "2023-12",
+    "city": "澎湖縣",
+    "suspects": 3
+  },
+  {
+    "month": "2023-12",
+    "city": "基隆市",
+    "suspects": 93
+  },
+  {
+    "month": "2023-12",
+    "city": "新竹市",
+    "suspects": 37
+  },
+  {
+    "month": "2023-12",
+    "city": "嘉義市",
+    "suspects": 55
+  },
+  {
+    "month": "2023-12",
+    "city": "金門縣",
+    "suspects": 4
+  },
+  {
+    "month": "2023-12",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-01",
+    "city": "新北市",
+    "suspects": 279
+  },
+  {
+    "month": "2024-01",
+    "city": "臺北市",
+    "suspects": 309
+  },
+  {
+    "month": "2024-01",
+    "city": "桃園市",
+    "suspects": 369
+  },
+  {
+    "month": "2024-01",
+    "city": "臺中市",
+    "suspects": 196
+  },
+  {
+    "month": "2024-01",
+    "city": "臺南市",
+    "suspects": 156
+  },
+  {
+    "month": "2024-01",
+    "city": "高雄市",
+    "suspects": 151
+  },
+  {
+    "month": "2024-01",
+    "city": "宜蘭縣",
+    "suspects": 37
+  },
+  {
+    "month": "2024-01",
+    "city": "新竹縣",
+    "suspects": 47
+  },
+  {
+    "month": "2024-01",
+    "city": "苗栗縣",
+    "suspects": 51
+  },
+  {
+    "month": "2024-01",
+    "city": "彰化縣",
+    "suspects": 105
+  },
+  {
+    "month": "2024-01",
+    "city": "南投縣",
+    "suspects": 24
+  },
+  {
+    "month": "2024-01",
+    "city": "雲林縣",
+    "suspects": 25
+  },
+  {
+    "month": "2024-01",
+    "city": "嘉義縣",
+    "suspects": 99
+  },
+  {
+    "month": "2024-01",
+    "city": "屏東縣",
+    "suspects": 105
+  },
+  {
+    "month": "2024-01",
+    "city": "臺東縣",
+    "suspects": 26
+  },
+  {
+    "month": "2024-01",
+    "city": "花蓮縣",
+    "suspects": 23
+  },
+  {
+    "month": "2024-01",
+    "city": "澎湖縣",
+    "suspects": 10
+  },
+  {
+    "month": "2024-01",
+    "city": "基隆市",
+    "suspects": 51
+  },
+  {
+    "month": "2024-01",
+    "city": "新竹市",
+    "suspects": 28
+  },
+  {
+    "month": "2024-01",
+    "city": "嘉義市",
+    "suspects": 56
+  },
+  {
+    "month": "2024-01",
+    "city": "金門縣",
+    "suspects": 14
+  },
+  {
+    "month": "2024-01",
+    "city": "連江縣",
+    "suspects": 1
+  },
+  {
+    "month": "2024-02",
+    "city": "新北市",
+    "suspects": 349
+  },
+  {
+    "month": "2024-02",
+    "city": "臺北市",
+    "suspects": 304
+  },
+  {
+    "month": "2024-02",
+    "city": "桃園市",
+    "suspects": 367
+  },
+  {
+    "month": "2024-02",
+    "city": "臺中市",
+    "suspects": 248
+  },
+  {
+    "month": "2024-02",
+    "city": "臺南市",
+    "suspects": 150
+  },
+  {
+    "month": "2024-02",
+    "city": "高雄市",
+    "suspects": 225
+  },
+  {
+    "month": "2024-02",
+    "city": "宜蘭縣",
+    "suspects": 28
+  },
+  {
+    "month": "2024-02",
+    "city": "新竹縣",
+    "suspects": 59
+  },
+  {
+    "month": "2024-02",
+    "city": "苗栗縣",
+    "suspects": 62
+  },
+  {
+    "month": "2024-02",
+    "city": "彰化縣",
+    "suspects": 91
+  },
+  {
+    "month": "2024-02",
+    "city": "南投縣",
+    "suspects": 37
+  },
+  {
+    "month": "2024-02",
+    "city": "雲林縣",
+    "suspects": 31
+  },
+  {
+    "month": "2024-02",
+    "city": "嘉義縣",
+    "suspects": 80
+  },
+  {
+    "month": "2024-02",
+    "city": "屏東縣",
+    "suspects": 113
+  },
+  {
+    "month": "2024-02",
+    "city": "臺東縣",
+    "suspects": 23
+  },
+  {
+    "month": "2024-02",
+    "city": "花蓮縣",
+    "suspects": 38
+  },
+  {
+    "month": "2024-02",
+    "city": "澎湖縣",
+    "suspects": 10
+  },
+  {
+    "month": "2024-02",
+    "city": "基隆市",
+    "suspects": 73
+  },
+  {
+    "month": "2024-02",
+    "city": "新竹市",
+    "suspects": 41
+  },
+  {
+    "month": "2024-02",
+    "city": "嘉義市",
+    "suspects": 41
+  },
+  {
+    "month": "2024-02",
+    "city": "金門縣",
+    "suspects": 7
+  },
+  {
+    "month": "2024-02",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-03",
+    "city": "新北市",
+    "suspects": 537
+  },
+  {
+    "month": "2024-03",
+    "city": "臺北市",
+    "suspects": 491
+  },
+  {
+    "month": "2024-03",
+    "city": "桃園市",
+    "suspects": 547
+  },
+  {
+    "month": "2024-03",
+    "city": "臺中市",
+    "suspects": 377
+  },
+  {
+    "month": "2024-03",
+    "city": "臺南市",
+    "suspects": 174
+  },
+  {
+    "month": "2024-03",
+    "city": "高雄市",
+    "suspects": 323
+  },
+  {
+    "month": "2024-03",
+    "city": "宜蘭縣",
+    "suspects": 79
+  },
+  {
+    "month": "2024-03",
+    "city": "新竹縣",
+    "suspects": 105
+  },
+  {
+    "month": "2024-03",
+    "city": "苗栗縣",
+    "suspects": 89
+  },
+  {
+    "month": "2024-03",
+    "city": "彰化縣",
+    "suspects": 187
+  },
+  {
+    "month": "2024-03",
+    "city": "南投縣",
+    "suspects": 61
+  },
+  {
+    "month": "2024-03",
+    "city": "雲林縣",
+    "suspects": 82
+  },
+  {
+    "month": "2024-03",
+    "city": "嘉義縣",
+    "suspects": 126
+  },
+  {
+    "month": "2024-03",
+    "city": "屏東縣",
+    "suspects": 134
+  },
+  {
+    "month": "2024-03",
+    "city": "臺東縣",
+    "suspects": 35
+  },
+  {
+    "month": "2024-03",
+    "city": "花蓮縣",
+    "suspects": 43
+  },
+  {
+    "month": "2024-03",
+    "city": "澎湖縣",
+    "suspects": 8
+  },
+  {
+    "month": "2024-03",
+    "city": "基隆市",
+    "suspects": 103
+  },
+  {
+    "month": "2024-03",
+    "city": "新竹市",
+    "suspects": 73
+  },
+  {
+    "month": "2024-03",
+    "city": "嘉義市",
+    "suspects": 65
+  },
+  {
+    "month": "2024-03",
+    "city": "金門縣",
+    "suspects": 11
+  },
+  {
+    "month": "2024-03",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-04",
+    "city": "新北市",
+    "suspects": 394
+  },
+  {
+    "month": "2024-04",
+    "city": "臺北市",
+    "suspects": 437
+  },
+  {
+    "month": "2024-04",
+    "city": "桃園市",
+    "suspects": 406
+  },
+  {
+    "month": "2024-04",
+    "city": "臺中市",
+    "suspects": 320
+  },
+  {
+    "month": "2024-04",
+    "city": "臺南市",
+    "suspects": 185
+  },
+  {
+    "month": "2024-04",
+    "city": "高雄市",
+    "suspects": 291
+  },
+  {
+    "month": "2024-04",
+    "city": "宜蘭縣",
+    "suspects": 62
+  },
+  {
+    "month": "2024-04",
+    "city": "新竹縣",
+    "suspects": 61
+  },
+  {
+    "month": "2024-04",
+    "city": "苗栗縣",
+    "suspects": 76
+  },
+  {
+    "month": "2024-04",
+    "city": "彰化縣",
+    "suspects": 111
+  },
+  {
+    "month": "2024-04",
+    "city": "南投縣",
+    "suspects": 67
+  },
+  {
+    "month": "2024-04",
+    "city": "雲林縣",
+    "suspects": 122
+  },
+  {
+    "month": "2024-04",
+    "city": "嘉義縣",
+    "suspects": 92
+  },
+  {
+    "month": "2024-04",
+    "city": "屏東縣",
+    "suspects": 160
+  },
+  {
+    "month": "2024-04",
+    "city": "臺東縣",
+    "suspects": 17
+  },
+  {
+    "month": "2024-04",
+    "city": "花蓮縣",
+    "suspects": 39
+  },
+  {
+    "month": "2024-04",
+    "city": "澎湖縣",
+    "suspects": 13
+  },
+  {
+    "month": "2024-04",
+    "city": "基隆市",
+    "suspects": 82
+  },
+  {
+    "month": "2024-04",
+    "city": "新竹市",
+    "suspects": 86
+  },
+  {
+    "month": "2024-04",
+    "city": "嘉義市",
+    "suspects": 48
+  },
+  {
+    "month": "2024-04",
+    "city": "金門縣",
+    "suspects": 14
+  },
+  {
+    "month": "2024-04",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-05",
+    "city": "新北市",
+    "suspects": 237
+  },
+  {
+    "month": "2024-05",
+    "city": "臺北市",
+    "suspects": 360
+  },
+  {
+    "month": "2024-05",
+    "city": "桃園市",
+    "suspects": 362
+  },
+  {
+    "month": "2024-05",
+    "city": "臺中市",
+    "suspects": 291
+  },
+  {
+    "month": "2024-05",
+    "city": "臺南市",
+    "suspects": 183
+  },
+  {
+    "month": "2024-05",
+    "city": "高雄市",
+    "suspects": 257
+  },
+  {
+    "month": "2024-05",
+    "city": "宜蘭縣",
+    "suspects": 32
+  },
+  {
+    "month": "2024-05",
+    "city": "新竹縣",
+    "suspects": 47
+  },
+  {
+    "month": "2024-05",
+    "city": "苗栗縣",
+    "suspects": 67
+  },
+  {
+    "month": "2024-05",
+    "city": "彰化縣",
+    "suspects": 83
+  },
+  {
+    "month": "2024-05",
+    "city": "南投縣",
+    "suspects": 63
+  },
+  {
+    "month": "2024-05",
+    "city": "雲林縣",
+    "suspects": 101
+  },
+  {
+    "month": "2024-05",
+    "city": "嘉義縣",
+    "suspects": 74
+  },
+  {
+    "month": "2024-05",
+    "city": "屏東縣",
+    "suspects": 111
+  },
+  {
+    "month": "2024-05",
+    "city": "臺東縣",
+    "suspects": 6
+  },
+  {
+    "month": "2024-05",
+    "city": "花蓮縣",
+    "suspects": 58
+  },
+  {
+    "month": "2024-05",
+    "city": "澎湖縣",
+    "suspects": 6
+  },
+  {
+    "month": "2024-05",
+    "city": "基隆市",
+    "suspects": 88
+  },
+  {
+    "month": "2024-05",
+    "city": "新竹市",
+    "suspects": 44
+  },
+  {
+    "month": "2024-05",
+    "city": "嘉義市",
+    "suspects": 50
+  },
+  {
+    "month": "2024-05",
+    "city": "金門縣",
+    "suspects": 27
+  },
+  {
+    "month": "2024-05",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-06",
+    "city": "新北市",
+    "suspects": 398
+  },
+  {
+    "month": "2024-06",
+    "city": "臺北市",
+    "suspects": 370
+  },
+  {
+    "month": "2024-06",
+    "city": "桃園市",
+    "suspects": 528
+  },
+  {
+    "month": "2024-06",
+    "city": "臺中市",
+    "suspects": 315
+  },
+  {
+    "month": "2024-06",
+    "city": "臺南市",
+    "suspects": 182
+  },
+  {
+    "month": "2024-06",
+    "city": "高雄市",
+    "suspects": 353
+  },
+  {
+    "month": "2024-06",
+    "city": "宜蘭縣",
+    "suspects": 46
+  },
+  {
+    "month": "2024-06",
+    "city": "新竹縣",
+    "suspects": 68
+  },
+  {
+    "month": "2024-06",
+    "city": "苗栗縣",
+    "suspects": 102
+  },
+  {
+    "month": "2024-06",
+    "city": "彰化縣",
+    "suspects": 106
+  },
+  {
+    "month": "2024-06",
+    "city": "南投縣",
+    "suspects": 62
+  },
+  {
+    "month": "2024-06",
+    "city": "雲林縣",
+    "suspects": 99
+  },
+  {
+    "month": "2024-06",
+    "city": "嘉義縣",
+    "suspects": 74
+  },
+  {
+    "month": "2024-06",
+    "city": "屏東縣",
+    "suspects": 118
+  },
+  {
+    "month": "2024-06",
+    "city": "臺東縣",
+    "suspects": 6
+  },
+  {
+    "month": "2024-06",
+    "city": "花蓮縣",
+    "suspects": 33
+  },
+  {
+    "month": "2024-06",
+    "city": "澎湖縣",
+    "suspects": 9
+  },
+  {
+    "month": "2024-06",
+    "city": "基隆市",
+    "suspects": 95
+  },
+  {
+    "month": "2024-06",
+    "city": "新竹市",
+    "suspects": 56
+  },
+  {
+    "month": "2024-06",
+    "city": "嘉義市",
+    "suspects": 48
+  },
+  {
+    "month": "2024-06",
+    "city": "金門縣",
+    "suspects": 11
+  },
+  {
+    "month": "2024-06",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-07",
+    "city": "新北市",
+    "suspects": 528
+  },
+  {
+    "month": "2024-07",
+    "city": "臺北市",
+    "suspects": 369
+  },
+  {
+    "month": "2024-07",
+    "city": "桃園市",
+    "suspects": 550
+  },
+  {
+    "month": "2024-07",
+    "city": "臺中市",
+    "suspects": 258
+  },
+  {
+    "month": "2024-07",
+    "city": "臺南市",
+    "suspects": 181
+  },
+  {
+    "month": "2024-07",
+    "city": "高雄市",
+    "suspects": 235
+  },
+  {
+    "month": "2024-07",
+    "city": "宜蘭縣",
+    "suspects": 49
+  },
+  {
+    "month": "2024-07",
+    "city": "新竹縣",
+    "suspects": 45
+  },
+  {
+    "month": "2024-07",
+    "city": "苗栗縣",
+    "suspects": 84
+  },
+  {
+    "month": "2024-07",
+    "city": "彰化縣",
+    "suspects": 126
+  },
+  {
+    "month": "2024-07",
+    "city": "南投縣",
+    "suspects": 80
+  },
+  {
+    "month": "2024-07",
+    "city": "雲林縣",
+    "suspects": 92
+  },
+  {
+    "month": "2024-07",
+    "city": "嘉義縣",
+    "suspects": 115
+  },
+  {
+    "month": "2024-07",
+    "city": "屏東縣",
+    "suspects": 143
+  },
+  {
+    "month": "2024-07",
+    "city": "臺東縣",
+    "suspects": 14
+  },
+  {
+    "month": "2024-07",
+    "city": "花蓮縣",
+    "suspects": 49
+  },
+  {
+    "month": "2024-07",
+    "city": "澎湖縣",
+    "suspects": 14
+  },
+  {
+    "month": "2024-07",
+    "city": "基隆市",
+    "suspects": 79
+  },
+  {
+    "month": "2024-07",
+    "city": "新竹市",
+    "suspects": 41
+  },
+  {
+    "month": "2024-07",
+    "city": "嘉義市",
+    "suspects": 36
+  },
+  {
+    "month": "2024-07",
+    "city": "金門縣",
+    "suspects": 10
+  },
+  {
+    "month": "2024-07",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-08",
+    "city": "新北市",
+    "suspects": 505
+  },
+  {
+    "month": "2024-08",
+    "city": "臺北市",
+    "suspects": 405
+  },
+  {
+    "month": "2024-08",
+    "city": "桃園市",
+    "suspects": 543
+  },
+  {
+    "month": "2024-08",
+    "city": "臺中市",
+    "suspects": 302
+  },
+  {
+    "month": "2024-08",
+    "city": "臺南市",
+    "suspects": 228
+  },
+  {
+    "month": "2024-08",
+    "city": "高雄市",
+    "suspects": 282
+  },
+  {
+    "month": "2024-08",
+    "city": "宜蘭縣",
+    "suspects": 73
+  },
+  {
+    "month": "2024-08",
+    "city": "新竹縣",
+    "suspects": 67
+  },
+  {
+    "month": "2024-08",
+    "city": "苗栗縣",
+    "suspects": 111
+  },
+  {
+    "month": "2024-08",
+    "city": "彰化縣",
+    "suspects": 180
+  },
+  {
+    "month": "2024-08",
+    "city": "南投縣",
+    "suspects": 107
+  },
+  {
+    "month": "2024-08",
+    "city": "雲林縣",
+    "suspects": 101
+  },
+  {
+    "month": "2024-08",
+    "city": "嘉義縣",
+    "suspects": 126
+  },
+  {
+    "month": "2024-08",
+    "city": "屏東縣",
+    "suspects": 129
+  },
+  {
+    "month": "2024-08",
+    "city": "臺東縣",
+    "suspects": 14
+  },
+  {
+    "month": "2024-08",
+    "city": "花蓮縣",
+    "suspects": 68
+  },
+  {
+    "month": "2024-08",
+    "city": "澎湖縣",
+    "suspects": 10
+  },
+  {
+    "month": "2024-08",
+    "city": "基隆市",
+    "suspects": 89
+  },
+  {
+    "month": "2024-08",
+    "city": "新竹市",
+    "suspects": 59
+  },
+  {
+    "month": "2024-08",
+    "city": "嘉義市",
+    "suspects": 49
+  },
+  {
+    "month": "2024-08",
+    "city": "金門縣",
+    "suspects": 9
+  },
+  {
+    "month": "2024-08",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-09",
+    "city": "新北市",
+    "suspects": 640
+  },
+  {
+    "month": "2024-09",
+    "city": "臺北市",
+    "suspects": 332
+  },
+  {
+    "month": "2024-09",
+    "city": "桃園市",
+    "suspects": 411
+  },
+  {
+    "month": "2024-09",
+    "city": "臺中市",
+    "suspects": 371
+  },
+  {
+    "month": "2024-09",
+    "city": "臺南市",
+    "suspects": 217
+  },
+  {
+    "month": "2024-09",
+    "city": "高雄市",
+    "suspects": 264
+  },
+  {
+    "month": "2024-09",
+    "city": "宜蘭縣",
+    "suspects": 43
+  },
+  {
+    "month": "2024-09",
+    "city": "新竹縣",
+    "suspects": 59
+  },
+  {
+    "month": "2024-09",
+    "city": "苗栗縣",
+    "suspects": 84
+  },
+  {
+    "month": "2024-09",
+    "city": "彰化縣",
+    "suspects": 200
+  },
+  {
+    "month": "2024-09",
+    "city": "南投縣",
+    "suspects": 61
+  },
+  {
+    "month": "2024-09",
+    "city": "雲林縣",
+    "suspects": 54
+  },
+  {
+    "month": "2024-09",
+    "city": "嘉義縣",
+    "suspects": 77
+  },
+  {
+    "month": "2024-09",
+    "city": "屏東縣",
+    "suspects": 119
+  },
+  {
+    "month": "2024-09",
+    "city": "臺東縣",
+    "suspects": 17
+  },
+  {
+    "month": "2024-09",
+    "city": "花蓮縣",
+    "suspects": 36
+  },
+  {
+    "month": "2024-09",
+    "city": "澎湖縣",
+    "suspects": 4
+  },
+  {
+    "month": "2024-09",
+    "city": "基隆市",
+    "suspects": 107
+  },
+  {
+    "month": "2024-09",
+    "city": "新竹市",
+    "suspects": 36
+  },
+  {
+    "month": "2024-09",
+    "city": "嘉義市",
+    "suspects": 57
+  },
+  {
+    "month": "2024-09",
+    "city": "金門縣",
+    "suspects": 12
+  },
+  {
+    "month": "2024-09",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-10",
+    "city": "新北市",
+    "suspects": 732
+  },
+  {
+    "month": "2024-10",
+    "city": "臺北市",
+    "suspects": 439
+  },
+  {
+    "month": "2024-10",
+    "city": "桃園市",
+    "suspects": 491
+  },
+  {
+    "month": "2024-10",
+    "city": "臺中市",
+    "suspects": 368
+  },
+  {
+    "month": "2024-10",
+    "city": "臺南市",
+    "suspects": 237
+  },
+  {
+    "month": "2024-10",
+    "city": "高雄市",
+    "suspects": 443
+  },
+  {
+    "month": "2024-10",
+    "city": "宜蘭縣",
+    "suspects": 94
+  },
+  {
+    "month": "2024-10",
+    "city": "新竹縣",
+    "suspects": 73
+  },
+  {
+    "month": "2024-10",
+    "city": "苗栗縣",
+    "suspects": 104
+  },
+  {
+    "month": "2024-10",
+    "city": "彰化縣",
+    "suspects": 185
+  },
+  {
+    "month": "2024-10",
+    "city": "南投縣",
+    "suspects": 79
+  },
+  {
+    "month": "2024-10",
+    "city": "雲林縣",
+    "suspects": 110
+  },
+  {
+    "month": "2024-10",
+    "city": "嘉義縣",
+    "suspects": 131
+  },
+  {
+    "month": "2024-10",
+    "city": "屏東縣",
+    "suspects": 95
+  },
+  {
+    "month": "2024-10",
+    "city": "臺東縣",
+    "suspects": 22
+  },
+  {
+    "month": "2024-10",
+    "city": "花蓮縣",
+    "suspects": 57
+  },
+  {
+    "month": "2024-10",
+    "city": "澎湖縣",
+    "suspects": 15
+  },
+  {
+    "month": "2024-10",
+    "city": "基隆市",
+    "suspects": 114
+  },
+  {
+    "month": "2024-10",
+    "city": "新竹市",
+    "suspects": 67
+  },
+  {
+    "month": "2024-10",
+    "city": "嘉義市",
+    "suspects": 44
+  },
+  {
+    "month": "2024-10",
+    "city": "金門縣",
+    "suspects": 14
+  },
+  {
+    "month": "2024-10",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2024-11",
+    "city": "新北市",
+    "suspects": 546
+  },
+  {
+    "month": "2024-11",
+    "city": "臺北市",
+    "suspects": 425
+  },
+  {
+    "month": "2024-11",
+    "city": "桃園市",
+    "suspects": 317
+  },
+  {
+    "month": "2024-11",
+    "city": "臺中市",
+    "suspects": 412
+  },
+  {
+    "month": "2024-11",
+    "city": "臺南市",
+    "suspects": 220
+  },
+  {
+    "month": "2024-11",
+    "city": "高雄市",
+    "suspects": 426
+  },
+  {
+    "month": "2024-11",
+    "city": "宜蘭縣",
+    "suspects": 88
+  },
+  {
+    "month": "2024-11",
+    "city": "新竹縣",
+    "suspects": 75
+  },
+  {
+    "month": "2024-11",
+    "city": "苗栗縣",
+    "suspects": 94
+  },
+  {
+    "month": "2024-11",
+    "city": "彰化縣",
+    "suspects": 179
+  },
+  {
+    "month": "2024-11",
+    "city": "南投縣",
+    "suspects": 98
+  },
+  {
+    "month": "2024-11",
+    "city": "雲林縣",
+    "suspects": 95
+  },
+  {
+    "month": "2024-11",
+    "city": "嘉義縣",
+    "suspects": 141
+  },
+  {
+    "month": "2024-11",
+    "city": "屏東縣",
+    "suspects": 106
+  },
+  {
+    "month": "2024-11",
+    "city": "臺東縣",
+    "suspects": 18
+  },
+  {
+    "month": "2024-11",
+    "city": "花蓮縣",
+    "suspects": 52
+  },
+  {
+    "month": "2024-11",
+    "city": "澎湖縣",
+    "suspects": 9
+  },
+  {
+    "month": "2024-11",
+    "city": "基隆市",
+    "suspects": 72
+  },
+  {
+    "month": "2024-11",
+    "city": "新竹市",
+    "suspects": 70
+  },
+  {
+    "month": "2024-11",
+    "city": "嘉義市",
+    "suspects": 52
+  },
+  {
+    "month": "2024-11",
+    "city": "金門縣",
+    "suspects": 11
+  },
+  {
+    "month": "2024-11",
+    "city": "連江縣",
+    "suspects": 2
+  },
+  {
+    "month": "2024-12",
+    "city": "新北市",
+    "suspects": 721
+  },
+  {
+    "month": "2024-12",
+    "city": "臺北市",
+    "suspects": 414
+  },
+  {
+    "month": "2024-12",
+    "city": "桃園市",
+    "suspects": 217
+  },
+  {
+    "month": "2024-12",
+    "city": "臺中市",
+    "suspects": 343
+  },
+  {
+    "month": "2024-12",
+    "city": "臺南市",
+    "suspects": 234
+  },
+  {
+    "month": "2024-12",
+    "city": "高雄市",
+    "suspects": 347
+  },
+  {
+    "month": "2024-12",
+    "city": "宜蘭縣",
+    "suspects": 45
+  },
+  {
+    "month": "2024-12",
+    "city": "新竹縣",
+    "suspects": 84
+  },
+  {
+    "month": "2024-12",
+    "city": "苗栗縣",
+    "suspects": 88
+  },
+  {
+    "month": "2024-12",
+    "city": "彰化縣",
+    "suspects": 141
+  },
+  {
+    "month": "2024-12",
+    "city": "南投縣",
+    "suspects": 71
+  },
+  {
+    "month": "2024-12",
+    "city": "雲林縣",
+    "suspects": 80
+  },
+  {
+    "month": "2024-12",
+    "city": "嘉義縣",
+    "suspects": 50
+  },
+  {
+    "month": "2024-12",
+    "city": "屏東縣",
+    "suspects": 95
+  },
+  {
+    "month": "2024-12",
+    "city": "臺東縣",
+    "suspects": 9
+  },
+  {
+    "month": "2024-12",
+    "city": "花蓮縣",
+    "suspects": 45
+  },
+  {
+    "month": "2024-12",
+    "city": "澎湖縣",
+    "suspects": 11
+  },
+  {
+    "month": "2024-12",
+    "city": "基隆市",
+    "suspects": 70
+  },
+  {
+    "month": "2024-12",
+    "city": "新竹市",
+    "suspects": 41
+  },
+  {
+    "month": "2024-12",
+    "city": "嘉義市",
+    "suspects": 42
+  },
+  {
+    "month": "2024-12",
+    "city": "金門縣",
+    "suspects": 4
+  },
+  {
+    "month": "2024-12",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2025-01",
+    "city": "新北市",
+    "suspects": 517
+  },
+  {
+    "month": "2025-01",
+    "city": "臺北市",
+    "suspects": 334
+  },
+  {
+    "month": "2025-01",
+    "city": "桃園市",
+    "suspects": 252
+  },
+  {
+    "month": "2025-01",
+    "city": "臺中市",
+    "suspects": 304
+  },
+  {
+    "month": "2025-01",
+    "city": "臺南市",
+    "suspects": 226
+  },
+  {
+    "month": "2025-01",
+    "city": "高雄市",
+    "suspects": 307
+  },
+  {
+    "month": "2025-01",
+    "city": "宜蘭縣",
+    "suspects": 47
+  },
+  {
+    "month": "2025-01",
+    "city": "新竹縣",
+    "suspects": 60
+  },
+  {
+    "month": "2025-01",
+    "city": "苗栗縣",
+    "suspects": 77
+  },
+  {
+    "month": "2025-01",
+    "city": "彰化縣",
+    "suspects": 109
+  },
+  {
+    "month": "2025-01",
+    "city": "南投縣",
+    "suspects": 35
+  },
+  {
+    "month": "2025-01",
+    "city": "雲林縣",
+    "suspects": 67
+  },
+  {
+    "month": "2025-01",
+    "city": "嘉義縣",
+    "suspects": 82
+  },
+  {
+    "month": "2025-01",
+    "city": "屏東縣",
+    "suspects": 100
+  },
+  {
+    "month": "2025-01",
+    "city": "臺東縣",
+    "suspects": 21
+  },
+  {
+    "month": "2025-01",
+    "city": "花蓮縣",
+    "suspects": 34
+  },
+  {
+    "month": "2025-01",
+    "city": "澎湖縣",
+    "suspects": 9
+  },
+  {
+    "month": "2025-01",
+    "city": "基隆市",
+    "suspects": 52
+  },
+  {
+    "month": "2025-01",
+    "city": "新竹市",
+    "suspects": 37
+  },
+  {
+    "month": "2025-01",
+    "city": "嘉義市",
+    "suspects": 50
+  },
+  {
+    "month": "2025-01",
+    "city": "金門縣",
+    "suspects": 5
+  },
+  {
+    "month": "2025-01",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2025-02",
+    "city": "新北市",
+    "suspects": 532
+  },
+  {
+    "month": "2025-02",
+    "city": "臺北市",
+    "suspects": 364
+  },
+  {
+    "month": "2025-02",
+    "city": "桃園市",
+    "suspects": 210
+  },
+  {
+    "month": "2025-02",
+    "city": "臺中市",
+    "suspects": 337
+  },
+  {
+    "month": "2025-02",
+    "city": "臺南市",
+    "suspects": 230
+  },
+  {
+    "month": "2025-02",
+    "city": "高雄市",
+    "suspects": 258
+  },
+  {
+    "month": "2025-02",
+    "city": "宜蘭縣",
+    "suspects": 49
+  },
+  {
+    "month": "2025-02",
+    "city": "新竹縣",
+    "suspects": 63
+  },
+  {
+    "month": "2025-02",
+    "city": "苗栗縣",
+    "suspects": 49
+  },
+  {
+    "month": "2025-02",
+    "city": "彰化縣",
+    "suspects": 101
+  },
+  {
+    "month": "2025-02",
+    "city": "南投縣",
+    "suspects": 42
+  },
+  {
+    "month": "2025-02",
+    "city": "雲林縣",
+    "suspects": 63
+  },
+  {
+    "month": "2025-02",
+    "city": "嘉義縣",
+    "suspects": 77
+  },
+  {
+    "month": "2025-02",
+    "city": "屏東縣",
+    "suspects": 75
+  },
+  {
+    "month": "2025-02",
+    "city": "臺東縣",
+    "suspects": 18
+  },
+  {
+    "month": "2025-02",
+    "city": "花蓮縣",
+    "suspects": 33
+  },
+  {
+    "month": "2025-02",
+    "city": "澎湖縣",
+    "suspects": 4
+  },
+  {
+    "month": "2025-02",
+    "city": "基隆市",
+    "suspects": 58
+  },
+  {
+    "month": "2025-02",
+    "city": "新竹市",
+    "suspects": 42
+  },
+  {
+    "month": "2025-02",
+    "city": "嘉義市",
+    "suspects": 57
+  },
+  {
+    "month": "2025-02",
+    "city": "金門縣",
+    "suspects": 12
+  },
+  {
+    "month": "2025-02",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2025-03",
+    "city": "新北市",
+    "suspects": 744
+  },
+  {
+    "month": "2025-03",
+    "city": "臺北市",
+    "suspects": 585
+  },
+  {
+    "month": "2025-03",
+    "city": "桃園市",
+    "suspects": 332
+  },
+  {
+    "month": "2025-03",
+    "city": "臺中市",
+    "suspects": 496
+  },
+  {
+    "month": "2025-03",
+    "city": "臺南市",
+    "suspects": 315
+  },
+  {
+    "month": "2025-03",
+    "city": "高雄市",
+    "suspects": 366
+  },
+  {
+    "month": "2025-03",
+    "city": "宜蘭縣",
+    "suspects": 73
+  },
+  {
+    "month": "2025-03",
+    "city": "新竹縣",
+    "suspects": 84
+  },
+  {
+    "month": "2025-03",
+    "city": "苗栗縣",
+    "suspects": 44
+  },
+  {
+    "month": "2025-03",
+    "city": "彰化縣",
+    "suspects": 181
+  },
+  {
+    "month": "2025-03",
+    "city": "南投縣",
+    "suspects": 49
+  },
+  {
+    "month": "2025-03",
+    "city": "雲林縣",
+    "suspects": 177
+  },
+  {
+    "month": "2025-03",
+    "city": "嘉義縣",
+    "suspects": 132
+  },
+  {
+    "month": "2025-03",
+    "city": "屏東縣",
+    "suspects": 112
+  },
+  {
+    "month": "2025-03",
+    "city": "臺東縣",
+    "suspects": 28
+  },
+  {
+    "month": "2025-03",
+    "city": "花蓮縣",
+    "suspects": 49
+  },
+  {
+    "month": "2025-03",
+    "city": "澎湖縣",
+    "suspects": 6
+  },
+  {
+    "month": "2025-03",
+    "city": "基隆市",
+    "suspects": 92
+  },
+  {
+    "month": "2025-03",
+    "city": "新竹市",
+    "suspects": 62
+  },
+  {
+    "month": "2025-03",
+    "city": "嘉義市",
+    "suspects": 61
+  },
+  {
+    "month": "2025-03",
+    "city": "金門縣",
+    "suspects": 10
+  },
+  {
+    "month": "2025-03",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2025-04",
+    "city": "新北市",
+    "suspects": 815
+  },
+  {
+    "month": "2025-04",
+    "city": "臺北市",
+    "suspects": 519
+  },
+  {
+    "month": "2025-04",
+    "city": "桃園市",
+    "suspects": 285
+  },
+  {
+    "month": "2025-04",
+    "city": "臺中市",
+    "suspects": 435
+  },
+  {
+    "month": "2025-04",
+    "city": "臺南市",
+    "suspects": 340
+  },
+  {
+    "month": "2025-04",
+    "city": "高雄市",
+    "suspects": 501
+  },
+  {
+    "month": "2025-04",
+    "city": "宜蘭縣",
+    "suspects": 132
+  },
+  {
+    "month": "2025-04",
+    "city": "新竹縣",
+    "suspects": 73
+  },
+  {
+    "month": "2025-04",
+    "city": "苗栗縣",
+    "suspects": 66
+  },
+  {
+    "month": "2025-04",
+    "city": "彰化縣",
+    "suspects": 167
+  },
+  {
+    "month": "2025-04",
+    "city": "南投縣",
+    "suspects": 79
+  },
+  {
+    "month": "2025-04",
+    "city": "雲林縣",
+    "suspects": 143
+  },
+  {
+    "month": "2025-04",
+    "city": "嘉義縣",
+    "suspects": 152
+  },
+  {
+    "month": "2025-04",
+    "city": "屏東縣",
+    "suspects": 148
+  },
+  {
+    "month": "2025-04",
+    "city": "臺東縣",
+    "suspects": 30
+  },
+  {
+    "month": "2025-04",
+    "city": "花蓮縣",
+    "suspects": 73
+  },
+  {
+    "month": "2025-04",
+    "city": "澎湖縣",
+    "suspects": 8
+  },
+  {
+    "month": "2025-04",
+    "city": "基隆市",
+    "suspects": 144
+  },
+  {
+    "month": "2025-04",
+    "city": "新竹市",
+    "suspects": 58
+  },
+  {
+    "month": "2025-04",
+    "city": "嘉義市",
+    "suspects": 86
+  },
+  {
+    "month": "2025-04",
+    "city": "金門縣",
+    "suspects": 7
+  },
+  {
+    "month": "2025-04",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2025-05",
+    "city": "新北市",
+    "suspects": 655
+  },
+  {
+    "month": "2025-05",
+    "city": "臺北市",
+    "suspects": 464
+  },
+  {
+    "month": "2025-05",
+    "city": "桃園市",
+    "suspects": 328
+  },
+  {
+    "month": "2025-05",
+    "city": "臺中市",
+    "suspects": 543
+  },
+  {
+    "month": "2025-05",
+    "city": "臺南市",
+    "suspects": 278
+  },
+  {
+    "month": "2025-05",
+    "city": "高雄市",
+    "suspects": 462
+  },
+  {
+    "month": "2025-05",
+    "city": "宜蘭縣",
+    "suspects": 90
+  },
+  {
+    "month": "2025-05",
+    "city": "新竹縣",
+    "suspects": 63
+  },
+  {
+    "month": "2025-05",
+    "city": "苗栗縣",
+    "suspects": 90
+  },
+  {
+    "month": "2025-05",
+    "city": "彰化縣",
+    "suspects": 178
+  },
+  {
+    "month": "2025-05",
+    "city": "南投縣",
+    "suspects": 39
+  },
+  {
+    "month": "2025-05",
+    "city": "雲林縣",
+    "suspects": 134
+  },
+  {
+    "month": "2025-05",
+    "city": "嘉義縣",
+    "suspects": 132
+  },
+  {
+    "month": "2025-05",
+    "city": "屏東縣",
+    "suspects": 151
+  },
+  {
+    "month": "2025-05",
+    "city": "臺東縣",
+    "suspects": 57
+  },
+  {
+    "month": "2025-05",
+    "city": "花蓮縣",
+    "suspects": 62
+  },
+  {
+    "month": "2025-05",
+    "city": "澎湖縣",
+    "suspects": 12
+  },
+  {
+    "month": "2025-05",
+    "city": "基隆市",
+    "suspects": 189
+  },
+  {
+    "month": "2025-05",
+    "city": "新竹市",
+    "suspects": 67
+  },
+  {
+    "month": "2025-05",
+    "city": "嘉義市",
+    "suspects": 88
+  },
+  {
+    "month": "2025-05",
+    "city": "金門縣",
+    "suspects": 13
+  },
+  {
+    "month": "2025-05",
+    "city": "連江縣",
+    "suspects": 1
+  },
+  {
+    "month": "2025-06",
+    "city": "新北市",
+    "suspects": 678
+  },
+  {
+    "month": "2025-06",
+    "city": "臺北市",
+    "suspects": 486
+  },
+  {
+    "month": "2025-06",
+    "city": "桃園市",
+    "suspects": 264
+  },
+  {
+    "month": "2025-06",
+    "city": "臺中市",
+    "suspects": 389
+  },
+  {
+    "month": "2025-06",
+    "city": "臺南市",
+    "suspects": 273
+  },
+  {
+    "month": "2025-06",
+    "city": "高雄市",
+    "suspects": 396
+  },
+  {
+    "month": "2025-06",
+    "city": "宜蘭縣",
+    "suspects": 73
+  },
+  {
+    "month": "2025-06",
+    "city": "新竹縣",
+    "suspects": 58
+  },
+  {
+    "month": "2025-06",
+    "city": "苗栗縣",
+    "suspects": 156
+  },
+  {
+    "month": "2025-06",
+    "city": "彰化縣",
+    "suspects": 175
+  },
+  {
+    "month": "2025-06",
+    "city": "南投縣",
+    "suspects": 103
+  },
+  {
+    "month": "2025-06",
+    "city": "雲林縣",
+    "suspects": 110
+  },
+  {
+    "month": "2025-06",
+    "city": "嘉義縣",
+    "suspects": 71
+  },
+  {
+    "month": "2025-06",
+    "city": "屏東縣",
+    "suspects": 114
+  },
+  {
+    "month": "2025-06",
+    "city": "臺東縣",
+    "suspects": 10
+  },
+  {
+    "month": "2025-06",
+    "city": "花蓮縣",
+    "suspects": 60
+  },
+  {
+    "month": "2025-06",
+    "city": "澎湖縣",
+    "suspects": 24
+  },
+  {
+    "month": "2025-06",
+    "city": "基隆市",
+    "suspects": 122
+  },
+  {
+    "month": "2025-06",
+    "city": "新竹市",
+    "suspects": 52
+  },
+  {
+    "month": "2025-06",
+    "city": "嘉義市",
+    "suspects": 61
+  },
+  {
+    "month": "2025-06",
+    "city": "金門縣",
+    "suspects": 13
+  },
+  {
+    "month": "2025-06",
+    "city": "連江縣",
+    "suspects": 1
+  },
+  {
+    "month": "2025-07",
+    "city": "新北市",
+    "suspects": 725
+  },
+  {
+    "month": "2025-07",
+    "city": "臺北市",
+    "suspects": 357
+  },
+  {
+    "month": "2025-07",
+    "city": "桃園市",
+    "suspects": 405
+  },
+  {
+    "month": "2025-07",
+    "city": "臺中市",
+    "suspects": 457
+  },
+  {
+    "month": "2025-07",
+    "city": "臺南市",
+    "suspects": 243
+  },
+  {
+    "month": "2025-07",
+    "city": "高雄市",
+    "suspects": 430
+  },
+  {
+    "month": "2025-07",
+    "city": "宜蘭縣",
+    "suspects": 58
+  },
+  {
+    "month": "2025-07",
+    "city": "新竹縣",
+    "suspects": 44
+  },
+  {
+    "month": "2025-07",
+    "city": "苗栗縣",
+    "suspects": 112
+  },
+  {
+    "month": "2025-07",
+    "city": "彰化縣",
+    "suspects": 159
+  },
+  {
+    "month": "2025-07",
+    "city": "南投縣",
+    "suspects": 77
+  },
+  {
+    "month": "2025-07",
+    "city": "雲林縣",
+    "suspects": 118
+  },
+  {
+    "month": "2025-07",
+    "city": "嘉義縣",
+    "suspects": 95
+  },
+  {
+    "month": "2025-07",
+    "city": "屏東縣",
+    "suspects": 138
+  },
+  {
+    "month": "2025-07",
+    "city": "臺東縣",
+    "suspects": 25
+  },
+  {
+    "month": "2025-07",
+    "city": "花蓮縣",
+    "suspects": 66
+  },
+  {
+    "month": "2025-07",
+    "city": "澎湖縣",
+    "suspects": 24
+  },
+  {
+    "month": "2025-07",
+    "city": "基隆市",
+    "suspects": 123
+  },
+  {
+    "month": "2025-07",
+    "city": "新竹市",
+    "suspects": 52
+  },
+  {
+    "month": "2025-07",
+    "city": "嘉義市",
+    "suspects": 60
+  },
+  {
+    "month": "2025-07",
+    "city": "金門縣",
+    "suspects": 10
+  },
+  {
+    "month": "2025-07",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2025-08",
+    "city": "新北市",
+    "suspects": 736
+  },
+  {
+    "month": "2025-08",
+    "city": "臺北市",
+    "suspects": 455
+  },
+  {
+    "month": "2025-08",
+    "city": "桃園市",
+    "suspects": 346
+  },
+  {
+    "month": "2025-08",
+    "city": "臺中市",
+    "suspects": 396
+  },
+  {
+    "month": "2025-08",
+    "city": "臺南市",
+    "suspects": 295
+  },
+  {
+    "month": "2025-08",
+    "city": "高雄市",
+    "suspects": 451
+  },
+  {
+    "month": "2025-08",
+    "city": "宜蘭縣",
+    "suspects": 39
+  },
+  {
+    "month": "2025-08",
+    "city": "新竹縣",
+    "suspects": 57
+  },
+  {
+    "month": "2025-08",
+    "city": "苗栗縣",
+    "suspects": 82
+  },
+  {
+    "month": "2025-08",
+    "city": "彰化縣",
+    "suspects": 161
+  },
+  {
+    "month": "2025-08",
+    "city": "南投縣",
+    "suspects": 92
+  },
+  {
+    "month": "2025-08",
+    "city": "雲林縣",
+    "suspects": 99
+  },
+  {
+    "month": "2025-08",
+    "city": "嘉義縣",
+    "suspects": 94
+  },
+  {
+    "month": "2025-08",
+    "city": "屏東縣",
+    "suspects": 145
+  },
+  {
+    "month": "2025-08",
+    "city": "臺東縣",
+    "suspects": 17
+  },
+  {
+    "month": "2025-08",
+    "city": "花蓮縣",
+    "suspects": 40
+  },
+  {
+    "month": "2025-08",
+    "city": "澎湖縣",
+    "suspects": 20
+  },
+  {
+    "month": "2025-08",
+    "city": "基隆市",
+    "suspects": 144
+  },
+  {
+    "month": "2025-08",
+    "city": "新竹市",
+    "suspects": 61
+  },
+  {
+    "month": "2025-08",
+    "city": "嘉義市",
+    "suspects": 58
+  },
+  {
+    "month": "2025-08",
+    "city": "金門縣",
+    "suspects": 13
+  },
+  {
+    "month": "2025-08",
+    "city": "連江縣",
+    "suspects": 1
+  },
+  {
+    "month": "2025-09",
+    "city": "新北市",
+    "suspects": 978
+  },
+  {
+    "month": "2025-09",
+    "city": "臺北市",
+    "suspects": 426
+  },
+  {
+    "month": "2025-09",
+    "city": "桃園市",
+    "suspects": 859
+  },
+  {
+    "month": "2025-09",
+    "city": "臺中市",
+    "suspects": 389
+  },
+  {
+    "month": "2025-09",
+    "city": "臺南市",
+    "suspects": 269
+  },
+  {
+    "month": "2025-09",
+    "city": "高雄市",
+    "suspects": 442
+  },
+  {
+    "month": "2025-09",
+    "city": "宜蘭縣",
+    "suspects": 64
+  },
+  {
+    "month": "2025-09",
+    "city": "新竹縣",
+    "suspects": 80
+  },
+  {
+    "month": "2025-09",
+    "city": "苗栗縣",
+    "suspects": 81
+  },
+  {
+    "month": "2025-09",
+    "city": "彰化縣",
+    "suspects": 159
+  },
+  {
+    "month": "2025-09",
+    "city": "南投縣",
+    "suspects": 73
+  },
+  {
+    "month": "2025-09",
+    "city": "雲林縣",
+    "suspects": 128
+  },
+  {
+    "month": "2025-09",
+    "city": "嘉義縣",
+    "suspects": 136
+  },
+  {
+    "month": "2025-09",
+    "city": "屏東縣",
+    "suspects": 119
+  },
+  {
+    "month": "2025-09",
+    "city": "臺東縣",
+    "suspects": 8
+  },
+  {
+    "month": "2025-09",
+    "city": "花蓮縣",
+    "suspects": 42
+  },
+  {
+    "month": "2025-09",
+    "city": "澎湖縣",
+    "suspects": 21
+  },
+  {
+    "month": "2025-09",
+    "city": "基隆市",
+    "suspects": 137
+  },
+  {
+    "month": "2025-09",
+    "city": "新竹市",
+    "suspects": 50
+  },
+  {
+    "month": "2025-09",
+    "city": "嘉義市",
+    "suspects": 55
+  },
+  {
+    "month": "2025-09",
+    "city": "金門縣",
+    "suspects": 13
+  },
+  {
+    "month": "2025-09",
+    "city": "連江縣",
+    "suspects": 2
+  },
+  {
+    "month": "2025-10",
+    "city": "新北市",
+    "suspects": 921
+  },
+  {
+    "month": "2025-10",
+    "city": "臺北市",
+    "suspects": 522
+  },
+  {
+    "month": "2025-10",
+    "city": "桃園市",
+    "suspects": 1190
+  },
+  {
+    "month": "2025-10",
+    "city": "臺中市",
+    "suspects": 439
+  },
+  {
+    "month": "2025-10",
+    "city": "臺南市",
+    "suspects": 293
+  },
+  {
+    "month": "2025-10",
+    "city": "高雄市",
+    "suspects": 435
+  },
+  {
+    "month": "2025-10",
+    "city": "宜蘭縣",
+    "suspects": 81
+  },
+  {
+    "month": "2025-10",
+    "city": "新竹縣",
+    "suspects": 122
+  },
+  {
+    "month": "2025-10",
+    "city": "苗栗縣",
+    "suspects": 93
+  },
+  {
+    "month": "2025-10",
+    "city": "彰化縣",
+    "suspects": 195
+  },
+  {
+    "month": "2025-10",
+    "city": "南投縣",
+    "suspects": 79
+  },
+  {
+    "month": "2025-10",
+    "city": "雲林縣",
+    "suspects": 119
+  },
+  {
+    "month": "2025-10",
+    "city": "嘉義縣",
+    "suspects": 175
+  },
+  {
+    "month": "2025-10",
+    "city": "屏東縣",
+    "suspects": 141
+  },
+  {
+    "month": "2025-10",
+    "city": "臺東縣",
+    "suspects": 21
+  },
+  {
+    "month": "2025-10",
+    "city": "花蓮縣",
+    "suspects": 50
+  },
+  {
+    "month": "2025-10",
+    "city": "澎湖縣",
+    "suspects": 23
+  },
+  {
+    "month": "2025-10",
+    "city": "基隆市",
+    "suspects": 109
+  },
+  {
+    "month": "2025-10",
+    "city": "新竹市",
+    "suspects": 64
+  },
+  {
+    "month": "2025-10",
+    "city": "嘉義市",
+    "suspects": 79
+  },
+  {
+    "month": "2025-10",
+    "city": "金門縣",
+    "suspects": 9
+  },
+  {
+    "month": "2025-10",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2025-11",
+    "city": "新北市",
+    "suspects": 827
+  },
+  {
+    "month": "2025-11",
+    "city": "臺北市",
+    "suspects": 444
+  },
+  {
+    "month": "2025-11",
+    "city": "桃園市",
+    "suspects": 759
+  },
+  {
+    "month": "2025-11",
+    "city": "臺中市",
+    "suspects": 420
+  },
+  {
+    "month": "2025-11",
+    "city": "臺南市",
+    "suspects": 260
+  },
+  {
+    "month": "2025-11",
+    "city": "高雄市",
+    "suspects": 421
+  },
+  {
+    "month": "2025-11",
+    "city": "宜蘭縣",
+    "suspects": 42
+  },
+  {
+    "month": "2025-11",
+    "city": "新竹縣",
+    "suspects": 182
+  },
+  {
+    "month": "2025-11",
+    "city": "苗栗縣",
+    "suspects": 76
+  },
+  {
+    "month": "2025-11",
+    "city": "彰化縣",
+    "suspects": 129
+  },
+  {
+    "month": "2025-11",
+    "city": "南投縣",
+    "suspects": 72
+  },
+  {
+    "month": "2025-11",
+    "city": "雲林縣",
+    "suspects": 128
+  },
+  {
+    "month": "2025-11",
+    "city": "嘉義縣",
+    "suspects": 105
+  },
+  {
+    "month": "2025-11",
+    "city": "屏東縣",
+    "suspects": 114
+  },
+  {
+    "month": "2025-11",
+    "city": "臺東縣",
+    "suspects": 34
+  },
+  {
+    "month": "2025-11",
+    "city": "花蓮縣",
+    "suspects": 44
+  },
+  {
+    "month": "2025-11",
+    "city": "澎湖縣",
+    "suspects": 9
+  },
+  {
+    "month": "2025-11",
+    "city": "基隆市",
+    "suspects": 102
+  },
+  {
+    "month": "2025-11",
+    "city": "新竹市",
+    "suspects": 53
+  },
+  {
+    "month": "2025-11",
+    "city": "嘉義市",
+    "suspects": 70
+  },
+  {
+    "month": "2025-11",
+    "city": "金門縣",
+    "suspects": 17
+  },
+  {
+    "month": "2025-11",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2025-12",
+    "city": "新北市",
+    "suspects": 784
+  },
+  {
+    "month": "2025-12",
+    "city": "臺北市",
+    "suspects": 391
+  },
+  {
+    "month": "2025-12",
+    "city": "桃園市",
+    "suspects": 579
+  },
+  {
+    "month": "2025-12",
+    "city": "臺中市",
+    "suspects": 309
+  },
+  {
+    "month": "2025-12",
+    "city": "臺南市",
+    "suspects": 219
+  },
+  {
+    "month": "2025-12",
+    "city": "高雄市",
+    "suspects": 397
+  },
+  {
+    "month": "2025-12",
+    "city": "宜蘭縣",
+    "suspects": 73
+  },
+  {
+    "month": "2025-12",
+    "city": "新竹縣",
+    "suspects": 123
+  },
+  {
+    "month": "2025-12",
+    "city": "苗栗縣",
+    "suspects": 90
+  },
+  {
+    "month": "2025-12",
+    "city": "彰化縣",
+    "suspects": 149
+  },
+  {
+    "month": "2025-12",
+    "city": "南投縣",
+    "suspects": 68
+  },
+  {
+    "month": "2025-12",
+    "city": "雲林縣",
+    "suspects": 71
+  },
+  {
+    "month": "2025-12",
+    "city": "嘉義縣",
+    "suspects": 77
+  },
+  {
+    "month": "2025-12",
+    "city": "屏東縣",
+    "suspects": 102
+  },
+  {
+    "month": "2025-12",
+    "city": "臺東縣",
+    "suspects": 64
+  },
+  {
+    "month": "2025-12",
+    "city": "花蓮縣",
+    "suspects": 81
+  },
+  {
+    "month": "2025-12",
+    "city": "澎湖縣",
+    "suspects": 20
+  },
+  {
+    "month": "2025-12",
+    "city": "基隆市",
+    "suspects": 92
+  },
+  {
+    "month": "2025-12",
+    "city": "新竹市",
+    "suspects": 40
+  },
+  {
+    "month": "2025-12",
+    "city": "嘉義市",
+    "suspects": 57
+  },
+  {
+    "month": "2025-12",
+    "city": "金門縣",
+    "suspects": 12
+  },
+  {
+    "month": "2025-12",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2026-01",
+    "city": "新北市",
+    "suspects": 869
+  },
+  {
+    "month": "2026-01",
+    "city": "臺北市",
+    "suspects": 378
+  },
+  {
+    "month": "2026-01",
+    "city": "桃園市",
+    "suspects": 640
+  },
+  {
+    "month": "2026-01",
+    "city": "臺中市",
+    "suspects": 323
+  },
+  {
+    "month": "2026-01",
+    "city": "臺南市",
+    "suspects": 291
+  },
+  {
+    "month": "2026-01",
+    "city": "高雄市",
+    "suspects": 476
+  },
+  {
+    "month": "2026-01",
+    "city": "宜蘭縣",
+    "suspects": 44
+  },
+  {
+    "month": "2026-01",
+    "city": "新竹縣",
+    "suspects": 56
+  },
+  {
+    "month": "2026-01",
+    "city": "苗栗縣",
+    "suspects": 69
+  },
+  {
+    "month": "2026-01",
+    "city": "彰化縣",
+    "suspects": 110
+  },
+  {
+    "month": "2026-01",
+    "city": "南投縣",
+    "suspects": 55
+  },
+  {
+    "month": "2026-01",
+    "city": "雲林縣",
+    "suspects": 127
+  },
+  {
+    "month": "2026-01",
+    "city": "嘉義縣",
+    "suspects": 79
+  },
+  {
+    "month": "2026-01",
+    "city": "屏東縣",
+    "suspects": 135
+  },
+  {
+    "month": "2026-01",
+    "city": "臺東縣",
+    "suspects": 26
+  },
+  {
+    "month": "2026-01",
+    "city": "花蓮縣",
+    "suspects": 57
+  },
+  {
+    "month": "2026-01",
+    "city": "澎湖縣",
+    "suspects": 14
+  },
+  {
+    "month": "2026-01",
+    "city": "基隆市",
+    "suspects": 106
+  },
+  {
+    "month": "2026-01",
+    "city": "新竹市",
+    "suspects": 58
+  },
+  {
+    "month": "2026-01",
+    "city": "嘉義市",
+    "suspects": 47
+  },
+  {
+    "month": "2026-01",
+    "city": "金門縣",
+    "suspects": 17
+  },
+  {
+    "month": "2026-01",
+    "city": "連江縣",
+    "suspects": 1
+  },
+  {
+    "month": "2026-02",
+    "city": "新北市",
+    "suspects": 650
+  },
+  {
+    "month": "2026-02",
+    "city": "臺北市",
+    "suspects": 251
+  },
+  {
+    "month": "2026-02",
+    "city": "桃園市",
+    "suspects": 439
+  },
+  {
+    "month": "2026-02",
+    "city": "臺中市",
+    "suspects": 274
+  },
+  {
+    "month": "2026-02",
+    "city": "臺南市",
+    "suspects": 244
+  },
+  {
+    "month": "2026-02",
+    "city": "高雄市",
+    "suspects": 395
+  },
+  {
+    "month": "2026-02",
+    "city": "宜蘭縣",
+    "suspects": 44
+  },
+  {
+    "month": "2026-02",
+    "city": "新竹縣",
+    "suspects": 60
+  },
+  {
+    "month": "2026-02",
+    "city": "苗栗縣",
+    "suspects": 78
+  },
+  {
+    "month": "2026-02",
+    "city": "彰化縣",
+    "suspects": 85
+  },
+  {
+    "month": "2026-02",
+    "city": "南投縣",
+    "suspects": 31
+  },
+  {
+    "month": "2026-02",
+    "city": "雲林縣",
+    "suspects": 66
+  },
+  {
+    "month": "2026-02",
+    "city": "嘉義縣",
+    "suspects": 60
+  },
+  {
+    "month": "2026-02",
+    "city": "屏東縣",
+    "suspects": 102
+  },
+  {
+    "month": "2026-02",
+    "city": "臺東縣",
+    "suspects": 41
+  },
+  {
+    "month": "2026-02",
+    "city": "花蓮縣",
+    "suspects": 40
+  },
+  {
+    "month": "2026-02",
+    "city": "澎湖縣",
+    "suspects": 13
+  },
+  {
+    "month": "2026-02",
+    "city": "基隆市",
+    "suspects": 108
+  },
+  {
+    "month": "2026-02",
+    "city": "新竹市",
+    "suspects": 50
+  },
+  {
+    "month": "2026-02",
+    "city": "嘉義市",
+    "suspects": 40
+  },
+  {
+    "month": "2026-02",
+    "city": "金門縣",
+    "suspects": 6
+  },
+  {
+    "month": "2026-02",
+    "city": "連江縣",
+    "suspects": 0
+  },
+  {
+    "month": "2026-03",
+    "city": "新北市",
+    "suspects": 993
+  },
+  {
+    "month": "2026-03",
+    "city": "臺北市",
+    "suspects": 526
+  },
+  {
+    "month": "2026-03",
+    "city": "桃園市",
+    "suspects": 597
+  },
+  {
+    "month": "2026-03",
+    "city": "臺中市",
+    "suspects": 327
+  },
+  {
+    "month": "2026-03",
+    "city": "臺南市",
+    "suspects": 300
+  },
+  {
+    "month": "2026-03",
+    "city": "高雄市",
+    "suspects": 495
+  },
+  {
+    "month": "2026-03",
+    "city": "宜蘭縣",
+    "suspects": 98
+  },
+  {
+    "month": "2026-03",
+    "city": "新竹縣",
+    "suspects": 106
+  },
+  {
+    "month": "2026-03",
+    "city": "苗栗縣",
+    "suspects": 137
+  },
+  {
+    "month": "2026-03",
+    "city": "彰化縣",
+    "suspects": 177
+  },
+  {
+    "month": "2026-03",
+    "city": "南投縣",
+    "suspects": 42
+  },
+  {
+    "month": "2026-03",
+    "city": "雲林縣",
+    "suspects": 71
+  },
+  {
+    "month": "2026-03",
+    "city": "嘉義縣",
+    "suspects": 118
+  },
+  {
+    "month": "2026-03",
+    "city": "屏東縣",
+    "suspects": 149
+  },
+  {
+    "month": "2026-03",
+    "city": "臺東縣",
+    "suspects": 50
+  },
+  {
+    "month": "2026-03",
+    "city": "花蓮縣",
+    "suspects": 44
+  },
+  {
+    "month": "2026-03",
+    "city": "澎湖縣",
+    "suspects": 20
+  },
+  {
+    "month": "2026-03",
+    "city": "基隆市",
+    "suspects": 151
+  },
+  {
+    "month": "2026-03",
+    "city": "新竹市",
+    "suspects": 59
+  },
+  {
+    "month": "2026-03",
+    "city": "嘉義市",
+    "suspects": 90
+  },
+  {
+    "month": "2026-03",
+    "city": "金門縣",
+    "suspects": 18
+  },
+  {
+    "month": "2026-03",
+    "city": "連江縣",
+    "suspects": 0
+  }
+]
