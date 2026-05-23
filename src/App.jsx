@@ -1,5 +1,6 @@
 import taiwanMap from "@svg-maps/taiwan";
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import "./App.css";
 
 const cityNameByMapId = {
   "changhua-county": "彰化縣",
@@ -56,12 +57,52 @@ const mapLocations = taiwanMap.locations.map((location) => ({
   ...location,
   city: cityNameByMapId[location.id],
 }));
-const mainIslandBounds = [360, 250, 650, 980];
+
+function getSvgMapBounds(locations, padding = 96) {
+  const points = [];
+
+  locations.forEach((location) => {
+    const numbers = String(location.path).match(/-?\d+(?:\.\d+)?/g)?.map(Number) || [];
+
+    for (let index = 0; index < numbers.length - 1; index += 2) {
+      points.push({
+        x: numbers[index],
+        y: numbers[index + 1],
+      });
+    }
+  });
+
+  if (!points.length && taiwanMap.viewBox) {
+    const fallback = String(taiwanMap.viewBox).split(/\s+/).map(Number);
+    if (fallback.length === 4 && fallback.every(Number.isFinite)) return fallback;
+  }
+
+  if (!points.length) return [0, 0, 1000, 1200];
+
+  const minX = Math.min(...points.map((point) => point.x));
+  const maxX = Math.max(...points.map((point) => point.x));
+  const minY = Math.min(...points.map((point) => point.y));
+  const maxY = Math.max(...points.map((point) => point.y));
+
+  return [
+    minX - padding,
+    minY - padding,
+    maxX - minX + padding * 2,
+    maxY - minY + padding * 2,
+  ];
+}
+
+const fullMapBounds = getSvgMapBounds(mapLocations);
 const iconMap = { death: "☠️", injury: "🩼" };
 
 function toMonthLabel(month) {
   const [year, monthNum] = month.split("-");
   return `${year}/${monthNum}`;
+}
+
+function toShortMonthLabel(month) {
+  const [year, monthNum] = month.split("-");
+  return `${year.slice(2)}/${monthNum}`;
 }
 
 function formatDate(dateText) {
@@ -75,11 +116,30 @@ function levelLabel(level) {
   return "低";
 }
 
-function zoomedViewBox(zoom) {
-  const [x, y, width, height] = mainIslandBounds;
+function clampNumber(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function clampMapPan(zoom, pan) {
+  const [, , width, height] = fullMapBounds;
   const nextWidth = width / zoom;
   const nextHeight = height / zoom;
-  return `${x + (width - nextWidth) / 2} ${y + (height - nextHeight) / 2} ${nextWidth} ${nextHeight}`;
+  const maxPanX = Math.max(0, (width - nextWidth) / 2);
+  const maxPanY = Math.max(0, (height - nextHeight) / 2);
+
+  return {
+    x: clampNumber(pan.x, -maxPanX, maxPanX),
+    y: clampNumber(pan.y, -maxPanY, maxPanY),
+  };
+}
+
+function zoomedViewBox(zoom, pan = { x: 0, y: 0 }) {
+  const [x, y, width, height] = fullMapBounds;
+  const nextWidth = width / zoom;
+  const nextHeight = height / zoom;
+  const clampedPan = clampMapPan(zoom, pan);
+
+  return `${x + (width - nextWidth) / 2 + clampedPan.x} ${y + (height - nextHeight) / 2 + clampedPan.y} ${nextWidth} ${nextHeight}`;
 }
 
 async function loadJson(filePath, fallback) {
@@ -99,12 +159,14 @@ function useDashboardData() {
   useEffect(() => {
     let alive = true;
     const baseUrl = import.meta.env.BASE_URL;
+
     Promise.all([
       loadJson(`${baseUrl}data/incidents.json`, []),
       loadJson(`${baseUrl}data/drug_suspects_monthly.json`, []),
     ]).then(([incidents, suspects]) => {
       if (alive) setData({ incidents, suspects, loading: false });
     });
+
     return () => {
       alive = false;
     };
@@ -113,27 +175,38 @@ function useDashboardData() {
   return data;
 }
 
-function Metric({ label, value, tone }) {
+function Metric({ label, value, tone, helper }) {
   return (
-    <div className={`metric ${tone || ""}`}>
+    <article className={`metric-card ${tone || ""}`}>
+      <i className="metric-glow" aria-hidden="true" />
       <span>{label}</span>
       <strong>{value}</strong>
-    </div>
+      {helper ? <small>{helper}</small> : null}
+    </article>
   );
 }
 
 function buildCityRanking(incidents, suspects, months) {
   const selectedMonthSet = new Set(months);
+
   return cities
     .map((city) => {
       const cityIncidents = incidents.filter((incident) => incident.city === city);
-      const deaths = cityIncidents.reduce((sum, item) => sum + item.deaths, 0);
-      const injuries = cityIncidents.reduce((sum, item) => sum + item.injuries, 0);
+      const deaths = cityIncidents.reduce((sum, item) => sum + Number(item.deaths || 0), 0);
+      const injuries = cityIncidents.reduce((sum, item) => sum + Number(item.injuries || 0), 0);
       const suspectTotal = suspects
         .filter((row) => row.city === city && selectedMonthSet.has(row.month))
-        .reduce((sum, row) => sum + row.suspects, 0);
+        .reduce((sum, row) => sum + Number(row.suspects || 0), 0);
       const score = deaths * 3 + injuries + cityIncidents.length * 1.5 + suspectTotal / 260;
-      return { city, deaths, injuries, events: cityIncidents.length, suspectTotal, score };
+
+      return {
+        city,
+        deaths,
+        injuries,
+        events: cityIncidents.length,
+        suspectTotal,
+        score,
+      };
     })
     .sort((a, b) => b.score - a.score || b.deaths - a.deaths || b.injuries - a.injuries);
 }
@@ -147,159 +220,319 @@ function rankingLevel(item, index) {
 
 function IncidentHoverCard({ incident, position }) {
   return (
-    <article
-      className="incident-card hover-card"
+    <div
+      className="incident-hover-card"
       style={{
-        left: `min(${position.x + 18}px, calc(100% - 340px))`,
-        top: `${Math.max(position.y - 12, 12)}px`,
+        left: `${Math.min(position.x + 18, 620)}px`,
+        top: `${Math.max(position.y - 18, 16)}px`,
       }}
     >
-      <div className="card-meta">
+      <div className="hover-meta">
         <span>{incident.city}</span>
         <span>{formatDate(incident.publishedAt)}</span>
         <span>{incident.source}</span>
       </div>
-      <h2>{incident.title}</h2>
-      <div className="casualties">
-        <span className="death-pill">死亡 {incident.deaths}</span>
-        <span className="injury-pill">受傷 {incident.injuries}</span>
-      </div>
+      <h3>{incident.title}</h3>
+      <p className="hover-stats">
+        死亡 {incident.deaths}｜受傷 {incident.injuries}
+      </p>
       <p>{incident.summary}</p>
-      <span className="open-hint">點擊圖示開啟新聞頁面</span>
-    </article>
+      <small>點擊圖示開啟新聞頁面</small>
+    </div>
+  );
+}
+
+function CityIncidentBadge({ type, count, x, y, incident, onHover, onMove, onLeave, onSelectCity }) {
+  const icon = iconMap[type];
+  const label = type === "death" ? "死亡" : "受傷";
+  const width = count >= 100 ? 82 : count >= 10 ? 72 : 62;
+  const severity = count >= 10 ? "major" : count >= 3 ? "medium" : "minor";
+
+  return (
+    <g
+      className={`city-incident-badge badge-${type} badge-${severity}`}
+      tabIndex="0"
+      role="button"
+      aria-label={`${incident.city}${label}${count}人`}
+      transform={`translate(${x} ${y})`}
+      onClick={() => onSelectCity(incident.city)}
+      onMouseEnter={(event) => onHover(event, incident)}
+      onMouseMove={onMove}
+      onMouseLeave={onLeave}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") onSelectCity(incident.city);
+      }}
+    >
+      <rect x={-width / 2} y="-18" width={width} height="34" rx="17" />
+      <text x="0" y="5" textAnchor="middle">
+        {icon}×{count}
+      </text>
+    </g>
   );
 }
 
 function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelectCity }) {
   const svgRef = useRef(null);
   const panelRef = useRef(null);
+  const dragStateRef = useRef(null);
+  const wasDraggingRef = useRef(false);
   const [cityPositions, setCityPositions] = useState({});
   const [hoverIncident, setHoverIncident] = useState(null);
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   const [zoom, setZoom] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     const nextPositions = {};
+
     svgRef.current?.querySelectorAll(".county-shape").forEach((element) => {
       const city = element.dataset.city;
       const box = element.getBBox();
-      nextPositions[city] = { x: box.x + box.width / 2, y: box.y + box.height / 2, short: cityShortNames[city] || city };
+      nextPositions[city] = {
+        x: box.x + box.width / 2,
+        y: box.y + box.height / 2,
+        short: cityShortNames[city] || city,
+      };
     });
+
     setCityPositions(nextPositions);
   }, []);
 
-  const markers = useMemo(() => {
-    const items = [];
-    const cityCounts = {};
+  useEffect(() => {
+    if (zoom === 1) {
+      setPan({ x: 0, y: 0 });
+      return;
+    }
+
+    setPan((current) => clampMapPan(zoom, current));
+  }, [zoom]);
+
+  const viewBox = useMemo(() => zoomedViewBox(zoom, pan), [zoom, pan]);
+
+  const cityBadges = useMemo(() => {
+    const grouped = new Map();
+
     incidents.forEach((incident) => {
-      const position = cityPositions[incident.city];
-      if (!position) return;
-      const count = cityCounts[incident.city] || 0;
-      cityCounts[incident.city] = count + 1;
-      const baseOffset = count * 12;
+      const current = grouped.get(incident.city) || {
+        city: incident.city,
+        deaths: 0,
+        injuries: 0,
+        events: [],
+        latestIncident: incident,
+      };
 
-      if (visibleTypes.deaths && incident.deaths > 0) {
-        for (let i = 0; i < incident.deaths; i += 1) {
-          items.push({
-            id: `${incident.id}-death-${i}`,
-            type: "death",
-            incident,
-            x: position.x - 30 + i * 18 + (baseOffset % 34),
-            y: position.y - 34 - Math.floor(baseOffset / 18) * 12,
-          });
-        }
+      current.deaths += Number(incident.deaths || 0);
+      current.injuries += Number(incident.injuries || 0);
+      current.events.push(incident);
+
+      if (
+        !current.latestIncident?.publishedAt ||
+        incident.publishedAt > current.latestIncident.publishedAt
+      ) {
+        current.latestIncident = incident;
       }
 
-      if (visibleTypes.injuries && incident.injuries > 0) {
-        for (let i = 0; i < incident.injuries; i += 1) {
-          items.push({
-            id: `${incident.id}-injury-${i}`,
-            type: "injury",
-            incident,
-            x: position.x + 30 + i * 16 - (baseOffset % 28),
-            y: position.y + 30 + Math.floor(baseOffset / 18) * 12,
-          });
-        }
-      }
+      grouped.set(incident.city, current);
     });
-    return items;
-  }, [cityPositions, incidents, visibleTypes]);
+
+    return [...grouped.values()]
+      .map((item) => {
+        const position = cityPositions[item.city];
+        if (!position) return null;
+
+        return {
+          ...item,
+          x: position.x,
+          y: position.y,
+        };
+      })
+      .filter(Boolean);
+  }, [cityPositions, incidents]);
 
   const updateHoverPosition = (event) => {
     const rect = panelRef.current?.getBoundingClientRect();
-    setHoverPosition({ x: rect ? event.clientX - rect.left : 0, y: rect ? event.clientY - rect.top : 0 });
+    setHoverPosition({
+      x: rect ? event.clientX - rect.left : 0,
+      y: rect ? event.clientY - rect.top : 0,
+    });
   };
 
-  const openIncident = (incident) => {
-    window.open(incident.url, "_blank", "noopener,noreferrer");
+  const handleSelectCity = (city) => {
+    if (wasDraggingRef.current) return;
+    onSelectCity(city);
+  };
+
+  const handleBadgeHover = (event, incident) => {
+    setHoverIncident(incident);
+    updateHoverPosition(event);
+  };
+
+  const handlePointerDown = (event) => {
+    if (zoom <= 1) return;
+    if (event.button !== undefined && event.button !== 0) return;
+
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (!rect) return;
+
+    const [, , viewWidth, viewHeight] = viewBox.split(" ").map(Number);
+
+    dragStateRef.current = {
+      pointerId: event.pointerId,
+      startClientX: event.clientX,
+      startClientY: event.clientY,
+      startPan: pan,
+      viewWidth,
+      viewHeight,
+      rectWidth: rect.width,
+      rectHeight: rect.height,
+      moved: false,
+    };
+
+    setIsDragging(true);
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+  };
+
+  const handlePointerMove = (event) => {
+    const dragState = dragStateRef.current;
+    if (!dragState) return;
+
+    const deltaX = event.clientX - dragState.startClientX;
+    const deltaY = event.clientY - dragState.startClientY;
+
+    if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
+      dragState.moved = true;
+      wasDraggingRef.current = true;
+    }
+
+    const nextPan = {
+      x: dragState.startPan.x - deltaX * (dragState.viewWidth / dragState.rectWidth),
+      y: dragState.startPan.y - deltaY * (dragState.viewHeight / dragState.rectHeight),
+    };
+
+    setPan(clampMapPan(zoom, nextPan));
+    event.preventDefault();
+  };
+
+  const endPointerDrag = (event) => {
+    const dragState = dragStateRef.current;
+    if (!dragState) return;
+
+    wasDraggingRef.current = Boolean(dragState.moved);
+    dragStateRef.current = null;
+    setIsDragging(false);
+    event.currentTarget.releasePointerCapture?.(event.pointerId);
+
+    window.setTimeout(() => {
+      wasDraggingRef.current = false;
+    }, 0);
   };
 
   return (
-    <section ref={panelRef} className="map-panel map-appear" aria-label="台灣毒駕死傷事件地圖">
-      <div className="map-tools" aria-label="地圖縮放">
-        <button type="button" aria-label="放大地圖" onClick={() => setZoom((value) => Math.min(2.25, value + 0.25))}>+</button>
-        <button type="button" aria-label="縮小地圖" onClick={() => setZoom((value) => Math.max(1, value - 0.25))}>-</button>
-        <button type="button" onClick={() => setZoom(1)}>重設</button>
+    <section className="map-panel panel-pop" ref={panelRef}>
+      <div className="map-toolbar">
+        <div>
+          <span>互動地圖</span>
+          <h2>{selectedCity || "全台縣市"}</h2>
+        </div>
+
+        <div className="zoom-control-wrap">
+          <div className="zoom-controls" aria-label="地圖縮放">
+            <button type="button" onClick={() => setZoom((value) => Math.min(2.75, value + 0.25))}>
+              +
+            </button>
+            <button type="button" onClick={() => setZoom((value) => Math.max(1, value - 0.25))}>
+              -
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setZoom(1);
+                setPan({ x: 0, y: 0 });
+              }}
+            >
+              重設
+            </button>
+          </div>
+          <small className="map-drag-hint">{zoom > 1 ? "拖曳地圖查看細節" : "放大後可拖曳"}</small>
+        </div>
       </div>
 
-      <svg ref={svgRef} className="taiwan-map" viewBox={zoomedViewBox(zoom)} role="img" aria-label="台灣地圖">
+      <svg
+        ref={svgRef}
+        className={`taiwan-map ${zoom > 1 ? "is-draggable" : ""} ${isDragging ? "is-dragging" : ""}`}
+        viewBox={viewBox}
+        role="img"
+        aria-label="台灣毒駕事件地圖"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={endPointerDrag}
+        onPointerCancel={endPointerDrag}
+        onPointerLeave={endPointerDrag}
+      >
         <defs>
-          <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
-            <feDropShadow dx="0" dy="14" stdDeviation="12" floodColor="#241814" floodOpacity="0.18" />
+          <filter id="badgeShadow" x="-40%" y="-40%" width="180%" height="180%">
+            <feDropShadow dx="0" dy="8" stdDeviation="6" floodColor="#1f2522" floodOpacity="0.18" />
           </filter>
         </defs>
 
-        <g filter="url(#softShadow)">
+        <g className="map-layer">
           {mapLocations.map((location) => {
             const risk = cityLevels.get(location.city) || "low";
             return (
               <path
                 key={location.id}
-                className={`county-shape county-${risk} ${selectedCity === location.city ? "selected" : ""}`}
+                className={`county-shape risk-${risk} ${selectedCity === location.city ? "selected" : ""}`}
                 data-city={location.city}
                 d={location.path}
-                role="button"
                 tabIndex="0"
-                onClick={() => onSelectCity(location.city)}
+                onClick={() => handleSelectCity(location.city)}
                 onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") onSelectCity(location.city);
+                  if (event.key === "Enter" || event.key === " ") handleSelectCity(location.city);
                 }}
                 aria-label={`${location.city} 風險${levelLabel(risk)}`}
               />
             );
           })}
+
+          {Object.entries(cityPositions).map(([city, position]) => (
+            <text key={city} className="city-label" x={position.x} y={position.y}>
+              {position.short}
+            </text>
+          ))}
+
+          {cityBadges.map((item) => (
+            <g key={item.city} className={`city-badge-pair ${selectedCity === item.city ? "selected" : ""}`}>
+              {visibleTypes.deaths && item.deaths > 0 ? (
+                <CityIncidentBadge
+                  type="death"
+                  count={item.deaths}
+                  x={item.x - 38}
+                  y={item.y - 34}
+                  incident={item.latestIncident}
+                  onHover={handleBadgeHover}
+                  onMove={updateHoverPosition}
+                  onLeave={() => setHoverIncident(null)}
+                  onSelectCity={handleSelectCity}
+                />
+              ) : null}
+
+              {visibleTypes.injuries && item.injuries > 0 ? (
+                <CityIncidentBadge
+                  type="injury"
+                  count={item.injuries}
+                  x={item.x + 42}
+                  y={item.y + 32}
+                  incident={item.latestIncident}
+                  onHover={handleBadgeHover}
+                  onMove={updateHoverPosition}
+                  onLeave={() => setHoverIncident(null)}
+                  onSelectCity={handleSelectCity}
+                />
+              ) : null}
+            </g>
+          ))}
         </g>
-
-        {Object.entries(cityPositions).map(([city, position]) => (
-          <g key={city} className="city-pin">
-            <circle cx={position.x} cy={position.y} r="4.5" />
-            <text x={position.x + 7} y={position.y + 4}>{position.short}</text>
-          </g>
-        ))}
-
-        {markers.map((marker) => (
-          <g
-            key={marker.id}
-            className={`map-icon ${marker.type}`}
-            transform={`translate(${marker.x} ${marker.y})`}
-            role="button"
-            tabIndex="0"
-            onClick={() => openIncident(marker.incident)}
-            onMouseEnter={(event) => {
-              setHoverIncident(marker.incident);
-              updateHoverPosition(event);
-            }}
-            onMouseMove={updateHoverPosition}
-            onMouseLeave={() => setHoverIncident(null)}
-            onKeyDown={(event) => {
-              if (event.key === "Enter" || event.key === " ") openIncident(marker.incident);
-            }}
-            aria-label={`${marker.incident.city} ${marker.type === "death" ? "死亡" : "受傷"}事件：${marker.incident.title}`}
-          >
-            <circle cx="0" cy="0" r="30" />
-            <text x="0" y="12" textAnchor="middle">{iconMap[marker.type]}</text>
-          </g>
-        ))}
       </svg>
 
       {hoverIncident ? <IncidentHoverCard incident={hoverIncident} position={hoverPosition} /> : null}
@@ -310,32 +543,34 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
 function MiniTrend({ title, rows, valueKey, colorClass }) {
   const width = 340;
   const height = 116;
-  const maxValue = Math.max(1, ...rows.map((row) => row[valueKey]));
+  const maxValue = Math.max(1, ...rows.map((row) => Number(row[valueKey] || 0)));
   const pathData = rows
     .map((row, index) => {
       const x = 32 + (rows.length <= 1 ? 0 : (index / (rows.length - 1)) * 290);
-      const y = 88 - (row[valueKey] / maxValue) * 64;
+      const y = 88 - (Number(row[valueKey] || 0) / maxValue) * 64;
       return `${index === 0 ? "M" : "L"}${x.toFixed(1)} ${y.toFixed(1)}`;
     })
     .join(" ");
 
   return (
-    <div className="mini-trend">
-      <div className="mini-title">
+    <article className="mini-trend">
+      <div className="mini-trend-title">
         <span>{title}</span>
-        <b>最高 {maxValue}</b>
+        <strong>最高 {maxValue.toLocaleString()}</strong>
       </div>
-      <svg className="trend-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${title} 折線圖`}>
-        <line x1="32" y1="88" x2="322" y2="88" />
-        <path className={colorClass} d={pathData} />
+      <svg viewBox={`0 0 ${width} ${height}`} aria-hidden="true">
+        <line x1="32" y1="88" x2="322" y2="88" className="trend-axis" />
+        <path d={pathData} className={`mini-line ${colorClass}`} />
         {rows.map((row, index) => {
           const x = 32 + (rows.length <= 1 ? 0 : (index / (rows.length - 1)) * 290);
-          return index % 3 === 0 || index === rows.length - 1 ? (
-            <text key={`${row.month}-${valueKey}`} x={x} y="108" textAnchor="middle">{row.month.slice(5)}</text>
+          return index % 2 === 0 || index === rows.length - 1 ? (
+            <text key={row.month} x={x} y="108" textAnchor="middle" className="mini-x-label">
+              {toShortMonthLabel(row.month)}
+            </text>
           ) : null;
         })}
       </svg>
-    </div>
+    </article>
   );
 }
 
@@ -343,18 +578,22 @@ function TrendCard({ city, months, suspects, incidents }) {
   const rows = useMemo(() => {
     const monthList = [...months].sort();
     const casualtyByMonth = new Map();
+
     incidents
       .filter((incident) => !city || incident.city === city)
       .forEach((incident) => {
         const month = incident.publishedAt.slice(0, 7);
-        casualtyByMonth.set(month, (casualtyByMonth.get(month) || 0) + incident.deaths + incident.injuries);
+        casualtyByMonth.set(
+          month,
+          (casualtyByMonth.get(month) || 0) + Number(incident.deaths || 0) + Number(incident.injuries || 0)
+        );
       });
 
     return monthList.map((month) => ({
       month,
       suspects: suspects
         .filter((row) => row.month === month && (!city || row.city === city))
-        .reduce((sum, row) => sum + row.suspects, 0),
+        .reduce((sum, row) => sum + Number(row.suspects || 0), 0),
       casualties: casualtyByMonth.get(month) || 0,
     }));
   }, [city, incidents, months, suspects]);
@@ -363,146 +602,558 @@ function TrendCard({ city, months, suspects, incidents }) {
   const casualtyTotal = rows.reduce((sum, row) => sum + row.casualties, 0);
 
   return (
-    <article className="trend-card panel-pop">
-      <div className="trend-header">
-        <div>
-          <span>縣市趨勢</span>
-          <h2>{city || "全部縣市"}</h2>
-        </div>
-        <div className="trend-latest">
-          <b>{casualtyTotal}</b>
-          <small>篩選死傷數</small>
-        </div>
+    <section className="trend-card panel-pop">
+      <div className="section-head">
+        <span>趨勢摘要</span>
+        <h2>{city || "全部縣市"}</h2>
+      </div>
+
+      <div className="trend-total">
+        <strong>{casualtyTotal}</strong>
+        <span>篩選死傷數</span>
+        <strong>{suspectTotal.toLocaleString()}</strong>
+        <span>毒品嫌疑犯背景數</span>
       </div>
 
       {rows.length ? (
         <>
-          <MiniTrend title={`毒品嫌疑犯人數，合計 ${suspectTotal}`} rows={rows} valueKey="suspects" colorClass="suspect-line" />
-          <MiniTrend title={`新聞死傷數，合計 ${casualtyTotal}`} rows={rows} valueKey="casualties" colorClass="casualty-line" />
+          <MiniTrend title="毒品嫌疑犯人數" rows={rows} valueKey="suspects" colorClass="teal" />
+          <MiniTrend title="新聞死傷數" rows={rows} valueKey="casualties" colorClass="red" />
         </>
       ) : (
         <div className="empty-panel">尚未選取月份</div>
       )}
-    </article>
+    </section>
   );
 }
 
 function RankingList({ ranking, selectedCity, onSelectCity }) {
   return (
-    <section>
-      <div className="panel-title">
-        <span>縣市排名</span>
-        <button type="button" onClick={() => onSelectCity("")}>全部縣市</button>
+    <section className="ranking-list">
+      <div className="ranking-title">
+        <h3>縣市排名</h3>
+        <button type="button" onClick={() => onSelectCity("")}>
+          全部縣市
+        </button>
       </div>
-      <ol className="risk-list ranking-list">
-        {ranking.slice(0, 10).map((item, index) => {
-          const level = rankingLevel(item, index);
-          return (
-            <li key={item.city} className={selectedCity === item.city ? "active" : ""}>
-              <button type="button" onClick={() => onSelectCity(item.city)}>
-                <div>
-                  <strong>{index + 1}. {item.city}</strong>
-                  <span>{item.events} 件，死亡 {item.deaths}，受傷 {item.injuries}</span>
-                </div>
-                <b className={`risk-${level}`}>{levelLabel(level)}</b>
-              </button>
-            </li>
-          );
-        })}
-      </ol>
+
+      {ranking.slice(0, 10).map((item, index) => {
+        const level = rankingLevel(item, index);
+
+        return (
+          <button
+            type="button"
+            key={item.city}
+            className={`ranking-item ${selectedCity === item.city ? "active" : ""}`}
+            onClick={() => onSelectCity(item.city)}
+          >
+            <div>
+              <strong>
+                {index + 1}. {item.city}
+              </strong>
+              <span>
+                {item.events} 件，死亡 {item.deaths}，受傷 {item.injuries}
+              </span>
+            </div>
+            <em className={`level-badge ${level}`}>{levelLabel(level)}</em>
+          </button>
+        );
+      })}
     </section>
   );
 }
 
-function ControlPanel({ months, selectedMonths, setSelectedMonths, sources, selectedSources, setSelectedSources, visibleTypes, setVisibleTypes, ranking, selectedCity, onSelectCity }) {
+
+function DataStatusBar({ status }) {
+  return (
+    <section className="data-status-bar panel-pop" aria-label="資料狀態">
+      <div>
+        <span>資料更新</span>
+        <strong>{status.latestDate || "尚無資料"}</strong>
+      </div>
+      <div>
+        <span>新聞事件</span>
+        <strong>{status.totalIncidents.toLocaleString()} 筆</strong>
+      </div>
+      <div>
+        <span>統計月份</span>
+        <strong>{status.monthRange || "尚無資料"}</strong>
+      </div>
+      <div>
+        <span>新聞來源</span>
+        <strong>{status.sourceCount.toLocaleString()} 個</strong>
+      </div>
+    </section>
+  );
+}
+
+function InsightStrip({ insights }) {
+  const items = [
+    {
+      label: "最高風險",
+      value: insights.topRiskCity,
+      text: `綜合死傷、事件數與毒品嫌疑犯背景數，目前排序最高。`,
+    },
+    {
+      label: "死亡集中",
+      value: insights.topDeathCity,
+      text: `篩選期間內，新聞事件死亡人數最高的縣市。`,
+    },
+    {
+      label: "受傷集中",
+      value: insights.topInjuryCity,
+      text: `篩選期間內，新聞事件受傷人數最高的縣市。`,
+    },
+  ];
+
+  return (
+    <section className="insight-strip">
+      {items.map((item) => (
+        <article className="insight-card panel-pop" key={item.label}>
+          <span>{item.label}</span>
+          <strong>{item.value || "無資料"}</strong>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </section>
+  );
+}
+
+function MapLegend({ activeView }) {
+  if (activeView !== "map") return null;
+
+  return (
+    <section className="tool-section map-legend">
+      <h3>地圖圖例</h3>
+
+      <div className="legend-row">
+        <span className="legend-pill death-pill">☠️×數字</span>
+        <p>死亡人數</p>
+      </div>
+
+      <div className="legend-row">
+        <span className="legend-pill injury-pill">🩼×數字</span>
+        <p>受傷人數</p>
+      </div>
+
+      <div className="legend-row">
+        <span className="risk-dot high" />
+        <p>高風險縣市</p>
+      </div>
+
+      <div className="legend-row">
+        <span className="risk-dot medium" />
+        <p>中風險縣市</p>
+      </div>
+
+      <div className="legend-row">
+        <span className="risk-dot low" />
+        <p>低風險縣市</p>
+      </div>
+    </section>
+  );
+}
+
+function CurrentFilterSummary({ selectedCity, selectedMonths, selectedSources, visibleTypes, metrics }) {
+  return (
+    <section className="tool-section filter-summary">
+      <h3>目前篩選</h3>
+
+      <dl>
+        <div>
+          <dt>縣市</dt>
+          <dd>{selectedCity || "全部縣市"}</dd>
+        </div>
+        <div>
+          <dt>月份</dt>
+          <dd>{selectedMonths.length} 個</dd>
+        </div>
+        <div>
+          <dt>來源</dt>
+          <dd>{selectedSources.length} 個</dd>
+        </div>
+        <div>
+          <dt>圖示</dt>
+          <dd>
+            {visibleTypes.deaths ? "死亡" : ""}
+            {visibleTypes.deaths && visibleTypes.injuries ? "＋" : ""}
+            {visibleTypes.injuries ? "受傷" : ""}
+            {!visibleTypes.deaths && !visibleTypes.injuries ? "未顯示" : ""}
+          </dd>
+        </div>
+        <div>
+          <dt>事件</dt>
+          <dd>{metrics.events} 筆</dd>
+        </div>
+      </dl>
+    </section>
+  );
+}
+
+function ControlPanel({
+  months,
+  selectedMonths,
+  setSelectedMonths,
+  sources,
+  selectedSources,
+  setSelectedSources,
+  visibleTypes,
+  setVisibleTypes,
+  ranking,
+  selectedCity,
+  onSelectCity,
+  showRanking = true,
+  activeView,
+  metrics,
+  insights,
+}) {
   const toggleSet = (value, list, setter) => {
     setter(list.includes(value) ? list.filter((item) => item !== value) : [...list, value]);
   };
 
   return (
-    <aside className="control-panel panel-pop" aria-label="地圖篩選與縣市排名">
-      <section>
-        <div className="panel-title">
-          <span>年月</span>
-          <div className="panel-actions">
-            <button type="button" onClick={() => setSelectedMonths(months)}>全選</button>
-            <button type="button" onClick={() => setSelectedMonths([])}>全不選</button>
+    <aside className="control-panel tool-panel panel-pop">
+      <div className="tool-panel-head">
+        <span>工具面板</span>
+        <h2>{activeView === "map" ? "地圖控制" : activeView === "trend" ? "趨勢篩選" : "新聞篩選"}</h2>
+        <p>調整月份、新聞來源與縣市後，地圖、趨勢圖與新聞列表會同步更新。</p>
+      </div>
+
+      <section className="tool-section focus-card">
+        <h3>本期觀察重點</h3>
+        <ul>
+          <li>
+            <span>最高風險</span>
+            <strong>{insights.topRiskCity || "無資料"}</strong>
+          </li>
+          <li>
+            <span>死亡最高</span>
+            <strong>{insights.topDeathCity || "無資料"}</strong>
+          </li>
+          <li>
+            <span>受傷最高</span>
+            <strong>{insights.topInjuryCity || "無資料"}</strong>
+          </li>
+        </ul>
+      </section>
+
+      <CurrentFilterSummary
+        selectedCity={selectedCity}
+        selectedMonths={selectedMonths}
+        selectedSources={selectedSources}
+        visibleTypes={visibleTypes}
+        metrics={metrics}
+      />
+
+      <section className="tool-section filter-group">
+        <div className="filter-title">
+          <h3>資料月份</h3>
+          <div>
+            <button type="button" onClick={() => setSelectedMonths(months)}>
+              全選
+            </button>
+            <button type="button" onClick={() => setSelectedMonths([])}>
+              全不選
+            </button>
           </div>
         </div>
-        <div className="chips">
+
+        <div className="chip-grid">
           {months.map((month) => (
-            <label key={month} className={selectedMonths.includes(month) ? "chip active" : "chip"}>
-              <input type="checkbox" checked={selectedMonths.includes(month)} onChange={() => toggleSet(month, selectedMonths, setSelectedMonths)} />
-              {toMonthLabel(month)}
+            <label key={month} className={`chip ${selectedMonths.includes(month) ? "checked" : ""}`}>
+              <input
+                type="checkbox"
+                checked={selectedMonths.includes(month)}
+                onChange={() => toggleSet(month, selectedMonths, setSelectedMonths)}
+              />
+              {toShortMonthLabel(month)}
             </label>
           ))}
         </div>
       </section>
 
-      <section>
-        <div className="panel-title">
-          <span>來源</span>
-          <div className="panel-actions">
-            <button type="button" onClick={() => setSelectedSources(sources)}>全選</button>
-            <button type="button" onClick={() => setSelectedSources([])}>全不選</button>
+      <section className="tool-section filter-group">
+        <div className="filter-title">
+          <h3>新聞來源</h3>
+          <div>
+            <button type="button" onClick={() => setSelectedSources(sources)}>
+              全選
+            </button>
+            <button type="button" onClick={() => setSelectedSources([])}>
+              全不選
+            </button>
           </div>
         </div>
-        <div className="chips">
+
+        <div className="chip-grid source-grid">
           {sources.map((source) => (
-            <label key={source} className={selectedSources.includes(source) ? "chip active" : "chip"}>
-              <input type="checkbox" checked={selectedSources.includes(source)} onChange={() => toggleSet(source, selectedSources, setSelectedSources)} />
+            <label key={source} className={`chip ${selectedSources.includes(source) ? "checked" : ""}`}>
+              <input
+                type="checkbox"
+                checked={selectedSources.includes(source)}
+                onChange={() => toggleSet(source, selectedSources, setSelectedSources)}
+              />
               {source}
             </label>
           ))}
         </div>
       </section>
 
-      <section>
-        <div className="panel-title"><span>圖示</span></div>
-        <div className="switches">
-          <label>
-            <input type="checkbox" checked={visibleTypes.deaths} onChange={() => setVisibleTypes((current) => ({ ...current, deaths: !current.deaths }))} />
-            <span>骷顱頭：死亡</span>
-          </label>
-          <label>
-            <input type="checkbox" checked={visibleTypes.injuries} onChange={() => setVisibleTypes((current) => ({ ...current, injuries: !current.injuries }))} />
-            <span>拐杖：受傷</span>
-          </label>
-        </div>
+      <section className="tool-section filter-group">
+        <h3>地圖顯示</h3>
+        <label className="switch-row">
+          <input
+            type="checkbox"
+            checked={visibleTypes.deaths}
+            onChange={() => setVisibleTypes((current) => ({ ...current, deaths: !current.deaths }))}
+          />
+          <span>☠️ 死亡人數</span>
+        </label>
+        <label className="switch-row">
+          <input
+            type="checkbox"
+            checked={visibleTypes.injuries}
+            onChange={() => setVisibleTypes((current) => ({ ...current, injuries: !current.injuries }))}
+          />
+          <span>🩼 受傷人數</span>
+        </label>
       </section>
 
-      <RankingList ranking={ranking} selectedCity={selectedCity} onSelectCity={onSelectCity} />
+      <MapLegend activeView={activeView} />
+
+      {showRanking ? (
+        <RankingList ranking={ranking} selectedCity={selectedCity} onSelectCity={onSelectCity} />
+      ) : null}
     </aside>
+  );
+}
+
+function TrendBreakChart({ rows }) {
+  const width = 920;
+  const height = 420;
+  const chartLeft = 58;
+  const chartRight = 880;
+  const topAreaTop = 42;
+  const topAreaBottom = 158;
+  const bottomAreaTop = 250;
+  const bottomAreaBottom = 366;
+
+  const maxCasualty = Math.max(1, ...rows.map((row) => Math.max(Number(row.deaths || 0), Number(row.injuries || 0))));
+  const maxSuspects = Math.max(1, ...rows.map((row) => Number(row.suspects || 0)));
+
+  const xOf = (index) => {
+    if (rows.length <= 1) return chartLeft;
+    return chartLeft + (index / (rows.length - 1)) * (chartRight - chartLeft);
+  };
+
+  const yTopOf = (value) => topAreaBottom - (value / maxCasualty) * (topAreaBottom - topAreaTop);
+  const yBottomOf = (value) => bottomAreaBottom - (value / maxSuspects) * (bottomAreaBottom - bottomAreaTop);
+
+  const buildPath = (key, yGetter) =>
+    rows
+      .map((row, index) => {
+        const x = xOf(index);
+        const y = yGetter(Number(row[key] || 0));
+        return `${index === 0 ? "M" : "L"}${x.toFixed(1)} ${y.toFixed(1)}`;
+      })
+      .join(" ");
+
+  return (
+    <div className="trend-break-chart-wrap">
+      <svg
+        className="trend-break-chart"
+        viewBox={`0 0 ${width} ${height}`}
+        role="img"
+        aria-label="死亡、受傷與毒品嫌疑犯人數縣市趨勢折線圖"
+      >
+        <line className="axis-line" x1={chartLeft} y1={topAreaBottom} x2={chartRight} y2={topAreaBottom} />
+        <line className="axis-line" x1={chartLeft} y1={bottomAreaBottom} x2={chartRight} y2={bottomAreaBottom} />
+
+        <text className="axis-label" x="16" y={topAreaTop + 8}>
+          死傷
+        </text>
+        <text className="axis-label" x="16" y={bottomAreaTop + 8}>
+          嫌疑犯
+        </text>
+
+        <text className="axis-number" x="18" y={topAreaTop + 6}>
+          {maxCasualty}
+        </text>
+        <text className="axis-number" x="18" y={topAreaBottom + 4}>
+          0
+        </text>
+        <text className="axis-number" x="18" y={bottomAreaTop + 6}>
+          {maxSuspects.toLocaleString()}
+        </text>
+        <text className="axis-number" x="18" y={bottomAreaBottom + 4}>
+          0
+        </text>
+
+        <text className="wave-break" x={width / 2} y="212" textAnchor="middle">
+          ～～～～～～～～～～～～～～～～～～～～
+        </text>
+
+        <path className="trend-line death-line" d={buildPath("deaths", yTopOf)} />
+        <path className="trend-line injury-line" d={buildPath("injuries", yTopOf)} />
+        <path className="trend-line suspect-line" d={buildPath("suspects", yBottomOf)} />
+
+        {rows.map((row, index) => {
+          const x = xOf(index);
+
+          return (
+            <g key={row.month}>
+              <circle className="death-dot" cx={x} cy={yTopOf(row.deaths)} r="4">
+                <title>
+                  {toShortMonthLabel(row.month)} 死亡 {row.deaths}
+                </title>
+              </circle>
+              <circle className="injury-dot" cx={x} cy={yTopOf(row.injuries)} r="4">
+                <title>
+                  {toShortMonthLabel(row.month)} 受傷 {row.injuries}
+                </title>
+              </circle>
+              <circle className="suspect-dot" cx={x} cy={yBottomOf(row.suspects)} r="4">
+                <title>
+                  {toShortMonthLabel(row.month)} 毒品嫌疑犯 {row.suspects.toLocaleString()}
+                </title>
+              </circle>
+
+              <text className="x-label" x={x} y="402" textAnchor="middle">
+                {toShortMonthLabel(row.month)}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
+function CityTrendPage({ months, selectedMonths, incidents, suspects, selectedCity }) {
+  const rows = useMemo(() => {
+    const monthList = selectedMonths.length ? [...selectedMonths].sort() : [...months].sort();
+
+    return monthList.map((month) => {
+      const filteredIncidents = incidents.filter((incident) => {
+        return incident.publishedAt?.slice(0, 7) === month && (!selectedCity || incident.city === selectedCity);
+      });
+
+      const deaths = filteredIncidents.reduce((sum, item) => sum + Number(item.deaths || 0), 0);
+      const injuries = filteredIncidents.reduce((sum, item) => sum + Number(item.injuries || 0), 0);
+      const suspectTotal = suspects
+        .filter((row) => row.month === month && (!selectedCity || row.city === selectedCity))
+        .reduce((sum, row) => sum + Number(row.suspects || 0), 0);
+
+      return {
+        month,
+        deaths,
+        injuries,
+        suspects: suspectTotal,
+      };
+    });
+  }, [months, selectedMonths, incidents, suspects, selectedCity]);
+
+  const totals = useMemo(() => {
+    return rows.reduce(
+      (summary, row) => ({
+        deaths: summary.deaths + row.deaths,
+        injuries: summary.injuries + row.injuries,
+        suspects: summary.suspects + row.suspects,
+      }),
+      { deaths: 0, injuries: 0, suspects: 0 }
+    );
+  }, [rows]);
+
+  return (
+    <section className="trend-page panel-pop">
+      <div className="trend-page-header">
+        <div>
+          <span>縣市趨勢</span>
+          <h2>{selectedCity || "全部縣市"}</h2>
+          <p>
+            死亡與受傷來自新聞事件整理；毒品嫌疑犯人數為公開統計背景資料。
+            中間以波浪號區隔，代表兩者量級差距大，不建議直接相加比較。
+          </p>
+          <p className="trend-motion-note">
+            動態設計：死亡線保持靜止，受傷線慢速脈動，毒品嫌疑犯線以心跳節奏提示背景風險仍在持續。
+          </p>
+        </div>
+
+        <div className="trend-summary">
+          <div>
+            <small>死亡</small>
+            <b>{totals.deaths}</b>
+          </div>
+          <div>
+            <small>受傷</small>
+            <b>{totals.injuries}</b>
+          </div>
+          <div>
+            <small>毒品嫌疑犯</small>
+            <b>{totals.suspects.toLocaleString()}</b>
+          </div>
+        </div>
+      </div>
+
+      {rows.length ? (
+        <>
+          <div className="trend-legend">
+            <span>
+              <i className="legend-death" />
+              死亡人數
+            </span>
+            <span>
+              <i className="legend-injury" />
+              受傷人數
+            </span>
+            <span>
+              <i className="legend-suspect" />
+              毒品嫌疑犯人數
+            </span>
+          </div>
+
+          <TrendBreakChart rows={rows} />
+        </>
+      ) : (
+        <div className="empty-panel">目前篩選條件沒有趨勢資料</div>
+      )}
+    </section>
   );
 }
 
 function NewsListPage({ incidents, selectedCity }) {
   return (
     <section className="news-page panel-pop">
-      <div className="news-header">
-        <div>
-          <span>新聞報導</span>
-          <h2>{selectedCity || "全部縣市"}</h2>
-        </div>
-        <b>{incidents.length} 篇</b>
+      <div className="section-head">
+        <span>新聞報導</span>
+        <h2>{selectedCity || "全部縣市"}</h2>
+        <p>{incidents.length} 篇</p>
       </div>
+
       <div className="news-list">
-        {incidents.length ? incidents.map((incident) => (
-          <article key={incident.id} className="news-row">
-            <div className="card-meta">
-              <span>{incident.city}</span>
-              <span>{formatDate(incident.publishedAt)}</span>
-              <span>{incident.source}</span>
-            </div>
-            <h3>{incident.title}</h3>
-            <p>{incident.summary}</p>
-            <div className="news-row-footer">
-              <span className="death-pill">死亡 {incident.deaths}</span>
-              <span className="injury-pill">受傷 {incident.injuries}</span>
-              <a href={incident.url} target="_blank" rel="noreferrer">閱讀原文</a>
-            </div>
-          </article>
-        )) : <div className="empty-panel">目前篩選條件沒有新聞</div>}
+        {incidents.length ? (
+          incidents.map((incident) => (
+            <article className="news-card" key={incident.id}>
+              <div className="news-meta">
+                <span>{incident.city}</span>
+                <span>{formatDate(incident.publishedAt)}</span>
+                <span>{incident.source}</span>
+              </div>
+              <h3>{incident.title}</h3>
+              <p>{incident.summary}</p>
+              <div className="news-footer">
+                <span>
+                  死亡 {incident.deaths}｜受傷 {incident.injuries}
+                </span>
+                <a href={incident.url} target="_blank" rel="noreferrer">
+                  閱讀原文
+                </a>
+              </div>
+            </article>
+          ))
+        ) : (
+          <div className="empty-panel">目前篩選條件沒有新聞</div>
+        )}
       </div>
     </section>
   );
@@ -518,7 +1169,11 @@ export default function App() {
   const didInitMonths = useRef(false);
   const didInitSources = useRef(false);
 
-  const months = useMemo(() => [...new Set(incidents.map((incident) => incident.publishedAt.slice(0, 7)))].sort().reverse(), [incidents]);
+  const months = useMemo(
+    () => [...new Set(incidents.map((incident) => incident.publishedAt.slice(0, 7)))].sort().reverse(),
+    [incidents]
+  );
+
   const sources = useMemo(() => [...new Set(incidents.map((incident) => incident.source))].sort(), [incidents]);
 
   useEffect(() => {
@@ -546,42 +1201,101 @@ export default function App() {
     return selectedCity ? monthSourceIncidents.filter((incident) => incident.city === selectedCity) : monthSourceIncidents;
   }, [monthSourceIncidents, selectedCity]);
 
-  const ranking = useMemo(() => buildCityRanking(monthSourceIncidents, suspects, selectedMonths), [monthSourceIncidents, selectedMonths, suspects]);
+  const ranking = useMemo(
+    () => buildCityRanking(monthSourceIncidents, suspects, selectedMonths),
+    [monthSourceIncidents, selectedMonths, suspects]
+  );
 
   const cityLevels = useMemo(() => {
     return new Map(ranking.map((item, index) => [item.city, rankingLevel(item, index)]));
   }, [ranking]);
 
   const metrics = useMemo(() => {
-    const deaths = visibleIncidents.reduce((sum, item) => sum + item.deaths, 0);
-    const injuries = visibleIncidents.reduce((sum, item) => sum + item.injuries, 0);
+    const deaths = visibleIncidents.reduce((sum, item) => sum + Number(item.deaths || 0), 0);
+    const injuries = visibleIncidents.reduce((sum, item) => sum + Number(item.injuries || 0), 0);
     const topCity = ranking.find((item) => item.score > 0)?.city || "無資料";
-    return { deaths, injuries, events: visibleIncidents.length, topCity };
+
+    return {
+      deaths,
+      injuries,
+      events: visibleIncidents.length,
+      topCity,
+    };
   }, [ranking, visibleIncidents]);
 
+  const dataStatus = useMemo(() => {
+    const dates = incidents.map((incident) => incident.publishedAt).filter(Boolean).sort();
+    const latestDate = dates.length ? formatDate(dates.at(-1)) : "";
+    const monthRange = months.length ? `${toShortMonthLabel(months.at(-1))} - ${toShortMonthLabel(months[0])}` : "";
+
+    return {
+      latestDate,
+      monthRange,
+      totalIncidents: incidents.length,
+      sourceCount: sources.length,
+    };
+  }, [incidents, months, sources]);
+
+  const insights = useMemo(() => {
+    const citySummary = buildCityRanking(monthSourceIncidents, suspects, selectedMonths);
+    const topRiskCity = citySummary.find((item) => item.score > 0)?.city || "無資料";
+    const topDeathCity = [...citySummary].sort((a, b) => b.deaths - a.deaths || b.events - a.events)[0]?.deaths
+      ? [...citySummary].sort((a, b) => b.deaths - a.deaths || b.events - a.events)[0].city
+      : "無資料";
+    const topInjuryCity = [...citySummary].sort((a, b) => b.injuries - a.injuries || b.events - a.events)[0]?.injuries
+      ? [...citySummary].sort((a, b) => b.injuries - a.injuries || b.events - a.events)[0].city
+      : "無資料";
+
+    return {
+      topRiskCity,
+      topDeathCity,
+      topInjuryCity,
+    };
+  }, [monthSourceIncidents, selectedMonths, suspects]);
+
   return (
-    <main className="app-shell">
-      <header className="site-header app-header">
-        <p>新聞事件與公開統計整理</p>
-        <h1>全台毒駕死傷地圖</h1>
-        <span>骷顱頭代表死亡，拐杖代表受傷。月份、來源與縣市會同步影響地圖、排名、趨勢與新聞列表。</span>
+    <div className="app-shell">
+      <header className="app-hero">
+        <div>
+          <span>新聞事件與公開統計整理</span>
+          <h1>全台毒駕死傷地圖</h1>
+          <p>
+            以新聞死傷事件與毒品嫌疑犯公開統計為基礎，建立可互動、可篩選、可追蹤趨勢的公共安全資料儀表板。
+          </p>
+        </div>
+
         <nav className="view-tabs" aria-label="頁面切換">
-          <button type="button" className={activeView === "map" ? "active" : ""} onClick={() => setActiveView("map")}>地圖</button>
-          <button type="button" className={activeView === "news" ? "active" : ""} onClick={() => setActiveView("news")}>新聞列表</button>
+          <button type="button" className={activeView === "map" ? "active" : ""} onClick={() => setActiveView("map")}>
+            地圖
+          </button>
+          <button
+            type="button"
+            className={activeView === "trend" ? "active" : ""}
+            onClick={() => setActiveView("trend")}
+          >
+            縣市趨勢
+          </button>
+          <button type="button" className={activeView === "news" ? "active" : ""} onClick={() => setActiveView("news")}>
+            新聞列表
+          </button>
         </nav>
       </header>
 
-      <div className="metrics-row" aria-label="目前篩選期間統計">
-        <Metric label={selectedCity ? `死亡：${selectedCity}` : "死亡"} value={metrics.deaths} tone="danger" />
-        <Metric label="受傷" value={metrics.injuries} tone="warning" />
-        <Metric label="新聞事件" value={metrics.events} />
-        <Metric label="目前最高排名" value={metrics.topCity} tone="risk" />
-      </div>
+      <DataStatusBar status={dataStatus} />
 
-      <section className="hero-grid">
-        <div className="map-column">
+      <section className="metric-grid">
+        <Metric label="新聞事件" value={metrics.events} tone="neutral" helper="目前篩選" />
+        <Metric label="死亡人數" value={metrics.deaths} tone="danger" helper="新聞事件整理" />
+        <Metric label="受傷人數" value={metrics.injuries} tone="warning" helper="新聞事件整理" />
+        <Metric label="最高風險縣市" value={metrics.topCity} tone="accent" helper="綜合排序" />
+      </section>
+
+      <InsightStrip insights={insights} />
+
+      <section className={`hero-grid ${activeView === "trend" ? "trend-mode" : ""}`}>
+        <div className="main-column">
           {loading ? (
-            <div className="loading">資料載入中</div>
+            <div className="loading panel-pop">資料載入中</div>
           ) : activeView === "map" ? (
             <TaiwanMap
               incidents={visibleIncidents}
@@ -589,6 +1303,14 @@ export default function App() {
               selectedCity={selectedCity}
               cityLevels={cityLevels}
               onSelectCity={setSelectedCity}
+            />
+          ) : activeView === "trend" ? (
+            <CityTrendPage
+              months={months}
+              selectedMonths={selectedMonths}
+              incidents={monthSourceIncidents}
+              suspects={suspects}
+              selectedCity={selectedCity}
             />
           ) : (
             <NewsListPage incidents={visibleIncidents} selectedCity={selectedCity} />
@@ -608,15 +1330,22 @@ export default function App() {
             ranking={ranking}
             selectedCity={selectedCity}
             onSelectCity={setSelectedCity}
+            showRanking={activeView === "map"}
+            activeView={activeView}
+            metrics={metrics}
+            insights={insights}
           />
-          <TrendCard city={selectedCity} months={selectedMonths} suspects={suspects} incidents={monthSourceIncidents} />
+
         </div>
       </section>
 
-      <section className="source-note">
+      <footer className="data-note panel-pop">
         <strong>資料說明</strong>
-        <p>新聞事件代表媒體報導案例，不等同官方完整事故統計；毒品嫌疑犯人數來自附件公開統計，作為風險指標的背景因子。</p>
-      </section>
-    </main>
+        <p>
+          新聞事件代表媒體報導案例，不等同官方完整事故統計；毒品嫌疑犯人數來自附件公開統計，
+          作為風險指標的背景因子。
+        </p>
+      </footer>
+    </div>
   );
 }
