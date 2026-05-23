@@ -95,7 +95,8 @@ function getSvgMapBounds(locations, padding = 96) {
 }
 
 const mainlandMapLocations = mapLocations.filter((location) => !offshoreCities.has(location.city));
-const defaultMapBounds = getSvgMapBounds(mainlandMapLocations);
+// 初始地圖固定聚焦完整本島，保留足夠 padding，避免本島被裁切或放太大。
+const defaultMapBounds = getSvgMapBounds(mainlandMapLocations, 132);
 const iconMap = { death: "☠️", injury: "🩼" };
 
 function toMonthLabel(month) {
@@ -286,14 +287,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
 
-  const mapBounds = useMemo(() => {
-    const incidentCities = new Set(incidents.map((incident) => incident.city));
-    const includedLocations = mapLocations.filter((location) => {
-      return !offshoreCities.has(location.city) || incidentCities.has(location.city);
-    });
-
-    return getSvgMapBounds(includedLocations.length ? includedLocations : mainlandMapLocations);
-  }, [incidents]);
+  const mapBounds = defaultMapBounds;
 
   useEffect(() => {
     const nextPositions = {};
@@ -798,6 +792,93 @@ function CurrentFilterSummary({ selectedCity, selectedMonths, metrics }) {
   );
 }
 
+
+function MonthPicker({ months, selectedMonths, setSelectedMonths, toggleSet }) {
+  const selectedSet = new Set(selectedMonths);
+
+  return (
+    <section className="month-picker-panel" aria-label="資料月份">
+      <div className="month-picker-header">
+        <h3>資料月份</h3>
+        <div className="month-picker-actions">
+          <button type="button" onClick={() => setSelectedMonths(months.slice(0, 3))}>
+            近3月
+          </button>
+          <button type="button" onClick={() => setSelectedMonths(months.slice(0, 6))}>
+            近6月
+          </button>
+          <button type="button" onClick={() => setSelectedMonths(months)}>
+            全部
+          </button>
+        </div>
+      </div>
+
+      <div className="month-picker-scroll" role="list" aria-label="月份清單">
+        {months.map((month) => (
+          <label
+            key={month}
+            className={`month-picker-chip ${selectedSet.has(month) ? "checked" : ""}`}
+            role="listitem"
+          >
+            <input
+              type="checkbox"
+              checked={selectedSet.has(month)}
+              onChange={() => toggleSet(month, selectedMonths, setSelectedMonths)}
+            />
+            <span>{toShortMonthLabel(month)}</span>
+          </label>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function GlobalMonthBar({ months, selectedMonths, setSelectedMonths }) {
+  const toggleMonth = (month) => {
+    setSelectedMonths((current) =>
+      current.includes(month) ? current.filter((item) => item !== month) : [...current, month]
+    );
+  };
+
+  return (
+    <section className="global-month-bar panel-pop" aria-label="全域月份篩選">
+      <div className="global-month-head">
+        <div>
+          <span>資料月份</span>
+          <strong>{selectedMonths.length === months.length ? "全部月份" : `已選 ${selectedMonths.length} 個月份`}</strong>
+        </div>
+
+        <div className="global-month-actions">
+          <button type="button" onClick={() => setSelectedMonths(months.slice(0, 3))}>
+            近3月
+          </button>
+          <button type="button" onClick={() => setSelectedMonths(months.slice(0, 6))}>
+            近6月
+          </button>
+          <button type="button" onClick={() => setSelectedMonths(months)}>
+            全部
+          </button>
+        </div>
+      </div>
+
+      <div className="global-month-scroll" role="list" aria-label="月份清單">
+        {months.map((month) => (
+          <button
+            type="button"
+            key={month}
+            className={`global-month-chip ${selectedMonths.includes(month) ? "checked" : ""}`}
+            onClick={() => toggleMonth(month)}
+            role="listitem"
+          >
+            {toShortMonthLabel(month)}
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
 function ControlPanel({
   months,
   selectedMonths,
@@ -824,7 +905,7 @@ function ControlPanel({
       <div className="tool-panel-head">
         <span>工具面板</span>
         <h2>{activeView === "map" ? "地圖控制" : activeView === "trend" ? "趨勢篩選" : "新聞篩選"}</h2>
-        <p>調整月份與縣市後，地圖、趨勢圖與新聞列表會同步更新。</p>
+        <p>上方月份列與縣市選取會同步影響地圖、趨勢圖與新聞列表。</p>
       </div>
 
       <section className="tool-section focus-card">
@@ -851,35 +932,7 @@ function ControlPanel({
         metrics={metrics}
       />
 
-      <section className="tool-section filter-group month-filter">
-        <div className="filter-title compact">
-          <h3>資料月份</h3>
-          <div className="quick-month-actions">
-            <button type="button" onClick={() => setSelectedMonths(months.slice(0, 3))}>
-              近3月
-            </button>
-            <button type="button" onClick={() => setSelectedMonths(months.slice(0, 6))}>
-              近6月
-            </button>
-            <button type="button" onClick={() => setSelectedMonths(months)}>
-              全部
-            </button>
-          </div>
-        </div>
 
-        <div className="month-scroll" role="list" aria-label="月份篩選">
-          {months.map((month) => (
-            <label key={month} className={`month-chip ${selectedMonths.includes(month) ? "checked" : ""}`} role="listitem">
-              <input
-                type="checkbox"
-                checked={selectedMonths.includes(month)}
-                onChange={() => toggleSet(month, selectedMonths, setSelectedMonths)}
-              />
-              {toShortMonthLabel(month)}
-            </label>
-          ))}
-        </div>
-      </section>
 
 
       <MapLegend activeView={activeView} />
@@ -1037,9 +1090,7 @@ function CityTrendPage({ months, selectedMonths, incidents, suspects, selectedCi
             死亡與受傷來自新聞事件整理；毒品嫌疑犯人數為公開統計背景資料。
             中間以波浪號區隔，代表兩者量級差距大，不建議直接相加比較。
           </p>
-          <p className="trend-motion-note">
-            動態設計：死亡線保持靜止，受傷線慢速脈動，毒品嫌疑犯線以心跳節奏提示背景風險仍在持續。
-          </p>
+
         </div>
 
         <div className="trend-summary">
@@ -1254,6 +1305,12 @@ export default function App() {
       </section>
 
       <InsightStrip insights={insights} />
+
+      <GlobalMonthBar
+        months={months}
+        selectedMonths={selectedMonths}
+        setSelectedMonths={setSelectedMonths}
+      />
 
       <section className={`hero-grid ${activeView === "trend" ? "trend-mode" : ""}`}>
         <div className="main-column">
