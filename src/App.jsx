@@ -1,5 +1,5 @@
 import taiwanMap from "@svg-maps/taiwan";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
 
 const cityNameByMapId = {
@@ -59,44 +59,21 @@ const mapLocations = taiwanMap.locations.map((location) => ({
 }));
 
 const offshoreCities = new Set(["澎湖縣", "金門縣", "連江縣"]);
+const MAP_PADDING = 132;
+const MAX_MAP_ZOOM = 2.75;
 
-function getSvgMapBounds(locations, padding = 96) {
-  const points = [];
+function getFallbackMapBounds() {
+  const fallback = String(taiwanMap.viewBox || "")
+    .split(/\s+/)
+    .map(Number);
 
-  locations.forEach((location) => {
-    const numbers = String(location.path).match(/-?\d+(?:\.\d+)?/g)?.map(Number) || [];
+  if (fallback.length === 4 && fallback.every(Number.isFinite)) return fallback;
 
-    for (let index = 0; index < numbers.length - 1; index += 2) {
-      points.push({
-        x: numbers[index],
-        y: numbers[index + 1],
-      });
-    }
-  });
-
-  if (!points.length && taiwanMap.viewBox) {
-    const fallback = String(taiwanMap.viewBox).split(/\s+/).map(Number);
-    if (fallback.length === 4 && fallback.every(Number.isFinite)) return fallback;
-  }
-
-  if (!points.length) return [0, 0, 1000, 1200];
-
-  const minX = Math.min(...points.map((point) => point.x));
-  const maxX = Math.max(...points.map((point) => point.x));
-  const minY = Math.min(...points.map((point) => point.y));
-  const maxY = Math.max(...points.map((point) => point.y));
-
-  return [
-    minX - padding,
-    minY - padding,
-    maxX - minX + padding * 2,
-    maxY - minY + padding * 2,
-  ];
+  return [0, 0, 1000, 1200];
 }
 
-const mainlandMapLocations = mapLocations.filter((location) => !offshoreCities.has(location.city));
-// 初始地圖固定聚焦完整本島，保留足夠 padding，避免本島被裁切或放太大。
-const defaultMapBounds = getSvgMapBounds(mainlandMapLocations, 132);
+const defaultMapBounds = getFallbackMapBounds();
+const visibleMapLocations = mapLocations.filter((location) => !offshoreCities.has(location.city));
 const iconMap = { death: "☠️", injury: "🩼" };
 
 function toMonthLabel(month) {
@@ -208,6 +185,35 @@ function zoomedViewBox(zoom, pan = { x: 0, y: 0 }, bounds = defaultMapBounds) {
   const clampedPan = clampMapPan(zoom, pan, bounds);
 
   return `${x + (width - nextWidth) / 2 + clampedPan.x} ${y + (height - nextHeight) / 2 + clampedPan.y} ${nextWidth} ${nextHeight}`;
+}
+
+function getElementBounds(elements, padding = 0) {
+  const boxes = elements.map((element) => element.getBBox()).filter((box) => box.width > 0 && box.height > 0);
+
+  if (!boxes.length) return null;
+
+  const minX = Math.min(...boxes.map((box) => box.x));
+  const maxX = Math.max(...boxes.map((box) => box.x + box.width));
+  const minY = Math.min(...boxes.map((box) => box.y));
+  const maxY = Math.max(...boxes.map((box) => box.y + box.height));
+
+  return [
+    minX - padding,
+    minY - padding,
+    maxX - minX + padding * 2,
+    maxY - minY + padding * 2,
+  ];
+}
+
+function getPointerDistance(first, second) {
+  return Math.hypot(first.clientX - second.clientX, first.clientY - second.clientY);
+}
+
+function getPointerMidpoint(first, second) {
+  return {
+    clientX: (first.clientX + second.clientX) / 2,
+    clientY: (first.clientY + second.clientY) / 2,
+  };
 }
 
 async function loadJson(filePath, fallback) {
@@ -362,6 +368,10 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   const svgRef = useRef(null);
   const panelRef = useRef(null);
   const dragStateRef = useRef(null);
+  const pinchStateRef = useRef(null);
+  const pointerPositionsRef = useRef(new Map());
+  const latestZoomRef = useRef(1);
+  const latestPanRef = useRef({ x: 0, y: 0 });
   const wasDraggingRef = useRef(false);
   const [cityPositions, setCityPositions] = useState({});
   const [hoverIncident, setHoverIncident] = useState(null);
@@ -369,15 +379,18 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
+  const [mapBounds, setMapBounds] = useState(defaultMapBounds);
 
-  const mapBounds = defaultMapBounds;
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     const nextPositions = {};
+    const mainlandElements = [];
 
     svgRef.current?.querySelectorAll(".county-shape").forEach((element) => {
       const city = element.dataset.city;
       const box = element.getBBox();
+
+      if (!offshoreCities.has(city)) mainlandElements.push(element);
+
       nextPositions[city] = {
         x: box.x + box.width / 2,
         y: box.y + box.height / 2,
@@ -386,7 +399,16 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
     });
 
     setCityPositions(nextPositions);
+    setMapBounds(getElementBounds(mainlandElements, MAP_PADDING) || defaultMapBounds);
   }, []);
+
+  useEffect(() => {
+    latestZoomRef.current = zoom;
+  }, [zoom]);
+
+  useEffect(() => {
+    latestPanRef.current = pan;
+  }, [pan]);
 
   useEffect(() => {
     setZoom(1);
@@ -462,7 +484,56 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
     updateHoverPosition(event);
   };
 
+  const beginPinchZoom = () => {
+    const pointers = [...pointerPositionsRef.current.values()];
+    if (pointers.length < 2) return false;
+
+    const [first, second] = pointers;
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (!rect) return false;
+
+    const startDistance = getPointerDistance(first, second);
+    if (startDistance <= 0) return false;
+
+    const [viewX, viewY, viewWidth, viewHeight] = zoomedViewBox(
+      latestZoomRef.current,
+      latestPanRef.current,
+      mapBounds,
+    )
+      .split(" ")
+      .map(Number);
+    const midpoint = getPointerMidpoint(first, second);
+    const relativeX = clampNumber((midpoint.clientX - rect.left) / rect.width, 0, 1);
+    const relativeY = clampNumber((midpoint.clientY - rect.top) / rect.height, 0, 1);
+
+    pinchStateRef.current = {
+      startDistance,
+      startZoom: latestZoomRef.current,
+      anchorSvgX: viewX + relativeX * viewWidth,
+      anchorSvgY: viewY + relativeY * viewHeight,
+      rect,
+      moved: false,
+    };
+    dragStateRef.current = null;
+    setIsDragging(false);
+
+    return true;
+  };
+
   const handlePointerDown = (event) => {
+    if (event.pointerType !== "mouse") {
+      pointerPositionsRef.current.set(event.pointerId, {
+        clientX: event.clientX,
+        clientY: event.clientY,
+      });
+      event.currentTarget.setPointerCapture?.(event.pointerId);
+
+      if (pointerPositionsRef.current.size >= 2 && beginPinchZoom()) {
+        event.preventDefault();
+        return;
+      }
+    }
+
     if (zoom <= 1) return;
     if (event.button !== undefined && event.button !== 0) return;
 
@@ -488,6 +559,44 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   };
 
   const handlePointerMove = (event) => {
+    if (pointerPositionsRef.current.has(event.pointerId)) {
+      pointerPositionsRef.current.set(event.pointerId, {
+        clientX: event.clientX,
+        clientY: event.clientY,
+      });
+    }
+
+    const pinchState = pinchStateRef.current;
+    if (pinchState) {
+      const pointers = [...pointerPositionsRef.current.values()];
+      if (pointers.length >= 2) {
+        const [first, second] = pointers;
+        const distance = getPointerDistance(first, second);
+        const midpoint = getPointerMidpoint(first, second);
+        const nextZoom = clampNumber(
+          pinchState.startZoom * (distance / pinchState.startDistance),
+          1,
+          MAX_MAP_ZOOM,
+        );
+        const [boundsX, boundsY, boundsWidth, boundsHeight] = mapBounds;
+        const nextWidth = boundsWidth / nextZoom;
+        const nextHeight = boundsHeight / nextZoom;
+        const relativeX = clampNumber((midpoint.clientX - pinchState.rect.left) / pinchState.rect.width, 0, 1);
+        const relativeY = clampNumber((midpoint.clientY - pinchState.rect.top) / pinchState.rect.height, 0, 1);
+        const nextPan = {
+          x: pinchState.anchorSvgX - relativeX * nextWidth - boundsX - (boundsWidth - nextWidth) / 2,
+          y: pinchState.anchorSvgY - relativeY * nextHeight - boundsY - (boundsHeight - nextHeight) / 2,
+        };
+
+        pinchState.moved = true;
+        wasDraggingRef.current = true;
+        setZoom(nextZoom);
+        setPan(clampMapPan(nextZoom, nextPan, mapBounds));
+        event.preventDefault();
+      }
+      return;
+    }
+
     const dragState = dragStateRef.current;
     if (!dragState) return;
 
@@ -508,7 +617,20 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
     event.preventDefault();
   };
 
-  const endPointerDrag = (event) => {
+  const endPointerInteraction = (event) => {
+    pointerPositionsRef.current.delete(event.pointerId);
+
+    if (pinchStateRef.current) {
+      wasDraggingRef.current = Boolean(pinchStateRef.current.moved);
+      pinchStateRef.current = null;
+      event.currentTarget.releasePointerCapture?.(event.pointerId);
+
+      window.setTimeout(() => {
+        wasDraggingRef.current = false;
+      }, 0);
+      return;
+    }
+
     const dragState = dragStateRef.current;
     if (!dragState) return;
 
@@ -532,7 +654,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
 
         <div className="zoom-control-wrap">
           <div className="zoom-controls" aria-label="地圖縮放">
-            <button type="button" onClick={() => setZoom((value) => Math.min(2.75, value + 0.25))}>
+            <button type="button" onClick={() => setZoom((value) => Math.min(MAX_MAP_ZOOM, value + 0.25))}>
               +
             </button>
             <button type="button" onClick={() => setZoom((value) => Math.max(1, value - 0.25))}>
@@ -548,7 +670,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
               重設
             </button>
           </div>
-          <small className="map-drag-hint">{zoom > 1 ? "拖曳地圖查看細節" : "放大後可拖曳"}</small>
+          <small className="map-drag-hint">{zoom > 1 ? "拖曳地圖查看細節" : "雙指放大後可拖曳"}</small>
         </div>
       </div>
 
@@ -560,9 +682,9 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
         aria-label="台灣毒駕事件地圖"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
-        onPointerUp={endPointerDrag}
-        onPointerCancel={endPointerDrag}
-        onPointerLeave={endPointerDrag}
+        onPointerUp={endPointerInteraction}
+        onPointerCancel={endPointerInteraction}
+        onPointerLeave={endPointerInteraction}
       >
         <defs>
           <filter id="badgeShadow" x="-40%" y="-40%" width="180%" height="180%">
@@ -571,7 +693,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
         </defs>
 
         <g className="map-layer">
-          {mapLocations.map((location) => {
+          {visibleMapLocations.map((location) => {
             const risk = cityLevels.get(location.city) || "low";
             return (
               <path
