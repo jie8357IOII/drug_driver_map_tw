@@ -957,6 +957,62 @@ function GlobalMonthBar({ months, selectedMonths, setSelectedMonths }) {
   );
 }
 
+function MobileSummaryBar({ status, metrics, latestIncident, selectedCity }) {
+  return (
+    <section className="mobile-summary-bar panel-pop" aria-label="手機版資料摘要">
+      <div>
+        <span>{status.latestDate || "尚無日期"} 更新</span>
+        <strong>
+          {selectedCity || "全部縣市"}｜{metrics.events}件｜{metrics.deaths}死{metrics.injuries}傷
+        </strong>
+      </div>
+
+      {latestIncident ? (
+        <a href={latestIncident.url} target="_blank" rel="noreferrer">
+          最新：{latestIncident.city}｜{formatDate(latestIncident.publishedAt)}
+        </a>
+      ) : (
+        <small>目前篩選條件沒有最新事故</small>
+      )}
+    </section>
+  );
+}
+
+function PageContextBar({ activeView, selectedCity, metrics, selectedMonths, months, newsCount }) {
+  const cityText = selectedCity || "全部縣市";
+  const monthText = selectedMonths.length === months.length ? "全部月份" : `已選 ${selectedMonths.length} 個月份`;
+
+  const content = {
+    map: {
+      title: "地圖",
+      text: `${cityText}｜${metrics.events}件｜${metrics.deaths}死${metrics.injuries}傷`,
+    },
+    trend: {
+      title: "縣市趨勢",
+      text: `${cityText}｜${monthText}｜死傷與毒品嫌疑犯趨勢`,
+    },
+    caseStats: {
+      title: "案件統計",
+      text: `${cityText}｜${metrics.events}件納入統計`,
+    },
+    news: {
+      title: "新聞列表",
+      text: `${cityText}｜完整新聞 ${newsCount} 篇｜含排除統計與後續報導`,
+    },
+  }[activeView] || {
+    title: "資料檢視",
+    text: `${cityText}｜${monthText}`,
+  };
+
+  return (
+    <section className="page-context-bar panel-pop" aria-label="目前分頁摘要">
+      <span>{content.title}</span>
+      <strong>{content.text}</strong>
+    </section>
+  );
+}
+
+
 
 function ControlPanel({
   months,
@@ -1655,6 +1711,8 @@ export default function App() {
   const [selectedCity, setSelectedCity] = useState("");
   const didInitMonths = useRef(false);
   const didInitSources = useRef(false);
+  const mainContentRef = useRef(null);
+  const didAutoScrollRef = useRef(false);
 
   const months = useMemo(
     () => [...new Set(incidents.map((incident) => incident.publishedAt.slice(0, 7)))].sort().reverse(),
@@ -1676,6 +1734,22 @@ export default function App() {
       didInitSources.current = true;
     }
   }, [sources]);
+
+  useEffect(() => {
+    if (!didAutoScrollRef.current) {
+      didAutoScrollRef.current = true;
+      return;
+    }
+
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      window.requestAnimationFrame(() => {
+        mainContentRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    }
+  }, [activeView]);
 
   const selectedMonthIncidents = useMemo(() => {
     return incidents.filter((incident) => {
@@ -1721,6 +1795,12 @@ export default function App() {
       .filter(isStatsIncident)
       .sort((a, b) => String(b.publishedAt || "").localeCompare(String(a.publishedAt || "")))[0];
   }, [visibleIncidents]);
+
+  const visibleNewsCount = useMemo(() => {
+    return selectedCity
+      ? selectedMonthIncidents.filter((incident) => incident.city === selectedCity).length
+      : selectedMonthIncidents.length;
+  }, [selectedCity, selectedMonthIncidents]);
 
   const dataStatus = useMemo(() => {
     const dates = incidents.map((incident) => incident.publishedAt).filter(Boolean).sort();
@@ -1797,11 +1877,31 @@ export default function App() {
 
       <InsightStrip insights={insights} />
 
-      <GlobalMonthBar
-        months={months}
-        selectedMonths={selectedMonths}
-        setSelectedMonths={setSelectedMonths}
+      <MobileSummaryBar
+        status={dataStatus}
+        metrics={metrics}
+        latestIncident={latestIncident}
+        selectedCity={selectedCity}
       />
+
+      <div className="desktop-month-wrap">
+        <GlobalMonthBar
+          months={months}
+          selectedMonths={selectedMonths}
+          setSelectedMonths={setSelectedMonths}
+        />
+      </div>
+
+      <div ref={mainContentRef} className="main-content-anchor">
+        <PageContextBar
+          activeView={activeView}
+          selectedCity={selectedCity}
+          metrics={metrics}
+          selectedMonths={selectedMonths}
+          months={months}
+          newsCount={visibleNewsCount}
+        />
+      </div>
 
       <section className={`hero-grid ${activeView === "trend" ? "trend-mode" : ""}`}>
         <div className="main-column">
@@ -1855,6 +1955,14 @@ export default function App() {
 
         </div>
       </section>
+
+      <div className="mobile-month-wrap">
+        <GlobalMonthBar
+          months={months}
+          selectedMonths={selectedMonths}
+          setSelectedMonths={setSelectedMonths}
+        />
+      </div>
 
       <footer className="data-note data-footer panel-pop">
         <section>
