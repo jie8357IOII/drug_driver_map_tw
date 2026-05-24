@@ -254,6 +254,25 @@ function Metric({ label, value, tone, helper }) {
   );
 }
 
+function LatestIncidentMetric({ incident }) {
+  return (
+    <article className="metric-card latest-incident-card accent">
+      <i className="metric-glow" aria-hidden="true" />
+      <span>最新事故縣市</span>
+      <strong>
+        {incident ? `${incident.city}｜${formatDate(incident.publishedAt)}` : "無資料"}
+      </strong>
+      {incident ? (
+        <a href={incident.url} target="_blank" rel="noreferrer" title={incident.title}>
+          {incident.title}
+        </a>
+      ) : (
+        <small>目前沒有符合篩選條件的事故</small>
+      )}
+    </article>
+  );
+}
+
 function buildCityRanking(incidents, suspects, months) {
   const selectedMonthSet = new Set(months);
 
@@ -1697,6 +1716,12 @@ export default function App() {
     };
   }, [ranking, visibleIncidents]);
 
+  const latestIncident = useMemo(() => {
+    return [...visibleIncidents]
+      .filter(isStatsIncident)
+      .sort((a, b) => String(b.publishedAt || "").localeCompare(String(a.publishedAt || "")))[0];
+  }, [visibleIncidents]);
+
   const dataStatus = useMemo(() => {
     const dates = incidents.map((incident) => incident.publishedAt).filter(Boolean).sort();
     const latestDate = dates.length ? formatDate(dates.at(-1)) : "";
@@ -1767,7 +1792,7 @@ export default function App() {
         <Metric label="新聞事件" value={metrics.events} tone="neutral" helper="目前篩選" />
         <Metric label="死亡人數" value={metrics.deaths} tone="danger" helper="新聞事件整理" />
         <Metric label="受傷人數" value={metrics.injuries} tone="warning" helper="新聞事件整理" />
-        <Metric label="最高風險縣市" value={metrics.topCity} tone="accent" helper="綜合排序" />
+        <LatestIncidentMetric incident={latestIncident} />
       </section>
 
       <InsightStrip insights={insights} />

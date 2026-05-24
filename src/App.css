@@ -2738,3 +2738,43 @@ body {
     border-radius: 16px;
   }
 }
+
+
+/* v17 latest incident metric */
+.latest-incident-card {
+  min-width: 0;
+}
+
+.latest-incident-card a {
+  display: -webkit-box;
+  margin-top: 10px;
+  color: #0c746b;
+  font-size: 0.82rem;
+  font-weight: 950;
+  line-height: 1.45;
+  text-decoration: none;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.latest-incident-card a:hover {
+  color: #8c2d2d;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.latest-incident-card small {
+  display: block;
+  margin-top: 10px;
+  color: #85877f;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+
+/* v18 latest incident date */
+.latest-incident-card strong {
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  letter-spacing: -0.04em;
+}
