@@ -1,5 +1,238 @@
 [
   {
+    "id": "ltn-0d99b461f469",
+    "title": "又來！捷運新埔站保時捷猛撞燈桿半毀 「喪屍」駕駛脫困被移送",
+    "source": "LTN",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5448041",
+    "publishedAt": "2026-05-24",
+    "city": "新北市",
+    "deaths": 0,
+    "injuries": 1,
+    "summary": "42歲洪姓業務員駕駛保時捷休旅車行經新北市板橋區捷運新埔站附近，疑未煞車衝撞分隔島燈桿，車頭全毀，洪男受困後由警消協助脫困並有擦挫傷。警方在車內搜出依托咪酯煙彈及安非他命，毒品唾液快篩呈依托咪酯、安非他命陽性反應，訊後依法送辦。",
+    "confidence": "reviewed_ok",
+    "extractedDetails": {
+      "driver": {
+        "age": 42,
+        "ageGroup": "35-44",
+        "gender": "male",
+        "vehicleTypes": [
+          "休旅車"
+        ],
+        "allMentionedVehicleTypes": [
+          "保時捷",
+          "休旅車"
+        ],
+        "primaryVehicleType": "休旅車",
+        "primaryVehicleLabel": "保時捷休旅車",
+        "vehicleExtractionMethod": "subject_pattern"
+      },
+      "drug": {
+        "keywords": [
+          "依托咪酯",
+          "喪屍煙彈",
+          "安非他命"
+        ],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          },
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
+      },
+      "crash": {
+        "scenarioTypes": [
+          "自撞/失控"
+        ],
+        "refusedInspection": false,
+        "hitAndRun": false,
+        "policeInteraction": true
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口",
+          "捷運/車站周邊"
+        ],
+        "familyImpact": false,
+        "schoolImpact": false,
+        "publicPlaceImpact": true
+      }
+    },
+    "dataQuality": {
+      "version": "quality_update_2026-05-24",
+      "sourceBasis": "title_summary_related_reports_only",
+      "includeInStats": true,
+      "originalDeaths": 0,
+      "originalInjuries": 1,
+      "correctedDeaths": 0,
+      "correctedInjuries": 1,
+      "flags": [
+        "basic_ok",
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
+      ],
+      "reviewNote": "",
+      "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
+    }
+  },
+  {
+    "id": "ltn-1119280a0576",
+    "title": "又見毒駕！拒檢逃1公里闖紅燈撞傷人 中和警壓制搜出喪屍煙彈",
+    "source": "LTN",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5447923",
+    "publishedAt": "2026-05-24",
+    "city": "新北市",
+    "deaths": 0,
+    "injuries": 1,
+    "summary": "36歲李姓男子中午騎機車行經新北市中和區廣福路、光華街口，因行車搖晃遭警方攔查後拒檢逃逸近1公里，沿路違規並在中和路350巷口與綠燈直行的48歲傅姓騎士碰撞，傅男左腳輕微擦傷。警方搜出依托咪酯喪屍煙彈，李男毒品唾液快篩呈安非他命陽性反應，訊後移送偵辦。",
+    "confidence": "reviewed_ok",
+    "extractedDetails": {
+      "driver": {
+        "age": 36,
+        "ageGroup": "35-44",
+        "gender": "male",
+        "vehicleTypes": [
+          "機車"
+        ],
+        "allMentionedVehicleTypes": [
+          "機車"
+        ],
+        "primaryVehicleType": "機車",
+        "primaryVehicleLabel": "機車",
+        "vehicleExtractionMethod": "subject_pattern"
+      },
+      "drug": {
+        "keywords": [
+          "依托咪酯",
+          "喪屍煙彈",
+          "安非他命"
+        ],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          },
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
+      },
+      "crash": {
+        "scenarioTypes": [
+          "拒檢逃逸",
+          "闖紅燈/違規穿越",
+          "連環撞/多車波及"
+        ],
+        "refusedInspection": true,
+        "hitAndRun": false,
+        "policeInteraction": true
+      },
+      "victim": {
+        "activities": [
+          "騎乘機車"
+        ],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口",
+          "警方攔查現場"
+        ],
+        "familyImpact": false,
+        "schoolImpact": false,
+        "publicPlaceImpact": false
+      }
+    },
+    "dataQuality": {
+      "version": "quality_update_2026-05-24",
+      "sourceBasis": "title_summary_related_reports_only",
+      "includeInStats": true,
+      "originalDeaths": 0,
+      "originalInjuries": 1,
+      "correctedDeaths": 0,
+      "correctedInjuries": 1,
+      "flags": [
+        "basic_ok",
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
+      ],
+      "reviewNote": "",
+      "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
+    }
+  },
+  {
     "id": "ltn-6a27e8a30a1d",
     "title": "又是毒駕？彰化砂石車撞破大賣場2傷 駕駛毒品快篩陽性",
     "source": "LTN",
@@ -7,8 +240,8 @@
     "publishedAt": "2026-05-23",
     "city": "彰化縣",
     "deaths": 0,
-    "injuries": 2,
-    "summary": "又是毒駕？1輛砂石車今天（23日）上午行經彰化市東谷路時突然失控衝向路旁，先撞破大賣場鐵捲門，車尾再掃過1輛停等紅燈的休旅車與路過的機車，造成機車乘客慘遭砂石車甩尾撞擊噴飛，砂石車則整輛車打橫在大馬路上，車頭嚴重毀損，現場一片狼藉，所幸砂石車駕駛與機車乘客都僅受輕傷，警方現場對砂石車司機實施毒品快篩",
+    "injuries": 3,
+    "summary": "砂石車23日上午行經彰化市東谷路時失控衝向路旁，先撞破大賣場鐵捲門，車尾再掃過停等紅燈的休旅車與路過機車，造成砂石車駕駛、機車騎士與乘客共3人輕傷。警方現場對砂石車司機實施毒品快篩，呈現安非他命陽性反應，將待其出院後移送彰化地檢署並建請聲押。",
     "confidence": "reviewed_ok",
     "extractedDetails": {
       "driver": {
@@ -29,7 +262,7 @@
       },
       "drug": {
         "keywords": [
-          "毒品陽性未詳"
+          "安非他命"
         ],
         "testMethods": [
           "快篩"
@@ -37,18 +270,18 @@
         "status": "positive_or_found",
         "scheduleClassifications": [
           {
-            "keyword": "毒品陽性未詳",
-            "schedule": "未明",
-            "label": "毒品級別未明",
-            "confidence": "unknown",
-            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
           }
         ],
         "scheduleLabels": [
-          "毒品級別未明"
+          "第二級毒品"
         ],
-        "scheduleSummary": "毒品級別未明",
-        "scheduleNeedsReview": true
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -82,14 +315,13 @@
       "sourceBasis": "title_summary_related_reports_only",
       "includeInStats": true,
       "originalDeaths": 0,
-      "originalInjuries": 2,
+      "originalInjuries": 3,
       "correctedDeaths": 0,
-      "correctedInjuries": 2,
+      "correctedInjuries": 3,
       "flags": [
         "basic_ok",
         "driver_vehicle_refined",
         "drug_schedule_classified",
-        "drug_schedule_needs_review",
         "human_impact_tagged"
       ],
       "reviewNote": "",
@@ -225,8 +457,8 @@
     "publishedAt": "2026-05-23",
     "city": "新北市",
     "deaths": 1,
-    "injuries": 0,
-    "summary": "50歲王姓男子今午駕車經新北市中和區時，在景平路與大勇街口撞擊路邊緣石，倒車時猛烈撞擊後方機車，隨後又駕車前進，當場輾壓被撞倒在地的林姓姊妹，64歲妹妹送醫急救不幸身亡，姊姊仍在救治。警方在王男身上搜出二級毒品依託咪酯喪屍菸彈及吸食器，且現場唾液快篩檢測呈現毒品陽性反應，當場將王男逮捕送辦。",
+    "injuries": 1,
+    "summary": "50歲王姓男子23日駕車行經新北市中和區景平路、大勇街口，撞擊路邊緣石後倒車撞倒雙載機車，再往前輾壓林姓姊妹，造成64歲妹妹送醫不治、71歲姊姊肋骨與骨盆等多處骨折。警方在王男身上搜出二級毒品依托咪酯喪屍煙彈及吸食器，現場唾液快篩呈毒品陽性反應，將王男逮捕送辦。",
     "confidence": "needs_review",
     "extractedDetails": {
       "driver": {
@@ -312,9 +544,9 @@
       "sourceBasis": "title_summary_related_reports_only",
       "includeInStats": true,
       "originalDeaths": 1,
-      "originalInjuries": 0,
+      "originalInjuries": 1,
       "correctedDeaths": 1,
-      "correctedInjuries": 0,
+      "correctedInjuries": 1,
       "flags": [
         "number_context_review",
         "driver_vehicle_refined",
