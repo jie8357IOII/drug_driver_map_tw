@@ -983,6 +983,10 @@ function PageContextBar({ activeView, selectedCity, metrics, selectedMonths, mon
   const monthText = selectedMonths.length === months.length ? "全部月份" : `已選 ${selectedMonths.length} 個月份`;
 
   const content = {
+    life: {
+      title: "生命影響",
+      text: `${cityText}｜看見受害者與家庭影響`,
+    },
     map: {
       title: "地圖",
       text: `${cityText}｜${metrics.events}件｜${metrics.deaths}死${metrics.injuries}傷`,
@@ -1039,7 +1043,7 @@ function ControlPanel({
     <aside className="control-panel tool-panel panel-pop">
       <div className="tool-panel-head">
         <span>工具面板</span>
-        <h2>{activeView === "map" ? "地圖控制" : activeView === "trend" ? "趨勢篩選" : activeView === "caseStats" ? "案件統計" : "新聞篩選"}</h2>
+        <h2>{activeView === "life" ? "生命影響" : activeView === "map" ? "地圖控制" : activeView === "trend" ? "趨勢篩選" : activeView === "caseStats" ? "案件統計" : "新聞篩選"}</h2>
         <p>上方月份列與縣市選取會同步影響地圖、趨勢圖與新聞列表。</p>
       </div>
 
@@ -1398,7 +1402,7 @@ function lifeActivityRows(incidents, limit = 7) {
   }));
 }
 
-function InterruptedDailyLifeSection({ incidents }) {
+function InterruptedDailyLifeSection({ incidents, onFocusNews }) {
   const rows = lifeActivityRows(incidents, 7);
   if (!rows.length) return null;
 
@@ -1414,15 +1418,26 @@ function InterruptedDailyLifeSection({ incidents }) {
 
       <div className="life-card-grid">
         {rows.map((row) => (
-          <article className="life-card" key={row.label}>
+          <button
+            type="button"
+            className="life-card clickable-card"
+            key={row.label}
+            onClick={() =>
+              onFocusNews?.({
+                type: "victimActivity",
+                value: row.label,
+                label: `被打斷的日常｜${row.label}`,
+              })
+            }
+          >
             <div className="life-card-visual" aria-hidden="true">
               <span className="life-card-bgicon">{row.icon}</span>
               <span className="life-card-icon">{row.icon}</span>
             </div>
             <strong>{row.label}</strong>
             <p>{row.text}</p>
-            <small>{row.value} 起新聞提及</small>
-          </article>
+            <small>{row.value} 起新聞提及｜查看相關新聞 →</small>
+          </button>
         ))}
       </div>
     </section>
@@ -1454,6 +1469,151 @@ function AffectedDailyLife({ incident }) {
           : "這起事件背後，可能是一段原本平凡的日常。"}
       </p>
       <ProfileTagList values={contextTags.slice(0, 6)} fallback="新聞未揭露受害者情境" tone="life" />
+    </section>
+  );
+}
+
+
+const familyRoleMeta = {
+  母親: { icon: "👩", narrative: "有些人失去的，不只是家人，也是孩子每天依靠的那個人。" },
+  父親: { icon: "👨", narrative: "有些家庭少了一位父親，留下的是陪伴與支撐突然中斷的空缺。" },
+  女兒: { icon: "👧", narrative: "有些家庭失去的，是本來還會繼續長大的女兒。" },
+  兒子: { icon: "👦", narrative: "有些家庭失去的，是原本還有很多未來的兒子。" },
+  "配偶/伴侶": { icon: "💍", narrative: "有些人失去的是每天共同生活、互相依靠的伴侶。" },
+  "祖父母/長者": { icon: "🧓", narrative: "有些家庭少了一位長輩，少的不只是家人，也是熟悉的陪伴。" },
+  "孩子/未成年": { icon: "🧒", narrative: "有些家庭承受的，是孩子突然被奪走的未來。" },
+  "兄弟姊妹": { icon: "🫂", narrative: "有些家庭失去的，是陪伴彼此長大的手足。" },
+  家庭同行: { icon: "🏠", narrative: "有些案件中，多位家人同時被捲入，整個家庭都被迫改變。" },
+};
+
+const householdImpactMeta = {
+  "孩子照顧與陪伴角色中斷": "孩子日常照顧與陪伴可能出現空缺。",
+  "家庭節奏與情感支持改變": "家庭原本的節奏、情感支持與日常分工都可能被迫重整。",
+  "家庭支柱與陪伴角色中斷": "家庭支柱與陪伴來源可能突然消失。",
+  "父母與手足長期創傷": "留下來的家人，往往要面對長期悲傷與創傷。",
+  "家庭陪伴與未來想像被迫中斷": "原本關於未來的想像與陪伴，被迫停在這一天。",
+  "伴侶支持系統改變": "伴侶之間的支持與照顧關係可能突然改變。",
+  "生活與可能的經濟壓力上升": "生活支援與可能的經濟壓力，可能因此提高。",
+  "長輩陪伴與照護關係改變": "長輩的陪伴與照護關係，可能因此中斷。",
+  "家庭情感支持出現空缺": "熟悉的家庭情感支持，可能從此少了一塊。",
+  "父母長期創傷與照顧失衡": "父母可能同時承受悲傷與照顧失衡。",
+  "家庭未來期待被迫中斷": "原本對孩子與家庭的未來期待，被迫中斷。",
+  "手足與家庭陪伴出現空缺": "手足之間的陪伴與家庭互動，可能出現長期空缺。",
+  "家人長期創傷": "家人可能需要長時間面對創傷與失落。",
+  "多位家人同時受影響": "不只是個人受害，整個家庭都可能一起承受衝擊。",
+  "家庭生活秩序可能被迫重整": "家庭的生活安排與照顧分工，可能被迫重新調整。",
+  "長期悲傷與生活重建壓力": "家人除了悲傷，也可能承受長期的生活重建壓力。",
+};
+
+function familyRoleRows(incidents, limit = 8) {
+  return countValues(incidents, (item) => item.humanImpact?.victimFamilyRoles || [], limit).map((row) => ({
+    ...row,
+    icon: familyRoleMeta[row.label]?.icon || "👤",
+    text: familyRoleMeta[row.label]?.narrative || "每一個角色背後，都是一個原本在家庭裡扮演重要位置的人。",
+  }));
+}
+
+function householdImpactRows(incidents, limit = 6) {
+  return countValues(incidents, (item) => item.humanImpact?.possibleHouseholdImpacts || [], limit).map((row) => ({
+    ...row,
+    text: householdImpactMeta[row.label] || row.label,
+  }));
+}
+
+function FamilyRoleSection({ incidents, onFocusNews }) {
+  const roleRows = familyRoleRows(incidents, 8);
+  const impactRows = householdImpactRows(incidents, 6);
+  if (!roleRows.length) return null;
+
+  return (
+    <section className="family-impact-section panel-pop">
+      <div className="family-impact-head">
+        <span>家中少了誰</span>
+        <h2>受害者不只是數字，也是某個家的角色</h2>
+        <p>以下內容來自新聞文字中的家庭角色線索，讓人看見：這些事故帶走的，可能是一位母親、一位父親、一個孩子，或一位陪伴家人的長輩。</p>
+      </div>
+
+      <div className="family-role-grid">
+        {roleRows.map((row) => (
+          <button
+            type="button"
+            className="family-role-card clickable-card"
+            key={row.label}
+            onClick={() =>
+              onFocusNews?.({
+                type: "familyRole",
+                value: row.label,
+                label: `家中少了誰｜${row.label}`,
+              })
+            }
+          >
+            <div className="family-role-visual" aria-hidden="true">
+              <span className="family-role-bgicon">{row.icon}</span>
+              <span className="family-role-icon">{row.icon}</span>
+            </div>
+            <strong>{row.label}</strong>
+            <p>{row.text}</p>
+            <small>{row.value} 起新聞提及｜查看相關新聞 →</small>
+          </button>
+        ))}
+      </div>
+
+      {impactRows.length ? (
+        <div className="household-impact-panel">
+          <div>
+            <span>對這個家未來的影響</span>
+            <p>我們無法替每個家庭下結論，但從新聞角色線索可以看見，事故可能留下的，不只是悲傷，也包含照顧、陪伴、生活節奏與重建壓力。</p>
+          </div>
+          <ul>
+            {impactRows.map((row) => (
+              <li key={row.label}>
+                <button
+                  type="button"
+                  className="household-impact-button"
+                  onClick={() =>
+                    onFocusNews?.({
+                      type: "householdImpact",
+                      value: row.label,
+                      label: `家庭影響｜${row.label}`,
+                    })
+                  }
+                >
+                  <strong>{row.label}</strong>
+                  <p>{row.text}</p>
+                  <small>{row.value} 起新聞提及｜查看相關新聞 →</small>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+    </section>
+  );
+}
+
+function FamilyImpactNote({ incident }) {
+  const familyRoles = incident.humanImpact?.victimFamilyRoles || [];
+  const socialRoles = incident.humanImpact?.victimSocialRoles || [];
+  const impacts = incident.humanImpact?.possibleHouseholdImpacts || [];
+  const evidence = incident.humanImpact?.sourceText || [];
+
+  if (!familyRoles.length && !socialRoles.length && !impacts.length) return null;
+
+  return (
+    <section className="family-impact-note">
+      <span>這個家少了誰</span>
+      <ProfileTagList values={[...familyRoles, ...socialRoles].slice(0, 6)} fallback="新聞未揭露家庭角色" tone="family" />
+      {impacts.length ? (
+        <div className="family-impact-copy">
+          <strong>可能留下的影響</strong>
+          <ul>
+            {impacts.slice(0, 3).map((item) => (
+              <li key={item}>{householdImpactMeta[item] || item}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+      {evidence.length ? <small>新聞提及：{evidence[0]}</small> : null}
     </section>
   );
 }
@@ -1697,6 +1857,28 @@ function QualitySummaryCard({ allIncidents, statsIncidents, selectedCity }) {
   );
 }
 
+
+function LifeImpactPage({ incidents, selectedCity, onFocusNews }) {
+  return (
+    <section className="life-impact-page">
+      <section className="life-impact-hero panel-pop">
+        <span>生命影響</span>
+        <h2>{selectedCity || "全部縣市"}｜家中少了誰？</h2>
+        <p>
+          這個分頁不是為了把悲劇變成排名，而是希望讓人看見：毒駕事件帶走的，可能是一位母親、一位父親、
+          一個孩子、一位伴侶，或是一個家庭原本熟悉的日常。
+        </p>
+      </section>
+
+      <FamilyRoleSection incidents={incidents} onFocusNews={onFocusNews} />
+
+      <SafetyReminderSection />
+
+      <WhyRecordSection />
+    </section>
+  );
+}
+
 function CaseStatsPage({ allIncidents, statsIncidents, selectedCity }) {
   const scopedAllIncidents = useMemo(() => {
     return selectedCity ? allIncidents.filter((item) => item.city === selectedCity) : allIncidents;
@@ -1770,8 +1952,6 @@ function CaseStatsPage({ allIncidents, statsIncidents, selectedCity }) {
         <StatBars title="資料品質" rows={qualityRows} tone="quality" />
       </div>
 
-      <InterruptedDailyLifeSection incidents={typeof scopedStatsIncidents !== "undefined" ? scopedStatsIncidents : statsIncidents} />
-
       <div className="quality-note-panel panel-pop">
         <h3>閱讀提醒</h3>
         <p>
@@ -1783,7 +1963,7 @@ function CaseStatsPage({ allIncidents, statsIncidents, selectedCity }) {
   );
 }
 
-function NewsListPage({ incidents, selectedCity }) {
+function NewsListPage({ incidents, selectedCity, newsFocusFilter, onClearFocus }) {
   return (
     <section className="news-page panel-pop">
       <div className="section-head">
@@ -1791,6 +1971,18 @@ function NewsListPage({ incidents, selectedCity }) {
         <h2>{selectedCity || "全部縣市"}</h2>
         <p>{incidents.length} 篇</p>
       </div>
+
+      {newsFocusFilter ? (
+        <div className="news-focus-banner">
+          <div>
+            <span>目前查看</span>
+            <strong>{newsFocusFilter.label}</strong>
+          </div>
+          <button type="button" onClick={onClearFocus}>
+            清除篩選
+          </button>
+        </div>
+      ) : null}
 
       <div className="news-list">
         {incidents.length ? (
@@ -1806,10 +1998,7 @@ function NewsListPage({ incidents, selectedCity }) {
               <p>{incident.summary}</p>
               <IncidentProfilePanel incident={incident} />
               <AffectedDailyLife incident={incident} />
-              {incident.dataQuality?.reviewNote ? (
-                <p className="news-quality-note">{incident.dataQuality.reviewNote}</p>
-              ) : null}
-
+              <FamilyImpactNote incident={incident} />
               <div className="news-footer">
                 <span>
                   死亡 {incident.deaths}｜受傷 {incident.injuries}
@@ -1830,11 +2019,12 @@ function NewsListPage({ incidents, selectedCity }) {
 
 export default function App() {
   const { incidents, suspects, loading } = useDashboardData();
-  const [activeView, setActiveView] = useState("map");
+  const [activeView, setActiveView] = useState("life");
   const [selectedMonths, setSelectedMonths] = useState([]);
   const [selectedSources, setSelectedSources] = useState([]);
   const [visibleTypes, setVisibleTypes] = useState({ deaths: true, injuries: true });
   const [selectedCity, setSelectedCity] = useState("");
+  const [newsFocusFilter, setNewsFocusFilter] = useState(null);
   const didInitMonths = useRef(false);
   const didInitSources = useRef(false);
   const mainContentRef = useRef(null);
@@ -1889,10 +2079,39 @@ export default function App() {
     [selectedMonthIncidents]
   );
 
+  const cityFilteredAllIncidents = useMemo(() => {
+    return selectedCity ? selectedMonthIncidents.filter((incident) => incident.city === selectedCity) : selectedMonthIncidents;
+  }, [selectedCity, selectedMonthIncidents]);
+
   const visibleIncidents = useMemo(() => {
     const base = activeView === "news" ? selectedMonthIncidents : monthSourceIncidents;
     return selectedCity ? base.filter((incident) => incident.city === selectedCity) : base;
   }, [activeView, monthSourceIncidents, selectedCity, selectedMonthIncidents]);
+
+  const focusedNewsIncidents = useMemo(() => {
+    if (!newsFocusFilter) return cityFilteredAllIncidents;
+
+    return cityFilteredAllIncidents.filter((incident) => {
+      if (newsFocusFilter.type === "familyRole") {
+        return incident.humanImpact?.victimFamilyRoles?.includes(newsFocusFilter.value);
+      }
+
+      if (newsFocusFilter.type === "householdImpact") {
+        return incident.humanImpact?.possibleHouseholdImpacts?.includes(newsFocusFilter.value);
+      }
+
+      if (newsFocusFilter.type === "victimActivity") {
+        return incident.extractedDetails?.victim?.activities?.includes(newsFocusFilter.value);
+      }
+
+      return true;
+    });
+  }, [cityFilteredAllIncidents, newsFocusFilter]);
+
+  const handleFocusNews = (filter) => {
+    setNewsFocusFilter(filter);
+    setActiveView("news");
+  };
 
   const ranking = useMemo(
     () => buildCityRanking(monthSourceIncidents, suspects, selectedMonths),
@@ -1922,11 +2141,7 @@ export default function App() {
       .sort((a, b) => String(b.publishedAt || "").localeCompare(String(a.publishedAt || "")))[0];
   }, [visibleIncidents]);
 
-  const visibleNewsCount = useMemo(() => {
-    return selectedCity
-      ? selectedMonthIncidents.filter((incident) => incident.city === selectedCity).length
-      : selectedMonthIncidents.length;
-  }, [selectedCity, selectedMonthIncidents]);
+  const visibleNewsCount = focusedNewsIncidents.length;
 
   const dataStatus = useMemo(() => {
     const dates = incidents.map((incident) => incident.publishedAt).filter(Boolean).sort();
@@ -1970,6 +2185,9 @@ export default function App() {
         </div>
 
         <nav className="view-tabs" aria-label="頁面切換">
+          <button type="button" className={activeView === "life" ? "active" : ""} onClick={() => setActiveView("life")}>
+            生命影響
+          </button>
           <button type="button" className={activeView === "map" ? "active" : ""} onClick={() => setActiveView("map")}>
             地圖
           </button>
@@ -1987,7 +2205,14 @@ export default function App() {
           >
             案件統計
           </button>
-          <button type="button" className={activeView === "news" ? "active" : ""} onClick={() => setActiveView("news")}>
+          <button
+            type="button"
+            className={activeView === "news" ? "active" : ""}
+            onClick={() => {
+              setNewsFocusFilter(null);
+              setActiveView("news");
+            }}
+          >
             新聞列表
           </button>
         </nav>
@@ -2011,7 +2236,7 @@ export default function App() {
         selectedCity={selectedCity}
       />
 
-      <InterruptedDailyLifeSection incidents={monthSourceIncidents} />
+      <InterruptedDailyLifeSection incidents={monthSourceIncidents} onFocusNews={handleFocusNews} />
 
       <div className="desktop-month-wrap">
         <GlobalMonthBar
@@ -2036,6 +2261,12 @@ export default function App() {
         <div className="main-column">
           {loading ? (
             <div className="loading panel-pop">資料載入中</div>
+          ) : activeView === "life" ? (
+            <LifeImpactPage
+              incidents={cityFilteredAllIncidents}
+              selectedCity={selectedCity}
+              onFocusNews={handleFocusNews}
+            />
           ) : activeView === "map" ? (
             <TaiwanMap
               incidents={visibleIncidents}
@@ -2059,7 +2290,12 @@ export default function App() {
               selectedCity={selectedCity}
             />
           ) : (
-            <NewsListPage incidents={visibleIncidents} selectedCity={selectedCity} />
+            <NewsListPage
+              incidents={focusedNewsIncidents}
+              selectedCity={selectedCity}
+              newsFocusFilter={newsFocusFilter}
+              onClearFocus={() => setNewsFocusFilter(null)}
+            />
           )}
         </div>
 
@@ -2092,10 +2328,6 @@ export default function App() {
           setSelectedMonths={setSelectedMonths}
         />
       </div>
-
-      <SafetyReminderSection />
-
-      <WhyRecordSection />
 
       <footer className="data-note data-footer panel-pop">
         <section>

@@ -34,7 +34,21 @@
         "testMethods": [
           "快篩"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -73,10 +87,24 @@
       "correctedInjuries": 2,
       "flags": [
         "basic_ok",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
       "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士",
+        "勞動者/工作者"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -113,7 +141,21 @@
           "尿液檢驗",
           "血液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -148,10 +190,31 @@
       "correctedInjuries": 3,
       "flags": [
         "basic_ok",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
       "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "女兒",
+        "配偶/伴侶"
+      ],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [
+        "父母與手足長期創傷",
+        "家庭陪伴與未來想像被迫中斷",
+        "伴侶支持系統改變",
+        "生活與可能的經濟壓力上升"
+      ],
+      "confidence": "high",
+      "needsHumanReview": true,
+      "sourceText": [
+        "女兒：，1對林姓夫妻與女兒在路旁與開火鍋店的女婿聊天時，慘",
+        "配偶/伴侶：傷車禍，1對林姓夫妻與女兒在路旁與開火鍋店的女婿聊天"
+      ]
     }
   },
   {
@@ -162,7 +225,7 @@
     "publishedAt": "2026-05-23",
     "city": "新北市",
     "deaths": 1,
-    "injuries": 1,
+    "injuries": 0,
     "summary": "50歲王姓男子今午駕車經新北市中和區時，在景平路與大勇街口撞擊路邊緣石，倒車時猛烈撞擊後方機車，隨後又駕車前進，當場輾壓被撞倒在地的林姓姊妹，64歲妹妹送醫急救不幸身亡，姊姊仍在救治。警方在王男身上搜出二級毒品依託咪酯喪屍菸彈及吸食器，且現場唾液快篩檢測呈現毒品陽性反應，當場將王男逮捕送辦。",
     "confidence": "needs_review",
     "extractedDetails": {
@@ -189,7 +252,36 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          },
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品",
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "第二級毒品、毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -225,10 +317,31 @@
       "correctedInjuries": 0,
       "flags": [
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "兄弟姊妹"
+      ],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "手足與家庭陪伴出現空缺",
+        "家人長期創傷",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "兄弟姊妹：路口猛倒車 機車姊妹遭捲車底妹妹傷重亡 50歲王姓男"
+      ]
     }
   },
   {
@@ -272,7 +385,21 @@
           "喪屍煙彈"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -313,10 +440,31 @@
         "number_context_review",
         "drug_status_or_cause_pending",
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "家庭同行"
+      ],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "多位家人同時受影響",
+        "家庭生活秩序可能被迫重整",
+        "家庭節奏與情感支持改變",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "家庭同行：傷，薛男最後撞進一家工廠鐵門，整部車成一團廢鐵，救出"
+      ]
     }
   },
   {
@@ -348,7 +496,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -384,10 +546,21 @@
         "count_corrected",
         "contains_no_injury_phrase",
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要明確寫「所幸無人受傷」，原 injuries=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -421,7 +594,21 @@
           "毒咖啡包/喵喵"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "毒咖啡包/喵喵",
+            "schedule": "混合型需複核",
+            "label": "混合型需複核",
+            "confidence": "review",
+            "basis": "毒咖啡包／喵喵可能混合第二級、第三級或其他成分，新聞摘要不足以直接判定單一級別"
+          }
+        ],
+        "scheduleLabels": [
+          "混合型需複核"
+        ],
+        "scheduleSummary": "混合型需複核",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -460,10 +647,32 @@
       "flags": [
         "number_context_review",
         "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "高齡者",
+        "勞動者/工作者"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：收車的88歲江姓老婦人，陳男停車19秒又踩油門將老婦"
+      ]
     }
   },
   {
@@ -491,7 +700,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -531,10 +754,23 @@
       "flags": [
         "basic_ok",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
       "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -568,7 +804,21 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -610,10 +860,32 @@
       "flags": [
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "警務人員",
+        "高齡者",
+        "勞動者/工作者"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：苗栗7旬老翁疑毒駕心虛拒檢 警攔查釀2傷 苗"
+      ]
     }
   },
   {
@@ -643,7 +915,21 @@
           "喪屍煙彈"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -679,10 +965,20 @@
       "flags": [
         "number_context_review",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -715,7 +1011,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -753,10 +1063,23 @@
       "correctedInjuries": 3,
       "flags": [
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -795,7 +1118,29 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "K他命/愷他命",
+            "schedule": "第三級",
+            "label": "第三級毒品",
+            "confidence": "high",
+            "basis": "K他命／愷他命屬第三級毒品"
+          },
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "第三級毒品",
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "第三級毒品、毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -832,10 +1177,23 @@
       "correctedInjuries": 6,
       "flags": [
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -904,7 +1262,21 @@
           "尿液檢驗",
           "血液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -940,10 +1312,25 @@
         "number_context_review",
         "drug_status_or_cause_pending",
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -981,7 +1368,21 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -1020,10 +1421,22 @@
         "count_corrected",
         "contains_no_injury_phrase",
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要明確寫「所幸沒有造成傷亡」，原 deaths=1 應為誤抓「毀7機車」等數字",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -1055,7 +1468,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -1095,10 +1522,37 @@
       "flags": [
         "count_corrected",
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "本篇主事件為一家4口被撞釀3傷；摘要前段2死1重傷為前一日背景事件",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "女兒",
+        "兒子",
+        "家庭同行"
+      ],
+      "victimSocialRoles": [
+        "行人",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "父母與手足長期創傷",
+        "家庭陪伴與未來想像被迫中斷",
+        "多位家人同時受影響",
+        "家庭生活秩序可能被迫重整"
+      ],
+      "confidence": "high",
+      "needsHumanReview": true,
+      "sourceText": [
+        "女兒：0歲兒子、19歲女兒，案發時停在機車待轉區，",
+        "兒子：別騎機車載20歲兒子、19歲女兒，案發時停在機車待轉",
+        "家庭同行：高雄再傳一家人遭衝撞！毒駕男拒檢逃逸 一家4"
+      ]
     }
   },
   {
@@ -1128,7 +1582,21 @@
           "安非他命"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -1168,10 +1636,22 @@
       "flags": [
         "basic_ok",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
       "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -1204,7 +1684,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -1240,10 +1734,21 @@
       "correctedInjuries": 1,
       "flags": [
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -1284,7 +1789,36 @@
           "唾液快篩/檢測",
           "尿液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          },
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品",
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "第二級毒品、毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -1320,10 +1854,23 @@
       "correctedInjuries": 1,
       "flags": [
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -1360,7 +1907,29 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          },
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品",
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "第二級毒品、毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -1402,10 +1971,32 @@
       "correctedInjuries": 4,
       "flags": [
         "count_corrected",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要明確寫1名女騎士與3名行人受傷，共4人",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "行人",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺",
+        "家庭節奏與情感支持改變"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：波及4人 孕婦、祖孫倆路過受輕傷 又傳毒駕！基隆市仁"
+      ]
     }
   },
   {
@@ -1456,7 +2047,21 @@
           "安非他命"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -1501,10 +2106,29 @@
         "count_corrected",
         "number_context_review",
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "本篇主事件為溪湖女駕駛逆向撞3車造成3傷；鹿港死亡案為前案背景",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：生毒駕撞死騎腳車阿嬤的不幸事件，未料溪湖鎮也爆出毒駕"
+      ]
     }
   },
   {
@@ -1532,7 +2156,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -1570,10 +2208,32 @@
       "flags": [
         "legal_follow_up_or_later_report",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
       "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "母親",
+        "女兒"
+      ],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [
+        "孩子照顧與陪伴角色中斷",
+        "家庭節奏與情感支持改變",
+        "父母與手足長期創傷",
+        "家庭陪伴與未來想像被迫中斷"
+      ],
+      "confidence": "high",
+      "needsHumanReview": true,
+      "sourceText": [
+        "母親：女子為替遭詐騙的母親討回公道，與親友設局誘捕詐團車手",
+        "女兒：我媽130萬！」女兒飛撲引擎蓋攔阻 毒駕車手狂飆1."
+      ]
     }
   },
   {
@@ -1618,7 +2278,21 @@
           "喪屍煙彈"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -1658,10 +2332,23 @@
         "number_context_review",
         "drug_status_or_cause_pending",
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要明確寫陳男沒有受傷，主事件未見傷亡",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士",
+        "勞動者/工作者"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -1704,7 +2391,21 @@
           "毒品陽性未詳"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -1745,10 +2446,24 @@
         "number_context_review",
         "drug_status_or_cause_pending",
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "行人",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -1776,7 +2491,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [],
@@ -1813,10 +2542,32 @@
         "number_context_review",
         "drug_status_or_cause_pending",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "標題/摘要為「3個孩子的媽媽」被撞斃，死亡人數應為1而非3",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "母親",
+        "孩子/未成年"
+      ],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [
+        "孩子照顧與陪伴角色中斷",
+        "家庭節奏與情感支持改變",
+        "父母長期創傷與照顧失衡",
+        "家庭未來期待被迫中斷"
+      ],
+      "confidence": "high",
+      "needsHumanReview": true,
+      "sourceText": [
+        "母親：，撞斃3個孩子的媽媽！市長陳其邁繼日前發文呼籲立法院",
+        "孩子/未成年：嫌毒駕，撞斃3個孩子的媽媽！市長陳其邁繼日前發文呼籲"
+      ]
     }
   },
   {
@@ -1858,7 +2609,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -1893,10 +2658,32 @@
       "flags": [
         "number_context_review",
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "女兒"
+      ],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "父母與手足長期創傷",
+        "家庭陪伴與未來想像被迫中斷",
+        "家庭節奏與情感支持改變",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "high",
+      "needsHumanReview": true,
+      "sourceText": [
+        "女兒：傷及她搭載的9歲女兒擦挫傷，而另一名 高雄男毒駕連撞"
+      ]
     }
   },
   {
@@ -1937,7 +2724,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -1983,10 +2784,35 @@
         "number_context_review",
         "has_related_reports",
         "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "紙本報導混合台中判決與宜蘭女老師事件，非單一乾淨事件；宜蘭事件已有獨立主報導",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "配偶/伴侶",
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "老師",
+        "高齡者"
+      ],
+      "possibleHouseholdImpacts": [
+        "伴侶支持系統改變",
+        "生活與可能的經濟壓力上升",
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺"
+      ],
+      "confidence": "high",
+      "needsHumanReview": true,
+      "sourceText": [
+        "配偶/伴侶：23歲男載19歲妻飆車 毒駕闖紅燈 撞死女老師 沿",
+        "祖父母/長者： 白翊辰毒駕撞死老翁還肇逃"
+      ]
     }
   },
   {
@@ -2029,7 +2855,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -2070,10 +2910,26 @@
       "flags": [
         "number_context_review",
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "老師",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -2101,7 +2957,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -2145,10 +3015,33 @@
         "exclude_from_stats",
         "number_context_review",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "宜蘭女老師事件校方後續報導，與主事故報導重複",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "孩子/未成年"
+      ],
+      "victimSocialRoles": [
+        "老師",
+        "學生"
+      ],
+      "possibleHouseholdImpacts": [
+        "父母長期創傷與照顧失衡",
+        "家庭未來期待被迫中斷",
+        "家庭節奏與情感支持改變",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "孩子/未成年：容力，深受家長及孩子歡迎，目前緊急安排主任暫代導師職"
+      ]
     }
   },
   {
@@ -2181,7 +3074,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -2226,10 +3133,32 @@
         "count_corrected",
         "number_context_review",
         "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "標題「7旬」與摘要「70多歲」為年齡，死亡人數應為1而非7",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "警務人員",
+        "高齡者"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：殯葬二代毒駕撞死7旬退休公務員 員警作證：現場否認撞"
+      ]
     }
   },
   {
@@ -2267,7 +3196,36 @@
         "testMethods": [
           "快篩"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          },
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品",
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "第二級毒品、毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -2307,10 +3265,21 @@
       "flags": [
         "count_corrected",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要寫陳姓男駕駛與郭姓女乘客受傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -2349,7 +3318,28 @@
         "testMethods": [
           "快篩"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -2390,10 +3380,31 @@
       "flags": [
         "count_corrected",
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要明確寫車內四女童、一男童都受傷，至少5名孩童受傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "孩子/未成年"
+      ],
+      "victimSocialRoles": [
+        "學生",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "父母長期創傷與照顧失衡",
+        "家庭未來期待被迫中斷",
+        "家庭節奏與情感支持改變"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "孩子/未成年：五名四到十二歲的孩子出門，途中遭警方追緝，他不願停靠"
+      ]
     }
   },
   {
@@ -2430,7 +3441,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -2474,10 +3499,23 @@
         "has_related_reports",
         "legal_follow_up_or_later_report",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "審理後續報導，非事故本體；避免以發布日重複計入",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -2516,7 +3554,36 @@
         "testMethods": [
           "尿液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          },
+          {
+            "keyword": "K他命/愷他命",
+            "schedule": "第三級",
+            "label": "第三級毒品",
+            "confidence": "high",
+            "basis": "K他命／愷他命屬第三級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品",
+          "第三級毒品"
+        ],
+        "scheduleSummary": "第二級毒品、第三級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -2553,10 +3620,20 @@
         "contains_no_injury_phrase",
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要明確寫3名駕駛未受傷，原 injuries=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -2584,7 +3661,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -2625,10 +3716,23 @@
         "count_corrected",
         "contains_no_injury_phrase",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要明確寫所幸現場無民眾傷亡，原 deaths=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -2661,7 +3765,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -2700,10 +3818,25 @@
       "correctedInjuries": 1,
       "flags": [
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -2742,7 +3875,29 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "海洛因",
+            "schedule": "第一級",
+            "label": "第一級毒品",
+            "confidence": "high",
+            "basis": "海洛因屬第一級毒品"
+          },
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "第一級毒品",
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "第一級毒品、毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -2784,10 +3939,34 @@
         "count_corrected",
         "contains_no_injury_phrase",
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要明確寫1大2小幸好未受傷，原 injuries=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "母親",
+        "孩子/未成年"
+      ],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "孩子照顧與陪伴角色中斷",
+        "家庭節奏與情感支持改變",
+        "父母長期創傷與照顧失衡",
+        "家庭未來期待被迫中斷"
+      ],
+      "confidence": "high",
+      "needsHumanReview": true,
+      "sourceText": [
+        "母親：旁機車，當時有1媽媽帶著2名小孩行經險遭撞擊，幸好3",
+        "孩子/未成年：有1媽媽帶著2名小孩行經險遭撞擊，幸好3人跑得快當場"
+      ]
     }
   },
   {
@@ -2823,7 +4002,21 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -2859,10 +4052,20 @@
         "count_corrected",
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要寫李男與另一名被撞駕駛送醫",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -2894,7 +4097,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -2930,10 +4147,23 @@
       "correctedInjuries": 1,
       "flags": [
         "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
       "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -2966,7 +4196,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3001,10 +4245,23 @@
       "correctedInjuries": 4,
       "flags": [
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -3040,7 +4297,29 @@
           "毒品陽性未詳"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          },
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品",
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "第二級毒品、毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3076,10 +4355,25 @@
       "correctedInjuries": 0,
       "flags": [
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -3115,7 +4409,21 @@
         "testMethods": [
           "尿液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3154,10 +4462,33 @@
       "flags": [
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "高齡者",
+        "行人",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：女騎士撞死88歲路人 竟自爆「肇事後太緊張吸毒」"
+      ]
     }
   },
   {
@@ -3212,7 +4543,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3252,10 +4597,32 @@
       "flags": [
         "drug_status_or_cause_pending",
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "高齡者",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：毒駕男撞死倒垃圾老翁 謝國樑：零容忍強化查緝 基隆1"
+      ]
     }
   },
   {
@@ -3291,7 +4658,21 @@
         "testMethods": [
           "快篩"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -3328,10 +4709,20 @@
         "count_corrected",
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "標題寫4就醫，摘要寫多名人員受傷，依標題修正為4",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -3362,7 +4753,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3400,10 +4805,23 @@
         "count_corrected",
         "number_context_review",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "標題/摘要均指3人車禍受傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -3442,7 +4860,36 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          },
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品",
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "第二級毒品、毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3478,10 +4925,23 @@
       "correctedInjuries": 3,
       "flags": [
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -3515,7 +4975,21 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3551,10 +5025,21 @@
         "count_corrected",
         "contains_no_injury_phrase",
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要明確寫車上4人沒有受傷，原 injuries=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -3584,7 +5069,21 @@
         "testMethods": [
           "唾液快篩/檢測"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3624,10 +5123,23 @@
         "exclude_from_stats",
         "count_corrected",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "警政執法/政策報導，非事故本體；不應以本篇發布日重複計入死亡",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -3657,7 +5169,21 @@
           "喪屍煙彈"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -3695,10 +5221,28 @@
         "number_context_review",
         "drug_status_or_cause_pending",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要寫一家3口多處擦挫傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "家庭同行"
+      ],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [
+        "多位家人同時受影響",
+        "家庭生活秩序可能被迫重整",
+        "家庭節奏與情感支持改變"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "家庭同行：架毒駕男高速追撞一家三口 驚險瞬間曝光 28歲雍姓男"
+      ]
     }
   },
   {
@@ -3732,7 +5276,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3767,10 +5325,25 @@
       "correctedInjuries": 0,
       "flags": [
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "勞動者/工作者"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -3818,7 +5391,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3859,10 +5446,32 @@
       "correctedInjuries": 1,
       "flags": [
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
       "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "高齡者",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：駕撞進茶葉行害死老婦人案，一天後的新北市，又發生毒駕"
+      ]
     }
   },
   {
@@ -3927,7 +5536,21 @@
           "毒品陽性未詳"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -3969,10 +5592,34 @@
         "number_context_review",
         "drug_status_or_cause_pending",
         "has_related_reports",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "母親",
+        "兒子",
+        "家庭同行"
+      ],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [
+        "孩子照顧與陪伴角色中斷",
+        "家庭節奏與情感支持改變",
+        "父母與手足長期創傷",
+        "家庭陪伴與未來想像被迫中斷"
+      ],
+      "confidence": "high",
+      "needsHumanReview": true,
+      "sourceText": [
+        "母親： 兒泣訴「醫生說媽媽腰斷了救不回來 要我放手&hel",
+        "兒子：慘死、61歲張姓兒子受傷，劉男因顱內出血一度昏迷住院",
+        "家庭同行：毒駕，衝撞五權路一家茶行，造成87歲老闆娘慘死、61"
+      ]
     }
   },
   {
@@ -4000,7 +5647,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -4034,10 +5695,23 @@
         "number_context_review",
         "legal_follow_up_or_later_report",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -4071,7 +5745,21 @@
           "安非他命"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -4108,10 +5796,24 @@
       "correctedInjuries": 0,
       "flags": [
         "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
       "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -4148,7 +5850,28 @@
         "testMethods": [
           "尿液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -4187,10 +5910,25 @@
       "flags": [
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "行人",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -4224,7 +5962,21 @@
           "喪屍煙彈"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -4261,10 +6013,20 @@
         "count_corrected",
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要寫3名被害轎車車主受到輕傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -4297,7 +6059,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -4338,10 +6114,24 @@
       "flags": [
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "行人",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -4379,7 +6169,21 @@
           "尿液檢驗",
           "血液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "K他命/愷他命",
+            "schedule": "第三級",
+            "label": "第三級毒品",
+            "confidence": "high",
+            "basis": "K他命／愷他命屬第三級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第三級毒品"
+        ],
+        "scheduleSummary": "第三級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -4416,10 +6220,22 @@
       "correctedInjuries": 2,
       "flags": [
         "count_corrected",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要寫蔡男與賴女都受傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -4451,7 +6267,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -4493,10 +6323,24 @@
       "correctedInjuries": 4,
       "flags": [
         "number_context_review",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "學生",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -4528,7 +6372,35 @@
           "安非他命"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          },
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -4567,10 +6439,22 @@
       "flags": [
         "number_context_review",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "學生"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -4612,7 +6496,21 @@
           "尿液檢驗",
           "血液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "毒品陽性未詳",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅揭露毒品陽性或毒駕，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -4654,10 +6552,23 @@
         "drug_status_or_cause_pending",
         "has_related_reports",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "康橋事故後續/評論型報導，非主事故本體；主事故已有彰化報導",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "學生"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -4692,7 +6603,28 @@
           "喪屍煙彈"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -4732,10 +6664,22 @@
       "flags": [
         "exclude_from_stats",
         "count_corrected",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "健康網解說文章，非事故本體",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "學生"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -4769,7 +6713,21 @@
         "testMethods": [
           "血液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -4807,10 +6765,31 @@
       "flags": [
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "高齡者"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：酒毒駕？打老翁後上國道追撞砂石車身亡 投檢：已"
+      ]
     }
   },
   {
@@ -4842,7 +6821,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -4878,10 +6871,21 @@
       "flags": [
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -4914,7 +6918,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -4951,10 +6969,23 @@
       "flags": [
         "number_context_review",
         "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -4989,7 +7020,21 @@
           "喪屍煙彈"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -5026,10 +7071,22 @@
         "count_corrected",
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "標題/摘要寫造成2女受傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -5060,7 +7117,28 @@
           "喪屍煙彈"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -5103,10 +7181,22 @@
         "number_context_review",
         "drug_status_or_cause_pending",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "後續報導，非事故本體；避免重複計入",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -5134,7 +7224,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -5176,10 +7280,23 @@
         "count_corrected",
         "drug_status_or_cause_pending",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要寫2名男子受傷送醫",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -5213,7 +7330,21 @@
           "K他命/愷他命"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "K他命/愷他命",
+            "schedule": "第三級",
+            "label": "第三級毒品",
+            "confidence": "high",
+            "basis": "K他命／愷他命屬第三級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第三級毒品"
+        ],
+        "scheduleSummary": "第三級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -5249,10 +7380,24 @@
       "flags": [
         "number_context_review",
         "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -5280,7 +7425,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -5320,10 +7479,23 @@
         "count_corrected",
         "legal_follow_up_or_later_report",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "綜合/撫卹認定報導，非單一事故本體",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -5357,7 +7529,21 @@
           "K他命/愷他命"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "K他命/愷他命",
+            "schedule": "第三級",
+            "label": "第三級毒品",
+            "confidence": "high",
+            "basis": "K他命／愷他命屬第三級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第三級毒品"
+        ],
+        "scheduleSummary": "第三級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [],
@@ -5389,10 +7575,20 @@
       "flags": [
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -5429,7 +7625,28 @@
         "testMethods": [
           "尿液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -5465,10 +7682,20 @@
         "exclude_from_stats",
         "count_corrected",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "摘要為自撞停放車輛並無死傷描述，原 deaths=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -5496,7 +7723,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -5536,10 +7777,24 @@
         "count_corrected",
         "legal_follow_up_or_later_report",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "撫卹後續報導，非事故本體；避免重複計入",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員",
+        "勞動者/工作者"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -5597,7 +7852,21 @@
           "喪屍煙彈"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -5641,10 +7910,30 @@
         "drug_status_or_cause_pending",
         "has_related_reports",
         "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [
+        "祖父母/長者"
+      ],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長輩陪伴與照護關係改變",
+        "家庭情感支持出現空缺",
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "medium",
+      "needsHumanReview": true,
+      "sourceText": [
+        "祖父母/長者：機車載孫子回家的阿公阿嬤，造成1死6傷悲劇。彭男經警"
+      ]
     }
   },
   {
@@ -5674,7 +7963,21 @@
         "testMethods": [
           "尿液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -5710,10 +8013,25 @@
       "flags": [
         "drug_status_or_cause_pending",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -5747,7 +8065,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -5792,10 +8124,26 @@
       "flags": [
         "number_context_review",
         "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -5827,7 +8175,21 @@
         "testMethods": [
           "尿液檢驗"
         ],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
       },
       "crash": {
         "scenarioTypes": [
@@ -5861,10 +8223,22 @@
       "flags": [
         "legal_follow_up_or_later_report",
         "driver_vehicle_refined",
-        "driver_vehicle_unknown"
+        "driver_vehicle_unknown",
+        "drug_schedule_classified",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
       "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": []
     }
   },
   {
@@ -5898,7 +8272,21 @@
           "卡西酮"
         ],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "卡西酮",
+            "schedule": "第二級/第三級需複核",
+            "label": "第二/三級需複核",
+            "confidence": "review",
+            "basis": "卡西酮類須依具體成分判斷；天然卡西酮、合成卡西酮與衍生物級別可能不同"
+          }
+        ],
+        "scheduleLabels": [
+          "第二/三級需複核"
+        ],
+        "scheduleSummary": "第二/三級需複核",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -5936,10 +8324,25 @@
       "flags": [
         "number_context_review",
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [
+        "長期悲傷與生活重建壓力"
+      ],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   },
   {
@@ -5972,7 +8375,21 @@
       "drug": {
         "keywords": [],
         "testMethods": [],
-        "status": "positive_or_found"
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞摘要未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
       },
       "crash": {
         "scenarioTypes": [
@@ -6015,10 +8432,24 @@
       "correctedInjuries": 3,
       "flags": [
         "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "drug_schedule_needs_review",
+        "human_impact_tagged"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警務人員",
+        "騎士"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": true,
+      "sourceText": []
     }
   }
 ]

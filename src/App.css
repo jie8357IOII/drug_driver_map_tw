@@ -2166,17 +2166,6 @@ body {
   color: #4f554f;
 }
 
-.news-quality-note {
-  border-left: 3px solid rgba(211, 139, 37, 0.72);
-  background: rgba(211, 139, 37, 0.08);
-  border-radius: 0 10px 10px 0;
-  padding: 10px 12px;
-  margin: 12px 0 0 !important;
-  color: #6f4a15 !important;
-  font-size: 0.86rem;
-  line-height: 1.6 !important;
-}
-
 .case-stats-page {
   display: grid;
   gap: 16px;
@@ -3200,4 +3189,364 @@ body {
 .life-card small {
   position: relative;
   z-index: 2;
+}
+
+
+/* v23 family impact */
+.family-impact-section {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 16px;
+  padding: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.92), rgba(255, 255, 255, 0.74)),
+    radial-gradient(circle at 100% 0%, rgba(12, 116, 107, 0.08), transparent 35%);
+}
+
+.family-impact-head span,
+.household-impact-panel span,
+.family-impact-note span {
+  display: block;
+  color: #8c2d2d;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.family-impact-head h2 {
+  margin: 6px 0 10px;
+  color: #1f2522;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.family-impact-head p,
+.household-impact-panel p {
+  margin: 0;
+  color: #575a54;
+  line-height: 1.8;
+}
+
+.family-role-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.family-role-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(31, 37, 34, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 250, 240, 0.72);
+  padding: 14px;
+  min-height: 168px;
+}
+
+.family-role-visual {
+  position: relative;
+  height: 52px;
+  margin-bottom: 8px;
+}
+
+.family-role-icon {
+  position: relative;
+  z-index: 2;
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(140, 45, 45, 0.14), rgba(12, 116, 107, 0.12));
+  box-shadow: inset 0 0 0 1px rgba(31, 37, 34, 0.06);
+  font-size: 1.45rem;
+}
+
+.family-role-bgicon {
+  position: absolute;
+  right: -2px;
+  top: -10px;
+  z-index: 1;
+  font-size: 3.3rem;
+  opacity: 0.08;
+  transform: rotate(-8deg);
+}
+
+.family-role-card strong {
+  color: #1f2522;
+  font-size: 1rem;
+}
+
+.family-role-card p {
+  margin: 10px 0;
+  color: #565c55;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.family-role-card small {
+  color: #8c2d2d;
+  font-size: 0.76rem;
+  font-weight: 950;
+}
+
+.household-impact-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 18px;
+  align-items: start;
+  border-top: 1px solid rgba(31, 37, 34, 0.08);
+  padding-top: 16px;
+}
+
+.household-impact-panel ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.household-impact-panel li {
+  border: 1px solid rgba(31, 37, 34, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 250, 240, 0.72);
+  padding: 12px 14px;
+}
+
+.household-impact-panel li strong {
+  display: block;
+  color: #1f2522;
+  font-size: 0.92rem;
+}
+
+.household-impact-panel li p {
+  margin: 6px 0 4px;
+  color: #565c55;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.household-impact-panel li small {
+  color: #0c746b;
+  font-size: 0.74rem;
+  font-weight: 950;
+}
+
+.family-impact-note {
+  border-left: 4px solid rgba(140, 45, 45, 0.72);
+  border-radius: 0 14px 14px 0;
+  background: rgba(140, 45, 45, 0.06);
+  padding: 12px 14px;
+  margin-top: 14px;
+}
+
+.profile-tag.family {
+  background: rgba(140, 45, 45, 0.12);
+  color: #8c2d2d;
+}
+
+.family-impact-copy {
+  margin-top: 10px;
+}
+
+.family-impact-copy strong {
+  display: block;
+  color: #1f2522;
+  font-size: 0.86rem;
+}
+
+.family-impact-copy ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.family-impact-copy li {
+  color: #565c55;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin-bottom: 4px;
+}
+
+.family-impact-note small {
+  display: block;
+  margin-top: 10px;
+  color: #6b6f69;
+  font-size: 0.74rem;
+}
+
+@media (max-width: 1100px) {
+  .family-role-grid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+  .household-impact-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .family-impact-section {
+    padding: 18px;
+    margin-bottom: 12px;
+  }
+  .family-role-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .family-role-card {
+    flex: 0 0 220px;
+  }
+}
+
+
+/* v24 life impact homepage */
+.life-impact-page {
+  display: grid;
+  gap: 16px;
+}
+
+.life-impact-hero {
+  padding: 26px;
+  background:
+    linear-gradient(135deg, rgba(31, 37, 34, 0.94), rgba(31, 37, 34, 0.84)),
+    radial-gradient(circle at 92% 0%, rgba(140, 45, 45, 0.28), transparent 36%);
+}
+
+.life-impact-hero span {
+  display: block;
+  color: #fffaf0;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.life-impact-hero h2 {
+  margin: 6px 0 12px;
+  color: #fffaf0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.08;
+}
+
+.life-impact-hero p {
+  margin: 0;
+  max-width: 860px;
+  color: rgba(255, 250, 240, 0.78);
+  line-height: 1.85;
+}
+
+@media (max-width: 760px) {
+  .life-impact-page {
+    gap: 12px;
+  }
+
+  .life-impact-hero {
+    padding: 20px;
+  }
+}
+
+
+/* v25 news focus links */
+.clickable-card {
+  cursor: pointer;
+  border: 1px solid rgba(31, 37, 34, 0.09);
+  text-align: left;
+  font-family: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.clickable-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(140, 45, 45, 0.24);
+  box-shadow: 0 16px 34px rgba(31, 37, 34, 0.1);
+}
+
+.clickable-card:focus-visible,
+.household-impact-button:focus-visible,
+.news-focus-banner button:focus-visible {
+  outline: 3px solid rgba(140, 45, 45, 0.28);
+  outline-offset: 3px;
+}
+
+.household-impact-panel li {
+  padding: 0;
+  overflow: hidden;
+}
+
+.household-impact-button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 12px 14px;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.household-impact-button:hover {
+  background: rgba(140, 45, 45, 0.05);
+}
+
+.news-focus-banner {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid rgba(140, 45, 45, 0.16);
+  border-radius: 16px;
+  background: rgba(140, 45, 45, 0.07);
+  padding: 12px 14px;
+  margin-bottom: 14px;
+}
+
+.news-focus-banner span {
+  display: block;
+  color: #8c2d2d;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.news-focus-banner strong {
+  display: block;
+  margin-top: 4px;
+  color: #1f2522;
+  font-size: 0.98rem;
+}
+
+.news-focus-banner button {
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 999px;
+  background: #1f2522;
+  color: #fffaf0;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .news-focus-banner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .news-focus-banner button {
+    width: fit-content;
+  }
+}
+
+
+/* v26 global interrupted daily life placement */
+.app-shell > .life-section {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  .app-shell > .life-section {
+    margin-bottom: 10px;
+  }
 }
