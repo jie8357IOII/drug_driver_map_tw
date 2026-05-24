@@ -1,5 +1,5 @@
 import taiwanMap from "@svg-maps/taiwan";
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./App.css";
 
 const cityNameByMapId = {
@@ -59,21 +59,44 @@ const mapLocations = taiwanMap.locations.map((location) => ({
 }));
 
 const offshoreCities = new Set(["澎湖縣", "金門縣", "連江縣"]);
-const MAP_PADDING = 132;
-const MAX_MAP_ZOOM = 2.75;
 
-function getFallbackMapBounds() {
-  const fallback = String(taiwanMap.viewBox || "")
-    .split(/\s+/)
-    .map(Number);
+function getSvgMapBounds(locations, padding = 96) {
+  const points = [];
 
-  if (fallback.length === 4 && fallback.every(Number.isFinite)) return fallback;
+  locations.forEach((location) => {
+    const numbers = String(location.path).match(/-?\d+(?:\.\d+)?/g)?.map(Number) || [];
 
-  return [0, 0, 1000, 1200];
+    for (let index = 0; index < numbers.length - 1; index += 2) {
+      points.push({
+        x: numbers[index],
+        y: numbers[index + 1],
+      });
+    }
+  });
+
+  if (!points.length && taiwanMap.viewBox) {
+    const fallback = String(taiwanMap.viewBox).split(/\s+/).map(Number);
+    if (fallback.length === 4 && fallback.every(Number.isFinite)) return fallback;
+  }
+
+  if (!points.length) return [0, 0, 1000, 1200];
+
+  const minX = Math.min(...points.map((point) => point.x));
+  const maxX = Math.max(...points.map((point) => point.x));
+  const minY = Math.min(...points.map((point) => point.y));
+  const maxY = Math.max(...points.map((point) => point.y));
+
+  return [
+    minX - padding,
+    minY - padding,
+    maxX - minX + padding * 2,
+    maxY - minY + padding * 2,
+  ];
 }
 
-const defaultMapBounds = getFallbackMapBounds();
-const visibleMapLocations = mapLocations.filter((location) => !offshoreCities.has(location.city));
+const mainlandMapLocations = mapLocations.filter((location) => !offshoreCities.has(location.city));
+// 初始地圖固定聚焦完整本島，保留足夠 padding，避免本島被裁切或放太大。
+const defaultMapBounds = getSvgMapBounds(mainlandMapLocations, 132);
 const iconMap = { death: "☠️", injury: "🩼" };
 
 function toMonthLabel(month) {
@@ -185,35 +208,6 @@ function zoomedViewBox(zoom, pan = { x: 0, y: 0 }, bounds = defaultMapBounds) {
   const clampedPan = clampMapPan(zoom, pan, bounds);
 
   return `${x + (width - nextWidth) / 2 + clampedPan.x} ${y + (height - nextHeight) / 2 + clampedPan.y} ${nextWidth} ${nextHeight}`;
-}
-
-function getElementBounds(elements, padding = 0) {
-  const boxes = elements.map((element) => element.getBBox()).filter((box) => box.width > 0 && box.height > 0);
-
-  if (!boxes.length) return null;
-
-  const minX = Math.min(...boxes.map((box) => box.x));
-  const maxX = Math.max(...boxes.map((box) => box.x + box.width));
-  const minY = Math.min(...boxes.map((box) => box.y));
-  const maxY = Math.max(...boxes.map((box) => box.y + box.height));
-
-  return [
-    minX - padding,
-    minY - padding,
-    maxX - minX + padding * 2,
-    maxY - minY + padding * 2,
-  ];
-}
-
-function getPointerDistance(first, second) {
-  return Math.hypot(first.clientX - second.clientX, first.clientY - second.clientY);
-}
-
-function getPointerMidpoint(first, second) {
-  return {
-    clientX: (first.clientX + second.clientX) / 2,
-    clientY: (first.clientY + second.clientY) / 2,
-  };
 }
 
 async function loadJson(filePath, fallback) {
@@ -368,10 +362,6 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   const svgRef = useRef(null);
   const panelRef = useRef(null);
   const dragStateRef = useRef(null);
-  const pinchStateRef = useRef(null);
-  const pointerPositionsRef = useRef(new Map());
-  const latestZoomRef = useRef(1);
-  const latestPanRef = useRef({ x: 0, y: 0 });
   const wasDraggingRef = useRef(false);
   const [cityPositions, setCityPositions] = useState({});
   const [hoverIncident, setHoverIncident] = useState(null);
@@ -379,18 +369,15 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   const [zoom, setZoom] = useState(1);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
-  const [mapBounds, setMapBounds] = useState(defaultMapBounds);
 
-  useLayoutEffect(() => {
+  const mapBounds = defaultMapBounds;
+
+  useEffect(() => {
     const nextPositions = {};
-    const mainlandElements = [];
 
     svgRef.current?.querySelectorAll(".county-shape").forEach((element) => {
       const city = element.dataset.city;
       const box = element.getBBox();
-
-      if (!offshoreCities.has(city)) mainlandElements.push(element);
-
       nextPositions[city] = {
         x: box.x + box.width / 2,
         y: box.y + box.height / 2,
@@ -399,16 +386,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
     });
 
     setCityPositions(nextPositions);
-    setMapBounds(getElementBounds(mainlandElements, MAP_PADDING) || defaultMapBounds);
   }, []);
-
-  useEffect(() => {
-    latestZoomRef.current = zoom;
-  }, [zoom]);
-
-  useEffect(() => {
-    latestPanRef.current = pan;
-  }, [pan]);
 
   useEffect(() => {
     setZoom(1);
@@ -484,56 +462,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
     updateHoverPosition(event);
   };
 
-  const beginPinchZoom = () => {
-    const pointers = [...pointerPositionsRef.current.values()];
-    if (pointers.length < 2) return false;
-
-    const [first, second] = pointers;
-    const rect = svgRef.current?.getBoundingClientRect();
-    if (!rect) return false;
-
-    const startDistance = getPointerDistance(first, second);
-    if (startDistance <= 0) return false;
-
-    const [viewX, viewY, viewWidth, viewHeight] = zoomedViewBox(
-      latestZoomRef.current,
-      latestPanRef.current,
-      mapBounds,
-    )
-      .split(" ")
-      .map(Number);
-    const midpoint = getPointerMidpoint(first, second);
-    const relativeX = clampNumber((midpoint.clientX - rect.left) / rect.width, 0, 1);
-    const relativeY = clampNumber((midpoint.clientY - rect.top) / rect.height, 0, 1);
-
-    pinchStateRef.current = {
-      startDistance,
-      startZoom: latestZoomRef.current,
-      anchorSvgX: viewX + relativeX * viewWidth,
-      anchorSvgY: viewY + relativeY * viewHeight,
-      rect,
-      moved: false,
-    };
-    dragStateRef.current = null;
-    setIsDragging(false);
-
-    return true;
-  };
-
   const handlePointerDown = (event) => {
-    if (event.pointerType !== "mouse") {
-      pointerPositionsRef.current.set(event.pointerId, {
-        clientX: event.clientX,
-        clientY: event.clientY,
-      });
-      event.currentTarget.setPointerCapture?.(event.pointerId);
-
-      if (pointerPositionsRef.current.size >= 2 && beginPinchZoom()) {
-        event.preventDefault();
-        return;
-      }
-    }
-
     if (zoom <= 1) return;
     if (event.button !== undefined && event.button !== 0) return;
 
@@ -559,44 +488,6 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   };
 
   const handlePointerMove = (event) => {
-    if (pointerPositionsRef.current.has(event.pointerId)) {
-      pointerPositionsRef.current.set(event.pointerId, {
-        clientX: event.clientX,
-        clientY: event.clientY,
-      });
-    }
-
-    const pinchState = pinchStateRef.current;
-    if (pinchState) {
-      const pointers = [...pointerPositionsRef.current.values()];
-      if (pointers.length >= 2) {
-        const [first, second] = pointers;
-        const distance = getPointerDistance(first, second);
-        const midpoint = getPointerMidpoint(first, second);
-        const nextZoom = clampNumber(
-          pinchState.startZoom * (distance / pinchState.startDistance),
-          1,
-          MAX_MAP_ZOOM,
-        );
-        const [boundsX, boundsY, boundsWidth, boundsHeight] = mapBounds;
-        const nextWidth = boundsWidth / nextZoom;
-        const nextHeight = boundsHeight / nextZoom;
-        const relativeX = clampNumber((midpoint.clientX - pinchState.rect.left) / pinchState.rect.width, 0, 1);
-        const relativeY = clampNumber((midpoint.clientY - pinchState.rect.top) / pinchState.rect.height, 0, 1);
-        const nextPan = {
-          x: pinchState.anchorSvgX - relativeX * nextWidth - boundsX - (boundsWidth - nextWidth) / 2,
-          y: pinchState.anchorSvgY - relativeY * nextHeight - boundsY - (boundsHeight - nextHeight) / 2,
-        };
-
-        pinchState.moved = true;
-        wasDraggingRef.current = true;
-        setZoom(nextZoom);
-        setPan(clampMapPan(nextZoom, nextPan, mapBounds));
-        event.preventDefault();
-      }
-      return;
-    }
-
     const dragState = dragStateRef.current;
     if (!dragState) return;
 
@@ -617,20 +508,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
     event.preventDefault();
   };
 
-  const endPointerInteraction = (event) => {
-    pointerPositionsRef.current.delete(event.pointerId);
-
-    if (pinchStateRef.current) {
-      wasDraggingRef.current = Boolean(pinchStateRef.current.moved);
-      pinchStateRef.current = null;
-      event.currentTarget.releasePointerCapture?.(event.pointerId);
-
-      window.setTimeout(() => {
-        wasDraggingRef.current = false;
-      }, 0);
-      return;
-    }
-
+  const endPointerDrag = (event) => {
     const dragState = dragStateRef.current;
     if (!dragState) return;
 
@@ -654,7 +532,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
 
         <div className="zoom-control-wrap">
           <div className="zoom-controls" aria-label="地圖縮放">
-            <button type="button" onClick={() => setZoom((value) => Math.min(MAX_MAP_ZOOM, value + 0.25))}>
+            <button type="button" onClick={() => setZoom((value) => Math.min(2.75, value + 0.25))}>
               +
             </button>
             <button type="button" onClick={() => setZoom((value) => Math.max(1, value - 0.25))}>
@@ -670,7 +548,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
               重設
             </button>
           </div>
-          <small className="map-drag-hint">{zoom > 1 ? "拖曳地圖查看細節" : "雙指放大後可拖曳"}</small>
+          <small className="map-drag-hint">{zoom > 1 ? "拖曳地圖查看細節" : "放大後可拖曳"}</small>
         </div>
       </div>
 
@@ -682,9 +560,9 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
         aria-label="台灣毒駕事件地圖"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
-        onPointerUp={endPointerInteraction}
-        onPointerCancel={endPointerInteraction}
-        onPointerLeave={endPointerInteraction}
+        onPointerUp={endPointerDrag}
+        onPointerCancel={endPointerDrag}
+        onPointerLeave={endPointerDrag}
       >
         <defs>
           <filter id="badgeShadow" x="-40%" y="-40%" width="180%" height="180%">
@@ -693,7 +571,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
         </defs>
 
         <g className="map-layer">
-          {visibleMapLocations.map((location) => {
+          {mapLocations.map((location) => {
             const risk = cityLevels.get(location.city) || "low";
             return (
               <path
@@ -1496,6 +1374,129 @@ function IncidentProfilePanel({ incident }) {
   );
 }
 
+
+const dailyLifeCopy = {
+  "停等紅燈/待轉": { text: "只是停在紅燈前，等待下一段路。", icon: "🚦" },
+  "行人/過馬路": { text: "只是走在應該被保護的斑馬線與路口。", icon: "🚶" },
+  "倒垃圾": { text: "只是做一件日常不過的小事。", icon: "🗑️" },
+  "買菜": { text: "只是出門準備一家人的餐桌。", icon: "🛒" },
+  "資源回收": { text: "只是推著回收車，完成一天的生活。", icon: "♻️" },
+  "學生/環島車隊": { text: "只是和同學一起完成一段青春旅程。", icon: "🎒" },
+  "警務執勤": { text: "只是正在完成守護道路的工作。", icon: "👮" },
+  "教師": { text: "只是正在往返教學與生活的路上。", icon: "📚" },
+  "家庭同行": { text: "只是和家人一起出門。", icon: "👨‍👩‍👧" },
+  "騎乘機車": { text: "只是騎在每天都會經過的路上。", icon: "🏍️" },
+  "下車救援": { text: "只是想停下來幫助別人。", icon: "🫶" },
+  "店家/商圈": { text: "只是出現在平常人來人往的地方。", icon: "🏪" },
+};
+
+function lifeActivityRows(incidents, limit = 7) {
+  return countValues(incidents, (item) => item.extractedDetails?.victim?.activities || [], limit).map((row) => ({
+    ...row,
+    text: dailyLifeCopy[row.label]?.text || "那原本也可能只是很平凡的一天。",
+    icon: dailyLifeCopy[row.label]?.icon || "•",
+  }));
+}
+
+function InterruptedDailyLifeSection({ incidents }) {
+  const rows = lifeActivityRows(incidents, 7);
+  if (!rows.length) return null;
+
+  return (
+    <section className="life-section panel-pop">
+      <div className="life-section-head">
+        <span>被打斷的日常</span>
+        <h2>他們當時正在……</h2>
+        <p>
+          這些不是抽象的事故數字。新聞裡的受害者，可能只是正在等紅燈、過馬路、買菜、倒垃圾、騎車回家，或和家人一起出門。
+        </p>
+      </div>
+
+      <div className="life-card-grid">
+        {rows.map((row) => (
+          <article className="life-card" key={row.label}>
+            <div className="life-card-visual" aria-hidden="true">
+              <span className="life-card-bgicon">{row.icon}</span>
+              <span className="life-card-icon">{row.icon}</span>
+            </div>
+            <strong>{row.label}</strong>
+            <p>{row.text}</p>
+            <small>{row.value} 起新聞提及</small>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function AffectedDailyLife({ incident }) {
+  const activities = incident.extractedDetails?.victim?.activities || [];
+  const vulnerableGroups = incident.extractedDetails?.victim?.vulnerableGroups || [];
+  const context = incident.extractedDetails?.context || {};
+  const contextTags = [
+    ...(activities || []),
+    ...(vulnerableGroups || []),
+    context.familyImpact ? "家庭受影響" : null,
+    context.schoolImpact ? "校園/學生相關" : null,
+    context.publicPlaceImpact ? "公共場域波及" : null,
+  ].filter(Boolean);
+
+  if (!contextTags.length) return null;
+
+  const firstActivity = activities[0];
+
+  return (
+    <section className="affected-life-note">
+      <span>被影響的日常</span>
+      <p>
+        {firstActivity && dailyLifeCopy[firstActivity]?.text
+          ? dailyLifeCopy[firstActivity].text
+          : "這起事件背後，可能是一段原本平凡的日常。"}
+      </p>
+      <ProfileTagList values={contextTags.slice(0, 6)} fallback="新聞未揭露受害者情境" tone="life" />
+    </section>
+  );
+}
+
+function SafetyReminderSection() {
+  const reminders = [
+    "過馬路前，多停一秒，再看一次來車方向。",
+    "等紅燈或待轉時，留意後方與側邊異常靠近的車。",
+    "騎車與開車時，注意蛇行、暴衝、逆向或異常停走車輛，先保持距離。",
+    "夜間外出，盡量選擇明亮路段，避免停留在視線死角。",
+    "看到疑似毒駕、酒駕或危險駕駛，先保護自己，再通報警方。",
+  ];
+
+  return (
+    <section className="safety-section panel-pop">
+      <div>
+        <span>外出安全提醒</span>
+        <h2>在路上，請多留一秒</h2>
+        <p>安全不該只靠運氣。每一次多看一眼、保持距離、提高警覺，都可能讓自己與身邊的人更安全。</p>
+      </div>
+
+      <ul>{reminders.map((item) => <li key={item}>{item}</li>)}</ul>
+    </section>
+  );
+}
+
+function WhyRecordSection() {
+  return (
+    <section className="why-record-section panel-pop">
+      <span>為什麼記錄</span>
+      <h2>不是為了製造恐懼，而是提醒彼此珍惜生命</h2>
+      <p>
+        我們記錄這些事件，不是為了替任何縣市貼上標籤，也不是為了把悲劇變成排名。
+        我們記錄，是因為每一個毒駕事件背後，都有一個被迫中斷的日常。
+      </p>
+      <p>
+        有人只是正在回家，有人只是停等紅燈，有人只是陪家人出門，也有人只是正在工作。
+        透過資料，我們希望看見問題；透過記錄，我們希望提醒彼此：生命不是數字，安全不該只靠運氣。
+      </p>
+    </section>
+  );
+}
+
 function QualityBadge({ incident }) {
   return <span className={`quality-badge ${qualityTone(incident)}`}>{qualityLabel(incident)}</span>;
 }
@@ -1769,6 +1770,8 @@ function CaseStatsPage({ allIncidents, statsIncidents, selectedCity }) {
         <StatBars title="資料品質" rows={qualityRows} tone="quality" />
       </div>
 
+      <InterruptedDailyLifeSection incidents={typeof scopedStatsIncidents !== "undefined" ? scopedStatsIncidents : statsIncidents} />
+
       <div className="quality-note-panel panel-pop">
         <h3>閱讀提醒</h3>
         <p>
@@ -1802,6 +1805,7 @@ function NewsListPage({ incidents, selectedCity }) {
               <h3>{incident.title}</h3>
               <p>{incident.summary}</p>
               <IncidentProfilePanel incident={incident} />
+              <AffectedDailyLife incident={incident} />
               {incident.dataQuality?.reviewNote ? (
                 <p className="news-quality-note">{incident.dataQuality.reviewNote}</p>
               ) : null}
@@ -1958,9 +1962,10 @@ export default function App() {
       <header className="app-hero">
         <div>
           <span>新聞事件與公開統計整理</span>
-          <h1>全台毒駕死傷地圖</h1>
+          <h1>全台毒駕死傷觀察地圖</h1>
           <p>
-            以品質校正後的新聞死傷事件與毒品嫌疑犯公開統計為基礎，建立可互動、可篩選、可追蹤趨勢的公共安全資料儀表板。
+            看見事件，也看見被影響的人。每一個死亡與受傷，背後都可能是一段正在回家的路、一次平凡的出門，
+            或一個家庭再也回不去的日常。
           </p>
         </div>
 
@@ -2005,6 +2010,8 @@ export default function App() {
         latestIncident={latestIncident}
         selectedCity={selectedCity}
       />
+
+      <InterruptedDailyLifeSection incidents={monthSourceIncidents} />
 
       <div className="desktop-month-wrap">
         <GlobalMonthBar
@@ -2085,6 +2092,10 @@ export default function App() {
           setSelectedMonths={setSelectedMonths}
         />
       </div>
+
+      <SafetyReminderSection />
+
+      <WhyRecordSection />
 
       <footer className="data-note data-footer panel-pop">
         <section>

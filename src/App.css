@@ -2949,3 +2949,255 @@ body {
     margin-top: 16px;
   }
 }
+
+
+
+/* v21 life reminder layer */
+.life-section {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 16px;
+  padding: 22px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.9), rgba(255, 255, 255, 0.68)),
+    radial-gradient(circle at 96% 0%, rgba(140, 45, 45, 0.08), transparent 34%);
+}
+
+.life-section-head span,
+.safety-section span,
+.why-record-section span {
+  display: block;
+  color: #8c2d2d;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.life-section-head h2,
+.safety-section h2,
+.why-record-section h2 {
+  margin: 6px 0 10px;
+  color: #1f2522;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.life-section-head p,
+.safety-section p,
+.why-record-section p {
+  margin: 0;
+  color: #575a54;
+  line-height: 1.8;
+}
+
+.life-card-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(150px, 1fr));
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.life-card {
+  min-height: 150px;
+  border: 1px solid rgba(31, 37, 34, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 250, 240, 0.72);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.life-card strong {
+  color: #1f2522;
+  font-size: 1rem;
+}
+
+.life-card p {
+  margin: 10px 0;
+  color: #565c55;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.life-card small {
+  color: #8c2d2d;
+  font-size: 0.76rem;
+  font-weight: 950;
+}
+
+.affected-life-note {
+  border-left: 4px solid rgba(12, 116, 107, 0.72);
+  border-radius: 0 14px 14px 0;
+  background: rgba(12, 116, 107, 0.08);
+  padding: 12px 14px;
+  margin-top: 14px;
+}
+
+.affected-life-note span {
+  display: block;
+  color: #0c746b;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.affected-life-note p {
+  margin: 6px 0 10px !important;
+  color: #35524f !important;
+  font-size: 0.9rem;
+  line-height: 1.7 !important;
+}
+
+.profile-tag.life {
+  background: rgba(12, 116, 107, 0.12);
+  color: #0c746b;
+}
+
+.safety-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 20px;
+  margin-top: 18px;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.9), rgba(255, 255, 255, 0.72)),
+    radial-gradient(circle at 0% 0%, rgba(12, 116, 107, 0.1), transparent 36%);
+}
+
+.safety-section ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.safety-section li {
+  position: relative;
+  border: 1px solid rgba(31, 37, 34, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 250, 240, 0.7);
+  padding: 12px 14px 12px 38px;
+  color: #4f554f;
+  font-weight: 900;
+  line-height: 1.6;
+}
+
+.safety-section li::before {
+  content: "•";
+  position: absolute;
+  left: 18px;
+  top: 12px;
+  color: #8c2d2d;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.why-record-section {
+  margin-top: 16px;
+  padding: 26px;
+  background:
+    linear-gradient(135deg, rgba(31, 37, 34, 0.94), rgba(31, 37, 34, 0.84)),
+    radial-gradient(circle at 90% 0%, rgba(140, 45, 45, 0.26), transparent 36%);
+}
+
+.why-record-section span,
+.why-record-section h2 {
+  color: #fffaf0;
+}
+
+.why-record-section p {
+  color: rgba(255, 250, 240, 0.78);
+}
+
+.why-record-section p + p {
+  margin-top: 12px;
+}
+
+@media (max-width: 1100px) {
+  .life-card-grid {
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+  }
+
+  .safety-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .life-section {
+    padding: 18px;
+    margin-bottom: 12px;
+  }
+
+  .life-card-grid {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+
+  .life-card {
+    flex: 0 0 190px;
+  }
+
+  .safety-section,
+  .why-record-section {
+    padding: 18px;
+  }
+
+  .safety-section li {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* v22 visual daily life cards */
+.life-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.life-card-visual {
+  position: relative;
+  height: 52px;
+  margin-bottom: 8px;
+}
+
+.life-card-icon {
+  position: relative;
+  z-index: 2;
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(140, 45, 45, 0.14), rgba(12, 116, 107, 0.12));
+  box-shadow: inset 0 0 0 1px rgba(31, 37, 34, 0.06);
+  font-size: 1.45rem;
+}
+
+.life-card-bgicon {
+  position: absolute;
+  right: -2px;
+  top: -10px;
+  z-index: 1;
+  font-size: 3.3rem;
+  opacity: 0.08;
+  transform: rotate(-8deg);
+  filter: grayscale(0.15);
+}
+
+.life-card strong {
+  position: relative;
+  z-index: 2;
+}
+
+.life-card p,
+.life-card small {
+  position: relative;
+  z-index: 2;
+}
