@@ -162,7 +162,7 @@
     "publishedAt": "2026-05-23",
     "city": "新北市",
     "deaths": 1,
-    "injuries": 1,
+    "injuries": 0,
     "summary": "50歲王姓男子今午駕車經新北市中和區時，在景平路與大勇街口撞擊路邊緣石，倒車時猛烈撞擊後方機車，隨後又駕車前進，當場輾壓被撞倒在地的林姓姊妹，64歲妹妹送醫急救不幸身亡，姊姊仍在救治。警方在王男身上搜出二級毒品依託咪酯喪屍菸彈及吸食器，且現場唾液快篩檢測呈現毒品陽性反應，當場將王男逮捕送辦。",
     "confidence": "needs_review",
     "extractedDetails": {
@@ -228,7 +228,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -316,7 +316,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -387,7 +387,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要明確寫「所幸無人受傷」，原 injuries=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -463,7 +463,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -613,7 +613,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -682,7 +682,7 @@
         "driver_vehicle_unknown"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -756,7 +756,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -835,7 +835,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -943,7 +943,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -1023,7 +1023,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要明確寫「所幸沒有造成傷亡」，原 deaths=1 應為誤抓「毀7機車」等數字",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -1098,7 +1098,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "本篇主事件為一家4口被撞釀3傷；摘要前段2死1重傷為前一日背景事件",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -1243,7 +1243,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -1323,7 +1323,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -1405,7 +1405,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要明確寫1名女騎士與3名行人受傷，共4人",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -1504,7 +1504,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "本篇主事件為溪湖女駕駛逆向撞3車造成3傷；鹿港死亡案為前案背景",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -1661,7 +1661,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要明確寫陳男沒有受傷，主事件未見傷亡",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -1748,75 +1748,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-b68f2cc5e55e",
-    "title": "高雄毒駕撞死3幼子之母 陳其邁籲從重量刑",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/breakingnews/5364754",
-    "publishedAt": "2026-03-10",
-    "city": "高雄市",
-    "deaths": 1,
-    "injuries": 0,
-    "summary": "高雄上週發生楊姓男子涉嫌毒駕，撞斃3個孩子的媽媽！市長陳其邁繼日前發文呼籲立法院檢討刑度，今再喊話司法，盼體認社會共識、對毒駕從重量刑。高雄3月7日晚發生楊男涉嫌毒駕、撞斃3個孩子的媽媽事件，引起非議！市長陳其邁事後發文沉痛斥責毒駕不是意外，社會絕不能容忍，同時呼籲立法院檢討刑度。",
-    "confidence": "exclude",
-    "extractedDetails": {
-      "driver": {
-        "age": null,
-        "ageGroup": null,
-        "gender": "male",
-        "vehicleTypes": [],
-        "allMentionedVehicleTypes": [],
-        "primaryVehicleType": null,
-        "primaryVehicleLabel": null,
-        "vehicleExtractionMethod": "unknown"
-      },
-      "drug": {
-        "keywords": [],
-        "testMethods": [],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [],
-        "refusedInspection": false,
-        "hitAndRun": false,
-        "policeInteraction": false
-      },
-      "victim": {
-        "activities": [
-          "家庭同行"
-        ],
-        "vulnerableGroups": [
-          "兒童/學生"
-        ]
-      },
-      "context": {
-        "placeTypes": [],
-        "familyImpact": true,
-        "schoolImpact": false,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 3,
-      "originalInjuries": 0,
-      "correctedDeaths": 1,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown"
-      ],
-      "reviewNote": "標題/摘要為「3個孩子的媽媽」被撞斃，死亡人數應為1而非3",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -1896,97 +1828,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-6d4d95948288",
-    "title": "23歲男載19歲妻飆車 毒駕闖紅燈 撞死女老師",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/paper/1745856",
-    "publishedAt": "2026-03-07",
-    "city": "臺中市",
-    "deaths": 1,
-    "injuries": 3,
-    "summary": "沿路闖紅燈 波及7車台中市一名男子毒駕撞人後，輾過對方致死逃逸，昨天被台中地院認定觸犯殺人等罪判刑。在這件毒駕判決出爐前一晚，宜蘭市也發生毒駕撞死人事件，廿三歲男子林益宏吸毒後駕車沿路闖紅燈狂飆，隨後追撞停等紅燈轎車，二車往前噴飛又波及六輛車，釀一死三傷，死者是遭追撞的轎車女駕駛，林男也受傷住院，坐",
-    "confidence": "exclude",
-    "relatedReports": [
-      {
-        "title": "惡劣！殯葬二代13歲起無照上路 白翊辰毒駕撞死老翁還肇逃",
-        "url": "https://news.ltn.com.tw/news/society/breakingnews/5360415",
-        "publishedAt": "2026-03-05",
-        "deaths": 1,
-        "injuries": 0
-      }
-    ],
-    "extractedDetails": {
-      "driver": {
-        "age": 23,
-        "ageGroup": "18-24",
-        "gender": "female",
-        "vehicleTypes": [
-          "轎車/自小客車"
-        ],
-        "allMentionedVehicleTypes": [
-          "轎車/自小客車"
-        ],
-        "primaryVehicleType": "轎車/自小客車",
-        "primaryVehicleLabel": "轎車/自小客車",
-        "vehicleExtractionMethod": "single_previous_vehicle"
-      },
-      "drug": {
-        "keywords": [],
-        "testMethods": [],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "拒檢逃逸",
-          "追撞/未保持距離",
-          "闖紅燈",
-          "連環撞/多車波及",
-          "拖行/輾壓",
-          "高速/飆車"
-        ],
-        "refusedInspection": false,
-        "hitAndRun": true,
-        "policeInteraction": false
-      },
-      "victim": {
-        "activities": [
-          "停等紅燈/待轉",
-          "教師"
-        ],
-        "vulnerableGroups": [
-          "高齡者"
-        ]
-      },
-      "context": {
-        "placeTypes": [
-          "一般道路/路口"
-        ],
-        "familyImpact": false,
-        "schoolImpact": true,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 1,
-      "originalInjuries": 3,
-      "correctedDeaths": 1,
-      "correctedInjuries": 3,
-      "flags": [
-        "exclude_from_stats",
-        "number_context_review",
-        "has_related_reports",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined"
-      ],
-      "reviewNote": "紙本報導混合台中判決與宜蘭女老師事件，非單一乾淨事件；宜蘭事件已有獨立主報導",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -2073,82 +1915,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-28f39df639da",
-    "title": "宜蘭59歲女老師停等紅燈遭毒駕撞死 校方心碎不捨嘆「怎麼告訴學生？」",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/breakingnews/5360727",
-    "publishedAt": "2026-03-06",
-    "city": "宜蘭縣",
-    "deaths": 1,
-    "injuries": 0,
-    "summary": "任職於宜蘭某間私立中小學的小學部59歲鍾姓女老師，昨晚駕車返家途中，遭毒駕高速追撞身亡，噩耗一早傳回校內，校方「心碎」不捨，大嘆該怎麼跟學生說？鍾師和善貼心且具包容力，深受家長及孩子歡迎，目前緊急安排主任暫代導師職務，將請諮商師入校輔導學生。",
-    "confidence": "exclude",
-    "extractedDetails": {
-      "driver": {
-        "age": 59,
-        "ageGroup": "55-64",
-        "gender": null,
-        "vehicleTypes": [],
-        "allMentionedVehicleTypes": [],
-        "primaryVehicleType": null,
-        "primaryVehicleLabel": null,
-        "vehicleExtractionMethod": "unknown"
-      },
-      "drug": {
-        "keywords": [],
-        "testMethods": [],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "追撞/未保持距離",
-          "連環撞/多車波及",
-          "高速/飆車"
-        ],
-        "refusedInspection": false,
-        "hitAndRun": false,
-        "policeInteraction": false
-      },
-      "victim": {
-        "activities": [
-          "停等紅燈/待轉",
-          "學生/環島車隊",
-          "教師",
-          "家庭同行"
-        ],
-        "vulnerableGroups": [
-          "兒童/學生"
-        ]
-      },
-      "context": {
-        "placeTypes": [
-          "學校/學生路線"
-        ],
-        "familyImpact": true,
-        "schoolImpact": true,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 1,
-      "originalInjuries": 0,
-      "correctedDeaths": 1,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "number_context_review",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown"
-      ],
-      "reviewNote": "宜蘭女老師事件校方後續報導，與主事故報導重複",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -2229,7 +1996,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "標題「7旬」與摘要「70多歲」為年齡，死亡人數應為1而非7",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -2310,7 +2077,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要寫陳姓男駕駛與郭姓女乘客受傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -2393,91 +2160,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要明確寫車內四女童、一男童都受傷，至少5名孩童受傷",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-d7fa0fdc8ec2",
-    "title": "毒駕女撞死新北警所長 鑑定醫師：辨識能力正常",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/breakingnews/5337608",
-    "publishedAt": "2026-02-09",
-    "city": "新北市",
-    "deaths": 0,
-    "injuries": 0,
-    "summary": "女子陳嘉瑩前年毒駕拒檢，衝撞、拖行派出所長劉宗鑫致死。新北地院今天開庭審理第2天，精神鑑定醫師表示，雖陳女有施用毒品，但案發當下的辨識能力與控制能力與正常人相同。新北市土城警分局清水派出所所長劉宗鑫113年9月30日深夜執行攔查時，遭持有毒品的陳嘉瑩開車衝撞、拖行後撞擊護欄身亡。新北地檢署依殺人罪、",
-    "confidence": "exclude",
-    "relatedReports": [
-      {
-        "title": "陳嘉瑩毒駕撞死警所長判死刑 侯友宜：謝謝司法正義",
-        "url": "https://news.ltn.com.tw/news/society/breakingnews/5341194",
-        "publishedAt": "2026-02-12",
-        "deaths": 1,
-        "injuries": 0
-      }
-    ],
-    "extractedDetails": {
-      "driver": {
-        "age": null,
-        "ageGroup": null,
-        "gender": "female",
-        "vehicleTypes": [],
-        "allMentionedVehicleTypes": [],
-        "primaryVehicleType": null,
-        "primaryVehicleLabel": null,
-        "vehicleExtractionMethod": "unknown"
-      },
-      "drug": {
-        "keywords": [],
-        "testMethods": [],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "拒檢逃逸",
-          "衝撞警員/警車",
-          "連環撞/多車波及",
-          "拖行/輾壓"
-        ],
-        "refusedInspection": true,
-        "hitAndRun": false,
-        "policeInteraction": true
-      },
-      "victim": {
-        "activities": [
-          "警務執勤"
-        ],
-        "vulnerableGroups": [
-          "警務人員"
-        ]
-      },
-      "context": {
-        "placeTypes": [
-          "警方攔查現場"
-        ],
-        "familyImpact": false,
-        "schoolImpact": false,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 1,
-      "originalInjuries": 0,
-      "correctedDeaths": 0,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "has_related_reports",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown"
-      ],
-      "reviewNote": "審理後續報導，非事故本體；避免以發布日重複計入",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -2556,7 +2239,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要明確寫3名駕駛未受傷，原 injuries=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -2628,7 +2311,7 @@
         "driver_vehicle_unknown"
       ],
       "reviewNote": "摘要明確寫所幸現場無民眾傷亡，原 deaths=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -2703,7 +2386,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -2787,7 +2470,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要明確寫1大2小幸好未受傷，原 injuries=1 應為誤抓",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -2862,7 +2545,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要寫李男與另一名被撞駕駛送醫",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3004,7 +2687,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3079,7 +2762,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3157,7 +2840,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3255,7 +2938,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3331,7 +3014,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "標題寫4就醫，摘要寫多名人員受傷，依標題修正為4",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3403,7 +3086,7 @@
         "driver_vehicle_unknown"
       ],
       "reviewNote": "標題/摘要均指3人車禍受傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3481,7 +3164,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3554,80 +3237,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要明確寫車上4人沒有受傷，原 injuries=1 應為誤抓",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-7e3af61c82e4",
-    "title": "婦人遭毒駕輾斃 彰化警啟用毒品唾液快篩全面取締",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/breakingnews/5254245",
-    "publishedAt": "2025-11-22",
-    "city": "彰化縣",
-    "deaths": 0,
-    "injuries": 0,
-    "summary": "近年一再發生毒駕肇事釀成重大傷亡事件，本月18日彰化員林又發生毒駕撞死人，警政署通令全國警察機關即日起展開「毒品唾液快篩試劑檢測」執法，彰化縣警察局為達到酒測+毒測執法零誤差，日前邀集刑事及交通幹部及承辦人員訓練，以實作情境演練及快篩試劑操作方式培訓種子教官，並全面推廣到第一線員警，確保執法正確與合",
-    "confidence": "exclude",
-    "extractedDetails": {
-      "driver": {
-        "age": null,
-        "ageGroup": null,
-        "gender": null,
-        "vehicleTypes": [],
-        "allMentionedVehicleTypes": [],
-        "primaryVehicleType": null,
-        "primaryVehicleLabel": null,
-        "vehicleExtractionMethod": "unknown"
-      },
-      "drug": {
-        "keywords": [],
-        "testMethods": [
-          "唾液快篩/檢測"
-        ],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "衝撞警員/警車",
-          "拖行/輾壓"
-        ],
-        "refusedInspection": false,
-        "hitAndRun": false,
-        "policeInteraction": true
-      },
-      "victim": {
-        "activities": [
-          "警務執勤"
-        ],
-        "vulnerableGroups": [
-          "警務人員"
-        ]
-      },
-      "context": {
-        "placeTypes": [
-          "警方攔查現場"
-        ],
-        "familyImpact": false,
-        "schoolImpact": false,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 1,
-      "originalInjuries": 0,
-      "correctedDeaths": 0,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown"
-      ],
-      "reviewNote": "警政執法/政策報導，非事故本體；不應以本篇發布日重複計入死亡",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3698,7 +3308,7 @@
         "driver_vehicle_unknown"
       ],
       "reviewNote": "摘要寫一家3口多處擦挫傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3770,7 +3380,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -3972,7 +3582,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4037,7 +3647,7 @@
         "driver_vehicle_unknown"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4190,7 +3800,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4264,7 +3874,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要寫3名被害轎車車主受到輕傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4341,7 +3951,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4419,7 +4029,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "摘要寫蔡男與賴女都受傷",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4496,7 +4106,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4570,172 +4180,7 @@
         "driver_vehicle_unknown"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-18c3cbeab824",
-    "title": "衝撞康橋車隊前 詭異飄移／毒駕？ 肇事男急驗血、尿",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/paper/1703270",
-    "publishedAt": "2025-04-24",
-    "city": "新北市",
-    "deaths": 0,
-    "injuries": 0,
-    "summary": "新北市康橋國際學校秀崗校區學生，廿二日騎單車環島經過彰化時，遭蕭姓男子駕車逆向撞擊，造成七名學生分受輕重傷，事後蕭男辯稱，「當時在彎腰撿東西」，不過有影片流出，蕭男在出事前曾多次鬼切變換車道，詭異飄移的行徑不似正常狀態下開車，質疑是否毒駕。對此警方不排除任何可能，已對蕭男尿液及血液檢驗，昨傍晚移送彰",
-    "confidence": "exclude",
-    "relatedReports": [
-      {
-        "title": "毒駕逆向撞傷康橋環台7學生 肇事嫌犯尿檢出3種毒品反應",
-        "url": "https://news.ltn.com.tw/news/society/breakingnews/5023428",
-        "publishedAt": "2025-04-25",
-        "deaths": 0,
-        "injuries": 1
-      }
-    ],
-    "extractedDetails": {
-      "driver": {
-        "age": null,
-        "ageGroup": null,
-        "gender": "male",
-        "vehicleTypes": [],
-        "allMentionedVehicleTypes": [],
-        "primaryVehicleType": null,
-        "primaryVehicleLabel": null,
-        "vehicleExtractionMethod": "unknown"
-      },
-      "drug": {
-        "keywords": [
-          "毒品陽性未詳"
-        ],
-        "testMethods": [
-          "尿液檢驗",
-          "血液檢驗"
-        ],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "逆向/跨越車道",
-          "連環撞/多車波及"
-        ],
-        "refusedInspection": false,
-        "hitAndRun": false,
-        "policeInteraction": true
-      },
-      "victim": {
-        "activities": [
-          "學生/環島車隊"
-        ],
-        "vulnerableGroups": [
-          "兒童/學生"
-        ]
-      },
-      "context": {
-        "placeTypes": [
-          "學校/學生路線"
-        ],
-        "familyImpact": false,
-        "schoolImpact": true,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 0,
-      "originalInjuries": 1,
-      "correctedDeaths": 0,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "drug_status_or_cause_pending",
-        "has_related_reports",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown"
-      ],
-      "reviewNote": "康橋事故後續/評論型報導，非主事故本體；主事故已有彰化報導",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-54de992e68e3",
-    "title": "健康網》「毒駕」撞康橋學生 醫：吸食喪屍煙彈難察覺",
-    "source": "LTN",
-    "url": "https://health.ltn.com.tw/article/breakingnews/5022395",
-    "publishedAt": "2025-04-24",
-    "city": "桃園市",
-    "deaths": 0,
-    "injuries": 0,
-    "summary": "相關新聞請見健康網》康橋重傷學生昏迷指數「3升8」 醫教計算方式新興毒品「喪屍煙彈」憾事頻傳 濫用症狀、拒毒5招一次看葉立斌／核稿編輯近日彰化發生康橋學校環島自行車隊遭汽車逆向衝撞，造成7名學生輕重傷的意外。肇事駕駛則是因為「毒駕」，吸食新興毒品「依托咪酯」（喪屍煙彈）並開車上路釀禍。桃園療養院副院",
-    "confidence": "exclude",
-    "extractedDetails": {
-      "driver": {
-        "age": null,
-        "ageGroup": null,
-        "gender": null,
-        "vehicleTypes": [
-          "轎車"
-        ],
-        "allMentionedVehicleTypes": [
-          "轎車/自小客車"
-        ],
-        "primaryVehicleType": "轎車/自小客車",
-        "primaryVehicleLabel": "轎車",
-        "vehicleExtractionMethod": "subject_pattern"
-      },
-      "drug": {
-        "keywords": [
-          "依托咪酯",
-          "喪屍煙彈"
-        ],
-        "testMethods": [],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "逆向/跨越車道",
-          "連環撞/多車波及"
-        ],
-        "refusedInspection": false,
-        "hitAndRun": false,
-        "policeInteraction": false
-      },
-      "victim": {
-        "activities": [
-          "學生/環島車隊"
-        ],
-        "vulnerableGroups": [
-          "兒童/學生"
-        ]
-      },
-      "context": {
-        "placeTypes": [
-          "一般道路/路口",
-          "學校/學生路線"
-        ],
-        "familyImpact": false,
-        "schoolImpact": true,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 0,
-      "originalInjuries": 1,
-      "correctedDeaths": 0,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "driver_vehicle_refined"
-      ],
-      "reviewNote": "健康網解說文章，非事故本體",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4810,7 +4255,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4881,7 +4326,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -4954,7 +4399,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -5029,84 +4474,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "標題/摘要寫造成2女受傷",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-3cae1841417b",
-    "title": "毒駕女拖撞警所長殉職 喪屍煙彈是23歲男賣她的",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/paper/1679771",
-    "publishedAt": "2024-11-30",
-    "city": "新北市",
-    "deaths": 0,
-    "injuries": 0,
-    "summary": "近期吸食依托咪酯製成的「喪屍煙彈」後毒駕，已造成新北市兩名警察殉職，撞死警員黃瑋震一案中，賣毒給毒蟲的毒販王厚升於本月廿七日落網。另一案為今年九月間，土城警分局清水派出所長劉宗鑫在新北地檢署旁盤查可疑車輛時，遭女子陳嘉瑩駕車拖行及猛力貼撞環狀線捷運工地圍籬殉職，事發後陳女也被查出涉吸食喪屍煙彈等毒品",
-    "confidence": "exclude",
-    "extractedDetails": {
-      "driver": {
-        "age": 23,
-        "ageGroup": "18-24",
-        "gender": "female",
-        "vehicleTypes": [],
-        "allMentionedVehicleTypes": [],
-        "primaryVehicleType": null,
-        "primaryVehicleLabel": null,
-        "vehicleExtractionMethod": "unknown"
-      },
-      "drug": {
-        "keywords": [
-          "依托咪酯",
-          "喪屍煙彈"
-        ],
-        "testMethods": [],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "衝撞警員/警車",
-          "連環撞/多車波及",
-          "拖行/輾壓"
-        ],
-        "refusedInspection": false,
-        "hitAndRun": false,
-        "policeInteraction": true
-      },
-      "victim": {
-        "activities": [
-          "警務執勤"
-        ],
-        "vulnerableGroups": [
-          "警務人員"
-        ]
-      },
-      "context": {
-        "placeTypes": [
-          "警方攔查現場"
-        ],
-        "familyImpact": false,
-        "schoolImpact": false,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 1,
-      "originalInjuries": 0,
-      "correctedDeaths": 0,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown"
-      ],
-      "reviewNote": "後續報導，非事故本體；避免重複計入",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -5179,7 +4547,7 @@
         "driver_vehicle_unknown"
       ],
       "reviewNote": "摘要寫2名男子受傷送醫",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -5252,78 +4620,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-8c999962ec2c",
-    "title": "黃瑋震、劉宗鑫2警遭毒駕撞死 廖訓誠：警政署認定皆因公殉職",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/breakingnews/4831602",
-    "publishedAt": "2024-10-15",
-    "city": "新北市",
-    "deaths": 0,
-    "injuries": 0,
-    "summary": "新北市警察局三重分局厚德派出所警員黃瑋震、土城分局清水派出所長劉宗鑫，分別於今年七月、九月值勤時遭毒駕撞死，市議員陳世軒今天在市議會指出，三個月內兩名員警不幸身亡，詢問撫卹目前進度，警察局長廖訓誠回應，警政署昨已開完審議會，均以「因公殉職」認定標準撫卹。",
-    "confidence": "exclude",
-    "extractedDetails": {
-      "driver": {
-        "age": null,
-        "ageGroup": null,
-        "gender": null,
-        "vehicleTypes": [],
-        "allMentionedVehicleTypes": [],
-        "primaryVehicleType": null,
-        "primaryVehicleLabel": null,
-        "vehicleExtractionMethod": "unknown"
-      },
-      "drug": {
-        "keywords": [],
-        "testMethods": [],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "衝撞警員/警車"
-        ],
-        "refusedInspection": false,
-        "hitAndRun": false,
-        "policeInteraction": true
-      },
-      "victim": {
-        "activities": [
-          "警務執勤"
-        ],
-        "vulnerableGroups": [
-          "警務人員"
-        ]
-      },
-      "context": {
-        "placeTypes": [
-          "警方攔查現場"
-        ],
-        "familyImpact": false,
-        "schoolImpact": false,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 1,
-      "originalInjuries": 0,
-      "correctedDeaths": 0,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown"
-      ],
-      "reviewNote": "綜合/撫卹認定報導，非單一事故本體",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -5392,154 +4689,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-08162e902c62",
-    "title": "台中男攜喪屍煙彈自撞2賓士 辯「太疲勞」警追毒駕究責",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/breakingnews/4807275",
-    "publishedAt": "2024-09-22",
-    "city": "臺中市",
-    "deaths": 0,
-    "injuries": 0,
-    "summary": "有「喪屍煙彈」之稱的依托咪酯，一旦吸食讓人產生幻覺，無法控制手腳，光今年7到9月就發生兩起因吸食該毒品涉毒駕死亡車禍，而台中市一名男子近日則是開車行經北區時，自撞停放停放路旁的兩輛賓士車，雖主動交付上述毒品卻辯稱是疲勞駕駛，警方已採尿送驗，釐清是否涉及毒駕究責。",
-    "confidence": "exclude",
-    "extractedDetails": {
-      "driver": {
-        "age": null,
-        "ageGroup": null,
-        "gender": "male",
-        "vehicleTypes": [
-          "賓士車"
-        ],
-        "allMentionedVehicleTypes": [
-          "賓士"
-        ],
-        "primaryVehicleType": "賓士車",
-        "primaryVehicleLabel": "賓士車",
-        "vehicleExtractionMethod": "title_pattern"
-      },
-      "drug": {
-        "keywords": [
-          "依托咪酯",
-          "喪屍煙彈"
-        ],
-        "testMethods": [
-          "尿液檢驗"
-        ],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "自撞/失控",
-          "連環撞/多車波及"
-        ],
-        "refusedInspection": false,
-        "hitAndRun": false,
-        "policeInteraction": true
-      },
-      "victim": {
-        "activities": [],
-        "vulnerableGroups": []
-      },
-      "context": {
-        "placeTypes": [
-          "一般道路/路口"
-        ],
-        "familyImpact": false,
-        "schoolImpact": false,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 1,
-      "originalInjuries": 0,
-      "correctedDeaths": 0,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "drug_status_or_cause_pending",
-        "driver_vehicle_refined"
-      ],
-      "reviewNote": "摘要為自撞停放車輛並無死傷描述，原 deaths=1 應為誤抓",
-      "needsHumanReview": false
-    }
-  },
-  {
-    "id": "ltn-2b0017b1891c",
-    "title": "三重警遭毒駕撞死送件拖2月？新北警：爭取新修法2000萬最優撫卹",
-    "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/breakingnews/4807032",
-    "publishedAt": "2024-09-21",
-    "city": "新北市",
-    "deaths": 0,
-    "injuries": 0,
-    "summary": "新北市警三重分局警員黃瑋震7月間巡邏中，不幸遭毒蟲黃國維毒駕撞上殉職，外傳撫卹案自事發逾2個月尚未送件，恐影響遺屬權益。新北市警察局表示，經與遺孀溝通，此案為考量修法後條件較優渥，技術性延至修法後送件，且距修法後僅5個上班日，並無延後怠慢情事，全力替遺屬爭取最大撫卹。",
-    "confidence": "exclude",
-    "extractedDetails": {
-      "driver": {
-        "age": null,
-        "ageGroup": null,
-        "gender": null,
-        "vehicleTypes": [],
-        "allMentionedVehicleTypes": [],
-        "primaryVehicleType": null,
-        "primaryVehicleLabel": null,
-        "vehicleExtractionMethod": "unknown"
-      },
-      "drug": {
-        "keywords": [],
-        "testMethods": [],
-        "status": "positive_or_found"
-      },
-      "crash": {
-        "scenarioTypes": [
-          "衝撞警員/警車"
-        ],
-        "refusedInspection": false,
-        "hitAndRun": false,
-        "policeInteraction": true
-      },
-      "victim": {
-        "activities": [
-          "警務執勤"
-        ],
-        "vulnerableGroups": [
-          "警務人員"
-        ]
-      },
-      "context": {
-        "placeTypes": [
-          "警方攔查現場"
-        ],
-        "familyImpact": false,
-        "schoolImpact": false,
-        "publicPlaceImpact": false
-      }
-    },
-    "dataQuality": {
-      "version": "quality_update_2026-05-24",
-      "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
-      "originalDeaths": 1,
-      "originalInjuries": 0,
-      "correctedDeaths": 0,
-      "correctedInjuries": 0,
-      "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown"
-      ],
-      "reviewNote": "撫卹後續報導，非事故本體；避免重複計入",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -5644,7 +4794,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -5713,7 +4863,7 @@
         "driver_vehicle_unknown"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -5795,7 +4945,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -5939,7 +5089,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   },
   {
@@ -6018,7 +5168,7 @@
         "driver_vehicle_refined"
       ],
       "reviewNote": "",
-      "needsHumanReview": false
+      "needsHumanReview": true
     }
   }
 ]

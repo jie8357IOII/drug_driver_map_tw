@@ -1,0 +1,94 @@
+{
+  "sourceFile": "incidents.json",
+  "sourceRecords": 77,
+  "updatedRecords": 77,
+  "statsReadyRecords": 66,
+  "countCorrectedRecords": 30,
+  "excludedFromStatsRecords": 11,
+  "originalTotals": {
+    "deaths": 52,
+    "injuries": 107
+  },
+  "updatedAllRecordsTotals": {
+    "deaths": 33,
+    "injuries": 121
+  },
+  "statsReadyTotals": {
+    "deaths": 30,
+    "injuries": 118
+  },
+  "confidenceDistribution": {
+    "reviewed_ok": 9,
+    "needs_review": 36,
+    "reviewed_corrected": 21,
+    "exclude": 11
+  },
+  "topExtractedVehicleTypes": {
+    "機車": 34,
+    "轎車/自小客車": 32,
+    "賓士": 12,
+    "小貨車/自小客貨車": 6,
+    "休旅車": 4,
+    "BMW": 4,
+    "砂石車": 2,
+    "廂型車": 2,
+    "保時捷": 1,
+    "Audi": 1
+  },
+  "topDrugKeywords": {
+    "喪屍煙彈": 21,
+    "毒品陽性未詳": 14,
+    "依托咪酯": 11,
+    "安非他命": 8,
+    "K他命/愷他命": 5,
+    "毒咖啡包/喵喵": 1,
+    "海洛因": 1,
+    "卡西酮": 1
+  },
+  "topScenarioTypes": {
+    "連環撞/多車波及": 70,
+    "自撞/失控": 29,
+    "拒檢逃逸": 22,
+    "衝撞警員/警車": 15,
+    "追撞/未保持距離": 15,
+    "逆向/跨越車道": 12,
+    "高速/飆車": 12,
+    "拖行/輾壓": 10,
+    "闖紅燈": 4
+  },
+  "topVictimActivities": {
+    "騎乘機車": 38,
+    "警務執勤": 13,
+    "家庭同行": 12,
+    "停等紅燈/待轉": 9,
+    "行人/過馬路": 7,
+    "學生/環島車隊": 6,
+    "店家/商圈": 5,
+    "教師": 3,
+    "下車救援": 2,
+    "倒垃圾": 2
+  },
+  "methodology": [
+    "本次更新僅依 uploaded incidents.json 內的 title、summary、relatedReports 做規則式資料品質校正。",
+    "未逐篇打開新聞原文全文，因此涉及法律進度、正式檢驗結果或未在摘要中明確揭露的細節，均保留 needsHumanReview。",
+    "correctedDeaths / correctedInjuries 只修正摘要明確可判斷的誤抓，例如年齡被誤作死亡數、背景事件被誤算入主事件、摘要明確寫無人受傷等。",
+    "includeInStats=false 代表後續/評論/解說/重複報導，建議前端統計或地圖 KPI 排除。"
+  ],
+  "driverVehicleUpdate": {
+    "version": "driver_vehicle_v13",
+    "description": "Refined offender vehicle extraction. driver.vehicleTypes now contains offender primary vehicle only; all mentioned vehicles moved to driver.allMentionedVehicleTypes.",
+    "unknownDriverVehicleRecords": 20,
+    "topDriverVehiclesStatsReady": {
+      "機車": 17,
+      "轎車": 15,
+      "賓士車": 5,
+      "小貨車": 4,
+      "轎車/自小客車": 3,
+      "休旅車": 3,
+      "砂石車": 2,
+      "賓士": 2,
+      "小貨車/自小客貨車": 1,
+      "Audi A7": 1
+    }
+  }
+}

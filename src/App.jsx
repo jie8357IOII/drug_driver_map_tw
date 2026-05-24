@@ -114,6 +114,70 @@ function formatDate(dateText) {
   return dateText.replaceAll("-", "/");
 }
 
+function isStatsIncident(incident) {
+  return incident.dataQuality?.includeInStats !== false;
+}
+
+function qualityLabel(incident) {
+  if (incident.dataQuality?.includeInStats === false) return "排除統計";
+  if (incident.dataQuality?.flags?.includes("count_corrected")) return "已校正";
+  if (incident.dataQuality?.needsHumanReview) return "需複核";
+  return "可統計";
+}
+
+function qualityTone(incident) {
+  if (incident.dataQuality?.includeInStats === false) return "excluded";
+  if (incident.dataQuality?.flags?.includes("count_corrected")) return "corrected";
+  if (incident.dataQuality?.needsHumanReview) return "review";
+  return "ok";
+}
+
+function countValues(items, selector, limit = 8) {
+  const counter = new Map();
+
+  items.forEach((item) => {
+    const values = selector(item);
+    const list = Array.isArray(values) ? values : values ? [values] : [];
+
+    list.filter(Boolean).forEach((value) => {
+      counter.set(value, (counter.get(value) || 0) + 1);
+    });
+  });
+
+  return [...counter.entries()]
+    .map(([label, value]) => ({ label, value }))
+    .sort((a, b) => b.value - a.value || a.label.localeCompare(b.label, "zh-Hant"))
+    .slice(0, limit);
+}
+
+
+function driverAgeLabel(ageGroup) {
+  switch (ageGroup) {
+    case "under_18":
+      return "18歲以下";
+    case "18-24":
+      return "18–24";
+    case "25-34":
+      return "25–34";
+    case "35-44":
+      return "35–44";
+    case "45-54":
+      return "45–54";
+    case "55-64":
+      return "55–64";
+    case "65+":
+      return "65歲以上";
+    default:
+      return "年齡未明";
+  }
+}
+
+function driverGenderLabel(gender) {
+  if (gender === "male") return "男性";
+  if (gender === "female") return "女性";
+  return "性別未明";
+}
+
 function levelLabel(level) {
   if (level === "high") return "高";
   if (level === "medium") return "中";
@@ -690,10 +754,6 @@ function DataStatusBar({ status }) {
         <span>統計月份</span>
         <strong>{status.monthRange || "尚無資料"}</strong>
       </div>
-      <div>
-        <span>新聞來源</span>
-        <strong>{status.sourceCount.toLocaleString()} 個</strong>
-      </div>
     </section>
   );
 }
@@ -904,7 +964,7 @@ function ControlPanel({
     <aside className="control-panel tool-panel panel-pop">
       <div className="tool-panel-head">
         <span>工具面板</span>
-        <h2>{activeView === "map" ? "地圖控制" : activeView === "trend" ? "趨勢篩選" : "新聞篩選"}</h2>
+        <h2>{activeView === "map" ? "地圖控制" : activeView === "trend" ? "趨勢篩選" : activeView === "caseStats" ? "案件統計" : "新聞篩選"}</h2>
         <p>上方月份列與縣市選取會同步影響地圖、趨勢圖與新聞列表。</p>
       </div>
 
@@ -1135,6 +1195,394 @@ function CityTrendPage({ months, selectedMonths, incidents, suspects, selectedCi
   );
 }
 
+
+
+function genderLabel(value) {
+  if (value === "male") return "男性";
+  if (value === "female") return "女性";
+  return null;
+}
+
+function profileTags(values, fallback) {
+  const list = Array.isArray(values) ? values.filter(Boolean) : values ? [values] : [];
+  return list.length ? list.slice(0, 5) : [fallback];
+}
+
+function ProfileTagList({ values, fallback, tone }) {
+  return (
+    <div className="profile-tags">
+      {profileTags(values, fallback).map((value) => (
+        <span className={`profile-tag ${tone || ""}`} key={value}>
+          {value}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function IncidentProfilePanel({ incident }) {
+  const driver = incident.extractedDetails?.driver || {};
+  const drug = incident.extractedDetails?.drug || {};
+  const crash = incident.extractedDetails?.crash || {};
+  const victim = incident.extractedDetails?.victim || {};
+  const context = incident.extractedDetails?.context || {};
+
+  const driverIdentity = [
+    driver.age ? `${driver.age}歲` : null,
+    genderLabel(driver.gender),
+    driver.ageGroup ? `年齡層 ${driver.ageGroup}` : null,
+  ].filter(Boolean);
+
+  const victimContext = [
+    ...(victim.vulnerableGroups || []),
+    context.familyImpact ? "家庭受影響" : null,
+    context.schoolImpact ? "校園/學生相關" : null,
+    context.publicPlaceImpact ? "公共場域波及" : null,
+  ].filter(Boolean);
+
+  return (
+    <section className="incident-profile-panel">
+      <article className="profile-card driver-profile">
+        <div className="profile-card-head">
+          <span>毒駕者輪廓</span>
+          <strong>{driverIdentity.length ? driverIdentity.join("・") : "身分資訊未明"}</strong>
+        </div>
+
+        <div className="profile-block">
+          <small>毒駕載具</small>
+          <ProfileTagList
+            values={driver.primaryVehicleLabel || driver.primaryVehicleType}
+            fallback="毒駕載具未明"
+            tone="vehicle"
+          />
+        </div>
+
+        <div className="profile-block">
+          <small>毒品 / 檢測</small>
+          <ProfileTagList
+            values={[...(drug.keywords || []), ...(drug.testMethods || [])]}
+            fallback="毒品類型未明"
+            tone="drug"
+          />
+        </div>
+
+        <div className="profile-block">
+          <small>行為型態</small>
+          <ProfileTagList values={crash.scenarioTypes || []} fallback="肇事型態未明" tone="scenario" />
+        </div>
+      </article>
+
+      <article className="profile-card victim-profile">
+        <div className="profile-card-head">
+          <span>受害者輪廓</span>
+          <strong>
+            死亡 {incident.deaths}｜受傷 {incident.injuries}
+          </strong>
+        </div>
+
+        <div className="profile-block">
+          <small>正在做什麼 / 受害情境</small>
+          <ProfileTagList values={victim.activities || []} fallback="受害情境未明" tone="victim" />
+        </div>
+
+        <div className="profile-block">
+          <small>脆弱族群 / 家庭影響</small>
+          <ProfileTagList values={victimContext} fallback="未揭露明確輪廓" tone="vulnerable" />
+        </div>
+
+        <div className="profile-block">
+          <small>場域</small>
+          <ProfileTagList values={context.placeTypes || []} fallback="場域未明" tone="place" />
+        </div>
+      </article>
+    </section>
+  );
+}
+
+function QualityBadge({ incident }) {
+  return <span className={`quality-badge ${qualityTone(incident)}`}>{qualityLabel(incident)}</span>;
+}
+
+function StatBars({ title, rows, tone = "" }) {
+  const max = Math.max(1, ...rows.map((row) => row.value));
+
+  return (
+    <article className={`stats-card ${tone}`}>
+      <h3>{title}</h3>
+
+      {rows.length ? (
+        <div className="stats-bars">
+          {rows.map((row) => (
+            <div className="stats-row" key={row.label}>
+              <div>
+                <span>{row.label}</span>
+                <strong>{row.value}</strong>
+              </div>
+              <i style={{ width: `${Math.max(8, (row.value / max) * 100)}%` }} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p className="stats-empty">目前資料不足</p>
+      )}
+    </article>
+  );
+}
+
+function DonutChartCard({ title, rows, centerValue, centerLabel, tone = "" }) {
+  const palette = ["#8c2d2d", "#0c746b", "#d38b25", "#7c3aed", "#2563eb", "#4f554f", "#d97706", "#9f1239"];
+  const total = Math.max(1, rows.reduce((sum, row) => sum + row.value, 0));
+  const circumference = 2 * Math.PI * 42;
+  let cumulative = 0;
+
+  return (
+    <article className={`donut-card ${tone}`}>
+      <div className="donut-card-head">
+        <h3>{title}</h3>
+        <p>僅統計目前可判讀之毒駕者資料，未明資料另列。</p>
+      </div>
+
+      <div className="donut-card-body">
+        <div className="donut-visual" aria-hidden="true">
+          <svg viewBox="0 0 120 120" className="donut-svg">
+            <circle cx="60" cy="60" r="42" className="donut-base" />
+            {rows.map((row, index) => {
+              const fraction = row.value / total;
+              const dash = fraction * circumference;
+              const gap = circumference - dash;
+              const segment = (
+                <circle
+                  key={row.label}
+                  cx="60"
+                  cy="60"
+                  r="42"
+                  fill="none"
+                  stroke={palette[index % palette.length]}
+                  strokeWidth="12"
+                  strokeDasharray={`${dash} ${gap}`}
+                  strokeDashoffset={-cumulative}
+                  strokeLinecap="butt"
+                  transform="rotate(-90 60 60)"
+                />
+              );
+              cumulative += dash;
+              return segment;
+            })}
+          </svg>
+
+          <div className="donut-center">
+            <strong>{centerValue}</strong>
+            <span>{centerLabel}</span>
+          </div>
+        </div>
+
+        <div className="donut-legend">
+          {rows.map((row, index) => {
+            const pct = Math.round((row.value / total) * 1000) / 10;
+            return (
+              <div className="donut-legend-row" key={row.label}>
+                <div>
+                  <i style={{ background: palette[index % palette.length] }} />
+                  <span>{row.label}</span>
+                </div>
+                <strong>{row.value} 筆・{pct}%</strong>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function OffenderDemographicsSection({ statsIncidents, selectedCity }) {
+  const ageRows = countValues(
+    statsIncidents,
+    (item) => driverAgeLabel(item.extractedDetails?.driver?.ageGroup),
+    8
+  );
+  const genderRows = countValues(
+    statsIncidents,
+    (item) => driverGenderLabel(item.extractedDetails?.driver?.gender),
+    3
+  );
+
+  const ageKnownCount = statsIncidents.filter(
+    (item) => driverAgeLabel(item.extractedDetails?.driver?.ageGroup) !== "年齡未明"
+  ).length;
+  const genderKnownCount = statsIncidents.filter(
+    (item) => driverGenderLabel(item.extractedDetails?.driver?.gender) !== "性別未明"
+  ).length;
+
+  return (
+    <section className="offender-demographics panel-pop">
+      <div className="section-head compact">
+        <span>毒駕者輪廓統計</span>
+        <h2>{selectedCity || "全部縣市"}｜毒駕者年齡與性別</h2>
+        <p>聚焦毒駕者本身，不混入受害者資料；切換縣市後會同步更新。</p>
+      </div>
+
+      <div className="offender-kpis">
+        <article>
+          <small>毒駕案件</small>
+          <strong>{statsIncidents.length}</strong>
+        </article>
+        <article>
+          <small>年齡可判讀</small>
+          <strong>{ageKnownCount}</strong>
+        </article>
+        <article>
+          <small>性別可判讀</small>
+          <strong>{genderKnownCount}</strong>
+        </article>
+      </div>
+
+      <div className="offender-demographics-grid">
+        <DonutChartCard
+          title="毒駕者年齡分布"
+          rows={ageRows}
+          centerValue={ageKnownCount}
+          centerLabel="年齡可判讀"
+          tone="age"
+        />
+        <DonutChartCard
+          title="毒駕者性別分布"
+          rows={genderRows}
+          centerValue={genderKnownCount}
+          centerLabel="性別可判讀"
+          tone="gender"
+        />
+      </div>
+    </section>
+  );
+}
+
+function QualitySummaryCard({ allIncidents, statsIncidents, selectedCity }) {
+  const corrected = allIncidents.filter((item) => item.dataQuality?.flags?.includes("count_corrected")).length;
+  const excluded = allIncidents.filter((item) => item.dataQuality?.includeInStats === false).length;
+  const needsReview = allIncidents.filter((item) => item.dataQuality?.needsHumanReview).length;
+
+  return (
+    <section className="quality-summary-card panel-pop">
+      <div>
+        <span>資料品質</span>
+        <h2>{selectedCity || "全部縣市"}｜統計口徑已更新</h2>
+        <p>
+          完整新聞列表保留所有案件；KPI、地圖、縣市排名與趨勢圖僅採用「建議納入統計」案件，
+          避免後續報導、評論文章或重複報導影響死傷數。
+        </p>
+      </div>
+
+      <div className="quality-kpis">
+        <article>
+          <small>完整資料</small>
+          <strong>{allIncidents.length}</strong>
+        </article>
+        <article>
+          <small>納入統計</small>
+          <strong>{statsIncidents.length}</strong>
+        </article>
+        <article>
+          <small>已校正</small>
+          <strong>{corrected}</strong>
+        </article>
+        <article>
+          <small>排除統計</small>
+          <strong>{excluded}</strong>
+        </article>
+        <article>
+          <small>需複核</small>
+          <strong>{needsReview}</strong>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+function CaseStatsPage({ allIncidents, statsIncidents, selectedCity }) {
+  const scopedAllIncidents = useMemo(() => {
+    return selectedCity ? allIncidents.filter((item) => item.city === selectedCity) : allIncidents;
+  }, [allIncidents, selectedCity]);
+
+  const scopedStatsIncidents = useMemo(() => {
+    return selectedCity ? statsIncidents.filter((item) => item.city === selectedCity) : statsIncidents;
+  }, [selectedCity, statsIncidents]);
+
+  const vehicleRows = countValues(
+    scopedStatsIncidents,
+    (item) =>
+      item.extractedDetails?.driver?.primaryVehicleLabel ||
+      item.extractedDetails?.driver?.primaryVehicleType,
+    8
+  );
+
+  const drugRows = countValues(
+    scopedStatsIncidents,
+    (item) => item.extractedDetails?.drug?.keywords || [],
+    8
+  );
+
+  const scenarioRows = countValues(
+    scopedStatsIncidents,
+    (item) => item.extractedDetails?.crash?.scenarioTypes || [],
+    8
+  );
+
+  const victimRows = countValues(
+    scopedStatsIncidents,
+    (item) => item.extractedDetails?.victim?.activities || [],
+    8
+  );
+
+  const vulnerableRows = countValues(
+    scopedStatsIncidents,
+    (item) => item.extractedDetails?.victim?.vulnerableGroups || [],
+    8
+  );
+
+  const qualityRows = [
+    { label: "可統計", value: scopedAllIncidents.filter((item) => qualityTone(item) === "ok").length },
+    { label: "已校正", value: scopedAllIncidents.filter((item) => qualityTone(item) === "corrected").length },
+    { label: "需複核", value: scopedAllIncidents.filter((item) => qualityTone(item) === "review").length },
+    { label: "排除統計", value: scopedAllIncidents.filter((item) => qualityTone(item) === "excluded").length },
+  ];
+
+  return (
+    <section className="case-stats-page">
+      {selectedCity ? (
+        <div className="case-scope-pill panel-pop">
+          目前案件統計範圍：<strong>{selectedCity}</strong>
+        </div>
+      ) : null}
+
+      <QualitySummaryCard
+        allIncidents={scopedAllIncidents}
+        statsIncidents={scopedStatsIncidents}
+        selectedCity={selectedCity}
+      />
+
+      <OffenderDemographicsSection statsIncidents={scopedStatsIncidents} selectedCity={selectedCity} />
+
+      <div className="case-stats-grid">
+        <StatBars title="毒駕載具" rows={vehicleRows} tone="vehicle" />
+        <StatBars title="毒品關鍵字" rows={drugRows} tone="drug" />
+        <StatBars title="肇事型態" rows={scenarioRows} tone="scenario" />
+        <StatBars title="受害情境" rows={victimRows} tone="victim" />
+        <StatBars title="脆弱族群" rows={vulnerableRows} tone="vulnerable" />
+        <StatBars title="資料品質" rows={qualityRows} tone="quality" />
+      </div>
+
+      <div className="quality-note-panel panel-pop">
+        <h3>閱讀提醒</h3>
+        <p>
+          本頁統計來自新聞標題、摘要與相關報導標題的規則式萃取。載具、毒品、肇事型態與受害情境屬於
+          「可觀察標籤」，不是法院認定或官方完整事故分類。標示為「需複核」的案件，建議後續再回到新聞原文人工確認。
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function NewsListPage({ incidents, selectedCity }) {
   return (
     <section className="news-page panel-pop">
@@ -1152,9 +1600,15 @@ function NewsListPage({ incidents, selectedCity }) {
                 <span>{incident.city}</span>
                 <span>{formatDate(incident.publishedAt)}</span>
                 <span>{incident.source}</span>
+                <QualityBadge incident={incident} />
               </div>
               <h3>{incident.title}</h3>
               <p>{incident.summary}</p>
+              <IncidentProfilePanel incident={incident} />
+              {incident.dataQuality?.reviewNote ? (
+                <p className="news-quality-note">{incident.dataQuality.reviewNote}</p>
+              ) : null}
+
               <div className="news-footer">
                 <span>
                   死亡 {incident.deaths}｜受傷 {incident.injuries}
@@ -1204,16 +1658,22 @@ export default function App() {
     }
   }, [sources]);
 
-  const monthSourceIncidents = useMemo(() => {
+  const selectedMonthIncidents = useMemo(() => {
     return incidents.filter((incident) => {
       const month = incident.publishedAt.slice(0, 7);
       return selectedMonths.includes(month) && selectedSources.includes(incident.source);
     });
   }, [incidents, selectedMonths, selectedSources]);
 
+  const monthSourceIncidents = useMemo(
+    () => selectedMonthIncidents.filter(isStatsIncident),
+    [selectedMonthIncidents]
+  );
+
   const visibleIncidents = useMemo(() => {
-    return selectedCity ? monthSourceIncidents.filter((incident) => incident.city === selectedCity) : monthSourceIncidents;
-  }, [monthSourceIncidents, selectedCity]);
+    const base = activeView === "news" ? selectedMonthIncidents : monthSourceIncidents;
+    return selectedCity ? base.filter((incident) => incident.city === selectedCity) : base;
+  }, [activeView, monthSourceIncidents, selectedCity, selectedMonthIncidents]);
 
   const ranking = useMemo(
     () => buildCityRanking(monthSourceIncidents, suspects, selectedMonths),
@@ -1246,9 +1706,8 @@ export default function App() {
       latestDate,
       monthRange,
       totalIncidents: incidents.length,
-      sourceCount: sources.length,
     };
-  }, [incidents, months, sources]);
+  }, [incidents, months]);
 
   const insights = useMemo(() => {
     const citySummary = buildCityRanking(monthSourceIncidents, suspects, selectedMonths);
@@ -1274,7 +1733,7 @@ export default function App() {
           <span>新聞事件與公開統計整理</span>
           <h1>全台毒駕死傷地圖</h1>
           <p>
-            以新聞死傷事件與毒品嫌疑犯公開統計為基礎，建立可互動、可篩選、可追蹤趨勢的公共安全資料儀表板。
+            以品質校正後的新聞死傷事件與毒品嫌疑犯公開統計為基礎，建立可互動、可篩選、可追蹤趨勢的公共安全資料儀表板。
           </p>
         </div>
 
@@ -1288,6 +1747,13 @@ export default function App() {
             onClick={() => setActiveView("trend")}
           >
             縣市趨勢
+          </button>
+          <button
+            type="button"
+            className={activeView === "caseStats" ? "active" : ""}
+            onClick={() => setActiveView("caseStats")}
+          >
+            案件統計
           </button>
           <button type="button" className={activeView === "news" ? "active" : ""} onClick={() => setActiveView("news")}>
             新聞列表
@@ -1332,6 +1798,12 @@ export default function App() {
               suspects={suspects}
               selectedCity={selectedCity}
             />
+          ) : activeView === "caseStats" ? (
+            <CaseStatsPage
+              allIncidents={selectedMonthIncidents}
+              statsIncidents={monthSourceIncidents}
+              selectedCity={selectedCity}
+            />
           ) : (
             <NewsListPage incidents={visibleIncidents} selectedCity={selectedCity} />
           )}
@@ -1359,11 +1831,45 @@ export default function App() {
         </div>
       </section>
 
-      <footer className="data-note panel-pop">
-        <strong>資料說明</strong>
-        <p>
-          新聞事件代表媒體報導案例，不等同官方完整事故統計；毒品嫌疑犯人數來自附件公開統計，
-          作為風險指標的背景因子。
+      <footer className="data-note data-footer panel-pop">
+        <section>
+          <span>資料來源</span>
+          <h2>資料來源與免責聲明</h2>
+          <p>
+            本網站之毒品嫌疑犯人數資料整理自內政部警政署公開統計資料；新聞事件資料則依公開新聞報導人工整理，
+            用於呈現毒駕相關死傷事件之地理分布與時間趨勢。
+          </p>
+        </section>
+
+        <section className="footer-grid">
+          <article>
+            <h3>主要資料來源</h3>
+            <ul>
+              <li>內政部警政署全球資訊網｜警政統計</li>
+              <li>內政部警政署統計室公開資料</li>
+              <li>公開新聞報導資料</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>資料說明</h3>
+            <p>
+              新聞事件資料僅代表已公開報導且經整理之案例，不等同官方完整事故統計。毒品嫌疑犯人數為背景風險觀察指標，
+              不代表毒駕事故發生數，也不應直接解讀為單一縣市之毒駕風險。
+            </p>
+          </article>
+
+          <article>
+            <h3>免責聲明</h3>
+            <p>
+              本網站之圖表、縣市排名與風險分級為資料視覺化結果，僅供公共議題觀察與參考，
+              不代表內政部警政署或其他政府機關之官方結論、排名或評等。
+            </p>
+          </article>
+        </section>
+
+        <p className="footer-note">
+          使用者引用、轉載或延伸使用本網站資料時，應自行查證原始資料來源與最新官方資訊。
         </p>
       </footer>
     </div>
