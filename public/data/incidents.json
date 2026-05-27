@@ -1,5 +1,117 @@
 [
   {
+    "id": "ltn-2f2710aaddf1",
+    "title": "基警抓喪屍煙彈分裝場受傷 童子瑋前往派出所慰問",
+    "source": "LTN",
+    "url": "https://video.ltn.com.tw/article/_Gd-rR7NvlQ/PLI7xntdRxhw0VRxm8nImOBCW2OZN7Ktws",
+    "publishedAt": "2026-05-25",
+    "city": "基隆市",
+    "deaths": 0,
+    "injuries": null,
+    "summary": "基隆市警察局大武崙派出所查獲喪屍煙彈分裝場時，蔡姓男子駕駛因酒駕被扣牌的違規賓士靠近，警方攔查後蔡男企圖衝撞警車及員警並與員警拉扯、攻擊。警方起出依托咪酯粉末，蔡男唾液快篩呈毒品陽性反應，多名員警遭辣椒水波及並有擦挫傷，蔡男被移送偵辦。",
+    "confidence": "reviewed_ok",
+    "extractedDetails": {
+      "driver": {
+        "age": null,
+        "ageGroup": null,
+        "gender": "male",
+        "vehicleTypes": [
+          "賓士"
+        ],
+        "allMentionedVehicleTypes": [
+          "賓士"
+        ],
+        "primaryVehicleType": "賓士",
+        "primaryVehicleLabel": "違規賓士",
+        "vehicleExtractionMethod": "article_text"
+      },
+      "drug": {
+        "keywords": [
+          "依托咪酯",
+          "喪屍煙彈"
+        ],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分早期新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
+      },
+      "crash": {
+        "scenarioTypes": [
+          "攔查衝撞",
+          "公共危險"
+        ],
+        "refusedInspection": true,
+        "hitAndRun": false,
+        "policeInteraction": true
+      },
+      "victim": {
+        "activities": [
+          "執勤"
+        ],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口",
+          "警察執勤現場"
+        ],
+        "familyImpact": false,
+        "schoolImpact": false,
+        "publicPlaceImpact": true
+      }
+    },
+    "dataQuality": {
+      "version": "quality_update_2026-05-27",
+      "sourceBasis": "article_text_reviewed",
+      "includeInStats": true,
+      "originalDeaths": 0,
+      "originalInjuries": null,
+      "correctedDeaths": 0,
+      "correctedInjuries": null,
+      "flags": [
+        "basic_ok",
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "public_danger_event"
+      ],
+      "reviewNote": "新聞僅稱多位或數名員警受傷，未提供明確受傷人數。",
+      "needsHumanReview": false
+    },
+    "humanImpact": {
+      "victimFamilyRoles": [],
+      "victimSocialRoles": [
+        "警察/執法人員"
+      ],
+      "possibleHouseholdImpacts": [],
+      "confidence": "low",
+      "needsHumanReview": false,
+      "sourceText": [
+        "多名同仁遭到波及，且有數人有擦、挫傷"
+      ]
+    }
+  },
+  {
     "id": "ltn-0d99b461f469",
     "title": "又來！捷運新埔站保時捷猛撞燈桿半毀 「喪屍」駕駛脫困被移送",
     "source": "LTN",
