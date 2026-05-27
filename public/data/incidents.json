@@ -1,5 +1,473 @@
 [
   {
+    "id": "ltn-57f930a06fc2",
+    "title": "毒駕連環爆！行人遭拉K騎士撞昏迷 1人拒檢持毒狂逃落網",
+    "source": "LTN",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5451449",
+    "publishedAt": "2026-05-27",
+    "city": "苗栗縣",
+    "deaths": 0,
+    "injuries": 1,
+    "summary": "苗栗頭份警方查獲兩起毒駕交通事件；林姓男子施用毒品後騎機車在三灣鄉撞擊行人，造成行人昏迷，尿液檢測呈K他命陽性，另有一名騎士毒駕拒檢危險駕駛並持毒。",
+    "confidence": "reviewed_ok",
+    "extractedDetails": {
+      "driver": {
+        "age": null,
+        "ageGroup": null,
+        "gender": "male",
+        "vehicleTypes": [
+          "機車"
+        ],
+        "allMentionedVehicleTypes": [
+          "機車"
+        ],
+        "primaryVehicleType": "機車",
+        "primaryVehicleLabel": "機車",
+        "vehicleExtractionMethod": "article_text"
+      },
+      "drug": {
+        "keywords": [
+          "K他命"
+        ],
+        "testMethods": [
+          "尿液檢驗"
+        ],
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "K他命",
+            "schedule": "第三級",
+            "label": "第三級毒品",
+            "confidence": "high",
+            "basis": "K他命屬第三級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第三級毒品"
+        ],
+        "scheduleSummary": "第三級毒品",
+        "scheduleNeedsReview": false
+      },
+      "crash": {
+        "scenarioTypes": [
+          "行人碰撞",
+          "拒檢逃逸",
+          "危險駕駛"
+        ],
+        "refusedInspection": true,
+        "hitAndRun": false,
+        "policeInteraction": true
+      },
+      "victim": {
+        "activities": [
+          "行人/過馬路"
+        ],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口"
+        ],
+        "familyImpact": false,
+        "schoolImpact": false,
+        "publicPlaceImpact": true
+      }
+    },
+    "dataQuality": {
+      "version": "quality_update_2026-05-27",
+      "sourceBasis": "article_text_reviewed",
+      "includeInStats": true,
+      "originalDeaths": 0,
+      "originalInjuries": 1,
+      "correctedDeaths": 0,
+      "correctedInjuries": 1,
+      "flags": [
+        "basic_ok",
+        "multiple_incidents_same_article",
+        "drug_schedule_classified",
+        "public_danger_event"
+      ],
+      "reviewNote": "同篇報導含兩起苗栗毒駕交通事件；死傷數依撞擊行人案計，另一拒檢危險駕駛案未揭露死傷。",
+      "needsHumanReview": true
+    }
+  },
+  {
+    "id": "ltn-706a70b6d846",
+    "title": "中和昨又發生毒駕案 新北檢訊後聲押毒駕男",
+    "source": "LTN",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5451369",
+    "publishedAt": "2026-05-27",
+    "city": "新北市",
+    "deaths": null,
+    "injuries": null,
+    "summary": "23歲蔡姓男子騎乘微型電動二輪車行經新北市中和區連城路時左右搖晃、逆向行駛，遭警方攔檢後拒檢逃逸並多次闖紅燈，最後失控自摔被壓制，毒品唾液快篩呈4種毒品陽性反應。",
+    "confidence": "reviewed_ok",
+    "extractedDetails": {
+      "driver": {
+        "age": 23,
+        "ageGroup": "18-24",
+        "gender": "male",
+        "vehicleTypes": [
+          "微型電動二輪車"
+        ],
+        "allMentionedVehicleTypes": [
+          "微型電動二輪車"
+        ],
+        "primaryVehicleType": "微型電動二輪車",
+        "primaryVehicleLabel": "微型電動二輪車",
+        "vehicleExtractionMethod": "article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞僅稱4種毒品陽性反應，未揭露具體毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
+      },
+      "crash": {
+        "scenarioTypes": [
+          "拒檢逃逸",
+          "逆向",
+          "闖紅燈",
+          "自摔/失控"
+        ],
+        "refusedInspection": true,
+        "hitAndRun": false,
+        "policeInteraction": true
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口",
+          "警方攔查現場"
+        ],
+        "familyImpact": false,
+        "schoolImpact": false,
+        "publicPlaceImpact": true
+      }
+    },
+    "dataQuality": {
+      "version": "quality_update_2026-05-27",
+      "sourceBasis": "article_text_reviewed",
+      "includeInStats": true,
+      "originalDeaths": null,
+      "originalInjuries": null,
+      "correctedDeaths": null,
+      "correctedInjuries": null,
+      "flags": [
+        "basic_ok",
+        "drug_schedule_needs_review",
+        "public_danger_event"
+      ],
+      "reviewNote": "新聞未明確揭露死傷結果，故死傷欄位維持 null。",
+      "needsHumanReview": true
+    }
+  },
+  {
+    "id": "ltn-a59dcf6f31fa",
+    "title": "又是毒駕肇事！北市松山男子失控波及1轎車9機車 起獲喪屍煙彈與安毒",
+    "source": "LTN",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5451332",
+    "publishedAt": "2026-05-27",
+    "city": "臺北市",
+    "deaths": 0,
+    "injuries": 0,
+    "summary": "34歲程姓男子駕車行經臺北市松山區健康路時失控衝撞，波及1部停等紅燈汽車及路邊9部機車，所幸無人員傷亡；警方毒品唾液快篩呈陽性，並起獲依托咪酯煙彈與安非他命。",
+    "confidence": "reviewed_ok",
+    "extractedDetails": {
+      "driver": {
+        "age": 34,
+        "ageGroup": "25-34",
+        "gender": "male",
+        "vehicleTypes": [
+          "汽車"
+        ],
+        "allMentionedVehicleTypes": [
+          "汽車",
+          "機車"
+        ],
+        "primaryVehicleType": "汽車",
+        "primaryVehicleLabel": "汽車",
+        "vehicleExtractionMethod": "article_text"
+      },
+      "drug": {
+        "keywords": [
+          "依托咪酯",
+          "喪屍煙彈",
+          "安非他命"
+        ],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "依托咪酯",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "依托咪酯現行列管為第二級毒品；部分新聞可能仍以舊列管或管制藥品脈絡描述"
+          },
+          {
+            "keyword": "喪屍煙彈",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "medium",
+            "basis": "新聞多以喪屍煙彈指稱含依托咪酯類成分；依托咪酯現行列管為第二級毒品"
+          },
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "high",
+            "basis": "安非他命／甲基安非他命屬第二級毒品"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleSummary": "第二級毒品",
+        "scheduleNeedsReview": false
+      },
+      "crash": {
+        "scenarioTypes": [
+          "自撞/失控",
+          "連環撞/多車波及"
+        ],
+        "refusedInspection": false,
+        "hitAndRun": false,
+        "policeInteraction": true
+      },
+      "victim": {
+        "activities": [
+          "停等紅燈/待轉"
+        ],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口"
+        ],
+        "familyImpact": false,
+        "schoolImpact": false,
+        "publicPlaceImpact": true
+      }
+    },
+    "dataQuality": {
+      "version": "quality_update_2026-05-27",
+      "sourceBasis": "article_text_reviewed",
+      "includeInStats": true,
+      "originalDeaths": 0,
+      "originalInjuries": 0,
+      "correctedDeaths": 0,
+      "correctedInjuries": 0,
+      "flags": [
+        "basic_ok",
+        "driver_vehicle_refined",
+        "drug_schedule_classified",
+        "public_danger_event"
+      ],
+      "reviewNote": "",
+      "needsHumanReview": false
+    }
+  },
+  {
+    "id": "ltn-aa788b846a2f",
+    "title": "新北永和毒駕！黑車左右晃、駕駛恍惚語無倫次 撞傷兩警逃逸",
+    "source": "LTN",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5451180",
+    "publishedAt": "2026-05-27",
+    "city": "新北市",
+    "deaths": 0,
+    "injuries": 2,
+    "summary": "新北市永和警分局2名員警巡邏時發現黑色轎車左右搖晃並攔查，陳姓駕駛精神恍惚、語無倫次，接受毒品唾液快篩過程中返回車上後踩油門衝撞2名員警逃逸。",
+    "confidence": "reviewed_ok",
+    "extractedDetails": {
+      "driver": {
+        "age": null,
+        "ageGroup": null,
+        "gender": "male",
+        "vehicleTypes": [
+          "汽車"
+        ],
+        "allMentionedVehicleTypes": [
+          "黑色轎車"
+        ],
+        "primaryVehicleType": "汽車",
+        "primaryVehicleLabel": "黑色轎車",
+        "vehicleExtractionMethod": "article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "suspected_or_pending",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞未揭露毒品種類，且快篩結果未於摘要中說明"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
+      },
+      "crash": {
+        "scenarioTypes": [
+          "攔查衝撞",
+          "衝撞警員/警車",
+          "肇事逃逸"
+        ],
+        "refusedInspection": true,
+        "hitAndRun": true,
+        "policeInteraction": true
+      },
+      "victim": {
+        "activities": [
+          "警務執勤"
+        ],
+        "vulnerableGroups": [
+          "警務人員"
+        ]
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口",
+          "警方攔查現場"
+        ],
+        "familyImpact": false,
+        "schoolImpact": false,
+        "publicPlaceImpact": true
+      }
+    },
+    "dataQuality": {
+      "version": "quality_update_2026-05-27",
+      "sourceBasis": "article_text_reviewed",
+      "includeInStats": true,
+      "originalDeaths": 0,
+      "originalInjuries": 2,
+      "correctedDeaths": 0,
+      "correctedInjuries": 2,
+      "flags": [
+        "basic_ok",
+        "drug_status_or_cause_pending",
+        "drug_schedule_needs_review",
+        "public_danger_event"
+      ],
+      "reviewNote": "",
+      "needsHumanReview": true
+    }
+  },
+  {
+    "id": "ltn-2e97a022d151",
+    "title": "上國道竟敢毒駕！男駕車國三基隆隧道前自撞護欄",
+    "source": "LTN",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5449643",
+    "publishedAt": "2026-05-26",
+    "city": "基隆市",
+    "deaths": 0,
+    "injuries": 0,
+    "summary": "39歲林姓男子駕駛小貨車行經國道3號南下基隆隧道口附近，疑受毒品影響恍神失控，於迴轉道處撞上北向外側路肩紐澤西護欄，車頭卡在護欄上；警方唾液快篩呈陽性，所幸無人受傷。",
+    "confidence": "reviewed_ok",
+    "extractedDetails": {
+      "driver": {
+        "age": 39,
+        "ageGroup": "35-44",
+        "gender": "male",
+        "vehicleTypes": [
+          "小貨車"
+        ],
+        "allMentionedVehicleTypes": [
+          "小貨車"
+        ],
+        "primaryVehicleType": "小貨車",
+        "primaryVehicleLabel": "小貨車",
+        "vehicleExtractionMethod": "article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "positive_or_found",
+        "scheduleClassifications": [
+          {
+            "keyword": "未揭露",
+            "schedule": "未明",
+            "label": "毒品級別未明",
+            "confidence": "unknown",
+            "basis": "新聞未揭露毒品種類"
+          }
+        ],
+        "scheduleLabels": [
+          "毒品級別未明"
+        ],
+        "scheduleSummary": "毒品級別未明",
+        "scheduleNeedsReview": true
+      },
+      "crash": {
+        "scenarioTypes": [
+          "自撞/失控",
+          "高速/國道"
+        ],
+        "refusedInspection": false,
+        "hitAndRun": false,
+        "policeInteraction": true
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "國道/快速道路"
+        ],
+        "familyImpact": false,
+        "schoolImpact": false,
+        "publicPlaceImpact": true
+      }
+    },
+    "dataQuality": {
+      "version": "quality_update_2026-05-27",
+      "sourceBasis": "article_text_reviewed",
+      "includeInStats": true,
+      "originalDeaths": 0,
+      "originalInjuries": 0,
+      "correctedDeaths": 0,
+      "correctedInjuries": 0,
+      "flags": [
+        "basic_ok",
+        "drug_schedule_needs_review",
+        "public_danger_event"
+      ],
+      "reviewNote": "同事故後續羈押報導 5451301 已排除為重複。",
+      "needsHumanReview": true
+    }
+  },
+  {
     "id": "ltn-2f2710aaddf1",
     "title": "基警抓喪屍煙彈分裝場受傷 童子瑋前往派出所慰問",
     "source": "LTN",
