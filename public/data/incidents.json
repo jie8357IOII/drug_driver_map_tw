@@ -8,12 +8,28 @@
     "city": "高雄市",
     "deaths": null,
     "injuries": null,
-    "summary": "高雄李男無照逆向騎人行道，警查出二度毒駕被逮。（民眾提供） 高雄李姓男子（47歲）騎機車違規逆向行駛，被巡邏員警攔查，發現他不僅駕照已遭註銷，面對盤問時，神情異常緊張、手腳顫抖，身上也散發毒品氣味，警方實施唾液毒品檢測，結果呈安非他命陽性反應，當場將他逮捕送辦。 鼓山分局今（1）日指出，前日巡邏經鼓",
+    "summary": "高雄李姓男子（47歲）騎機車違規逆向行駛，被巡邏員警攔查，發現他不僅駕照已遭註銷，面對盤問時，神情異常緊張、手腳顫抖，身上也散發毒品氣味，警方實施唾液毒品檢測，結果呈安非他命陽性反應，當場將他逮捕送辦。 鼓山分局今（1）日指出，前日巡邏經鼓山區博愛二路與裕誠路口時，發現李男騎乘機車不依規定駛入來車道",
     "confidence": "needs_review",
     "extractedDetails": {
-      "driver": {},
-      "drug": {},
-      "crash": {},
+      "driver": {
+        "primaryVehicleType": "機車",
+        "primaryVehicleLabel": "機車",
+        "vehicleExtractionMethod": "article_text"
+      },
+      "drug": {
+        "keywords": [
+          "安非他命"
+        ],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "逆向",
+          "行駛人行道"
+        ]
+      },
       "victim": {},
       "context": {}
     },
@@ -28,20 +44,31 @@
     }
   },
   {
-    "id": "ltn-a8efbe126e00",
-    "title": "男逆向騎車見警神色慌！警查獲2種毒品送辦",
+    "id": "ltn-8005d167eecd",
+    "title": "綠燈亮了不走？男疑毒駕拒測被捕 新制上路首日重罰27萬",
     "source": "LTN",
-    "url": "https://news.ltn.com.tw/news/society/breakingnews/5624523",
-    "publishedAt": "2026-10-31",
-    "city": "高雄市",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5625597",
+    "publishedAt": "2026-11-01",
+    "city": "桃園市",
     "deaths": null,
     "injuries": null,
-    "summary": "警方查獲洪男攜帶2種毒品送辦。（民眾提供） 高雄市一名洪姓男子騎自行車違規逆向行駛楠梓區右昌街與三山街口，見警心虛神色慌張，警方查獲海洛因、新興毒品「喪屍煙彈」等，警訊後將他依毒品罪嫌移送法辦。 楠梓警分局警員前天巡邏經過楠梓區右昌街與三山街口，發現46歲洪姓男子騎乘自行車逆向行駛，主動上前實施攔查",
+    "summary": "蔡姓男子昨（31）日駕車行經桃園市平鎮區振興西路與新德街口，因綠燈亮起卻遲未起步，引來巡邏員警注意，警方上前盤查發現涉嫌毒駕，雖然拒絕接受毒品唾液快篩，但行為觀察及生理平衡測試均未通過，毒駕新制已在10月31日起正式上路，警方依毒駕新制舉發蔡男27萬元罰鍰，同時依法逮捕，移送桃園地檢署偵辦。 北勢派",
     "confidence": "needs_review",
     "extractedDetails": {
       "driver": {},
-      "drug": {},
-      "crash": {},
+      "drug": {
+        "keywords": [
+          "安非他命"
+        ],
+        "testMethods": [
+          "尿液檢驗"
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "綠燈未行"
+        ]
+      },
       "victim": {},
       "context": {}
     },
@@ -52,7 +79,7 @@
         "automated_candidate",
         "unknown_casualties"
       ],
-      "sourceSearchUrl": "https://search.ltn.com.tw/list?keyword=%E6%AF%92%E9%A7%95&start_time=20261031&end_time=20261102&sort=date&type=all&page=2"
+      "sourceSearchUrl": "https://search.ltn.com.tw/list?keyword=%E6%AF%92%E9%A7%95&start_time=20261031&end_time=20261102&sort=date&type=all"
     }
   },
   {
