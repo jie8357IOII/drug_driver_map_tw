@@ -294,13 +294,49 @@ public/data/drug_suspects_monthly.json
 npm run data:news
 ```
 
----
+未帶日期時，檢查最近三個已結束的台北日曆日，包含零死傷的具體毒駕危險事件。
+先完成搜尋分頁與原文讀取，再一次寫入；抓取、版型或日期驗證失敗時保留既有資料。
 
-### 清理新聞資料
+指定日期或回補區間：
 
 ```bash
-npm run data:clean
+npm run data:news -- --date 2026-05-26
+npm run data:news -- --start 2026-05-26 --end 2026-05-27 --report /tmp/news-report.json
 ```
+
+`--max-pages` 預設 20，超過時失敗並要求拆小區間，不會悄悄截斷。長期缺口請依週分批回補；預設三日回看不代表歷史資料已完整。
+
+新資料是待複核候選：`needsHumanReview: true`、`includeInStats: false`，沒有明確數量時使用 `null`。閱讀全文不代表規則判讀已經正確。人工核對事故、地點、死傷與重複報導後，才調整品質欄位；明確零死傷可收錄，未知不可當成零。
+
+重跑會保留既有紀錄與校正，依 URL、標題及 `relatedReports` 避免再次加入同篇報導。不會只憑同縣市、相同傷亡數就合併不同事故；同一事故的跨篇報導由 PR 複核確認。
+
+```bash
+npm test
+npm run data:validate
+```
+
+### GitHub Actions 每日新聞更新
+
+`Update LTN news` 每天台北時間 **00:17** 執行，也可在 Actions 手動執行。手動回補必須同時填入 `start_date` 與 `end_date`，且選擇 `main` 分支。
+
+流程：抓取與來源判定 → 測試／資料檢查／建置 → 建立或累積同一個資料 PR → 人工複核與合併 → 既有 Pages 部署 → 線上 JSON 雜湊核對。
+
+- 只有 `public/data/incidents.json` 會被自動提交，沒有新資料時不建立新 PR。
+- 未合併的 PR 持續累積；保留人工修改，與 main 合併衝突時停止，不會強制推送。
+- 合併前核對完整 diff、原文及事件是否重複。新候選預設排除統計；確認城市與死傷後才設 `needsHumanReview: false`、`includeInStats: true`。
+- 每次執行都有搜尋來源、收錄／排除／重複的摘要及 30 天 artifact。失敗有明確錯誤；「沒有新事故」與「無法取得資料」不混用。
+- GitHub repository 的 **Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests** 必須開啟。預設權限仍可維持唯讀；只有更新 job 要求 contents／pull-requests write。不需要另外建立 PAT 或 AI 金鑰。
+- 使用 `GITHUB_TOKEN` 建立的 PR，其 PR 檢查可能等待使用者批准；更新 job 本身已先跑測試、資料驗證與 build。若 GitHub 顯示 **Approve workflows to run**，批准後再確認檢查結果。
+- GitHub 排程可能延遲；公開 repo 60 天無活動時可能被停用。請留意 Actions 失敗通知及排程狀態；停用或中斷超過三天後，手動補跑缺漏區間。
+- 舊 Codex 每日任務維持暫停；`auto_scrap.md` 是舊流程筆記，不是這個 workflow 的執行來源。
+
+規則見 [CONTEXT.md](CONTEXT.md)。排程與 token 行為依 [GitHub 排程文件](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule) 與 [workflow 觸發文件](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)。
+
+---
+
+### 舊版一次性清理
+
+`npm run data:clean` 是歷史資料整備工具，可能改用固定日期的原始備份重建；**不屬於每日流程，不要接在 `data:news` 後面執行**。每日更新自行保留既有資料與人工校正，不使用這支腳本。
 
 ---
 

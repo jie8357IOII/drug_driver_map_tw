@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      incidents_sha: ${{ steps.data.outputs.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,6 +31,15 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Verify news and published data
+        run: |
+          npm test
+          npm run data:validate
+
+      - name: Identify the data being published
+        id: data
+        run: echo "sha=$(sha256sum public/data/incidents.json | cut -d ' ' -f1)" >> "$GITHUB_OUTPUT"
 
       - name: Build
         run: npm run build
@@ -53,3 +64,25 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Verify published incidents
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_SHA: ${{ needs.build.outputs.incidents_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent --show-error --max-time 20 \
+              "${PAGE_URL%/}/data/incidents.json?run=${GITHUB_RUN_ID}&attempt=$attempt" \
+              -o "$RUNNER_TEMP/published-incidents.json"; then
+              actual=$(sha256sum "$RUNNER_TEMP/published-incidents.json" | cut -d ' ' -f1)
+              if [ "$actual" = "$EXPECTED_SHA" ]; then
+                echo 'Published incidents match this build.' >> "$GITHUB_STEP_SUMMARY"
+                exit 0
+              fi
+            fi
+            sleep 5
+          done
+          echo 'Pages did not return the expected incident data.' >&2
+          exit 1
