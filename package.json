@@ -13,7 +13,8 @@
     "data:forecast": "node scripts/build_forecast.mjs",
     "data:all": "npm run data:excel && npm run data:forecast",
     "test": "node --test tests/*.test.mjs",
-    "data:validate": "node scripts/scrape_news.mjs --validate"
+    "data:validate": "node scripts/scrape_news.mjs --validate",
+    "news:pr": "bash scripts/update_news_pr.sh"
   },
   "dependencies": {
     "@svg-maps/taiwan": "^2.0.0",

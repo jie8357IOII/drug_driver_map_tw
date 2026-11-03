@@ -41,134 +41,23 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - name: Preserve the open data PR and reviewer changes
-        id: branch
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          prs=$(gh pr list --state open --base main --limit 100 --json number,headRefName,isCrossRepository \
-            --jq '[.[] | select(.isCrossRepository == false) | select(.headRefName | startswith("codex/ltn-news-data-"))]')
-          count=$(jq 'length' <<< "$prs")
-          if [ "$count" -gt 1 ]; then
-            echo 'More than one open news data PR; resolve them before updating.' >&2
-            exit 1
-          fi
-          if [ "$count" -eq 1 ]; then
-            branch=$(jq -r '.[0].headRefName' <<< "$prs")
-            pr=$(jq -r '.[0].number' <<< "$prs")
-            git fetch origin "$branch"
-            git switch -c "$branch" FETCH_HEAD
-            # Fail on conflicts; never reset or force-push a reviewer's work.
-            git merge --no-edit origin/main
-          else
-            branch="codex/ltn-news-data-${GITHUB_RUN_ID}"
-            pr=''
-            git switch -c "$branch" origin/main
-          fi
-          echo "name=$branch" >> "$GITHUB_OUTPUT"
-          echo "pr=$pr" >> "$GITHUB_OUTPUT"
-      - run: npm ci
-      - run: npm test
-      - run: npm run data:validate
-      - name: Preserve past review deletions
-        shell: bash
-        run: |
-          set -euo pipefail
-          refs=()
-          gh api --paginate "repos/$GH_REPO/pulls?state=closed&base=main&per_page=100" \
-            --jq '.[] | select(.merged_at != null) | select(.head.ref | startswith("codex/ltn-news-data-")) | .number' \
-            > "$RUNNER_TEMP/merged-news-prs.txt"
-          while read -r number; do
-            [ -n "$number" ] || continue
-            ref="refs/remotes/news-reviews/$number"
-            git fetch origin "refs/pull/$number/head:$ref"
-            refs+=("$ref")
-          done < "$RUNNER_TEMP/merged-news-prs.txt"
-          node scripts/list_rejected_news.mjs "$RUNNER_TEMP/rejected-urls.json" "${refs[@]}"
-      - name: Fetch complete articles into review candidates
+      - name: Run the shared news PR workflow
         env:
           START_DATE: ${{ inputs.start_date }}
           END_DATE: ${{ inputs.end_date }}
+          NEWS_RUN_DIR: ${{ runner.temp }}/ltn-news
         shell: bash
         run: |
-          set -euo pipefail
-          args=(--report "$RUNNER_TEMP/news-report.json" --rejections "$RUNNER_TEMP/rejected-urls.json")
+          args=()
           if [ -n "$START_DATE" ] || [ -n "$END_DATE" ]; then
             args+=(--start "$START_DATE" --end "$END_DATE")
           fi
-          npm run data:news -- "${args[@]}"
-      - run: npm run data:validate
-      - run: npm run build
-        env:
-          GITHUB_PAGES: "true"
-      - name: Record the source review report
-        if: always()
-        shell: bash
-        run: |
-          node --input-type=module <<'JS'
-          import fs from 'node:fs';
-          import path from 'node:path';
-          const file = path.join(process.env.RUNNER_TEMP, 'news-report.json');
-          if (!fs.existsSync(file)) process.exit(0);
-          const report = JSON.parse(fs.readFileSync(file, 'utf8'));
-          const safe = value => String(value ?? '未知').replace(/[\r\n|<>]/g, ' ').replace(/`/g, "'");
-          const lines = [
-            '# 毒駕新聞資料複核', '',
-            `檢查日期：${report.start}–${report.end}（Asia/Taipei）`,
-            `執行結果：${report.status}；本次新增候選：${report.added ?? 0}`, '',
-            '收錄具體毒駕事故與危險交通事件，包括零死傷案件。候選已讀原文，但仍須核對，不代表官方完整事故統計。', '',
-            '- [ ] 核對原文、事故身分、城市、發布日期與死傷；同一事故的報導保留在 relatedReports，不重複計數。',
-            '- [ ] 排除政策、統計、評論、舊案司法後續與沒有危險交通情境的一般毒品案件。',
-            '- [ ] 確認後才把 needsHumanReview 設為 false；城市與死傷已確認的事故才將 includeInStats 設為 true。未知值不可改成零。',
-            '- [ ] 檢查完整 Files changed；這個 PR 會持續累積，後續批次清單見 Update LTN news 的執行摘要與 artifact。', '',
-            '合併到 main 才會觸發既有 Pages 部署。沒有自動合併。', '',
-            '| 狀態 | 新聞 | 原因 | 死亡 | 受傷 |', '|---|---|---|---:|---:|',
-            ...report.articles.map(row => `| ${row.status} | [${safe(row.title).replace(/[\[\]]/g, '')}](${row.url}) | ${safe(row.reason)} | ${safe(row.deaths)} | ${safe(row.injuries)} |`),
-            '', ...report.articles.map(row => `搜尋來源：${row.searchUrl}`),
-          ];
-          if (report.error) lines.push('', `失敗原因：${safe(report.error)}`);
-          const markdown = lines.join('\n') + '\n';
-          fs.writeFileSync(path.join(process.env.RUNNER_TEMP, 'news-report.md'), markdown);
-          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, markdown);
-          JS
-      - name: Create or update the data PR
-        env:
-          NEWS_BRANCH: ${{ steps.branch.outputs.name }}
-          NEWS_PR: ${{ steps.branch.outputs.pr }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          git add -- public/data/incidents.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Update LTN incident review candidates'
-          fi
-          if git diff --quiet origin/main -- public/data/incidents.json; then
-            echo 'No data changes; no new PR.' >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          if [ -n "$NEWS_PR" ] && [ "$(gh pr view "$NEWS_PR" --json state --jq .state)" != OPEN ]; then
-            echo 'The data PR was merged or closed during collection; rerun against main.' >&2
-            exit 1
-          fi
-          git push origin "HEAD:$NEWS_BRANCH"
-          if [ -z "$NEWS_PR" ]; then
-            gh pr create --base main --head "$NEWS_BRANCH" \
-              --title 'Review new LTN drug-driving incidents' \
-              --body-file "$RUNNER_TEMP/news-report.md"
-          else
-            if [ "$(gh pr view "$NEWS_PR" --json state --jq .state)" != OPEN ]; then
-              echo 'The data PR changed state during publication; verify the retained report before rerunning.' >&2
-              exit 1
-            fi
-            gh pr view "$NEWS_PR" --json url --jq .url >> "$GITHUB_STEP_SUMMARY"
-          fi
+          npm run news:pr -- "${args[@]}"
       - name: Retain source decisions, including failures
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: news-review-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/news-report.*
+          path: ${{ runner.temp }}/ltn-news/news-report.*
           if-no-files-found: ignore
           retention-days: 30
