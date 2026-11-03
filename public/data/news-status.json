@@ -1,11 +1,1681 @@
 {
   "version": 1,
-  "lastCheckedAt": "2026-11-03T09:03:23.762Z",
-  "lastChangedAt": "2026-11-03T09:03:23.762Z",
+  "lastCheckedAt": "2026-11-03T10:12:37.138Z",
+  "lastChangedAt": "2026-11-03T10:12:37.138Z",
   "lastPublishedAt": null,
   "sourceCoverage": [
     "LTN"
   ],
   "status": "success",
-  "pendingCount": 142
+  "pendingCount": 136,
+  "coverage": {
+    "searches": [
+      {
+        "source": "LTN",
+        "from": "2026-10-27",
+        "to": "2026-11-02",
+        "keywords": [
+          "拒測",
+          "毒駕",
+          "酒後駕車",
+          "酒測",
+          "酒駕"
+        ],
+        "checkedAt": "2026-11-03T10:12:37.138Z"
+      }
+    ],
+    "recordDates": {
+      "publishedFrom": "2024-05-05",
+      "publishedTo": "2026-11-02",
+      "occurredFrom": "2023-02-07",
+      "occurredTo": "2026-11-02"
+    },
+    "historyReview": {
+      "checkedAt": "2026-11-03T10:12:37.138Z",
+      "total": 72,
+      "accepted": 35,
+      "pending": 37,
+      "rows": [
+        {
+          "incidentId": "ltn-57f930a06fc2",
+          "title": "毒駕連環爆！行人遭拉K騎士撞昏迷 1人拒檢持毒狂逃落網",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5451449",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-57f930a06fc2。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449：事件 2：可能重複或有身分矛盾，待釐清事件：ltn-57f930a06fc2。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449：事件 2：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449：事件 2：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449：事件 2：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "既有事件紀錄：舊資料合併了同篇多案，尚未安全拆分，不能直接升格統計",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5451449"
+          ]
+        },
+        {
+          "incidentId": "ltn-706a70b6d846",
+          "title": "中和昨又發生毒駕案 新北檢訊後聲押毒駕男",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5451369",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5451369。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451369：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451369：事件 1：受傷人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5451369"
+          ]
+        },
+        {
+          "incidentId": "ltn-aa788b846a2f",
+          "title": "新北永和毒駕！黑車左右晃、駕駛恍惚語無倫次 撞傷兩警逃逸",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5451180",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5451180。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451180：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451180：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451180：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451180：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451180：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451180：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451180：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5451180：事件 1：受傷人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5451180"
+          ]
+        },
+        {
+          "incidentId": "ltn-2e97a022d151",
+          "title": "上國道竟敢毒駕！男駕車國三基隆隧道前自撞護欄",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5449643",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5449643：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5449643：事件 1：酒／毒主張尚未以強證據連到具體駕駛"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5449643"
+          ]
+        },
+        {
+          "incidentId": "ltn-bc9c0a6433ea",
+          "title": "又是毒駕！男子新北路口猛倒車 機車姊妹遭捲車底妹妹傷重亡",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5447202",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5447202。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5447202：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5447202：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5447202：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5447202"
+          ]
+        },
+        {
+          "incidentId": "ltn-969186233ac1",
+          "title": "岡山恐怖連環撞！ 轎車撞飛4機車釀5傷 駕駛身亡疑毒駕",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5440041",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：事件 1：酒精關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/paper/1755265：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/paper/1755265：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/paper/1755265：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-969186233ac1。",
+            "https://news.ltn.com.tw/news/society/paper/1755265：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/paper/1755265：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/paper/1755265：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/paper/1755265：事件 1：酒精關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/paper/1755265：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5440041",
+            "https://news.ltn.com.tw/news/society/paper/1755265"
+          ]
+        },
+        {
+          "incidentId": "ltn-0b73a10d18bb",
+          "title": "高雄毒駕自撞分隔島 輪胎、輪圈「單飛了」",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5439620",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5439620。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5439620：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5439620：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5439620：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5439620：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5439620：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5439620"
+          ]
+        },
+        {
+          "incidentId": "ltn-547e820987a3",
+          "title": "消防工程行老闆毒駕撞死88歲回收婦 賠630萬和解遭境管",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5434065",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5434065。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5434065：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5434065：事件 1：受傷人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5434065"
+          ]
+        },
+        {
+          "incidentId": "ltn-c2095048c366",
+          "title": "苗栗7旬老翁疑毒駕心虛拒檢 警攔查釀2傷",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5432536",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5432536：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5432536：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5432536：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5432536：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5432536：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5432536"
+          ]
+        },
+        {
+          "incidentId": "ltn-3bd68ea88b7f",
+          "title": "又是毒駕！高雄女通緝犯拒檢 闖15紅燈擦撞4車",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5429477",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5429477。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5429477：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5429477：事件 1：死亡人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5429477"
+          ]
+        },
+        {
+          "incidentId": "ltn-688b01b6b84f",
+          "title": "高雄通緝犯深夜毒駕連環撞釀3傷 搜出毒品法辦",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5428271",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5428271。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5428271：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5428271：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5428271：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5428271"
+          ]
+        },
+        {
+          "incidentId": "ltn-6d777daa2faa",
+          "title": "又是毒駕！鶯歌6傷連環車禍 賓士男驗出K毒還抄出殘渣袋",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5427158",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5427158。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5427158：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5427158：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5427158：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5427158：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5427158：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5427158：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5427158：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5427158"
+          ]
+        },
+        {
+          "incidentId": "ltn-3429702396db",
+          "title": "毒駕撞死2人、自己也受傷 BMW男背3大重罪及鉅額賠償",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5425545",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5425545。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-3429702396db。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：事件 1：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-3429702396db。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002：事件 1：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002：事件 1：具體上路或危險駕駛經過未通過原文核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002：事件 1：酒精關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-3429702396db。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302：事件 1：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302：事件 1：酒精關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5428178：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5428178：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5428178：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-3429702396db。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5428178：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5428178：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5424741",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425002",
+            "https://news.ltn.com.tw/news/society/breakingnews/5425545",
+            "https://news.ltn.com.tw/news/society/breakingnews/5426302",
+            "https://news.ltn.com.tw/news/society/breakingnews/5428178"
+          ]
+        },
+        {
+          "incidentId": "ltn-7939a563bd55",
+          "title": "保時捷撞變電箱翻覆毀7機車 落跑駕駛到案竟是毒駕",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5424652",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5424652：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424652：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424652：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424652：事件 1：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424652：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424652：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5424652：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5424652"
+          ]
+        },
+        {
+          "incidentId": "ltn-13a969d78e2e",
+          "title": "高雄再傳一家人遭衝撞！毒駕男拒檢逃逸 一家4口被撞釀3傷",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5423730",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5423730：死亡人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5423730：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5423730：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5423730：事件 1：死亡人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5423730：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5423730：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：死亡人數有衝突，僅可沿用先前已核對值，其他值待釐清"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5423730"
+          ]
+        },
+        {
+          "incidentId": "ltn-861a1b37670c",
+          "title": "白色賓士車多次撞分隔島又追撞前車後逃逸 遭疑涉毒駕",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5400347",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5400347：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5400347：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5400347：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5400347：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5400347：事件 1：酒精關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5400347：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5400347"
+          ]
+        },
+        {
+          "incidentId": "ltn-d2d9b7acadc8",
+          "title": "又是毒駕？高雄男連刷3車釀1傷肇事逃逸 快篩驗出疑使用喪屍煙彈",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5397714",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：事件 1：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "既有事件紀錄：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5397714"
+          ]
+        },
+        {
+          "incidentId": "ltn-192ff256b141",
+          "title": "基隆廟口夜市毒駕撞店家波及4人 孕婦、祖孫倆路過受輕傷",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5394167",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5394167。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5394167：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5394167：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5394167：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5394167：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5394167：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5394167：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5394167：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5394167"
+          ]
+        },
+        {
+          "incidentId": "ltn-d3363b62ad9a",
+          "title": "毒駕連環爆！鹿港才奪命 溪湖又爆無照女吸毒駕Audi A7逆向撞3車",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5393391",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5393391。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-d3363b62ad9a。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393122：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393122：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393122：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-d3363b62ad9a。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393122：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393122：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393122：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393122：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393122：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393391：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393391：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393391：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393391：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393391：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393391：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393391：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5392751",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393122",
+            "https://news.ltn.com.tw/news/society/breakingnews/5393391"
+          ]
+        },
+        {
+          "incidentId": "ltn-02697e0897f2",
+          "title": "BMW男撞安坑輕軌站牌及護欄 搜出喪屍煙彈涉毒駕",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5375820",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5375820。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371596：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371596：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371596：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-02697e0897f2。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371596：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371596：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371596：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371596：事件 1：酒精關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375820：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375820：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375820：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375820：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375820：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5371596",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375820"
+          ]
+        },
+        {
+          "incidentId": "ltn-ed7d1bd026e3",
+          "title": "無照又毒駕！高雄男開車自撞飲料店 先吞18萬罰單",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5375222",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5375222。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371626：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371626：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371626：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-ed7d1bd026e3。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371626：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5371626：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375222：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375222：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375222：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5371626",
+            "https://news.ltn.com.tw/news/society/breakingnews/5375222"
+          ]
+        },
+        {
+          "incidentId": "ltn-b68f2cc5e55e",
+          "title": "高雄毒駕撞死3幼子之母 陳其邁籲從重量刑",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5364754",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：事件 1：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5364754"
+          ]
+        },
+        {
+          "incidentId": "ltn-5c7ed1aab98f",
+          "title": "高雄毒駕撞死女騎士！陳其邁說話了",
+          "url": "https://news.ltn.com.tw/news/politics/breakingnews/5363472",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472：事件 1：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472：事件 1：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5362611：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5362611：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5362611：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-5c7ed1aab98f。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5362611：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5362611：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5362611：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5362611：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5362611：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/politics/breakingnews/5363472",
+            "https://news.ltn.com.tw/news/society/breakingnews/5362611"
+          ]
+        },
+        {
+          "incidentId": "ltn-6d4d95948288",
+          "title": "23歲男載19歲妻飆車 毒駕闖紅燈 撞死女老師",
+          "url": "https://news.ltn.com.tw/news/society/paper/1745856",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-6d4d95948288、ltn-b603d6a5e629。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：當事人否認吸毒；否認另列疑義，不等於陰性檢驗",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/paper/1745856：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/paper/1745856：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1745856：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/paper/1745856：事件 1：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/paper/1745856：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1745856：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/paper/1745856：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "https://news.ltn.com.tw/news/society/paper/1745856：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415",
+            "https://news.ltn.com.tw/news/society/paper/1745856"
+          ]
+        },
+        {
+          "incidentId": "ltn-9bbe068b82c2",
+          "title": "又是毒駕！宜蘭賓士男高速撞死返家女老師 波及7車釀1死3傷",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5360695",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5360695。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360695：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360695：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360695：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5361237：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5361237：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5361237：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-9bbe068b82c2。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5361237：事件 1：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/breakingnews/5361237：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5361237：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5360695",
+            "https://news.ltn.com.tw/news/society/breakingnews/5361237"
+          ]
+        },
+        {
+          "incidentId": "ltn-28f39df639da",
+          "title": "宜蘭59歲女老師停等紅燈遭毒駕撞死 校方心碎不捨嘆「怎麼告訴學生？」",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5360727",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5360727：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360727：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360727：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360727：事件 1：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360727：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5360727"
+          ]
+        },
+        {
+          "incidentId": "ltn-b603d6a5e629",
+          "title": "台中殯葬二代毒駕撞死7旬退休公務員 員警作證：現場否認撞到人",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5359522",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5359522。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5359522：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5359522：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5359522：事件 1：當事人否認吸毒；否認另列疑義，不等於陰性檢驗",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-6d4d95948288、ltn-b603d6a5e629。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：當事人否認吸毒；否認另列疑義，不等於陰性檢驗",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5359522",
+            "https://news.ltn.com.tw/news/society/breakingnews/5360415"
+          ]
+        },
+        {
+          "incidentId": "ltn-5a71d42ddc45",
+          "title": "高雄大寮毒駕衝撞警車 攔腰撞斷電桿男女就逮",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5350417",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5350417：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5350417：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5350417：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5350417：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5350417：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5350417：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5350417：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5350417"
+          ]
+        },
+        {
+          "incidentId": "ltn-91ecb96b2313",
+          "title": "毒駕小貨車載5童躲警自撞 孩童全受傷",
+          "url": "https://news.ltn.com.tw/news/society/paper/1744426",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/paper/1744426。",
+            "https://news.ltn.com.tw/news/society/paper/1744426：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1744426：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1744426：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/paper/1744426：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1744426：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1744426：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1744426：事件 1：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/paper/1744426：事件 1：受傷人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/paper/1744426"
+          ]
+        },
+        {
+          "incidentId": "ltn-d7fa0fdc8ec2",
+          "title": "毒駕女撞死新北警所長 鑑定醫師：辨識能力正常",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5337608",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：解析事發日 2026-09-30 晚於發布日 2026-02-09，日期矛盾未解除。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-d7fa0fdc8ec2。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5337608",
+            "https://news.ltn.com.tw/news/society/breakingnews/5341194"
+          ]
+        },
+        {
+          "incidentId": "ltn-624f0d2a8214",
+          "title": "高雄男疑毒駕釀追撞 車上搜出喪屍煙彈、K盤",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5331873",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5331873：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5331873：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5331873：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5331873：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5331873：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5331873：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5331873：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5331873：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5331873"
+          ]
+        },
+        {
+          "incidentId": "ltn-4b9bf229d7db",
+          "title": "衝撞警察後被逮孬喊歹勢！台中毒駕男拒檢狂竄警鳴槍 驚險圍捕畫面曝",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5328112",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5328112。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5328112：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5328112：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5328112：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5328112：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5328112：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5328112：事件 1：受傷人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5328112"
+          ]
+        },
+        {
+          "incidentId": "ltn-40b9b922483f",
+          "title": "可惡！屏男毒駕權利車撞死婦人肇逃 警方5小時緝凶到案",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5325078",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5325078"
+          ]
+        },
+        {
+          "incidentId": "ltn-764e12e3e373",
+          "title": "驚險一瞬間！高雄男毒駕逆向撞翻車 1大2小嚇到彈飛",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5309035",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5309035。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5309035：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5309035：事件 1：死亡人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5309035"
+          ]
+        },
+        {
+          "incidentId": "ltn-3e3098e0d0cb",
+          "title": "男子毒駕上路釀禍 翻車起火幸運僅輕傷被法辦",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5306279",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5306279。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5306279：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5306279：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5306279：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5306279"
+          ]
+        },
+        {
+          "incidentId": "ltn-8a9409ef4193",
+          "title": "高雄毒駕連環撞 毀9車4人傷",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5291022",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5291022。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5291022：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5291022：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5291022：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5291022：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5291022：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5291022：事件 1：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5291022：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "既有事件紀錄：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5291022"
+          ]
+        },
+        {
+          "incidentId": "ltn-f18ca67979cb",
+          "title": "再傳毒駕奪命？ 淡水逆撞騎士殞命大逆轉 女駕駛毒篩陽性",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5288745",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5288745：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5288745：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5288745：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5288745：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5288745：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5288745：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5288745：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5288745：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5288745"
+          ]
+        },
+        {
+          "incidentId": "ltn-ef07438d0dd4",
+          "title": "女騎士撞死88歲路人 竟自爆「肇事後太緊張吸毒」北市警追是否毒駕",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5282817",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817：事件 1：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817：事件 1：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5282817"
+          ]
+        },
+        {
+          "incidentId": "ltn-cb9624d4403c",
+          "title": "疑又毒駕害命！基隆男駕車衝撞10輛汽機車 3人送醫1婦人送醫不治",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5278649",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/politics/breakingnews/5278859：政策／宣導／評論新聞，只收錄新聞卡，不採用法律數字或假設人物作事件統計。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-cb9624d4403c、ltn-4405bd4bdf41。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：同姓或人物指代有歧義，不能確定是否同一人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：事件 1：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：事件 1：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5281479：原文案件數與分案結果不一致，人物及數值尚不能分配到單一事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5281479：本次原文未解析出可核對的具體上路事件。",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/politics/breakingnews/5278859",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897",
+            "https://news.ltn.com.tw/news/society/breakingnews/5278649",
+            "https://news.ltn.com.tw/news/society/breakingnews/5281479"
+          ]
+        },
+        {
+          "incidentId": "ltn-4405bd4bdf41",
+          "title": "可惡！基隆毒駕衝撞倒垃圾民眾 撞擊多車4就醫",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5273196",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5273196。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-cb9624d4403c、ltn-4405bd4bdf41。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：同姓或人物指代有歧義，不能確定是否同一人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5273196",
+            "https://news.ltn.com.tw/news/society/breakingnews/5275897"
+          ]
+        },
+        {
+          "incidentId": "ltn-2493ae2187fd",
+          "title": "山路逆撞2車3人害墜山坡 警方一測毒駕送辦",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5271270",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5271270。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5271270：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5271270：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5271270：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5271270：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5271270：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5271270"
+          ]
+        },
+        {
+          "incidentId": "ltn-11cc6b502894",
+          "title": "中和轎車逆向與機車腳踏車對撞釀3傷 男被驗出毒駕搜出「喪屍菸彈」",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5269413",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5269413。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5269413：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5269413：事件 1：死亡人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5269413"
+          ]
+        },
+        {
+          "incidentId": "ltn-6af427e3ddc8",
+          "title": "好市多北屯店停車場男毒駕 暴衝撞3車又撞柱民眾嚇傻",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5264331",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5264331。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5264331：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5264331：事件 1：死亡人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5264331"
+          ]
+        },
+        {
+          "incidentId": "ltn-7e3af61c82e4",
+          "title": "婦人遭毒駕輾斃 彰化警啟用毒品唾液快篩全面取締",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5254245",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：事件 1：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：事件 1：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5254245"
+          ]
+        },
+        {
+          "incidentId": "ltn-88171ff3d8d6",
+          "title": "飛車來襲！北市建國高架毒駕男高速追撞一家三口 驚險瞬間曝光",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5249095",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5249095。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5249095：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5249095：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5249095：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5249095：事件 1：死亡人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5249095"
+          ]
+        },
+        {
+          "incidentId": "ltn-9980e824904e",
+          "title": "毒駕害命+1！貨車司機遭高速撞擊喪命 肇事駕駛恍神被搜出毒品",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5233496",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5233496。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5233496"
+          ]
+        },
+        {
+          "incidentId": "ltn-5a116b6888c4",
+          "title": "飛車衝茶行撞死老闆娘 BMW男已清醒將依毒駕、過失致死送辦",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5207213",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5207213。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205551：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205551：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205551：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-5a116b6888c4。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205551：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205551：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-5a116b6888c4。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：事件 1：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：事件 1：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207717：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207717：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207717：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-5a116b6888c4。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207717：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207717：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207717：事件 1：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207717：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207717：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/paper/1727446：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/paper/1727446：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/paper/1727446：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-5a116b6888c4。",
+            "https://news.ltn.com.tw/news/society/paper/1727446：事件 1：親屬稱謂無法可靠連到特定人物",
+            "https://news.ltn.com.tw/news/society/paper/1727446：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1727446：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1727446：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5205551",
+            "https://news.ltn.com.tw/news/society/breakingnews/5205855",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207213",
+            "https://news.ltn.com.tw/news/society/breakingnews/5207717",
+            "https://news.ltn.com.tw/news/society/paper/1727446"
+          ]
+        },
+        {
+          "incidentId": "ltn-b6e13518f664",
+          "title": "台中男酒毒駕釀1死2傷 稱嚴重「蜂窩性組織炎」求交保被駁回",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5156086",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5156086。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5156086：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5156086"
+          ]
+        },
+        {
+          "incidentId": "ltn-dc9cf8ad4878",
+          "title": "也疑毒駕 闖紅燈撞死婦 搜出喪屍煙油",
+          "url": "https://news.ltn.com.tw/news/society/paper/1713711",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/paper/1713711：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1713711：當事人否認吸毒；否認另列疑義，不等於陰性檢驗",
+            "https://news.ltn.com.tw/news/society/paper/1713711：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/paper/1713711：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1713711：事件 1：當事人否認吸毒；否認另列疑義，不等於陰性檢驗",
+            "https://news.ltn.com.tw/news/society/paper/1713711：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/paper/1713711：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "https://news.ltn.com.tw/news/society/paper/1713711：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/paper/1713711"
+          ]
+        },
+        {
+          "incidentId": "ltn-36945c1d95a4",
+          "title": "北市忠孝橋連環追撞4車受損 肇事駕駛疑毒駕",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5080737",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：同姓或人物指代有歧義，不能確定是否同一人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：事件 1：同姓或人物指代有歧義，不能確定是否同一人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：事件 1：受傷人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5080737"
+          ]
+        },
+        {
+          "incidentId": "ltn-8b9416199700",
+          "title": "台南62歲男疑毒駕 衝撞7汽機車及1行人2傷送醫",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5055090",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5055090：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5055090：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5055090：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5055090：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5055090：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5055090：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5055090：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5055090"
+          ]
+        },
+        {
+          "incidentId": "ltn-e1bab4470634",
+          "title": "毒駕？台中男疾駛追撞女騎士又自撞電線桿 車內有愷他命",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5053400",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5053400。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5053400：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5053400：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5053400：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5053400"
+          ]
+        },
+        {
+          "incidentId": "ltn-216af61cf15b",
+          "title": "又是彰水路！毒駕男才逆向撞7人 無照高職女打保齡球撞等紅燈機車",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5023732",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5023732：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023732：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023732：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023732：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023732：事件 1：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023732：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023732：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023732：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5023732"
+          ]
+        },
+        {
+          "incidentId": "ltn-e126e858bd6d",
+          "title": "逆向撞康橋學生7傷 41歲毒駕男出社會以來離不開毒品",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5022121",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5022121：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/breakingnews/5022121：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5022121：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/5022121：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5022121：事件 1：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/breakingnews/5022121：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5022121：事件 1：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/5022121：事件 1：受傷人數未明或尚未通過欄位核對"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5022121"
+          ]
+        },
+        {
+          "incidentId": "ltn-18c3cbeab824",
+          "title": "衝撞康橋車隊前 詭異飄移／毒駕？ 肇事男急驗血、尿",
+          "url": "https://news.ltn.com.tw/news/society/paper/1703270",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5023428：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023428：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023428：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-18c3cbeab824。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023428：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023428：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/5023428：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "https://news.ltn.com.tw/news/society/paper/1703270：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/paper/1703270：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1703270：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1703270：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/paper/1703270：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1703270：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1703270：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/paper/1703270：事件 1：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/paper/1703270：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5023428",
+            "https://news.ltn.com.tw/news/society/paper/1703270"
+          ]
+        },
+        {
+          "incidentId": "ltn-54de992e68e3",
+          "title": "健康網》「毒駕」撞康橋學生 醫：吸食喪屍煙彈難察覺",
+          "url": "https://health.ltn.com.tw/article/breakingnews/5022395",
+          "status": "pending",
+          "reasons": [
+            "https://health.ltn.com.tw/article/breakingnews/5022395：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://health.ltn.com.tw/article/breakingnews/5022395：原文未能確定事發日期",
+            "https://health.ltn.com.tw/article/breakingnews/5022395：死亡人數未明或尚未通過欄位核對",
+            "https://health.ltn.com.tw/article/breakingnews/5022395：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://health.ltn.com.tw/article/breakingnews/5022395：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://health.ltn.com.tw/article/breakingnews/5022395：事件 1：原文未能確定事發日期",
+            "https://health.ltn.com.tw/article/breakingnews/5022395：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://health.ltn.com.tw/article/breakingnews/5022395：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://health.ltn.com.tw/article/breakingnews/5022395：事件 1：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://health.ltn.com.tw/article/breakingnews/5022395：事件 1：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "既有事件紀錄：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清"
+          ],
+          "sourceUrls": [
+            "https://health.ltn.com.tw/article/breakingnews/5022395"
+          ]
+        },
+        {
+          "incidentId": "ltn-6c6221e8bef0",
+          "title": "酒毒駕？打老翁後上國道追撞砂石車身亡 投檢：已抽血送驗",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5013953",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/5013953。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5013953"
+          ]
+        },
+        {
+          "incidentId": "ltn-2480516abf9f",
+          "title": "疑毒駕肇事！嘉義小貨車自撞火燒車1傷1逃 車上起出針頭及殘渣袋",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5007597",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：事件 1：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：事件 1：酒精關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/5007597"
+          ]
+        },
+        {
+          "incidentId": "ltn-7a74a625735c",
+          "title": "車禍肇逃1小時回現場詭異投案 竟是惡質毒駕致人於死",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4902032",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/4902032。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4902032"
+          ]
+        },
+        {
+          "incidentId": "ltn-1e9d07a4bf23",
+          "title": "男疑毒駕連撞4車造成2女受傷 警起獲「喪屍煙彈」",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4896740",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/4896740。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4896740：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4896740：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4896740：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4896740：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4896740：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4896740：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4896740"
+          ]
+        },
+        {
+          "incidentId": "ltn-3cae1841417b",
+          "title": "毒駕女拖撞警所長殉職 喪屍煙彈是23歲男賣她的",
+          "url": "https://news.ltn.com.tw/news/society/paper/1679771",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/paper/1679771：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1679771：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/paper/1679771：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1679771：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1679771：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/paper/1679771：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1679771：事件 1：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/paper/1679771：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1679771：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1679771：事件 1：事發日未通過核對：可能未明、精度不足或晚於發布日"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/paper/1679771"
+          ]
+        },
+        {
+          "incidentId": "ltn-c5785e898c4b",
+          "title": "毒駕拒圍捕市區狂飆 新店警車硬撞逮3毒蟲",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4858597",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：事件 1：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：事件 1：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：事件 1：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4858597"
+          ]
+        },
+        {
+          "incidentId": "ltn-e4f043fc18dc",
+          "title": "嘉義男無照毒駕撞死騎士被通緝 還當詐團車手",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4850192",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/4850192。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4850192：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4850192：事件 1：受傷人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4850192"
+          ]
+        },
+        {
+          "incidentId": "ltn-8c999962ec2c",
+          "title": "黃瑋震、劉宗鑫2警遭毒駕撞死 廖訓誠：警政署認定皆因公殉職",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4831602",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：事件 1：駕駛身分或角色仍未釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：事件 1：駕駛身分、角色或人物區分未通過核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4831602"
+          ]
+        },
+        {
+          "incidentId": "ltn-a783cf99fe1b",
+          "title": "他追尾前車釀2傷 警起獲K盤疑毒駕釀禍",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4815464",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4815464：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4815464：當事人否認吸毒；否認另列疑義，不等於陰性檢驗",
+            "https://news.ltn.com.tw/news/society/breakingnews/4815464：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4815464：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4815464：事件 1：當事人否認吸毒；否認另列疑義，不等於陰性檢驗",
+            "https://news.ltn.com.tw/news/society/breakingnews/4815464：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4815464：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4815464：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4815464"
+          ]
+        },
+        {
+          "incidentId": "ltn-08162e902c62",
+          "title": "台中男攜喪屍煙彈自撞2賓士 辯「太疲勞」警追毒駕究責",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4807275",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/breakingnews/4807275。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4807275：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4807275：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4807275：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4807275：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4807275：事件 1：原文未建立酒精與駕駛的有效關聯；僅持有、乘客或物品結果不足。",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4807275"
+          ]
+        },
+        {
+          "incidentId": "ltn-2b0017b1891c",
+          "title": "三重警遭毒駕撞死送件拖2月？新北警：爭取新修法2000萬最優撫卹",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4807032",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4807032：政策／宣導／評論新聞，只收錄新聞卡，不採用法律數字或假設人物作事件統計。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4807032"
+          ]
+        },
+        {
+          "incidentId": "ltn-88e369d327d5",
+          "title": "竹市虎林國中前1死車禍 毒駕男吸食「喪屍煙彈」移送竹檢",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4802592",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/life/paper/1668120：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/life/paper/1668120：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/life/paper/1668120：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-88e369d327d5。",
+            "https://news.ltn.com.tw/news/life/paper/1668120：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/life/paper/1668120：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/life/paper/1668120：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802038：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802038：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802038：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-88e369d327d5。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802038：事件 1：酒精檢測的單位或檢體資訊不完整",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802038：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802038：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802038：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802038：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802592：原文案件數與分案結果不一致，人物及數值尚不能分配到單一事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802592：本次原文未解析出可核對的具體上路事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4805853：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/4805853：新聞尚未連到已核對的實際事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/4805853：事件 1：可能重複或有身分矛盾，待釐清事件：ltn-88e369d327d5。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4805853：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4805853：事件 1：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+            "https://news.ltn.com.tw/news/society/breakingnews/4805853：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/life/paper/1668120",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802038",
+            "https://news.ltn.com.tw/news/society/breakingnews/4802592",
+            "https://news.ltn.com.tw/news/society/breakingnews/4805853"
+          ]
+        },
+        {
+          "incidentId": "ltn-61405af26c35",
+          "title": "黑幫毒駕撞死人 破竹聯毒品分裝場",
+          "url": "https://news.ltn.com.tw/news/society/paper/1656648",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/paper/1656648：死亡人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/paper/1656648：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/paper/1656648：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1656648：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/paper/1656648：事件 1：原文未能確定事發日期",
+            "https://news.ltn.com.tw/news/society/paper/1656648：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1656648：事件 1：事發日未通過核對：可能未明、精度不足或晚於發布日",
+            "https://news.ltn.com.tw/news/society/paper/1656648：事件 1：死亡人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/paper/1656648：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "既有事件紀錄：死亡人數有衝突，僅可沿用先前已核對值，其他值待釐清"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/paper/1656648"
+          ]
+        },
+        {
+          "incidentId": "ltn-012961176ba2",
+          "title": "毒駕飆速逆撞警車 1警亡4傷 破百時速毀22車 警車彈10多公尺",
+          "url": "https://news.ltn.com.tw/news/society/paper/1656413",
+          "status": "accepted",
+          "reasons": [
+            "本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：https://news.ltn.com.tw/news/society/paper/1656413。",
+            "https://news.ltn.com.tw/news/society/paper/1656413：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1656413：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/paper/1656413：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1656413：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1656413：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/paper/1656413：事件 1：死亡人數只能確認下限，不能當成精確總數",
+            "https://news.ltn.com.tw/news/society/paper/1656413：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/paper/1656413：事件 1：受傷人數未明或尚未通過欄位核對",
+            "部分欄位待釐清：死亡人數未明或尚未通過欄位核對；不影響已核對事件數。",
+            "部分欄位待釐清：受傷人數未明或尚未通過欄位核對；不影響已核對事件數。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/paper/1656413"
+          ]
+        },
+        {
+          "incidentId": "ltn-ffa689148e20",
+          "title": "男疑毒駕連撞3機車 男大生遭拖行10公尺送醫不治",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4669639",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：事件 1：傷亡敘述尚未連到明確當事人",
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：事件 1：受傷人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：事件 1：檢測對象未釐清，不能把物品或他人結果移給駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：事件 1：原文已排除酒精關聯，不能據此納入此類型事件。",
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4669639"
+          ]
+        },
+        {
+          "incidentId": "ltn-820288218253",
+          "title": "三重飆仔疑毒駕連撞機車、消防栓釀3傷 警員等5人逃死劫",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/4662961",
+          "status": "pending",
+          "reasons": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4662961：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/4662961：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4662961：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4662961：事件 1：死亡人數未明或尚未通過欄位核對",
+            "https://news.ltn.com.tw/news/society/breakingnews/4662961：事件 1：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清",
+            "https://news.ltn.com.tw/news/society/breakingnews/4662961：事件 1：酒／毒主張尚未以強證據連到具體駕駛",
+            "https://news.ltn.com.tw/news/society/breakingnews/4662961：事件 1：毒品關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。",
+            "既有事件紀錄：受傷人數有衝突，僅可沿用先前已核對值，其他值待釐清"
+          ],
+          "sourceUrls": [
+            "https://news.ltn.com.tw/news/society/breakingnews/4662961"
+          ]
+        }
+      ]
+    },
+    "alignment": {
+      "source": "NPA",
+      "dataset": "drug_suspects_monthly",
+      "fromMonth": "2023-01",
+      "toMonth": "2026-03"
+    }
+  }
 }

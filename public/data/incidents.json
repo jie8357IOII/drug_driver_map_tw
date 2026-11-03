@@ -175,28 +175,141 @@
     "dataQuality": {
       "version": "quality_update_2026-05-27",
       "sourceBasis": "article_text_reviewed",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": null,
       "originalInjuries": null,
       "correctedDeaths": null,
       "correctedInjuries": null,
       "flags": [
-        "basic_ok",
-        "drug_schedule_needs_review",
-        "public_danger_event"
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "follow_up_requires_existing_event_link",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "新聞未明確揭露死傷結果，故死傷欄位維持 null。",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "8f15bcc638cfbe4ac0e227e931952f3779de0afe86a0704ed76088591c537b06",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 81,
+            "quote": "蔡姓男子昨晚騎乘微型電動二輪車，行經新北市中和區連城路時，因形跡可疑，被警方盯上，蔡男拒檢加速逃逸，最終因自摔而被壓制，經毒品唾液快篩檢測，呈現4種毒品陽性反應；"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 81,
+            "quote": "蔡姓男子昨晚騎乘微型電動二輪車，行經新北市中和區連城路時，因形跡可疑，被警方盯上，蔡男拒檢加速逃逸，最終因自摔而被壓制，經毒品唾液快篩檢測，呈現4種毒品陽性反應；"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 81,
+            "quote": "蔡姓男子昨晚騎乘微型電動二輪車，行經新北市中和區連城路時，因形跡可疑，被警方盯上，蔡男拒檢加速逃逸，最終因自摔而被壓制，經毒品唾液快篩檢測，呈現4種毒品陽性反應；"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 81,
+            "end": 133,
+            "quote": "新北地檢署訊問蔡男後，認為他涉犯刑法不能安全駕駛等罪嫌重大，且有逃亡、反覆實施之虞，今日向法院聲請羈押。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 134,
+            "end": 256,
+            "quote": "警方調查，無業的23歲蔡嫌住在永和區，昨晚8時許，他騎微型電動二輪車，行經中和連城路時，左右搖晃、逆向行駛、形跡可疑，巡邏員警見狀上前攔檢，蔡嫌反而催油門加速逃逸，多次闖紅燈四處亂竄，警方在後方尾隨，蔡嫌最後失控自摔，旋即被員警及熱心民眾壓制。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 81,
+            "quote": "蔡姓男子昨晚騎乘微型電動二輪車，行經新北市中和區連城路時，因形跡可疑，被警方盯上，蔡男拒檢加速逃逸，最終因自摔而被壓制，經毒品唾液快篩檢測，呈現4種毒品陽性反應；"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 81,
+            "end": 133,
+            "quote": "新北地檢署訊問蔡男後，認為他涉犯刑法不能安全駕駛等罪嫌重大，且有逃亡、反覆實施之虞，今日向法院聲請羈押。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 134,
+            "end": 256,
+            "quote": "警方調查，無業的23歲蔡嫌住在永和區，昨晚8時許，他騎微型電動二輪車，行經中和連城路時，左右搖晃、逆向行駛、形跡可疑，巡邏員警見狀上前攔檢，蔡嫌反而催油門加速逃逸，多次闖紅燈四處亂竄，警方在後方尾隨，蔡嫌最後失控自摔，旋即被員警及熱心民眾壓制。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 257,
+            "end": 407,
+            "quote": "警方指出，盤查過程中，蔡嫌神情恍惚且對答語無倫次，經實施毒品唾液快篩，結果呈現依托咪酯、愷他命、安非他命及甲基卡西酮陽性反應，另查獲毒咖啡包殘渣袋3包，隨後逮捕帶回派出所偵辦，警詢後依刑法公共危險罪及毒品危害防制條例移送檢方偵辦，針對毒駕部分，依道路交通管理處罰條例規定製單舉發，並當場移置保管車輛。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 81,
+            "quote": "蔡姓男子昨晚騎乘微型電動二輪車，行經新北市中和區連城路時，因形跡可疑，被警方盯上，蔡男拒檢加速逃逸，最終因自摔而被壓制，經毒品唾液快篩檢測，呈現4種毒品陽性反應；"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 257,
+            "end": 407,
+            "quote": "警方指出，盤查過程中，蔡嫌神情恍惚且對答語無倫次，經實施毒品唾液快篩，結果呈現依托咪酯、愷他命、安非他命及甲基卡西酮陽性反應，另查獲毒咖啡包殘渣袋3包，隨後逮捕帶回派出所偵辦，警詢後依刑法公共危險罪及毒品危害防制條例移送檢方偵辦，針對毒駕部分，依道路交通管理處罰條例規定製單舉發，並當場移置保管車輛。"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-05-26"
   },
   {
     "id": "ltn-a59dcf6f31fa",
@@ -393,29 +506,149 @@
     "dataQuality": {
       "version": "quality_update_2026-05-27",
       "sourceBasis": "article_text_reviewed",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 2,
       "correctedDeaths": 0,
       "correctedInjuries": 2,
       "flags": [
-        "basic_ok",
-        "drug_status_or_cause_pending",
-        "drug_schedule_needs_review",
-        "public_danger_event"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "75fcd2c1f1aa72f9032e0ea24d98fe52a95516c38a68278fa23dfa5698e19c54",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 116,
+            "quote": "新北市永和警分局2名員警，今天（27日）早上9時許，在永和環河西路巡邏時，發現一輛黑色轎車左右搖晃，隨即上前攔查，過程中，警方對陳姓駕駛實施毒品唾液快篩時，陳男藉故返回車上拿手機，隨即踩油門衝撞2名員警後逃逸，而警方目前正全力追緝。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 116,
+            "quote": "新北市永和警分局2名員警，今天（27日）早上9時許，在永和環河西路巡邏時，發現一輛黑色轎車左右搖晃，隨即上前攔查，過程中，警方對陳姓駕駛實施毒品唾液快篩時，陳男藉故返回車上拿手機，隨即踩油門衝撞2名員警後逃逸，而警方目前正全力追緝。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 116,
+            "quote": "新北市永和警分局2名員警，今天（27日）早上9時許，在永和環河西路巡邏時，發現一輛黑色轎車左右搖晃，隨即上前攔查，過程中，警方對陳姓駕駛實施毒品唾液快篩時，陳男藉故返回車上拿手機，隨即踩油門衝撞2名員警後逃逸，而警方目前正全力追緝。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 214,
+            "end": 316,
+            "quote": "據知，就在等待毒品快篩檢測結果期間，陳男自稱手機沒電，要返回車上將手機充電，但坐上駕駛座後，隨即踩油門加速，員警見狀上前逮人，但仍遭駕駛衝撞後逃逸，2員警受到擦挫傷，所幸沒有生命危險，已自行前往醫院就醫。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 28,
+            "quote": "新北永和毒駕！黑車左右晃、駕駛恍惚語無倫次 撞傷兩警逃逸"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 117,
+            "end": 213,
+            "quote": "據了解，永和分局得和派出所許姓及江姓員警，今早執行巡邏勤務，行經永和環河西路二段時，發現一輛黑色轎車搖搖晃晃上前攔查，盤查過程中，陳姓駕駛精神恍惚且語無倫次，員警隨即對其實施毒品唾液快篩檢測。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 116,
+            "quote": "新北市永和警分局2名員警，今天（27日）早上9時許，在永和環河西路巡邏時，發現一輛黑色轎車左右搖晃，隨即上前攔查，過程中，警方對陳姓駕駛實施毒品唾液快篩時，陳男藉故返回車上拿手機，隨即踩油門衝撞2名員警後逃逸，而警方目前正全力追緝。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 117,
+            "end": 213,
+            "quote": "據了解，永和分局得和派出所許姓及江姓員警，今早執行巡邏勤務，行經永和環河西路二段時，發現一輛黑色轎車搖搖晃晃上前攔查，盤查過程中，陳姓駕駛精神恍惚且語無倫次，員警隨即對其實施毒品唾液快篩檢測。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 214,
+            "end": 316,
+            "quote": "據知，就在等待毒品快篩檢測結果期間，陳男自稱手機沒電，要返回車上將手機充電，但坐上駕駛座後，隨即踩油門加速，員警見狀上前逮人，但仍遭駕駛衝撞後逃逸，2員警受到擦挫傷，所幸沒有生命危險，已自行前往醫院就醫。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 317,
+            "end": 360,
+            "quote": "據指出，陳男毒品快篩檢測結果呈依託咪酯陽性反應，警方已擴大調閱監視影像，正全力追緝中。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 317,
+            "end": 360,
+            "quote": "據指出，陳男毒品快篩檢測結果呈依託咪酯陽性反應，警方已擴大調閱監視影像，正全力追緝中。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 28,
+            "quote": "新北永和毒駕！黑車左右晃、駕駛恍惚語無倫次 撞傷兩警逃逸"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-05-27"
   },
   {
     "id": "ltn-2e97a022d151",
@@ -1212,26 +1445,169 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 1,
       "correctedDeaths": 1,
       "correctedInjuries": 1,
       "flags": [
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "alcohol_measurement_incomplete"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
-        "deaths": "unknown",
-        "injuries": "unknown"
+        "deaths": "checked",
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 176,
+            "end": 274,
+            "quote": "警方初步調查，王男有毒品前科，今日下午從朋友家準備開車返回永和住處，行經景平路與大勇街口準備左轉大勇街時，稱因為開過頭想要倒車，先是不慎撞擊路邊緣石，隨後猛烈倒車，撞上正在等候左轉林姓姊妹的機車。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 29,
+            "end": 121,
+            "quote": "50歲王姓男子今午駕車經新北市中和區時，在景平路與大勇街口撞擊路邊緣石，倒車時猛烈撞擊後方機車，隨後又駕車前進，當場輾壓被撞倒在地的林姓姊妹，64歲妹妹送醫急救不幸身亡，姊姊仍在救治。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 29,
+            "end": 121,
+            "quote": "50歲王姓男子今午駕車經新北市中和區時，在景平路與大勇街口撞擊路邊緣石，倒車時猛烈撞擊後方機車，隨後又駕車前進，當場輾壓被撞倒在地的林姓姊妹，64歲妹妹送醫急救不幸身亡，姊姊仍在救治。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 176,
+            "end": 274,
+            "quote": "警方初步調查，王男有毒品前科，今日下午從朋友家準備開車返回永和住處，行經景平路與大勇街口準備左轉大勇街時，稱因為開過頭想要倒車，先是不慎撞擊路邊緣石，隨後猛烈倒車，撞上正在等候左轉林姓姊妹的機車。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 274,
+            "end": 304,
+            "quote": "不料撞擊後，王男竟再度駕車前進，導致車輪當場輾壓過林姓姊妹。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 305,
+            "end": 321,
+            "quote": "車禍發生後，肇事的王男並未受傷。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 29,
+            "end": 121,
+            "quote": "50歲王姓男子今午駕車經新北市中和區時，在景平路與大勇街口撞擊路邊緣石，倒車時猛烈撞擊後方機車，隨後又駕車前進，當場輾壓被撞倒在地的林姓姊妹，64歲妹妹送醫急救不幸身亡，姊姊仍在救治。"
+          },
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 121,
+            "end": 175,
+            "quote": "警方在王男身上搜出二級毒品依託咪酯喪屍菸彈及吸食器，且現場唾液快篩檢測呈現毒品陽性反應，當場將王男逮捕送辦。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 176,
+            "end": 274,
+            "quote": "警方初步調查，王男有毒品前科，今日下午從朋友家準備開車返回永和住處，行經景平路與大勇街口準備左轉大勇街時，稱因為開過頭想要倒車，先是不慎撞擊路邊緣石，隨後猛烈倒車，撞上正在等候左轉林姓姊妹的機車。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 274,
+            "end": 304,
+            "quote": "不料撞擊後，王男竟再度駕車前進，導致車輪當場輾壓過林姓姊妹。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 121,
+            "end": 175,
+            "quote": "警方在王男身上搜出二級毒品依託咪酯喪屍菸彈及吸食器，且現場唾液快篩檢測呈現毒品陽性反應，當場將王男逮捕送辦。"
+          },
+          {
+            "sentenceId": "p5s2",
+            "field": "body",
+            "start": 451,
+            "end": 527,
+            "quote": "經實施酒精呼氣測試，王男酒測值為0.00mg/L，但經毒品唾液快篩檢測，結果呈依託咪酯陽性反應，警方並當場在王男褲袋內查獲依託咪酯菸彈1顆及吸食器1枚。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 29,
+            "end": 121,
+            "quote": "50歲王姓男子今午駕車經新北市中和區時，在景平路與大勇街口撞擊路邊緣石，倒車時猛烈撞擊後方機車，隨後又駕車前進，當場輾壓被撞倒在地的林姓姊妹，64歲妹妹送醫急救不幸身亡，姊姊仍在救治。"
+          },
+          {
+            "sentenceId": "p4s3",
+            "field": "body",
+            "start": 365,
+            "end": 427,
+            "quote": "然而，坐在後座的妹妹送醫時原本意識清楚，在抵達醫院前卻突然失去意識，被送往新店慈濟醫院加護病房急救後，仍不幸因傷重宣告不治。"
+          }
+        ],
+        "injuries": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 29,
+            "end": 121,
+            "quote": "50歲王姓男子今午駕車經新北市中和區時，在景平路與大勇街口撞擊路邊緣石，倒車時猛烈撞擊後方機車，隨後又駕車前進，當場輾壓被撞倒在地的林姓姊妹，64歲妹妹送醫急救不幸身亡，姊姊仍在救治。"
+          },
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 321,
+            "end": 365,
+            "quote": "騎士林姓姐姐肋骨及鼻梁骨折、全身多處擦傷，所幸意識清楚，經送往雙和醫院救治後無生命危險。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "identified_people",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "59abc1ba8b740e64143bb2dea5197f44d88c43c34b151b453021f35b579a3ac2",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -1253,7 +1629,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-05-23"
   },
   {
     "id": "ltn-969186233ac1",
@@ -1457,28 +1834,149 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 0,
       "flags": [
-        "count_corrected",
-        "contains_no_injury_phrase",
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
       ],
       "reviewNote": "摘要明確寫「所幸無人受傷」，原 injuries=1 應為誤抓",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 95,
+            "end": 175,
+            "quote": "警方指出，今（17）日凌晨2點多，王男開車行經左營區民族一路與民族一路1101巷口時，自撞快慢車道的分隔島，造成車輛右前輪脫落後，滑行至民族一路與重愛路口停下。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 74,
+            "end": 94,
+            "quote": "高雄警方檢測發現王男毒駕，當場逮捕法辦。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 74,
+            "quote": "61歲王姓男子駕駛藍色汽車自撞分隔島，猛烈的衝撞力道，不僅導致分隔島的石塊斷裂、標牌傾斜，汽車右前輪脫落，輪胎與輪圈更分離「單飛了」，所幸無人受傷；"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 95,
+            "end": 175,
+            "quote": "警方指出，今（17）日凌晨2點多，王男開車行經左營區民族一路與民族一路1101巷口時，自撞快慢車道的分隔島，造成車輛右前輪脫落後，滑行至民族一路與重愛路口停下。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 20,
+            "quote": "高雄毒駕自撞分隔島 輪胎、輪圈「單飛了」"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 247,
+            "end": 329,
+            "quote": "另外，依道路交通管理處罰條例第35條規定，「駕駛汽機車吸食毒品、迷幻藥、麻醉藥品或其相類似之管制藥品」處3萬元至12萬元罰金，移置保管車輛、吊扣駕駛執照一年至二年。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 74,
+            "quote": "61歲王姓男子駕駛藍色汽車自撞分隔島，猛烈的衝撞力道，不僅導致分隔島的石塊斷裂、標牌傾斜，汽車右前輪脫落，輪胎與輪圈更分離「單飛了」，所幸無人受傷；"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 74,
+            "end": 94,
+            "quote": "高雄警方檢測發現王男毒駕，當場逮捕法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 95,
+            "end": 175,
+            "quote": "警方指出，今（17）日凌晨2點多，王男開車行經左營區民族一路與民族一路1101巷口時，自撞快慢車道的分隔島，造成車輛右前輪脫落後，滑行至民族一路與重愛路口停下。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 176,
+            "end": 246,
+            "quote": "王男雖然沒有受傷，但精神狀況不穩、語無倫次，警方檢測無酒駕，唾液快篩卻呈現甲基安非他命陽性反應，依公共危險罪及毒品危害防制條例罪嫌逮捕法辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 176,
+            "end": 246,
+            "quote": "王男雖然沒有受傷，但精神狀況不穩、語無倫次，警方檢測無酒駕，唾液快篩卻呈現甲基安非他命陽性反應，依公共危險罪及毒品危害防制條例罪嫌逮捕法辦。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 247,
+            "end": 329,
+            "quote": "另外，依道路交通管理處罰條例第35條規定，「駕駛汽機車吸食毒品、迷幻藥、麻醉藥品或其相類似之管制藥品」處3萬元至12萬元罰金，移置保管車輛、吊扣駕駛執照一年至二年。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 74,
+            "quote": "61歲王姓男子駕駛藍色汽車自撞分隔島，猛烈的衝撞力道，不僅導致分隔島的石塊斷裂、標牌傾斜，汽車右前輪脫落，輪胎與輪圈更分離「單飛了」，所幸無人受傷；"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "0d5f5d71314a983bfa33b841e89127047b29fa4366c539b7ad4b181de1e3b9e5",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -1490,7 +1988,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-05-17"
   },
   {
     "id": "ltn-547e820987a3",
@@ -1568,27 +2067,141 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 0,
       "correctedDeaths": 1,
       "correctedInjuries": 0,
       "flags": [
-        "number_context_review",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "injuries_not_reported",
+        "injuries_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
-        "deaths": "unknown",
+        "deaths": "checked",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 166,
+            "end": 339,
+            "quote": "中檢起訴表示，陳男2025年8月27日深夜11點多在公司喝下俗稱「喵喵」的毒咖啡包後，隔天清晨7點多駕駛賓士車行經南屯區環中路3段，撞上推著資源回收車的江姓老婦人（88歲），陳男在現場停留19秒後，繼續踩油門往前開，造成江女滾入車輛右側底盤，遭右前、後輪胎碾壓，雖送醫仍因頭頸部損傷，頸椎、骨盆骨和兩下肢骨折，致頸部脊髓破裂出血、肺脂肪栓塞死亡。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 165,
+            "quote": "台中一名陳姓（40歲）消防工程行老闆，去年8月喝了俗稱「喵喵」的毒咖啡包後開賓士車上路，在路上撞上推著資源回收車的88歲江姓老婦人，陳男停車19秒又踩油門將老婦人輾過，造成她慘死，檢方今年4月依毒駕致死將他起訴，台中地院今天開庭，陳男表示已經以630萬和家屬達成和解，除聲請一般審理，法官也諭知限制出境、出海8月，並施以科技監控。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 165,
+            "quote": "台中一名陳姓（40歲）消防工程行老闆，去年8月喝了俗稱「喵喵」的毒咖啡包後開賓士車上路，在路上撞上推著資源回收車的88歲江姓老婦人，陳男停車19秒又踩油門將老婦人輾過，造成她慘死，檢方今年4月依毒駕致死將他起訴，台中地院今天開庭，陳男表示已經以630萬和家屬達成和解，除聲請一般審理，法官也諭知限制出境、出海8月，並施以科技監控。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 166,
+            "end": 339,
+            "quote": "中檢起訴表示，陳男2025年8月27日深夜11點多在公司喝下俗稱「喵喵」的毒咖啡包後，隔天清晨7點多駕駛賓士車行經南屯區環中路3段，撞上推著資源回收車的江姓老婦人（88歲），陳男在現場停留19秒後，繼續踩油門往前開，造成江女滾入車輛右側底盤，遭右前、後輪胎碾壓，雖送醫仍因頭頸部損傷，頸椎、骨盆骨和兩下肢骨折，致頸部脊髓破裂出血、肺脂肪栓塞死亡。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 28,
+            "quote": "消防工程行老闆毒駕撞死88歲回收婦 賠630萬和解遭境管"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 165,
+            "quote": "台中一名陳姓（40歲）消防工程行老闆，去年8月喝了俗稱「喵喵」的毒咖啡包後開賓士車上路，在路上撞上推著資源回收車的88歲江姓老婦人，陳男停車19秒又踩油門將老婦人輾過，造成她慘死，檢方今年4月依毒駕致死將他起訴，台中地院今天開庭，陳男表示已經以630萬和家屬達成和解，除聲請一般審理，法官也諭知限制出境、出海8月，並施以科技監控。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 166,
+            "end": 339,
+            "quote": "中檢起訴表示，陳男2025年8月27日深夜11點多在公司喝下俗稱「喵喵」的毒咖啡包後，隔天清晨7點多駕駛賓士車行經南屯區環中路3段，撞上推著資源回收車的江姓老婦人（88歲），陳男在現場停留19秒後，繼續踩油門往前開，造成江女滾入車輛右側底盤，遭右前、後輪胎碾壓，雖送醫仍因頭頸部損傷，頸椎、骨盆骨和兩下肢骨折，致頸部脊髓破裂出血、肺脂肪栓塞死亡。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 340,
+            "end": 394,
+            "quote": "警方於當天採集陳男尿液送驗，呈現「4-甲基甲基卡西酮」、「4-甲基麻黃鹼」陽性反應，檢方依毒駕致死將他起訴。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 395,
+            "end": 507,
+            "quote": "台中地院今天開庭審理，因檢方在案發時諭知陳男以20萬元交保，另以手錶科技設備監控，陳男表示，因經常要在地下室工作，常收不到訊號，自己已經坦承犯行，也已經和家屬以630萬元達成和解，沒有逃亡和滅證之虞，希望法官能改以手機監控。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 340,
+            "end": 394,
+            "quote": "警方於當天採集陳男尿液送驗，呈現「4-甲基甲基卡西酮」、「4-甲基麻黃鹼」陽性反應，檢方依毒駕致死將他起訴。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 165,
+            "quote": "台中一名陳姓（40歲）消防工程行老闆，去年8月喝了俗稱「喵喵」的毒咖啡包後開賓士車上路，在路上撞上推著資源回收車的88歲江姓老婦人，陳男停車19秒又踩油門將老婦人輾過，造成她慘死，檢方今年4月依毒駕致死將他起訴，台中地院今天開庭，陳男表示已經以630萬和家屬達成和解，除聲請一般審理，法官也諭知限制出境、出海8月，並施以科技監控。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 166,
+            "end": 339,
+            "quote": "中檢起訴表示，陳男2025年8月27日深夜11點多在公司喝下俗稱「喵喵」的毒咖啡包後，隔天清晨7點多駕駛賓士車行經南屯區環中路3段，撞上推著資源回收車的江姓老婦人（88歲），陳男在現場停留19秒後，繼續踩油門往前開，造成江女滾入車輛右側底盤，遭右前、後輪胎碾壓，雖送醫仍因頭頸部損傷，頸椎、骨盆骨和兩下肢骨折，致頸部脊髓破裂出血、肺脂肪栓塞死亡。"
+          }
+        ],
+        "injuries": []
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "identified_people",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "21d00d217165222253fc1fcf693d1a4c8cadf5669c4d6298dc142bc1927de30a",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-2"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -1611,7 +2224,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-08-28"
   },
   {
     "id": "ltn-c267e4119e54",
@@ -1913,26 +2527,148 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 1,
       "flags": [
-        "number_context_review",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 131,
+            "quote": "高雄市蔡姓女通緝犯身背3條毒品通緝，今天毒駕行經鳳山區博愛路與立人街口時，見警拒檢連闖15處紅燈，還連續擦撞4車造成1人受傷，警方追逐8公里，晚間查獲蔡女起出「喪屍煙彈」等毒品499公克，全案將依毒品等4罪嫌移送法辦，並開出20張紅單，最高可罰12萬7200元。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 131,
+            "quote": "高雄市蔡姓女通緝犯身背3條毒品通緝，今天毒駕行經鳳山區博愛路與立人街口時，見警拒檢連闖15處紅燈，還連續擦撞4車造成1人受傷，警方追逐8公里，晚間查獲蔡女起出「喪屍煙彈」等毒品499公克，全案將依毒品等4罪嫌移送法辦，並開出20張紅單，最高可罰12萬7200元。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 131,
+            "quote": "高雄市蔡姓女通緝犯身背3條毒品通緝，今天毒駕行經鳳山區博愛路與立人街口時，見警拒檢連闖15處紅燈，還連續擦撞4車造成1人受傷，警方追逐8公里，晚間查獲蔡女起出「喪屍煙彈」等毒品499公克，全案將依毒品等4罪嫌移送法辦，並開出20張紅單，最高可罰12萬7200元。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 132,
+            "end": 231,
+            "quote": "鳳山警分局鳳崗派出所警員今天下午巡邏行經鳳山區博愛路與立人街口時，發現蔡姓女子駕駛白色轎車未依規定使用方向燈，警方上前攔查蔡女假意配合，突然加速逃逸，沿途危險駕駛、拒絕停車受檢，嚴重危害用路人安全。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 232,
+            "end": 315,
+            "quote": "警方通報線上攔截圍捕，蔡女除跨越網狀線、駛入來車道外，更一路連闖15處紅燈，並於大寮區沿線發生多起交通事故，連續擦撞3輛重機車、1輛自小貨車，造成胡姓騎士全身擦挫傷。"
+          },
+          {
+            "sentenceId": "p5s2",
+            "field": "body",
+            "start": 484,
+            "end": 566,
+            "quote": "另警方調閱秘錄器及沿線監視器影像，統計蔡女駕車逃逸過程中，違規闖紅燈、拒檢逃逸及危險駕駛等，違反《道路交通管理處罰條例》，開出20張紅單，最高可罰12萬7200元。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 131,
+            "quote": "高雄市蔡姓女通緝犯身背3條毒品通緝，今天毒駕行經鳳山區博愛路與立人街口時，見警拒檢連闖15處紅燈，還連續擦撞4車造成1人受傷，警方追逐8公里，晚間查獲蔡女起出「喪屍煙彈」等毒品499公克，全案將依毒品等4罪嫌移送法辦，並開出20張紅單，最高可罰12萬7200元。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 132,
+            "end": 231,
+            "quote": "鳳山警分局鳳崗派出所警員今天下午巡邏行經鳳山區博愛路與立人街口時，發現蔡姓女子駕駛白色轎車未依規定使用方向燈，警方上前攔查蔡女假意配合，突然加速逃逸，沿途危險駕駛、拒絕停車受檢，嚴重危害用路人安全。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 232,
+            "end": 315,
+            "quote": "警方通報線上攔截圍捕，蔡女除跨越網狀線、駛入來車道外，更一路連闖15處紅燈，並於大寮區沿線發生多起交通事故，連續擦撞3輛重機車、1輛自小貨車，造成胡姓騎士全身擦挫傷。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 316,
+            "end": 418,
+            "quote": "警方追逐8公里，今晚發現蔡女將白車棄置大寮區內坑路一處停車場內，並查獲蔡女（42歲），身背3條意圖販賣毒品通緝案件，車內起獲大量毒品，包括海洛因59公克、「喪屍煙彈」依托咪酯22公克、安非他命418公克。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 419,
+            "end": 484,
+            "quote": "警方對蔡女驗出安非他命陽性，確認蔡女毒駕上路，全案將依公共危險、妨害公務、毒品及肇事逃逸等罪嫌移送偵辦，後續向上溯源追查毒品來源。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 131,
+            "quote": "高雄市蔡姓女通緝犯身背3條毒品通緝，今天毒駕行經鳳山區博愛路與立人街口時，見警拒檢連闖15處紅燈，還連續擦撞4車造成1人受傷，警方追逐8公里，晚間查獲蔡女起出「喪屍煙彈」等毒品499公克，全案將依毒品等4罪嫌移送法辦，並開出20張紅單，最高可罰12萬7200元。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 232,
+            "end": 315,
+            "quote": "警方通報線上攔截圍捕，蔡女除跨越網狀線、駛入來車道外，更一路連闖15處紅燈，並於大寮區沿線發生多起交通事故，連續擦撞3輛重機車、1輛自小貨車，造成胡姓騎士全身擦挫傷。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "7d6a664aafffe6d29d51f0896ac2a776f6eb7ccf1eb74cdc7dc7e33c5954c712",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -1944,7 +2680,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-05-07"
   },
   {
     "id": "ltn-688b01b6b84f",
@@ -2021,26 +2758,148 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 3,
       "correctedDeaths": 0,
       "correctedInjuries": 3,
       "flags": [
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 110,
+            "quote": "高雄市三民區金山路口昨（6）日深夜23時35分發生車禍，顏姓男子（31歲）駕駛轎車直行金鼎路，因未保持安全距離追撞前方停等紅燈的機車，肇事逃逸又追撞前方的轎車，共造成3人受傷，警方從顏男隨身包內查獲毒品，查出他毒駕肇禍。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 110,
+            "quote": "高雄市三民區金山路口昨（6）日深夜23時35分發生車禍，顏姓男子（31歲）駕駛轎車直行金鼎路，因未保持安全距離追撞前方停等紅燈的機車，肇事逃逸又追撞前方的轎車，共造成3人受傷，警方從顏男隨身包內查獲毒品，查出他毒駕肇禍。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 110,
+            "quote": "高雄市三民區金山路口昨（6）日深夜23時35分發生車禍，顏姓男子（31歲）駕駛轎車直行金鼎路，因未保持安全距離追撞前方停等紅燈的機車，肇事逃逸又追撞前方的轎車，共造成3人受傷，警方從顏男隨身包內查獲毒品，查出他毒駕肇禍。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 111,
+            "end": 176,
+            "quote": "金鼎路與金山路口昨晚發生車禍，顏男駕駛白色轎車直行金鼎路（西向東），因未保持安全距離，先追撞前方停等紅燈的陳姓機車騎士（37歲）。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 177,
+            "end": 257,
+            "quote": "肇事後繼續行駛至金鼎路與金鼎路120巷口，再追撞停等紅燈由蔡男（28歲）駕駛的轎車，造成陳姓騎士手腳擦挫傷，蔡姓駕駛及乘客徐女擦挫傷，徐女經送醫救治後已無大礙。"
+          },
+          {
+            "sentenceId": "p6s1",
+            "field": "body",
+            "start": 460,
+            "end": 608,
+            "quote": "警方分別對3方駕駛、騎士酒測，酒測值皆為零，初步研判顏男駕駛車輛不依規定保持前、後車距離、違規闖紅燈、無照駕駛且肇事後未停留現場逕行離去，並有毒駕情形，違反多項道路交通管理處罰條例，最高可處新臺幣19萬5600元，當場移置保管該汽車、扣繳牌照並吊銷其駕駛執照，詳細肇因將由交通大隊進一步分析研判。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 110,
+            "quote": "高雄市三民區金山路口昨（6）日深夜23時35分發生車禍，顏姓男子（31歲）駕駛轎車直行金鼎路，因未保持安全距離追撞前方停等紅燈的機車，肇事逃逸又追撞前方的轎車，共造成3人受傷，警方從顏男隨身包內查獲毒品，查出他毒駕肇禍。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 258,
+            "end": 389,
+            "quote": "三民二分局獲報到場處理時，當場查獲顏男持有第二級毒品安非他命1包（毛重19.4公克）、第二級毒品依托咪酯菸彈2顆及依托咪酯補充液1罐（毛重57.5公克），經使用毒品唾液快篩試劑進行檢測，結果呈現二級毒品依託咪脂、甲基安非他命陽性反應，顯示確有施用毒品後駕車情形。"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 390,
+            "end": 459,
+            "quote": "顏男依違反毒品危害防制條例、毒駕及肇事逃逸案辦理，警方還查出顏男為高雄地檢署及橋頭地檢署發佈的通緝犯，依法解送高雄地檢署及橋頭地檢署歸案。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 258,
+            "end": 389,
+            "quote": "三民二分局獲報到場處理時，當場查獲顏男持有第二級毒品安非他命1包（毛重19.4公克）、第二級毒品依托咪酯菸彈2顆及依托咪酯補充液1罐（毛重57.5公克），經使用毒品唾液快篩試劑進行檢測，結果呈現二級毒品依託咪脂、甲基安非他命陽性反應，顯示確有施用毒品後駕車情形。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 22,
+            "quote": "高雄通緝犯深夜毒駕連環撞釀3傷 搜出毒品法辦"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 110,
+            "quote": "高雄市三民區金山路口昨（6）日深夜23時35分發生車禍，顏姓男子（31歲）駕駛轎車直行金鼎路，因未保持安全距離追撞前方停等紅燈的機車，肇事逃逸又追撞前方的轎車，共造成3人受傷，警方從顏男隨身包內查獲毒品，查出他毒駕肇禍。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 177,
+            "end": 257,
+            "quote": "肇事後繼續行駛至金鼎路與金鼎路120巷口，再追撞停等紅燈由蔡男（28歲）駕駛的轎車，造成陳姓騎士手腳擦挫傷，蔡姓駕駛及乘客徐女擦挫傷，徐女經送醫救治後已無大礙。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "9f82694dab0025942e3783cebd6ffa77b63b7bf99535a7c92e5b311d9a87703e",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -2054,7 +2913,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-05-06"
   },
   {
     "id": "ltn-6d777daa2faa",
@@ -2144,26 +3004,157 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 6,
       "correctedDeaths": 0,
       "correctedInjuries": 6,
       "flags": [
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "test_target_unresolved",
+        "deaths_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 95,
+            "quote": "新北市鶯歌區館前路今上午發生嚴重的連環車禍，66歲楊姓男子駕駛賓士轎車行經該路段，自稱為了撿拾掉落的手機，導致車輛失控偏移，擦撞對向車輛外，更引發後方6輛機車連環追撞，造成6名騎士受傷送醫。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 95,
+            "quote": "新北市鶯歌區館前路今上午發生嚴重的連環車禍，66歲楊姓男子駕駛賓士轎車行經該路段，自稱為了撿拾掉落的手機，導致車輛失控偏移，擦撞對向車輛外，更引發後方6輛機車連環追撞，造成6名騎士受傷送醫。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 95,
+            "quote": "新北市鶯歌區館前路今上午發生嚴重的連環車禍，66歲楊姓男子駕駛賓士轎車行經該路段，自稱為了撿拾掉落的手機，導致車輛失控偏移，擦撞對向車輛外，更引發後方6輛機車連環追撞，造成6名騎士受傷送醫。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 149,
+            "end": 245,
+            "quote": "​據悉，今上午7時許，楊男駕車沿館前路往鶯歌方向行駛，楊男向警方供稱，行駛途中因手機不慎掉落，他隨即彎腰撿拾，未料方向盤因此大幅偏移，車頭瞬間切入對向車道，擦撞一輛往樹林方向行駛的轎車右後輪。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 246,
+            "end": 326,
+            "quote": "​由於事發正值上班尖峰時段，對向車輛遭撞失控後，後方反應不及的1輛轎車與6輛機車瞬間如保齡球般撞成一團，共造成6名騎士倒地受傷，救護人員趕抵後，緊急將傷者送醫。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 27,
+            "quote": "又是毒駕！鶯歌6傷連環車禍 賓士男驗出K毒還抄出殘渣袋"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 95,
+            "quote": "新北市鶯歌區館前路今上午發生嚴重的連環車禍，66歲楊姓男子駕駛賓士轎車行經該路段，自稱為了撿拾掉落的手機，導致車輛失控偏移，擦撞對向車輛外，更引發後方6輛機車連環追撞，造成6名騎士受傷送醫。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 95,
+            "end": 148,
+            "quote": "警方到場後除發現楊男唾液毒品檢測呈現K他命陽性反應，更在車內搜出K他命殘渣袋，全案依公共危險罪嫌移送法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 149,
+            "end": 245,
+            "quote": "​據悉，今上午7時許，楊男駕車沿館前路往鶯歌方向行駛，楊男向警方供稱，行駛途中因手機不慎掉落，他隨即彎腰撿拾，未料方向盤因此大幅偏移，車頭瞬間切入對向車道，擦撞一輛往樹林方向行駛的轎車右後輪。"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 358,
+            "end": 416,
+            "quote": "警方據報趕抵，並對楊男進行檢測，其酒測值為0mg/L，但唾液快篩呈現K他命陽性反應，警方也在車內查獲疑似毒品殘渣袋。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 95,
+            "end": 148,
+            "quote": "警方到場後除發現楊男唾液毒品檢測呈現K他命陽性反應，更在車內搜出K他命殘渣袋，全案依公共危險罪嫌移送法辦。"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 358,
+            "end": 416,
+            "quote": "警方據報趕抵，並對楊男進行檢測，其酒測值為0mg/L，但唾液快篩呈現K他命陽性反應，警方也在車內查獲疑似毒品殘渣袋。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 27,
+            "quote": "又是毒駕！鶯歌6傷連環車禍 賓士男驗出K毒還抄出殘渣袋"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 95,
+            "quote": "新北市鶯歌區館前路今上午發生嚴重的連環車禍，66歲楊姓男子駕駛賓士轎車行經該路段，自稱為了撿拾掉落的手機，導致車輛失控偏移，擦撞對向車輛外，更引發後方6輛機車連環追撞，造成6名騎士受傷送醫。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "a69d7c6beea3068ad8efb3800329632e863feb0647890e687c307c7bcffd686e",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -2177,7 +3168,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-05-06"
   },
   {
     "id": "ltn-3429702396db",
@@ -2286,28 +3278,167 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 2,
       "originalInjuries": 2,
       "correctedDeaths": 2,
       "correctedInjuries": 2,
-      "flags": [
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "has_related_reports",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
-      ],
+      "flags": [],
       "reviewNote": "",
-      "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "needsHumanReview": false,
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
-        "deaths": "unknown",
-        "injuries": "unknown"
+        "deaths": "checked",
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 101,
+            "quote": "30歲高姓男子昨天（4日）駕駛BMW在彰化市接連撞死吳姓機車騎士與開車經過的翁姓女子，高男一開始還自己爬出車外，不過送醫治療後疑因頭部撕裂傷內出血陷入昏迷，經警方抽血驗尿發現有毒品反應，證實為毒駕肇事；"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 177,
+            "end": 257,
+            "quote": "這起發生在彰化市中華西路、中華陸橋上的2死2傷重大車禍，事發至今引起大批民眾議論，由於警方已證實肇事的BMW高姓男子為毒駕，不少民眾都要求司法應嚴懲肇事的高男。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 101,
+            "quote": "30歲高姓男子昨天（4日）駕駛BMW在彰化市接連撞死吳姓機車騎士與開車經過的翁姓女子，高男一開始還自己爬出車外，不過送醫治療後疑因頭部撕裂傷內出血陷入昏迷，經警方抽血驗尿發現有毒品反應，證實為毒駕肇事；"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 177,
+            "end": 257,
+            "quote": "這起發生在彰化市中華西路、中華陸橋上的2死2傷重大車禍，事發至今引起大批民眾議論，由於警方已證實肇事的BMW高姓男子為毒駕，不少民眾都要求司法應嚴懲肇事的高男。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 27,
+            "quote": "毒駕撞死2人、自己也受傷 BMW男背3大重罪及鉅額賠償"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 101,
+            "quote": "30歲高姓男子昨天（4日）駕駛BMW在彰化市接連撞死吳姓機車騎士與開車經過的翁姓女子，高男一開始還自己爬出車外，不過送醫治療後疑因頭部撕裂傷內出血陷入昏迷，經警方抽血驗尿發現有毒品反應，證實為毒駕肇事；"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 101,
+            "end": 176,
+            "quote": "經過漏夜治療，高男轉往加護病房觀察，不過已恢復意識，警方指出，高男未來將面臨毒駕公共危險、毒品危害防制條例及過失致人於死等3大刑責，還有民事鉅額賠償。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 177,
+            "end": 257,
+            "quote": "這起發生在彰化市中華西路、中華陸橋上的2死2傷重大車禍，事發至今引起大批民眾議論，由於警方已證實肇事的BMW高姓男子為毒駕，不少民眾都要求司法應嚴懲肇事的高男。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 258,
+            "end": 298,
+            "quote": "警方指出，高男未來將面臨毒駕公共危險、毒品危害防制條例及過失致人於死等3大刑責；"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 101,
+            "quote": "30歲高姓男子昨天（4日）駕駛BMW在彰化市接連撞死吳姓機車騎士與開車經過的翁姓女子，高男一開始還自己爬出車外，不過送醫治療後疑因頭部撕裂傷內出血陷入昏迷，經警方抽血驗尿發現有毒品反應，證實為毒駕肇事；"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 298,
+            "end": 344,
+            "quote": "由於高男有毒駕行為，因此依觸犯毒品危害防制條例第10條施用第二級毒品者，處3年以下有期徒刑；"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 27,
+            "quote": "毒駕撞死2人、自己也受傷 BMW男背3大重罪及鉅額賠償"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 177,
+            "end": 257,
+            "quote": "這起發生在彰化市中華西路、中華陸橋上的2死2傷重大車禍，事發至今引起大批民眾議論，由於警方已證實肇事的BMW高姓男子為毒駕，不少民眾都要求司法應嚴懲肇事的高男。"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 101,
+            "quote": "30歲高姓男子昨天（4日）駕駛BMW在彰化市接連撞死吳姓機車騎士與開車經過的翁姓女子，高男一開始還自己爬出車外，不過送醫治療後疑因頭部撕裂傷內出血陷入昏迷，經警方抽血驗尿發現有毒品反應，證實為毒駕肇事；"
+          }
+        ],
+        "injuries": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 177,
+            "end": 257,
+            "quote": "這起發生在彰化市中華西路、中華陸橋上的2死2傷重大車禍，事發至今引起大批民眾議論，由於警方已證實肇事的BMW高姓男子為毒駕，不少民眾都要求司法應嚴懲肇事的高男。"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 101,
+            "quote": "30歲高姓男子昨天（4日）駕駛BMW在彰化市接連撞死吳姓機車騎士與開車經過的翁姓女子，高男一開始還自己爬出車外，不過送醫治療後疑因頭部撕裂傷內出血陷入昏迷，經警方抽血驗尿發現有毒品反應，證實為毒駕肇事；"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "explicit_total",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "302e81def1a98b9f9e8f6458cb2e4d57f8680daf6e7db195afa3a58415be79f9",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -2323,7 +3454,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-05-04"
   },
   {
     "id": "ltn-7939a563bd55",
@@ -2918,7 +4050,7 @@
     "publishedAt": "2026-04-05",
     "city": "基隆市",
     "deaths": 0,
-    "injuries": 4,
+    "injuries": 3,
     "summary": "又傳毒駕！基隆市仁愛區基隆廟口夜市愛四路，今天（5日）下午5時許驚傳1輛黑色轎車先擦撞東北麵食館招牌，再推撞品都串燒前餐車，最後停在品都串燒門口，不僅撞壞店家招牌、餐車，還造成1名女騎士與3名行人受傷。警方獲報趕抵查出，肇事駕駛為有吸毒前科的陳姓男子；經施以唾液快篩，呈吸食安非他命毒品反應，將依法將",
     "confidence": "reviewed_corrected",
     "extractedDetails": {
@@ -3001,26 +4133,143 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 4,
       "flags": [
-        "count_corrected",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
       ],
       "reviewNote": "摘要明確寫1名女騎士與3名行人受傷，共4人",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 24,
+            "end": 120,
+            "quote": "基隆市仁愛區基隆廟口夜市愛四路，今天（5日）下午5時許驚傳1輛黑色轎車先擦撞東北麵食館招牌，再推撞品都串燒前餐車，最後停在品都串燒門口，不僅撞壞店家招牌、餐車，還造成1名女騎士與3名行人受傷。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 176,
+            "end": 302,
+            "quote": "基隆市消防局今天下午4時49分獲報，基隆市仁愛區愛四路品都串燒前發生汽車失控撞到商家門前招牌、行人與機車事故，消防隊員趕抵發現，除了1名女騎士受傷外，還有3名行人，分別為1名孕婦、阿嬤及孫女，還好4人均意識清楚，僅受輕傷，已由消防隊員送往基隆醫院救治。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 24,
+            "end": 120,
+            "quote": "基隆市仁愛區基隆廟口夜市愛四路，今天（5日）下午5時許驚傳1輛黑色轎車先擦撞東北麵食館招牌，再推撞品都串燒前餐車，最後停在品都串燒門口，不僅撞壞店家招牌、餐車，還造成1名女騎士與3名行人受傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 176,
+            "end": 302,
+            "quote": "基隆市消防局今天下午4時49分獲報，基隆市仁愛區愛四路品都串燒前發生汽車失控撞到商家門前招牌、行人與機車事故，消防隊員趕抵發現，除了1名女騎士受傷外，還有3名行人，分別為1名孕婦、阿嬤及孫女，還好4人均意識清楚，僅受輕傷，已由消防隊員送往基隆醫院救治。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 27,
+            "quote": "基隆廟口夜市毒駕撞店家波及4人 孕婦、祖孫倆路過受輕傷"
+          },
+          {
+            "sentenceId": "p2s3",
+            "field": "body",
+            "start": 120,
+            "end": 145,
+            "quote": "警方獲報趕抵查出，肇事駕駛為有吸毒前科的陳姓男子；"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p2s3",
+            "field": "body",
+            "start": 120,
+            "end": 145,
+            "quote": "警方獲報趕抵查出，肇事駕駛為有吸毒前科的陳姓男子；"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 303,
+            "end": 409,
+            "quote": "轄區基隆市警一分局延平街派出所趕抵調查事故原因，初步排除酒駕，但發現46歲的陳姓駕駛為轄區列管的毒品人口，立即為他進行唾液篩檢，篩檢出呈現施用安非他命毒品的陽性反應，將他依違反毒品危害防制條例移送基隆地檢署偵辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p2s3",
+            "field": "body",
+            "start": 120,
+            "end": 145,
+            "quote": "警方獲報趕抵查出，肇事駕駛為有吸毒前科的陳姓男子；"
+          },
+          {
+            "sentenceId": "p2s4",
+            "field": "body",
+            "start": 145,
+            "end": 175,
+            "quote": "經施以唾液快篩，呈吸食安非他命毒品反應，將依法將他移送究辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 24,
+            "end": 120,
+            "quote": "基隆市仁愛區基隆廟口夜市愛四路，今天（5日）下午5時許驚傳1輛黑色轎車先擦撞東北麵食館招牌，再推撞品都串燒前餐車，最後停在品都串燒門口，不僅撞壞店家招牌、餐車，還造成1名女騎士與3名行人受傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 176,
+            "end": 302,
+            "quote": "基隆市消防局今天下午4時49分獲報，基隆市仁愛區愛四路品都串燒前發生汽車失控撞到商家門前招牌、行人與機車事故，消防隊員趕抵發現，除了1名女騎士受傷外，還有3名行人，分別為1名孕婦、阿嬤及孫女，還好4人均意識清楚，僅受輕傷，已由消防隊員送往基隆醫院救治。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "sourceBodyHash": "015583768341934319070dcf3d797afa75e7e726a2916722e68eedc49837b377",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -3043,7 +4292,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-04-05"
   },
   {
     "id": "ltn-d3363b62ad9a",
@@ -3143,27 +4393,171 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 3,
       "correctedDeaths": 0,
       "correctedInjuries": 3,
       "flags": [
-        "count_corrected",
-        "number_context_review",
-        "has_related_reports",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "unattributed_outcome:dead",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
       ],
       "reviewNote": "本篇主事件為溪湖女駕駛逆向撞3車造成3傷；鹿港死亡案為前案背景",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 7,
+            "end": 43,
+            "quote": "彰化鹿港昨日發生毒駕撞死騎腳車阿嬤的不幸事件，未料溪湖鎮也爆出毒駕車禍。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 7,
+            "end": 43,
+            "quote": "彰化鹿港昨日發生毒駕撞死騎腳車阿嬤的不幸事件，未料溪湖鎮也爆出毒駕車禍。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 7,
+            "end": 43,
+            "quote": "彰化鹿港昨日發生毒駕撞死騎腳車阿嬤的不幸事件，未料溪湖鎮也爆出毒駕車禍。"
+          },
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 43,
+            "end": 125,
+            "quote": "一名33歲楊姓女子吸食安非他命後，竟無照駕駛逾300萬元的Audi A7上路，行經員鹿路一段時突然逆向跨越雙黃線，猛撞對向兩車，造成3人受傷送醫，所幸皆無生命危險。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 160,
+            "end": 239,
+            "quote": "警方指出，事故發生在1日下午3時許，楊女駕車行經員鹿路一段時，車輛突然偏離原車道，直接衝入對向車道，導致對向正常行駛的兩輛自小客車閃避不及，當場發生猛烈碰撞。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 34,
+            "quote": "毒駕連環爆！鹿港才奪命 溪湖又爆無照女吸毒駕Audi A7逆向撞3車"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 43,
+            "end": 125,
+            "quote": "一名33歲楊姓女子吸食安非他命後，竟無照駕駛逾300萬元的Audi A7上路，行經員鹿路一段時突然逆向跨越雙黃線，猛撞對向兩車，造成3人受傷送醫，所幸皆無生命危險。"
+          },
+          {
+            "sentenceId": "p1s4",
+            "field": "body",
+            "start": 125,
+            "end": 159,
+            "quote": "警方當場檢測，發現楊女毒品呈陽性反應，訊後依毒品及公共危險罪嫌送辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 160,
+            "end": 239,
+            "quote": "警方指出，事故發生在1日下午3時許，楊女駕車行經員鹿路一段時，車輛突然偏離原車道，直接衝入對向車道，導致對向正常行駛的兩輛自小客車閃避不及，當場發生猛烈碰撞。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 299,
+            "end": 372,
+            "quote": "警方同步對3名駕駛進行酒測，結果皆為0，但員警察覺楊女神情異常，出現眼神渙散、反應遲鈍等狀況，隨即對其實施唾液毒品快篩，結果呈現甲基安非他命陽性。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 43,
+            "end": 125,
+            "quote": "一名33歲楊姓女子吸食安非他命後，竟無照駕駛逾300萬元的Audi A7上路，行經員鹿路一段時突然逆向跨越雙黃線，猛撞對向兩車，造成3人受傷送醫，所幸皆無生命危險。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 299,
+            "end": 372,
+            "quote": "警方同步對3名駕駛進行酒測，結果皆為0，但員警察覺楊女神情異常，出現眼神渙散、反應遲鈍等狀況，隨即對其實施唾液毒品快篩，結果呈現甲基安非他命陽性。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 373,
+            "end": 412,
+            "quote": "警方進一步調查發現，楊女不僅未持有駕照，甚至從未考照，卻在吸毒後直接駕車上路。"
+          },
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 412,
+            "end": 471,
+            "quote": "她事後坦承施用毒品，警方依規定開立相關違規罰單，並將車輛移置保管，採取人車分離措施，同時依毒品及公共危險罪嫌移送法辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 43,
+            "end": 125,
+            "quote": "一名33歲楊姓女子吸食安非他命後，竟無照駕駛逾300萬元的Audi A7上路，行經員鹿路一段時突然逆向跨越雙黃線，猛撞對向兩車，造成3人受傷送醫，所幸皆無生命危險。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 263,
+            "end": 299,
+            "quote": "警消獲報到場後，立即將3名受傷駕駛送醫治療，所幸均意識清楚，無生命危險。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "3ae058d9ecca71b9ecca8be4cbf6aeecd2c1333f8708b69b7aa52a559c533758",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -3184,7 +4578,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-04-03"
   },
   {
     "id": "ltn-7fff4c316ced",
@@ -3385,29 +4780,120 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 0,
       "flags": [
-        "count_corrected",
-        "contains_no_injury_phrase",
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "has_related_reports",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "摘要明確寫陳男沒有受傷，主事件未見傷亡",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": false,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "0ad1fed12c872073096d26edb1cb945632a40cdece25f8e617218619dd3f2815",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 109,
+            "quote": "新北市陳姓男子今天上午駕駛BMW轎車，行經新店安坑輕軌台北小城站旁時，疑因恍神失控撞上輕軌站牌及護欄，警方獲報趕抵，所幸陳男沒有受傷，但在車內搜出喪屍煙彈，經毒品唾液檢驗呈現陽性反應，依法扣車並開單舉發，詢後移送偵辦。"
+          }
+        ],
+        "city": [],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 109,
+            "quote": "新北市陳姓男子今天上午駕駛BMW轎車，行經新店安坑輕軌台北小城站旁時，疑因恍神失控撞上輕軌站牌及護欄，警方獲報趕抵，所幸陳男沒有受傷，但在車內搜出喪屍煙彈，經毒品唾液檢驗呈現陽性反應，依法扣車並開單舉發，詢後移送偵辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 110,
+            "end": 224,
+            "quote": "新店警分局調查，從事物流業的44歲陳男，今天早上10時許，駕駛BMW轎車準備接送友人，當時新店安一路二段往雙城方向行駛，途中行經輕軌台北小城站，先撞壞輕軌站牌後，在失控衝上人行道撞擊護欄，由於撞擊力道猛烈，附近民眾見狀紛紛報案。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 24,
+            "quote": "BMW男撞安坑輕軌站牌及護欄 搜出喪屍煙彈涉毒駕"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 109,
+            "quote": "新北市陳姓男子今天上午駕駛BMW轎車，行經新店安坑輕軌台北小城站旁時，疑因恍神失控撞上輕軌站牌及護欄，警方獲報趕抵，所幸陳男沒有受傷，但在車內搜出喪屍煙彈，經毒品唾液檢驗呈現陽性反應，依法扣車並開單舉發，詢後移送偵辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 110,
+            "end": 224,
+            "quote": "新店警分局調查，從事物流業的44歲陳男，今天早上10時許，駕駛BMW轎車準備接送友人，當時新店安一路二段往雙城方向行駛，途中行經輕軌台北小城站，先撞壞輕軌站牌後，在失控衝上人行道撞擊護欄，由於撞擊力道猛烈，附近民眾見狀紛紛報案。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 225,
+            "end": 340,
+            "quote": "警方指出，獲報趕抵時，陳男並無酒駕情事，隨後交付電子菸彈一顆，經毒品試劑初驗呈依託咪酯陽性反應，隨後進行毒品唾液檢驗，同樣呈現陽性反應，依法製單舉發並扣車，警詢後依毒品危害防制條例、公共危險罪嫌移送台北地檢署偵辦，另採集尿液送檢。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 109,
+            "quote": "新北市陳姓男子今天上午駕駛BMW轎車，行經新店安坑輕軌台北小城站旁時，疑因恍神失控撞上輕軌站牌及護欄，警方獲報趕抵，所幸陳男沒有受傷，但在車內搜出喪屍煙彈，經毒品唾液檢驗呈現陽性反應，依法扣車並開單舉發，詢後移送偵辦。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 225,
+            "end": 340,
+            "quote": "警方指出，獲報趕抵時，陳男並無酒駕情事，隨後交付電子菸彈一顆，經毒品試劑初驗呈依託咪酯陽性反應，隨後進行毒品唾液檢驗，同樣呈現陽性反應，依法製單舉發並扣車，警詢後依毒品危害防制條例、公共危險罪嫌移送台北地檢署偵辦，另採集尿液送檢。"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -3422,7 +4908,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-03-19"
   },
   {
     "id": "ltn-ed7d1bd026e3",
@@ -3510,28 +4997,148 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 1,
       "flags": [
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "has_related_reports",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 119,
+            "quote": "高雄市苓雅區武廟路與國治路口今（19）日凌晨1點多發生自撞車禍，肇事駕駛李男（35歲）開車至路口時，突然偏移車道撞向1家飲料店騎樓的柱子，當時正好有路人行經斑馬線，幸未被波及，李男受傷送醫，但被驗出有二級毒品反應，涉嫌毒駕，且為無照駕駛。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 119,
+            "quote": "高雄市苓雅區武廟路與國治路口今（19）日凌晨1點多發生自撞車禍，肇事駕駛李男（35歲）開車至路口時，突然偏移車道撞向1家飲料店騎樓的柱子，當時正好有路人行經斑馬線，幸未被波及，李男受傷送醫，但被驗出有二級毒品反應，涉嫌毒駕，且為無照駕駛。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 119,
+            "quote": "高雄市苓雅區武廟路與國治路口今（19）日凌晨1點多發生自撞車禍，肇事駕駛李男（35歲）開車至路口時，突然偏移車道撞向1家飲料店騎樓的柱子，當時正好有路人行經斑馬線，幸未被波及，李男受傷送醫，但被驗出有二級毒品反應，涉嫌毒駕，且為無照駕駛。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 120,
+            "end": 214,
+            "quote": "從監視器畫面發現，當時路口有1名行人正要穿越斑馬線，李男駕駛的白色休旅車原本就有點左偏右晃的行駛至路口，路人才通過不久，休旅車就突然加速衝向飲料店，幸好撞及騎樓柱子後就停住，也沒波及路人。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 215,
+            "end": 286,
+            "quote": "苓雅分局福德所指出，今日凌晨1點13分接獲通報車禍，員警到場了解，為李男開車沿武廟路往西行駛，於武廟路與國治路口因操控不慎自撞路邊柱子致肇事。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 24,
+            "quote": "無照又毒駕！高雄男開車自撞飲料店 先吞18萬罰單"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 119,
+            "quote": "高雄市苓雅區武廟路與國治路口今（19）日凌晨1點多發生自撞車禍，肇事駕駛李男（35歲）開車至路口時，突然偏移車道撞向1家飲料店騎樓的柱子，當時正好有路人行經斑馬線，幸未被波及，李男受傷送醫，但被驗出有二級毒品反應，涉嫌毒駕，且為無照駕駛。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 215,
+            "end": 286,
+            "quote": "苓雅分局福德所指出，今日凌晨1點13分接獲通報車禍，員警到場了解，為李男開車沿武廟路往西行駛，於武廟路與國治路口因操控不慎自撞路邊柱子致肇事。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 286,
+            "end": 310,
+            "quote": "李男身體有多處擦挫傷，送醫治療，意識清楚無大礙。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 311,
+            "end": 380,
+            "quote": "警方表示，李男無酒駕，但為無照駕駛，實施唾液快篩檢測，結果呈二級毒品陽性反應，依違反毒品危害防制條例及公共危險罪，移請高雄地方檢察署偵辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 311,
+            "end": 380,
+            "quote": "警方表示，李男無酒駕，但為無照駕駛，實施唾液快篩檢測，結果呈二級毒品陽性反應，依違反毒品危害防制條例及公共危險罪，移請高雄地方檢察署偵辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 119,
+            "quote": "高雄市苓雅區武廟路與國治路口今（19）日凌晨1點多發生自撞車禍，肇事駕駛李男（35歲）開車至路口時，突然偏移車道撞向1家飲料店騎樓的柱子，當時正好有路人行經斑馬線，幸未被波及，李男受傷送醫，但被驗出有二級毒品反應，涉嫌毒駕，且為無照駕駛。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 286,
+            "end": 310,
+            "quote": "李男身體有多處擦挫傷，送醫治療，意識清楚無大礙。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "9b004b58b33c8a5efab1e0b97b34a3f05ccf25a3a4f813ad3e4ebf617f23208b",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -3546,7 +5153,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-03-19"
   },
   {
     "id": "ltn-b68f2cc5e55e",
@@ -4011,27 +5619,183 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 3,
       "correctedDeaths": 1,
       "correctedInjuries": 3,
       "flags": [
-        "number_context_review",
-        "has_related_reports",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:injured"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
-        "deaths": "unknown",
-        "injuries": "unknown"
+        "deaths": "checked",
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 93,
+            "quote": "宜蘭市中山路三段5日晚間發生重大車禍，8車撞成一團，警消封街救援，23歲林姓男子吸毒後駕駛白色賓士車，高速追撞停等紅燈的銀色轎車，2車往前噴飛，再波及其他6輛轎車與數輛機車，釀1死3傷；"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 93,
+            "quote": "宜蘭市中山路三段5日晚間發生重大車禍，8車撞成一團，警消封街救援，23歲林姓男子吸毒後駕駛白色賓士車，高速追撞停等紅燈的銀色轎車，2車往前噴飛，再波及其他6輛轎車與數輛機車，釀1死3傷；"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 93,
+            "quote": "宜蘭市中山路三段5日晚間發生重大車禍，8車撞成一團，警消封街救援，23歲林姓男子吸毒後駕駛白色賓士車，高速追撞停等紅燈的銀色轎車，2車往前噴飛，再波及其他6輛轎車與數輛機車，釀1死3傷；"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 93,
+            "end": 138,
+            "quote": "首當其衝遭高速追撞的銀車59歲鍾姓女駕駛是名小學老師，受困車內被救出，緊急送醫仍傷重不治。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 139,
+            "end": 252,
+            "quote": "宜蘭市鬧區昨晚近9點發生8車追、推撞事故，另波及多輛機車，其中1輛是清潔隊的環保回收車，事故現場滿目瘡痍、零件碎片散落一地，連避震器也噴飛，因撞擊力道猛力，導致多輛車體嚴重毀損，還有人受困車內不斷哀號，目擊民眾驚恐「相當可怕！"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 363,
+            "end": 466,
+            "quote": "警方調查，林男駕駛賓士車供稱要返家，但從環河路右轉中山路之後就沿路闖紅燈，對於2人在車上做了什麼事「都說不出個所以然」，最後在中山路三段追撞停等紅燈的鍾姓女老師，2車又陸續波及周邊停等紅燈與路邊車等6輛車。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 93,
+            "quote": "宜蘭市中山路三段5日晚間發生重大車禍，8車撞成一團，警消封街救援，23歲林姓男子吸毒後駕駛白色賓士車，高速追撞停等紅燈的銀色轎車，2車往前噴飛，再波及其他6輛轎車與數輛機車，釀1死3傷；"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 311,
+            "end": 362,
+            "quote": "肇事毒駕的林男頭部及四肢挫傷、副駕19歲妻子李女四肢挫傷，61歲董姓女機車騎士則是左腳骨折、腦部出血。"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 467,
+            "end": 577,
+            "quote": "警消獲報到場立即將傷者送醫救治，並對相關駕駛實施吐氣酒測，均無酒精反應，不過肇事的林男車內及身上，被查獲毒品「依托咪酯」，經以毒品唾液快篩檢測後，呈陽性反應，全案將依公共危險及毒品危害防制條例等罪嫌，移請宜蘭地檢署偵辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 93,
+            "quote": "宜蘭市中山路三段5日晚間發生重大車禍，8車撞成一團，警消封街救援，23歲林姓男子吸毒後駕駛白色賓士車，高速追撞停等紅燈的銀色轎車，2車往前噴飛，再波及其他6輛轎車與數輛機車，釀1死3傷；"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 467,
+            "end": 577,
+            "quote": "警消獲報到場立即將傷者送醫救治，並對相關駕駛實施吐氣酒測，均無酒精反應，不過肇事的林男車內及身上，被查獲毒品「依托咪酯」，經以毒品唾液快篩檢測後，呈陽性反應，全案將依公共危險及毒品危害防制條例等罪嫌，移請宜蘭地檢署偵辦。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 29,
+            "quote": "又是毒駕！宜蘭賓士男高速撞死返家女老師 波及7車釀1死3傷"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 93,
+            "quote": "宜蘭市中山路三段5日晚間發生重大車禍，8車撞成一團，警消封街救援，23歲林姓男子吸毒後駕駛白色賓士車，高速追撞停等紅燈的銀色轎車，2車往前噴飛，再波及其他6輛轎車與數輛機車，釀1死3傷；"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 93,
+            "end": 138,
+            "quote": "首當其衝遭高速追撞的銀車59歲鍾姓女駕駛是名小學老師，受困車內被救出，緊急送醫仍傷重不治。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 254,
+            "end": 311,
+            "quote": "警消獲報第一時間封街救援，陸續將4名傷者救出送醫，其中59歲鍾姓女老師脫困後，當場無生命徵象，送醫搶救仍傷重不治。"
+          }
+        ],
+        "injuries": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 29,
+            "quote": "又是毒駕！宜蘭賓士男高速撞死返家女老師 波及7車釀1死3傷"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 93,
+            "quote": "宜蘭市中山路三段5日晚間發生重大車禍，8車撞成一團，警消封街救援，23歲林姓男子吸毒後駕駛白色賓士車，高速追撞停等紅燈的銀色轎車，2車往前噴飛，再波及其他6輛轎車與數輛機車，釀1死3傷；"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 311,
+            "end": 362,
+            "quote": "肇事毒駕的林男頭部及四肢挫傷、副駕19歲妻子李女四肢挫傷，61歲董姓女機車騎士則是左腳骨折、腦部出血。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "explicit_total",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "f91c8ef2321dd09330bc357ec8cbb5b169bf0700d672779dd1eb5020259d4039",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -4048,7 +5812,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-03-05"
   },
   {
     "id": "ltn-28f39df639da",
@@ -4251,28 +6016,150 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 7,
       "originalInjuries": 0,
       "correctedDeaths": 1,
       "correctedInjuries": 0,
       "flags": [
-        "count_corrected",
-        "number_context_review",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "follow_up_requires_existing_event_link",
+        "drug_denial_reported",
+        "injuries_unknown"
       ],
       "reviewNote": "標題「7旬」與摘要「70多歲」為年齡，死亡人數應為1而非7",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
-        "deaths": "unknown",
+        "deaths": "checked",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": false,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 190,
+            "end": 321,
+            "quote": "檢警調查，18歲的白翊辰，2024年10月27日上午9時5分無照駕駛租賃的BMW轎車，行經北屯路240巷時直接撞飛七旬葉姓退休公務員，葉男騰空撞上擋風玻璃後重摔路面，還因此翻滾數圈，未料白男不但未停車查看，竟還直接輾壓後加速逃逸，導致葉男經送醫搶救仍因傷重不治。"
+          }
+        ],
+        "city": [],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 189,
+            "quote": "台中市18歲殯葬二代白翊辰，前年10月吸毒後無照駕駛租來的BMW轎車，行經北屯區時撞上70多歲葉姓退休公務員還輾過後逃逸並自撞，造成葉男傷重不治，檢方依殺人罪、毒駕等罪嫌將他起訴，昨天起台中地院國民法庭進行審理，白男辯護律師坦承毒駕、肇逃事實，但否認他有殺人犯意，今天法院傳當天到自撞現場處理的楊姓交通分隊員警作證，楊員表示，白男現場雖略感疲憊，但對答正常，詢問時否認有撞到人。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 190,
+            "end": 321,
+            "quote": "檢警調查，18歲的白翊辰，2024年10月27日上午9時5分無照駕駛租賃的BMW轎車，行經北屯路240巷時直接撞飛七旬葉姓退休公務員，葉男騰空撞上擋風玻璃後重摔路面，還因此翻滾數圈，未料白男不但未停車查看，竟還直接輾壓後加速逃逸，導致葉男經送醫搶救仍因傷重不治。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 322,
+            "end": 434,
+            "quote": "白男逃離現場約15分鐘，當天上午9時20分，行經北屯區太原路與環中東路自撞路口電箱，員警立即趕赴現場，白男卻辯稱「不知道發生車禍，也不知道撞到人」，他還堅稱沒有吸毒駕車，直到檢方偵訊時，才改口坦承「開車前一天拉K（吸毒）」。"
+          },
+          {
+            "sentenceId": "p6s1",
+            "field": "body",
+            "start": 624,
+            "end": 725,
+            "quote": "台中地院今天傳當天到太原路與環中東路處理自撞電箱的楊姓交通分隊員警作證，楊男表示，到場時白男站在車外，沒有明顯外傷，還跟他借電話打給家人，和家人通話時情緒激動飆罵三字經，雖略感疲憊、愛睏，但對答都正常。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 189,
+            "quote": "台中市18歲殯葬二代白翊辰，前年10月吸毒後無照駕駛租來的BMW轎車，行經北屯區時撞上70多歲葉姓退休公務員還輾過後逃逸並自撞，造成葉男傷重不治，檢方依殺人罪、毒駕等罪嫌將他起訴，昨天起台中地院國民法庭進行審理，白男辯護律師坦承毒駕、肇逃事實，但否認他有殺人犯意，今天法院傳當天到自撞現場處理的楊姓交通分隊員警作證，楊員表示，白男現場雖略感疲憊，但對答正常，詢問時否認有撞到人。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 190,
+            "end": 321,
+            "quote": "檢警調查，18歲的白翊辰，2024年10月27日上午9時5分無照駕駛租賃的BMW轎車，行經北屯路240巷時直接撞飛七旬葉姓退休公務員，葉男騰空撞上擋風玻璃後重摔路面，還因此翻滾數圈，未料白男不但未停車查看，竟還直接輾壓後加速逃逸，導致葉男經送醫搶救仍因傷重不治。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 322,
+            "end": 434,
+            "quote": "白男逃離現場約15分鐘，當天上午9時20分，行經北屯區太原路與環中東路自撞路口電箱，員警立即趕赴現場，白男卻辯稱「不知道發生車禍，也不知道撞到人」，他還堅稱沒有吸毒駕車，直到檢方偵訊時，才改口坦承「開車前一天拉K（吸毒）」。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 435,
+            "end": 529,
+            "quote": "檢警調查發現，白男案發前一天，先在於桃園市殯葬管理所附近吸毒，之後開車返回台中市住處，並在當天上午肇事，檢驗發現他吸食的毒品，包括俗稱「喪屍煙彈」的依托咪酯，俗稱「喵喵」的甲基甲基卡西酮。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 322,
+            "end": 434,
+            "quote": "白男逃離現場約15分鐘，當天上午9時20分，行經北屯區太原路與環中東路自撞路口電箱，員警立即趕赴現場，白男卻辯稱「不知道發生車禍，也不知道撞到人」，他還堅稱沒有吸毒駕車，直到檢方偵訊時，才改口坦承「開車前一天拉K（吸毒）」。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 435,
+            "end": 529,
+            "quote": "檢警調查發現，白男案發前一天，先在於桃園市殯葬管理所附近吸毒，之後開車返回台中市住處，並在當天上午肇事，檢驗發現他吸食的毒品，包括俗稱「喪屍煙彈」的依托咪酯，俗稱「喵喵」的甲基甲基卡西酮。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 189,
+            "quote": "台中市18歲殯葬二代白翊辰，前年10月吸毒後無照駕駛租來的BMW轎車，行經北屯區時撞上70多歲葉姓退休公務員還輾過後逃逸並自撞，造成葉男傷重不治，檢方依殺人罪、毒駕等罪嫌將他起訴，昨天起台中地院國民法庭進行審理，白男辯護律師坦承毒駕、肇逃事實，但否認他有殺人犯意，今天法院傳當天到自撞現場處理的楊姓交通分隊員警作證，楊員表示，白男現場雖略感疲憊，但對答正常，詢問時否認有撞到人。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 190,
+            "end": 321,
+            "quote": "檢警調查，18歲的白翊辰，2024年10月27日上午9時5分無照駕駛租賃的BMW轎車，行經北屯路240巷時直接撞飛七旬葉姓退休公務員，葉男騰空撞上擋風玻璃後重摔路面，還因此翻滾數圈，未料白男不但未停車查看，竟還直接輾壓後加速逃逸，導致葉男經送醫搶救仍因傷重不治。"
+          }
+        ],
+        "injuries": []
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "identified_people",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "c1dad7f2b7add0944f873134907c4cfe7389553c19f1be5316debbe2ddc21da9",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-2"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -4295,7 +6182,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2024-10-27"
   },
   {
     "id": "ltn-5a71d42ddc45",
@@ -4517,26 +6405,137 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 5,
       "flags": [
-        "count_corrected",
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "摘要明確寫車內四女童、一男童都受傷，至少5名孩童受傷",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "lower_bound"
+      },
+      "sourceBodyHash": "5608c7f1deaa3513df6f8c9ed4e48c93231c278e8a479276cbf76e769e1c4682",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 94,
+            "quote": "台南仁德區昨傍晚發生連環車禍，卅三歲吳姓男子駕駛小貨車，載著友人五名四到十二歲的孩子出門，途中遭警方追緝，他不願停靠，一路衝撞，波及轎車、機車，並自撞電線桿，車內四女童、一男童都受傷送醫；"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 94,
+            "quote": "台南仁德區昨傍晚發生連環車禍，卅三歲吳姓男子駕駛小貨車，載著友人五名四到十二歲的孩子出門，途中遭警方追緝，他不願停靠，一路衝撞，波及轎車、機車，並自撞電線桿，車內四女童、一男童都受傷送醫；"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 94,
+            "quote": "台南仁德區昨傍晚發生連環車禍，卅三歲吳姓男子駕駛小貨車，載著友人五名四到十二歲的孩子出門，途中遭警方追緝，他不願停靠，一路衝撞，波及轎車、機車，並自撞電線桿，車內四女童、一男童都受傷送醫；"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 285,
+            "end": 361,
+            "quote": "據了解，男子開著小貨車載有五名孩子，被第一分局員警追緝，攔查不停，在義林五街衝撞一部轎車後，失控於交叉路口自撞電線桿，又撞擊一部停靠的機車，未波及路人。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 362,
+            "end": 427,
+            "quote": "男子當時幫忙載送五名友人的孩子（分屬不同家庭），現場傳準備到麥當勞用餐，兩人在副駕駛座，三人坐在後車斗，衝撞後才會噴飛，造成受傷。"
+          },
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 427,
+            "end": 468,
+            "quote": "小貨車衝撞電線桿後嚴重變形，吳男並未受傷，當場被逮捕，歸仁警分局也到現場協助鑑識。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 94,
+            "quote": "台南仁德區昨傍晚發生連環車禍，卅三歲吳姓男子駕駛小貨車，載著友人五名四到十二歲的孩子出門，途中遭警方追緝，他不願停靠，一路衝撞，波及轎車、機車，並自撞電線桿，車內四女童、一男童都受傷送醫；"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 94,
+            "end": 165,
+            "quote": "吳男當場被逮，小貨車上起出俗稱「喪屍煙彈」的依托咪酯，吳男快篩呈現依托咪酯陽性反應，現場也查扣煙彈一枚等違禁品，全案依毒品及公共危險罪嫌移送。"
+          },
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 427,
+            "end": 468,
+            "quote": "小貨車衝撞電線桿後嚴重變形，吳男並未受傷，當場被逮捕，歸仁警分局也到現場協助鑑識。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 94,
+            "end": 165,
+            "quote": "吳男當場被逮，小貨車上起出俗稱「喪屍煙彈」的依托咪酯，吳男快篩呈現依托咪酯陽性反應，現場也查扣煙彈一枚等違禁品，全案依毒品及公共危險罪嫌移送。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 94,
+            "quote": "台南仁德區昨傍晚發生連環車禍，卅三歲吳姓男子駕駛小貨車，載著友人五名四到十二歲的孩子出門，途中遭警方追緝，他不願停靠，一路衝撞，波及轎車、機車，並自撞電線桿，車內四女童、一男童都受傷送醫；"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -4559,7 +6558,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-02-23"
   },
   {
     "id": "ltn-d7fa0fdc8ec2",
@@ -4879,28 +6879,146 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 0,
       "correctedDeaths": 0,
       "correctedInjuries": 0,
       "flags": [
-        "count_corrected",
-        "contains_no_injury_phrase",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "摘要明確寫所幸現場無民眾傷亡，原 deaths=1 應為誤抓",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "36d9b93bcd897e398df6cbfe8889380ec9582265e536d62dd8dbeadee943ccbb",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 10,
+            "end": 117,
+            "quote": "」深夜街頭，謝姓男子被多名員警壓制在柏油路上，情緒潰堤不斷哭喊求饒，結束一場驚險追逐，台中市西屯區文心路一帶今（31）日凌晨爆發毒駕拒檢衝撞警察事件，警方依法對空鳴槍制止，最終成功將人圍捕到案，所幸現場無民眾傷亡。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 10,
+            "end": 117,
+            "quote": "」深夜街頭，謝姓男子被多名員警壓制在柏油路上，情緒潰堤不斷哭喊求饒，結束一場驚險追逐，台中市西屯區文心路一帶今（31）日凌晨爆發毒駕拒檢衝撞警察事件，警方依法對空鳴槍制止，最終成功將人圍捕到案，所幸現場無民眾傷亡。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 10,
+            "end": 117,
+            "quote": "」深夜街頭，謝姓男子被多名員警壓制在柏油路上，情緒潰堤不斷哭喊求饒，結束一場驚險追逐，台中市西屯區文心路一帶今（31）日凌晨爆發毒駕拒檢衝撞警察事件，警方依法對空鳴槍制止，最終成功將人圍捕到案，所幸現場無民眾傷亡。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 118,
+            "end": 237,
+            "quote": "台中市第六分局今天凌晨在文心路與市政北一路口執行取締酒駕勤務時，一輛轎車行經路檢點卻拒不停車，反而突然加速，直接朝執勤員警衝撞，現場氣氛瞬間緊繃，33歲謝姓駕駛衝過路檢點後失控偏移，猛力撞上路旁店家鐵門、玻璃及停放機車，現場傳出巨大聲響。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 238,
+            "end": 362,
+            "quote": "為防止事態擴大、確保執勤同仁生命安全，現場員警立即依法對空鳴槍示警，同步通報攔截圍捕，謝男一路逃逸至文心路、大隆路口自撞分隔島，遭多名警力前後包抄，最終被揪出車外強勢壓制在地，過程中，他不斷哭喊「歹勢啦」、「我又沒怎樣」，態度與稍早衝撞時判若兩人。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 363,
+            "end": 491,
+            "quote": "警方在謝男車內查獲安非他命毒品、吸食器及刀械等物，經唾液快篩檢測，毒品反應呈陽性，經查，謝男因毒品遭通緝，因心虛才會闖過路檢點逃竄，警詢後依毒品、妨害公務及公共危險等罪嫌，移送台中地檢署偵辦，至於遭擦撞的執勤員警經送醫診斷為雙腳擦挫傷，所幸治療後已無大礙。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 10,
+            "end": 117,
+            "quote": "」深夜街頭，謝姓男子被多名員警壓制在柏油路上，情緒潰堤不斷哭喊求饒，結束一場驚險追逐，台中市西屯區文心路一帶今（31）日凌晨爆發毒駕拒檢衝撞警察事件，警方依法對空鳴槍制止，最終成功將人圍捕到案，所幸現場無民眾傷亡。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 118,
+            "end": 237,
+            "quote": "台中市第六分局今天凌晨在文心路與市政北一路口執行取締酒駕勤務時，一輛轎車行經路檢點卻拒不停車，反而突然加速，直接朝執勤員警衝撞，現場氣氛瞬間緊繃，33歲謝姓駕駛衝過路檢點後失控偏移，猛力撞上路旁店家鐵門、玻璃及停放機車，現場傳出巨大聲響。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 238,
+            "end": 362,
+            "quote": "為防止事態擴大、確保執勤同仁生命安全，現場員警立即依法對空鳴槍示警，同步通報攔截圍捕，謝男一路逃逸至文心路、大隆路口自撞分隔島，遭多名警力前後包抄，最終被揪出車外強勢壓制在地，過程中，他不斷哭喊「歹勢啦」、「我又沒怎樣」，態度與稍早衝撞時判若兩人。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 363,
+            "end": 491,
+            "quote": "警方在謝男車內查獲安非他命毒品、吸食器及刀械等物，經唾液快篩檢測，毒品反應呈陽性，經查，謝男因毒品遭通緝，因心虛才會闖過路檢點逃竄，警詢後依毒品、妨害公務及公共危險等罪嫌，移送台中地檢署偵辦，至於遭擦撞的執勤員警經送醫診斷為雙腳擦挫傷，所幸治療後已無大礙。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 118,
+            "end": 237,
+            "quote": "台中市第六分局今天凌晨在文心路與市政北一路口執行取締酒駕勤務時，一輛轎車行經路檢點卻拒不停車，反而突然加速，直接朝執勤員警衝撞，現場氣氛瞬間緊繃，33歲謝姓駕駛衝過路檢點後失控偏移，猛力撞上路旁店家鐵門、玻璃及停放機車，現場傳出巨大聲響。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 363,
+            "end": 491,
+            "quote": "警方在謝男車內查獲安非他命毒品、吸食器及刀械等物，經唾液快篩檢測，毒品反應呈陽性，經查，謝男因毒品遭通緝，因心虛才會闖過路檢點逃竄，警詢後依毒品、妨害公務及公共危險等罪嫌，移送台中地檢署偵辦，至於遭擦撞的執勤員警經送醫診斷為雙腳擦挫傷，所幸治療後已無大礙。"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol",
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -4913,8 +7031,10 @@
       "sourceText": []
     },
     "impairmentTypes": [
+      "alcohol",
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-01-31"
   },
   {
     "id": "ltn-40b9b922483f",
@@ -5037,7 +7157,7 @@
     "publishedAt": "2026-01-14",
     "city": "高雄市",
     "deaths": 0,
-    "injuries": 0,
+    "injuries": 1,
     "summary": "高雄市苓雅區福安路昨（13）日晚上7點多發生一起驚險車禍，曾姓男子（57歲）駕駛轎車突逆向衝撞對向車道路旁停放的小貨車，曾男的轎車當場翻覆四輪朝天，車禍除了波及4輛路旁機車，當時有1媽媽帶著2名小孩行經險遭撞擊，幸好3人跑得快當場被嚇到彈飛未受傷，曾男不僅唾液測試有毒品反應，車上還被找到海洛因等毒品",
     "confidence": "reviewed_corrected",
     "extractedDetails": {
@@ -5120,28 +7240,148 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 0,
       "flags": [
-        "count_corrected",
-        "contains_no_injury_phrase",
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "摘要明確寫1大2小幸好未受傷，原 injuries=1 應為誤抓",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 151,
+            "quote": "高雄市苓雅區福安路昨（13）日晚上7點多發生一起驚險車禍，曾姓男子（57歲）駕駛轎車突逆向衝撞對向車道路旁停放的小貨車，曾男的轎車當場翻覆四輪朝天，車禍除了波及4輛路旁機車，當時有1媽媽帶著2名小孩行經險遭撞擊，幸好3人跑得快當場被嚇到彈飛未受傷，曾男不僅唾液測試有毒品反應，車上還被找到海洛因等毒品。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 151,
+            "quote": "高雄市苓雅區福安路昨（13）日晚上7點多發生一起驚險車禍，曾姓男子（57歲）駕駛轎車突逆向衝撞對向車道路旁停放的小貨車，曾男的轎車當場翻覆四輪朝天，車禍除了波及4輛路旁機車，當時有1媽媽帶著2名小孩行經險遭撞擊，幸好3人跑得快當場被嚇到彈飛未受傷，曾男不僅唾液測試有毒品反應，車上還被找到海洛因等毒品。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 151,
+            "quote": "高雄市苓雅區福安路昨（13）日晚上7點多發生一起驚險車禍，曾姓男子（57歲）駕駛轎車突逆向衝撞對向車道路旁停放的小貨車，曾男的轎車當場翻覆四輪朝天，車禍除了波及4輛路旁機車，當時有1媽媽帶著2名小孩行經險遭撞擊，幸好3人跑得快當場被嚇到彈飛未受傷，曾男不僅唾液測試有毒品反應，車上還被找到海洛因等毒品。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 152,
+            "end": 181,
+            "quote": "苓雅分局凱旋所指出，13日晚間7時48分接獲通報車禍到場。"
+          },
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 181,
+            "end": 245,
+            "quote": "經瞭解，曾男轎車於福安路往東行駛，不明原因逆向擦撞路邊停放之1部小貨車後翻覆，車禍波及4輛機車，幸好無路人受傷，僅曾男輕微擦傷。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 25,
+            "quote": "驚險一瞬間！高雄男毒駕逆向撞翻車 1大2小嚇到彈飛"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 151,
+            "quote": "高雄市苓雅區福安路昨（13）日晚上7點多發生一起驚險車禍，曾姓男子（57歲）駕駛轎車突逆向衝撞對向車道路旁停放的小貨車，曾男的轎車當場翻覆四輪朝天，車禍除了波及4輛路旁機車，當時有1媽媽帶著2名小孩行經險遭撞擊，幸好3人跑得快當場被嚇到彈飛未受傷，曾男不僅唾液測試有毒品反應，車上還被找到海洛因等毒品。"
+          },
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 181,
+            "end": 245,
+            "quote": "經瞭解，曾男轎車於福安路往東行駛，不明原因逆向擦撞路邊停放之1部小貨車後翻覆，車禍波及4輛機車，幸好無路人受傷，僅曾男輕微擦傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 246,
+            "end": 282,
+            "quote": "警方在曾男車上查獲海洛因3包（總毛重1.22公克）及依托咪酯電子菸1支；"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 282,
+            "end": 336,
+            "quote": "曾男經毒品唾液試劑測試結果為鴉片類、安非他命類、依托咪酯類、卡西酮類等呈現陽性反應，警方現場將曾男逮捕偵辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 151,
+            "quote": "高雄市苓雅區福安路昨（13）日晚上7點多發生一起驚險車禍，曾姓男子（57歲）駕駛轎車突逆向衝撞對向車道路旁停放的小貨車，曾男的轎車當場翻覆四輪朝天，車禍除了波及4輛路旁機車，當時有1媽媽帶著2名小孩行經險遭撞擊，幸好3人跑得快當場被嚇到彈飛未受傷，曾男不僅唾液測試有毒品反應，車上還被找到海洛因等毒品。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 282,
+            "end": 336,
+            "quote": "曾男經毒品唾液試劑測試結果為鴉片類、安非他命類、依托咪酯類、卡西酮類等呈現陽性反應，警方現場將曾男逮捕偵辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 181,
+            "end": 245,
+            "quote": "經瞭解，曾男轎車於福安路往東行駛，不明原因逆向擦撞路邊停放之1部小貨車後翻覆，車禍波及4輛機車，幸好無路人受傷，僅曾男輕微擦傷。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "sourceBodyHash": "be03cedf272b8cab183894c6f0ec11f4e70a6c04374f2b463eddfb48036fd6fb",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -5166,7 +7406,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-01-13"
   },
   {
     "id": "ltn-3e3098e0d0cb",
@@ -5242,27 +7483,162 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 2,
       "flags": [
-        "count_corrected",
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "摘要寫李男與另一名被撞駕駛送醫",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 53,
+            "quote": "25歲李姓男子昨駕車行經新北市三重區環河北路，疑似未注意前方路況，在三信路口直撞前車並翻覆，車子當場起火。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 53,
+            "quote": "25歲李姓男子昨駕車行經新北市三重區環河北路，疑似未注意前方路況，在三信路口直撞前車並翻覆，車子當場起火。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 53,
+            "quote": "25歲李姓男子昨駕車行經新北市三重區環河北路，疑似未注意前方路況，在三信路口直撞前車並翻覆，車子當場起火。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 53,
+            "end": 108,
+            "quote": "警、消據報趕抵即刻滅火，並將已逃出汽車、受輕傷的李男，以及另一名被撞的駕駛送醫，警方還在現場發現「喪屍煙彈」。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 128,
+            "end": 211,
+            "quote": "據悉，昨下午5時許，李男駕車行經環河北路三段最外側車道往蘆洲方向，他疑似因吸毒導致恍神，沒有發現正前方有1輛臨停路邊的休旅車，閃避不及撞上，李男的汽車翻覆並起火燃燒。"
+          },
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 374,
+            "end": 416,
+            "quote": "警詢後，依毒品、公共危險等罪嫌，將李男移送法辦，另李男也將針對車禍肇責進行後續賠償。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 53,
+            "quote": "25歲李姓男子昨駕車行經新北市三重區環河北路，疑似未注意前方路況，在三信路口直撞前車並翻覆，車子當場起火。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 53,
+            "end": 108,
+            "quote": "警、消據報趕抵即刻滅火，並將已逃出汽車、受輕傷的李男，以及另一名被撞的駕駛送醫，警方還在現場發現「喪屍煙彈」。"
+          },
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 108,
+            "end": 127,
+            "quote": "經唾液篩檢，李男呈陽性，警方將其法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 128,
+            "end": 211,
+            "quote": "據悉，昨下午5時許，李男駕車行經環河北路三段最外側車道往蘆洲方向，他疑似因吸毒導致恍神，沒有發現正前方有1輛臨停路邊的休旅車，閃避不及撞上，李男的汽車翻覆並起火燃燒。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 108,
+            "end": 127,
+            "quote": "經唾液篩檢，李男呈陽性，警方將其法辦。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 276,
+            "end": 333,
+            "quote": "警方發現雙方均未酒駕，但李男毒品唾液篩檢呈現陽性反應，警方也在現場找到含依托咪酯的喪屍煙彈，李男見狀只能承認毒駕。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 334,
+            "end": 374,
+            "quote": "李男向警方供稱，毒品確實是他的，也承認吸毒，毒品在網路上購得，賣家資料已記不清。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 53,
+            "end": 108,
+            "quote": "警、消據報趕抵即刻滅火，並將已逃出汽車、受輕傷的李男，以及另一名被撞的駕駛送醫，警方還在現場發現「喪屍煙彈」。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 236,
+            "end": 276,
+            "quote": "警察、消防據報趕抵，第一時間滅火外，發現李男、林男幸運只受輕傷，將2人送醫救治。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "661a459604e6fbc77818b4e99ce210fb435c9f5fd926fea3ee2cc705c0c092ab",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -5274,7 +7650,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2026-01-10"
   },
   {
     "id": "ltn-e8faddd3ef14",
@@ -5455,26 +7832,144 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 4,
       "correctedDeaths": 0,
       "correctedInjuries": 4,
       "flags": [
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_conflicting",
+        "deaths_unknown",
+        "injuries_conflict"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "conflicting"
+      },
+      "sourceBodyHash": "a7d095c7f21700b32fbf4942fa22db25279290429b479873285d0ffdc1aca6b2",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "12月26日晚間約7點半，高雄市大寮區驚傳毒駕連環撞的3段車禍，造成肇事者人車在內，共4人受傷及9輛汽機車毀損，警方逮捕40歲吳姓男子法辦。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "12月26日晚間約7點半，高雄市大寮區驚傳毒駕連環撞的3段車禍，造成肇事者人車在內，共4人受傷及9輛汽機車毀損，警方逮捕40歲吳姓男子法辦。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "12月26日晚間約7點半，高雄市大寮區驚傳毒駕連環撞的3段車禍，造成肇事者人車在內，共4人受傷及9輛汽機車毀損，警方逮捕40歲吳姓男子法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 71,
+            "end": 194,
+            "quote": "警方指出，吳男駕駛汽車先在大寮區光明路二段與市道188路口 ，擦撞1輛汽車造成駕駛輕傷，接著在河堤路與義和路口，擦撞1輛汽車但無人受傷，最後在大寮區九和路偏離至對向車道，衝撞正在停等紅燈6輛汽機車，造成包含吳男在內共3人受輕傷，其中2人送醫治療。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 195,
+            "end": 288,
+            "quote": "警方強調，留在現場的吳男無酒駕，但他坦承開車前施用毒品依托咪酯，員警擴大追查，比對案發時間前後交通事故及監視器影像，發現吳男涉前2起車禍，將依公共危險準現行犯（施用毒品後駕車）移送法辦。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 14,
+            "quote": "高雄毒駕連環撞 毀9車4人傷"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "12月26日晚間約7點半，高雄市大寮區驚傳毒駕連環撞的3段車禍，造成肇事者人車在內，共4人受傷及9輛汽機車毀損，警方逮捕40歲吳姓男子法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 71,
+            "end": 194,
+            "quote": "警方指出，吳男駕駛汽車先在大寮區光明路二段與市道188路口 ，擦撞1輛汽車造成駕駛輕傷，接著在河堤路與義和路口，擦撞1輛汽車但無人受傷，最後在大寮區九和路偏離至對向車道，衝撞正在停等紅燈6輛汽機車，造成包含吳男在內共3人受輕傷，其中2人送醫治療。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 195,
+            "end": 288,
+            "quote": "警方強調，留在現場的吳男無酒駕，但他坦承開車前施用毒品依托咪酯，員警擴大追查，比對案發時間前後交通事故及監視器影像，發現吳男涉前2起車禍，將依公共危險準現行犯（施用毒品後駕車）移送法辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 195,
+            "end": 288,
+            "quote": "警方強調，留在現場的吳男無酒駕，但他坦承開車前施用毒品依托咪酯，員警擴大追查，比對案發時間前後交通事故及監視器影像，發現吳男涉前2起車禍，將依公共危險準現行犯（施用毒品後駕車）移送法辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "12月26日晚間約7點半，高雄市大寮區驚傳毒駕連環撞的3段車禍，造成肇事者人車在內，共4人受傷及9輛汽機車毀損，警方逮捕40歲吳姓男子法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 71,
+            "end": 194,
+            "quote": "警方指出，吳男駕駛汽車先在大寮區光明路二段與市道188路口 ，擦撞1輛汽車造成駕駛輕傷，接著在河堤路與義和路口，擦撞1輛汽車但無人受傷，最後在大寮區九和路偏離至對向車道，衝撞正在停等紅燈6輛汽機車，造成包含吳男在內共3人受輕傷，其中2人送醫治療。"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -5488,7 +7983,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-12-26"
   },
   {
     "id": "ltn-f18ca67979cb",
@@ -5953,27 +8449,131 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 4,
       "flags": [
-        "count_corrected",
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "標題寫4就醫，摘要寫多名人員受傷，依標題修正為4",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "88cd2190ca7d37645b69cf6525f36777d287a436ff98b090628e352c8faf67c4",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 33,
+            "end": 102,
+            "quote": "32歲陳姓男子昨（9）日晚間6時37分駕車行經基隆市南榮路時，疑因吸食毒品，神智不清，撞上正在倒垃圾的民眾及環保局人員，造成多名人員受傷。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 33,
+            "end": 102,
+            "quote": "32歲陳姓男子昨（9）日晚間6時37分駕車行經基隆市南榮路時，疑因吸食毒品，神智不清，撞上正在倒垃圾的民眾及環保局人員，造成多名人員受傷。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 33,
+            "end": 102,
+            "quote": "32歲陳姓男子昨（9）日晚間6時37分駕車行經基隆市南榮路時，疑因吸食毒品，神智不清，撞上正在倒垃圾的民眾及環保局人員，造成多名人員受傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 186,
+            "end": 265,
+            "quote": "警方調查，陳姓男子案發時駕駛賓士車行經南榮路一帶時，突然衝撞路旁的垃圾車，導致馬姓清潔隊員、陳姓保全、陳姓騎士及一名路人遭到撞擊，所幸送醫救治後，無生命危險。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 22,
+            "quote": "可惡！基隆毒駕衝撞倒垃圾民眾 撞擊多車4就醫"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 33,
+            "end": 102,
+            "quote": "32歲陳姓男子昨（9）日晚間6時37分駕車行經基隆市南榮路時，疑因吸食毒品，神智不清，撞上正在倒垃圾的民眾及環保局人員，造成多名人員受傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 186,
+            "end": 265,
+            "quote": "警方調查，陳姓男子案發時駕駛賓士車行經南榮路一帶時，突然衝撞路旁的垃圾車，導致馬姓清潔隊員、陳姓保全、陳姓騎士及一名路人遭到撞擊，所幸送醫救治後，無生命危險。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 266,
+            "end": 326,
+            "quote": "警方到場後，在現場發現依托咪酯「喪屍煙彈」1顆，且陳男意識不清，隨即予以毒品快篩及酒測，結果毒品快篩呈陽性，酒測值為0；"
+          },
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 326,
+            "end": 378,
+            "quote": "確認陳男有毒駕的情形，當場以公共危險現行犯將其逮捕，帶回偵辦，另也在其身上起出含「喪屍煙彈」的主機一組。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 33,
+            "end": 102,
+            "quote": "32歲陳姓男子昨（9）日晚間6時37分駕車行經基隆市南榮路時，疑因吸食毒品，神智不清，撞上正在倒垃圾的民眾及環保局人員，造成多名人員受傷。"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -5985,7 +8585,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-12-09"
   },
   {
     "id": "ltn-2493ae2187fd",
@@ -6058,28 +8659,149 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 3,
       "flags": [
-        "count_corrected",
-        "number_context_review",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "標題/摘要均指3人車禍受傷",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 196,
+            "quote": "新北市三芝今天凌晨驚傳一輛轎車過彎不慎，逆向衝撞對向2輛機車，一名機車騎士彈落邊坡，全身擦挫傷、乘客腿部骨折，另名女騎士也全身多處受傷，肇事車半毀也險些墜落，撞到電線桿才停下，釀成3車3人車禍，警方到場，將傷者送醫，發現肇事劉姓駕駛嚴重逆向，詢問是否疲勞駕駛、恍神，也說不出來，車上雖無違禁品，但警方對他毒測，赫見混用「喪屍毒品」依托咪酯、安非他命等毒品，警方將劉嫌依毒駕、公共危險罪嫌送辦。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 196,
+            "quote": "新北市三芝今天凌晨驚傳一輛轎車過彎不慎，逆向衝撞對向2輛機車，一名機車騎士彈落邊坡，全身擦挫傷、乘客腿部骨折，另名女騎士也全身多處受傷，肇事車半毀也險些墜落，撞到電線桿才停下，釀成3車3人車禍，警方到場，將傷者送醫，發現肇事劉姓駕駛嚴重逆向，詢問是否疲勞駕駛、恍神，也說不出來，車上雖無違禁品，但警方對他毒測，赫見混用「喪屍毒品」依托咪酯、安非他命等毒品，警方將劉嫌依毒駕、公共危險罪嫌送辦。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 196,
+            "quote": "新北市三芝今天凌晨驚傳一輛轎車過彎不慎，逆向衝撞對向2輛機車，一名機車騎士彈落邊坡，全身擦挫傷、乘客腿部骨折，另名女騎士也全身多處受傷，肇事車半毀也險些墜落，撞到電線桿才停下，釀成3車3人車禍，警方到場，將傷者送醫，發現肇事劉姓駕駛嚴重逆向，詢問是否疲勞駕駛、恍神，也說不出來，車上雖無違禁品，但警方對他毒測，赫見混用「喪屍毒品」依托咪酯、安非他命等毒品，警方將劉嫌依毒駕、公共危險罪嫌送辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 197,
+            "end": 274,
+            "quote": "新北市警察局110今天凌晨獲報，三芝區北海福座附近，北101線道驚傳一輛汽車逆向衝撞對向兩輛機車，造成一名騎士墜落山坡，3人受傷，肇事轎車也險些墜落山谷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 275,
+            "end": 392,
+            "quote": "淡水警分局員警到場，發現45歲劉男駕駛轎車途經事發路段，跨越雙黃線逆向撞擊對向2輛機車，造成20歲葉姓女騎士全身擦挫傷，20歲郭姓騎士跌落山谷，幸有樹枝當緩衝，全身擦挫傷，20歲乘客魏男腿部骨折，傷者由消防送醫救治，所幸均無生命危險。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 21,
+            "quote": "山路逆撞2車3人害墜山坡 警方一測毒駕送辦"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 196,
+            "quote": "新北市三芝今天凌晨驚傳一輛轎車過彎不慎，逆向衝撞對向2輛機車，一名機車騎士彈落邊坡，全身擦挫傷、乘客腿部骨折，另名女騎士也全身多處受傷，肇事車半毀也險些墜落，撞到電線桿才停下，釀成3車3人車禍，警方到場，將傷者送醫，發現肇事劉姓駕駛嚴重逆向，詢問是否疲勞駕駛、恍神，也說不出來，車上雖無違禁品，但警方對他毒測，赫見混用「喪屍毒品」依托咪酯、安非他命等毒品，警方將劉嫌依毒駕、公共危險罪嫌送辦。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 275,
+            "end": 392,
+            "quote": "淡水警分局員警到場，發現45歲劉男駕駛轎車途經事發路段，跨越雙黃線逆向撞擊對向2輛機車，造成20歲葉姓女騎士全身擦挫傷，20歲郭姓騎士跌落山谷，幸有樹枝當緩衝，全身擦挫傷，20歲乘客魏男腿部骨折，傷者由消防送醫救治，所幸均無生命危險。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 393,
+            "end": 504,
+            "quote": "警方對肇事劉男酒測，沒有酒精反應，初步檢視車內沒發現違禁物品，因劉嫌駕駛行徑怪異，警方對他進行毒品唾液快篩檢測，依托咪酯、安非他命都呈現陽性反應，當場製單、扣車，採尿送驗及製作觀察紀錄表，全案依公共危險（毒駕）罪嫌函送辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 393,
+            "end": 504,
+            "quote": "警方對肇事劉男酒測，沒有酒精反應，初步檢視車內沒發現違禁物品，因劉嫌駕駛行徑怪異，警方對他進行毒品唾液快篩檢測，依托咪酯、安非他命都呈現陽性反應，當場製單、扣車，採尿送驗及製作觀察紀錄表，全案依公共危險（毒駕）罪嫌函送辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 197,
+            "end": 274,
+            "quote": "新北市警察局110今天凌晨獲報，三芝區北海福座附近，北101線道驚傳一輛汽車逆向衝撞對向兩輛機車，造成一名騎士墜落山坡，3人受傷，肇事轎車也險些墜落山谷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 275,
+            "end": 392,
+            "quote": "淡水警分局員警到場，發現45歲劉男駕駛轎車途經事發路段，跨越雙黃線逆向撞擊對向2輛機車，造成20歲葉姓女騎士全身擦挫傷，20歲郭姓騎士跌落山谷，幸有樹枝當緩衝，全身擦挫傷，20歲乘客魏男腿部骨折，傷者由消防送醫救治，所幸均無生命危險。"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 196,
+            "quote": "新北市三芝今天凌晨驚傳一輛轎車過彎不慎，逆向衝撞對向2輛機車，一名機車騎士彈落邊坡，全身擦挫傷、乘客腿部骨折，另名女騎士也全身多處受傷，肇事車半毀也險些墜落，撞到電線桿才停下，釀成3車3人車禍，警方到場，將傷者送醫，發現肇事劉姓駕駛嚴重逆向，詢問是否疲勞駕駛、恍神，也說不出來，車上雖無違禁品，但警方對他毒測，赫見混用「喪屍毒品」依托咪酯、安非他命等毒品，警方將劉嫌依毒駕、公共危險罪嫌送辦。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "447f81d5000b0f93dffcc50f311017480cd387be266f5c4fc49af8bec2744291",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -6093,7 +8815,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-12-08"
   },
   {
     "id": "ltn-11cc6b502894",
@@ -6189,26 +8912,169 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 3,
       "correctedDeaths": 0,
       "correctedInjuries": 3,
       "flags": [
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 87,
+            "quote": "45歲詹姓男子昨（5）日晚間駕駛黑色轎車行經新北市中和區忠孝街一帶時，先擦撞路邊停放的1部轎車及4部機車，隨後又在華新街一帶逆向行駛，與對向白色轎車對撞，引發3車連環撞事故。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 87,
+            "quote": "45歲詹姓男子昨（5）日晚間駕駛黑色轎車行經新北市中和區忠孝街一帶時，先擦撞路邊停放的1部轎車及4部機車，隨後又在華新街一帶逆向行駛，與對向白色轎車對撞，引發3車連環撞事故。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 87,
+            "quote": "45歲詹姓男子昨（5）日晚間駕駛黑色轎車行經新北市中和區忠孝街一帶時，先擦撞路邊停放的1部轎車及4部機車，隨後又在華新街一帶逆向行駛，與對向白色轎車對撞，引發3車連環撞事故。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 161,
+            "end": 239,
+            "quote": "警方調查，45歲詹男駕駛轎車先在忠孝街一帶擦撞路邊車輛，隨後在華新街一帶逆向行駛，與另一輛轎車駕駛28歲廖男對撞，廖男倒車時又不慎與腳踏車騎士王女發生碰撞。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 32,
+            "quote": "中和轎車逆向與機車腳踏車對撞釀3傷 男被驗出毒駕搜出「喪屍菸彈」"
+          },
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 329,
+            "end": 353,
+            "quote": "警方已依法舉發詹嫌施用毒品駕車，並扣押肇事轎車。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 87,
+            "quote": "45歲詹姓男子昨（5）日晚間駕駛黑色轎車行經新北市中和區忠孝街一帶時，先擦撞路邊停放的1部轎車及4部機車，隨後又在華新街一帶逆向行駛，與對向白色轎車對撞，引發3車連環撞事故。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 87,
+            "end": 160,
+            "quote": "事故共造成3人受傷送醫，肇事者詹男經毒品唾液快篩呈陽性反應，中和分局警方還搜出一顆依託咪酯煙彈，全案將依公共危險、毒品危害防制條例等罪嫌移送偵辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 161,
+            "end": 239,
+            "quote": "警方調查，45歲詹男駕駛轎車先在忠孝街一帶擦撞路邊車輛，隨後在華新街一帶逆向行駛，與另一輛轎車駕駛28歲廖男對撞，廖男倒車時又不慎與腳踏車騎士王女發生碰撞。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 240,
+            "end": 284,
+            "quote": "這起事故造成詹嫌右手骨折、廖男手腳多處擦挫傷、腳踏車騎士王女雙腳擦挫傷，送雙和醫院急救。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 87,
+            "end": 160,
+            "quote": "事故共造成3人受傷送醫，肇事者詹男經毒品唾液快篩呈陽性反應，中和分局警方還搜出一顆依託咪酯煙彈，全案將依公共危險、毒品危害防制條例等罪嫌移送偵辦。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 285,
+            "end": 329,
+            "quote": "警方對肇事者詹嫌施以唾液快篩，結果呈現陽性反應，並在現場查扣針筒1支與依託咪酯煙彈1個。"
+          },
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 329,
+            "end": 353,
+            "quote": "警方已依法舉發詹嫌施用毒品駕車，並扣押肇事轎車。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 32,
+            "quote": "中和轎車逆向與機車腳踏車對撞釀3傷 男被驗出毒駕搜出「喪屍菸彈」"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 87,
+            "end": 160,
+            "quote": "事故共造成3人受傷送醫，肇事者詹男經毒品唾液快篩呈陽性反應，中和分局警方還搜出一顆依託咪酯煙彈，全案將依公共危險、毒品危害防制條例等罪嫌移送偵辦。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 240,
+            "end": 284,
+            "quote": "這起事故造成詹嫌右手骨折、廖男手腳多處擦挫傷、腳踏車騎士王女雙腳擦挫傷，送雙和醫院急救。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "f088373f376dccd850eb0be00bbf85cbb62668194273c30c38231ecdf5eb023f",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -6222,7 +9088,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-12-05"
   },
   {
     "id": "ltn-6af427e3ddc8",
@@ -6232,7 +9099,7 @@
     "publishedAt": "2025-12-01",
     "city": "臺中市",
     "deaths": 0,
-    "injuries": 0,
+    "injuries": 1,
     "summary": "台中一名李姓男子（41歲）昨天下午開車到好市多北屯店的停車場，沒想到先撞到1輛賓士車，接著倒車猛撞柱子，巨大的聲響引起停車場內民眾注意，有民眾見狀喊「我們快走」，沒想到下一秒李男的車子突然暴衝，往前撞上2輛車，所幸車上4人沒有受傷。警方獲報到場見李男精神恍惚，對他實施唾液毒品快篩呈陽性反應，除開單舉",
     "confidence": "reviewed_corrected",
     "extractedDetails": {
@@ -6296,28 +9163,148 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 0,
       "flags": [
-        "count_corrected",
-        "contains_no_injury_phrase",
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "摘要明確寫車上4人沒有受傷，原 injuries=1 應為誤抓",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 116,
+            "quote": "台中一名李姓男子（41歲）昨天下午開車到好市多北屯店的停車場，沒想到先撞到1輛賓士車，接著倒車猛撞柱子，巨大的聲響引起停車場內民眾注意，有民眾見狀喊「我們快走」，沒想到下一秒李男的車子突然暴衝，往前撞上2輛車，所幸車上4人沒有受傷。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 116,
+            "quote": "台中一名李姓男子（41歲）昨天下午開車到好市多北屯店的停車場，沒想到先撞到1輛賓士車，接著倒車猛撞柱子，巨大的聲響引起停車場內民眾注意，有民眾見狀喊「我們快走」，沒想到下一秒李男的車子突然暴衝，往前撞上2輛車，所幸車上4人沒有受傷。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 116,
+            "quote": "台中一名李姓男子（41歲）昨天下午開車到好市多北屯店的停車場，沒想到先撞到1輛賓士車，接著倒車猛撞柱子，巨大的聲響引起停車場內民眾注意，有民眾見狀喊「我們快走」，沒想到下一秒李男的車子突然暴衝，往前撞上2輛車，所幸車上4人沒有受傷。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 161,
+            "end": 315,
+            "quote": "這起事故發生在昨天下午4點45分，當時李姓男子駕駛Lexus自小客車在好市多北屯店停車場，卻突然失控，先往前撞上1輛賓士車，接著倒車猛撞柱子，將自己的後車廂都撞凹，正當巨大的聲響引起賣場停車場民眾側目，李男的車子又突然往前暴衝，先撞到1輛廂型車，並往前碰撞另1輛自小客車，所幸車上包括李男在內4人都沒人受傷。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 25,
+            "quote": "好市多北屯店停車場男毒駕 暴衝撞3車又撞柱民眾嚇傻"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 316,
+            "end": 414,
+            "quote": "台中市警局第五分局獲報，立即到場處理，員警發現李男精神恍惚，疑似施用毒品駕車，經李男同意後實施唾液毒品快篩，檢驗後呈現陽性反應，立刻依違反「道路交通管理處罰條例」第35條開單舉發，並移置保管車輛；"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 116,
+            "quote": "台中一名李姓男子（41歲）昨天下午開車到好市多北屯店的停車場，沒想到先撞到1輛賓士車，接著倒車猛撞柱子，巨大的聲響引起停車場內民眾注意，有民眾見狀喊「我們快走」，沒想到下一秒李男的車子突然暴衝，往前撞上2輛車，所幸車上4人沒有受傷。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 116,
+            "end": 160,
+            "quote": "警方獲報到場見李男精神恍惚，對他實施唾液毒品快篩呈陽性反應，除開單舉發，並移置保管車輛。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 161,
+            "end": 315,
+            "quote": "這起事故發生在昨天下午4點45分，當時李姓男子駕駛Lexus自小客車在好市多北屯店停車場，卻突然失控，先往前撞上1輛賓士車，接著倒車猛撞柱子，將自己的後車廂都撞凹，正當巨大的聲響引起賣場停車場民眾側目，李男的車子又突然往前暴衝，先撞到1輛廂型車，並往前碰撞另1輛自小客車，所幸車上包括李男在內4人都沒人受傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 316,
+            "end": 414,
+            "quote": "台中市警局第五分局獲報，立即到場處理，員警發現李男精神恍惚，疑似施用毒品駕車，經李男同意後實施唾液毒品快篩，檢驗後呈現陽性反應，立刻依違反「道路交通管理處罰條例」第35條開單舉發，並移置保管車輛；"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 116,
+            "end": 160,
+            "quote": "警方獲報到場見李男精神恍惚，對他實施唾液毒品快篩呈陽性反應，除開單舉發，並移置保管車輛。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 316,
+            "end": 414,
+            "quote": "台中市警局第五分局獲報，立即到場處理，員警發現李男精神恍惚，疑似施用毒品駕車，經李男同意後實施唾液毒品快篩，檢驗後呈現陽性反應，立刻依違反「道路交通管理處罰條例」第35條開單舉發，並移置保管車輛；"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 161,
+            "end": 315,
+            "quote": "這起事故發生在昨天下午4點45分，當時李姓男子駕駛Lexus自小客車在好市多北屯店停車場，卻突然失控，先往前撞上1輛賓士車，接著倒車猛撞柱子，將自己的後車廂都撞凹，正當巨大的聲響引起賣場停車場民眾側目，李男的車子又突然往前暴衝，先撞到1輛廂型車，並往前碰撞另1輛自小客車，所幸車上包括李男在內4人都沒人受傷。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "sourceBodyHash": "63ee9eb9e5d053b97b343cc9d245a9ae1abcfbbf426548c125c4ecdf0b2e61dd",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -6329,7 +9316,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-11-30"
   },
   {
     "id": "ltn-7e3af61c82e4",
@@ -6509,28 +9497,152 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 3,
       "flags": [
-        "count_corrected",
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "摘要寫一家3口多處擦挫傷",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 76,
+            "end": 132,
+            "quote": "雍男今天將行車紀錄器影片PO網，並說當時後方車高速衝撞就像「飛彈來襲」，並問「台灣真的不對毒駕/酒駕增加刑責嗎？"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 76,
+            "quote": "28歲雍姓男子駕車行駛在台北市建國高架橋時，突遭1車從後追撞，造成他們一家3口多處擦挫傷，警方到場，發現後方追撞他的58歲邱姓駕駛涉嫌吸食喪屍煙彈毒駕。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 76,
+            "quote": "28歲雍姓男子駕車行駛在台北市建國高架橋時，突遭1車從後追撞，造成他們一家3口多處擦挫傷，警方到場，發現後方追撞他的58歲邱姓駕駛涉嫌吸食喪屍煙彈毒駕。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 76,
+            "end": 132,
+            "quote": "雍男今天將行車紀錄器影片PO網，並說當時後方車高速衝撞就像「飛彈來襲」，並問「台灣真的不對毒駕/酒駕增加刑責嗎？"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 134,
+            "end": 200,
+            "quote": "雍男將當時驚險過程PO在YouTube，心有餘悸說，當晚一家人（包含2歲小孩）開車回家的路上，被後方毒駕駕駛高速追撞，幸好人都沒事；"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 218,
+            "end": 303,
+            "quote": "警方調查，10月9日晚間10時許，邱男駕車沿建國高架南往北方向，行駛至民權東路匝道口附近，左前車頭撞上前方雍男駕駛車輛右後車尾，前方車上2名乘客身體多處擦挫傷，送醫治療。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 76,
+            "quote": "28歲雍姓男子駕車行駛在台北市建國高架橋時，突遭1車從後追撞，造成他們一家3口多處擦挫傷，警方到場，發現後方追撞他的58歲邱姓駕駛涉嫌吸食喪屍煙彈毒駕。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 218,
+            "end": 303,
+            "quote": "警方調查，10月9日晚間10時許，邱男駕車沿建國高架南往北方向，行駛至民權東路匝道口附近，左前車頭撞上前方雍男駕駛車輛右後車尾，前方車上2名乘客身體多處擦挫傷，送醫治療。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 304,
+            "end": 398,
+            "quote": "後續警方於邱男車上發現摻有第二級毒品依托咪酯之電子煙彈1顆、專供施用第二級毒品依托咪酯之吸食器、專供施用第一級毒品海洛因之分裝勺，詢後依涉犯毒品危害防制條例及公共危險罪移送台北地檢署偵辦。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 76,
+            "end": 132,
+            "quote": "雍男今天將行車紀錄器影片PO網，並說當時後方車高速衝撞就像「飛彈來襲」，並問「台灣真的不對毒駕/酒駕增加刑責嗎？"
+          },
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 200,
+            "end": 217,
+            "quote": "網友氣憤皆稱「酒駕毒駕7414」。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 304,
+            "end": 398,
+            "quote": "後續警方於邱男車上發現摻有第二級毒品依托咪酯之電子煙彈1顆、專供施用第二級毒品依托咪酯之吸食器、專供施用第一級毒品海洛因之分裝勺，詢後依涉犯毒品危害防制條例及公共危險罪移送台北地檢署偵辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 76,
+            "quote": "28歲雍姓男子駕車行駛在台北市建國高架橋時，突遭1車從後追撞，造成他們一家3口多處擦挫傷，警方到場，發現後方追撞他的58歲邱姓駕駛涉嫌吸食喪屍煙彈毒駕。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "2e8b7785221f74d899b88e42a540c48b71dea3856d681efed910b46705696d81",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol",
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -6549,8 +9661,10 @@
       ]
     },
     "impairmentTypes": [
+      "alcohol",
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-11-17"
   },
   {
     "id": "ltn-9980e824904e",
@@ -6625,26 +9739,152 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 0,
       "correctedDeaths": 1,
       "correctedInjuries": 0,
       "flags": [
-        "number_context_review",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "lower_bound",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "1f951e3b31aaa5522d09ae41ceac979ac7cf7f895bb1df5f03518e175b8c2a0c",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 22,
+            "end": 173,
+            "quote": "桃園市龜山區忠義路一段，昨（3）日晚間9點54分發生嚴重車禍，33歲黃姓男子駕駛Lexus白色小客車突然高速撞擊同向67歲戴姓男子駕駛的小貨車，小貨車失控撞上路邊燈桿且波及路旁3輛車，戴男被夾在扭曲變形的車頭，後方車斗也被撞裂、物品四散，戴男被救出時已心肺功能停止，緊急送往林口長庚醫院搶救仍宣告不治。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 22,
+            "end": 173,
+            "quote": "桃園市龜山區忠義路一段，昨（3）日晚間9點54分發生嚴重車禍，33歲黃姓男子駕駛Lexus白色小客車突然高速撞擊同向67歲戴姓男子駕駛的小貨車，小貨車失控撞上路邊燈桿且波及路旁3輛車，戴男被夾在扭曲變形的車頭，後方車斗也被撞裂、物品四散，戴男被救出時已心肺功能停止，緊急送往林口長庚醫院搶救仍宣告不治。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 22,
+            "end": 173,
+            "quote": "桃園市龜山區忠義路一段，昨（3）日晚間9點54分發生嚴重車禍，33歲黃姓男子駕駛Lexus白色小客車突然高速撞擊同向67歲戴姓男子駕駛的小貨車，小貨車失控撞上路邊燈桿且波及路旁3輛車，戴男被夾在扭曲變形的車頭，後方車斗也被撞裂、物品四散，戴男被救出時已心肺功能停止，緊急送往林口長庚醫院搶救仍宣告不治。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 317,
+            "end": 417,
+            "quote": "目擊者拍下現場車體凹陷、車斗被撞裂畫面，驚恐說，車禍就發生在面前，差一點就會被波及，當時白色自小客車速度很快，撞擊後小貨車司機受困車內，已經完全沒有反應，警方在搜索白色自小客車，好像有找到顆粒狀物品。"
+          },
+          {
+            "sentenceId": "p7s1",
+            "field": "body",
+            "start": 548,
+            "end": 740,
+            "quote": "據悉，黃男有毒品前科，他住在龜山坪頂一帶，事發時要外出，而帶姓小貨車駕駛住在下龜山，當時正要開車返家，他從事水電工程等工作，車斗滿載工具、電線等，監視器拍下撞擊瞬間，當時黃姓白色自小客車駕駛、戴姓小貨車司機都沿忠義路一段林口往龜山方向行駛，黃男車速非常快，接連超越多輛車，行經忠義路一段與光峰路口時，突然撞上前方小貨車，小貨車失控撞擊路邊燈桿，不僅波及路旁3輛車，還險些撞上無辜路人。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 30,
+            "quote": "毒駕害命+1！貨車司機遭高速撞擊喪命 肇事駕駛恍神被搜出毒品"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 22,
+            "end": 173,
+            "quote": "桃園市龜山區忠義路一段，昨（3）日晚間9點54分發生嚴重車禍，33歲黃姓男子駕駛Lexus白色小客車突然高速撞擊同向67歲戴姓男子駕駛的小貨車，小貨車失控撞上路邊燈桿且波及路旁3輛車，戴男被夾在扭曲變形的車頭，後方車斗也被撞裂、物品四散，戴男被救出時已心肺功能停止，緊急送往林口長庚醫院搶救仍宣告不治。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 174,
+            "end": 316,
+            "quote": "案發後黃男精神相當恍惚，車內副駕駛座被搜出「喪屍煙彈」依托咪酯8顆、電子煙桿主機2支，其中7顆都已施用過，事故指向毒駕惹禍，警方訊後依過失致死、公共危險、毒品危害防制條例等罪嫌移送桃園地檢署，將報請檢察官申請羈押禁見，檢警下午相驗戴男遺體，釐清確切肇禍原因，複訊後認為向法院聲押黃男。"
+          },
+          {
+            "sentenceId": "p6s1",
+            "field": "body",
+            "start": 473,
+            "end": 547,
+            "quote": "黃男酒測值0，但精神相當恍惚，隨後在他車內副駕駛座上查獲依托咪酯煙彈（俗稱喪屍煙彈）8顆、電子煙桿主機2支，其中有7顆都已施用過，懷疑又是毒駕惹禍。"
+          },
+          {
+            "sentenceId": "p7s1",
+            "field": "body",
+            "start": 548,
+            "end": 740,
+            "quote": "據悉，黃男有毒品前科，他住在龜山坪頂一帶，事發時要外出，而帶姓小貨車駕駛住在下龜山，當時正要開車返家，他從事水電工程等工作，車斗滿載工具、電線等，監視器拍下撞擊瞬間，當時黃姓白色自小客車駕駛、戴姓小貨車司機都沿忠義路一段林口往龜山方向行駛，黃男車速非常快，接連超越多輛車，行經忠義路一段與光峰路口時，突然撞上前方小貨車，小貨車失控撞擊路邊燈桿，不僅波及路旁3輛車，還險些撞上無辜路人。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 174,
+            "end": 316,
+            "quote": "案發後黃男精神相當恍惚，車內副駕駛座被搜出「喪屍煙彈」依托咪酯8顆、電子煙桿主機2支，其中7顆都已施用過，事故指向毒駕惹禍，警方訊後依過失致死、公共危險、毒品危害防制條例等罪嫌移送桃園地檢署，將報請檢察官申請羈押禁見，檢警下午相驗戴男遺體，釐清確切肇禍原因，複訊後認為向法院聲押黃男。"
+          },
+          {
+            "sentenceId": "p6s1",
+            "field": "body",
+            "start": 473,
+            "end": 547,
+            "quote": "黃男酒測值0，但精神相當恍惚，隨後在他車內副駕駛座上查獲依托咪酯煙彈（俗稱喪屍煙彈）8顆、電子煙桿主機2支，其中有7顆都已施用過，懷疑又是毒駕惹禍。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 22,
+            "end": 173,
+            "quote": "桃園市龜山區忠義路一段，昨（3）日晚間9點54分發生嚴重車禍，33歲黃姓男子駕駛Lexus白色小客車突然高速撞擊同向67歲戴姓男子駕駛的小貨車，小貨車失控撞上路邊燈桿且波及路旁3輛車，戴男被夾在扭曲變形的車頭，後方車斗也被撞裂、物品四散，戴男被救出時已心肺功能停止，緊急送往林口長庚醫院搶救仍宣告不治。"
+          }
+        ],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -6660,7 +9900,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-11-03"
   },
   {
     "id": "ltn-f7c04ab6a508",
@@ -6908,28 +10149,167 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 1,
       "correctedDeaths": 1,
       "correctedInjuries": 1,
       "flags": [
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "has_related_reports",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:dead",
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "lower_bound"
+      },
+      "sourceBodyHash": "032e37bc2a9dc36cd3fb4ec3d41993d06dfd5372b0a6c221ffb819f552c2cf60",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 138,
+            "quote": "台中市43歲劉姓男子昨凌晨駕駛BMW轎車疑似毒駕，衝撞五權路一家茶行，造成87歲老闆娘慘死、61歲張姓兒子受傷，劉男因顱內出血一度昏迷住院，不過今天意識已恢復，警方已派人到醫院製作事發筆錄，因醫院初步檢驗有毒品陽性反應，警方預計明天或後天出院後，依車禍過失致死、毒駕移送法辦。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 138,
+            "quote": "台中市43歲劉姓男子昨凌晨駕駛BMW轎車疑似毒駕，衝撞五權路一家茶行，造成87歲老闆娘慘死、61歲張姓兒子受傷，劉男因顱內出血一度昏迷住院，不過今天意識已恢復，警方已派人到醫院製作事發筆錄，因醫院初步檢驗有毒品陽性反應，警方預計明天或後天出院後，依車禍過失致死、毒駕移送法辦。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 138,
+            "quote": "台中市43歲劉姓男子昨凌晨駕駛BMW轎車疑似毒駕，衝撞五權路一家茶行，造成87歲老闆娘慘死、61歲張姓兒子受傷，劉男因顱內出血一度昏迷住院，不過今天意識已恢復，警方已派人到醫院製作事發筆錄，因醫院初步檢驗有毒品陽性反應，警方預計明天或後天出院後，依車禍過失致死、毒駕移送法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 139,
+            "end": 239,
+            "quote": "警方調查，劉姓男子昨天凌晨3點多駕駛BMW自小客車，自南屯區五權西路一路直行，抵達事故地點前的Y字型路口時，突然高速闖紅燈，衝過馬路隨即撞進茶葉行，撞擊瞬間爆出巨大聲響，茶行鐵門被撞飛、店內滿目瘡痍。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 240,
+            "end": 278,
+            "quote": "當時在店內後方隔間臥室，睡下鋪的老婦人當場被撞死，睡上鋪的兒子則是頭部受傷；"
+          },
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 387,
+            "end": 397,
+            "quote": "至於為何會衝進茶行？"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 138,
+            "quote": "台中市43歲劉姓男子昨凌晨駕駛BMW轎車疑似毒駕，衝撞五權路一家茶行，造成87歲老闆娘慘死、61歲張姓兒子受傷，劉男因顱內出血一度昏迷住院，不過今天意識已恢復，警方已派人到醫院製作事發筆錄，因醫院初步檢驗有毒品陽性反應，警方預計明天或後天出院後，依車禍過失致死、毒駕移送法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 139,
+            "end": 239,
+            "quote": "警方調查，劉姓男子昨天凌晨3點多駕駛BMW自小客車，自南屯區五權西路一路直行，抵達事故地點前的Y字型路口時，突然高速闖紅燈，衝過馬路隨即撞進茶葉行，撞擊瞬間爆出巨大聲響，茶行鐵門被撞飛、店內滿目瘡痍。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 278,
+            "end": 327,
+            "quote": "劉男亦顱內出血送醫，抽血驗出體內有二級毒品安非他命陽性反應，車上還被查獲含依托咪酯毒品的喪屍煙彈。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 328,
+            "end": 387,
+            "quote": "昨天送醫一度昏迷的劉男今天已清醒，警方派人到醫院製作筆錄，劉男雖坦承自己有吸毒，但強調不是昨天肇事前吸的、不承認毒駕；"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 278,
+            "end": 327,
+            "quote": "劉男亦顱內出血送醫，抽血驗出體內有二級毒品安非他命陽性反應，車上還被查獲含依托咪酯毒品的喪屍煙彈。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 328,
+            "end": 387,
+            "quote": "昨天送醫一度昏迷的劉男今天已清醒，警方派人到醫院製作筆錄，劉男雖坦承自己有吸毒，但強調不是昨天肇事前吸的、不承認毒駕；"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 138,
+            "quote": "台中市43歲劉姓男子昨凌晨駕駛BMW轎車疑似毒駕，衝撞五權路一家茶行，造成87歲老闆娘慘死、61歲張姓兒子受傷，劉男因顱內出血一度昏迷住院，不過今天意識已恢復，警方已派人到醫院製作事發筆錄，因醫院初步檢驗有毒品陽性反應，警方預計明天或後天出院後，依車禍過失致死、毒駕移送法辦。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 240,
+            "end": 278,
+            "quote": "當時在店內後方隔間臥室，睡下鋪的老婦人當場被撞死，睡上鋪的兒子則是頭部受傷；"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 328,
+            "end": 387,
+            "quote": "昨天送醫一度昏迷的劉男今天已清醒，警方派人到醫院製作筆錄，劉男雖坦承自己有吸毒，但強調不是昨天肇事前吸的、不承認毒駕；"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -6954,7 +10334,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-10-09"
   },
   {
     "id": "ltn-b6e13518f664",
@@ -7020,28 +10401,162 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 2,
       "correctedDeaths": 1,
       "correctedInjuries": 2,
       "flags": [
-        "number_context_review",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined",
-        "driver_vehicle_unknown",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "follow_up_requires_existing_event_link"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
-        "deaths": "unknown",
-        "injuries": "unknown"
+        "deaths": "checked",
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 136,
+            "end": 272,
+            "quote": "這名22歲林姓男子，去年12月12日上午11點多，喝酒後從KTV離開，酒駕行經台中市東區自由路三段狂飆蛇行，撞上5輛汽機車與自行車，造成一名開賓士女駕駛輕傷，一名騎機車買午餐的75歲杜姓老翁被撞飛喪命，另有一名騎自行車宋姓街友顱內出血、身體多處骨折重傷，送進加護病房觀察。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 136,
+            "end": 272,
+            "quote": "這名22歲林姓男子，去年12月12日上午11點多，喝酒後從KTV離開，酒駕行經台中市東區自由路三段狂飆蛇行，撞上5輛汽機車與自行車，造成一名開賓士女駕駛輕傷，一名騎機車買午餐的75歲杜姓老翁被撞飛喪命，另有一名騎自行車宋姓街友顱內出血、身體多處骨折重傷，送進加護病房觀察。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 66,
+            "quote": "台中林姓男子去年12月酒後開車蛇行狂飆，連撞5車釀成1死2傷，警方事後還在車上查獲毒品，認定酒駕、毒駕釀禍，目前在台中看守所羈押中。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 136,
+            "end": 272,
+            "quote": "這名22歲林姓男子，去年12月12日上午11點多，喝酒後從KTV離開，酒駕行經台中市東區自由路三段狂飆蛇行，撞上5輛汽機車與自行車，造成一名開賓士女駕駛輕傷，一名騎機車買午餐的75歲杜姓老翁被撞飛喪命，另有一名騎自行車宋姓街友顱內出血、身體多處骨折重傷，送進加護病房觀察。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 66,
+            "quote": "台中林姓男子去年12月酒後開車蛇行狂飆，連撞5車釀成1死2傷，警方事後還在車上查獲毒品，認定酒駕、毒駕釀禍，目前在台中看守所羈押中。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 66,
+            "end": 135,
+            "quote": "林男近日聲請具保停押，強調自己罹患「蜂窩性組織炎」非常嚴重，若無保外就醫無法痊癒，不過台中地院認為在看守所就能接受適當治療，駁回交保聲請。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 136,
+            "end": 272,
+            "quote": "這名22歲林姓男子，去年12月12日上午11點多，喝酒後從KTV離開，酒駕行經台中市東區自由路三段狂飆蛇行，撞上5輛汽機車與自行車，造成一名開賓士女駕駛輕傷，一名騎機車買午餐的75歲杜姓老翁被撞飛喪命，另有一名騎自行車宋姓街友顱內出血、身體多處骨折重傷，送進加護病房觀察。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 273,
+            "end": 302,
+            "quote": "檢方今年4月依酒駕、毒駕致死，以及過失傷害等罪嫌起訴林男。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 66,
+            "quote": "台中林姓男子去年12月酒後開車蛇行狂飆，連撞5車釀成1死2傷，警方事後還在車上查獲毒品，認定酒駕、毒駕釀禍，目前在台中看守所羈押中。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 136,
+            "end": 272,
+            "quote": "這名22歲林姓男子，去年12月12日上午11點多，喝酒後從KTV離開，酒駕行經台中市東區自由路三段狂飆蛇行，撞上5輛汽機車與自行車，造成一名開賓士女駕駛輕傷，一名騎機車買午餐的75歲杜姓老翁被撞飛喪命，另有一名騎自行車宋姓街友顱內出血、身體多處骨折重傷，送進加護病房觀察。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 29,
+            "quote": "台中男酒毒駕釀1死2傷 稱嚴重「蜂窩性組織炎」求交保被駁回"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 66,
+            "quote": "台中林姓男子去年12月酒後開車蛇行狂飆，連撞5車釀成1死2傷，警方事後還在車上查獲毒品，認定酒駕、毒駕釀禍，目前在台中看守所羈押中。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 136,
+            "end": 272,
+            "quote": "這名22歲林姓男子，去年12月12日上午11點多，喝酒後從KTV離開，酒駕行經台中市東區自由路三段狂飆蛇行，撞上5輛汽機車與自行車，造成一名開賓士女駕駛輕傷，一名騎機車買午餐的75歲杜姓老翁被撞飛喪命，另有一名騎自行車宋姓街友顱內出血、身體多處骨折重傷，送進加護病房觀察。"
+          }
+        ],
+        "injuries": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 29,
+            "quote": "台中男酒毒駕釀1死2傷 稱嚴重「蜂窩性組織炎」求交保被駁回"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 66,
+            "quote": "台中林姓男子去年12月酒後開車蛇行狂飆，連撞5車釀成1死2傷，警方事後還在車上查獲毒品，認定酒駕、毒駕釀禍，目前在台中看守所羈押中。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "explicit_total",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "dae8c15bfd5482925ba7f178788e183f407b16571eac2f9a5612afeeab48d749",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -7054,8 +10569,9 @@
       "sourceText": []
     },
     "impairmentTypes": [
-      "drug"
-    ]
+      "alcohol"
+    ],
+    "occurredAt": "2024-12-12"
   },
   {
     "id": "ltn-2764af496444",
@@ -7592,25 +11108,148 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 2,
       "flags": [
-        "count_corrected",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "摘要寫蔡男與賴女都受傷",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 126,
+            "quote": "台中市北屯區今天發生一起車禍，蔡姓男子駕駛轎車於軍功路一段疾駛，先擦撞路旁轎車，又追撞前方賴姓機車女騎士，之後失控撞上路旁電線桿，蔡男與賴女都受傷，警方抽血檢驗，蔡男血液無酒精反應，但他車內卻有毒品愷他命，警方先以過失傷害罪偵辦，至於他是否吸毒後駕車？"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 126,
+            "quote": "台中市北屯區今天發生一起車禍，蔡姓男子駕駛轎車於軍功路一段疾駛，先擦撞路旁轎車，又追撞前方賴姓機車女騎士，之後失控撞上路旁電線桿，蔡男與賴女都受傷，警方抽血檢驗，蔡男血液無酒精反應，但他車內卻有毒品愷他命，警方先以過失傷害罪偵辦，至於他是否吸毒後駕車？"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 126,
+            "quote": "台中市北屯區今天發生一起車禍，蔡姓男子駕駛轎車於軍功路一段疾駛，先擦撞路旁轎車，又追撞前方賴姓機車女騎士，之後失控撞上路旁電線桿，蔡男與賴女都受傷，警方抽血檢驗，蔡男血液無酒精反應，但他車內卻有毒品愷他命，警方先以過失傷害罪偵辦，至於他是否吸毒後駕車？"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 163,
+            "end": 266,
+            "quote": "中市警局第五分局調查，今天（23日）中午11時許，25歲蔡男駕駛日產銀色轎車，沿軍功路外側車道直行，先碰撞路邊停放轎車後，再往前追撞騎機車賴女（61歲），賴女當場被撞翻，蔡男失控撞上路旁電線桿，整輛車撞凹。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 349,
+            "end": 449,
+            "quote": "警方事後經車主同意，搜索蔡男駕駛的轎車，於車內查獲毒品愷他命，先以過失傷害罪偵辦，後續全案待蔡男出院及毒品、尿液鑑驗結果確認後，再行依公共危險（施用毒品致不能安全駕駛）、毒品等罪嫌移請台中地檢署偵辦。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 26,
+            "quote": "毒駕？台中男疾駛追撞女騎士又自撞電線桿 車內有愷他命"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 126,
+            "quote": "台中市北屯區今天發生一起車禍，蔡姓男子駕駛轎車於軍功路一段疾駛，先擦撞路旁轎車，又追撞前方賴姓機車女騎士，之後失控撞上路旁電線桿，蔡男與賴女都受傷，警方抽血檢驗，蔡男血液無酒精反應，但他車內卻有毒品愷他命，警方先以過失傷害罪偵辦，至於他是否吸毒後駕車？"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 126,
+            "end": 162,
+            "quote": "警方將等蔡男出院，以及毒品、尿液鑑驗結果確認後，再依公共危險等罪名偵辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 163,
+            "end": 266,
+            "quote": "中市警局第五分局調查，今天（23日）中午11時許，25歲蔡男駕駛日產銀色轎車，沿軍功路外側車道直行，先碰撞路邊停放轎車後，再往前追撞騎機車賴女（61歲），賴女當場被撞翻，蔡男失控撞上路旁電線桿，整輛車撞凹。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 267,
+            "end": 348,
+            "quote": "蔡男與賴女全身多處擦挫傷，由中市消防局派遣救護車送醫救治，蔡男受傷無法吹氣，經檢察官同意抽血檢驗，但無酒精反應，賴女酒測值也是0，詳細肇事原因由鑑定單位分析研判。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 349,
+            "end": 449,
+            "quote": "警方事後經車主同意，搜索蔡男駕駛的轎車，於車內查獲毒品愷他命，先以過失傷害罪偵辦，後續全案待蔡男出院及毒品、尿液鑑驗結果確認後，再行依公共危險（施用毒品致不能安全駕駛）、毒品等罪嫌移請台中地檢署偵辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 126,
+            "quote": "台中市北屯區今天發生一起車禍，蔡姓男子駕駛轎車於軍功路一段疾駛，先擦撞路旁轎車，又追撞前方賴姓機車女騎士，之後失控撞上路旁電線桿，蔡男與賴女都受傷，警方抽血檢驗，蔡男血液無酒精反應，但他車內卻有毒品愷他命，警方先以過失傷害罪偵辦，至於他是否吸毒後駕車？"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 267,
+            "end": 348,
+            "quote": "蔡男與賴女全身多處擦挫傷，由中市消防局派遣救護車送醫救治，蔡男受傷無法吹氣，經檢察官同意抽血檢驗，但無酒精反應，賴女酒測值也是0，詳細肇事原因由鑑定單位分析研判。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "5fc86612e03a3555b4cab9399a0c999a180c90b1fc94a86702c2780ef92195e5",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -7624,7 +11263,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2025-05-24"
   },
   {
     "id": "ltn-216af61cf15b",
@@ -8181,27 +11821,145 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 0,
       "correctedDeaths": 1,
       "correctedInjuries": 0,
       "flags": [
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "lower_bound",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "07f554d8f56e07099d370bf6b174c2776cabb52d39fa4ca1b58d520c93f80af7",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 138,
+            "end": 241,
+            "quote": "楊姓男子14日上午在國道3號221.4K北向路段，失速追撞行駛在最外側車道的砂石車，轎車前半部卡進砂石車下方，並將砂石車拖拉往右偏，經由吊車和消防隊員破壞車體後，才將楊姓男子拉出，惟其頭殼破裂，已明顯死亡。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 137,
+            "quote": "週一發生在國道3號追撞砂石車頭破身亡的車禍，死者楊姓男子在上國道前曾於名間鄉差點擦撞7旬老翁的車，暴怒擋車毆打老翁，上國道車速逾180公里追撞砂石車，很多人懷疑他是否酒駕或毒駕，南投地檢署相驗檢察官和法醫相驗時，已對楊男抽血，並將檢體送法醫研究所，結果最快要1個月才能知曉。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 137,
+            "quote": "週一發生在國道3號追撞砂石車頭破身亡的車禍，死者楊姓男子在上國道前曾於名間鄉差點擦撞7旬老翁的車，暴怒擋車毆打老翁，上國道車速逾180公里追撞砂石車，很多人懷疑他是否酒駕或毒駕，南投地檢署相驗檢察官和法醫相驗時，已對楊男抽血，並將檢體送法醫研究所，結果最快要1個月才能知曉。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 138,
+            "end": 241,
+            "quote": "楊姓男子14日上午在國道3號221.4K北向路段，失速追撞行駛在最外側車道的砂石車，轎車前半部卡進砂石車下方，並將砂石車拖拉往右偏，經由吊車和消防隊員破壞車體後，才將楊姓男子拉出，惟其頭殼破裂，已明顯死亡。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 258,
+            "end": 313,
+            "quote": "楊男在發生車禍前，曾開車行經名間鄉出林虎路，險擦撞到70多歲老翁的車子，他暴怒擋下車子，並下車出拳毆打老人家。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 27,
+            "quote": "酒毒駕？打老翁後上國道追撞砂石車身亡 投檢：已抽血送驗"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 137,
+            "quote": "週一發生在國道3號追撞砂石車頭破身亡的車禍，死者楊姓男子在上國道前曾於名間鄉差點擦撞7旬老翁的車，暴怒擋車毆打老翁，上國道車速逾180公里追撞砂石車，很多人懷疑他是否酒駕或毒駕，南投地檢署相驗檢察官和法醫相驗時，已對楊男抽血，並將檢體送法醫研究所，結果最快要1個月才能知曉。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 138,
+            "end": 241,
+            "quote": "楊姓男子14日上午在國道3號221.4K北向路段，失速追撞行駛在最外側車道的砂石車，轎車前半部卡進砂石車下方，並將砂石車拖拉往右偏，經由吊車和消防隊員破壞車體後，才將楊姓男子拉出，惟其頭殼破裂，已明顯死亡。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 258,
+            "end": 313,
+            "quote": "楊男在發生車禍前，曾開車行經名間鄉出林虎路，險擦撞到70多歲老翁的車子，他暴怒擋下車子，並下車出拳毆打老人家。"
+          },
+          {
+            "sentenceId": "p3s3",
+            "field": "body",
+            "start": 347,
+            "end": 367,
+            "quote": "其暴怒和站不住情況，老翁直覺楊男怪怪的。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 392,
+            "end": 486,
+            "quote": "針對楊男是否有酒駕或毒駕，南投地檢署檢察官和法醫進行相驗時，已對楊男抽血，檢體昨也送法醫研究所檢驗，檢方表示，檢驗結果最快要1個月才會出爐，屆時即知楊男有無毒酒駕，或體內有無什麼特殊物質。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 138,
+            "end": 241,
+            "quote": "楊姓男子14日上午在國道3號221.4K北向路段，失速追撞行駛在最外側車道的砂石車，轎車前半部卡進砂石車下方，並將砂石車拖拉往右偏，經由吊車和消防隊員破壞車體後，才將楊姓男子拉出，惟其頭殼破裂，已明顯死亡。"
+          }
+        ],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [
@@ -8222,8 +11980,9 @@
       ]
     },
     "impairmentTypes": [
-      "drug"
-    ]
+      "alcohol"
+    ],
+    "occurredAt": "2025-04-14"
   },
   {
     "id": "ltn-2480516abf9f",
@@ -8403,27 +12162,131 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 0,
       "correctedDeaths": 1,
       "correctedInjuries": 0,
       "flags": [
-        "number_context_review",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:injured",
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "lower_bound",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "aa2f32e5863404f95f3a48a45a5077b15839a0a5d3d30eb492db1dc0a3cdd181",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 130,
+            "quote": "屏東市和生路21日發生一起肇逃事故，70歲曹姓男子駕駛廂型車，遭一部變換車道的汽車追撞後翻覆，曹男受困車內，經消防人員搶救送醫仍不治，蔡姓汽車駕駛逃逸後約1小時突然出現在事故現場投案，後續經檢警調查，竟然是毒駕致人於死而逃逸，屏東地檢署22日晚間將其羈押禁見。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 130,
+            "quote": "屏東市和生路21日發生一起肇逃事故，70歲曹姓男子駕駛廂型車，遭一部變換車道的汽車追撞後翻覆，曹男受困車內，經消防人員搶救送醫仍不治，蔡姓汽車駕駛逃逸後約1小時突然出現在事故現場投案，後續經檢警調查，竟然是毒駕致人於死而逃逸，屏東地檢署22日晚間將其羈押禁見。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 130,
+            "quote": "屏東市和生路21日發生一起肇逃事故，70歲曹姓男子駕駛廂型車，遭一部變換車道的汽車追撞後翻覆，曹男受困車內，經消防人員搶救送醫仍不治，蔡姓汽車駕駛逃逸後約1小時突然出現在事故現場投案，後續經檢警調查，竟然是毒駕致人於死而逃逸，屏東地檢署22日晚間將其羈押禁見。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 131,
+            "end": 198,
+            "quote": "這起事故發生在21日上午7時許，曹姓男子駕駛小貨車沿和生路由西往東直行時，遭一輛白色汽車變換車道後直接追撞，導致其車輛翻覆至對向車道。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 222,
+            "end": 324,
+            "quote": "而附近監視器影像顯示，廂型車遭撞擊後先是翻了九十度，接著滑上分隔島上下翻覆，車子又再翻正停在對向車道，駕駛座凹陷，經法醫進行相驗，初步判定曹姓被害人因創傷性血胸及全身多處骨折死亡，看的出當時衝擊力量之大。"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 444,
+            "end": 559,
+            "quote": "屏東地檢署檢察官偵訊後，認蔡姓嫌犯涉嫌刑法之施用毒品後不能安全駕駛致人於死、駕駛動力交通工具發生交通事故致人於死而逃逸等罪嫌，犯罪嫌疑重大並有湮滅證據及逃亡之事實，向屏東地方法院聲請羈押，經法院於22日晚間裁准羈押並禁止接見通信。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 325,
+            "end": 413,
+            "quote": "而整起案件詭異的是，距事發時間約一小時，警方在現場處理事故過程中，突有一名22歲蔡姓男子自行騎車返回現場，主動向警方表示為肇事駕駛，雖然酒測值為零，但精神狀態及神情相當不尋常；"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 444,
+            "end": 559,
+            "quote": "屏東地檢署檢察官偵訊後，認蔡姓嫌犯涉嫌刑法之施用毒品後不能安全駕駛致人於死、駕駛動力交通工具發生交通事故致人於死而逃逸等罪嫌，犯罪嫌疑重大並有湮滅證據及逃亡之事實，向屏東地方法院聲請羈押，經法院於22日晚間裁准羈押並禁止接見通信。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 413,
+            "end": 443,
+            "quote": "檢警採集尿液後，初步檢驗發現有二級毒品甲基安非他命陽性反應。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 198,
+            "end": 221,
+            "quote": "肇事車輛隨即逃逸，曹姓駕駛受困車內後送醫不治。"
+          }
+        ],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-2"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -8437,7 +12300,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2024-12-22"
   },
   {
     "id": "ltn-1e9d07a4bf23",
@@ -8513,27 +12377,157 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 0,
       "originalInjuries": 1,
       "correctedDeaths": 0,
       "correctedInjuries": 2,
       "flags": [
-        "count_corrected",
-        "number_context_review",
-        "drug_status_or_cause_pending",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
       ],
       "reviewNote": "標題/摘要寫造成2女受傷",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 87,
+            "end": 168,
+            "quote": "警方調查，嫌疑人劉姓男子（41歲）昨夜駕駛自小客車，沿鳳山區青年路直行，突然不明原因偏右，撞擊路邊停放4輛機車，當場造成劉女（25歲）、胡女（64歲）等手腳挫傷。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 86,
+            "quote": "高雄市一名劉姓男子疑似毒駕行經鳳山區青年路，一連撞路邊停放4輛機車，造成2女手腳挫傷，警方攔下起獲「喪屍煙彈」25個及使用過煙彈1個，警訊後今將他依毒品、公共危險罪嫌送辦。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 86,
+            "quote": "高雄市一名劉姓男子疑似毒駕行經鳳山區青年路，一連撞路邊停放4輛機車，造成2女手腳挫傷，警方攔下起獲「喪屍煙彈」25個及使用過煙彈1個，警訊後今將他依毒品、公共危險罪嫌送辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 87,
+            "end": 168,
+            "quote": "警方調查，嫌疑人劉姓男子（41歲）昨夜駕駛自小客車，沿鳳山區青年路直行，突然不明原因偏右，撞擊路邊停放4輛機車，當場造成劉女（25歲）、胡女（64歲）等手腳挫傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 169,
+            "end": 251,
+            "quote": "適逢警方於鳳山區青年、文衡路口處理交通事故，目擊車禍發生上前制止劉男駕車，並呼叫線上支援警力，警方到場發現劉男精神恍惚，且不願下車，警方施以強制力，劉男才就範下車。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 24,
+            "quote": "男疑毒駕連撞4車造成2女受傷 警起獲「喪屍煙彈」"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 86,
+            "quote": "高雄市一名劉姓男子疑似毒駕行經鳳山區青年路，一連撞路邊停放4輛機車，造成2女手腳挫傷，警方攔下起獲「喪屍煙彈」25個及使用過煙彈1個，警訊後今將他依毒品、公共危險罪嫌送辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 87,
+            "end": 168,
+            "quote": "警方調查，嫌疑人劉姓男子（41歲）昨夜駕駛自小客車，沿鳳山區青年路直行，突然不明原因偏右，撞擊路邊停放4輛機車，當場造成劉女（25歲）、胡女（64歲）等手腳挫傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 169,
+            "end": 251,
+            "quote": "適逢警方於鳳山區青年、文衡路口處理交通事故，目擊車禍發生上前制止劉男駕車，並呼叫線上支援警力，警方到場發現劉男精神恍惚，且不願下車，警方施以強制力，劉男才就範下車。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 252,
+            "end": 304,
+            "quote": "警方於車內查獲1盒俗稱「喪屍煙彈」的依托咪酯煙彈25個及使用過煙彈1個，經查劉男施用後約半小時開車上路。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 252,
+            "end": 304,
+            "quote": "警方於車內查獲1盒俗稱「喪屍煙彈」的依托咪酯煙彈25個及使用過煙彈1個，經查劉男施用後約半小時開車上路。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 24,
+            "quote": "男疑毒駕連撞4車造成2女受傷 警起獲「喪屍煙彈」"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 86,
+            "quote": "高雄市一名劉姓男子疑似毒駕行經鳳山區青年路，一連撞路邊停放4輛機車，造成2女手腳挫傷，警方攔下起獲「喪屍煙彈」25個及使用過煙彈1個，警訊後今將他依毒品、公共危險罪嫌送辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 87,
+            "end": 168,
+            "quote": "警方調查，嫌疑人劉姓男子（41歲）昨夜駕駛自小客車，沿鳳山區青年路直行，突然不明原因偏右，撞擊路邊停放4輛機車，當場造成劉女（25歲）、胡女（64歲）等手腳挫傷。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "92eb487565cc13e2385617a0e3cf2405b47d08a6f57d68ed6b09b6814b781dac",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -8547,7 +12541,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2024-12-17"
   },
   {
     "id": "ltn-3cae1841417b",
@@ -8850,26 +12845,147 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 0,
       "correctedDeaths": 1,
       "correctedInjuries": 0,
       "flags": [
-        "number_context_review",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "injuries_not_reported",
+        "injuries_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
-        "deaths": "unknown",
+        "deaths": "checked",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": false,
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 133,
+            "quote": "23歲男子黃文俊去年2月6日晚間吸食愷他命毒品後無照駕車，隔天凌晨2點許行經嘉義市世賢路一段與四維路口時，與蕭姓機車騎士相撞，蕭男創傷性休克送醫不治死亡，檢方近日偵結，依不能安全駕駛動力交通工具致人於死等罪嫌起訴黃男，因涉故意犯罪發生死亡案件，符合國民法官參與審判。"
+          }
+        ],
+        "city": [],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 133,
+            "quote": "23歲男子黃文俊去年2月6日晚間吸食愷他命毒品後無照駕車，隔天凌晨2點許行經嘉義市世賢路一段與四維路口時，與蕭姓機車騎士相撞，蕭男創傷性休克送醫不治死亡，檢方近日偵結，依不能安全駕駛動力交通工具致人於死等罪嫌起訴黃男，因涉故意犯罪發生死亡案件，符合國民法官參與審判。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 270,
+            "end": 366,
+            "quote": "2月7日凌晨2點多，黃男駕車自世賢路一段由西往東方向行駛，經過世賢路一段與四維路口時，撞上自四維路北往南通過該路口的蕭姓機車騎士，蕭男人車倒地、創傷性休克，送醫急救後於當天凌晨4點許宣告不治。"
+          },
+          {
+            "sentenceId": "p5s2",
+            "field": "body",
+            "start": 402,
+            "end": 431,
+            "quote": "檢方近日偵結，依不能安全駕駛動力交通工具致人於死罪嫌起訴。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 21,
+            "quote": "嘉義男無照毒駕撞死騎士被通緝 還當詐團車手"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 133,
+            "quote": "23歲男子黃文俊去年2月6日晚間吸食愷他命毒品後無照駕車，隔天凌晨2點許行經嘉義市世賢路一段與四維路口時，與蕭姓機車騎士相撞，蕭男創傷性休克送醫不治死亡，檢方近日偵結，依不能安全駕駛動力交通工具致人於死等罪嫌起訴黃男，因涉故意犯罪發生死亡案件，符合國民法官參與審判。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 134,
+            "end": 177,
+            "quote": "檢警偵查期間，黃男未到案被通緝，黃男後來因涉及擔任詐騙集團車手落網、在其他縣市羈押中。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 178,
+            "end": 269,
+            "quote": "起訴書指出，黃男是台南人、住在嘉義市西區，去年2月6日晚間無照駕駛到嘉義市埤竹路，向不知名藥頭購買2小包愷他命、8包毒品咖啡包，於車上吸食K他命後，自興業路駕車上路往博愛路住處行駛。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 270,
+            "end": 366,
+            "quote": "2月7日凌晨2點多，黃男駕車自世賢路一段由西往東方向行駛，經過世賢路一段與四維路口時，撞上自四維路北往南通過該路口的蕭姓機車騎士，蕭男人車倒地、創傷性休克，送醫急救後於當天凌晨4點許宣告不治。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 178,
+            "end": 269,
+            "quote": "起訴書指出，黃男是台南人、住在嘉義市西區，去年2月6日晚間無照駕駛到嘉義市埤竹路，向不知名藥頭購買2小包愷他命、8包毒品咖啡包，於車上吸食K他命後，自興業路駕車上路往博愛路住處行駛。"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 367,
+            "end": 402,
+            "quote": "黃男肇事後留在現場配合調查，警方採集尿液送驗，結果呈現愷他命陽性反應。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 133,
+            "quote": "23歲男子黃文俊去年2月6日晚間吸食愷他命毒品後無照駕車，隔天凌晨2點許行經嘉義市世賢路一段與四維路口時，與蕭姓機車騎士相撞，蕭男創傷性休克送醫不治死亡，檢方近日偵結，依不能安全駕駛動力交通工具致人於死等罪嫌起訴黃男，因涉故意犯罪發生死亡案件，符合國民法官參與審判。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 270,
+            "end": 366,
+            "quote": "2月7日凌晨2點多，黃男駕車自世賢路一段由西往東方向行駛，經過世賢路一段與四維路口時，撞上自四維路北往南通過該路口的蕭姓機車騎士，蕭男人車倒地、創傷性休克，送醫急救後於當天凌晨4點許宣告不治。"
+          }
+        ],
+        "injuries": []
+      },
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "identified_people",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "87e0777808bd4b9c21e96624bce616093dac997123fb4535e06e7c695360ae74",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-2"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -8885,7 +13001,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2023-02-07"
   },
   {
     "id": "ltn-8c999962ec2c",
@@ -9104,7 +13221,7 @@
     "publishedAt": "2024-09-22",
     "city": "臺中市",
     "deaths": 0,
-    "injuries": 0,
+    "injuries": 1,
     "summary": "有「喪屍煙彈」之稱的依托咪酯，一旦吸食讓人產生幻覺，無法控制手腳，光今年7到9月就發生兩起因吸食該毒品涉毒駕死亡車禍，而台中市一名男子近日則是開車行經北區時，自撞停放停放路旁的兩輛賓士車，雖主動交付上述毒品卻辯稱是疲勞駕駛，警方已採尿送驗，釐清是否涉及毒駕究責。",
     "confidence": "exclude",
     "extractedDetails": {
@@ -9178,27 +13295,127 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 0,
       "correctedDeaths": 0,
       "correctedInjuries": 0,
       "flags": [
-        "exclude_from_stats",
-        "count_corrected",
-        "drug_status_or_cause_pending",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "human_impact_tagged"
+        "unattributed_outcome:dead",
+        "deaths_not_reported",
+        "deaths_unknown"
       ],
       "reviewNote": "摘要為自撞停放車輛並無死傷描述，原 deaths=1 應為誤抓",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
-        "injuries": "unknown"
+        "injuries": "checked"
       },
-      "mapEligible": false
+      "mapEligible": false,
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 132,
+            "end": 247,
+            "quote": "台中市北區19日凌晨發生一起交通事故，26歲邱男駕駛豐田轎車由忠明七街沿忠明路往忠太東路方向行駛時，失控撞上停放路旁的兩輛賓士車，所幸遭撞兩車均無駕駛或乘客在車內，這起事故除三方車損外，僅肇事邱男有雙腳擦挫傷的輕微傷勢，並無大礙。"
+          }
+        ],
+        "city": [],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 131,
+            "quote": "有「喪屍煙彈」之稱的依托咪酯，一旦吸食讓人產生幻覺，無法控制手腳，光今年7到9月就發生兩起因吸食該毒品涉毒駕死亡車禍，而台中市一名男子近日則是開車行經北區時，自撞停放停放路旁的兩輛賓士車，雖主動交付上述毒品卻辯稱是疲勞駕駛，警方已採尿送驗，釐清是否涉及毒駕究責。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 132,
+            "end": 247,
+            "quote": "台中市北區19日凌晨發生一起交通事故，26歲邱男駕駛豐田轎車由忠明七街沿忠明路往忠太東路方向行駛時，失控撞上停放路旁的兩輛賓士車，所幸遭撞兩車均無駕駛或乘客在車內，這起事故除三方車損外，僅肇事邱男有雙腳擦挫傷的輕微傷勢，並無大礙。"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 514,
+            "end": 646,
+            "quote": "據了解，「喪屍煙彈」是新興毒品，去年開始在國內流竄，業者聲稱是「合法替代大麻」，吸引民眾嘗試，但卻造成多起毒駕及重大死傷事故，今年7月新北警員執行巡邏勤務時，遭吸食「喪屍煙彈」25歲黃男逆向撞死，本月新竹市虎林國中前死亡車禍，肇事駕駛當下也被測出，曾施用同款毒品。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 26,
+            "quote": "台中男攜喪屍煙彈自撞2賓士 辯「太疲勞」警追毒駕究責"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 132,
+            "end": 247,
+            "quote": "台中市北區19日凌晨發生一起交通事故，26歲邱男駕駛豐田轎車由忠明七街沿忠明路往忠太東路方向行駛時，失控撞上停放路旁的兩輛賓士車，所幸遭撞兩車均無駕駛或乘客在車內，這起事故除三方車損外，僅肇事邱男有雙腳擦挫傷的輕微傷勢，並無大礙。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 248,
+            "end": 369,
+            "quote": "事故發生後，第二分局立人派出所獲報立即派遣員警到場處理，帶回邱男釐清案情，邱男經實施呼氣酒精檢測，並未出現酒精反應，車上行車紀錄器因故障無法取得影像，現場也無路口監視器畫面可供調閱，惟邱男自述因疲勞駕駛，才不慎釀禍，卻主動交出身上持有的毒品。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 370,
+            "end": 513,
+            "quote": "其中包括3包安非他命（重6.81公克）、網稱「喪屍煙彈」依託咪酯煙彈3顆（重16.08公克）及安非他命吸食器1組，邱男坦認持有及施用毒品，經警方採尿送驗，全案依違反毒品危害防制條例罪嫌，移請台中地檢署偵辦，至於邱男涉嫌刑法毒駕公共危險部分，將待尿液檢驗結果出爐後，另函送台中地檢署併辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 370,
+            "end": 513,
+            "quote": "其中包括3包安非他命（重6.81公克）、網稱「喪屍煙彈」依託咪酯煙彈3顆（重16.08公克）及安非他命吸食器1組，邱男坦認持有及施用毒品，經警方採尿送驗，全案依違反毒品危害防制條例罪嫌，移請台中地檢署偵辦，至於邱男涉嫌刑法毒駕公共危險部分，將待尿液檢驗結果出爐後，另函送台中地檢署併辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 132,
+            "end": 247,
+            "quote": "台中市北區19日凌晨發生一起交通事故，26歲邱男駕駛豐田轎車由忠明七街沿忠明路往忠太東路方向行駛時，失控撞上停放路旁的兩輛賓士車，所幸遭撞兩車均無駕駛或乘客在車內，這起事故除三方車損外，僅肇事邱男有雙腳擦挫傷的輕微傷勢，並無大礙。"
+          }
+        ]
+      },
+      "eventCountValid": true,
+      "sourceBodyHash": "8eab1227673294b229ec0a7c251482fd01feeebb49848fe4611e7645987ace50",
+      "understandingVersion": "local-events-v3",
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -9210,7 +13427,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2024-09-19"
   },
   {
     "id": "ltn-2b0017b1891c",
@@ -9657,27 +13875,152 @@
     "dataQuality": {
       "version": "quality_update_2026-05-24",
       "sourceBasis": "title_summary_related_reports_only",
-      "includeInStats": false,
+      "includeInStats": true,
       "originalDeaths": 1,
       "originalInjuries": 4,
       "correctedDeaths": 1,
       "correctedInjuries": 4,
       "flags": [
-        "number_context_review",
-        "legal_follow_up_or_later_report",
-        "driver_vehicle_refined",
-        "drug_schedule_classified",
-        "drug_schedule_needs_review",
-        "human_impact_tagged"
+        "unattributed_outcome:dead",
+        "unattributed_outcome:injured",
+        "deaths_lower_bound",
+        "deaths_unknown",
+        "injuries_unknown"
       ],
       "reviewNote": "",
       "needsHumanReview": true,
-      "verificationStatus": "legacy",
+      "verificationStatus": "machine_checked",
       "fieldStatus": {
         "deaths": "unknown",
         "injuries": "unknown"
       },
-      "mapEligible": false
+      "mapEligible": true,
+      "eventCountValid": true,
+      "countBasis": {
+        "deaths": "lower_bound",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "2a7df26c4b22c7a72c2c051720112e7bf41f61d0968da8453b6c8ab165098a3f",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 97,
+            "quote": "二十五歲男子黃國維，前晚吸食近年新興的「喪屍毒品」電子煙後精神亢進，昨凌晨駕賓士轎車在新北市三重區以破百時速逆向撞上停等紅燈的警車，坐在副駕駛座的二十八歲警員黃瑋震送醫不治，駕車警員周恩宇受傷；"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 97,
+            "quote": "二十五歲男子黃國維，前晚吸食近年新興的「喪屍毒品」電子煙後精神亢進，昨凌晨駕賓士轎車在新北市三重區以破百時速逆向撞上停等紅燈的警車，坐在副駕駛座的二十八歲警員黃瑋震送醫不治，駕車警員周恩宇受傷；"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 97,
+            "quote": "二十五歲男子黃國維，前晚吸食近年新興的「喪屍毒品」電子煙後精神亢進，昨凌晨駕賓士轎車在新北市三重區以破百時速逆向撞上停等紅燈的警車，坐在副駕駛座的二十八歲警員黃瑋震送醫不治，駕車警員周恩宇受傷；"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 97,
+            "end": 156,
+            "quote": "失控的賓士又連撞後方計程車及路邊十九輛機車才停下，黃犯後承認毒駕，檢察官認定黃男公共危險、過失致死罪嫌重大，聲請羈押。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 157,
+            "end": 185,
+            "quote": "一場毒駕車禍共造成一警殉職、四位警民受傷、二十二車毀損；"
+          },
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 185,
+            "end": 228,
+            "quote": "事發時警車根本來不及閃避，整輛車被撞後失控彈到十多公尺外的對向騎樓，可見撞擊力之猛烈。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 97,
+            "end": 156,
+            "quote": "失控的賓士又連撞後方計程車及路邊十九輛機車才停下，黃犯後承認毒駕，檢察官認定黃男公共危險、過失致死罪嫌重大，聲請羈押。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 229,
+            "end": 328,
+            "quote": "警方調查，昨天凌晨一時廿六分，三重警分局厚德派出所的周員駕駛警車，臨停在正義北路、龍門路的路口等紅燈，黃男轎車猝不及防地逆向撞上來，再連撞後方汽機車，警車及計程車全毀，整排機車遭橫掃，現場零件四散。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 329,
+            "end": 367,
+            "quote": "救護人員將傷勢較重的兩警、肇事者黃男及同車林姓男友人、計程車司機共五人送醫。"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 395,
+            "end": 465,
+            "quote": "警方現場測量，事發路口寬約廿公尺，黃男駕車衝過路口，不到一秒就撞上警車，秒速超過廿七公尺多，換算時速至少上百公里，已將相關數據送交車禍鑑定。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p6s1",
+            "field": "body",
+            "start": 466,
+            "end": 530,
+            "quote": "黃男起初辯稱精神不濟，疲勞駕駛肇事，經警方追問黃男及其友人，才供出事發前吸食「喪屍毒品」電子煙後沿路狂飆，警方已對黃男採尿送驗。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "p4s2",
+            "field": "body",
+            "start": 367,
+            "end": 394,
+            "quote": "黃員因氣血胸、內出血傷重不治，家人趕抵醫院，哀慟逾恆。"
+          }
+        ],
+        "injuries": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 32,
+            "quote": "毒駕飆速逆撞警車 1警亡4傷 破百時速毀22車 警車彈10多公尺"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      }
     },
     "humanImpact": {
       "victimFamilyRoles": [],
@@ -9694,7 +14037,8 @@
     },
     "impairmentTypes": [
       "drug"
-    ]
+    ],
+    "occurredAt": "2024-07-12"
   },
   {
     "id": "ltn-9e3d6577f3dc",
@@ -16069,6 +20413,211 @@
             "start": 154,
             "end": 307,
             "quote": "嘉市第一警分局北鎮派出所員警今凌晨3點許在八德路與竹圍三路口發現一輛轎車形跡可疑，主動趨前盤查，發現車內共3人，起獲三級毒品愷他命3包、三級毒品成分的咖啡包1包，而蔡男經毒品唾液篩檢呈愷他命陽性反應，依法製單舉發，沒入涉案轎車，並依涉犯《刑法》公共危險、《毒品危害防制條例》等罪嫌，依法移送嘉義地檢署偵辦；"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    }
+  },
+  {
+    "id": "ltn-8320a25b814e",
+    "title": "騎車偏斜引攔查 毒駕男逮正著",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5620374",
+    "source": "LTN",
+    "publishedAt": "2026-10-27",
+    "occurredAt": "2026-10-26",
+    "city": "新北市",
+    "eventType": "drug_driving",
+    "impairmentTypes": [
+      "drug"
+    ],
+    "deaths": null,
+    "injuries": null,
+    "summary": "18歲張姓男子於昨深夜11時許騎機車行經新北市土城區中正路56巷口，因後座乘客未佩戴合格安全帽、僅隨意戴著工程帽充數，加上車輛行車軌跡明顯偏斜不穩，引起巡邏經過的土城警分局土城派出所員警注意，隨即上前攔查。 警方在盤查過程中，發現張男眼神閃爍且神情異常，取得張男同意後對其實施毒品唾液快篩檢測。 經採驗結果呈現毒品安非他命陽性反應，證實張男涉及毒駕，但並未在張",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 18,
+        "ageGroup": "18-24",
+        "gender": "male",
+        "vehicleTypes": [
+          "機車"
+        ],
+        "allMentionedVehicleTypes": [
+          "機車"
+        ],
+        "primaryVehicleType": "機車",
+        "primaryVehicleLabel": "機車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [
+          "安非他命"
+        ],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "person_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [
+              {
+                "name": "安非他命",
+                "raw": "安非他命"
+              }
+            ],
+            "methods": [
+              "唾液快篩/檢測"
+            ],
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported_use",
+            "timeScope": "current"
+          }
+        ],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "not_supported",
+        "findings": []
+      },
+      "crash": {
+        "scenarioTypes": []
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "警方攔查現場"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "unknown"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "4e112f4a8b67a35d55e412ecda061a901ff10f39526f231e6e0ef1bd6af02554",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 103,
+            "quote": "18歲張姓男子於昨深夜11時許騎機車行經新北市土城區中正路56巷口，因後座乘客未佩戴合格安全帽、僅隨意戴著工程帽充數，加上車輛行車軌跡明顯偏斜不穩，引起巡邏經過的土城警分局土城派出所員警注意，隨即上前攔查。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 103,
+            "quote": "18歲張姓男子於昨深夜11時許騎機車行經新北市土城區中正路56巷口，因後座乘客未佩戴合格安全帽、僅隨意戴著工程帽充數，加上車輛行車軌跡明顯偏斜不穩，引起巡邏經過的土城警分局土城派出所員警注意，隨即上前攔查。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 103,
+            "quote": "18歲張姓男子於昨深夜11時許騎機車行經新北市土城區中正路56巷口，因後座乘客未佩戴合格安全帽、僅隨意戴著工程帽充數，加上車輛行車軌跡明顯偏斜不穩，引起巡邏經過的土城警分局土城派出所員警注意，隨即上前攔查。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 103,
+            "quote": "18歲張姓男子於昨深夜11時許騎機車行經新北市土城區中正路56巷口，因後座乘客未佩戴合格安全帽、僅隨意戴著工程帽充數，加上車輛行車軌跡明顯偏斜不穩，引起巡邏經過的土城警分局土城派出所員警注意，隨即上前攔查。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 104,
+            "end": 147,
+            "quote": "警方在盤查過程中，發現張男眼神閃爍且神情異常，取得張男同意後對其實施毒品唾液快篩檢測。"
+          },
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 147,
+            "end": 192,
+            "quote": "經採驗結果呈現毒品安非他命陽性反應，證實張男涉及毒駕，但並未在張男身上或機車上搜出違禁品。"
+          },
+          {
+            "sentenceId": "p2s3",
+            "field": "body",
+            "start": 192,
+            "end": 240,
+            "quote": "警方依規定扣留車輛並開單舉發，張男向警方承認吸毒後上路，警詢後依公共危險罪、毒品等罪嫌移送法辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p2s3",
+            "field": "body",
+            "start": 192,
+            "end": 240,
+            "quote": "警方依規定扣留車輛並開單舉發，張男向警方承認吸毒後上路，警詢後依公共危險罪、毒品等罪嫌移送法辦。"
           }
         ],
         "deaths": [],

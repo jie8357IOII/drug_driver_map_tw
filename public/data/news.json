@@ -919,9 +919,11 @@
       "city": null,
       "issues": [
         "unattributed_outcome:injured",
+        "unknown_event_date",
         "driver_identity_unresolved",
         "driver_identity_not_checked",
         "impairment_driver_link_not_checked",
+        "event_date_not_checked",
         "no_verified_event_link"
       ]
     },
@@ -1159,10 +1161,8 @@
       "eventIds": [],
       "city": null,
       "issues": [
-        "unknown_event_date",
         "deaths_not_reported",
         "impairment_driver_link_not_checked",
-        "event_date_not_checked",
         "deaths_unknown",
         "no_verified_event_link"
       ]
@@ -1219,15 +1219,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-45e80e2cadbd"
-      ],
+      "eventIds": [],
       "city": "基隆市",
       "issues": [
-        "unattributed_outcome:injured",
-        "unattributed_outcome:dead",
-        "deaths_lower_bound",
-        "deaths_unknown"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -1322,16 +1318,15 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [],
+      "eventIds": [
+        "ltn-8320a25b814e"
+      ],
       "city": "新北市",
       "issues": [
-        "unknown_event_date",
         "deaths_not_reported",
         "injuries_not_reported",
-        "event_date_not_checked",
         "deaths_unknown",
-        "injuries_unknown",
-        "no_verified_event_link"
+        "injuries_unknown"
       ]
     },
     {
@@ -1483,7 +1478,11 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -1514,12 +1513,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-57f930a06fc2"
-      ],
+      "eventIds": [],
       "city": "苗栗縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -1528,8 +1526,8 @@
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5451369",
       "source": "LTN",
       "publishedAt": "2026-05-27",
-      "kind": "incident",
-      "status": "needs_clarification",
+      "kind": "judicial",
+      "status": "verified",
       "impairmentTypes": [
         "drug"
       ],
@@ -1537,9 +1535,7 @@
         "ltn-706a70b6d846"
       ],
       "city": "新北市",
-      "issues": [
-        "legacy_source_not_rechecked"
-      ]
+      "issues": []
     },
     {
       "id": "article-55ce22b4a6e40188",
@@ -1557,7 +1553,7 @@
       ],
       "city": "基隆市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "impairment_driver_link_not_checked"
       ]
     },
     {
@@ -1661,7 +1657,7 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "alcohol_measurement_incomplete"
       ]
     },
     {
@@ -1673,14 +1669,14 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
-      "eventIds": [
-        "ltn-969186233ac1"
-      ],
+      "eventIds": [],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -1699,7 +1695,9 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
       ]
     },
     {
@@ -1711,6 +1709,7 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
       "eventIds": [
@@ -1718,7 +1717,12 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "unattributed_outcome:injured",
+        "deaths_lower_bound",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -1737,7 +1741,8 @@
       ],
       "city": "臺中市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_not_reported",
+        "injuries_unknown"
       ]
     },
     {
@@ -1773,7 +1778,9 @@
       ],
       "city": "苗栗縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -1792,7 +1799,8 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -1811,7 +1819,8 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -1825,12 +1834,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-3429702396db"
-      ],
+      "eventIds": [],
       "city": "彰化縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -1849,7 +1857,10 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "test_target_unresolved",
+        "deaths_unknown"
       ]
     },
     {
@@ -1859,7 +1870,7 @@
       "source": "LTN",
       "publishedAt": "2026-05-05",
       "kind": "incident",
-      "status": "needs_clarification",
+      "status": "verified",
       "impairmentTypes": [
         "drug"
       ],
@@ -1867,9 +1878,7 @@
         "ltn-3429702396db"
       ],
       "city": "彰化縣",
-      "issues": [
-        "legacy_source_not_rechecked"
-      ]
+      "issues": []
     },
     {
       "id": "article-f4b34fe1e7bb7c56",
@@ -1880,14 +1889,14 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
-      "eventIds": [
-        "ltn-3429702396db"
-      ],
+      "eventIds": [],
       "city": "彰化縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -1901,12 +1910,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-3429702396db"
-      ],
+      "eventIds": [],
       "city": "彰化縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -1925,7 +1933,9 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked"
       ]
     },
     {
@@ -1934,17 +1944,16 @@
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5425002",
       "source": "LTN",
       "publishedAt": "2026-05-04",
-      "kind": "incident",
+      "kind": "other",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
-      "eventIds": [
-        "ltn-3429702396db"
-      ],
+      "eventIds": [],
       "city": "彰化縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict"
       ]
     },
     {
@@ -1963,7 +1972,8 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_conflict",
+        "impairment_driver_link_not_checked"
       ]
     },
     {
@@ -1992,6 +2002,7 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
       "eventIds": [
@@ -1999,7 +2010,9 @@
       ],
       "city": "桃園市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -2018,7 +2031,14 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_conflict",
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_conflicting",
+        "alcohol_measurement_incomplete",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -2037,7 +2057,10 @@
       ],
       "city": "基隆市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
       ]
     },
     {
@@ -2051,12 +2074,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-d3363b62ad9a"
-      ],
+      "eventIds": [],
       "city": "彰化縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2075,7 +2097,10 @@
       ],
       "city": "彰化縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
       ]
     },
     {
@@ -2089,12 +2114,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-d3363b62ad9a"
-      ],
+      "eventIds": [],
       "city": "彰化縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2130,7 +2154,8 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -2147,9 +2172,12 @@
       "eventIds": [
         "ltn-02697e0897f2"
       ],
-      "city": "新北市",
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2163,12 +2191,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-ed7d1bd026e3"
-      ],
+      "eventIds": [],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2180,14 +2207,14 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
-      "eventIds": [
-        "ltn-02697e0897f2"
-      ],
+      "eventIds": [],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2206,7 +2233,13 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2225,7 +2258,11 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_conflict",
+        "injuries_conflicting",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked"
       ]
     },
     {
@@ -2239,12 +2276,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-5c7ed1aab98f"
-      ],
+      "eventIds": [],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2261,9 +2297,13 @@
       "eventIds": [
         "ltn-6d4d95948288"
       ],
-      "city": "臺中市",
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "unresolved_family_reference:妻子",
+        "unresolved_family_reference:母親",
+        "unattributed_outcome:dead",
+        "unattributed_outcome:injured",
+        "impairment_driver_link_not_checked"
       ]
     },
     {
@@ -2282,7 +2322,7 @@
       ],
       "city": "宜蘭縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured"
       ]
     },
     {
@@ -2296,12 +2336,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-9bbe068b82c2"
-      ],
+      "eventIds": [],
       "city": "宜蘭縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2320,7 +2359,8 @@
       ],
       "city": "宜蘭縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_conflict",
+        "impairment_driver_link_not_checked"
       ]
     },
     {
@@ -2334,12 +2374,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-6d4d95948288"
-      ],
-      "city": "臺中市",
+      "eventIds": [],
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2348,18 +2387,16 @@
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5359522",
       "source": "LTN",
       "publishedAt": "2026-03-05",
-      "kind": "incident",
-      "status": "needs_clarification",
+      "kind": "judicial",
+      "status": "verified",
       "impairmentTypes": [
         "drug"
       ],
       "eventIds": [
         "ltn-b603d6a5e629"
       ],
-      "city": "臺中市",
-      "issues": [
-        "legacy_source_not_rechecked"
-      ]
+      "city": null,
+      "issues": []
     },
     {
       "id": "article-04b9db0ede0c4b7d",
@@ -2377,7 +2414,10 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "driver_identity_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -2396,7 +2436,11 @@
       ],
       "city": "臺南市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2410,12 +2454,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-d7fa0fdc8ec2"
-      ],
+      "eventIds": [],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2434,7 +2477,17 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unresolved_family_reference:父親",
+        "unattributed_outcome:dead",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2453,7 +2506,11 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2465,6 +2522,7 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
       "eventIds": [
@@ -2472,7 +2530,11 @@
       ],
       "city": "臺中市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2489,9 +2551,14 @@
       "eventIds": [
         "ltn-40b9b922483f"
       ],
-      "city": "屏東縣",
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2510,7 +2577,8 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -2529,7 +2597,8 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -2565,7 +2634,11 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_conflict",
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_conflicting",
+        "deaths_unknown"
       ]
     },
     {
@@ -2584,7 +2657,10 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown"
       ]
     },
     {
@@ -2603,7 +2679,11 @@
       ],
       "city": "臺北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unknown_event_date",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "event_date_not_checked",
+        "injuries_unknown"
       ]
     },
     {
@@ -2612,17 +2692,15 @@
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5281479",
       "source": "LTN",
       "publishedAt": "2025-12-17",
-      "kind": "incident",
+      "kind": "other",
       "status": "needs_clarification",
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-cb9624d4403c"
-      ],
-      "city": "基隆市",
+      "eventIds": [],
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "multiple_events_unresolved"
       ]
     },
     {
@@ -2631,18 +2709,14 @@
       "url": "https://news.ltn.com.tw/news/politics/breakingnews/5278859",
       "source": "LTN",
       "publishedAt": "2025-12-15",
-      "kind": "incident",
-      "status": "needs_clarification",
+      "kind": "policy",
+      "status": "verified",
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-cb9624d4403c"
-      ],
-      "city": "基隆市",
-      "issues": [
-        "legacy_source_not_rechecked"
-      ]
+      "eventIds": [],
+      "city": null,
+      "issues": []
     },
     {
       "id": "article-47335055d58b7467",
@@ -2660,7 +2734,11 @@
       ],
       "city": "基隆市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unresolved_family_reference:妻子",
+        "unattributed_outcome:injured",
+        "injuries_lower_bound",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown"
       ]
     },
     {
@@ -2672,14 +2750,14 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
-      "eventIds": [
-        "ltn-cb9624d4403c"
-      ],
-      "city": "基隆市",
+      "eventIds": [],
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2698,7 +2776,13 @@
       ],
       "city": "基隆市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2717,7 +2801,9 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -2736,7 +2822,8 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -2755,7 +2842,8 @@
       ],
       "city": "臺中市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -2772,9 +2860,16 @@
       "eventIds": [
         "ltn-7e3af61c82e4"
       ],
-      "city": "彰化縣",
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "unknown_event_date",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2786,6 +2881,7 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
       "eventIds": [
@@ -2793,7 +2889,9 @@
       ],
       "city": "臺北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -2812,7 +2910,12 @@
       ],
       "city": "桃園市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2877,12 +2980,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-5a116b6888c4"
-      ],
+      "eventIds": [],
       "city": "臺中市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2901,7 +3003,13 @@
       ],
       "city": "臺中市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -2915,17 +3023,16 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-5a116b6888c4"
-      ],
+      "eventIds": [],
       "city": "臺中市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
       "id": "article-de3dd8ee8e170fce",
-      "title": "BMW毒駕撞進茶行 兒泣訴「醫生說媽媽腰斷了救不回來 要我放手&hellip;」",
+      "title": "BMW毒駕撞進茶行 兒泣訴「醫生說媽媽腰斷了救不回來 要我放手…」",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5205855",
       "source": "LTN",
       "publishedAt": "2025-10-09",
@@ -2934,12 +3041,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-5a116b6888c4"
-      ],
+      "eventIds": [],
       "city": "臺中市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2953,12 +3059,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-5a116b6888c4"
-      ],
+      "eventIds": [],
       "city": "臺中市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -2967,18 +3072,17 @@
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5156086",
       "source": "LTN",
       "publishedAt": "2025-08-25",
-      "kind": "incident",
-      "status": "needs_clarification",
+      "kind": "judicial",
+      "status": "verified",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
       "eventIds": [
         "ltn-b6e13518f664"
       ],
       "city": "臺中市",
-      "issues": [
-        "legacy_source_not_rechecked"
-      ]
+      "issues": []
     },
     {
       "id": "article-e2756beb2aa1bf63",
@@ -3013,7 +3117,10 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_not_reported",
+        "drug_denial_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown"
       ]
     },
     {
@@ -3030,9 +3137,16 @@
       "eventIds": [
         "ltn-36945c1d95a4"
       ],
-      "city": "新北市",
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "ambiguous_person:陳男",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "test_target_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -3051,7 +3165,10 @@
       ],
       "city": "臺南市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -3070,7 +3187,8 @@
       ],
       "city": "臺中市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -3089,7 +3207,11 @@
       ],
       "city": "彰化縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_conflict",
+        "deaths_not_reported",
+        "injuries_conflicting",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -3103,12 +3225,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-18c3cbeab824"
-      ],
-      "city": "新北市",
+      "eventIds": [],
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -3125,9 +3246,13 @@
       "eventIds": [
         "ltn-18c3cbeab824"
       ],
-      "city": "新北市",
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_conflict",
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -3146,7 +3271,11 @@
       ],
       "city": "彰化縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unknown_event_date",
+        "deaths_not_reported",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -3158,14 +3287,20 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
       "eventIds": [
         "ltn-54de992e68e3"
       ],
-      "city": "桃園市",
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_conflict",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -3177,6 +3312,7 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
       "eventIds": [
@@ -3184,7 +3320,12 @@
       ],
       "city": "南投縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -3196,6 +3337,7 @@
       "kind": "incident",
       "status": "needs_clarification",
       "impairmentTypes": [
+        "alcohol",
         "drug"
       ],
       "eventIds": [
@@ -3203,7 +3345,12 @@
       ],
       "city": "嘉義縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -3222,7 +3369,12 @@
       ],
       "city": "屏東縣",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -3241,7 +3393,10 @@
       ],
       "city": "高雄市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
       ]
     },
     {
@@ -3260,7 +3415,13 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -3279,7 +3440,12 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_conflict",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -3296,9 +3462,10 @@
       "eventIds": [
         "ltn-e4f043fc18dc"
       ],
-      "city": "嘉義市",
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_not_reported",
+        "injuries_unknown"
       ]
     },
     {
@@ -3317,7 +3484,14 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -3336,7 +3510,10 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_not_reported",
+        "drug_denial_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     },
     {
@@ -3353,9 +3530,11 @@
       "eventIds": [
         "ltn-08162e902c62"
       ],
-      "city": "臺中市",
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "deaths_not_reported",
+        "deaths_unknown"
       ]
     },
     {
@@ -3364,18 +3543,14 @@
       "url": "https://news.ltn.com.tw/news/society/breakingnews/4807032",
       "source": "LTN",
       "publishedAt": "2024-09-21",
-      "kind": "incident",
-      "status": "needs_clarification",
+      "kind": "policy",
+      "status": "verified",
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-2b0017b1891c"
-      ],
-      "city": "新北市",
-      "issues": [
-        "legacy_source_not_rechecked"
-      ]
+      "eventIds": [],
+      "city": null,
+      "issues": []
     },
     {
       "id": "article-d496554a8f367f6f",
@@ -3388,12 +3563,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-88e369d327d5"
-      ],
+      "eventIds": [],
       "city": "新竹市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -3407,12 +3581,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-88e369d327d5"
-      ],
+      "eventIds": [],
       "city": "新竹市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -3421,17 +3594,15 @@
       "url": "https://news.ltn.com.tw/news/society/breakingnews/4802592",
       "source": "LTN",
       "publishedAt": "2024-09-17",
-      "kind": "incident",
+      "kind": "other",
       "status": "needs_clarification",
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-88e369d327d5"
-      ],
-      "city": "新竹市",
+      "eventIds": [],
+      "city": null,
       "issues": [
-        "legacy_source_not_rechecked"
+        "multiple_events_unresolved"
       ]
     },
     {
@@ -3445,12 +3616,11 @@
       "impairmentTypes": [
         "drug"
       ],
-      "eventIds": [
-        "ltn-88e369d327d5"
-      ],
+      "eventIds": [],
       "city": "新竹市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
       ]
     },
     {
@@ -3469,7 +3639,11 @@
       ],
       "city": "臺北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "deaths_conflict",
+        "unknown_event_date",
+        "injuries_not_reported",
+        "event_date_not_checked",
+        "injuries_unknown"
       ]
     },
     {
@@ -3488,7 +3662,11 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:dead",
+        "unattributed_outcome:injured",
+        "deaths_lower_bound",
+        "deaths_unknown",
+        "injuries_unknown"
       ]
     },
     {
@@ -3524,7 +3702,11 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "unattributed_outcome:injured",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown"
       ]
     },
     {
@@ -3543,7 +3725,11 @@
       ],
       "city": "新北市",
       "issues": [
-        "legacy_source_not_rechecked"
+        "injuries_conflict",
+        "deaths_not_reported",
+        "injuries_conflicting",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown"
       ]
     }
   ]
