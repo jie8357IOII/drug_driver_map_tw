@@ -8,6 +8,7 @@ import { understandArticle, VERSION } from "./news_understanding.mjs";
 import { buildNewsSnapshot, validateNewsSnapshot } from "./news_records.mjs";
 import { assistUnresolved } from "./news_assistance.mjs";
 import { tokenizeArticle } from "./news_tokenizer.mjs";
+import { collectOfficialTraffic } from "./official_traffic.mjs";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const digest = (s) => crypto.createHash("sha256").update(s).digest("hex");
@@ -98,6 +99,13 @@ async function main() {
     const rejectedUrls = [...new Set([...existingRejections, ...additionalRejections])];
     // A zero-result day must still fail closed if the required parser is broken.
     await tokenizeArticle({ title: "", body: "" });
+    const officialTraffic = args.input ? previousState?.officialTraffic
+      : await collectOfficialTraffic({ checkedAt, previous: previousState?.officialTraffic || null });
+    if (officialTraffic) {
+      report.officialTraffic = { status: officialTraffic.status, fromMonth: officialTraffic.fromMonth, toMonth: officialTraffic.toMonth,
+        ...(officialTraffic.error ? { error: officialTraffic.error } : {}) };
+      console.log(`Official traffic ${officialTraffic.status}: ${officialTraffic.fromMonth}..${officialTraffic.toMonth}`);
+    }
     const targetIncidents = args.recheckExcluded ? baseIncidents.filter((row) => row.dataQuality?.includeInStats === false) : [];
     const historyUrls = [...new Set(targetIncidents.flatMap((row) => [row.url, ...(row.relatedReports || []).map((r) => r.url)]).filter(Boolean))];
     const historyReview = args.recheckExcluded ? { checkedAt, targetIds: targetIncidents.map((row) => row.id), sourceResults: [] } : null;
@@ -172,16 +180,7 @@ async function main() {
     const throughDate = args.input ? previousThrough : coversNextDay ? to : previousThrough;
     const snapshot = buildNewsSnapshot({ baseIncidents, previousState, analyses, checkedAt, throughDate, rejectedUrls,
       collection: args.input ? null : { source: "LTN", from, to, keywords: NEWS_KEYWORDS, checkedAt },
-      historyReview, forceRecheckUrls: historyUrls });
-    if (snapshot.state.coverage) {
-      const suspects = await readJson(path.join(root, "public/data/drug_suspects_monthly.json"), true);
-      if (Array.isArray(suspects) && suspects.length) {
-        const months = [...new Set(suspects.map((row) => row.month))].sort();
-        const alignment = { source: "NPA", dataset: "drug_suspects_monthly", fromMonth: months[0], toMonth: months.at(-1) };
-        snapshot.state.coverage.alignment = alignment;
-        snapshot.status.coverage.alignment = alignment;
-      }
-    }
+      historyReview, forceRecheckUrls: historyUrls, officialTraffic });
     snapshot.state.api = apiBudget;
     validateNewsSnapshot(snapshot);
     const files = {};

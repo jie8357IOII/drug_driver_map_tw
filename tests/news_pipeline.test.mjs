@@ -421,7 +421,7 @@ test("publication does not promote an alcohol result missing units or a valid or
 
 test("replay CLI hashes raw inputs, deduplicates sources, preserves a null watermark and fails closed on an engine fault", async (t) => {
   const ctx = await sandbox(t, ["update_news.mjs", "news_records.mjs", "news_understanding.mjs", "news_assistance.mjs",
-    "news_tokenizer.mjs", "tokenize_news.py", "ltn_article.mjs"]);
+    "news_tokenizer.mjs", "tokenize_news.py", "ltn_article.mjs", "official_traffic.mjs"]);
   await fs.symlink(path.join(root, "node_modules"), path.join(ctx.directory, "node_modules"), "dir");
   await fs.symlink(path.join(root, "scripts/lexicon"), path.join(ctx.directory, "scripts/lexicon"), "dir");
   const base = path.join(ctx.directory, "base.json"), state = path.join(ctx.directory, "previous-state.json");
@@ -478,7 +478,7 @@ test("replay CLI hashes raw inputs, deduplicates sources, preserves a null water
 
 test("live CLI rejects watermark gaps, advances continuous coverage and preserves history-only backfills", async (t) => {
   const ctx = await sandbox(t, ["update_news.mjs", "news_records.mjs", "news_understanding.mjs", "news_assistance.mjs",
-    "news_tokenizer.mjs", "tokenize_news.py", "ltn_article.mjs"]);
+    "news_tokenizer.mjs", "tokenize_news.py", "ltn_article.mjs", "official_traffic.mjs"]);
   await fs.symlink(path.join(root, "node_modules"), path.join(ctx.directory, "node_modules"), "dir");
   await fs.symlink(path.join(root, "scripts/lexicon"), path.join(ctx.directory, "scripts/lexicon"), "dir");
   const old = { ...checkedOld, publishedAt: "2026-10-30", occurredAt: "2026-10-29" };

@@ -1,4 +1,5 @@
 import crypto from "node:crypto";
+import { validateOfficialTraffic } from "./official_traffic.mjs";
 
 // Publication owns consistency checks, not interpretation. Source sentences are
 // transient; state retains only cards, match keys, bounded excerpts and changes.
@@ -523,8 +524,8 @@ function buildHistoryReview(input, incidents, records, articles, analyses, rejec
 }
 
 function coverageHash(coverage) {
-  // The caller may attach NPA alignment after build. The review/search payload
-  // has its own hash; the four-file manifest also protects the full status/state.
+  // Excluding legacy NPA alignment preserves old snapshot hashes. The four-file
+  // manifest protects full state/status, including separate official traffic data.
   return digest(JSON.stringify({ searches: coverage.searches, recordDates: coverage.recordDates, historyReview: coverage.historyReview }));
 }
 
@@ -533,9 +534,10 @@ function coverageHash(coverage) {
  * checkedAt is an ISO timestamp; throughDate is the successful crawl watermark.
  * Optional collection/review metadata is mirrored into public status.coverage;
  * a missing historyReview keeps the previous dated review, not a fresh verdict.
+ * Omitted officialTraffic retains the previous official data independently of news.
  */
 export function buildNewsSnapshot({ baseIncidents, previousState = null, analyses, checkedAt, throughDate, rejectedUrls = [],
-  collection = null, historyReview = null, forceRecheckUrls = [] }) {
+  collection = null, historyReview = null, forceRecheckUrls = [], officialTraffic = previousState?.officialTraffic }) {
   requireValue(Array.isArray(baseIncidents) && Array.isArray(analyses), "expected incidents and analyses arrays");
   requireValue(typeof checkedAt === "string" && Number.isFinite(Date.parse(checkedAt)), "checkedAt");
   requireValue(throughDate === null || date(throughDate), "throughDate");
@@ -657,15 +659,16 @@ export function buildNewsSnapshot({ baseIncidents, previousState = null, analyse
   report.conflicts = records.flatMap((record) => record.conflicts.map((conflict) => ({ incidentId: record.id, ...copy(conflict) })));
   const coverage = { searches: mergeSearches([...(previousState?.coverage?.searches || []), ...(collection ? [collection] : [])]),
     recordDates: recordDates(incidents, news.articles),
-    historyReview: historyReview ? buildHistoryReview(historyReview, incidents, records, articles, analyses, rejected) : copy(previousState?.coverage?.historyReview || null),
-    ...(previousState?.coverage?.alignment ? { alignment: copy(previousState.coverage.alignment) } : {}) };
+    historyReview: historyReview ? buildHistoryReview(historyReview, incidents, records, articles, analyses, rejected) : copy(previousState?.coverage?.historyReview || null) };
   if (historyReview) report.historyReview = copy(coverage.historyReview);
   const pendingCount = news.articles.filter((article) => article.status === "needs_clarification").length;
   const dataHash = digest(JSON.stringify({ incidents, news }));
   const lastChangedAt = previousState?.dataHash === dataHash ? previousState.lastChangedAt : checkedAt;
   const state = { version: 1, throughDate, rejectedUrls: copy(rejectedUrls), lastCheckedAt: checkedAt, lastChangedAt,
-    dataHash, articles, events: records, coverage, coverageHash: coverageHash(coverage), ...(previousState?.api ? { api: copy(previousState.api) } : {}) };
-  const status = { version: 1, lastCheckedAt: checkedAt, lastChangedAt, lastPublishedAt: null, sourceCoverage: ["LTN"], status: "success", pendingCount, coverage: copy(coverage) };
+    dataHash, articles, events: records, coverage, coverageHash: coverageHash(coverage), ...(previousState?.api ? { api: copy(previousState.api) } : {}),
+    ...(officialTraffic !== undefined ? { officialTraffic: copy(officialTraffic) } : {}) };
+  const status = { version: 1, lastCheckedAt: checkedAt, lastChangedAt, lastPublishedAt: null, sourceCoverage: ["LTN"], status: "success", pendingCount, coverage: copy(coverage),
+    ...(officialTraffic !== undefined ? { officialTraffic: copy(officialTraffic) } : {}) };
   const snapshot = { incidents, news, state, status, report };
   validateNewsSnapshot(snapshot);
   return snapshot;
@@ -674,6 +677,11 @@ export function buildNewsSnapshot({ baseIncidents, previousState = null, analyse
 export function validateNewsSnapshot({ incidents, news, state, status }) {
   requireValue(Array.isArray(incidents) && news?.version === 1 && Array.isArray(news.articles) && state?.version === 1 &&
     Array.isArray(state.articles) && Array.isArray(state.events) && status?.version === 1, "collections and versions");
+  if (state.officialTraffic !== undefined || status.officialTraffic !== undefined) {
+    requireValue(state.officialTraffic !== undefined && status.officialTraffic !== undefined &&
+      JSON.stringify(state.officialTraffic) === JSON.stringify(status.officialTraffic), "state/status officialTraffic mismatch");
+    validateOfficialTraffic(state.officialTraffic);
+  }
   const ids = new Set();
   for (const row of incidents) {
     requireValue(typeof row.id === "string" && row.id && !ids.has(row.id), "duplicate or empty incident ID"); ids.add(row.id);

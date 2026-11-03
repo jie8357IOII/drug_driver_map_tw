@@ -933,7 +933,90 @@ function coverageDateRange(from, to) {
   return `${formatDate(from) || "起日未登錄"} ～ ${formatDate(to) || "迄日未登錄"}`;
 }
 
-function DataCoveragePanel({ newsStatus, selectedMonths, months, setSelectedMonths, suspects = [] }) {
+function OfficialTrafficPanel({ officialTraffic, searches, months, setSelectedMonths }) {
+  const [yearChoice, setYearChoice] = useState("");
+  const rows = Array.isArray(officialTraffic?.rows) ? officialTraffic.rows : [];
+  const years = [...new Set(rows.map((row) => row.year))].sort((a, b) => b - a);
+  const selectedYear = years.includes(Number(yearChoice)) ? Number(yearChoice) : years[0];
+  const yearRows = rows.filter((row) => row.year === selectedYear);
+  const fromMonth = officialTraffic?.fromMonth;
+  const toMonth = officialTraffic?.toMonth;
+  const hasPeriod = /^\d{4}-\d{2}$/.test(fromMonth || "") && /^\d{4}-\d{2}$/.test(toMonth || "") && fromMonth <= toMonth;
+  const comparisonMonths = hasPeriod ? months.filter((month) => month >= fromMonth && month <= toMonth) : [];
+  const hasSearchOverlap = hasPeriod && searches.some(({ from, to }) =>
+    /^\d{4}-\d{2}-\d{2}$/.test(from || "") && /^\d{4}-\d{2}-\d{2}$/.test(to || "") && from <= to &&
+    from.slice(0, 7) <= toMonth && to.slice(0, 7) >= fromMonth
+  );
+  const caseCount = (value) => Number.isInteger(value) && value >= 0 ? value.toLocaleString("zh-TW") : "未提供";
+
+  return (
+    <section className="coverage-official" aria-labelledby="coverage-official-heading">
+      <div className="official-traffic-heading">
+        <h3 id="coverage-official-heading">官方事故肇因件數｜第一當事者</h3>
+        {officialTraffic ? <span className={`quality-badge ${officialTraffic.status === "current" ? "ok" : "review"}`}>
+          {officialTraffic.status === "stale" ? "沿用上次資料" : officialTraffic.status === "current" ? "最近更新成功" : "更新狀態未提供"}
+        </span> : null}
+      </div>
+      {!officialTraffic ? <p className="coverage-empty">尚未接入官方酒／毒交通事故肇因資料，尚無可顯示的官方件數與可套用期間。</p> : <>
+        {officialTraffic.status === "stale" ? <div className="official-traffic-stale" role="status">
+          <strong>本次更新未成功，保留上次取得的官方資料。</strong>
+          <p>錯誤：{officialTraffic.error || "未提供錯誤訊息"}</p>
+        </div> : null}
+        <dl className="official-traffic-metadata">
+          <div><dt>來源</dt><dd>{officialTraffic.sourceUrl ? <a href={officialTraffic.sourceUrl} target="_blank" rel="noreferrer">交通部道安資訊查詢網</a> : "未提供來源連結"}</dd></div>
+          <div><dt>統計範圍</dt><dd>{officialTraffic.scope || "未提供"}</dd></div>
+          <div><dt>已接入官方期間（非全部歷史）</dt><dd>{hasPeriod ? `${toMonthLabel(fromMonth)} ～ ${toMonthLabel(toMonth)}` : "未提供"}</dd></div>
+          <div><dt>官方頁面更新日期</dt><dd>{formatDate(officialTraffic.sourceUpdatedAt) || "未提供"}</dd></div>
+          <div><dt>最近檢查時間</dt><dd>{formatStatusTime(officialTraffic.checkedAt) || "未提供"}</dd></div>
+          <div><dt>目前資料取得時間</dt><dd>{formatStatusTime(officialTraffic.fetchedAt) || "未提供"}</dd></div>
+        </dl>
+        <p className="coverage-caveat"><strong>官方說明：</strong>{officialTraffic.notice || "未提供初估或修訂說明，請查閱官方來源。"}</p>
+        <p>
+          非所有涉酒／毒事故；不含非第一當事者涉酒毒，亦未涵蓋行人／其他未列車種。
+          官方肇因分組與新聞收錄不是同一母體，不能與新聞件數計算覆蓋率。
+          各車種分列，不合計為全國酒／毒事故總數。
+        </p>
+        <div className="official-traffic-controls">
+          <label>官方資料年份
+            <select value={selectedYear ?? ""} disabled={!years.length} onChange={(event) => setYearChoice(event.target.value)}>
+              {years.length ? years.map((year) => <option key={year} value={year}>{year} 年</option>) : <option value="">未提供年份</option>}
+            </select>
+          </label>
+          <p>年份選擇只切換下表。全國、全年齡的官方資料不隨新聞縣市、月份或酒／毒類別篩選改變。</p>
+        </div>
+        {yearRows.length ? <div className="table-scroll official-traffic-table-wrap" tabIndex="0" role="region" aria-label="官方事故肇因件數表，可橫向捲動">
+          <table className="official-traffic-table">
+            <caption>{selectedYear} 年｜依第一當事者肇因分組，月份範圍逐列標示</caption>
+            <thead><tr><th scope="col">車種</th><th scope="col">資料月份</th><th scope="col">酒醉(後)駕駛（件）</th><th scope="col">吸食違禁物駕駛（件）</th><th scope="col">來源</th></tr></thead>
+            <tbody>{yearRows.map((row) => <tr key={`${row.year}-${row.vehicleType}`}>
+              <th scope="row">{row.vehicle}</th>
+              <td>{coverageDateRange(row.fromMonth, row.toMonth)}</td>
+              <td className="official-case-count">{caseCount(row.alcoholCases)}</td>
+              <td className="official-case-count">{caseCount(row.drugCases)}</td>
+              <td>{row.sourceUrl ? <a href={row.sourceUrl} target="_blank" rel="noreferrer" aria-label={`${row.year} 年${row.vehicle}官方查詢資料`}>查詢資料</a> : "未提供"}</td>
+            </tr>)}</tbody>
+          </table>
+        </div> : <p className="coverage-empty">尚無可顯示的年度車種資料，不能視為零件。</p>}
+        <p>「未提供」表示未取得可核對的精確肇因列，來源明示零件時才顯示 0。本表僅列事故件數，未提供死傷指標。</p>
+        {hasPeriod && !hasSearchOverlap ? <p className="coverage-caveat">
+          已接入官方事故期間內尚無已登錄的完整新聞搜尋區間，不能視為已補齊同期間新聞。
+        </p> : null}
+        <div className="coverage-period-actions" role="group" aria-label="官方事故期間篩選" aria-describedby="coverage-period-help">
+          <button type="button" disabled={!hasPeriod} onClick={() => setSelectedMonths(comparisonMonths)}>套用官方事故期間</button>
+          <button type="button" disabled={!months.length} onClick={() => setSelectedMonths(months)}>全部新聞月份</button>
+        </div>
+        <p id="coverage-period-help">
+          依上方已接入官方事故期間篩選現有新聞月份，採新聞發布日，不是事件發生日。
+          {comparisonMonths.length ? `目前有 ${comparisonMonths.length} 個月份交集。` : "目前沒有月份交集，套用後顯示無資料，不代表零事件。"}
+          這不表示已補齊同期間新聞；不補入未搜尋月份、不填零事件。
+          期間外新聞仍保留，可用「全部新聞月份」恢復查看。
+        </p>
+      </>}
+    </section>
+  );
+}
+
+function DataCoveragePanel({ newsStatus, selectedMonths, months, setSelectedMonths }) {
   const [reviewFilter, setReviewFilter] = useState("all");
   const coverage = newsStatus?.coverage;
   const searches = Array.isArray(coverage?.searches) ? coverage.searches : [];
@@ -947,13 +1030,6 @@ function DataCoveragePanel({ newsStatus, selectedMonths, months, setSelectedMont
   ].filter(Boolean))];
   const sourceLabel = (source) => source === "LTN" ? "自由時報（LTN）" : source || "來源未登錄";
   const countLabel = (value) => Number.isInteger(value) && value >= 0 ? `${value} 筆` : "未登錄";
-  const suspectMonths = [...new Set(suspects.map((row) => row.month).filter(Boolean))].sort();
-  const comparisonMonths = suspectMonths.length
-    ? months.filter((month) => month >= suspectMonths[0] && month <= suspectMonths.at(-1)) : [];
-  const hasSearchOverlap = suspectMonths.length > 0 && searches.some(({ from, to }) =>
-    /^\d{4}-\d{2}-\d{2}$/.test(from || "") && /^\d{4}-\d{2}-\d{2}$/.test(to || "") && from <= to &&
-    from.slice(0, 7) <= suspectMonths.at(-1) && to.slice(0, 7) >= suspectMonths[0]
-  );
 
   return (
     <section className="coverage-panel panel-pop" aria-labelledby="coverage-heading">
@@ -992,31 +1068,12 @@ function DataCoveragePanel({ newsStatus, selectedMonths, months, setSelectedMont
         </section>
       </div>
 
-      <section className="coverage-official" aria-labelledby="coverage-official-heading">
-        <h3 id="coverage-official-heading">警政署公開統計｜毒品嫌疑犯</h3>
-        {suspectMonths.length ? <p>
-          現有月資料起訖：<strong>{toMonthLabel(suspectMonths[0])} ～ {toMonthLabel(suspectMonths.at(-1))}</strong>
-          ；有資料 {suspectMonths.length} 個月份、{suspects.length} 筆縣市月資料。
-        </p> : <p className="coverage-empty">尚未載入毒品嫌疑犯月資料，無法顯示現有資料起訖。</p>}
-        <p>這份資料記錄毒品嫌疑犯人數，不是酒駕或毒駕事故件數。
-          它與新聞資料分開計算，不互相加總，也不作為新聞事故率的分母；上述月份不代表新聞已完成搜尋的期間。</p>
-        {suspectMonths.length > 0 && !hasSearchOverlap ? <p className="coverage-caveat">
-          警政署期間內尚無已登錄的完整新聞搜尋區間，不能視為已補齊同期間新聞。
-        </p> : null}
-        <div className="coverage-period-actions" role="group" aria-label="期間對照" aria-describedby="coverage-period-help">
-          <button type="button" disabled={!suspectMonths.length} onClick={() => setSelectedMonths(comparisonMonths)}>
-            套用警政署對照期間
-          </button>
-          <button type="button" disabled={!months.length} onClick={() => setSelectedMonths(months)}>
-            全部新聞月份
-          </button>
-        </div>
-        <p id="coverage-period-help">
-          依警政署期間篩選現有新聞月份，{comparisonMonths.length ? `目前有 ${comparisonMonths.length} 個月份交集。` : "目前沒有月份交集，套用後顯示無資料，不代表零事件。"}
-          這不表示已補齊整段期間的新聞；未搜尋或沒有現有新聞的月份不自動補入、不填零事件。
-          事件件數與嫌疑犯人數仍分開計算；期間外新聞保留，可用「全部新聞月份」恢復查看。
-        </p>
-      </section>
+      <OfficialTrafficPanel
+        officialTraffic={newsStatus?.officialTraffic}
+        searches={searches}
+        months={months}
+        setSelectedMonths={setSelectedMonths}
+      />
 
       <div className="coverage-selection">
         <strong>目前選取的新聞發布月份（{selectedMonths.length} 個）</strong>
@@ -2596,7 +2653,6 @@ export default function App() {
         selectedMonths={selectedMonths}
         months={months}
         setSelectedMonths={setSelectedMonths}
-        suspects={suspects}
       />
 
       <section className="global-news-filters panel-pop" aria-label="共同資料篩選">
