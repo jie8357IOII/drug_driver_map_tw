@@ -262,10 +262,11 @@ function chooseMatch(records, analysis, event, result) {
     // Separate local cases in the same source version must keep separate IDs.
     if (record.sources.some((s) => s.url === url && s.bodyHash === analysis.article.bodyHash &&
       s.version === analysis.version && s.eventId && s.eventId !== event.id)) continue;
-    const sameUrl = record.sources.some((s) => s.url === url && (s.eventId === event.id ||
+    const sameUrl = record.sources.some((s) => s.url === url && s.kind !== "legacy_related" && (s.eventId === event.id ||
       (s.eventId === null && analysis.events.length === 1)));
-    const explicit = refs.some((ref) => record.sources.some((s) => s.url === ref.url && (!ref.eventId || s.eventId === ref.eventId || record.id === ref.eventId)));
-    if (record.issues.includes("legacy_multiple_events_unresolved") && (sameUrl || explicit)) possible.push(record);
+    const explicit = refs.some((ref) => record.sources.some((s) => s.url === ref.url && s.kind !== "legacy_related" &&
+      (!ref.eventId || s.eventId === ref.eventId || record.id === ref.eventId)));
+    if (record.issues.includes("legacy_multiple_events_unresolved") && (sameUrl || explicit || record.sources.some((s) => s.url === url))) possible.push(record);
     else if ((sameUrl || explicit) && !contradictory(record.match, result.match)) exact.push(record);
     else if (exactMatch(record.match, result.match)) exact.push(record);
     else if (sameUrl || explicit || possibleMatch(record.match, result.match) || record.sources.some((s) => s.url === url)) possible.push(record);
@@ -359,7 +360,8 @@ function mergeIncident(row, record, analysis, event, result, checkedAt) {
     row.dataQuality.mapEligible = row.dataQuality.includeInStats && Boolean(city(row.city)) && Boolean(row.dataQuality.evidence.city?.length);
   }
   record.match = { date: record.match.date || result.match.date, city: record.match.city || result.match.city,
-    road: record.match.road || result.match.road, actorKeys: record.match.actorKeys.length ? record.match.actorKeys : result.match.actorKeys };
+    road: record.match.road || result.match.road, actorKeys: record.match.actorKeys.length ? record.match.actorKeys :
+      result.issues.includes("driver_identity_not_checked") ? [] : result.match.actorKeys };
   record.issues = unique([...record.issues, ...issues]);
   if (issues.length && !locked) row.dataQuality.needsHumanReview = true;
   addUnique(record.sources, source);
@@ -368,16 +370,180 @@ function mergeIncident(row, record, analysis, event, result, checkedAt) {
   return { issues, changes };
 }
 
+function mergeSearches(searches) {
+  const normalized = searches.map((search) => {
+    requireValue(search?.source === "LTN" && date(search.from) && date(search.to) && search.from <= search.to &&
+      Array.isArray(search.keywords) && search.keywords.every((word) => typeof word === "string" && word.trim()) &&
+      typeof search.checkedAt === "string" && Number.isFinite(Date.parse(search.checkedAt)), "coverage search");
+    return { source: search.source, from: search.from, to: search.to, keywords: unique(search.keywords.map((word) => word.trim())).sort(), checkedAt: search.checkedAt };
+  }).sort((a, b) => a.source.localeCompare(b.source) || JSON.stringify(a.keywords).localeCompare(JSON.stringify(b.keywords)) || a.from.localeCompare(b.from));
+  const result = [];
+  for (const search of normalized) {
+    const last = result.at(-1);
+    if (last && last.source === search.source && JSON.stringify(last.keywords) === JSON.stringify(search.keywords) &&
+      Date.parse(search.from) <= Date.parse(last.to) + 86400000) {
+      if (search.to > last.to) last.to = search.to;
+      if (Date.parse(search.checkedAt) > Date.parse(last.checkedAt)) last.checkedAt = search.checkedAt;
+    } else result.push(search);
+  }
+  return result;
+}
+
+function recordDates(incidents, articles) {
+  // Publication coverage includes news-only cards; occurrence coverage uses
+  // reported incident dates only, never publication dates as a substitute.
+  const published = [...incidents, ...articles].map((row) => row.publishedAt).filter(date).sort();
+  const occurred = incidents.map((row) => row.occurredAt).filter(date).sort();
+  return { publishedFrom: published[0] || null, publishedTo: published.at(-1) || null,
+    occurredFrom: occurred[0] || null, occurredTo: occurred.at(-1) || null };
+}
+
+function reviewReason(issue) {
+  const code = String(issue).split(":")[0];
+  const messages = {
+    outside_taiwan_scope: "國外事件，不在台灣事件收錄範圍",
+    article_not_related: "本次原文未確認與酒駕／毒駕相關",
+    legacy_source_not_rechecked: "舊新聞卡尚未經本次原文重新核對",
+    legacy_multiple_events_unresolved: "舊資料合併了同篇多案，尚未安全拆分，不能直接升格統計",
+    multiple_events_unresolved: "原文案件數與分案結果不一致，人物及數值尚不能分配到單一事件",
+    possible_duplicate_or_identity_conflict: "可能與既有事件重複或身分有矛盾，暫不新增或合併統計事件",
+    driver_identity_unresolved: "駕駛身分或角色仍未釐清",
+    driver_identity_not_checked: "駕駛身分、角色或人物區分未通過核對",
+    impairment_driver_link_not_checked: "酒／毒主張尚未以強證據連到具體駕駛",
+    test_target_unresolved: "檢測對象未釐清，不能把物品或他人結果移給駕駛",
+    event_date_not_checked: "事發日未通過核對：可能未明、精度不足或晚於發布日",
+    unknown_event_date: "原文未能確定事發日期",
+    unknown_city: "事發縣市未明，尚不能進地圖；不因此否定已核對事件數",
+    driving_not_established: "具體上路經過尚未確立",
+    concrete_driving_not_checked: "具體上路或危險駕駛經過未通過原文核對",
+    conflicting_drug_evidence: "毒品主張互相矛盾，不能據此確認毒駕事件",
+    conflicting_alcohol_evidence: "酒精主張互相矛盾，不能據此確認酒駕事件",
+    alcohol_measurement_incomplete: "酒精檢測的單位或檢體資訊不完整",
+    drug_denial_reported: "當事人否認吸毒；否認另列疑義，不等於陰性檢驗",
+    alcohol_denial_reported: "當事人否認飲酒，保留否認與檢測各自的依據",
+    candidate_source_or_event_mismatch: "候選的來源 hash、版本或事件欄位與解析結果不一致",
+    follow_up_requires_existing_event_link: "司法／後續報導須先確認與既有事件的連結",
+    context_report_requires_event_review: "政策、評論或背景報導不能直接轉為個案統計",
+    no_verified_event_link: "新聞尚未連到已核對的實際事件",
+    event_not_publishable: "尚未滿足事件發布條件，僅保留新聞來源",
+  };
+  let message = messages[code];
+  if (/^(deaths|injuries)_/.test(code)) {
+    const label = code.startsWith("deaths_") ? "死亡" : "受傷";
+    message = /conflict/.test(code) ? `${label}人數有衝突，僅可沿用先前已核對值，其他值待釐清` :
+      /lower_bound/.test(code) ? `${label}人數只能確認下限，不能當成精確總數` : `${label}人數未明或尚未通過欄位核對`;
+  }
+  if (code === "ambiguous_person") message = "同姓或人物指代有歧義，不能確定是否同一人";
+  if (code === "unresolved_family_reference") message = "親屬稱謂無法可靠連到特定人物";
+  if (code === "unattributed_outcome") message = "傷亡敘述尚未連到明確當事人";
+  return message || "尚待釐清的解析或事件項目，詳細代碼保留於事件紀錄。";
+}
+
+function buildHistoryReview(input, incidents, records, articles, analyses, rejected) {
+  requireValue(input && typeof input.checkedAt === "string" && Number.isFinite(Date.parse(input.checkedAt)) &&
+    Array.isArray(input.targetIds) && input.targetIds.every((id) => typeof id === "string" && id) &&
+    new Set(input.targetIds).size === input.targetIds.length && Array.isArray(input.sourceResults), "history review input");
+  const sources = new Map();
+  for (const source of input.sourceResults) {
+    requireValue(sourceUrl(source?.url) && typeof source.ok === "boolean" &&
+      (source.error === undefined || typeof source.error === "string"), "history source result");
+    sources.set(sourceUrl(source.url), source);
+  }
+  const parsed = new Map(analyses.map((analysis) => [sourceUrl(analysis.article?.url), analysis]));
+  const byId = new Map(incidents.map((row) => [row.id, row]));
+  const rows = input.targetIds.map((incidentId) => {
+    const row = byId.get(incidentId), record = records.find((entry) => entry.id === incidentId);
+    if (!row) return { incidentId, title: incidentId, url: "", status: "pending",
+      reasons: ["指定的歷史事件不在本次基準資料中，無法核對；未省略此目標。"], sourceUrls: [] };
+    const linkedCards = articles.filter((article) => article.eventLinks.some((link) => link.eventId === incidentId || link.possibleEventIds.includes(incidentId)));
+    const sourceUrls = unique([row.url, ...(row.relatedReports || []).map((source) => source.url),
+      ...(record?.sources || []).map((source) => source.url), ...linkedCards.map((article) => article.url)]
+      .map((url) => sourceUrl(url) || url).filter(Boolean)).sort();
+    const reasons = [], confirmed = [];
+    for (const url of sourceUrls) {
+      const source = sources.get(url), analysis = parsed.get(url);
+      const add = (reason) => reasons.push(`${url}：${reason}`);
+      if (rejected.has(url)) { add("此來源在拒收清單內，不作為本次確認依據。"); continue; }
+      if (source?.ok === false) {
+        add(`來源擷取或解析失敗${source.error ? `（${source.error.replace(/\s+/g, " ").slice(0, 160)}）` : "（未提供錯誤細節）"}。`);
+        continue;
+      }
+      if (!analysis) {
+        add(source?.ok ? "來源已取得，但本輪沒有可核對的解析結果。" : "本輪未取得此來源的解析結果，尚未完成回看。");
+        continue;
+      }
+      for (const issue of analysis.issues || []) add(reviewReason(issue));
+      if (analysis.article.related !== true) { add(reviewReason("article_not_related")); continue; }
+      if (["policy", "statistics"].includes(analysis.article.kind)) {
+        add(analysis.article.kind === "policy" ? "政策／宣導／評論新聞，只收錄新聞卡，不採用法律數字或假設人物作事件統計。" :
+          "統計報導，只收錄新聞卡，不將全國、歷年或彙總人數當成個案。");
+        continue;
+      }
+      const card = articles.find((article) => (sourceUrl(article.url) || article.url) === url);
+      for (const issue of card?.issues || []) if (issue !== "legacy_source_not_rechecked") add(reviewReason(issue));
+      if (!analysis.events?.length) add("本次原文未解析出可核對的具體上路事件。");
+      for (const event of analysis.events || []) {
+        const link = card?.eventLinks.find((entry) => entry.localEventId === event.id);
+        const result = assess(analysis, event);
+        const prefix = `${event.id.replace(/^event-/, "事件 ")}：`;
+        if (link?.eventId === incidentId && result.eligible) confirmed.push(url);
+        else if (link?.possibleEventIds.includes(incidentId)) add(`${prefix}可能重複或有身分矛盾，待釐清事件：${link.possibleEventIds.join("、")}。`);
+        else if (link?.eventId && link.eventId !== incidentId) { add(`${prefix}目前連到另一筆事件 ${link.eventId}，不能直接移用至本筆。`); continue; }
+        else if (link?.eventId !== incidentId) add(`${prefix}尚未建立與本筆歷史事件的可靠連結。`);
+        for (const issue of unique([...result.issues, ...(link?.issues || [])])) {
+          if (issue === "follow_up_requires_existing_event_link" && link?.eventId === incidentId) continue;
+          add(prefix + reviewReason(issue));
+        }
+        if (date(event.occurredAt?.value) && event.occurredAt.value > analysis.article.publishedAt) {
+          add(`${prefix}解析事發日 ${event.occurredAt.value} 晚於發布日 ${analysis.article.publishedAt}，日期矛盾未解除。`);
+        }
+        for (const type of TYPES) {
+          const driving = event[`${type}Driving`], claims = event[`${type}Claims`] || [];
+          if (!(event.impairmentTypes || []).includes(type) && !claims.length) continue;
+          const label = type === "alcohol" ? "酒精" : "毒品";
+          if (driving?.status === "suspected") add(`${prefix}${label}關聯仍屬疑似、待驗或拒測，僅可收錄新聞，未確認此類型事件。`);
+          if (driving?.status === "ruled_out") add(`${prefix}原文已排除${label}關聯，不能據此納入此類型事件。`);
+          if (driving?.status === "not_supported") add(`${prefix}原文未建立${label}與駕駛的有效關聯；僅持有、乘客或物品結果不足。`);
+        }
+      }
+    }
+    for (const issue of record?.issues || []) reasons.push(`既有事件紀錄：${reviewReason(issue)}`);
+    const q = row.dataQuality;
+    const accepted = confirmed.length > 0 && q.includeInStats === true &&
+      (q.verificationStatus === "manual_checked" || (q.verificationStatus === "machine_checked" && q.eventCountValid === true));
+    if (accepted) {
+      reasons.unshift(`本輪來源已連到此事件且通過事件核對，可納事件統計；確認來源：${unique(confirmed).join("、")}。`);
+      for (const field of FIELDS) if (q.fieldStatus[field] !== "checked") reasons.push(`部分欄位待釐清：${reviewReason(`${field}_${q.fieldStatus[field]}`)}；不影響已核對事件數。`);
+    } else if (confirmed.length) reasons.unshift("本輪有可核對來源，但本筆尚未取得納統計資格；保留既有排除／人工決定。");
+    else if (!reasons.length) reasons.push("本輪未取得可連到此歷史事件的原文與解析結果，尚未完成核對。");
+    return { incidentId, title: row.title, url: row.url, status: accepted ? "accepted" : "pending", reasons: unique(reasons), sourceUrls };
+  });
+  const accepted = rows.filter((row) => row.status === "accepted").length;
+  return { checkedAt: input.checkedAt, total: rows.length, accepted, pending: rows.length - accepted, rows };
+}
+
+function coverageHash(coverage) {
+  // The caller may attach NPA alignment after build. The review/search payload
+  // has its own hash; the four-file manifest also protects the full status/state.
+  return digest(JSON.stringify({ searches: coverage.searches, recordDates: coverage.recordDates, historyReview: coverage.historyReview }));
+}
+
 /** baseIncidents is the last public snapshot, including subsequent human edits.
  * previousState supplies article cards and match/history metadata, never rows.
  * checkedAt is an ISO timestamp; throughDate is the successful crawl watermark.
+ * Optional collection/review metadata is mirrored into public status.coverage;
+ * a missing historyReview keeps the previous dated review, not a fresh verdict.
  */
-export function buildNewsSnapshot({ baseIncidents, previousState = null, analyses, checkedAt, throughDate, rejectedUrls = [] }) {
+export function buildNewsSnapshot({ baseIncidents, previousState = null, analyses, checkedAt, throughDate, rejectedUrls = [],
+  collection = null, historyReview = null, forceRecheckUrls = [] }) {
   requireValue(Array.isArray(baseIncidents) && Array.isArray(analyses), "expected incidents and analyses arrays");
   requireValue(typeof checkedAt === "string" && Number.isFinite(Date.parse(checkedAt)), "checkedAt");
   requireValue(throughDate === null || date(throughDate), "throughDate");
   requireValue(Array.isArray(rejectedUrls), "rejectedUrls");
+  requireValue(Array.isArray(forceRecheckUrls) && forceRecheckUrls.every((url) => sourceUrl(url)), "forceRecheckUrls");
+  const forced = new Set(forceRecheckUrls.map(sourceUrl));
   requireValue(!previousState || previousState.version === 1, "state version");
+  if (previousState?.coverage) requireValue(previousState.coverageHash === coverageHash(previousState.coverage), "previous coverage content hash");
   const incidents = baseIncidents.map(migrate), rows = new Map(incidents.map((row) => [row.id, row]));
   requireValue(rows.size === incidents.length, "duplicate base incident IDs");
   const records = copy(previousState?.events || []), cards = new Map();
@@ -388,19 +554,22 @@ export function buildNewsSnapshot({ baseIncidents, previousState = null, analyse
       history: [], conflicts: [], issues: row.dataQuality.verificationStatus === "legacy" &&
         row.dataQuality.flags?.some((flag) => /multiple_incidents_same_article|multiple_events_unresolved/.test(flag)) ? ["legacy_multiple_events_unresolved"] : [] });
     const record = records.find((r) => r.id === row.id);
-    // These are explicit, historically curated same-case references, not the
-    // unrelated recommendations that may appear on a fetched news page.
+    // Historical relatedReports are leads, not proof that two reports share a
+    // case. Only primary URLs or independently checked links can anchor a match.
     for (const related of row.relatedReports || []) {
       const relatedUrl = sourceUrl(related.url);
       if (!relatedUrl) continue;
-      if (!record.sources.some((source) => source.url === relatedUrl)) record.sources.push({ url: relatedUrl, eventId: null, bodyHash: null, version: null });
+      if (!record.sources.some((source) => source.url === relatedUrl)) record.sources.push({ url: relatedUrl, eventId: null, bodyHash: null, version: null, kind: "legacy_related" });
+      if (relatedUrl !== sourceUrl(row.url)) for (const source of record.sources) {
+        if (source.url === relatedUrl && source.eventId === null) source.kind = "legacy_related";
+      }
       if (!cards.has(relatedUrl) && related.title && date(related.publishedAt)) {
         cards.set(relatedUrl, { ...legacyCard({ ...row, ...related, id: row.id }), bodyHash: null, understandingVersion: null, eventLinks: [], origin: "legacy" });
-      } else if (cards.has(relatedUrl)) cards.get(relatedUrl).eventIds = unique([...cards.get(relatedUrl).eventIds, row.id]);
+      } else if (cards.get(relatedUrl)?.origin === "legacy") cards.get(relatedUrl).eventIds = unique([...cards.get(relatedUrl).eventIds, row.id]);
     }
     const url = sourceUrl(row.url) || row.url;
     if (!cards.has(url)) cards.set(url, { ...legacyCard(row), bodyHash: null, understandingVersion: null, eventLinks: [], origin: "legacy" });
-    else cards.get(url).eventIds = unique([...cards.get(url).eventIds, row.id]);
+    else if (cards.get(url).origin === "legacy") cards.get(url).eventIds = unique([...cards.get(url).eventIds, row.id]);
   }
   requireValue(records.every((record) => rows.has(record.id)), "state references an incident missing from baseIncidents");
   const rejected = new Set(rejectedUrls.map((entry) => sourceUrl(typeof entry === "string" ? entry : entry.url)).filter(Boolean));
@@ -408,10 +577,12 @@ export function buildNewsSnapshot({ baseIncidents, previousState = null, analyse
     beforeStatsCount: baseIncidents.filter((row) => row.dataQuality?.includeInStats !== false).length,
     beforeVerifiedStatsCount: incidents.filter((row) => row.dataQuality.includeInStats).length,
     afterStatsCount: 0, excludedLegacyCount: 0, excludedLegacyPreviouslyIncludedCount: 0, conflicts: [], changes: [], issues: [] };
-  // Recheck known sources before new URLs, so an existing case's match keys are
-  // available even when its old row did not yet store its earlier news source.
+  // Primary articles anchor identity before historical related links or new
+  // URLs. Even a suspected primary can establish date/person contradictions.
+  const primaryUrls = new Set(incidents.map((row) => sourceUrl(row.url)));
   const knownUrls = new Set(records.flatMap((record) => record.sources.map((source) => source.url)));
-  for (const analysis of [...analyses].sort((a, b) => Number(knownUrls.has(sourceUrl(b.article?.url))) - Number(knownUrls.has(sourceUrl(a.article?.url))) ||
+  const sourcePriority = (analysis) => primaryUrls.has(sourceUrl(analysis.article?.url)) ? 0 : knownUrls.has(sourceUrl(analysis.article?.url)) ? 1 : 2;
+  for (const analysis of [...analyses].sort((a, b) => sourcePriority(a) - sourcePriority(b) ||
     String(a.article?.publishedAt).localeCompare(String(b.article?.publishedAt)) ||
     String(a.article?.url).localeCompare(String(b.article?.url)))) {
     const article = analysis.article, url = sourceUrl(article?.url);
@@ -422,9 +593,11 @@ export function buildNewsSnapshot({ baseIncidents, previousState = null, analyse
     requireValue(analysis.sentences.some((s) => s.field === "body" && typeof s.text === "string" && s.text.length &&
       Number.isInteger(s.start) && Number.isInteger(s.end) && s.start >= 0 && s.end - s.start === s.text.length), "confirmed article requires original body spans");
     const previous = cards.get(url);
-    if (previous?.bodyHash === article.bodyHash && previous.understandingVersion === analysis.version &&
+    if (!forced.has(url) && previous?.bodyHash === article.bodyHash && previous.understandingVersion === analysis.version &&
       previous.title === article.title && previous.publishedAt === article.publishedAt) continue;
-    const eventIds = [...(previous?.eventIds || [])], eventLinks = [], articleIssues = [...(analysis.issues || [])];
+    // A rechecked card is linked only by this analysis, never by inherited
+    // legacy eventIds (which can contain unrelated historical recommendations).
+    const eventIds = [], eventLinks = [], articleIssues = [...(analysis.issues || [])];
     const cities = [];
     requireValue(new Set(analysis.events.map((event) => event.id)).size === analysis.events.length, "duplicate local event IDs");
     // Policy/statistical prose can mention hypothetical drivers and statutory
@@ -482,12 +655,17 @@ export function buildNewsSnapshot({ baseIncidents, previousState = null, analyse
   report.excludedLegacyPreviouslyIncludedCount = baseIncidents.filter((row) => row.dataQuality?.includeInStats !== false &&
     rows.get(row.id).dataQuality.verificationStatus === "legacy").length;
   report.conflicts = records.flatMap((record) => record.conflicts.map((conflict) => ({ incidentId: record.id, ...copy(conflict) })));
+  const coverage = { searches: mergeSearches([...(previousState?.coverage?.searches || []), ...(collection ? [collection] : [])]),
+    recordDates: recordDates(incidents, news.articles),
+    historyReview: historyReview ? buildHistoryReview(historyReview, incidents, records, articles, analyses, rejected) : copy(previousState?.coverage?.historyReview || null),
+    ...(previousState?.coverage?.alignment ? { alignment: copy(previousState.coverage.alignment) } : {}) };
+  if (historyReview) report.historyReview = copy(coverage.historyReview);
   const pendingCount = news.articles.filter((article) => article.status === "needs_clarification").length;
   const dataHash = digest(JSON.stringify({ incidents, news }));
   const lastChangedAt = previousState?.dataHash === dataHash ? previousState.lastChangedAt : checkedAt;
   const state = { version: 1, throughDate, rejectedUrls: copy(rejectedUrls), lastCheckedAt: checkedAt, lastChangedAt,
-    dataHash, articles, events: records, ...(previousState?.api ? { api: copy(previousState.api) } : {}) };
-  const status = { version: 1, lastCheckedAt: checkedAt, lastChangedAt, lastPublishedAt: null, sourceCoverage: ["LTN"], status: "success", pendingCount };
+    dataHash, articles, events: records, coverage, coverageHash: coverageHash(coverage), ...(previousState?.api ? { api: copy(previousState.api) } : {}) };
+  const status = { version: 1, lastCheckedAt: checkedAt, lastChangedAt, lastPublishedAt: null, sourceCoverage: ["LTN"], status: "success", pendingCount, coverage: copy(coverage) };
   const snapshot = { incidents, news, state, status, report };
   validateNewsSnapshot(snapshot);
   return snapshot;
@@ -561,13 +739,42 @@ export function validateNewsSnapshot({ incidents, news, state, status }) {
   const inspect = (value) => {
     if (!value || typeof value !== "object") return;
     for (const [key, child] of Object.entries(value)) {
-      requireValue(!["body", "fullText", "sentences", "tokens", "html"].includes(key), "full source text in state");
+      requireValue(!["body", "fullText", "fulltext", "sentences", "tokens", "html"].includes(key), "full source text in state");
       if (key === "quote") requireValue(typeof child === "string" && child.length <= 240, "unbounded state evidence");
       if (key === "evidence") requireValue(Array.isArray(child) ? child.length <= 4 && child.every(positioned) : positioned(child), "invalid bounded state evidence");
       inspect(child);
     }
   };
   inspect(state);
+  if (state.coverage !== undefined || status.coverage !== undefined || state.coverageHash !== undefined) {
+    const coverage = state.coverage;
+    requireValue(coverage && JSON.stringify(coverage) === JSON.stringify(status.coverage), "state/status coverage mismatch");
+    requireValue(Array.isArray(coverage.searches) && JSON.stringify(coverage.searches) === JSON.stringify(mergeSearches(coverage.searches)), "coverage search intervals");
+    requireValue(JSON.stringify(coverage.recordDates) === JSON.stringify(recordDates(incidents, news.articles)), "coverage record dates");
+    requireValue(HASH.test(state.coverageHash) && state.coverageHash === coverageHash(coverage), "coverage content hash");
+    const review = coverage.historyReview;
+    if (review !== null) {
+      requireValue(review && typeof review.checkedAt === "string" && Number.isFinite(Date.parse(review.checkedAt)) &&
+        count(review.total) && count(review.accepted) && count(review.pending) && Array.isArray(review.rows) &&
+        review.total === review.rows.length && review.accepted + review.pending === review.total &&
+        review.accepted === review.rows.filter((row) => row.status === "accepted").length, "history review counts");
+      const reviewed = new Set();
+      for (const row of review.rows) {
+        requireValue(typeof row.incidentId === "string" && row.incidentId && !reviewed.has(row.incidentId), "history review duplicate/missing target");
+        reviewed.add(row.incidentId);
+        requireValue(typeof row.title === "string" && row.title && typeof row.url === "string" &&
+          ["accepted", "pending"].includes(row.status) && (row.status !== "accepted" || ids.has(row.incidentId)) &&
+          Array.isArray(row.reasons) && row.reasons.length > 0 && row.reasons.every((reason) => typeof reason === "string" && /[\p{Script=Han}]/u.test(reason)) &&
+          Array.isArray(row.sourceUrls) && new Set(row.sourceUrls).size === row.sourceUrls.length &&
+          row.sourceUrls.every((url) => typeof url === "string" && url), "history review row");
+      }
+    }
+    if (coverage.alignment !== undefined) {
+      const alignment = coverage.alignment, month = /^20\d{2}-(?:0[1-9]|1[0-2])$/;
+      requireValue(alignment?.source === "NPA" && alignment.dataset === "drug_suspects_monthly" &&
+        month.test(alignment.fromMonth) && month.test(alignment.toMonth) && alignment.fromMonth <= alignment.toMonth, "coverage alignment");
+    }
+  }
   requireValue((state.throughDate === null || date(state.throughDate)) && Array.isArray(state.rejectedUrls) && HASH.test(state.dataHash) &&
     state.dataHash === digest(JSON.stringify({ incidents, news })), "state watermark or content hash");
   requireValue(status.status === "success" && JSON.stringify(status.sourceCoverage) === '["LTN"]' && status.lastPublishedAt === null &&

@@ -298,9 +298,19 @@ public/data/drug_suspects_monthly.json
 - 新聞可先公開來源標題與連結；未確認欄位標示待釐清。事件身分明確但人數未明時，可計事件數，未知人數不當成零。
 - 同案後續連到原事件，不能將每篇傷亡加總。只有符合日期、具體地點、人物及車輛等條件才自動配對；歧義不新增統計事件。已核對值遇衝突時保留原值及新來源。
 - 舊資料保留 ID、來源與修訂；未複核資料標記 `legacy`，排除已核對統計，另顯示待核對數量。不能把原本的 `includeInStats: true` 當作已驗證證據。
-- 第一個來源為 LTN，國外事件及僅頁尾提及「禁止酒駕」的無關文章不收錄；這不是全台完整事故統計。
+- 第一個來源為 LTN，日常搜尋最近七個已結束的台北日曆日；國外事件及僅頁尾提及「禁止酒駕」的無關文章不收錄。舊資料與歷史回看只涵蓋已取得來源的零散日期，最早至最晚日期不代表中間每日都已搜尋，也不是全台完整新聞或事故統計。
 
 解析與網站共用 `incidents.json`（事件）、`news.json`（新聞卡片）及 `news-status.json`（檢查時間／缺值狀態）。`impairmentTypes` 可同時含 `alcohol`、`drug`，全部事件總數按 ID 去重。`occurredAt` 是事發日，`publishedAt` 是發布日。
+
+截至 2026-11-03 的資料涵蓋紀錄：
+
+| 資料 | 實際日期範圍 | 涵蓋意義 |
+|---|---|---|
+| 警政署毒品嫌疑人月檔 | 2023-01 至 2026-03 | 毒品嫌疑人背景統計，不是酒駕／毒駕事故資料。 |
+| 既存新聞與歷史來源 | 2024-05-05 至 2026-11-02 | 零散來源的最早／最晚日期，不表示已逐日搜尋整段期間。 |
+| 首次依設定關鍵字完成的新聞搜尋 | 2026-10-27 至 2026-11-02 | 僅 LTN 來源，不代表全台新聞或事故完整收錄。 |
+
+月檔與新聞事件的統計對象不同；是否沿用毒品嫌疑人資料對齊，或另接酒駕／毒駕事故資料，仍待確認。目前不宣稱已完成 2023 年起的酒毒駕事故回補。
 
 ### 安裝本機新聞環境
 
@@ -320,6 +330,11 @@ npm run news:update -- --help
 ```bash
 # 與每日排程相同：檢查最近七個已結束的台北日曆日
 npm run news:update -- --output .news-output/daily --dry-run
+
+# 明確要求重抓歷史排除資料的來源；同時執行一般日期區間收集
+# 日常排程不會自動重跑整批歷史排除資料
+npm run news:update -- --recheck-excluded \
+  --output .news-output/recheck-excluded --dry-run
 
 # 指定發布日期區間；有既有水位時不能跳過尚未抓取日期
 npm run news:update -- --from 2026-11-01 --to 2026-11-02 \
@@ -343,6 +358,10 @@ npm run data:validate
 快照目錄包含三份 `public/data/*.json`、`state.json`、`manifest.json`、`report.json`、`analysis.json`、`sources.json`。manifest 只雜湊三份公開資料與 state，並記錄產生快照時 base/state **原始 bytes** 的 hash；只有完整驗證通過才產生 `status: ready`。全文 sources 與完整分析僅供本機回看，不進網站或資料分支。
 
 首次必須有非空的歷史 `incidents.json`。後續使用 `--base FILE --state FILE` 接續成功快照；明確指定卻不存在的 state 會失敗。每日缺口每次最多補七天，成功水位只沿連續日期前進；指定較舊日期回補與離線重播不將水位倒退。
+
+每次指定 `--recheck-excluded`，都會在正常最近七日或指定區間搜尋之外，額外重新抓取歷史排除資料的主來源與相關報導 URL，產生 `manifest.mode: live` 的快照。有漏跑時仍先補連續日期缺口；歷史重查不單獨推進每日水位。
+
+歷史 URL 抓取失敗時保留既有數值，並在稽核紀錄列出失敗原因；正常當期搜尋若有任何故障，仍停止整批快照發布。歷史回看結果與涵蓋範圍由 `report.json`、state 及公開 `news-status.json` 記錄；應區分實際檢查的日期區間與零散歷史來源，不將兩者合成全台連續涵蓋。`--dry-run` 仍會下載來源，只是不發布；要完全離線須使用已保存來源的 replay。
 
 ```bash
 npm run news:update -- \
@@ -406,8 +425,8 @@ npm run news:publish -- --snapshot .news-output/replay --allow-replay
 ### GitHub Actions 設定與故障恢復
 
 1. 將已驗證的程式合併至 `main`，Pages Source 設為 GitHub Actions；若 Pages environment 要求每次人工核准，需依自動發布目標調整設定。
-2. 首次手動執行 `Update and publish daily news`。一般回補同時填 `start_date`、`end_date`；本機上傳模式使用 `snapshot_ref`／`snapshot_sha`，不與日期混用。
-3. `news-data` 持久保存快照與 state，不依賴暫存 cache。建置後先保存，再部署；部署失敗時下次優先重試同一快照。未完成的快照會阻擋不同新版本，請不填日期或 `snapshot_ref` 重跑 workflow。抓取成功日與發布完成記錄分開。
+2. 首次手動執行 `Update and publish daily news`。一般回補同時填 `start_date`、`end_date`；需要額外重抓歷史排除資料時，手動勾選 `recheck_excluded`（預設 `false`）。00:17／08:17 排程維持一般收集，不自動重跑整批歷史排除資料。本機上傳模式使用 `snapshot_ref`／`snapshot_sha`，不與日期或 `recheck_excluded` 混用。
+3. `news-data` 持久保存快照與 state，不依賴暫存 cache。建置後先保存，再部署；部署失敗時下次優先重試同一快照。未完成的快照會阻擋不同新版本，請不填日期或 `snapshot_ref`、保持 `recheck_excluded=false` 重跑 workflow；舊快照發布成功後再另行要求歷史回看。抓取成功日與發布完成記錄分開。
 4. 新聞更新與程式部署共用 Pages 發布鎖；程式部署也取最新 `news-data`，不把每日資料倒退成 main 舊版本。
 5. 部署後核對三份 JSON hash、程式 commit SHA 與快照 ID；成功才保存 `published.json`。失敗保留既有網站及診斷報告，不把失敗當「今日無新新聞」。
 

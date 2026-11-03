@@ -137,6 +137,105 @@ test("regulation commencement dates do not replace the date of today's driving e
   }
 });
 
+test("今上午 anchors a driving event to its 2026-05-06 publication date", async () => {
+  const article = { url: url(90000009), source: "LTN", publishedAt: "2026-05-06",
+    title: "新北館前路駕駛唾液快篩陽性",
+    body: "66歲楊姓男子今上午駕駛轎車在新北市館前路撞車。楊男唾液快篩K他命陽性。" };
+  const analysis = await understandArticle(article);
+  sourcePositions(analysis, article);
+  assert.equal(analysis.events.length, 1);
+  const event = analysis.events[0];
+  assert.equal(event.occurredAt.value, "2026-05-06");
+  assert.equal(event.occurredAt.precision, "day");
+  assert.ok(event.occurredAt.evidence.some(e => e.quote.includes("楊姓男子今上午駕駛")));
+  assert.equal(analysis.article.kind, "incident");
+  assert.equal(analysis.candidates.length, 1);
+  assert.equal(analysis.candidates[0].occurredAt, "2026-05-06");
+});
+
+test("昨駕車 anchors a driving event to the day before its 2026-01-11 publication", async () => {
+  const article = { url: url(90000010), source: "LTN", publishedAt: "2026-01-11",
+    title: "新北環河北路駕駛唾液快篩陽性",
+    body: "25歲李姓男子昨駕車行經新北市環河北路撞車。李男本人唾液快篩K他命陽性。" };
+  const analysis = await understandArticle(article);
+  sourcePositions(analysis, article);
+  assert.equal(analysis.events.length, 1);
+  const event = analysis.events[0];
+  assert.equal(event.occurredAt.value, "2026-01-10");
+  assert.equal(event.occurredAt.precision, "day");
+  assert.ok(event.occurredAt.evidence.some(e => e.quote.includes("李姓男子昨駕車")));
+  assert.equal(analysis.article.kind, "incident");
+  assert.equal(analysis.candidates.length, 1);
+  assert.equal(analysis.candidates[0].occurredAt, "2026-01-10");
+});
+
+test("a bail report dates last December's event correctly and updates only an existing event", async () => {
+  const article = { url: url(90000011), source: "LTN", publishedAt: "2025-08-25", title: "酒駕撞車案林男交保",
+    // Court action today must not replace the earlier incident's explicit date.
+    body: "法院今天裁定林男交保。22歲林姓男子去年12月12日駕駛轎車在台中市自由路撞車，本人呼氣酒測0.5mg/L。" };
+  const analysis = await understandArticle(article);
+  sourcePositions(analysis, article);
+  assert.equal(analysis.events.length, 1);
+  assert.equal(analysis.events[0].occurredAt.value, "2024-12-12");
+  assert.equal(analysis.events[0].occurredAt.precision, "day");
+  assert.ok(analysis.events[0].occurredAt.evidence.some(e => e.quote.includes("去年12月12日駕駛轎車")));
+  assert.equal(analysis.article.kind, "judicial");
+  assert.equal(analysis.disposition, "update_review");
+  assert.equal(analysis.events[0].candidate, null);
+  assert.deepEqual(analysis.candidates, []);
+  const unlinked = buildNewsSnapshot({ baseIncidents: [], analyses: [analysis], checkedAt, throughDate: null });
+  assert.deepEqual(unlinked.incidents, []);
+  assert.equal(unlinked.news.articles.length, 1);
+  assert.deepEqual(unlinked.news.articles[0].eventIds, []);
+
+  const existing = { id: "existing-taichung-case", url: url(90000012), source: "LTN", title: "台中自由路酒駕撞車",
+    publishedAt: "2024-12-13", occurredAt: null, city: "臺中市", deaths: null, injuries: null,
+    dataQuality: { verificationStatus: "legacy", includeInStats: false, needsHumanReview: true },
+    // A historical related link is only a lead, not proof of shared identity.
+    relatedReports: [{ url: article.url, title: article.title, publishedAt: article.publishedAt }] };
+  const pointerOnly = buildNewsSnapshot({ baseIncidents: [existing], analyses: [analysis], checkedAt, throughDate: null });
+  assert.equal(pointerOnly.incidents.length, 1);
+  assert.equal(pointerOnly.incidents[0].id, existing.id);
+  assert.equal(pointerOnly.incidents[0].occurredAt, null);
+  assert.equal(pointerOnly.incidents[0].dataQuality.verificationStatus, "legacy");
+  assert.equal(pointerOnly.incidents[0].dataQuality.includeInStats, false);
+  assert.equal(pointerOnly.report.addedEventCount, 0);
+  assert.equal(pointerOnly.report.linkedEventCount, 0);
+  assert.deepEqual(pointerOnly.news.articles.find(a => a.url === article.url).eventIds, []);
+
+  const primary = { url: existing.url, source: existing.source, title: existing.title, publishedAt: existing.publishedAt,
+    body: "2024年12月12日，22歲林姓男子駕駛轎車在台中市自由路撞車。林男本人呼氣酒測0.5mg/L。" };
+  const primaryAnalysis = await understandArticle(primary);
+  sourcePositions(primaryAnalysis, primary);
+  // Seed from the actual primary text, with no related URL to supply linkage.
+  const seeded = buildNewsSnapshot({ baseIncidents: [{ ...existing, relatedReports: [] }], analyses: [primaryAnalysis],
+    checkedAt, throughDate: null });
+  assert.equal(seeded.incidents.length, 1);
+  assert.equal(seeded.incidents[0].id, existing.id);
+  assert.equal(seeded.incidents[0].occurredAt, "2024-12-12");
+  assert.equal(seeded.incidents[0].dataQuality.verificationStatus, "machine_checked");
+  assert.equal(seeded.incidents[0].dataQuality.includeInStats, true);
+  assert.equal(seeded.report.addedEventCount, 0);
+  const beforeUpdate = structuredClone(seeded);
+  const linked = buildNewsSnapshot({ baseIncidents: seeded.incidents, previousState: seeded.state,
+    analyses: [analysis], checkedAt, throughDate: null });
+  assert.deepEqual(seeded, beforeUpdate, "the checked primary snapshot must remain unchanged");
+  assert.equal(existing.occurredAt, null, "the caller's baseline must remain unchanged");
+  assert.equal(linked.incidents.length, 1);
+  assert.equal(linked.incidents[0].id, existing.id);
+  assert.equal(linked.incidents[0].occurredAt, "2024-12-12");
+  assert.equal(linked.incidents[0].dataQuality.verificationStatus, "machine_checked");
+  assert.equal(linked.incidents[0].dataQuality.eventCountValid, true);
+  assert.equal(linked.incidents[0].dataQuality.includeInStats, true);
+  assert.equal(linked.incidents[0].publishedAt, primary.publishedAt);
+  assert.equal(linked.incidents[0].dataQuality.sourceBodyHash, sha256(primary.body));
+  assert.deepEqual(linked.state.events.find(e => e.id === existing.id).history.map(h => ({ url: h.url, bodyHash: h.bodyHash })),
+    [{ url: primary.url, bodyHash: sha256(primary.body) }, { url: article.url, bodyHash: sha256(article.body) }]);
+  assert.equal(linked.report.addedEventCount, 0);
+  assert.equal(linked.report.linkedEventCount, 1);
+  assert.deepEqual(linked.news.articles.find(a => a.url === article.url).eventIds, [existing.id]);
+});
+
 test("generic police drug-driving warnings cannot establish a person's drug use", async () => {
   const warning = "警方表示，施用毒品後駕車嚴重影響交通安全。";
   const article = { url: url(90000008), source: "LTN", publishedAt: "2026-11-02",
@@ -158,6 +257,58 @@ test("generic police drug-driving warnings cannot establish a person's drug use"
   assert.equal(snapshot.incidents.length, 0, "generic advice cannot promote a pending test into a checked event");
   assert.equal(snapshot.news.articles.length, 1);
   assert.deepEqual(snapshot.news.articles[0].eventIds, []);
+});
+
+test("consequence clauses attribute a unique female victim but never transfer unnamed group injuries to the driver", async () => {
+  for (const [index, body, surname, field, allowedCounts] of [
+    [0, "40歲陳姓男子駕車撞上88歲江姓老婦人，造成她慘死。", "陳", "deaths", [1]],
+    [1, "劉男駕車，造成2女手腳挫傷。", "劉", "injuries", [null, 2]],
+    [2, "劉男駕車，造成他們一家3口擦挫傷。", "劉", "injuries", [null, 3]],
+  ]) {
+    const article = { url: url(90000030 + index), source: "LTN", publishedAt: "2026-05-06", title: "車禍傷亡調查", body };
+    const analysis = await understandArticle(article);
+    sourcePositions(analysis, article);
+    assert.equal(analysis.events.length, 1);
+    const event = analysis.events[0];
+    const driver = event.actors.find(a => a.surname === surname && a.roles.includes("driver"));
+    assert.ok(driver, body);
+    assert.ok(!driver.outcomes.some(o => ["dead", "injured"].includes(o.state)), `victim outcome assigned to driver: ${body}`);
+    assert.ok(allowedCounts.includes(event.casualties[field].value), `${body}: unexpected ${field}=${event.casualties[field].value}`);
+    if (field === "deaths") {
+      const deceased = event.actors.filter(a => a.outcomes.some(o => o.state === "dead"));
+      assert.equal(deceased.length, 1);
+      assert.deepEqual({ surname: deceased[0].surname, age: deceased[0].age, gender: deceased[0].gender },
+        { surname: "江", age: 88, gender: "female" });
+    }
+  }
+});
+
+test("a testimony report uses the explicit traffic date in paragraph two instead of today's court activity", async () => {
+  const article = { url: url(90000033), source: "LTN", publishedAt: "2026-05-06", title: "毒駕案目擊證人出庭作證",
+    body: "法院今天傳喚目擊證人到庭，證人作證說明事故經過。\n" +
+      "2024年10月27日，18歲白姓男子駕車在台中市自由路撞車。白男唾液快篩K他命呈陽性。" };
+  const analysis = await understandArticle(article);
+  sourcePositions(analysis, article);
+  assert.equal(analysis.events.length, 1);
+  assert.equal(analysis.events[0].occurredAt.value, "2024-10-27");
+  assert.equal(analysis.events[0].occurredAt.precision, "day");
+  assert.ok(analysis.events[0].occurredAt.evidence.some(e => e.field === "body" &&
+    e.start >= article.body.indexOf("2024年10月27日") && e.quote.includes("白姓男子駕車")));
+  assert.equal(analysis.article.kind, "judicial");
+  assert.equal(analysis.events[0].candidate, null);
+  assert.deepEqual(analysis.candidates, []);
+});
+
+test("driving the next morning is dated after the explicit drug-consumption date", async () => {
+  const article = { url: url(90000034), source: "LTN", publishedAt: "2025-08-29", title: "中山路毒駕撞人",
+    body: "40歲陳姓男子在2025年8月27日喝毒咖啡包後，隔天清晨7點駕車在臺北市中山路撞人。陳男唾液快篩K他命呈陽性。" };
+  const analysis = await understandArticle(article);
+  sourcePositions(analysis, article);
+  assert.equal(analysis.events.length, 1);
+  const occurredAt = analysis.events[0].occurredAt;
+  assert.equal(occurredAt.value, "2025-08-28");
+  assert.equal(occurredAt.precision, "day");
+  assert.ok(occurredAt.evidence.some(e => e.quote.includes("2025年8月27日喝毒咖啡包後") && e.quote.includes("隔天清晨7點駕車")));
 });
 
 // A publication-boundary fixture with literal source spans; this is not generated

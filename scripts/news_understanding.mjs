@@ -3,7 +3,7 @@ import { tokenizeArticle } from "./news_tokenizer.mjs";
 
 // This module owns interpretation. Source readers and publishers must not redo
 // its actor attribution, event partitioning, polarity or casualty arithmetic.
-export const VERSION = "local-events-v2";
+export const VERSION = "local-events-v3";
 const NUMBER = "[0-9零〇一二兩三四五六七八九十百]+";
 const SURNAMES = "王李張劉陳楊黃趙吳周徐孫馬朱胡郭何高林羅鄭梁謝宋唐許韓馮鄧曹彭曾蕭田董潘袁蔡蔣余杜葉程蘇魏呂丁任沈姚盧姜崔鍾譚陸汪范金石廖賴江侯邱洪邵孟白秦邢郝孔戴莫湯康毛殷段雷黎龍薛卓莊游詹施紀柯溫翁鄒巫傅連簡顏龔涂池藍尹阮倪成武童辜萬柳易符饒嚴韋巫";
 const CITY_ALIASES = {
@@ -298,6 +298,21 @@ function attachPeople(part, model) {
         const state = /未受傷|沒有受傷|無受傷/.test(outcomeMatch[0]) ? "unharmed" : DEAD.test(outcomeMatch[0]) ? "dead" : "injured";
         const scopePrefix = s.text.slice(clauseMatch.index, pos);
         if (/無人|人員|附近店家|車內無人/.test(scopePrefix)) continue;
+        const localMentions = (model.mentions.get(s.id) || []).filter((m) => m.start >= clauseMatch.index && m.end <= pos);
+        // A result attributed to an unnamed victim/group must not fall back to
+        // the driver in an earlier clause (e.g.「造成她慘死」「造成2女挫傷」).
+        const consequence = /造成|導致|致使/.test(scopePrefix);
+        const priorVictimGroup = /(?:造成|導致|致使)[^。]*(?:一家|\d+[男女口]|清潔隊員|保全|路人)/.test(s.text.slice(0, pos));
+        if (!localMentions.length && (consequence || priorVictimGroup)) {
+          const pronoun = scopePrefix.match(/[她他](?!們)/)?.[0];
+          const candidates = pronoun ? model.actors.filter((a) => a.gender === (pronoun === "她" ? "female" : "male") &&
+            (model.mentions.get(s.id) || []).some((m) => m.actorId === a.id && m.start < pos)) : [];
+          if (candidates.length === 1) {
+            candidates[0].outcomes.push({ state, evidence: [evidence(s)] });
+            if (state !== "unharmed") candidates[0].roles = unique([...candidates[0].roles, "casualty"]);
+          } else unresolved.push({ kind: "unattributed_outcome", state, evidence: [evidence(s)] });
+          continue;
+        }
         const objectMentions = /撞死|輾斃|撞傷/.test(outcomeMatch[0]) ? (model.mentions.get(s.id) || []).filter((m) =>
           m.start > pos && m.start < pos + 24 && m.start < clauseMatch.index + clause.length) : [];
         if (/撞死|輾斃|撞傷/.test(outcomeMatch[0]) && !objectMentions.length) {
@@ -523,14 +538,16 @@ function occurrence(part, publishedAt) {
     // Policy commencement and announcement dates are not the incident date,
     // even when a news lead discusses the new rule and a concrete case together.
     const value = s.text.split(/[，,]/).filter((clause) => !/(?:條例|法案|法規|新制|修正案).{0,40}(?:公告|施行|實施|生效|上路)/.test(clause)).join("，")
-      .replace(/(?:今|今日|今天)[^，。]{0,12}(?:指出|表示|說明|訊後|聲押)/g, "");
-    const relative = value.match(/前天|前日|昨天|昨日|昨晚|昨夜|昨（\d{1,2}）日|今晨|今早|今凌晨|今天|今日|今（\d{1,2}）日/);
-    const explicit = value.match(/(?:(20\d{2})年)?(\d{1,2})月(\d{1,2})日/);
+      .replace(/(?:今天|今日|昨天|昨日|今|昨)[^，。]{0,12}(?:指出|表示|說明|訊後|聲押|審理|開庭|作證|宣判|裁定)/g, "");
+    const relative = value.match(/前天|前日|前晚|昨天|昨日|昨晚|昨夜|昨（\d{1,2}）日|今晨|今早|今凌晨|今天|今日|今（\d{1,2}）日|[今昨](?=上午|下午|清晨|凌晨|晚間|中午|深夜|早上|傍晚|駕車|騎車|開車|行經)/);
+    const explicit = value.match(/(?:(20\d{2})年|(前年|去年|今年))?(\d{1,2})月(\d{1,2})日/);
     const day = value.match(/(?<!\d)(\d{1,2})日(?:晚|傍晚|上|下|清晨|凌晨|早|中午)/);
     let date = null, raw = null;
     if (explicit) {
-      date = new Date(Date.UTC(Number(explicit[1] || anchor.getUTCFullYear()), Number(explicit[2]) - 1, Number(explicit[3])));
-      if (date.getUTCMonth() !== Number(explicit[2]) - 1 || date.getUTCDate() !== Number(explicit[3])) date = null;
+      const year = explicit[1] ? Number(explicit[1]) : anchor.getUTCFullYear() - (explicit[2] === "前年" ? 2 : explicit[2] === "去年" ? 1 : 0);
+      date = new Date(Date.UTC(year, Number(explicit[3]) - 1, Number(explicit[4])));
+      if (date.getUTCMonth() !== Number(explicit[3]) - 1 || date.getUTCDate() !== Number(explicit[4])) date = null;
+      if (date && /隔[天日].{0,20}(?:駕車|開車|騎車|行經)/.test(value.slice(explicit.index + explicit[0].length))) date.setUTCDate(date.getUTCDate() + 1);
       raw = explicit[0];
     } else if (relative) {
       date = new Date(anchor); date.setUTCDate(date.getUTCDate() - (/前/.test(relative[0]) ? 2 : /昨/.test(relative[0]) ? 1 : 0)); raw = relative[0];
@@ -557,6 +574,8 @@ function casualtyClaims(part, title, useTitle) {
     const correction = s.field === "body" ? explicitCorrection(s.text) : null;
     if (correction) claims.push({ kind: correction.field, value: correction.value, scope: "reported_total", approximate: false, evidence: [evidence(s)] });
     const subset = /其中|包括|分別/.test(s.text) && !/共|合計|總計/.test(s.text);
+    const explicitGroup = s.text.match(new RegExp(`(?:造成|導致)(?:他們|她們)?(?:一家)?(${NUMBER})(?:名)?(?:男子|女子|男|女|口)(?:手腳|四肢|多處|輕重|皆|均|都|受有|受到|受|遭|、){0,8}(?:擦挫傷|挫傷|擦傷|受傷|輕傷|重傷)`));
+    if (explicitGroup && !subset) claims.push({ kind: "injuries", value: number(explicitGroup[1]), scope: "reported_total", approximate: false, evidence: [evidence(s)] });
     const groupInjury = s.text.match(new RegExp(`(${NUMBER})人(?:一度受困|意識清楚)[，,](?:(?:所幸|僅|由救護車送醫救治|意識清楚|、|[，,]){0,8})(?:受|受到)(?:擦挫傷|輕傷|擦傷)`));
     if (groupInjury && !subset) claims.push({ kind: "injuries", value: number(groupInjury[1]), scope: "reported_total", approximate: false, evidence: [evidence(s)] });
     const admitted = s.text.match(new RegExp(`(${NUMBER})(?:人|名)(?:傷者)?(?:受傷)?送醫`));
@@ -709,7 +728,7 @@ export async function understandArticle(article) {
   const sourceSentences = sentences(article, lexical);
   const title = sourceSentences[0];
   const split = partition(sourceSentences);
-  const followUp = /判刑|判決|重判|判處|判撤銷|定讞|一審|二審|上訴|訊後聲押|裁定羈押/.test(article.title);
+  const followUp = /判刑|判決|重判|判處|判撤銷|定讞|一審|二審|上訴|訊後聲押|裁定羈押|交保|羈押|作證|國民法庭|庭審/.test(article.title);
   const contextual = /自由觀點|自由廣場|社論|評論|修法|刑罰|政策|統計|宣導|防制|立委|藍委|議員|質詢|條款|民眾黨|國民黨|民進黨/.test(article.title);
   const issues = split.unresolved ? ["multiple_events_unresolved"] : [];
   const events = (contextual ? [] : split.parts).map((part, index) => {
@@ -734,9 +753,10 @@ export async function understandArticle(article) {
     const alcohol = alcoholClaims(part, model, title, split.parts.length === 1);
     const alcoholDriving = alcoholStatus(model, alcohol);
     const counts = casualtyClaims(part, title, split.parts.length === 1);
+    const datedPart = followUp ? part.filter((s) => /20\d{2}年\d{1,2}月\d{1,2}日/.test(s.text) && (DRIVING.test(s.text) || DANGER.test(s.text))) : [];
     const event = {
       id: `event-${index + 1}`, actors: model.actors,
-      occurredAt: occurrence(part, article.publishedAt), city: location(part, title),
+      occurredAt: occurrence(datedPart.length ? datedPart : part, article.publishedAt), city: location(part, title),
       drugDriving, drugClaims: claims, alcoholDriving, alcoholClaims: alcohol, casualtyClaims: counts,
       locationDetail: roadLocation(part),
       casualties: { deaths: countCasualties("deaths", counts, model, unattributed), injuries: countCasualties("injuries", counts, model, unattributed) },

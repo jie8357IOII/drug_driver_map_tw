@@ -3580,6 +3580,261 @@ body {
   line-height: 1.8;
 }
 
+.coverage-panel {
+  margin-bottom: 16px;
+  padding: 20px;
+}
+
+.coverage-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.coverage-panel h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.coverage-panel h3 {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+}
+
+.coverage-panel p {
+  margin: 8px 0;
+  color: #575a54;
+  font-size: 0.87rem;
+  line-height: 1.8;
+}
+
+.coverage-panel small {
+  color: #62665c;
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.coverage-panel .coverage-caveat {
+  margin: 12px 0 18px;
+  border-left: 3px solid #ad7725;
+  padding: 10px 14px;
+  background: #fff8e9;
+  color: #625342;
+}
+
+.coverage-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+}
+
+.coverage-search-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.coverage-search-list > li {
+  border-bottom: 1px solid #e2e1d8;
+  padding-bottom: 12px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.coverage-record-dates dl {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.coverage-record-dates dt {
+  color: #62665c;
+}
+
+.coverage-record-dates dd {
+  margin: 2px 0 0;
+  font-weight: 800;
+}
+
+.coverage-official {
+  margin-top: 18px;
+  border: 1px solid #dcded5;
+  border-radius: 8px;
+  padding: 14px;
+  background: #f5f7f0;
+}
+
+.coverage-period-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.coverage-period-actions button {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #b1c2b6;
+  border-radius: 8px;
+  background: #fffdf7;
+  color: #285f52;
+  font-size: 0.87rem;
+  font-weight: 800;
+}
+
+.coverage-period-actions button:first-child {
+  background: #285f52;
+  color: #fffdf7;
+}
+
+.coverage-period-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.coverage-selection {
+  margin: 16px 0;
+  border-top: 1px solid #e2e1d8;
+  padding-top: 14px;
+  font-size: 0.87rem;
+}
+
+.coverage-history {
+  border-top: 1px solid #dcded5;
+  padding-top: 12px;
+}
+
+.coverage-history > summary {
+  padding: 8px 0;
+  color: #35665a;
+  cursor: pointer;
+  line-height: 1.8;
+}
+
+.coverage-history > summary strong {
+  margin-right: 14px;
+}
+
+.coverage-history > summary span {
+  font-size: 0.87rem;
+}
+
+.coverage-review-controls {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin: 14px 0;
+  font-size: 0.85rem;
+}
+
+.coverage-review-controls label {
+  display: grid;
+  min-width: 190px;
+  gap: 6px;
+  font-weight: 800;
+}
+
+.coverage-review-controls select {
+  min-height: 44px;
+  border: 1px solid #c6c6b9;
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #fffdf7;
+  color: #1f2522;
+  font: inherit;
+}
+
+.coverage-review-list {
+  display: grid;
+  gap: 12px;
+  max-height: 620px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  margin: 0;
+  padding: 4px 8px 4px 28px;
+}
+
+.coverage-review-card {
+  border: 1px solid #dcded5;
+  border-radius: 8px;
+  padding: 14px;
+  background: #fffdf7;
+}
+
+.coverage-review-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+}
+
+.coverage-review-heading h4 {
+  flex: 1 1 240px;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.coverage-review-card a {
+  color: #285f52;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.coverage-review-reasons {
+  margin: 10px 0;
+  padding-left: 20px;
+  color: #575a54;
+  font-size: 0.87rem;
+  line-height: 1.8;
+}
+
+.coverage-review-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.coverage-panel :focus-visible {
+  outline: 3px solid #0c746b;
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .coverage-panel {
+    padding: 14px;
+  }
+
+  .coverage-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .coverage-history > summary span {
+    display: block;
+  }
+
+  .coverage-review-controls label {
+    width: 100%;
+  }
+
+  .coverage-review-list {
+    max-height: 65vh;
+  }
+
+  .coverage-review-card {
+    padding: 10px;
+  }
+}
+
 .global-news-filters,
 .news-filters {
   display: flex;

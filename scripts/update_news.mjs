@@ -3,7 +3,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { setTimeout as delay } from "node:timers/promises";
-import { discoverArticles, fetchHtml, parseArticleHtml } from "./ltn_article.mjs";
+import { discoverArticles, fetchHtml, parseArticleHtml, NEWS_KEYWORDS } from "./ltn_article.mjs";
 import { understandArticle, VERSION } from "./news_understanding.mjs";
 import { buildNewsSnapshot, validateNewsSnapshot } from "./news_records.mjs";
 import { assistUnresolved } from "./news_assistance.mjs";
@@ -17,6 +17,7 @@ const help = `Usage: npm run news:update -- [options]
   --base FILE                        Existing incidents; default public/data/incidents.json.
   --state FILE                       Previous state; default .news-state/state.json.
   --rejections FILE                  Persistently excluded source URLs (JSON array).
+  --recheck-excluded                 Also refetch excluded incidents and related sources.
   --output DIR                       Snapshot directory; default .news-output/latest.
   --dry-run                          Explicitly request the default non-publishing operation.
   --help                            Show help.
@@ -32,10 +33,12 @@ function argsOf(argv) {
     const key = argv[i];
     if (["--help", "-h"].includes(key)) { args.help = true; continue; }
     if (key === "--dry-run") { args.dryRun = true; continue; }
+    if (key === "--recheck-excluded") { args.recheckExcluded = true; continue; }
     if (!["--from", "--to", "--input", "--base", "--state", "--output", "--rejections"].includes(key) || !argv[i + 1] || argv[i + 1].startsWith("--")) throw new Error(`Invalid option: ${key}`);
     args[key.slice(2)] = argv[++i];
   }
   if (Boolean(args.from) !== Boolean(args.to)) throw new Error("Use both --from and --to.");
+  if (args.input && args.recheckExcluded) throw new Error("--recheck-excluded requires live collection; do not combine with --input.");
   return args;
 }
 
@@ -95,6 +98,9 @@ async function main() {
     const rejectedUrls = [...new Set([...existingRejections, ...additionalRejections])];
     // A zero-result day must still fail closed if the required parser is broken.
     await tokenizeArticle({ title: "", body: "" });
+    const targetIncidents = args.recheckExcluded ? baseIncidents.filter((row) => row.dataQuality?.includeInStats === false) : [];
+    const historyUrls = [...new Set(targetIncidents.flatMap((row) => [row.url, ...(row.relatedReports || []).map((r) => r.url)]).filter(Boolean))];
+    const historyReview = args.recheckExcluded ? { checkedAt, targetIds: targetIncidents.map((row) => row.id), sourceResults: [] } : null;
     let articles, from, to;
     if (args.input) {
       articles = inputsOf(await readJson(path.resolve(args.input)));
@@ -118,6 +124,27 @@ async function main() {
         const article = parseArticleHtml(await fetchHtml(listing.url), listing);
         articles.push(article); await delay(300);
       }
+      if (historyReview) {
+        const fetched = new Set(articles.map((article) => article.url));
+        for (const url of historyUrls) {
+          if (rejectedUrls.includes(url)) {
+            historyReview.sourceResults.push({ url, ok: false, error: "來源已列為拒收，不自動恢復" });
+            continue;
+          }
+          if (fetched.has(url)) { historyReview.sourceResults.push({ url, ok: true }); continue; }
+          try {
+            console.log(`History recheck ${url}`);
+            articles.push(parseArticleHtml(await fetchHtml(url), { url }));
+            fetched.add(url);
+            historyReview.sourceResults.push({ url, ok: true });
+          } catch (error) {
+            // A missing historical source stays excluded; a parser/validator
+            // failure still aborts the batch below, preserving public data.
+            historyReview.sourceResults.push({ url, ok: false, error: error.message });
+          }
+          await delay(300);
+        }
+      }
     }
     date(from); date(to);
     if (from > to) throw new Error("--from must not be after --to.");
@@ -125,7 +152,7 @@ async function main() {
     const analyses = [];
     const seen = new Map();
     for (const article of articles) {
-      if (article.publishedAt < from || article.publishedAt > to || rejectedUrls.includes(article.url)) continue;
+      if ((!historyUrls.includes(article.url) && (article.publishedAt < from || article.publishedAt > to)) || rejectedUrls.includes(article.url)) continue;
       const bodyHash = digest(article.body);
       if (seen.has(article.url)) {
         if (seen.get(article.url) !== bodyHash) throw new Error(`Conflicting captured versions of ${article.url}`);
@@ -143,7 +170,18 @@ async function main() {
     const previousThrough = previousState?.throughDate || null;
     const coversNextDay = !previousThrough || (from <= shift(previousThrough, 1) && to >= shift(previousThrough, 1));
     const throughDate = args.input ? previousThrough : coversNextDay ? to : previousThrough;
-    const snapshot = buildNewsSnapshot({ baseIncidents, previousState, analyses, checkedAt, throughDate, rejectedUrls });
+    const snapshot = buildNewsSnapshot({ baseIncidents, previousState, analyses, checkedAt, throughDate, rejectedUrls,
+      collection: args.input ? null : { source: "LTN", from, to, keywords: NEWS_KEYWORDS, checkedAt },
+      historyReview, forceRecheckUrls: historyUrls });
+    if (snapshot.state.coverage) {
+      const suspects = await readJson(path.join(root, "public/data/drug_suspects_monthly.json"), true);
+      if (Array.isArray(suspects) && suspects.length) {
+        const months = [...new Set(suspects.map((row) => row.month))].sort();
+        const alignment = { source: "NPA", dataset: "drug_suspects_monthly", fromMonth: months[0], toMonth: months.at(-1) };
+        snapshot.state.coverage.alignment = alignment;
+        snapshot.status.coverage.alignment = alignment;
+      }
+    }
     snapshot.state.api = apiBudget;
     validateNewsSnapshot(snapshot);
     const files = {};
