@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "status": "ready",
+  "createdAt": "2026-11-03T09:03:23.762Z",
+  "mode": "live",
+  "inputs": {
+    "baseSha256": "4bfbb8d665f55b1392b5fdc06541aa67f123b18efcf54c50f0862c9ef3188f90",
+    "stateSha256": null
+  },
+  "files": {
+    "public/data/incidents.json": "1c6d62d9e425266f73a0f5c15b5c4ab76ec18bbf03bb31c38284444a07a8a058",
+    "public/data/news.json": "9c14435e1f05c4496988fa2436882b0cb5b6dac3aca080cf2738dd7de65d5fe4",
+    "public/data/news-status.json": "cb5c5e7311bacdadf8b09f92945eb15780fc0ff68546bf8deed644a0690e94d4",
+    "state.json": "11337f6602eda26ac6de50377a8a14b8811f841ec4a153f3089f90b54850c1ae"
+  }
+}
