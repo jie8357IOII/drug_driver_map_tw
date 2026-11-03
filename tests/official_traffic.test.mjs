@@ -31,6 +31,7 @@ test("official causes use exact labels beyond the top ten and preserve missing v
   assert.deepEqual(parseOfficialCauseRows([{ name: "吸食違禁物駕駛", caseQty: 0 }]), { alcoholCases: null, drugCases: 0 });
   assert.throws(() => parseOfficialCauseRows([...causeRows, causeRows[95]]), /duplicate cause/);
   assert.throws(() => parseOfficialCauseRows([{ name: "吸食違禁物駕駛", caseQty: null }]), /invalid count/);
+  assert.throws(() => parseOfficialCauseRows([{ name: "來源錯誤訊息" }]), /invalid count/, "malformed responses cannot become missing-cause null counts");
 });
 
 test("official page metadata determines the latest period and rejects invalid or unavailable periods", () => {

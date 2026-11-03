@@ -37,11 +37,11 @@ export function parseOfficialTrafficPage(html) {
 
 export function parseOfficialCauseRows(rows) {
   requireValue(Array.isArray(rows) && rows.length > 0 && rows.every((row) => row && typeof row.name === "string"), "empty or malformed cause response");
+  requireValue(rows.every((row) => Number.isSafeInteger(row.caseQty) && row.caseQty >= 0), "invalid count in cause response");
   const cases = (label) => {
     const matches = rows.filter((row) => row.name === label);
     requireValue(matches.length <= 1, `duplicate cause ${label}`);
     if (!matches.length) return null;
-    requireValue(Number.isSafeInteger(matches[0].caseQty) && matches[0].caseQty >= 0, `invalid count ${label}`);
     return matches[0].caseQty;
   };
   return { alcoholCases: cases("酒醉(後)駕駛"), drugCases: cases("吸食違禁物駕駛") };
