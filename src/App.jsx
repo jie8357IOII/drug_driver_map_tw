@@ -332,7 +332,7 @@ function zoomedViewBox(zoom, pan = { x: 0, y: 0 }, bounds = defaultMapBounds) {
 
 async function loadJson(filePath, fallback, optional = false) {
   try {
-    const response = await fetch(filePath);
+    const response = await fetch(filePath, { cache: "no-store" });
     if (optional && response.status === 404) return fallback;
     if (!response.ok) throw new Error(`${filePath} ${response.status}`);
     return await response.json();
@@ -349,13 +349,16 @@ function useDashboardData() {
     let alive = true;
     const baseUrl = import.meta.env.BASE_URL;
 
-    Promise.all([
-      loadJson(`${baseUrl}data/incidents.json`, []),
-      loadJson(`${baseUrl}data/drug_suspects_monthly.json`, []),
-      loadJson(`${baseUrl}data/news.json`, null),
-      loadJson(`${baseUrl}data/news-status.json`, null),
-      loadJson(`${baseUrl}news-build.json`, null, true),
-    ]).then(([incidents, suspects, news, newsStatus, newsBuild]) => {
+    // Pages caches stable data URLs across deployments. Read the current build
+    // first, then give every news file the same snapshot-specific cache key.
+    loadJson(`${baseUrl}news-build.json?check=${Date.now()}`, null, true).then(async (newsBuild) => {
+      const version = encodeURIComponent(newsBuild?.snapshotId || Date.now());
+      const [incidents, suspects, news, newsStatus] = await Promise.all([
+        loadJson(`${baseUrl}data/incidents.json?v=${version}`, []),
+        loadJson(`${baseUrl}data/drug_suspects_monthly.json`, []),
+        loadJson(`${baseUrl}data/news.json?v=${version}`, null),
+        loadJson(`${baseUrl}data/news-status.json?v=${version}`, null),
+      ]);
       if (alive) setData({
         incidents: uniqueIncidents(Array.isArray(incidents) ? incidents : []),
         suspects: Array.isArray(suspects) ? suspects : [],
