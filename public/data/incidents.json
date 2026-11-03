@@ -1,5 +1,61 @@
 [
   {
+    "id": "ltn-9189d24b27e1",
+    "title": "高雄男無照逆向騎人行道 警查出二度毒駕被逮",
+    "source": "LTN",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5625421",
+    "publishedAt": "2026-11-01",
+    "city": "高雄市",
+    "deaths": null,
+    "injuries": null,
+    "summary": "高雄李男無照逆向騎人行道，警查出二度毒駕被逮。（民眾提供） 高雄李姓男子（47歲）騎機車違規逆向行駛，被巡邏員警攔查，發現他不僅駕照已遭註銷，面對盤問時，神情異常緊張、手腳顫抖，身上也散發毒品氣味，警方實施唾液毒品檢測，結果呈安非他命陽性反應，當場將他逮捕送辦。 鼓山分局今（1）日指出，前日巡邏經鼓",
+    "confidence": "needs_review",
+    "extractedDetails": {
+      "driver": {},
+      "drug": {},
+      "crash": {},
+      "victim": {},
+      "context": {}
+    },
+    "dataQuality": {
+      "includeInStats": false,
+      "needsHumanReview": true,
+      "flags": [
+        "automated_candidate",
+        "unknown_casualties"
+      ],
+      "sourceSearchUrl": "https://search.ltn.com.tw/list?keyword=%E6%AF%92%E9%A7%95&start_time=20261031&end_time=20261102&sort=date&type=all"
+    }
+  },
+  {
+    "id": "ltn-a8efbe126e00",
+    "title": "男逆向騎車見警神色慌！警查獲2種毒品送辦",
+    "source": "LTN",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5624523",
+    "publishedAt": "2026-10-31",
+    "city": "高雄市",
+    "deaths": null,
+    "injuries": null,
+    "summary": "警方查獲洪男攜帶2種毒品送辦。（民眾提供） 高雄市一名洪姓男子騎自行車違規逆向行駛楠梓區右昌街與三山街口，見警心虛神色慌張，警方查獲海洛因、新興毒品「喪屍煙彈」等，警訊後將他依毒品罪嫌移送法辦。 楠梓警分局警員前天巡邏經過楠梓區右昌街與三山街口，發現46歲洪姓男子騎乘自行車逆向行駛，主動上前實施攔查",
+    "confidence": "needs_review",
+    "extractedDetails": {
+      "driver": {},
+      "drug": {},
+      "crash": {},
+      "victim": {},
+      "context": {}
+    },
+    "dataQuality": {
+      "includeInStats": false,
+      "needsHumanReview": true,
+      "flags": [
+        "automated_candidate",
+        "unknown_casualties"
+      ],
+      "sourceSearchUrl": "https://search.ltn.com.tw/list?keyword=%E6%AF%92%E9%A7%95&start_time=20261031&end_time=20261102&sort=date&type=all&page=2"
+    }
+  },
+  {
     "id": "ltn-57f930a06fc2",
     "title": "毒駕連環爆！行人遭拉K騎士撞昏迷 1人拒檢持毒狂逃落網",
     "source": "LTN",
