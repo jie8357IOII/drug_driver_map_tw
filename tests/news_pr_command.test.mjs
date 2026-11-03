@@ -35,7 +35,7 @@ test("retired PR wrapper rejects execution without touching Git, staged edits or
 });
 
 async function publisher(t) {
-  const ctx = await sandbox(t, ["publish_news.mjs", "news_records.mjs"]);
+  const ctx = await sandbox(t, ["publish_news.mjs", "news_records.mjs", "official_traffic.mjs"]);
   const snapshot = buildNewsSnapshot({ baseIncidents: [checkedOld], analyses: [], checkedAt, throughDate: null });
   const directory = path.join(ctx.directory, "snapshot");
   const manifest = await writeSnapshot(directory, snapshot);

@@ -3670,6 +3670,88 @@ body {
   background: #f5f7f0;
 }
 
+.official-traffic-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.official-traffic-stale {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid #c5b391;
+  border-radius: 8px;
+  background: #fff8e9;
+  color: #70511e;
+  font-size: 0.87rem;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.official-traffic-metadata {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 24px;
+  margin: 14px 0;
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.official-traffic-metadata dt {
+  color: #62665c;
+  font-size: 0.8rem;
+}
+
+.official-traffic-metadata dd {
+  margin: 3px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.coverage-official a {
+  color: #285f52;
+  text-underline-offset: 3px;
+}
+
+.official-traffic-controls p {
+  flex: 1 1 260px;
+  margin: 0;
+}
+
+.official-traffic-table {
+  width: 100%;
+  min-width: 660px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.87rem;
+  line-height: 1.7;
+}
+
+.official-traffic-table caption {
+  padding: 8px 0;
+  text-align: left;
+  color: #62665c;
+}
+
+.official-traffic-table th,
+.official-traffic-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #dcded5;
+}
+
+.official-traffic-table thead {
+  background: #e6eee3;
+}
+
+.official-traffic-table td {
+  white-space: nowrap;
+}
+
+.official-traffic-table .official-case-count {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 .coverage-period-actions {
   display: flex;
   flex-wrap: wrap;
@@ -3725,7 +3807,8 @@ body {
   font-size: 0.87rem;
 }
 
-.coverage-review-controls {
+.coverage-review-controls,
+.official-traffic-controls {
   display: flex;
   align-items: end;
   flex-wrap: wrap;
@@ -3734,14 +3817,16 @@ body {
   font-size: 0.85rem;
 }
 
-.coverage-review-controls label {
+.coverage-review-controls label,
+.official-traffic-controls label {
   display: grid;
   min-width: 190px;
   gap: 6px;
   font-weight: 800;
 }
 
-.coverage-review-controls select {
+.coverage-review-controls select,
+.official-traffic-controls select {
   min-height: 44px;
   border: 1px solid #c6c6b9;
   border-radius: 8px;
@@ -3818,11 +3903,16 @@ body {
     gap: 18px;
   }
 
+  .official-traffic-metadata {
+    grid-template-columns: 1fr;
+  }
+
   .coverage-history > summary span {
     display: block;
   }
 
-  .coverage-review-controls label {
+  .coverage-review-controls label,
+  .official-traffic-controls label {
     width: 100%;
   }
 
