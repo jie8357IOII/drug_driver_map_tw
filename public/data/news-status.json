@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastCheckedAt": "2026-11-03T10:12:37.138Z",
+  "lastCheckedAt": "2026-11-03T10:35:22.897Z",
   "lastChangedAt": "2026-11-03T10:12:37.138Z",
   "lastPublishedAt": null,
   "sourceCoverage": [
@@ -21,7 +21,7 @@
           "酒測",
           "酒駕"
         ],
-        "checkedAt": "2026-11-03T10:12:37.138Z"
+        "checkedAt": "2026-11-03T10:35:22.897Z"
       }
     ],
     "recordDates": {
@@ -1670,12 +1670,198 @@
           ]
         }
       ]
-    },
-    "alignment": {
-      "source": "NPA",
-      "dataset": "drug_suspects_monthly",
-      "fromMonth": "2023-01",
-      "toMonth": "2026-03"
     }
+  },
+  "officialTraffic": {
+    "version": 1,
+    "source": "MOTC_ROADSAFETY",
+    "dataset": "first_party_cause_by_vehicle",
+    "sourceUrl": "https://roadsafety.tw/AccAgeI26CauseOrder?type=肇因分析",
+    "scope": "第一當事者事故肇因，分車種、全國、全年齡",
+    "fromMonth": "2023-01",
+    "toMonth": "2026-08",
+    "sourceUpdatedAt": "2026-10-27",
+    "notice": "112-114年、115年1-8月查詢結果為初估值",
+    "checkedAt": "2026-11-03T10:35:22.897Z",
+    "fetchedAt": "2026-11-03T10:35:22.897Z",
+    "status": "current",
+    "rows": [
+      {
+        "year": 2023,
+        "fromMonth": "2023-01",
+        "toMonth": "2023-12",
+        "vehicleType": 0,
+        "vehicle": "機車",
+        "alcoholCases": 2488,
+        "drugCases": 8,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=112&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=0",
+        "sourceSha256": "3ffca0b72aaa37ef16d3997f671c8f6fcdea859ea2b5a297b0d679e53f9f4711"
+      },
+      {
+        "year": 2023,
+        "fromMonth": "2023-01",
+        "toMonth": "2023-12",
+        "vehicleType": 1,
+        "vehicle": "小型車",
+        "alcoholCases": 1122,
+        "drugCases": 6,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=112&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=1",
+        "sourceSha256": "78cd5febca08ff11207045f4e8df38ac63fc03bfb32e2f557ddc34cf1e12f692"
+      },
+      {
+        "year": 2023,
+        "fromMonth": "2023-01",
+        "toMonth": "2023-12",
+        "vehicleType": 4,
+        "vehicle": "大型車",
+        "alcoholCases": 23,
+        "drugCases": null,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=112&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=4",
+        "sourceSha256": "1a69dd4c7205c2d96890250a2605bf37fc6d3b486194c16e907f453c47b610a1"
+      },
+      {
+        "year": 2023,
+        "fromMonth": "2023-01",
+        "toMonth": "2023-12",
+        "vehicleType": 2,
+        "vehicle": "自行車(含電自、電輔)",
+        "alcoholCases": 378,
+        "drugCases": 1,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=112&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=2",
+        "sourceSha256": "3c918f3d11337a4ec0f356520645a1c9df10f2796d1488ef657aebb106125964"
+      },
+      {
+        "year": 2024,
+        "fromMonth": "2024-01",
+        "toMonth": "2024-12",
+        "vehicleType": 0,
+        "vehicle": "機車",
+        "alcoholCases": 2341,
+        "drugCases": 8,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=113&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=0",
+        "sourceSha256": "e61fc6d5adac7ec5de8f81d3868f026cbf49e875a545aafc61b839252a2f82ca"
+      },
+      {
+        "year": 2024,
+        "fromMonth": "2024-01",
+        "toMonth": "2024-12",
+        "vehicleType": 1,
+        "vehicle": "小型車",
+        "alcoholCases": 1063,
+        "drugCases": 24,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=113&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=1",
+        "sourceSha256": "f9e16ddff5ba9a755ca1f6de543413784872261b9f5b478f6c3baee30ba30dec"
+      },
+      {
+        "year": 2024,
+        "fromMonth": "2024-01",
+        "toMonth": "2024-12",
+        "vehicleType": 4,
+        "vehicle": "大型車",
+        "alcoholCases": 25,
+        "drugCases": null,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=113&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=4",
+        "sourceSha256": "4295700246aea4b083a59c7ef69e1de6ea0794a41f60f956b28ec79ed98968bc"
+      },
+      {
+        "year": 2024,
+        "fromMonth": "2024-01",
+        "toMonth": "2024-12",
+        "vehicleType": 2,
+        "vehicle": "自行車(含電自、電輔)",
+        "alcoholCases": 393,
+        "drugCases": null,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=113&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=2",
+        "sourceSha256": "62ec6761eabd94a7718a8e5f4e3ee31d924a53c70abd5344af5e8ad7c08a36b7"
+      },
+      {
+        "year": 2025,
+        "fromMonth": "2025-01",
+        "toMonth": "2025-12",
+        "vehicleType": 0,
+        "vehicle": "機車",
+        "alcoholCases": 2199,
+        "drugCases": 21,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=114&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=0",
+        "sourceSha256": "3f79e427c2226db5e85afa1ec5d08ba6cebf31d49a501eb45ad6f28e3ffc55fa"
+      },
+      {
+        "year": 2025,
+        "fromMonth": "2025-01",
+        "toMonth": "2025-12",
+        "vehicleType": 1,
+        "vehicle": "小型車",
+        "alcoholCases": 1061,
+        "drugCases": 66,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=114&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=1",
+        "sourceSha256": "f9a6f781c00cc819de0752cbc365e899e94fc59ff7f8e6d41fcad946c71b0a13"
+      },
+      {
+        "year": 2025,
+        "fromMonth": "2025-01",
+        "toMonth": "2025-12",
+        "vehicleType": 4,
+        "vehicle": "大型車",
+        "alcoholCases": 17,
+        "drugCases": 4,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=114&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=4",
+        "sourceSha256": "30facb00edd514a5db9bc518a36045a1c94e9156f7e7c45a21dee051d23f5042"
+      },
+      {
+        "year": 2025,
+        "fromMonth": "2025-01",
+        "toMonth": "2025-12",
+        "vehicleType": 2,
+        "vehicle": "自行車(含電自、電輔)",
+        "alcoholCases": 396,
+        "drugCases": 1,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=114&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=2",
+        "sourceSha256": "b7a3025b78a4c59d899816cf277a053989f72c5dbc1bf2ffdcaa5c2e58212a87"
+      },
+      {
+        "year": 2026,
+        "fromMonth": "2026-01",
+        "toMonth": "2026-08",
+        "vehicleType": 0,
+        "vehicle": "機車",
+        "alcoholCases": 1278,
+        "drugCases": 89,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=115&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=0",
+        "sourceSha256": "2cf071835c720b89c03edf83038b88ee1df6ed60553e0a1bb443ccd0acff2415"
+      },
+      {
+        "year": 2026,
+        "fromMonth": "2026-01",
+        "toMonth": "2026-08",
+        "vehicleType": 1,
+        "vehicle": "小型車",
+        "alcoholCases": 583,
+        "drugCases": 191,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=115&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=1",
+        "sourceSha256": "9c8909c0829ea4c30283179da9d366d0d8b8cb6351b01233128a769262fd9088"
+      },
+      {
+        "year": 2026,
+        "fromMonth": "2026-01",
+        "toMonth": "2026-08",
+        "vehicleType": 4,
+        "vehicle": "大型車",
+        "alcoholCases": 7,
+        "drugCases": 9,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=115&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=4",
+        "sourceSha256": "b488be4ece35806f5cc60e643d0fba2812e08b15aefbf588a19c52ef93d59f78"
+      },
+      {
+        "year": 2026,
+        "fromMonth": "2026-01",
+        "toMonth": "2026-08",
+        "vehicleType": 2,
+        "vehicle": "自行車(含電自、電輔)",
+        "alcoholCases": 286,
+        "drugCases": 2,
+        "sourceUrl": "https://roadsafety.tw/api/AccAgeI26CauseOrderAjax/GetResult?Cyear=115&CityKeyid=0&AreaKeyid=0&OrderType=1&Age=0&I26type=2",
+        "sourceSha256": "2290cfbbb3823eb95dc4f78c6aeba0d2b3cdcda1c7209e7fb2745e02ba6fbd60"
+      }
+    ]
   }
 }
