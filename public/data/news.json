@@ -2,6 +2,72 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-2cd804e5bf1d0d87",
+      "title": "臉書常貼飲酒照 5度酒駕不悔改／冷血男又酒駕 撞死男大生肇逃",
+      "url": "https://news.ltn.com.tw/news/society/paper/1776983",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "unattributed_outcome:dead",
+        "unknown_event_date",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-3e77443791e2acb7",
+      "title": "男大生才18歲 計畫去波蘭當交換生",
+      "url": "https://news.ltn.com.tw/news/society/paper/1776984",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "unknown_event_date",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-cb437a3700783750",
+      "title": "毒駕被抓 同車2乘客重罰",
+      "url": "https://news.ltn.com.tw/news/society/paper/1776985",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "嘉義市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-090e7cc73155de2e",
       "title": "白牌車司機手抖打不出導航 乘客驚覺毒駕急報警",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5626293",
@@ -75,6 +141,24 @@
         "injuries_not_reported",
         "deaths_unknown",
         "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-87c8e4f1b1a3f273",
+      "title": "毒酒駕新法上路 新北警專案一晚查獲33件",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5626982",
+      "source": "LTN",
+      "publishedAt": "2026-11-02",
+      "kind": "other",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "multiple_events_unresolved"
       ]
     },
     {
@@ -199,6 +283,24 @@
       "eventIds": [],
       "city": null,
       "issues": []
+    },
+    {
+      "id": "article-f597526e9b7b36cf",
+      "title": "台南永康男大生深夜返校被撞死 無照又肇逃酒駕慣犯收押",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5626895",
+      "source": "LTN",
+      "publishedAt": "2026-11-02",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ]
     },
     {
       "id": "article-13a8bd10f2c1ba81",

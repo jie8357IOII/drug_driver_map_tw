@@ -1,11 +1,130 @@
 {
   "version": 1,
-  "throughDate": "2026-11-02",
+  "throughDate": "2026-11-03",
   "rejectedUrls": [],
-  "lastCheckedAt": "2026-11-03T10:35:22.897Z",
-  "lastChangedAt": "2026-11-03T10:12:37.138Z",
-  "dataHash": "44bc9059ef5886dccb1e729295a113693ade158405a02aa5d08c9147541ae72f",
+  "lastCheckedAt": "2026-11-03T21:46:56.639Z",
+  "lastChangedAt": "2026-11-03T21:46:56.639Z",
+  "dataHash": "afe085f2706d050365fb3f1b5e03364d3e4f7229fbec9485b86d2b0216d68466",
   "articles": [
+    {
+      "id": "article-2cd804e5bf1d0d87",
+      "title": "臉書常貼飲酒照 5度酒駕不悔改／冷血男又酒駕 撞死男大生肇逃",
+      "url": "https://news.ltn.com.tw/news/society/paper/1776983",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "unattributed_outcome:dead",
+        "unknown_event_date",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "eb697c70a7da48fd064b14120e5077d4bc6cef31a9a65664f1b61fea0f97ab34",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unattributed_outcome:dead",
+            "unknown_event_date",
+            "deaths_lower_bound",
+            "injuries_not_reported",
+            "event_date_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-3e77443791e2acb7",
+      "title": "男大生才18歲 計畫去波蘭當交換生",
+      "url": "https://news.ltn.com.tw/news/society/paper/1776984",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "unknown_event_date",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "c489f34ea7adb42ab75297b80fe2c7c188ad9cc69fabe1229339882ba2bc81a4",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unknown_event_date",
+            "injuries_not_reported",
+            "driver_identity_unresolved",
+            "driver_identity_not_checked",
+            "impairment_driver_link_not_checked",
+            "event_date_not_checked",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-cb437a3700783750",
+      "title": "毒駕被抓 同車2乘客重罰",
+      "url": "https://news.ltn.com.tw/news/society/paper/1776985",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "嘉義市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "427fe208ae369261590f22a525d18bc46029232ccc06d7ef6d9fe8766a8f1c72",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-0179ea8121ff"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
     {
       "id": "article-090e7cc73155de2e",
       "title": "白牌車司機手抖打不出導航 乘客驚覺毒駕急報警",
@@ -144,6 +263,28 @@
           ]
         }
       ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-87c8e4f1b1a3f273",
+      "title": "毒酒駕新法上路 新北警專案一晚查獲33件",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5626982",
+      "source": "LTN",
+      "publishedAt": "2026-11-02",
+      "kind": "other",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "multiple_events_unresolved"
+      ],
+      "bodyHash": "b6e70c50a4243688e5c0f4c01bb8349dc44d84790ae8a5c71d56dba664304258",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [],
       "origin": "confirmed_source"
     },
     {
@@ -348,6 +489,39 @@
       "bodyHash": "209b5eae675e36fffed93fc9b3b5955870620c87fc129b4008940455d7ef0c9d",
       "understandingVersion": "local-events-v3",
       "eventLinks": [],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-f597526e9b7b36cf",
+      "title": "台南永康男大生深夜返校被撞死 無照又肇逃酒駕慣犯收押",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5626895",
+      "source": "LTN",
+      "publishedAt": "2026-11-02",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "a68409b81f69cae4bdc42a794f7436ec4f389607ad05956c9fd4a35a81e5be9b",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-5a0b2afa3dc1"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        }
+      ],
       "origin": "confirmed_source"
     },
     {
@@ -11638,7 +11812,8 @@
       ],
       "conflicts": [],
       "issues": [
-        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5626807"
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5626807",
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5626895"
       ]
     },
     {
@@ -11855,7 +12030,9 @@
         }
       ],
       "conflicts": [],
-      "issues": []
+      "issues": [
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/paper/1776985"
+      ]
     },
     {
       "id": "ltn-8320a25b814e",
@@ -11903,7 +12080,7 @@
       {
         "source": "LTN",
         "from": "2026-10-27",
-        "to": "2026-11-02",
+        "to": "2026-11-03",
         "keywords": [
           "拒測",
           "毒駕",
@@ -11911,12 +12088,12 @@
           "酒測",
           "酒駕"
         ],
-        "checkedAt": "2026-11-03T10:35:22.897Z"
+        "checkedAt": "2026-11-03T21:46:56.639Z"
       }
     ],
     "recordDates": {
       "publishedFrom": "2024-05-05",
-      "publishedTo": "2026-11-02",
+      "publishedTo": "2026-11-03",
       "occurredFrom": "2023-02-07",
       "occurredTo": "2026-11-02"
     },
@@ -13562,7 +13739,7 @@
       ]
     }
   },
-  "coverageHash": "cc4b04fd74918fa58aabef5a4ee49ae42a9139c10a6c22ecc2c70b6be22858a9",
+  "coverageHash": "88a9f320ee1a61c8cc20cb3fc6c3daf9997a78f230674877c314c8db5c889631",
   "api": {
     "date": "2026-11-03",
     "runRequests": 0,
@@ -13579,8 +13756,8 @@
     "toMonth": "2026-08",
     "sourceUpdatedAt": "2026-10-27",
     "notice": "112-114年、115年1-8月查詢結果為初估值",
-    "checkedAt": "2026-11-03T10:35:22.897Z",
-    "fetchedAt": "2026-11-03T10:35:22.897Z",
+    "checkedAt": "2026-11-03T21:46:56.639Z",
+    "fetchedAt": "2026-11-03T21:46:56.639Z",
     "status": "current",
     "rows": [
       {
