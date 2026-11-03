@@ -8,13 +8,17 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
     "data:excel": "python3 scripts/convert_excel.py public/data/q04010103_210702733.xlsx public/data/drug_suspects_monthly.json",
-    "data:news": "node scripts/scrape_news.mjs",
+    "data:news": "node scripts/update_news.mjs",
     "data:clean": "node scripts/clean_incidents.mjs",
     "data:forecast": "node scripts/build_forecast.mjs",
     "data:all": "npm run data:excel && npm run data:forecast",
     "test": "node --test tests/*.test.mjs",
     "data:validate": "node scripts/scrape_news.mjs --validate",
-    "news:pr": "bash scripts/update_news_pr.sh"
+    "news:pr": "bash scripts/update_news_pr.sh",
+    "news:analyze": "node scripts/analyze_news.mjs",
+    "news:update": "node scripts/update_news.mjs",
+    "news:replay": "node scripts/update_news.mjs",
+    "news:publish": "node scripts/publish_news.mjs"
   },
   "dependencies": {
     "@svg-maps/taiwan": "^2.0.0",

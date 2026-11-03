@@ -1,0 +1,5 @@
+# Preserve upstream bytes and stable domain hashes across checkout platforms.
+dict.txt.big -text
+LICENSE.jieba -text
+domain.json text eol=lf
+manifest.json text eol=lf

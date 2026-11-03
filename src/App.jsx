@@ -97,7 +97,8 @@ function getSvgMapBounds(locations, padding = 96) {
 const mainlandMapLocations = mapLocations.filter((location) => !offshoreCities.has(location.city));
 // 初始地圖固定聚焦完整本島，保留足夠 padding，避免本島被裁切或放太大。
 const defaultMapBounds = getSvgMapBounds(mainlandMapLocations, 132);
-const iconMap = { death: "☠️", injury: "🩼" };
+const iconMap = { death: "☠️", injury: "🩼", event: "件" };
+const newsKindLabels = { incident: "事件", policy: "政策", judicial: "判決／司法", statistics: "統計", other: "其他" };
 
 function toMonthLabel(month) {
   const [year, monthNum] = month.split("-");
@@ -114,22 +115,141 @@ function formatDate(dateText) {
   return dateText.replaceAll("-", "/");
 }
 
+const statusTimeFormatter = new Intl.DateTimeFormat("zh-TW", {
+  timeZone: "Asia/Taipei",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hourCycle: "h23",
+});
+
+function formatStatusTime(timestamp) {
+  if (!timestamp) return "";
+  const date = new Date(timestamp);
+  return Number.isNaN(date.getTime()) ? "" : `${statusTimeFormatter.format(date)}（台北時間）`;
+}
+
 function isStatsIncident(incident) {
-  return incident.dataQuality?.includeInStats !== false;
+  const quality = incident.dataQuality || {};
+  if (quality.includeInStats !== true) return false;
+  if (quality.verificationStatus === "machine_checked") return quality.eventCountValid === true;
+  if (quality.verificationStatus === "manual_checked") return quality.eventCountValid !== false;
+  if (quality.verificationStatus) return false;
+  // Compatibility for unmigrated records; explicit legacy rows remain excluded.
+  const review = quality.needsHumanReview === true || incident.needsHumanReview === true;
+  return !review && (quality.needsHumanReview === false || incident.needsHumanReview === false);
+}
+
+function hasPendingFields(incident) {
+  return incident.dataQuality?.needsHumanReview === true || incident.needsHumanReview === true ||
+    ["deaths", "injuries"].some((field) => ["unknown", "conflict"].includes(incident.dataQuality?.fieldStatus?.[field]));
+}
+
+function isLegacyIncident(incident) {
+  return !incident.dataQuality?.verificationStatus || incident.dataQuality.verificationStatus === "legacy";
+}
+
+function isMapIncident(incident) {
+  return isStatsIncident(incident) && cities.includes(incident.city) &&
+    (incident.dataQuality?.mapEligible === true ||
+      (isLegacyIncident(incident) && incident.dataQuality?.mapEligible !== false));
+}
+
+function impairmentTypes(item, legacy = false) {
+  return Array.isArray(item.impairmentTypes) ? item.impairmentTypes : legacy ? ["drug"] : [];
+}
+
+function impairmentLabel(item, legacy = false) {
+  const types = impairmentTypes(item, legacy);
+  const labels = types.map((type) => ({ alcohol: "酒駕", drug: "毒駕" })[type]).filter(Boolean);
+  return labels.length ? labels.join("＋") : "類別待釐清";
+}
+
+function matchesImpairment(item, filter, legacy = false) {
+  const types = impairmentTypes(item, legacy);
+  return filter === "all" || (filter === "both" ? types.includes("alcohol") && types.includes("drug") : types.includes(filter));
+}
+
+function uniqueIncidents(items) {
+  return [...new Map(items.map((item, index) => [item.id || `unidentified-${index}`, item])).values()];
+}
+
+function casualtyValue(incident, field) {
+  const status = incident.dataQuality?.fieldStatus?.[field];
+  // In records, a conflict retains the previous checked value; no retained value is null.
+  if (!["checked", "conflict"].includes(status) && (status !== undefined || !isLegacyIncident(incident))) return null;
+  const value = incident[field];
+  return Number.isInteger(value) && value >= 0 ? value : null;
+}
+
+function casualtyText(incident, field) {
+  const value = casualtyValue(incident, field);
+  if (incident.dataQuality?.fieldStatus?.[field] === "conflict") {
+    return value === null ? "未明（衝突待釐清，無既有核對值）" : `${value}（沿用既有核對值，新報數值待釐清）`;
+  }
+  return value ?? "未明";
+}
+
+function incidentTotals(incidents) {
+  return uniqueIncidents(incidents).reduce((totals, incident) => {
+    totals.events += 1;
+    for (const field of ["deaths", "injuries"]) {
+      const value = casualtyValue(incident, field);
+      if (value === null) totals[`${field}Missing`] += 1;
+      else {
+        totals[field] += value;
+        if (incident.dataQuality?.fieldStatus?.[field] === "conflict") totals[`${field}Retained`] += 1;
+      }
+    }
+    return totals;
+  }, { events: 0, deaths: 0, injuries: 0, deathsMissing: 0, injuriesMissing: 0, deathsRetained: 0, injuriesRetained: 0 });
+}
+
+function casualtyCoverage(totals, field) {
+  const retained = totals[`${field}Retained`];
+  return `${totals[`${field}Missing`]} 件未明${retained ? `；${retained} 件衝突沿用既有核對值` : ""}`;
+}
+
+function casualtySummary(totals) {
+  return `已知死亡 ${totals.deaths}（${casualtyCoverage(totals, "deaths")}）／受傷 ${totals.injuries}（${casualtyCoverage(totals, "injuries")}）`;
+}
+
+function articleFeed(articles, incidents) {
+  const byUrl = new Map();
+  for (const incident of incidents) {
+    for (const report of [incident, ...(incident.relatedReports || [])]) {
+      if (!report.url) continue;
+      const previous = byUrl.get(report.url);
+      byUrl.set(report.url, {
+        id: report.url, title: report.title || incident.title, url: report.url,
+        source: report.source || incident.source, publishedAt: report.publishedAt || incident.publishedAt,
+        kind: "incident", status: "needs_clarification", legacy: isLegacyIncident(incident),
+        impairmentTypes: [...new Set([...(previous?.impairmentTypes || []), ...impairmentTypes(incident, isLegacyIncident(incident))])],
+        eventIds: [...new Set([...(previous?.eventIds || []), incident.id])], city: incident.city, issues: [],
+      });
+    }
+  }
+  for (const article of articles) {
+    const archivedEventIds = byUrl.get(article.url)?.eventIds || [];
+    byUrl.set(article.url || article.id, { ...article, legacy: false, archivedEventIds });
+  }
+  return [...byUrl.values()].sort((a, b) => String(b.publishedAt || "").localeCompare(String(a.publishedAt || "")));
 }
 
 function qualityLabel(incident) {
-  if (incident.dataQuality?.includeInStats === false) return "排除統計";
-  if (incident.dataQuality?.flags?.includes("count_corrected")) return "已校正";
-  if (incident.dataQuality?.needsHumanReview) return "需複核";
-  return "可統計";
+  if (isLegacyIncident(incident)) return isStatsIncident(incident) ? "歷史資料（舊口徑）" : "歷史待核對";
+  const status = incident.dataQuality?.verificationStatus;
+  const label = status === "manual_checked" ? "人工核對" : status === "machine_checked" ? "機器規則核對" : "待釐清";
+  if (!isStatsIncident(incident)) return `${label}・排除統計`;
+  return hasPendingFields(incident) ? `${label}・事件可計數，部分欄位待釐清` : label;
 }
 
 function qualityTone(incident) {
-  if (incident.dataQuality?.includeInStats === false) return "excluded";
-  if (incident.dataQuality?.flags?.includes("count_corrected")) return "corrected";
-  if (incident.dataQuality?.needsHumanReview) return "review";
-  return "ok";
+  if (hasPendingFields(incident)) return "review";
+  return isStatsIncident(incident) ? (isLegacyIncident(incident) ? "corrected" : "ok") : "review";
 }
 
 function countValues(items, selector, limit = 8) {
@@ -210,9 +330,10 @@ function zoomedViewBox(zoom, pan = { x: 0, y: 0 }, bounds = defaultMapBounds) {
   return `${x + (width - nextWidth) / 2 + clampedPan.x} ${y + (height - nextHeight) / 2 + clampedPan.y} ${nextWidth} ${nextHeight}`;
 }
 
-async function loadJson(filePath, fallback) {
+async function loadJson(filePath, fallback, optional = false) {
   try {
     const response = await fetch(filePath);
+    if (optional && response.status === 404) return fallback;
     if (!response.ok) throw new Error(`${filePath} ${response.status}`);
     return await response.json();
   } catch (error) {
@@ -222,7 +343,7 @@ async function loadJson(filePath, fallback) {
 }
 
 function useDashboardData() {
-  const [data, setData] = useState({ incidents: [], suspects: [], loading: true });
+  const [data, setData] = useState({ incidents: [], suspects: [], articles: [], newsStatus: null, newsBuild: null, loading: true });
 
   useEffect(() => {
     let alive = true;
@@ -231,8 +352,15 @@ function useDashboardData() {
     Promise.all([
       loadJson(`${baseUrl}data/incidents.json`, []),
       loadJson(`${baseUrl}data/drug_suspects_monthly.json`, []),
-    ]).then(([incidents, suspects]) => {
-      if (alive) setData({ incidents, suspects, loading: false });
+      loadJson(`${baseUrl}data/news.json`, null),
+      loadJson(`${baseUrl}data/news-status.json`, null),
+      loadJson(`${baseUrl}news-build.json`, null, true),
+    ]).then(([incidents, suspects, news, newsStatus, newsBuild]) => {
+      if (alive) setData({
+        incidents: uniqueIncidents(Array.isArray(incidents) ? incidents : []),
+        suspects: Array.isArray(suspects) ? suspects : [],
+        articles: Array.isArray(news?.articles) ? news.articles : [], newsStatus, newsBuild, loading: false,
+      });
     });
 
     return () => {
@@ -258,9 +386,9 @@ function LatestIncidentMetric({ incident }) {
   return (
     <article className="metric-card latest-incident-card accent">
       <i className="metric-glow" aria-hidden="true" />
-      <span>最新事故縣市</span>
+      <span>最近刊登的統計事件</span>
       <strong>
-        {incident ? `${incident.city}｜${formatDate(incident.publishedAt)}` : "無資料"}
+        {incident ? incident.city || "縣市未明" : "無資料"}
       </strong>
       {incident ? (
         <a href={incident.url} target="_blank" rel="noreferrer" title={incident.title}>
@@ -269,29 +397,21 @@ function LatestIncidentMetric({ incident }) {
       ) : (
         <small>目前沒有符合篩選條件的事故</small>
       )}
+      {incident ? <small>發生：{formatDate(incident.occurredAt) || "未明"}｜發布：{formatDate(incident.publishedAt) || "未明"}</small> : null}
     </article>
   );
 }
 
-function buildCityRanking(incidents, suspects, months) {
-  const selectedMonthSet = new Set(months);
-
+function buildCityRanking(incidents) {
   return cities
     .map((city) => {
       const cityIncidents = incidents.filter((incident) => incident.city === city);
-      const deaths = cityIncidents.reduce((sum, item) => sum + Number(item.deaths || 0), 0);
-      const injuries = cityIncidents.reduce((sum, item) => sum + Number(item.injuries || 0), 0);
-      const suspectTotal = suspects
-        .filter((row) => row.city === city && selectedMonthSet.has(row.month))
-        .reduce((sum, row) => sum + Number(row.suspects || 0), 0);
-      const score = deaths * 3 + injuries + cityIncidents.length * 1.5 + suspectTotal / 260;
+      const totals = incidentTotals(cityIncidents);
+      const score = totals.events;
 
       return {
         city,
-        deaths,
-        injuries,
-        events: cityIncidents.length,
-        suspectTotal,
+        ...totals,
         score,
       };
     })
@@ -300,8 +420,8 @@ function buildCityRanking(incidents, suspects, months) {
 
 function rankingLevel(item, index) {
   if (item.score <= 0) return "low";
-  if (index < 3 || item.deaths >= 3) return "high";
-  if (index < 8 || item.deaths + item.injuries > 0) return "medium";
+  if (index < 3) return "high";
+  if (index < 8) return "medium";
   return "low";
 }
 
@@ -316,22 +436,23 @@ function IncidentHoverCard({ incident, position }) {
     >
       <div className="hover-meta">
         <span>{incident.city}</span>
-        <span>{formatDate(incident.publishedAt)}</span>
+        <span>發布 {formatDate(incident.publishedAt)}</span>
         <span>{incident.source}</span>
       </div>
       <h3>{incident.title}</h3>
       <p className="hover-stats">
-        死亡 {incident.deaths}｜受傷 {incident.injuries}
+        此事件：死亡 {casualtyText(incident, "deaths")}｜受傷 {casualtyText(incident, "injuries")}
       </p>
-      <p>{incident.summary}</p>
-      <small>點擊圖示開啟新聞頁面</small>
+      <p>發生日期：{formatDate(incident.occurredAt) || "未明"}</p>
+      <QualityBadge incident={incident} />
+      <small>標記為縣市彙總，並非事故座標；此處列最近刊登的事件。點擊可篩選縣市。</small>
     </div>
   );
 }
 
 function CityIncidentBadge({ type, count, x, y, incident, onHover, onMove, onLeave, onSelectCity }) {
   const icon = iconMap[type];
-  const label = type === "death" ? "死亡" : "受傷";
+  const label = type === "event" ? "事件" : type === "death" ? "已知死亡" : "已知受傷";
   const width = count >= 100 ? 82 : count >= 10 ? 72 : 62;
   const severity = count >= 10 ? "major" : count >= 3 ? "medium" : "minor";
 
@@ -340,19 +461,22 @@ function CityIncidentBadge({ type, count, x, y, incident, onHover, onMove, onLea
       className={`city-incident-badge badge-${type} badge-${severity}`}
       tabIndex="0"
       role="button"
-      aria-label={`${incident.city}${label}${count}人`}
+      aria-label={`${incident.city}彙總${label}${count}${type === "event" ? "件" : "人"}`}
       transform={`translate(${x} ${y})`}
       onClick={() => onSelectCity(incident.city)}
       onMouseEnter={(event) => onHover(event, incident)}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
       onKeyDown={(event) => {
-        if (event.key === "Enter" || event.key === " ") onSelectCity(incident.city);
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onSelectCity(incident.city);
+        }
       }}
     >
       <rect x={-width / 2} y="-18" width={width} height="34" rx="17" />
       <text x="0" y="5" textAnchor="middle">
-        {icon}×{count}
+        {type === "event" ? `${count} 件` : `${icon}×${count}`}
       </text>
     </g>
   );
@@ -370,7 +494,9 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
 
-  const mapBounds = defaultMapBounds;
+  const mapBounds = useMemo(() => offshoreCities.has(selectedCity)
+    ? getSvgMapBounds(mapLocations.filter((location) => location.city === selectedCity), 40)
+    : defaultMapBounds, [selectedCity]);
 
   useEffect(() => {
     const nextPositions = {};
@@ -416,8 +542,8 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
         latestIncident: incident,
       };
 
-      current.deaths += Number(incident.deaths || 0);
-      current.injuries += Number(incident.injuries || 0);
+      current.deaths += casualtyValue(incident, "deaths") ?? 0;
+      current.injuries += casualtyValue(incident, "injuries") ?? 0;
       current.events.push(incident);
 
       if (
@@ -528,6 +654,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
         <div>
           <span>互動地圖</span>
           <h2>{selectedCity || "全台縣市"}</h2>
+          <p className="map-aggregation-note">縣市彙總，非事故座標；含零死傷與傷亡未明事件。離島可由縣市篩選查看彙總。</p>
         </div>
 
         <div className="zoom-control-wrap">
@@ -557,7 +684,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
         className={`taiwan-map ${zoom > 1 ? "is-draggable" : ""} ${isDragging ? "is-dragging" : ""}`}
         viewBox={viewBox}
         role="img"
-        aria-label="台灣毒駕事件地圖"
+        aria-label="台灣酒駕與毒駕事件縣市彙總地圖"
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={endPointerDrag}
@@ -584,7 +711,7 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
                 onKeyDown={(event) => {
                   if (event.key === "Enter" || event.key === " ") handleSelectCity(location.city);
                 }}
-                aria-label={`${location.city} 風險${levelLabel(risk)}`}
+                aria-label={`${location.city} 新聞事件數排序${levelLabel(risk)}`}
               />
             );
           })}
@@ -597,6 +724,17 @@ function TaiwanMap({ incidents, visibleTypes, selectedCity, cityLevels, onSelect
 
           {cityBadges.map((item) => (
             <g key={item.city} className={`city-badge-pair ${selectedCity === item.city ? "selected" : ""}`}>
+              <CityIncidentBadge
+                type="event"
+                count={item.events.length}
+                x={item.x + 38}
+                y={item.y - 34}
+                incident={item.latestIncident}
+                onHover={handleBadgeHover}
+                onMove={updateHoverPosition}
+                onLeave={() => setHoverIncident(null)}
+                onSelectCity={handleSelectCity}
+              />
               {visibleTypes.deaths && item.deaths > 0 ? (
                 <CityIncidentBadge
                   type="death"
@@ -725,7 +863,7 @@ function RankingList({ ranking, selectedCity, onSelectCity }) {
   return (
     <section className="ranking-list">
       <div className="ranking-title">
-        <h3>縣市排名</h3>
+        <h3>可定位新聞事件數排序</h3>
         <button type="button" onClick={() => onSelectCity("")}>
           全部縣市
         </button>
@@ -746,7 +884,7 @@ function RankingList({ ranking, selectedCity, onSelectCity }) {
                 {index + 1}. {item.city}
               </strong>
               <span>
-                {item.events} 件，死亡 {item.deaths}，受傷 {item.injuries}
+                {item.events} 件｜{casualtySummary(item)}
               </span>
             </div>
             <em className={`level-badge ${level}`}>{levelLabel(level)}</em>
@@ -758,21 +896,31 @@ function RankingList({ ranking, selectedCity, onSelectCity }) {
 }
 
 
-function DataStatusBar({ status }) {
+function DataStatusBar({ status, build }) {
+  const hasBuild = typeof build?.snapshotId === "string" && typeof build?.codeSha === "string";
   return (
-    <section className="data-status-bar panel-pop" aria-label="資料狀態">
+    <section className="data-status-bar publication-status panel-pop" aria-label="資料狀態">
       <div>
-        <span>資料更新</span>
-        <strong>{status.latestDate || "尚無資料"}</strong>
+        <span>最近檢查</span>
+        <strong>{formatStatusTime(status.lastCheckedAt) || "尚無檢查紀錄"}</strong>
       </div>
       <div>
-        <span>新聞事件</span>
-        <strong>{status.totalIncidents.toLocaleString()} 筆</strong>
+        <span>最近資料變更</span>
+        <strong>{formatStatusTime(status.lastChangedAt) || "尚無變更紀錄"}</strong>
       </div>
       <div>
-        <span>統計月份</span>
-        <strong>{status.monthRange || "尚無資料"}</strong>
+        <span>目前網站版本</span>
+        {hasBuild ? <>
+          <strong title={build.snapshotId}>資料 {build.snapshotId.slice(0, 12)}</strong>
+          <small className="build-code-version" title={build.codeSha}>程式 {build.codeSha.slice(0, 12)}</small>
+        </> : <strong>版本資訊尚未提供</strong>}
       </div>
+      <p className="publication-coverage">
+        來源範圍：{status.sourceCoverage?.join("、") || "未提供"}（非全台所有新聞）｜
+        檢查狀態：{status.status === "success" ? "完成" : status.status || "未提供"}｜
+        全站待釐清：{Number.isInteger(status.pendingCount) ? `${status.pendingCount} 項` : "未提供"}。
+        檢查完成不代表全部判讀正確；機器規則核對與人工核對分開標示。
+      </p>
     </section>
   );
 }
@@ -780,19 +928,19 @@ function DataStatusBar({ status }) {
 function InsightStrip({ insights }) {
   const items = [
     {
-      label: "最高風險",
-      value: insights.topRiskCity,
-      text: `綜合死傷、事件數與毒品嫌疑犯背景數，目前排序最高。`,
+      label: "可定位事件最多",
+      value: insights.topEventCity,
+      text: `依納入地圖的新聞事件數排序；不是酒駕、毒駕風險排名。`,
     },
     {
       label: "死亡集中",
       value: insights.topDeathCity,
-      text: `篩選期間內，新聞事件死亡人數最高的縣市。`,
+      text: `篩選期間內，可定位新聞事件的已知死亡人數最高；未明欄位不加總。`,
     },
     {
       label: "受傷集中",
       value: insights.topInjuryCity,
-      text: `篩選期間內，新聞事件受傷人數最高的縣市。`,
+      text: `篩選期間內，可定位新聞事件的已知受傷人數最高；未明欄位不加總。`,
     },
   ];
 
@@ -815,30 +963,34 @@ function MapLegend({ activeView }) {
   return (
     <section className="tool-section map-legend">
       <h3>地圖圖例</h3>
+      <div className="legend-row">
+        <span className="legend-pill event-pill">數字 件</span>
+        <p>縣市事件總數（含零死傷／未明）</p>
+      </div>
 
       <div className="legend-row">
         <span className="legend-pill death-pill">☠️×數字</span>
-        <p>死亡人數</p>
+        <p>已知死亡人數</p>
       </div>
 
       <div className="legend-row">
         <span className="legend-pill injury-pill">🩼×數字</span>
-        <p>受傷人數</p>
+        <p>已知受傷人數</p>
       </div>
 
       <div className="legend-row">
         <span className="risk-dot high" />
-        <p>高風險縣市</p>
+        <p>新聞事件數排序前 3 名</p>
       </div>
 
       <div className="legend-row">
         <span className="risk-dot medium" />
-        <p>中風險縣市</p>
+        <p>新聞事件數排序第 4–8 名</p>
       </div>
 
       <div className="legend-row">
         <span className="risk-dot low" />
-        <p>低風險縣市</p>
+        <p>其他縣市／無符合事件</p>
       </div>
     </section>
   );
@@ -864,7 +1016,7 @@ function CurrentFilterSummary({ selectedCity, selectedMonths, metrics }) {
         </div>
         <div>
           <dt>死傷</dt>
-          <dd>死亡 {metrics.deaths}｜受傷 {metrics.injuries}</dd>
+          <dd>{casualtySummary(metrics)}</dd>
         </div>
       </dl>
     </section>
@@ -923,7 +1075,7 @@ function GlobalMonthBar({ months, selectedMonths, setSelectedMonths }) {
     <section className="global-month-bar panel-pop" aria-label="全域月份篩選">
       <div className="global-month-head">
         <div>
-          <span>資料月份</span>
+          <span>新聞發布月份</span>
           <strong>{selectedMonths.length === months.length ? "全部月份" : `已選 ${selectedMonths.length} 個月份`}</strong>
         </div>
 
@@ -961,15 +1113,15 @@ function MobileSummaryBar({ status, metrics, latestIncident, selectedCity }) {
   return (
     <section className="mobile-summary-bar panel-pop" aria-label="手機版資料摘要">
       <div>
-        <span>{status.latestDate || "尚無日期"} 更新</span>
+        <span>最近檢查：{formatStatusTime(status.lastCheckedAt) || "未提供"}</span>
         <strong>
-          {selectedCity || "全部縣市"}｜{metrics.events}件｜{metrics.deaths}死{metrics.injuries}傷
+          {selectedCity || "全部縣市"}｜{metrics.events}件｜{casualtySummary(metrics)}
         </strong>
       </div>
 
       {latestIncident ? (
         <a href={latestIncident.url} target="_blank" rel="noreferrer">
-          最新：{latestIncident.city}｜{formatDate(latestIncident.publishedAt)}
+          最近刊登：{latestIncident.city}｜發布 {formatDate(latestIncident.publishedAt)}｜發生 {formatDate(latestIncident.occurredAt) || "未明"}
         </a>
       ) : (
         <small>目前篩選條件沒有最新事故</small>
@@ -989,11 +1141,11 @@ function PageContextBar({ activeView, selectedCity, metrics, selectedMonths, mon
     },
     map: {
       title: "地圖",
-      text: `${cityText}｜${metrics.events}件｜${metrics.deaths}死${metrics.injuries}傷`,
+      text: `${cityText}｜${metrics.events}件納入統計｜${casualtySummary(metrics)}`,
     },
     trend: {
       title: "縣市趨勢",
-      text: `${cityText}｜${monthText}｜死傷與毒品嫌疑犯趨勢`,
+      text: `${cityText}｜發布月份：${monthText}｜已知死傷與毒品嫌疑犯背景資料`,
     },
     caseStats: {
       title: "案件統計",
@@ -1051,8 +1203,8 @@ function ControlPanel({
         <h3>本期觀察重點</h3>
         <ul>
           <li>
-            <span>最高風險</span>
-            <strong>{insights.topRiskCity || "無資料"}</strong>
+            <span>可定位事件最多</span>
+            <strong>{insights.topEventCity || "無資料"}</strong>
           </li>
           <li>
             <span>死亡最高</span>
@@ -1159,12 +1311,12 @@ function TrendBreakChart({ rows }) {
             <g key={row.month}>
               <circle className="death-dot" cx={x} cy={yTopOf(row.deaths)} r="4">
                 <title>
-                  {toShortMonthLabel(row.month)} 死亡 {row.deaths}
+                  {toShortMonthLabel(row.month)} 已知死亡 {row.deaths}；{casualtyCoverage(row, "deaths")}
                 </title>
               </circle>
               <circle className="injury-dot" cx={x} cy={yTopOf(row.injuries)} r="4">
                 <title>
-                  {toShortMonthLabel(row.month)} 受傷 {row.injuries}
+                  {toShortMonthLabel(row.month)} 已知受傷 {row.injuries}；{casualtyCoverage(row, "injuries")}
                 </title>
               </circle>
               <circle className="suspect-dot" cx={x} cy={yBottomOf(row.suspects)} r="4">
@@ -1186,23 +1338,21 @@ function TrendBreakChart({ rows }) {
 
 function CityTrendPage({ months, selectedMonths, incidents, suspects, selectedCity }) {
   const rows = useMemo(() => {
-    const monthList = selectedMonths.length ? [...selectedMonths].sort() : [...months].sort();
+    const monthList = [...selectedMonths].sort();
 
     return monthList.map((month) => {
       const filteredIncidents = incidents.filter((incident) => {
         return incident.publishedAt?.slice(0, 7) === month && (!selectedCity || incident.city === selectedCity);
       });
 
-      const deaths = filteredIncidents.reduce((sum, item) => sum + Number(item.deaths || 0), 0);
-      const injuries = filteredIncidents.reduce((sum, item) => sum + Number(item.injuries || 0), 0);
+      const totals = incidentTotals(filteredIncidents);
       const suspectTotal = suspects
         .filter((row) => row.month === month && (!selectedCity || row.city === selectedCity))
         .reduce((sum, row) => sum + Number(row.suspects || 0), 0);
 
       return {
         month,
-        deaths,
-        injuries,
+        ...totals,
         suspects: suspectTotal,
       };
     });
@@ -1213,9 +1363,13 @@ function CityTrendPage({ months, selectedMonths, incidents, suspects, selectedCi
       (summary, row) => ({
         deaths: summary.deaths + row.deaths,
         injuries: summary.injuries + row.injuries,
+        deathsMissing: summary.deathsMissing + row.deathsMissing,
+        injuriesMissing: summary.injuriesMissing + row.injuriesMissing,
+        deathsRetained: summary.deathsRetained + row.deathsRetained,
+        injuriesRetained: summary.injuriesRetained + row.injuriesRetained,
         suspects: summary.suspects + row.suspects,
       }),
-      { deaths: 0, injuries: 0, suspects: 0 }
+      { deaths: 0, injuries: 0, deathsMissing: 0, injuriesMissing: 0, deathsRetained: 0, injuriesRetained: 0, suspects: 0 }
     );
   }, [rows]);
 
@@ -1226,20 +1380,23 @@ function CityTrendPage({ months, selectedMonths, incidents, suspects, selectedCi
           <span>縣市趨勢</span>
           <h2>{selectedCity || "全部縣市"}</h2>
           <p>
-            死亡與受傷來自新聞事件整理；毒品嫌疑犯人數為公開統計背景資料。
-            中間以波浪號區隔，代表兩者量級差距大，不建議直接相加比較。
+            事件依新聞發布月份歸組，並非事故發生月份。只加總已知傷亡，未明欄位不填零。
+            新報數值衝突時保留既有核對值並揭露件數，沒有既有值則列未明。
+            毒品嫌疑犯人數為獨立的公開統計背景資料，不是酒駕或毒駕事故數，也不受酒／毒類型篩選影響。
           </p>
 
         </div>
 
         <div className="trend-summary">
           <div>
-            <small>死亡</small>
+            <small>已知死亡</small>
             <b>{totals.deaths}</b>
+            <small>{casualtyCoverage(totals, "deaths")}</small>
           </div>
           <div>
-            <small>受傷</small>
+            <small>已知受傷</small>
             <b>{totals.injuries}</b>
+            <small>{casualtyCoverage(totals, "injuries")}</small>
           </div>
           <div>
             <small>毒品嫌疑犯</small>
@@ -1253,11 +1410,11 @@ function CityTrendPage({ months, selectedMonths, incidents, suspects, selectedCi
           <div className="trend-legend">
             <span>
               <i className="legend-death" />
-              死亡人數
+              已知死亡人數
             </span>
             <span>
               <i className="legend-injury" />
-              受傷人數
+              已知受傷人數
             </span>
             <span>
               <i className="legend-suspect" />
@@ -1266,6 +1423,19 @@ function CityTrendPage({ months, selectedMonths, incidents, suspects, selectedCi
           </div>
 
           <TrendBreakChart rows={rows} />
+          <details className="trend-data-details">
+            <summary>逐月已知人數、缺值與衝突保留件數</summary>
+            <div className="table-scroll">
+              <table>
+                <caption>按新聞發布月份；沒有符合事件與傷亡未明分開呈現</caption>
+                <thead><tr><th>發布月</th><th>事件</th><th>已知死亡／欄位狀態</th><th>已知受傷／欄位狀態</th></tr></thead>
+                <tbody>{rows.map((row) => <tr key={row.month}>
+                  <th scope="row">{toMonthLabel(row.month)}</th><td>{row.events}</td>
+                  <td>{row.deaths} 人／{casualtyCoverage(row, "deaths")}</td><td>{row.injuries} 人／{casualtyCoverage(row, "injuries")}</td>
+                </tr>)}</tbody>
+              </table>
+            </div>
+          </details>
         </>
       ) : (
         <div className="empty-panel">目前篩選條件沒有趨勢資料</div>
@@ -1323,27 +1493,27 @@ function IncidentProfilePanel({ incident }) {
     <section className="incident-profile-panel">
       <article className="profile-card driver-profile">
         <div className="profile-card-head">
-          <span>毒駕者輪廓</span>
+          <span>涉案駕駛輪廓</span>
           <strong>{driverIdentity.length ? driverIdentity.join("・") : "身分資訊未明"}</strong>
         </div>
 
         <div className="profile-block">
-          <small>毒駕載具</small>
+          <small>涉案載具</small>
           <ProfileTagList
             values={driver.primaryVehicleLabel || driver.primaryVehicleType}
-            fallback="毒駕載具未明"
+            fallback="涉案載具未明"
             tone="vehicle"
           />
         </div>
 
-        <div className="profile-block">
+        {impairmentTypes(incident, isLegacyIncident(incident)).includes("drug") ? <div className="profile-block">
           <small>毒品 / 檢測</small>
           <ProfileTagList
             values={[...(drug.keywords || []), ...(drug.testMethods || [])]}
             fallback="毒品類型未明"
             tone="drug"
           />
-        </div>
+        </div> : null}
 
         <div className="profile-block">
           <small>行為型態</small>
@@ -1355,7 +1525,7 @@ function IncidentProfilePanel({ incident }) {
         <div className="profile-card-head">
           <span>受害者輪廓</span>
           <strong>
-            死亡 {incident.deaths}｜受傷 {incident.injuries}
+            死亡 {casualtyText(incident, "deaths")}｜受傷 {casualtyText(incident, "injuries")}
           </strong>
         </div>
 
@@ -1647,7 +1817,7 @@ function WhyRecordSection() {
       <h2>不是為了製造恐懼，而是提醒彼此珍惜生命</h2>
       <p>
         我們記錄這些事件，不是為了替任何縣市貼上標籤，也不是為了把悲劇變成排名。
-        我們記錄，是因為每一個毒駕事件背後，都有一個被迫中斷的日常。
+        我們記錄酒駕與毒駕事件，也關注受影響的人與日常生活。
       </p>
       <p>
         有人只是正在回家，有人只是停等紅燈，有人只是陪家人出門，也有人只是正在工作。
@@ -1697,7 +1867,7 @@ function DonutChartCard({ title, rows, centerValue, centerLabel, tone = "" }) {
     <article className={`donut-card ${tone}`}>
       <div className="donut-card-head">
         <h3>{title}</h3>
-        <p>僅統計目前可判讀之毒駕者資料，未明資料另列。</p>
+        <p>僅統計目前可判讀之涉案駕駛資料，未明資料另列。</p>
       </div>
 
       <div className="donut-card-body">
@@ -1775,14 +1945,14 @@ function OffenderDemographicsSection({ statsIncidents, selectedCity }) {
   return (
     <section className="offender-demographics panel-pop">
       <div className="section-head compact">
-        <span>毒駕者輪廓統計</span>
-        <h2>{selectedCity || "全部縣市"}｜毒駕者年齡與性別</h2>
-        <p>聚焦毒駕者本身，不混入受害者資料；切換縣市後會同步更新。</p>
+        <span>涉案駕駛輪廓統計</span>
+        <h2>{selectedCity || "全部縣市"}｜涉案駕駛年齡與性別</h2>
+        <p>依可統計事件的既有駕駛欄位計件，不代表所有當事人人數；缺少欄位列為未明。</p>
       </div>
 
       <div className="offender-kpis">
         <article>
-          <small>毒駕案件</small>
+          <small>納入統計事件</small>
           <strong>{statsIncidents.length}</strong>
         </article>
         <article>
@@ -1797,14 +1967,14 @@ function OffenderDemographicsSection({ statsIncidents, selectedCity }) {
 
       <div className="offender-demographics-grid">
         <DonutChartCard
-          title="毒駕者年齡分布"
+          title="涉案駕駛年齡分布（事件筆數）"
           rows={ageRows}
           centerValue={ageKnownCount}
           centerLabel="年齡可判讀"
           tone="age"
         />
         <DonutChartCard
-          title="毒駕者性別分布"
+          title="涉案駕駛性別分布（事件筆數）"
           rows={genderRows}
           centerValue={genderKnownCount}
           centerLabel="性別可判讀"
@@ -1816,9 +1986,9 @@ function OffenderDemographicsSection({ statsIncidents, selectedCity }) {
 }
 
 function QualitySummaryCard({ allIncidents, statsIncidents, selectedCity }) {
-  const corrected = allIncidents.filter((item) => item.dataQuality?.flags?.includes("count_corrected")).length;
-  const excluded = allIncidents.filter((item) => item.dataQuality?.includeInStats === false).length;
-  const needsReview = allIncidents.filter((item) => item.dataQuality?.needsHumanReview).length;
+  const machineChecked = statsIncidents.filter((item) => item.dataQuality?.verificationStatus === "machine_checked").length;
+  const excluded = allIncidents.filter((item) => !isStatsIncident(item)).length;
+  const legacyPending = allIncidents.filter((item) => isLegacyIncident(item) && !isStatsIncident(item)).length;
 
   return (
     <section className="quality-summary-card panel-pop">
@@ -1826,8 +1996,9 @@ function QualitySummaryCard({ allIncidents, statsIncidents, selectedCity }) {
         <span>資料品質</span>
         <h2>{selectedCity || "全部縣市"}｜統計口徑已更新</h2>
         <p>
-          完整新聞列表保留所有案件；KPI、地圖、縣市排名與趨勢圖僅採用「建議納入統計」案件，
-          避免後續報導、評論文章或重複報導影響死傷數。
+          全部分頁採用同一事件資格，事件未確認的紀錄不納入。已確認事件即使部分欄位待釐清，仍計入事件數；傷亡逐欄採用已核對值，衝突時保留既有核對值。
+          新聞文章不直接增加事件數，同案按事件 ID 去重。
+          歷史資料沿用明確標為可統計且無待複核的舊紀錄，不視為本次機器核對；其他歷史紀錄仍可在新聞列表查看。
         </p>
       </div>
 
@@ -1841,16 +2012,16 @@ function QualitySummaryCard({ allIncidents, statsIncidents, selectedCity }) {
           <strong>{statsIncidents.length}</strong>
         </article>
         <article>
-          <small>已校正</small>
-          <strong>{corrected}</strong>
+          <small>機器規則核對</small>
+          <strong>{machineChecked}</strong>
         </article>
         <article>
           <small>排除統計</small>
           <strong>{excluded}</strong>
         </article>
         <article>
-          <small>需複核</small>
-          <strong>{needsReview}</strong>
+          <small>歷史待核對</small>
+          <strong>{legacyPending}</strong>
         </article>
       </div>
     </section>
@@ -1865,7 +2036,7 @@ function LifeImpactPage({ incidents, selectedCity, onFocusNews }) {
         <span>生命影響</span>
         <h2>{selectedCity || "全部縣市"}｜家中少了誰？</h2>
         <p>
-          這個分頁不是為了把悲劇變成排名，而是希望讓人看見：毒駕事件帶走的，可能是一位母親、一位父親、
+          酒駕與毒駕事件所影響的，可能是一位母親、一位父親、
           一個孩子、一位伴侶，或是一個家庭原本熟悉的日常。
         </p>
       </section>
@@ -1921,10 +2092,11 @@ function CaseStatsPage({ allIncidents, statsIncidents, selectedCity }) {
   );
 
   const qualityRows = [
-    { label: "可統計", value: scopedAllIncidents.filter((item) => qualityTone(item) === "ok").length },
-    { label: "已校正", value: scopedAllIncidents.filter((item) => qualityTone(item) === "corrected").length },
-    { label: "需複核", value: scopedAllIncidents.filter((item) => qualityTone(item) === "review").length },
-    { label: "排除統計", value: scopedAllIncidents.filter((item) => qualityTone(item) === "excluded").length },
+    { label: "機器規則核對・可統計", value: scopedStatsIncidents.filter((item) => item.dataQuality?.verificationStatus === "machine_checked").length },
+    { label: "人工核對・可統計", value: scopedStatsIncidents.filter((item) => item.dataQuality?.verificationStatus === "manual_checked").length },
+    { label: "歷史資料・舊口徑", value: scopedStatsIncidents.filter(isLegacyIncident).length },
+    { label: "歷史待核對", value: scopedAllIncidents.filter((item) => isLegacyIncident(item) && !isStatsIncident(item)).length },
+    { label: "其他排除統計", value: scopedAllIncidents.filter((item) => !isLegacyIncident(item) && !isStatsIncident(item)).length },
   ];
 
   return (
@@ -1944,7 +2116,7 @@ function CaseStatsPage({ allIncidents, statsIncidents, selectedCity }) {
       <OffenderDemographicsSection statsIncidents={scopedStatsIncidents} selectedCity={selectedCity} />
 
       <div className="case-stats-grid">
-        <StatBars title="毒駕載具" rows={vehicleRows} tone="vehicle" />
+        <StatBars title="涉案載具" rows={vehicleRows} tone="vehicle" />
         <StatBars title="毒品關鍵字" rows={drugRows} tone="drug" />
         <StatBars title="肇事型態" rows={scenarioRows} tone="scenario" />
         <StatBars title="受害情境" rows={victimRows} tone="victim" />
@@ -1963,13 +2135,31 @@ function CaseStatsPage({ allIncidents, statsIncidents, selectedCity }) {
   );
 }
 
-function NewsListPage({ incidents, selectedCity, newsFocusFilter, onClearFocus }) {
+function NewsListPage({ articles, incidentsById, selectedCity, newsFocusFilter, onClearFocus, newsKind, setNewsKind, reviewFilter, setReviewFilter }) {
+  const filtered = articles.filter((article) => {
+    const linked = [...new Set([...(article.eventIds || []), ...(article.archivedEventIds || [])])].map((id) => incidentsById.get(id)).filter(Boolean);
+    const legacyPending = linked.some((item) => isLegacyIncident(item) && !isStatsIncident(item));
+    const pending = article.status !== "verified" || linked.some((item) => !isStatsIncident(item) || hasPendingFields(item));
+    return (newsKind === "all" || article.kind === newsKind) &&
+      (reviewFilter === "all" || (reviewFilter === "legacy" ? legacyPending : pending));
+  });
+
   return (
     <section className="news-page panel-pop">
       <div className="section-head">
         <span>新聞報導</span>
         <h2>{selectedCity || "全部縣市"}</h2>
-        <p>{incidents.length} 篇</p>
+        <p>{filtered.length} 篇來源報導；篇數不等於事件數。待釐清文章不生成事實摘要；關聯事件的已核對資料另列。</p>
+      </div>
+
+      <div className="news-filters">
+        <label>新聞類型<select value={newsKind} onChange={(event) => setNewsKind(event.target.value)}>
+          <option value="all">全部類型</option>
+          {Object.entries(newsKindLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+        </select></label>
+        <label>核對狀態<select value={reviewFilter} onChange={(event) => setReviewFilter(event.target.value)}>
+          <option value="all">全部狀態</option><option value="pending">待釐清／待核對</option><option value="legacy">歷史待核對</option>
+        </select></label>
       </div>
 
       {newsFocusFilter ? (
@@ -1985,30 +2175,53 @@ function NewsListPage({ incidents, selectedCity, newsFocusFilter, onClearFocus }
       ) : null}
 
       <div className="news-list">
-        {incidents.length ? (
-          incidents.map((incident) => (
-            <article className="news-card" key={incident.id}>
+        {filtered.length ? (
+          filtered.map((article) => {
+            const linked = [...new Set([...(article.eventIds || []), ...(article.archivedEventIds || [])])].map((id) => incidentsById.get(id)).filter(Boolean);
+            const legacyPending = linked.some((item) => isLegacyIncident(item) && !isStatsIncident(item));
+            const pendingEvents = linked.filter((item) => !isLegacyIncident(item) && !isStatsIncident(item));
+            const readableEvents = linked.filter(isStatsIncident);
+            const canShowDetails = article.status === "verified" || article.legacy;
+            return <article className="news-card" key={article.url || article.id}>
               <div className="news-meta">
-                <span>{incident.city}</span>
-                <span>{formatDate(incident.publishedAt)}</span>
-                <span>{incident.source}</span>
-                <QualityBadge incident={incident} />
-              </div>
-              <h3>{incident.title}</h3>
-              <p>{incident.summary}</p>
-              <IncidentProfilePanel incident={incident} />
-              <AffectedDailyLife incident={incident} />
-              <FamilyImpactNote incident={incident} />
-              <div className="news-footer">
-                <span>
-                  死亡 {incident.deaths}｜受傷 {incident.injuries}
+                <span>{newsKindLabels[article.kind] || "其他"}</span>
+                <span>{article.city || "全國／縣市未明"}</span>
+                <span>發布 {formatDate(article.publishedAt) || "未明"}</span>
+                <span>{article.source || "來源未提供"}</span>
+                <span>{impairmentLabel(article)}{article.legacy ? "（歷史分類）" : ""}</span>
+                <span className={`quality-badge ${article.status === "verified" ? "ok" : "review"}`}>
+                  {article.legacy ? legacyPending ? "歷史待核對" : "歷史來源" : article.status === "verified" ? "已通過新聞發布條件" : "待釐清"}
                 </span>
-                <a href={incident.url} target="_blank" rel="noreferrer">
+                {!article.legacy && legacyPending ? <span className="quality-badge review">另有歷史待核對紀錄</span> : null}
+              </div>
+              <h3><a href={article.url} target="_blank" rel="noreferrer">{article.title}</a></h3>
+              {article.status !== "verified" && !article.legacy ? <p className="news-status-note">本篇有資訊待釐清，僅刊登來源；下方若有關聯事件，列出的是已核對資料，不將本篇未確認的新主張加入統計。</p> : null}
+              {legacyPending ? <p className="news-status-note">保留歷史來源；其中 {linked.filter((item) => isLegacyIncident(item) && !isStatsIncident(item)).length} 筆歷史紀錄待核對，已排除統計。</p> : null}
+              {pendingEvents.length ? <p className="news-status-note">另有 {pendingEvents.length} 筆關聯事件未達統計條件，暫不呈現事實摘要或加總傷亡。</p> : null}
+              {readableEvents.length ? <div className="news-events">
+                <strong>關聯事件已核對資料</strong>
+                {readableEvents.map((incident) => <section className="news-event" key={incident.id}>
+                  <div className="news-event-head"><strong>{incident.city || "縣市未明"}｜{impairmentLabel(incident, isLegacyIncident(incident))}</strong><QualityBadge incident={incident} /></div>
+                  <p>發生：{formatDate(incident.occurredAt) || "未明"}｜來源發布：{formatDate(incident.publishedAt) || "未明"}</p>
+                  <p>死亡 {casualtyText(incident, "deaths")}｜受傷 {casualtyText(incident, "injuries")} {isMapIncident(incident) ? "・可納縣市彙總" : "・未納地圖"}</p>
+                  <small>事件 ID：{incident.id}；同案後續報導不另計一件。</small>
+                  {canShowDetails && (incident.extractedDetails || incident.humanImpact) ? <details className="event-detail-tags">
+                    <summary>查看既有事件標籤</summary>
+                    <p>標籤來自資料整理，不等於司法認定；歷史資料未經本次機器重新核對。</p>
+                    <IncidentProfilePanel incident={incident} />
+                    <AffectedDailyLife incident={incident} />
+                    <FamilyImpactNote incident={incident} />
+                  </details> : null}
+                </section>)}
+              </div> : null}
+              <div className="news-footer">
+                <span>{article.issues?.length ? `${article.issues.length} 項待釐清紀錄` : "請以原文及後續報導核對"}</span>
+                <a href={article.url} target="_blank" rel="noreferrer">
                   閱讀原文
                 </a>
               </div>
-            </article>
-          ))
+            </article>;
+          })
         ) : (
           <div className="empty-panel">目前篩選條件沒有新聞</div>
         )}
@@ -2018,8 +2231,11 @@ function NewsListPage({ incidents, selectedCity, newsFocusFilter, onClearFocus }
 }
 
 export default function App() {
-  const { incidents, suspects, loading } = useDashboardData();
-  const [activeView, setActiveView] = useState("life");
+  const { incidents, suspects, articles, newsStatus, newsBuild, loading } = useDashboardData();
+  const [activeView, setActiveView] = useState("news");
+  const [impairmentFilter, setImpairmentFilter] = useState("all");
+  const [newsKind, setNewsKind] = useState("all");
+  const [reviewFilter, setReviewFilter] = useState("all");
   const [selectedMonths, setSelectedMonths] = useState([]);
   const [selectedSources, setSelectedSources] = useState([]);
   const [visibleTypes, setVisibleTypes] = useState({ deaths: true, injuries: true });
@@ -2029,13 +2245,15 @@ export default function App() {
   const didInitSources = useRef(false);
   const mainContentRef = useRef(null);
   const didAutoScrollRef = useRef(false);
+  const newsArticles = useMemo(() => articleFeed(articles, incidents), [articles, incidents]);
+  const incidentsById = useMemo(() => new Map(incidents.map((incident) => [incident.id, incident])), [incidents]);
 
   const months = useMemo(
-    () => [...new Set(incidents.map((incident) => incident.publishedAt.slice(0, 7)))].sort().reverse(),
-    [incidents]
+    () => [...new Set([...incidents, ...newsArticles].map((item) => item.publishedAt?.slice(0, 7)).filter(Boolean))].sort().reverse(),
+    [incidents, newsArticles]
   );
 
-  const sources = useMemo(() => [...new Set(incidents.map((incident) => incident.source))].sort(), [incidents]);
+  const sources = useMemo(() => [...new Set([...incidents, ...newsArticles].map((item) => item.source).filter(Boolean))].sort(), [incidents, newsArticles]);
 
   useEffect(() => {
     if (months.length && !didInitMonths.current) {
@@ -2069,10 +2287,11 @@ export default function App() {
 
   const selectedMonthIncidents = useMemo(() => {
     return incidents.filter((incident) => {
-      const month = incident.publishedAt.slice(0, 7);
-      return selectedMonths.includes(month) && selectedSources.includes(incident.source);
+      const month = incident.publishedAt?.slice(0, 7);
+      return selectedMonths.includes(month) && selectedSources.includes(incident.source) &&
+        matchesImpairment(incident, impairmentFilter, isLegacyIncident(incident));
     });
-  }, [incidents, selectedMonths, selectedSources]);
+  }, [incidents, selectedMonths, selectedSources, impairmentFilter]);
 
   const monthSourceIncidents = useMemo(
     () => selectedMonthIncidents.filter(isStatsIncident),
@@ -2084,9 +2303,10 @@ export default function App() {
   }, [selectedCity, selectedMonthIncidents]);
 
   const visibleIncidents = useMemo(() => {
-    const base = activeView === "news" ? selectedMonthIncidents : monthSourceIncidents;
-    return selectedCity ? base.filter((incident) => incident.city === selectedCity) : base;
-  }, [activeView, monthSourceIncidents, selectedCity, selectedMonthIncidents]);
+    return selectedCity ? monthSourceIncidents.filter((incident) => incident.city === selectedCity) : monthSourceIncidents;
+  }, [monthSourceIncidents, selectedCity]);
+
+  const mapIncidents = useMemo(() => visibleIncidents.filter(isMapIncident), [visibleIncidents]);
 
   const focusedNewsIncidents = useMemo(() => {
     if (!newsFocusFilter) return cityFilteredAllIncidents;
@@ -2108,14 +2328,27 @@ export default function App() {
     });
   }, [cityFilteredAllIncidents, newsFocusFilter]);
 
+  const visibleArticles = useMemo(() => {
+    const focusedIds = new Set(focusedNewsIncidents.map((item) => item.id));
+    return newsArticles.filter((article) => {
+      const linkedIds = [...(article.eventIds || []), ...(article.archivedEventIds || [])];
+      const cityMatches = !selectedCity || article.city === selectedCity || linkedIds.some((id) => incidentsById.get(id)?.city === selectedCity);
+      return selectedMonths.includes(article.publishedAt?.slice(0, 7)) && selectedSources.includes(article.source) &&
+        matchesImpairment(article, impairmentFilter) && cityMatches &&
+        (!newsFocusFilter || linkedIds.some((id) => focusedIds.has(id)));
+    });
+  }, [newsArticles, focusedNewsIncidents, selectedCity, incidentsById, selectedMonths, selectedSources, impairmentFilter, newsFocusFilter]);
+
   const handleFocusNews = (filter) => {
     setNewsFocusFilter(filter);
+    setNewsKind("all");
+    setReviewFilter("all");
     setActiveView("news");
   };
 
   const ranking = useMemo(
-    () => buildCityRanking(monthSourceIncidents, suspects, selectedMonths),
-    [monthSourceIncidents, selectedMonths, suspects]
+    () => buildCityRanking(monthSourceIncidents.filter(isMapIncident)),
+    [monthSourceIncidents]
   );
 
   const cityLevels = useMemo(() => {
@@ -2123,14 +2356,10 @@ export default function App() {
   }, [ranking]);
 
   const metrics = useMemo(() => {
-    const deaths = visibleIncidents.reduce((sum, item) => sum + Number(item.deaths || 0), 0);
-    const injuries = visibleIncidents.reduce((sum, item) => sum + Number(item.injuries || 0), 0);
     const topCity = ranking.find((item) => item.score > 0)?.city || "無資料";
 
     return {
-      deaths,
-      injuries,
-      events: visibleIncidents.length,
+      ...incidentTotals(visibleIncidents),
       topCity,
     };
   }, [ranking, visibleIncidents]);
@@ -2141,23 +2370,16 @@ export default function App() {
       .sort((a, b) => String(b.publishedAt || "").localeCompare(String(a.publishedAt || "")))[0];
   }, [visibleIncidents]);
 
-  const visibleNewsCount = focusedNewsIncidents.length;
+  const visibleNewsCount = visibleArticles.length;
+  const excludedCount = cityFilteredAllIncidents.length - visibleIncidents.length;
+  const legacyPendingCount = cityFilteredAllIncidents.filter((item) => isLegacyIncident(item) && !isStatsIncident(item)).length;
+  const legacyStatsCount = visibleIncidents.filter(isLegacyIncident).length;
 
-  const dataStatus = useMemo(() => {
-    const dates = incidents.map((incident) => incident.publishedAt).filter(Boolean).sort();
-    const latestDate = dates.length ? formatDate(dates.at(-1)) : "";
-    const monthRange = months.length ? `${toShortMonthLabel(months.at(-1))} - ${toShortMonthLabel(months[0])}` : "";
-
-    return {
-      latestDate,
-      monthRange,
-      totalIncidents: incidents.length,
-    };
-  }, [incidents, months]);
+  const dataStatus = newsStatus || {};
 
   const insights = useMemo(() => {
-    const citySummary = buildCityRanking(monthSourceIncidents, suspects, selectedMonths);
-    const topRiskCity = citySummary.find((item) => item.score > 0)?.city || "無資料";
+    const citySummary = ranking;
+    const topEventCity = citySummary.find((item) => item.score > 0)?.city || "無資料";
     const topDeathCity = [...citySummary].sort((a, b) => b.deaths - a.deaths || b.events - a.events)[0]?.deaths
       ? [...citySummary].sort((a, b) => b.deaths - a.deaths || b.events - a.events)[0].city
       : "無資料";
@@ -2166,18 +2388,18 @@ export default function App() {
       : "無資料";
 
     return {
-      topRiskCity,
+      topEventCity,
       topDeathCity,
       topInjuryCity,
     };
-  }, [monthSourceIncidents, selectedMonths, suspects]);
+  }, [ranking]);
 
   return (
     <div className="app-shell">
       <header className="app-hero">
         <div>
           <span>新聞事件與公開統計整理</span>
-          <h1>全台毒駕死傷觀察地圖</h1>
+          <h1>全台酒駕與毒駕新聞觀察</h1>
           <p>
             看見事件，也看見被影響的人。每一個死亡與受傷，背後都可能是一段正在回家的路、一次平凡的出門，
             或一個家庭再也回不去的日常。
@@ -2218,12 +2440,36 @@ export default function App() {
         </nav>
       </header>
 
-      <DataStatusBar status={dataStatus} />
+      <DataStatusBar status={dataStatus} build={newsBuild} />
+
+      <section className="global-news-filters panel-pop" aria-label="共同資料篩選">
+        <label>酒／毒類別<select value={impairmentFilter} onChange={(event) => setImpairmentFilter(event.target.value)}>
+          <option value="all">全部（同案只計一次）</option><option value="alcohol">酒駕（含同案兩者）</option>
+          <option value="drug">毒駕（含同案兩者）</option><option value="both">同案涉及酒駕與毒駕</option>
+        </select></label>
+        <label>縣市<select value={selectedCity} onChange={(event) => setSelectedCity(event.target.value)}>
+          <option value="">全部縣市／全國新聞</option>{cities.map((city) => <option key={city} value={city}>{city}</option>)}
+        </select></label>
+        <fieldset><legend>新聞來源</legend>{sources.map((source) => <label key={source}>
+          <input type="checkbox" checked={selectedSources.includes(source)} onChange={() => setSelectedSources((current) => current.includes(source) ? current.filter((value) => value !== source) : [...current, source])} />{source}
+        </label>)}</fieldset>
+        <p>月份篩選以新聞發布日為準；發生日另列。兩類可重疊，全部事件按 ID 去重，分類數不能直接相加。</p>
+      </section>
+
+      <section className="stats-eligibility-note panel-pop" aria-label="統計資格與排除紀錄">
+        <div>
+          <strong>目前範圍：{metrics.events} 件納入統計，{excludedCount} 筆排除</strong>
+          <p>排除中含 {legacyPendingCount} 筆「歷史待核對」，來源仍保留。納入中有 {legacyStatsCount} 件歷史舊口徑資料，未升格為機器核對。
+            已確認事件的個別欄位待釐清不阻擋計件；傷亡衝突沿用既有核對值，沒有既有值則列未明。
+            新聞文章本身不計件；政策、判決、統計報導不直接增加事件。符合地圖條件 {mapIncidents.length} 件。</p>
+        </div>
+        <button type="button" onClick={() => { setNewsFocusFilter(null); setNewsKind("all"); setReviewFilter("legacy"); setActiveView("news"); }}>查看歷史待核對</button>
+      </section>
 
       <section className="metric-grid">
-        <Metric label="新聞事件" value={metrics.events} tone="neutral" helper="目前篩選" />
-        <Metric label="死亡人數" value={metrics.deaths} tone="danger" helper="新聞事件整理" />
-        <Metric label="受傷人數" value={metrics.injuries} tone="warning" helper="新聞事件整理" />
+        <Metric label="納入統計事件" value={metrics.events} tone="neutral" helper="同案按 ID 去重；各分頁相同口徑" />
+        <Metric label="已知死亡人數" value={metrics.deaths} tone="danger" helper={`${casualtyCoverage(metrics, "deaths")}；未明欄位不加總`} />
+        <Metric label="已知受傷人數" value={metrics.injuries} tone="warning" helper={`${casualtyCoverage(metrics, "injuries")}；未明欄位不加總`} />
         <LatestIncidentMetric incident={latestIncident} />
       </section>
 
@@ -2236,7 +2482,7 @@ export default function App() {
         selectedCity={selectedCity}
       />
 
-      <InterruptedDailyLifeSection incidents={monthSourceIncidents} onFocusNews={handleFocusNews} />
+      <InterruptedDailyLifeSection incidents={visibleIncidents} onFocusNews={handleFocusNews} />
 
       <div className="desktop-month-wrap">
         <GlobalMonthBar
@@ -2263,13 +2509,13 @@ export default function App() {
             <div className="loading panel-pop">資料載入中</div>
           ) : activeView === "life" ? (
             <LifeImpactPage
-              incidents={cityFilteredAllIncidents}
+              incidents={visibleIncidents}
               selectedCity={selectedCity}
               onFocusNews={handleFocusNews}
             />
           ) : activeView === "map" ? (
             <TaiwanMap
-              incidents={visibleIncidents}
+              incidents={mapIncidents}
               visibleTypes={visibleTypes}
               selectedCity={selectedCity}
               cityLevels={cityLevels}
@@ -2291,10 +2537,15 @@ export default function App() {
             />
           ) : (
             <NewsListPage
-              incidents={focusedNewsIncidents}
+              articles={visibleArticles}
+              incidentsById={incidentsById}
               selectedCity={selectedCity}
               newsFocusFilter={newsFocusFilter}
               onClearFocus={() => setNewsFocusFilter(null)}
+              newsKind={newsKind}
+              setNewsKind={setNewsKind}
+              reviewFilter={reviewFilter}
+              setReviewFilter={setReviewFilter}
             />
           )}
         </div>
@@ -2334,8 +2585,8 @@ export default function App() {
           <span>資料來源</span>
           <h2>資料來源與免責聲明</h2>
           <p>
-            本網站之毒品嫌疑犯人數資料整理自內政部警政署公開統計資料；新聞事件資料則依公開新聞報導人工整理，
-            用於呈現毒駕相關死傷事件之地理分布與時間趨勢。
+            本網站之毒品嫌疑犯人數資料整理自內政部警政署公開統計資料；酒駕與毒駕新聞依來源報導整理，
+            區分機器規則核對、人工核對、歷史資料與待釐清狀態。新聞通過發布條件不等於司法認定。
           </p>
         </section>
 
@@ -2352,15 +2603,15 @@ export default function App() {
           <article>
             <h3>資料說明</h3>
             <p>
-              新聞事件資料僅代表已公開報導且經整理之案例，不等同官方完整事故統計。毒品嫌疑犯人數為背景風險觀察指標，
-              不代表毒駕事故發生數，也不應直接解讀為單一縣市之毒駕風險。
+              新聞事件資料僅代表來源涵蓋且經整理之案例，不等同官方完整事故統計。毒品嫌疑犯人數只作獨立背景資料，
+              不代表酒駕或毒駕事故數，不參與地圖事件數排序，也不代表縣市風險。
             </p>
           </article>
 
           <article>
             <h3>免責聲明</h3>
             <p>
-              本網站之圖表、縣市排名與風險分級為資料視覺化結果，僅供公共議題觀察與參考，
+              本網站之圖表與縣市事件數排序為資料視覺化結果，僅供公共議題觀察與參考，
               不代表內政部警政署或其他政府機關之官方結論、排名或評等。
             </p>
           </article>

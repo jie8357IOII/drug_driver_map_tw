@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "upstream": "https://github.com/fxsjy/jieba",
+  "revision": "1e20c89b66f56c9301b0feed211733ffaa1bd72a",
+  "tag": "v0.42.1",
+  "license": "MIT",
+  "files": {
+    "dict.txt.big": {
+      "source": "https://raw.githubusercontent.com/fxsjy/jieba/1e20c89b66f56c9301b0feed211733ffaa1bd72a/extra_dict/dict.txt.big",
+      "sha256": "b16011275c42955ccd81fc1adecc93a59dbb7926af69d93fc95d4943d40f6aad",
+      "bytes": 8583143
+    },
+    "LICENSE.jieba": {
+      "source": "https://raw.githubusercontent.com/fxsjy/jieba/1e20c89b66f56c9301b0feed211733ffaa1bd72a/LICENSE",
+      "sha256": "18ba0984839f85853b29fadaf992f7dba8fd0ca0fbeae34de2b8735222dc7a37",
+      "bytes": 1075
+    }
+  }
+}

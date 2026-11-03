@@ -1,6 +1,6 @@
-# 全台毒駕死傷地圖 Taiwan Drug Driving Map
+# 台灣酒駕與毒駕新聞地圖
 
-以新聞事件與公開統計資料為基礎，整理全台毒駕相關死傷事件，並透過生命影響敘事、互動式台灣地圖、縣市趨勢、案件統計與新聞列表，協助使用者理解毒駕事件的地理分布、時間變化與人身影響。
+以新聞事件與公開統計資料為基礎，整理台灣酒駕與毒駕事件及相關新聞，並透過生命影響敘事、互動式台灣地圖、縣市趨勢、案件統計與新聞列表，協助使用者理解毒駕事件的地理分布、時間變化與人身影響。
 
 > 本專案為資料視覺化作品。新聞事件不等同官方完整事故統計；毒品嫌疑犯人數則作為背景風險指標使用。
 
@@ -91,7 +91,7 @@ https://jie8357ioii.github.io/drug_driver_map_tw/
 
 本專案使用 React + Vite 開發，請先確認本機已安裝 Node.js。
 
-建議使用 Node.js 20 以上版本。
+新聞流程與 Actions 使用 Node.js 22、Python 3.12；純網站開發只需 Node.js。
 
 確認 Node.js 版本：
 
@@ -230,8 +230,8 @@ npm run preview
 
 閱讀口徑：
 
-- `includeInStats: false` 的新聞仍會保留在新聞列表，但不納入 KPI、地圖、排名與趨勢統計。
-- `needsHumanReview: true` 代表資料可先展示，但建議回到新聞原文人工確認。
+- `includeInStats` 控制事件資格，地圖另看 `mapEligible`；傷亡按 `fieldStatus` 分別採用。相關新聞卡片來自 `news.json`，不因公開就進統計。
+- `needsHumanReview: true` 表示仍有欄位待釐清；已確認的機器事件可計事件數，但不把未知人數當零。歷史未核對資料另外標記並排除已核對統計。
 - `extractedDetails` 與 `humanImpact` 來自規則式萃取，屬於輔助理解的可觀察標籤，不是官方分類。
 
 ---
@@ -288,119 +288,140 @@ public/data/drug_suspects_monthly.json
 
 ---
 
-### 抓取新聞資料
+### 每日酒駕與毒駕新聞
+
+每日台北時間 **00:17** 抓取，**08:17** 檢查是否需要補跑。使用 GitHub Actions，不依賴 Codex 排程；符合來源、人物與事件核對條件的資料自動部署，日常不再逐批人工合併資料 PR。
+
+- 新聞區包含具體事件、政策、判決與統計報導；新聞篇數與事件數分開。
+- jieba 繁體詞典＋專用詞典辨識用語，規則連結人物、車輛、酒精／毒品檢測、日期與傷亡，每項保留原文位置。詞典與 jieba 版本固定，HMM 關閉。
+- 酒精數值保存單位、檢體與對象；拒測、待驗、排除、物品含毒及乘客結果不能當成駕駛陽性。
+- 新聞可先公開來源標題與連結；未確認欄位標示待釐清。事件身分明確但人數未明時，可計事件數，未知人數不當成零。
+- 同案後續連到原事件，不能將每篇傷亡加總。只有符合日期、具體地點、人物及車輛等條件才自動配對；歧義不新增統計事件。已核對值遇衝突時保留原值及新來源。
+- 舊資料保留 ID、來源與修訂；未複核資料標記 `legacy`，排除已核對統計，另顯示待核對數量。不能把原本的 `includeInStats: true` 當作已驗證證據。
+- 第一個來源為 LTN，國外事件及僅頁尾提及「禁止酒駕」的無關文章不收錄；這不是全台完整事故統計。
+
+解析與網站共用 `incidents.json`（事件）、`news.json`（新聞卡片）及 `news-status.json`（檢查時間／缺值狀態）。`impairmentTypes` 可同時含 `alcohol`、`drug`，全部事件總數按 ID 去重。`occurredAt` 是事發日，`publishedAt` 是發布日。
+
+### 安裝本機新聞環境
+
+從 repository 根目錄執行。Python 版本與 Actions 對齊；若使用其他安裝路徑，設定 `NEWS_PYTHON` 指向已安裝相同依賴的直譯器。
 
 ```bash
-npm run data:news
+npm ci
+python3.12 -m venv .venv-news
+.venv-news/bin/python -m pip install -r requirements-news.txt
+npm run news:update -- --help
 ```
 
-未帶日期時，檢查最近三個已結束的台北日曆日，包含零死傷的具體毒駕危險事件。
-先完成搜尋分頁與原文讀取，再一次寫入；抓取、版型或日期驗證失敗時保留既有資料。
+`requirements-news.txt` 固定 jieba 0.42.1；繁體基底詞典隨庫保存並驗證 checksum，切詞時不用上網。詞典來源與 offset 契約見 [詞典說明](scripts/lexicon/README.md)。Windows 可用 WSL；原生 Windows 可將 `NEWS_PYTHON` 設為 venv 的 `Scripts/python.exe`。
 
-指定日期或回補區間：
-
-```bash
-npm run data:news -- --date 2026-05-26
-npm run data:news -- --start 2026-05-26 --end 2026-05-27 --report /tmp/news-report.json
-```
-
-`--max-pages` 預設 20，超過時失敗並要求拆小區間，不會悄悄截斷。長期缺口請依週分批回補；預設三日回看不代表歷史資料已完整。
-
-新資料是待複核候選：`needsHumanReview: true`、`includeInStats: false`，沒有明確數量時使用 `null`。目前採保守標題篩選：標題須能辨識具體交通危險；可能漏掉僅在內文交代事故的文章，可從執行報告逐篇核對。閱讀全文不代表規則判讀已經正確。人工核對事故、地點、死傷與重複報導後，才調整品質欄位；明確零死傷可收錄，未知不可當成零。
-
-自動欄位目前包括原文標題、發布日期、摘要、城市、明示死傷數，以及毒品關鍵字、已執行的檢測方式、可辨識的駕駛載具與行為標籤。`publishedAt` 是發布日，不是事故發生日；毒品關鍵字表示報導提及，不代表每一種都已證實由駕駛施用。年齡、性別、毒品級別與受害者輪廓仍需人工補充。
-
-只持有毒品或只有乘客驗出毒品，不足以認定毒駕。偵測到同篇多起案件時，標記 `multiple_incidents_same_article`，暫不混合人數及人物標籤。分散敘述的傷亡、未識別出的多案與同事故跨篇報導，仍需在資料 PR 複核。已存在的新聞不會因原文更新而自動覆寫。
-
-實際原文對照與已知限制見 [2026-11-03 爬蟲驗證](docs/news-crawler-verification-2026-11-03.md)。本機執行回歸檢查：`npm test`；使用下方暫存副本指令可重新連線試抓。
-
-輸出檔必須先有有效的既有資料；檔案遺失或空陣列時停止，避免只用近期新聞重建整份資料。
-
-重跑會保留既有紀錄與校正，依 URL、標題及 `relatedReports` 避免再次加入同篇報導。不會只憑同縣市、相同傷亡數就合併不同事故；同一事故的跨篇報導由 PR 複核確認。
+### 抓取與離線重播（不發布）
 
 ```bash
-npm test
+# 與每日排程相同：檢查最近七個已結束的台北日曆日
+npm run news:update -- --output .news-output/daily --dry-run
+
+# 指定發布日期區間；有既有水位時不能跳過尚未抓取日期
+npm run news:update -- --from 2026-11-01 --to 2026-11-02 \
+  --output .news-output/range --dry-run
+
+# 單篇全文、人物與原文依據報告
+npm run news:analyze -- \
+  --url https://news.ltn.com.tw/news/society/breakingnews/5626487 \
+  --output .news-output/single
+
+# 固定原文離線重播，不再下載文章、不推進每日抓取水位
+npm run news:replay -- --input .news-output/single/sources.json \
+  --output .news-output/replay --dry-run
+
+# 只驗證既有事件資料，與排程使用同一入口
 npm run data:validate
 ```
 
-### GitHub Actions 每日新聞更新
+`news:update` 與 `news:replay` 預設就不改公開資料、不提交 Git、不部署；`--dry-run` 可明示此意圖。`data:news` 是新入口的別名，舊 `--date/--start/--end` 改為 `--from/--to`。
 
-`Update LTN news` 每天台北時間 **00:17** 執行，也可在 Actions 手動執行。手動回補必須同時填入 `start_date` 與 `end_date`，且選擇 `main` 分支。
+快照目錄包含三份 `public/data/*.json`、`state.json`、`manifest.json`、`report.json`、`analysis.json`、`sources.json`。manifest 只雜湊三份公開資料與 state，並記錄產生快照時 base/state **原始 bytes** 的 hash；只有完整驗證通過才產生 `status: ready`。全文 sources 與完整分析僅供本機回看，不進網站或資料分支。
 
-流程：抓取與來源判定 → 測試／資料檢查／建置 → 建立或累積同一個資料 PR → 人工複核與合併 → 既有 Pages 部署 → 線上 JSON 雜湊核對。
-
-- 只有 `public/data/incidents.json` 會被自動提交，沒有新資料時不建立新 PR。
-- 未合併的 PR 持續累積；保留人工修改與刪除，與 main 合併衝突時停止，不會強制推送。移除的來源網址由目前分支及已合併資料 PR 的 Git 歷史記住（包括 squash merge）；之後即使 PR 已合併也不自動加回。若要恢復誤刪資料，請人工加入。單純關閉未合併 PR 不代表永久拒絕其中所有新聞。
-- 合併前核對完整 diff、原文及事件是否重複。新候選預設排除統計；確認城市與死傷後才設 `needsHumanReview: false`、`includeInStats: true`。
-- 每次執行都有搜尋來源、收錄／排除／重複的摘要及 30 天 artifact。失敗有明確錯誤；「沒有新事故」與「無法取得資料」不混用。
-- GitHub repository 的 **Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests** 必須開啟。預設權限仍可維持唯讀；只有更新 job 要求 contents／pull-requests write。不需要另外建立 PAT 或 AI 金鑰。
-- 使用 `GITHUB_TOKEN` 建立的 PR，其 PR 檢查可能等待使用者批准；更新 job 本身已先跑測試、資料驗證與 build。若 GitHub 顯示 **Approve workflows to run**，批准後再確認檢查結果。
-- GitHub 排程可能延遲；公開 repo 60 天無活動時可能被停用。請留意 Actions 失敗通知及排程狀態；停用或中斷超過三天後，手動補跑缺漏區間。
-- 舊 Codex 每日任務維持暫停；`auto_scrap.md` 是舊流程筆記，不是這個 workflow 的執行來源。
-
-規則見 [CONTEXT.md](CONTEXT.md)。排程與 token 行為依 [GitHub 排程文件](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule) 與 [workflow 觸發文件](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)。
-
----
-
-### 在本機執行相同流程
-
-Actions 與本機共用 `scripts/update_news_pr.sh`，完整入口是 `npm run news:pr`。只有定時觸發與 artifact 上傳留在 GitHub；抓取、複核紀錄、驗證、建置及建立／更新 PR 都能在本機執行。
-
-**前置需求**：Node.js 22、npm、Git、GitHub CLI (`gh`)、`jq` 與 Bash（macOS／Linux；Windows 可用 WSL）。本機使用你登入的 GitHub 身分，需有此 repository 的推送及建立 PR 權限；不需要設定 `GITHUB_TOKEN`。
+首次必須有非空的歷史 `incidents.json`。後續使用 `--base FILE --state FILE` 接續成功快照；明確指定卻不存在的 state 會失敗。每日缺口每次最多補七天，成功水位只沿連續日期前進；指定較舊日期回補與離線重播不將水位倒退。
 
 ```bash
-node --version
-npm --version
-git --version
-gh --version
-jq --version
+npm run news:update -- \
+  --base .news-output/previous/public/data/incidents.json \
+  --state .news-output/previous/state.json \
+  --output .news-output/next --dry-run
+
+# 保留人工拒收清單；URL JSON array，同時寫進下一版 state
+npm run news:update -- --rejections rejected-news.json \
+  --output .news-output/filtered --dry-run
+```
+
+### 發布同一份快照
+
+先離線檢查，不需要 GitHub 登入或網路：
+
+```bash
+npm run news:publish -- --snapshot .news-output/daily --dry-run
+```
+
+正式發布需要本機 `main` 等於遠端 `main`、已提交的程式、Git／GitHub CLI 登入及 repository 寫入權限。Pages Source 必須選 **GitHub Actions**。快照必須來自最新的 `news-data` 基準；三份公開資料可因恢復基準而與 main 不同，程式不可有未提交變更。
+
+```bash
 gh auth login
 gh auth setup-git
+
+# 已存在 news-data 時：取出生成快照所需的最新基準到外部目錄
+# 先用 git ls-remote --heads origin news-data 確認是否已初始化
+mkdir -p .news-output/baseline
+git fetch origin news-data
+git show FETCH_HEAD:public/data/incidents.json > .news-output/baseline/incidents.json
+git show FETCH_HEAD:state.json > .news-output/baseline/state.json
+npm run news:update -- \
+  --base .news-output/baseline/incidents.json \
+  --state .news-output/baseline/state.json \
+  --output .news-output/publish
+npm run news:publish -- --snapshot .news-output/publish
 ```
 
-如果原目錄有尚未提交的程式或資料，請先使用另一份乾淨 clone。以下從你要存放專案的上層目錄執行，資料夾名稱可自行替換：
+首次沒有 `news-data`，可先在 Actions 手動執行 `Update and publish daily news` 初始化。若要從本機初始化，先在已與遠端同步的 main 匯出過往拒收決定，再使用 main 歷史資料、不帶 `--state` 產生快照：
 
 ```bash
-git clone https://github.com/jie8357IOII/drug_driver_map_tw.git drug-driver-news-runner
-cd drug-driver-news-runner
-npm ci
+bash scripts/bootstrap_news_rejections.sh --output .news-output/rejected-urls.json
+npm run news:update -- --output .news-output/initial \
+  --base public/data/incidents.json --rejections .news-output/rejected-urls.json
+npm run news:publish -- --snapshot .news-output/initial
 ```
 
-**完整流程：會推送資料分支並建立／更新 PR，不會直接合併或發布網站。**
+匯出程式只讀 main 完整歷史與已合併資料 PR，不讀未合併 PR、不切換分支或 push。Actions 首次執行也用同一程式；後續從 state 繼承拒收清單，不必每日匯出。初始化前的一般程式部署會明確停止，避免把 main 的舊資料當作最新版本。
+
+本機 publisher 將**精確快照**上傳至 `news-upload/<hash>`，再 dispatch 主 workflow，在共同發布鎖下驗證、建置、保存與部署。`Submitted` 表示已送出；需等 Actions 的線上 hash 讀回成功才算發布完成。它不會在你的工作目錄切分支或繞過雲端鎖直接寫 `news-data`。
+
+離線重播快照預設禁止正式發布；確認要採用歷史重播結果時，需明示 `--allow-replay`，仍須通過原始基準與資料驗證：
 
 ```bash
-# 與每日 Actions 相同：最近三個已結束的台北日曆日
-npm run news:pr
-
-# 回補單日
-npm run news:pr -- --date 2026-05-26
-
-# 回補一段區間；長期缺口請分批
-npm run news:pr -- --start 2026-05-26 --end 2026-05-27
-
-# 查看可用參數
-npm run news:pr -- --help
+npm run news:publish -- --snapshot .news-output/replay --allow-replay
 ```
 
-完整流程會更新 `origin/main` 的遠端追蹤資訊，另開 `codex/news-run-*` 工作分支，保留既有資料 PR 的修改與刪除。成功後回到原分支；失敗時保留工作分支及報告供檢查，不會自動 stash、丟棄本機修改或強制推送。工作目錄不乾淨時直接停止。請避免同時啟動本機與雲端更新；發生推送競爭或合併衝突時先檢查，再重跑。
+`news:pr` 已停用並提供遷移指引；舊未合併資料 PR 不會被偷偷合併或自動吞入新流程。
 
-執行結束會印出 `Run reports: /絕對路徑`，其中 `news-report.json` 是完整來源判定紀錄，`news-report.md` 是閱讀版。GitHub 執行時相同檔案會成為 artifact。
+### GitHub Actions 設定與故障恢復
 
-**只在暫存副本試抓，不提交或推送：**
+1. 將已驗證的程式合併至 `main`，Pages Source 設為 GitHub Actions；若 Pages environment 要求每次人工核准，需依自動發布目標調整設定。
+2. 首次手動執行 `Update and publish daily news`。一般回補同時填 `start_date`、`end_date`；本機上傳模式使用 `snapshot_ref`／`snapshot_sha`，不與日期混用。
+3. `news-data` 持久保存快照與 state，不依賴暫存 cache。建置後先保存，再部署；部署失敗時下次優先重試同一快照。未完成的快照會阻擋不同新版本，請不填日期或 `snapshot_ref` 重跑 workflow。抓取成功日與發布完成記錄分開。
+4. 新聞更新與程式部署共用 Pages 發布鎖；程式部署也取最新 `news-data`，不把每日資料倒退成 main 舊版本。
+5. 部署後核對三份 JSON hash、程式 commit SHA 與快照 ID；成功才保存 `published.json`。失敗保留既有網站及診斷報告，不把失敗當「今日無新新聞」。
 
-```bash
-news_preview_dir=$(mktemp -d)
-cp public/data/incidents.json "$news_preview_dir/incidents.json"
-npm run data:news -- --date 2026-05-26 \
-  --output "$news_preview_dir/incidents.json" \
-  --report "$news_preview_dir/news-report.json"
-npm run data:validate -- --output "$news_preview_dir/incidents.json"
-cat "$news_preview_dir/news-report.json"
-```
+GitHub 排程可能延遲或漏執行，公開 repo 長期無活動也可能停用；08:17 補跑降低影響，不能取代外部監測。請查看 Actions 狀態與網站的最近檢查時間。[GitHub schedule 文件](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule)
 
-此試抓指令不會自動匯入 Git 歷史中的刪除決定；需要保留完整複核歷史時請使用 `news:pr`。單獨的 `data:news` 不指定 `--output` 會修改目前目錄的資料檔。
+### 可選 Gemini 擷取建議
 
-**分別執行 Actions 中的檢查與建置：**
+**不設定金鑰即可完成本機規則與每日更新。** 有無法解析的關係時，可設定 `GEMINI_API_KEY`、`GEMINI_MODEL`；Actions 分別使用同名 secret 與 repository variable。模型需自行確認帳戶免費層可用，程式不會開啟付費或自動更換供應商，亦無法替 API 供應商保證免費額度。
+
+`NEWS_API_MAX_REQUESTS` 控制每次執行的請求上限（預設 10，0 為不發請求）；快取按正文、標題、模型與提示版本保存於 state。額度錯誤或 API 故障記錄後延後處理，不阻擋可獨立完成的本機結果；不要將單次請求上限誤認為供應商的每日額度限制。
+
+API 只產生附原文引句的關係建議，會核對引句及字串位置，保留於 `analysis.json`；**這不是已驗證語意，不會直接提高發布資格或覆寫傷亡**。未取得金鑰的環境只驗證停用路徑，不能宣稱已量測雲端模型效果。免費層的資料使用條件見 [官方定價](https://ai.google.dev/gemini-api/docs/pricing)。
+
+### 檢查、建置與預覽
 
 ```bash
 npm test
@@ -409,7 +430,9 @@ GITHUB_PAGES=true npm run build
 GITHUB_PAGES=true npm run preview
 ```
 
-使用 Pages 設定建置後，本機預覽路徑為終端顯示的網址加上 `/drug_driver_map_tw/`（預設通常是 `http://localhost:4173/drug_driver_map_tw/`）。建置與預覽不會發布網站。資料 PR 經人工複核、合併到 `main` 後，才由 Pages workflow 部署並核對線上資料。
+Pages 預覽路徑為終端顯示網址加 `/drug_driver_map_tw/`。要預覽快照，可在建置完成後把該快照的三份 JSON 複製到 **dist/data/**，不修改 `public/data`；這只改本機建置結果，不會部署。
+
+方法、限制與決策見 [每日規劃](docs/daily-alcohol-drug-news-plan.md)、[ADR-0002](docs/adr/0002-automatic-news-publication.md)，實際結果見 [39 篇原文回看與實作驗證](docs/news-implementation-2026-11-03.md)。已用於修規則的新聞是開發材料，不能當成獨立準確率證據。修改理解規則時須更新 `news_understanding.mjs` 的 `VERSION`，讓已讀過且正文未變的文章重新核對。
 
 ### 舊版一次性清理
 

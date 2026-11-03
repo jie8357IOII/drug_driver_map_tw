@@ -1,63 +1,225 @@
-name: Update LTN news
+name: Update and publish daily news
+run-name: News ${{ inputs.snapshot_sha || inputs.start_date || github.event_name }}
 
 on:
   schedule:
-    # 00:17 Asia/Taipei. Avoid the busy start of the hour.
+    # 00:17 and 08:17 Asia/Taipei. The morning run skips a verified, caught-up day.
     - cron: "17 16 * * *"
+    - cron: "17 0 * * *"
   workflow_dispatch:
     inputs:
       start_date:
-        description: "Optional first day (YYYY-MM-DD); supply both dates for backfill"
+        description: "Optional first publication day (YYYY-MM-DD); supply both dates"
         type: string
       end_date:
-        description: "Optional last day (YYYY-MM-DD), inclusive"
+        description: "Optional last publication day (YYYY-MM-DD), inclusive"
         type: string
+      snapshot_ref:
+        description: "Local publisher upload: news-upload/<snapshot hash> (no crawl)"
+        type: string
+      snapshot_sha:
+        description: "Exact upload commit SHA; required with snapshot_ref"
+        type: string
+      allow_replay:
+        description: "Explicitly permit publishing a replay snapshot"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
+# Shared with code deployment, including persistence and online readback.
 concurrency:
-  group: ltn-news-data-pr
+  group: pages
   cancel-in-progress: false
   queue: max
 
 jobs:
-  update:
+  publish:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 45
     permissions:
       contents: write
-      pull-requests: write
+      pull-requests: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     env:
-      GH_TOKEN: ${{ github.token }}
-      GH_REPO: ${{ github.repository }}
+      START_DATE: ${{ inputs.start_date }}
+      END_DATE: ${{ inputs.end_date }}
+      SNAPSHOT_REF: ${{ inputs.snapshot_ref }}
+      SNAPSHOT_SHA: ${{ inputs.snapshot_sha }}
+      ALLOW_REPLAY: ${{ inputs.allow_replay == true && '--allow-replay' || '' }}
     steps:
       - uses: actions/checkout@v4
         with:
+          # A queued run must not redeploy stale code from its triggering SHA.
           ref: main
+          # Bootstrap must retain removals from the complete reviewed history.
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - name: Run the shared news PR workflow
-        env:
-          START_DATE: ${{ inputs.start_date }}
-          END_DATE: ${{ inputs.end_date }}
-          NEWS_RUN_DIR: ${{ runner.temp }}/ltn-news
+      - name: Validate dispatch inputs
         shell: bash
         run: |
-          args=()
-          if [ -n "$START_DATE" ] || [ -n "$END_DATE" ]; then
-            args+=(--start "$START_DATE" --end "$END_DATE")
+          set -euo pipefail
+          if [[ -n "$START_DATE" && -z "$END_DATE" || -z "$START_DATE" && -n "$END_DATE" ]]; then
+            echo 'Supply both start_date and end_date.' >&2; exit 1
           fi
-          npm run news:pr -- "${args[@]}"
-      - name: Retain source decisions, including failures
+          if [[ -n "$SNAPSHOT_REF" && -z "$SNAPSHOT_SHA" || -z "$SNAPSHOT_REF" && -n "$SNAPSHOT_SHA" ]]; then
+            echo 'Supply both snapshot_ref and snapshot_sha.' >&2; exit 1
+          fi
+          if [[ -n "$SNAPSHOT_REF" && -n "$START_DATE" ]]; then
+            echo 'Choose a snapshot or a collection date range, not both.' >&2; exit 1
+          fi
+      - name: Restore durable state and decide whether to retry
+        id: restore
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=()
+          if [[ "$SCHEDULE" == '17 0 * * *' ]]; then args+=(--catch-up); fi
+          node scripts/publish_news.mjs --restore "$RUNNER_TEMP/news-previous" "${args[@]}"
+      - name: Report completed morning check
+        if: steps.restore.outputs.mode == 'skip'
+        run: echo 'Already published and verified today; live state covers yesterday. No collection needed.' >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/setup-python@v5
+        if: steps.restore.outputs.mode != 'skip'
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-news.txt
+      - name: Install required parsing and build dependencies
+        if: steps.restore.outputs.mode != 'skip'
+        run: |
+          npm ci
+          python -m pip install -r requirements-news.txt
+          # Check the required engine/dictionaries even on a day with no articles.
+          node --input-type=module -e 'import { tokenizeArticle } from "./scripts/news_tokenizer.mjs"; await tokenizeArticle({ title: "", body: "" });'
+      - name: Select the exact snapshot
+        if: steps.restore.outputs.mode != 'skip'
+        id: select
+        env:
+          NEWS_DATA_SHA: ${{ steps.restore.outputs.news_data_sha }}
+          MODE: ${{ steps.restore.outputs.mode }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=()
+          if [[ -n "$ALLOW_REPLAY" ]]; then args+=("$ALLOW_REPLAY"); fi
+          if [[ -n "$SNAPSHOT_REF" ]]; then
+            # The publisher rejects any different upload while durable data is pending.
+            node scripts/publish_news.mjs --import "$SNAPSHOT_REF" --sha "$SNAPSHOT_SHA" --output "$RUNNER_TEMP/news-next" "${args[@]}"
+            echo "NEWS_SNAPSHOT=$RUNNER_TEMP/news-next" >> "$GITHUB_ENV"
+          elif [[ "$MODE" == retry ]]; then
+            if [[ -n "$START_DATE" ]]; then
+              echo 'A saved snapshot is awaiting deployment. Retry without dates before backfilling.' >&2; exit 1
+            fi
+            echo "NEWS_SNAPSHOT=$RUNNER_TEMP/news-previous" >> "$GITHUB_ENV"
+          else
+            echo "NEWS_SNAPSHOT=$RUNNER_TEMP/news-next" >> "$GITHUB_ENV"
+            echo 'collect=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Recover rejected URLs from merged data PRs on bootstrap
+        if: steps.select.outputs.collect == 'true' && steps.restore.outputs.has_snapshot == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: bash scripts/bootstrap_news_rejections.sh --output "$RUNNER_TEMP/news-rejected-urls.json"
+      - name: Collect from the last successful state
+        if: steps.select.outputs.collect == 'true'
+        env:
+          HAS_SNAPSHOT: ${{ steps.restore.outputs.has_snapshot }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          NEWS_API_MAX_REQUESTS: ${{ vars.NEWS_API_MAX_REQUESTS }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Empty optional settings must not enable an API or override its defaults.
+          if [[ -z "$GEMINI_API_KEY" ]]; then unset GEMINI_API_KEY GEMINI_MODEL;
+          elif [[ -z "$GEMINI_MODEL" ]]; then unset GEMINI_MODEL; fi
+          collection_date=$(TZ=Asia/Taipei date +%F)
+          args=(--output "$NEWS_SNAPSHOT")
+          if [[ "$HAS_SNAPSHOT" == true ]]; then
+            args+=(--base "$RUNNER_TEMP/news-previous/public/data/incidents.json" --state "$RUNNER_TEMP/news-previous/state.json")
+          else
+            # An explicitly specified missing state is an error; omit it on bootstrap.
+            args+=(--base public/data/incidents.json --rejections "$RUNNER_TEMP/news-rejected-urls.json")
+          fi
+          if [[ -n "$START_DATE" ]]; then args+=(--from "$START_DATE" --to "$END_DATE"); fi
+          npm run news:update -- "${args[@]}"
+          if [[ -z "$START_DATE" ]]; then echo "NEWS_COLLECTION_DATE=$collection_date" >> "$GITHUB_ENV"; fi
+      - name: Validate and prepare the immutable public snapshot
+        if: steps.restore.outputs.mode != 'skip'
+        env:
+          NEWS_DATA_SHA: ${{ steps.restore.outputs.news_data_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=()
+          if [[ -n "$ALLOW_REPLAY" ]]; then args+=("$ALLOW_REPLAY"); fi
+          node scripts/publish_news.mjs --snapshot "$NEWS_SNAPSHOT" --prepare "${args[@]}"
+          npm test
+          npm run data:validate
+      - name: Build and check the same snapshot
+        if: steps.restore.outputs.mode != 'skip'
+        env:
+          GITHUB_PAGES: "true"
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run build
+          args=()
+          if [[ -n "$ALLOW_REPLAY" ]]; then args+=("$ALLOW_REPLAY"); fi
+          node scripts/publish_news.mjs --snapshot "$NEWS_SNAPSHOT" --check-dist dist "${args[@]}"
+      - name: Save data and state before deployment
+        if: steps.restore.outputs.mode != 'skip'
+        id: persist
+        env:
+          NEWS_DATA_SHA: ${{ steps.restore.outputs.news_data_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=()
+          if [[ -n "$ALLOW_REPLAY" ]]; then args+=("$ALLOW_REPLAY"); fi
+          node scripts/publish_news.mjs --snapshot "$NEWS_SNAPSHOT" --persist "${args[@]}"
+      - uses: actions/configure-pages@v5
+        if: steps.restore.outputs.mode != 'skip'
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.restore.outputs.mode != 'skip'
+        with:
+          path: dist
+      # GITHUB_TOKEN's news-data push does not trigger deploy.yml. Deploy explicitly.
+      - name: Deploy this build to Pages
+        if: steps.restore.outputs.mode != 'skip'
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify online code/data hashes and record publication
+        if: steps.restore.outputs.mode != 'skip'
+        env:
+          NEWS_DATA_SHA: ${{ steps.persist.outputs.news_data_sha }}
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          args=()
+          if [[ -n "$ALLOW_REPLAY" ]]; then args+=("$ALLOW_REPLAY"); fi
+          node scripts/publish_news.mjs --snapshot "$NEWS_SNAPSHOT" --verify-url "$PAGE_URL" "${args[@]}"
+      - name: Retain diagnostic report, including collection failures
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: news-review-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/ltn-news/news-report.*
+          name: news-report-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/news-next/report.json
+            ${{ runner.temp }}/news-next/manifest.json
           if-no-files-found: ignore
           retention-days: 30
