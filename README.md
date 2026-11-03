@@ -306,7 +306,9 @@ npm run data:news -- --start 2026-05-26 --end 2026-05-27 --report /tmp/news-repo
 
 `--max-pages` 預設 20，超過時失敗並要求拆小區間，不會悄悄截斷。長期缺口請依週分批回補；預設三日回看不代表歷史資料已完整。
 
-新資料是待複核候選：`needsHumanReview: true`、`includeInStats: false`，沒有明確數量時使用 `null`。閱讀全文不代表規則判讀已經正確。人工核對事故、地點、死傷與重複報導後，才調整品質欄位；明確零死傷可收錄，未知不可當成零。
+新資料是待複核候選：`needsHumanReview: true`、`includeInStats: false`，沒有明確數量時使用 `null`。目前採保守標題篩選：標題須能辨識具體交通危險；可能漏掉僅在內文交代事故的文章，可從執行報告逐篇核對。閱讀全文不代表規則判讀已經正確。人工核對事故、地點、死傷與重複報導後，才調整品質欄位；明確零死傷可收錄，未知不可當成零。
+
+輸出檔必須先有有效的既有資料；檔案遺失或空陣列時停止，避免只用近期新聞重建整份資料。
 
 重跑會保留既有紀錄與校正，依 URL、標題及 `relatedReports` 避免再次加入同篇報導。不會只憑同縣市、相同傷亡數就合併不同事故；同一事故的跨篇報導由 PR 複核確認。
 
@@ -322,7 +324,7 @@ npm run data:validate
 流程：抓取與來源判定 → 測試／資料檢查／建置 → 建立或累積同一個資料 PR → 人工複核與合併 → 既有 Pages 部署 → 線上 JSON 雜湊核對。
 
 - 只有 `public/data/incidents.json` 會被自動提交，沒有新資料時不建立新 PR。
-- 未合併的 PR 持續累積；保留人工修改，與 main 合併衝突時停止，不會強制推送。
+- 未合併的 PR 持續累積；保留人工修改與刪除，與 main 合併衝突時停止，不會強制推送。移除的來源網址由目前分支及已合併資料 PR 的 Git 歷史記住（包括 squash merge）；之後即使 PR 已合併也不自動加回。若要恢復誤刪資料，請人工加入。單純關閉未合併 PR 不代表永久拒絕其中所有新聞。
 - 合併前核對完整 diff、原文及事件是否重複。新候選預設排除統計；確認城市與死傷後才設 `needsHumanReview: false`、`includeInStats: true`。
 - 每次執行都有搜尋來源、收錄／排除／重複的摘要及 30 天 artifact。失敗有明確錯誤；「沒有新事故」與「無法取得資料」不混用。
 - GitHub repository 的 **Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests** 必須開啟。預設權限仍可維持唯讀；只有更新 job 要求 contents／pull-requests write。不需要另外建立 PAT 或 AI 金鑰。

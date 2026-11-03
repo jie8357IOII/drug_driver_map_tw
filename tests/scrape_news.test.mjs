@@ -47,6 +47,10 @@ for (const [name, title, body, counts] of [
   ["explicit casualty numbers", "臺北市毒駕釀2死3傷", "臺北市發生毒駕事故，共造成2人死亡、3人受傷，警方正在調查駕駛的毒品來源。", [2, 3]],
   ["age is not a casualty count", "臺北市毒駕撞死78歲婦人", "臺北市一輛轎車涉毒駕失控，撞上78歲婦人，警方調查事故經過，報導未提供總死傷數。", [null, null]],
   ["unknown is not zero", "臺北市毒駕逆向逃逸", "臺北市警方追查毒駕事件，駕駛逆向逃逸造成交通危險，事故細節仍在調查中。", [null, null]],
+  ["unharmed nearby people do not negate an injured rider", "臺北市毒駕撞機車", "臺北市發生毒駕撞機車事故，騎士受傷送醫，附近店家無人傷亡，警方調查中。", [null, null]],
+  ["denied internet counts stay unknown", "臺北市毒駕撞車 網傳2死3傷", "臺北市發生毒駕撞車，警方否認網傳2死3傷，事故詳細人數仍未公布，請民眾勿轉傳。", [null, null]],
+  ["historical casualty counts are not current incident counts", "臺北市毒駕撞車", "臺北市發生毒駕撞車，人數尚未公布。去年另一起事故造成2人死亡、3人受傷。", [null, null]],
+  ["not yet ruled out is still suspected drug driving", "臺北市疑毒駕撞車", "臺北市發生駕車撞擊事故，警方尚未排除毒駕，仍在調查肇事原因及駕駛狀況。", [null, null]],
 ]) {
   test(name, async (t) => {
     const ctx = await setup(t, [{ url: url(200), title, body }]);
@@ -86,6 +90,30 @@ test("policies and court follow-ups do not become new incidents", async (t) => {
   assert.equal((await ctx.run()).code, 0);
   assert.deepEqual(await ctx.read(), [sentinel]);
   assert.equal((await ctx.report()).articles.filter((item) => item.status === "excluded").length, 2);
+});
+
+test("enforcement and general drug stories mentioning past crashes are not new traffic events", async (t) => {
+  const titles = [
+    "防毒駕！卓揆稱提高刑罰有共識 藍委駁綠營轟藍白砍預算帶風向",
+    "毒駕不斷令人憂 中市警察局:上週開始只要毒駕反應就逮捕",
+    "獨家》毒駕躲查緝狂飆重創2機車騎士肇逃 重判6年2月",
+    "擴大攔檢抓毒駕 逮到失聯移工",
+    "抄喪屍毒分裝場 基隆3警受傷",
+  ];
+  const ctx = await setup(t, titles.map((title, index) => ({
+    title, url: url(200 + index), body: "警方公布此次毒品案件處理情況。臺北市過去曾發生毒駕衝撞事件，造成1人受傷，因此加強執法。",
+  })));
+  assert.equal((await ctx.run()).code, 0);
+  assert.deepEqual(await ctx.read(), [sentinel]);
+});
+
+test("ordinary crashes mentioning no drug evidence are excluded", async (t) => {
+  const ctx = await setup(t, [
+    { url: url(200), title: "臺中市轎車左轉撞機車", body: "臺中市轎車左轉撞機車，騎士送醫。警方確認均無酒精反應，也未發現毒駕徵候，肇事原因仍待調查。" },
+    { url: url(201), title: "臺中市撞完行人庇護島就落跑", body: "臺中市車輛撞行人庇護島，員警檢視車內也未發現毒品相關跡證。警方未發現酒駕或毒駕徵候。" },
+  ]);
+  assert.equal((await ctx.run()).code, 0);
+  assert.deepEqual(await ctx.read(), [sentinel]);
 });
 
 test("duplicates include related reports; reruns preserve reviewer changes and bytes", async (t) => {
@@ -149,4 +177,26 @@ test("default dates are three completed Taipei days regardless of runner timezon
 test("validation rejects unreviewed automatic candidates included in statistics", async (t) => {
   const ctx = await setup(t, [], [{ ...sentinel, dataQuality: { flags: ["automated_candidate"], includeInStats: true, needsHumanReview: true } }]);
   assert.equal((await ctx.run(["--validate"])).code, 1);
+});
+
+test("a removed or empty dataset cannot be silently recreated from a short window", async (t) => {
+  const ctx = await setup(t, []);
+  await fs.unlink(ctx.output);
+  assert.equal((await ctx.run()).code, 1);
+  await assert.rejects(fs.stat(ctx.output), { code: "ENOENT" });
+  await fs.writeFile(ctx.output, "[]\n");
+  assert.equal((await ctx.run()).code, 1);
+  assert.deepEqual(await ctx.read(), []);
+});
+
+test("overlapping collection honors a previously deleted source", async (t) => {
+  const item = { url: url(200), title: "臺北市毒駕撞車", body: "臺北市發生毒駕撞車事件，警方正在現場調查，現場無人傷亡，交通逐漸恢復。" };
+  const ctx = await setup(t, [item]);
+  assert.equal((await ctx.run()).code, 0);
+  await fs.writeFile(ctx.output, JSON.stringify([sentinel]));
+  const rejections = path.join(path.dirname(ctx.output), "rejected.json");
+  await fs.writeFile(rejections, JSON.stringify([item.url]));
+  assert.equal((await ctx.run(["--rejections", rejections])).code, 0);
+  assert.deepEqual(await ctx.read(), [sentinel]);
+  assert.match((await ctx.report()).articles[0].reason, /複核已移除/);
 });

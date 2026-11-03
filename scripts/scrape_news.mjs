@@ -21,6 +21,7 @@ Options:
   --keyword <text>                  Search keyword. Default: 毒駕
   --max-pages <number>              Fail if more pages are needed. Default: 20.
   --report <path>                    Write a JSON report, including failures.
+  --rejections <path>                JSON array of previously removed source URLs.
   --validate                        Validate the existing file without fetching.
 
 With no dates, check the last three completed Asia/Taipei calendar days.
@@ -52,7 +53,7 @@ function parseArgs(argv) {
       continue;
     }
 
-    if (["--date", "--start", "--end", "--output", "--keyword", "--max-pages", "--report"].includes(arg)) {
+    if (["--date", "--start", "--end", "--output", "--keyword", "--max-pages", "--report", "--rejections"].includes(arg)) {
       if (!next || next.startsWith("--")) {
         throw new Error(`${arg} requires a value.`);
       }
@@ -63,6 +64,7 @@ function parseArgs(argv) {
       if (arg === "--output") args.outputPath = next;
       if (arg === "--keyword") args.keyword = next;
       if (arg === "--report") args.reportPath = next;
+      if (arg === "--rejections") args.rejectionsPath = next;
       if (arg === "--max-pages") {
         const parsed = Number(next);
         if (!Number.isInteger(parsed) || parsed < 1) {
@@ -334,19 +336,32 @@ function casualtyCount(value, kind) {
   return counts.size === 1 ? [...counts][0] : null;
 }
 
+function casualtyEvidence(title, body) {
+  if (/否認|不實|誤傳|網傳|謠言|未證實/.test(`${title} ${body}`)) return "";
+  const summaries = body.split(/[。！？\n]/).filter((sentence) =>
+    !/去年|前年|過去|多年前|另一起|另外一起|另案|統計|往年|平均|附近店家/.test(sentence) &&
+    /(?:造成|釀成|導致|共計|合計)[\d零〇一二兩三四五六七八九十]|(?:現場|整起事故|這起事故)(?:均|皆|並|幸|所幸)?(?:無人|未造成)/.test(sentence),
+  );
+  return `${title} ${summaries.join(" ")}`;
+}
+
 function classify(article) {
   const { title, body } = article;
-  if (/判刑|判決|起訴|求刑|國民法官|一審|二審|定讞|上訴|修法|政策|立委|議員|質詢|擬推|防制|統計|專題|社論|評論|宣導|回顧/.test(title)) {
+  if (/判刑|判決|重判|輕判|判處|徒刑|起訴|求刑|國民法官|一審|二審|定讞|上訴|修法|政策|刑責|刑罰|立委|藍委|議員|質詢|擬推|防制|防毒駕|統計|專題|社論|評論|宣導|回顧/.test(title)) {
     return { reason: "政策、統計、評論或司法後續報導" };
   }
-  if (/排除毒駕|無酒駕毒駕|驗無.*毒駕/.test(`${title} ${body.slice(0, 350)}`)) {
+  const lead = `${title} ${body.slice(0, 350)}`;
+  const negationChecked = lead.replace(/尚未排除毒駕|未排除毒駕|不能排除毒駕|無法排除毒駕/g, "疑似毒駕");
+  if (/排除毒駕|無酒駕毒駕|驗無.*毒駕/.test(negationChecked)) {
     return { reason: "報導排除毒駕" };
   }
-  const lead = `${title} ${body.slice(0, 350)}`;
-  const drug = /毒駕|吸毒|毒品|毒檢|毒物|安非他命|愷他命|依托咪酯|喪屍煙彈|大麻|海洛因/.test(lead);
-  const traffic = /撞|衝入|衝進|衝上|翻車|車禍|事故|肇事|逆向|失控|危險駕駛|拒檢.*(?:逃|衝)|逃逸.*(?:追|衝|車)|闖紅燈/.test(lead);
+  const drugEvidence = lead.replace(/(?:未發現|未見|查無|無)(?:酒駕[、或及與]?|酒精[、或及與]?)?(?:毒駕(?:徵候|反應)?|毒品(?:相關)?(?:跡證|反應)?)/g, "");
+  const drug = /毒駕|吸毒|毒品|毒檢|毒物|安非他命|愷他命|依托咪酯|喪屍煙彈|大麻|海洛因/.test(drugEvidence);
+  // General drug/enforcement stories often mention historical crashes in their body.
+  // Require a concrete traffic event in the headline, then verify the drug link in the lead.
+  const traffic = /撞|衝入|衝進|衝上|翻車|車禍|事故|肇事|逆向|失控|危險駕駛|拒檢.*(?:逃|衝)|逃逸.*(?:追|衝|車)|闖紅燈|釀.*(?:死|傷)/.test(title);
   if (!drug || !traffic) return { reason: "未確認具體涉毒交通事故或危險事件" };
-  const evidenceText = `${title} ${body}`;
+  const evidenceText = casualtyEvidence(title, body);
   const city = inferCity(title, body);
   const deaths = casualtyCount(evidenceText, "deaths");
   const injuries = casualtyCount(evidenceText, "injuries");
@@ -406,6 +421,7 @@ function knownArticles(incidents) {
 }
 
 async function crawl(existing, report) {
+  const rejected = new Set(cli.rejectionsPath ? JSON.parse(await fs.readFile(cli.rejectionsPath, "utf8")) : []);
   const first = parseSearch(await fetchHtml(searchUrl(1)), 1);
   const totalPages = Math.max(1, Math.ceil(first.total / DEFAULT_PAGE_SIZE));
   if (totalPages > ltnSearch.maxPages) throw new Error(`Need ${totalPages} pages, exceeding --max-pages ${ltnSearch.maxPages}; split the date range.`);
@@ -424,6 +440,10 @@ async function crawl(existing, report) {
     const row = { ...listing, status: "duplicate", reason: "已存在的 URL 或報導標題" };
     report.articles.push(row);
     if (known.urls.has(listing.url) || known.titles.has(listing.title)) continue;
+    if (rejected.has(listing.url)) {
+      Object.assign(row, { status: "excluded", reason: "先前複核已移除的來源；保留刪除決定" });
+      continue;
+    }
     await delay(300);
     const article = parseArticle(await fetchHtml(listing.url), listing);
     const date = normalizeDate(article.publishedAt);
@@ -481,15 +501,9 @@ const report = {
 };
 if (cli.reportPath && path.resolve(cli.reportPath) === outputPath) throw new Error("Report and incidents paths must differ.");
 try {
-  let existing;
-  try {
-    existing = JSON.parse(await fs.readFile(outputPath, "utf8"));
-  } catch (error) {
-    if (error.code !== "ENOENT" || cli.validate) throw error;
-    existing = [];
-  }
+  const existing = JSON.parse(await fs.readFile(outputPath, "utf8"));
   validateIncidents(existing);
-  if (cli.validate && !existing.length) throw new Error("The published incidents file must not be empty.");
+  if (!existing.length) throw new Error("The existing incidents file must not be empty; refusing to replace historical data.");
   const additions = cli.validate ? [] : await crawl(existing, report);
   const incidents = [...additions, ...existing].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
   validateIncidents(incidents);

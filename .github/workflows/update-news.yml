@@ -19,6 +19,7 @@ permissions:
 concurrency:
   group: ltn-news-data-pr
   cancel-in-progress: false
+  queue: max
 
 jobs:
   update:
@@ -70,6 +71,22 @@ jobs:
           echo "pr=$pr" >> "$GITHUB_OUTPUT"
       - run: npm ci
       - run: npm test
+      - run: npm run data:validate
+      - name: Preserve past review deletions
+        shell: bash
+        run: |
+          set -euo pipefail
+          refs=()
+          gh api --paginate "repos/$GH_REPO/pulls?state=closed&base=main&per_page=100" \
+            --jq '.[] | select(.merged_at != null) | select(.head.ref | startswith("codex/ltn-news-data-")) | .number' \
+            > "$RUNNER_TEMP/merged-news-prs.txt"
+          while read -r number; do
+            [ -n "$number" ] || continue
+            ref="refs/remotes/news-reviews/$number"
+            git fetch origin "refs/pull/$number/head:$ref"
+            refs+=("$ref")
+          done < "$RUNNER_TEMP/merged-news-prs.txt"
+          node scripts/list_rejected_news.mjs "$RUNNER_TEMP/rejected-urls.json" "${refs[@]}"
       - name: Fetch complete articles into review candidates
         env:
           START_DATE: ${{ inputs.start_date }}
@@ -77,7 +94,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          args=(--report "$RUNNER_TEMP/news-report.json")
+          args=(--report "$RUNNER_TEMP/news-report.json" --rejections "$RUNNER_TEMP/rejected-urls.json")
           if [ -n "$START_DATE" ] || [ -n "$END_DATE" ]; then
             args+=(--start "$START_DATE" --end "$END_DATE")
           fi
@@ -131,12 +148,20 @@ jobs:
             echo 'No data changes; no new PR.' >> "$GITHUB_STEP_SUMMARY"
             exit 0
           fi
+          if [ -n "$NEWS_PR" ] && [ "$(gh pr view "$NEWS_PR" --json state --jq .state)" != OPEN ]; then
+            echo 'The data PR was merged or closed during collection; rerun against main.' >&2
+            exit 1
+          fi
           git push origin "HEAD:$NEWS_BRANCH"
           if [ -z "$NEWS_PR" ]; then
             gh pr create --base main --head "$NEWS_BRANCH" \
               --title 'Review new LTN drug-driving incidents' \
               --body-file "$RUNNER_TEMP/news-report.md"
           else
+            if [ "$(gh pr view "$NEWS_PR" --json state --jq .state)" != OPEN ]; then
+              echo 'The data PR changed state during publication; verify the retained report before rerunning.' >&2
+              exit 1
+            fi
             gh pr view "$NEWS_PR" --json url --jq .url >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Retain source decisions, including failures
