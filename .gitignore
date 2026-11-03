@@ -2,3 +2,7 @@ node_modules/
 dist/
 .DS_Store
 npm-debug.log*
+.venv-news/
+__pycache__/
+.news-output/
+.news-state/
