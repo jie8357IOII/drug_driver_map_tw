@@ -336,6 +336,75 @@ npm run data:validate
 
 ---
 
+### 在本機執行相同流程
+
+Actions 與本機共用 `scripts/update_news_pr.sh`，完整入口是 `npm run news:pr`。只有定時觸發與 artifact 上傳留在 GitHub；抓取、複核紀錄、驗證、建置及建立／更新 PR 都能在本機執行。
+
+**前置需求**：Node.js 22、npm、Git、GitHub CLI (`gh`)、`jq` 與 Bash（macOS／Linux；Windows 可用 WSL）。本機使用你登入的 GitHub 身分，需有此 repository 的推送及建立 PR 權限；不需要設定 `GITHUB_TOKEN`。
+
+```bash
+node --version
+npm --version
+git --version
+gh --version
+jq --version
+gh auth login
+gh auth setup-git
+```
+
+如果原目錄有尚未提交的程式或資料，請先使用另一份乾淨 clone。以下從你要存放專案的上層目錄執行，資料夾名稱可自行替換：
+
+```bash
+git clone https://github.com/jie8357IOII/drug_driver_map_tw.git drug-driver-news-runner
+cd drug-driver-news-runner
+npm ci
+```
+
+**完整流程：會推送資料分支並建立／更新 PR，不會直接合併或發布網站。**
+
+```bash
+# 與每日 Actions 相同：最近三個已結束的台北日曆日
+npm run news:pr
+
+# 回補單日
+npm run news:pr -- --date 2026-05-26
+
+# 回補一段區間；長期缺口請分批
+npm run news:pr -- --start 2026-05-26 --end 2026-05-27
+
+# 查看可用參數
+npm run news:pr -- --help
+```
+
+完整流程會更新 `origin/main` 的遠端追蹤資訊，另開 `codex/news-run-*` 工作分支，保留既有資料 PR 的修改與刪除。成功後回到原分支；失敗時保留工作分支及報告供檢查，不會自動 stash、丟棄本機修改或強制推送。工作目錄不乾淨時直接停止。請避免同時啟動本機與雲端更新；發生推送競爭或合併衝突時先檢查，再重跑。
+
+執行結束會印出 `Run reports: /絕對路徑`，其中 `news-report.json` 是完整來源判定紀錄，`news-report.md` 是閱讀版。GitHub 執行時相同檔案會成為 artifact。
+
+**只在暫存副本試抓，不提交或推送：**
+
+```bash
+news_preview_dir=$(mktemp -d)
+cp public/data/incidents.json "$news_preview_dir/incidents.json"
+npm run data:news -- --date 2026-05-26 \
+  --output "$news_preview_dir/incidents.json" \
+  --report "$news_preview_dir/news-report.json"
+npm run data:validate -- --output "$news_preview_dir/incidents.json"
+cat "$news_preview_dir/news-report.json"
+```
+
+此試抓指令不會自動匯入 Git 歷史中的刪除決定；需要保留完整複核歷史時請使用 `news:pr`。單獨的 `data:news` 不指定 `--output` 會修改目前目錄的資料檔。
+
+**分別執行 Actions 中的檢查與建置：**
+
+```bash
+npm test
+npm run data:validate
+GITHUB_PAGES=true npm run build
+GITHUB_PAGES=true npm run preview
+```
+
+使用 Pages 設定建置後，本機預覽路徑為終端顯示的網址加上 `/drug_driver_map_tw/`（預設通常是 `http://localhost:4173/drug_driver_map_tw/`）。建置與預覽不會發布網站。資料 PR 經人工複核、合併到 `main` 後，才由 Pages workflow 部署並核對線上資料。
+
 ### 舊版一次性清理
 
 `npm run data:clean` 是歷史資料整備工具，可能改用固定日期的原始備份重建；**不屬於每日流程，不要接在 `data:news` 後面執行**。每日更新自行保留既有資料與人工校正，不使用這支腳本。
