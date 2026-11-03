@@ -1,6 +1,8 @@
 import { setTimeout as delay } from "node:timers/promises";
 import { load } from "cheerio";
 
+export const NEWS_KEYWORDS = ["毒駕", "酒駕", "酒後駕車", "酒測", "拒測"];
+
 function text(value) {
   return String(value || "").replace(/\s+/g, " ").trim();
 }
@@ -85,7 +87,7 @@ export async function fetchHtml(url) {
 }
 
 // Shared source adapter: every returned listing belongs to a fully checked page.
-export async function discoverArticles({ from, to, keywords = ["毒駕", "酒駕", "酒後駕車", "酒測", "拒測"], maxPages = 30 }) {
+export async function discoverArticles({ from, to, keywords = NEWS_KEYWORDS, maxPages = 30 }) {
   const found = new Map();
   for (const keyword of keywords) {
     let total = null;

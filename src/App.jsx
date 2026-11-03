@@ -928,6 +928,152 @@ function DataStatusBar({ status, build }) {
   );
 }
 
+function coverageDateRange(from, to) {
+  if (!from && !to) return "未登錄";
+  return `${formatDate(from) || "起日未登錄"} ～ ${formatDate(to) || "迄日未登錄"}`;
+}
+
+function DataCoveragePanel({ newsStatus, selectedMonths, months, setSelectedMonths, suspects = [] }) {
+  const [reviewFilter, setReviewFilter] = useState("all");
+  const coverage = newsStatus?.coverage;
+  const searches = Array.isArray(coverage?.searches) ? coverage.searches : [];
+  const recordDates = coverage?.recordDates || {};
+  const history = coverage?.historyReview;
+  const rows = Array.isArray(history?.rows) ? history.rows : [];
+  const visibleRows = rows.filter((row) => reviewFilter === "all" || row.status === reviewFilter);
+  const sources = [...new Set([
+    ...(Array.isArray(newsStatus?.sourceCoverage) ? newsStatus.sourceCoverage : []),
+    ...searches.map((search) => search.source),
+  ].filter(Boolean))];
+  const sourceLabel = (source) => source === "LTN" ? "自由時報（LTN）" : source || "來源未登錄";
+  const countLabel = (value) => Number.isInteger(value) && value >= 0 ? `${value} 筆` : "未登錄";
+  const suspectMonths = [...new Set(suspects.map((row) => row.month).filter(Boolean))].sort();
+  const comparisonMonths = suspectMonths.length
+    ? months.filter((month) => month >= suspectMonths[0] && month <= suspectMonths.at(-1)) : [];
+  const hasSearchOverlap = suspectMonths.length > 0 && searches.some(({ from, to }) =>
+    /^\d{4}-\d{2}-\d{2}$/.test(from || "") && /^\d{4}-\d{2}-\d{2}$/.test(to || "") && from <= to &&
+    from.slice(0, 7) <= suspectMonths.at(-1) && to.slice(0, 7) >= suspectMonths[0]
+  );
+
+  return (
+    <section className="coverage-panel panel-pop" aria-labelledby="coverage-heading">
+      <div className="coverage-heading">
+        <h2 id="coverage-heading">資料來源與涵蓋範圍</h2>
+        <p>登錄來源：{sources.length ? sources.map(sourceLabel).join("、") : "未登錄"}</p>
+      </div>
+      <p className="coverage-caveat">
+        本站依下列來源、關鍵字與搜尋區間整理新聞，不涵蓋全台所有媒體或所有事件。
+        有資料的日期跨度，不代表期間每天都已完整搜尋，也不代表沒有收錄的日期沒有事件。
+      </p>
+
+      <div className="coverage-grid">
+        <section className="coverage-searches">
+          <h3>已完成搜尋的新聞發布日期區間</h3>
+          {searches.length ? <ul className="coverage-search-list">
+            {searches.map((search, index) => {
+              const keywords = Array.isArray(search.keywords) ? search.keywords.filter((word) => typeof word === "string" && word.trim()) : [];
+              return <li key={`${search.source}-${search.from}-${search.to}-${index}`}>
+                <strong>{sourceLabel(search.source)}｜{coverageDateRange(search.from, search.to)}</strong>
+                <p>搜尋關鍵字：{keywords.length ? keywords.join("、") : "未登錄"}</p>
+                <small>檢查時間：{formatStatusTime(search.checkedAt) || "未登錄"}</small>
+              </li>;
+            })}
+          </ul> : <p className="coverage-empty">未登錄實際搜尋區間與關鍵字；不能從既有資料的最早、最晚日期推定搜尋範圍。</p>}
+        </section>
+
+        <section className="coverage-record-dates">
+          <h3>既有資料日期跨度</h3>
+          <dl>
+            <div><dt>新聞發布日期</dt><dd>{coverageDateRange(recordDates.publishedFrom, recordDates.publishedTo)}</dd></div>
+            <div><dt>事件發生日期</dt><dd>{coverageDateRange(recordDates.occurredFrom, recordDates.occurredTo)}</dd></div>
+          </dl>
+          <p>這裡只列已收錄資料的日期邊界；發生日期未明的事件無法提供該日期。
+            歷史原文重新核對，也不等於已補齊整段期間的新聞搜尋。</p>
+        </section>
+      </div>
+
+      <section className="coverage-official" aria-labelledby="coverage-official-heading">
+        <h3 id="coverage-official-heading">警政署公開統計｜毒品嫌疑犯</h3>
+        {suspectMonths.length ? <p>
+          現有月資料起訖：<strong>{toMonthLabel(suspectMonths[0])} ～ {toMonthLabel(suspectMonths.at(-1))}</strong>
+          ；有資料 {suspectMonths.length} 個月份、{suspects.length} 筆縣市月資料。
+        </p> : <p className="coverage-empty">尚未載入毒品嫌疑犯月資料，無法顯示現有資料起訖。</p>}
+        <p>這份資料記錄毒品嫌疑犯人數，不是酒駕或毒駕事故件數。
+          它與新聞資料分開計算，不互相加總，也不作為新聞事故率的分母；上述月份不代表新聞已完成搜尋的期間。</p>
+        {suspectMonths.length > 0 && !hasSearchOverlap ? <p className="coverage-caveat">
+          警政署期間內尚無已登錄的完整新聞搜尋區間，不能視為已補齊同期間新聞。
+        </p> : null}
+        <div className="coverage-period-actions" role="group" aria-label="期間對照" aria-describedby="coverage-period-help">
+          <button type="button" disabled={!suspectMonths.length} onClick={() => setSelectedMonths(comparisonMonths)}>
+            套用警政署對照期間
+          </button>
+          <button type="button" disabled={!months.length} onClick={() => setSelectedMonths(months)}>
+            全部新聞月份
+          </button>
+        </div>
+        <p id="coverage-period-help">
+          依警政署期間篩選現有新聞月份，{comparisonMonths.length ? `目前有 ${comparisonMonths.length} 個月份交集。` : "目前沒有月份交集，套用後顯示無資料，不代表零事件。"}
+          這不表示已補齊整段期間的新聞；未搜尋或沒有現有新聞的月份不自動補入、不填零事件。
+          事件件數與嫌疑犯人數仍分開計算；期間外新聞保留，可用「全部新聞月份」恢復查看。
+        </p>
+      </section>
+
+      <div className="coverage-selection">
+        <strong>目前選取的新聞發布月份（{selectedMonths.length} 個）</strong>
+        <p>{selectedMonths.length ? [...selectedMonths].sort().map(toMonthLabel).join("、") : "目前未選取可用的新聞月份，列表與趨勢無資料；不代表這段期間沒有事件。"}</p>
+        <small>月份篩選依新聞發布日，不是事件發生日；選取月份不會擴大上述實際搜尋範圍。</small>
+      </div>
+
+      <details className="coverage-history">
+        <summary>
+          <strong>歷史資料重新核對</strong>
+          <span>{history ? `本輪 ${countLabel(history.total)}｜自動通過 ${countLabel(history.accepted)}｜仍待釐清 ${countLabel(history.pending)}` : "尚未登錄複核結果"}</span>
+        </summary>
+        {history ? <>
+          <p>複核時間：{formatStatusTime(history.checkedAt) || "未登錄"}。自動通過代表機器核對通過，不是人工審查或司法認定。</p>
+          <p>以下為全站本輪歷史複核紀錄，不隨月份、縣市或酒／毒類別篩選變動；逐筆保留結果、原因與來源。</p>
+          <div className="coverage-review-controls">
+            <label>複核結果
+              <select value={reviewFilter} onChange={(event) => setReviewFilter(event.target.value)}>
+                <option value="all">全部結果</option>
+                <option value="pending">仍待釐清</option>
+                <option value="accepted">自動核對通過</option>
+              </select>
+            </label>
+            <span>已登錄明細 {rows.length} 筆，目前顯示 {visibleRows.length} 筆</span>
+          </div>
+          {visibleRows.length ? <ol className="coverage-review-list" tabIndex="0" aria-label="歷史複核逐筆結果，可捲動查看">
+            {visibleRows.map((row, index) => {
+              const urls = [...new Set([row.url, ...(Array.isArray(row.sourceUrls) ? row.sourceUrls : [])])]
+                .filter((url) => typeof url === "string" && /^https?:\/\//i.test(url));
+              const reasons = Array.isArray(row.reasons)
+                ? row.reasons.filter((reason) => typeof reason === "string" && /[\u3400-\u9fff]/u.test(reason)) : [];
+              return <li key={row.incidentId || row.url || index}>
+                <article className="coverage-review-card">
+                  <div className="coverage-review-heading">
+                    <span className={`quality-badge ${row.status === "accepted" ? "ok" : "review"}`}>
+                      {row.status === "accepted" ? "自動核對通過" : row.status === "pending" ? "仍待釐清" : "結果未登錄"}
+                    </span>
+                    <h4>{urls.includes(row.url) ? <a href={row.url} target="_blank" rel="noreferrer">{row.title || "未登錄新聞標題"}</a> : row.title || "未登錄新聞標題"}</h4>
+                  </div>
+                  {reasons.length ? <ul className="coverage-review-reasons">
+                    {reasons.map((reason, reasonIndex) => <li key={reasonIndex}>{reason}</li>)}
+                  </ul> : <p>未登錄中文原因說明；請參閱來源報導核對。</p>}
+                  <div className="coverage-review-sources" aria-label="本筆複核來源">
+                    {urls.length ? urls.map((url, sourceIndex) => <a key={url} href={url} target="_blank" rel="noreferrer">
+                      來源 {sourceIndex + 1}{url === row.url ? "（原始報導）" : ""}
+                    </a>) : <span>未登錄來源連結</span>}
+                  </div>
+                </article>
+              </li>;
+            })}
+          </ol> : <p className="coverage-empty">{rows.length ? "此分類沒有已登錄的複核紀錄。" : "未登錄逐筆複核明細，不能將缺少明細視為全部通過。"}</p>}
+        </> : <p className="coverage-empty">尚未登錄歷史資料的重新核對結果；舊資料仍依各筆統計資格處理。</p>}
+      </details>
+    </section>
+  );
+}
+
 function InsightStrip({ insights }) {
   const items = [
     {
@@ -2402,7 +2548,7 @@ export default function App() {
       <header className="app-hero">
         <div>
           <span>新聞事件與公開統計整理</span>
-          <h1>全台酒駕與毒駕新聞觀察</h1>
+          <h1>酒駕與毒駕新聞觀察</h1>
           <p>
             看見事件，也看見被影響的人。每一個死亡與受傷，背後都可能是一段正在回家的路、一次平凡的出門，
             或一個家庭再也回不去的日常。
@@ -2444,6 +2590,14 @@ export default function App() {
       </header>
 
       <DataStatusBar status={dataStatus} build={newsBuild} />
+
+      <DataCoveragePanel
+        newsStatus={dataStatus}
+        selectedMonths={selectedMonths}
+        months={months}
+        setSelectedMonths={setSelectedMonths}
+        suspects={suspects}
+      />
 
       <section className="global-news-filters panel-pop" aria-label="共同資料篩選">
         <label>酒／毒類別<select value={impairmentFilter} onChange={(event) => setImpairmentFilter(event.target.value)}>

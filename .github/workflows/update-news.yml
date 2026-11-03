@@ -14,6 +14,10 @@ on:
       end_date:
         description: "Optional last publication day (YYYY-MM-DD), inclusive"
         type: string
+      recheck_excluded:
+        description: "Also refetch excluded historical records; normal daily collection still runs"
+        type: boolean
+        default: false
       snapshot_ref:
         description: "Local publisher upload: news-upload/<snapshot hash> (no crawl)"
         type: string
@@ -50,6 +54,7 @@ jobs:
     env:
       START_DATE: ${{ inputs.start_date }}
       END_DATE: ${{ inputs.end_date }}
+      RECHECK_EXCLUDED: ${{ inputs.recheck_excluded == true && 'true' || 'false' }}
       SNAPSHOT_REF: ${{ inputs.snapshot_ref }}
       SNAPSHOT_SHA: ${{ inputs.snapshot_sha }}
       ALLOW_REPLAY: ${{ inputs.allow_replay == true && '--allow-replay' || '' }}
@@ -76,6 +81,9 @@ jobs:
           fi
           if [[ -n "$SNAPSHOT_REF" && -n "$START_DATE" ]]; then
             echo 'Choose a snapshot or a collection date range, not both.' >&2; exit 1
+          fi
+          if [[ -n "$SNAPSHOT_REF" && "$RECHECK_EXCLUDED" == true ]]; then
+            echo 'recheck_excluded collects new sources and cannot be combined with snapshot_ref.' >&2; exit 1
           fi
       - name: Restore durable state and decide whether to retry
         id: restore
@@ -119,8 +127,8 @@ jobs:
             node scripts/publish_news.mjs --import "$SNAPSHOT_REF" --sha "$SNAPSHOT_SHA" --output "$RUNNER_TEMP/news-next" "${args[@]}"
             echo "NEWS_SNAPSHOT=$RUNNER_TEMP/news-next" >> "$GITHUB_ENV"
           elif [[ "$MODE" == retry ]]; then
-            if [[ -n "$START_DATE" ]]; then
-              echo 'A saved snapshot is awaiting deployment. Retry without dates before backfilling.' >&2; exit 1
+            if [[ -n "$START_DATE" || "$RECHECK_EXCLUDED" == true ]]; then
+              echo 'A saved snapshot is awaiting deployment. Retry without dates or recheck_excluded before collecting again.' >&2; exit 1
             fi
             echo "NEWS_SNAPSHOT=$RUNNER_TEMP/news-previous" >> "$GITHUB_ENV"
           else
@@ -155,6 +163,7 @@ jobs:
             args+=(--base public/data/incidents.json --rejections "$RUNNER_TEMP/news-rejected-urls.json")
           fi
           if [[ -n "$START_DATE" ]]; then args+=(--from "$START_DATE" --to "$END_DATE"); fi
+          if [[ "$RECHECK_EXCLUDED" == true ]]; then args+=(--recheck-excluded); fi
           npm run news:update -- "${args[@]}"
           if [[ -z "$START_DATE" ]]; then echo "NEWS_COLLECTION_DATE=$collection_date" >> "$GITHUB_ENV"; fi
       - name: Validate and prepare the immutable public snapshot
