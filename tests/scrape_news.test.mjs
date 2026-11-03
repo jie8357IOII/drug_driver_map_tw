@@ -65,6 +65,52 @@ for (const [name, title, body, counts] of [
   });
 }
 
+test("rolling backward over a victim is a concrete traffic event", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "毒駕倒車將人捲車底", body: "新北市男子毒駕倒車，騎士遭捲車底，警方將駕駛帶回調查，傷者尚在治療中。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  assert.equal((await ctx.read()).length, 2);
+});
+
+test("passenger drug evidence does not establish a drug-driving offender", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "高雄轎車撞護欄", body: "高雄市轎車撞護欄，警方檢查發現乘客毒品唾液檢驗呈陽性，駕駛的毒品檢測則為陰性。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  assert.deepEqual(await ctx.read(), [sentinel]);
+});
+
+test("multiple incidents do not mix drivers, drugs or casualty totals", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "苗栗連查兩起毒駕 一起撞傷行人", body: "苗栗警方分別查獲兩起毒駕。第一案騎士施用K他命撞人造成1人受傷；第二案駕駛吸食安非他命逆向，沒有公布傷亡。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  const row = (await ctx.read())[0];
+  assert.ok(row.dataQuality.flags.includes("multiple_incidents_same_article"));
+  assert.deepEqual(row.extractedDetails.drug, {});
+  assert.deepEqual([row.deaths, row.injuries], [null, null]);
+});
+
+test("drug aliases are normalized; negations and refused tests are not positive evidence", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "新北疑毒駕逆向", body: "新北市男子駕駛轎車逆向撞上機車。車內查獲依託咪酯及甲基安非它命，未檢出海洛因；警方要求唾液快篩但遭拒絕，後來採集尿液送驗。警方未進行血液檢驗。警方提醒勿接觸大麻。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  const row = (await ctx.read())[0];
+  assert.deepEqual(row.extractedDetails.drug.keywords, ["安非他命", "依托咪酯"]);
+  assert.deepEqual(row.extractedDetails.drug.testMethods, ["尿液檢驗"]);
+  assert.equal(row.extractedDetails.driver.primaryVehicleType, "汽車");
+});
+
+test("an impaired driver blocking a green light is retained without treating refused saliva tests as performed", async (t) => {
+  // LTN 5625597: the driver refused saliva screening; urine was subsequently collected.
+  const ctx = await setup(t, [{ url: url(200), title: "綠燈亮了不走 男疑毒駕拒測", body: "桃園市男子開車綠燈不走，警方發現有不能安全駕駛之虞。男子坦承施用安非他命。警方要求唾液快篩，男子卻始終不願配合。警方隨後採集尿液送驗。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  const rows = await ctx.read();
+  assert.equal(rows.length, 2);
+  assert.deepEqual(rows[0].extractedDetails.drug.testMethods, ["尿液檢驗"]);
+  assert.ok(rows[0].extractedDetails.crash.scenarioTypes.includes("綠燈未行"));
+});
+
+test("contradictory unquantified injuries cannot become zero casualties", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "臺北市毒駕事故", body: "臺北市事故造成騎士受傷，現場無人傷亡，警方正調查駕駛毒駕及肇事經過。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  assert.equal((await ctx.read())[0].injuries, null);
+});
+
 test("unrecognized HTTP 200 is a failure and leaves bytes intact", async (t) => {
   const ctx = await setup(t, []);
   const before = await fs.readFile(ctx.output, "utf8");
@@ -200,3 +246,80 @@ test("overlapping collection honors a previously deleted source", async (t) => {
   assert.deepEqual(await ctx.read(), [sentinel]);
   assert.match((await ctx.report()).articles[0].reason, /複核已移除/);
 });
+
+test("extracts reported drugs, performed tests and dangerous behavior from the article", async (t) => {
+  // LTN 5625421: drug/test information must reach the fields consumed by App.jsx.
+  const ctx = await setup(t, [{ url: url(200), title: "高雄男子毒駕逆向騎機車", body: "高雄市男子騎機車逆向遭攔查。警方實施唾液檢測，結果呈安非他命陽性反應。警方呼籲遠離海洛因與大麻。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  const row = (await ctx.read())[0];
+  assert.deepEqual(row.extractedDetails.drug.keywords, ["安非他命"]);
+  assert.deepEqual(row.extractedDetails.drug.testMethods, ["唾液快篩/檢測"]);
+  assert.equal(row.extractedDetails.driver.primaryVehicleType, "機車");
+  assert.ok(row.extractedDetails.crash.scenarioTypes.includes("逆向"));
+});
+
+test("drug possession and a traffic violation alone do not establish drug driving", async (t) => {
+  // LTN 5624523 reports possession, not consumption, suspicion or a drug-driving test.
+  const ctx = await setup(t, [{ url: url(200), title: "男子逆向騎車遭查獲毒品", body: "高雄市男子騎自行車逆向，警方攔查發現身上攜帶海洛因及依托咪酯，依毒品罪嫌送辦，另開交通違規罰單。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  assert.deepEqual(await ctx.read(), [sentinel]);
+});
+
+test("a drug-driving escape ending in a fall is a concrete dangerous event", async (t) => {
+  // LTN 5450990 was missed because the headline says 自摔 rather than 撞/失控.
+  const ctx = await setup(t, [{ url: url(200), title: "中和毒駕騎士遇警加速逃 自摔遭逮", body: "新北市男子騎微型電動二輪車拒檢逃逸、闖紅燈，最後自摔。唾液快篩呈愷他命、甲基卡西酮陽性反應。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  const row = (await ctx.read())[0];
+  assert.equal((await ctx.read()).length, 2);
+  assert.deepEqual(row.extractedDetails.drug.keywords, ["K他命", "甲基卡西酮"]);
+  assert.equal(row.extractedDetails.driver.primaryVehicleType, "微型電動二輪車");
+});
+
+test("city follows event location rather than the fixed city list or arrest location", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "毒駕撞警車 高雄追到台南逮人", body: "男子駕車在高雄市仁武區撞警車，逃到台南市後遭逮捕。警方毒品唾液快篩呈陽性反應，事故無人受傷。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  assert.equal((await ctx.read())[0].city, "高雄市");
+});
+
+test("bare Hsinchu does not guess county instead of city", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "新竹毒駕撞車", body: "新竹發生毒駕撞車，警方正調查詳細地點，報導並未揭露行政區及傷亡結果。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  assert.equal((await ctx.read())[0].city, "");
+});
+
+test("photo captions and promotions do not replace the article summary", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "高雄毒駕逆向", body: "高雄市男子騎機車逆向，警方檢測毒品呈陽性反應，後續移送偵辦，傷亡結果尚未公布。" }]);
+  ctx.routes.articles[url(200)] = ctx.routes.articles[url(200)].replace('<div class="text">', '<div class="text"><div class="photo"><p>資料照：台北市去年事故造成3死</p></div>');
+  assert.equal((await ctx.run()).code, 0);
+  const row = (await ctx.read())[0];
+  assert.match(row.summary, /^高雄市男子/);
+  assert.equal(row.deaths, null);
+});
+
+test("an explicit opinion headline needs no incident body and does not abort a batch", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "自由觀點》毒駕應如何防範", body: "" }]);
+  assert.equal((await ctx.run()).code, 0);
+  assert.deepEqual(await ctx.read(), [sentinel]);
+  assert.equal((await ctx.report()).articles[0].status, "excluded");
+});
+
+test("an incident-wide zero-casualty statement in the body is retained", async (t) => {
+  const ctx = await setup(t, [{ url: url(200), title: "臺北市毒駕撞多車", body: "臺北市男子涉毒駕失控撞上多輛車，所幸無人員傷亡，警方已將男子帶回調查。" }]);
+  assert.equal((await ctx.run()).code, 0);
+  assert.deepEqual([(await ctx.read())[0].deaths, (await ctx.read())[0].injuries], [0, 0]);
+});
+
+for (const [name, title, body, counts] of [
+  ["not ruled out is not ruled out", "高雄連環撞釀5傷 駕駛身亡疑毒駕", "高雄市發生車禍，警方不排除毒駕，仍須抽血確認，車內查獲依託咪酯菸彈。", [null, 5]],
+  ["explicit body totals", "彰化疑毒駕撞行人", "彰化市發生2死3傷事故，駕駛毒品快篩呈陽性反應，警方仍在調查事故原因。", [2, 3]],
+  ["no casualties wording", "臺北市毒駕撞車", "臺北市男子毒駕失控撞車，所幸沒有造成人員傷亡，警方已完成現場處理。", [0, 0]],
+  ["numbered police injuries", "新北毒駕撞傷兩警逃逸", "新北市毒駕男子撞傷執勤警員逃逸，警方正追查車輛行蹤，傷者已送醫治療。", [null, 2]],
+]) {
+  test(name, async (t) => {
+    const ctx = await setup(t, [{ url: url(200), title, body }]);
+    assert.equal((await ctx.run()).code, 0);
+    const rows = await ctx.read();
+    assert.equal(rows.length, 2);
+    assert.deepEqual([rows[0].deaths, rows[0].injuries], counts);
+  });
+}
