@@ -50,6 +50,77 @@
       ]
     },
     {
+      "id": "article-7bcfd240cf797b82",
+      "title": "騎士沒打方向燈又搖晃 一驗是毒駕！後座前妻也挨罰",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5627555",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-4eeb47b68332"
+      ],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-7db6331cb26a2525",
+      "title": "閃橫切機車自摔全身傷！ 永和騎士送醫「酒測高達0.83」遭送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5627732",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "conflicting_alcohol_evidence",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-7f4508e02de095d2",
+      "title": "北市文山隧道事故！公車疑遭飛石砸玻璃 司機受傷送醫",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5627490",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-cb437a3700783750",
       "title": "毒駕被抓 同車2乘客重罰",
       "url": "https://news.ltn.com.tw/news/society/paper/1776985",
@@ -64,6 +135,74 @@
       "city": "嘉義市",
       "issues": [
         "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-d6ad5237a908f236",
+      "title": "違規右轉巧遇巡邏員警 男掏證件不慎加碼演出「現場掉毒秀」",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5627718",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-b62507688011"
+      ],
+      "city": null,
+      "issues": [
+        "unknown_city",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-dcc91fff11a0801b",
+      "title": "屏科大校園車禍連連！機車車頭近全掉、轎車鈑金凹 駕駛雙雙送醫",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5628425",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-0b80840412f9"
+      ],
+      "city": "屏東縣",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-ebeeb0663bb4a632",
+      "title": "成功國宅昔有住戶趕警察又討便當！石明謹曝：治安變差還求搬回",
+      "url": "https://news.ltn.com.tw/news/life/breakingnews/5627493",
+      "source": "LTN",
+      "publishedAt": "2026-11-03",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
         "no_verified_event_link"
       ]
     },
