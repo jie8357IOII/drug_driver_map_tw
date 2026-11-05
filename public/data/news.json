@@ -2,6 +2,279 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-e6f36cb20b36d8ac",
+      "title": "魏平政問缺席毒駕修法 陳素月：勿炒作",
+      "url": "https://news.ltn.com.tw/news/politics/paper/1777305",
+      "source": "LTN",
+      "publishedAt": "2026-11-05",
+      "kind": "policy",
+      "status": "verified",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": []
+    },
+    {
+      "id": "article-00d23df058e273ea",
+      "title": "想倒車竟暴衝！台中6旬駕駛誤踩油門 母子收攤被撞「到處是便當」",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629301",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-38cb08af18f9"
+      ],
+      "city": "臺中市",
+      "issues": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-0bd9fafa79f9ae2c",
+      "title": "酒駕案參選爭議中選會抗告被駁 花蓮議員周駿宥保住參選資格",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629728",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "policy",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": []
+    },
+    {
+      "id": "article-35396cd202699f81",
+      "title": "抓賊變自投羅網！車子被搶急報案 被害車主先被揪出毒駕",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5628833",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-2a6ead48bb77"
+      ],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-41dc4034f5ace23f",
+      "title": "蕭淑慎丈夫梁軒安性侵案二審逆轉獲判無罪 卻因酒駕闖紅燈被起訴",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5628732",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unresolved_family_reference:丈夫",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "follow_up_requires_existing_event_link",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-511abfa61aff26d9",
+      "title": "才剛判性侵無罪...梁軒安「酒駕闖紅燈逃逸」遭起訴 本人反應曝光",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5629141",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unresolved_family_reference:丈夫",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-5b59eabdb6786c23",
+      "title": "屏東酒駕累犯撞死女大生10萬交保 檢不服提出抗告",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629371",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unattributed_outcome:dead",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "follow_up_requires_existing_event_link",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-62112aafdee6a547",
+      "title": "台南警檢噪 兩小時攔查52部汽機車、逾半違規改裝",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5628667",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-d3aadf4419e6101f",
+      "title": "和阿公同一天過世！屏東女大生返鄉奔喪遭酒駕累犯撞死",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629200",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-d40df18f3f3a67e1",
+      "title": "魏平政追打要求說清楚毒駕立場 陳素月競總：絕對零容忍",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5628792",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "彰化縣",
+      "issues": [
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-df10ee9afd60433f",
+      "title": "酒駕撞死女大生！高雄市府公開25歲酒駕累犯照 先前被抓至少3次",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629381",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-7e7a84399617"
+      ],
+      "city": null,
+      "issues": [
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-e686c58d2e6eef71",
+      "title": "毒駕新制上路！楊梅警單日抓2件毒駕 今年累計破160件",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629092",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "statistics",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "multiple_events_unresolved"
+      ]
+    },
+    {
+      "id": "article-e9a0a822533ca84e",
+      "title": "女大生返鄉奔喪遭休旅車撞死 肇事男酒測達0.81",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5628784",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "屏東縣",
+      "issues": [
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-2cd804e5bf1d0d87",
       "title": "臉書常貼飲酒照 5度酒駕不悔改／冷血男又酒駕 撞死男大生肇逃",
       "url": "https://news.ltn.com.tw/news/society/paper/1776983",

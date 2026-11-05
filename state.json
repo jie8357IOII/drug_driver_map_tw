@@ -1,11 +1,471 @@
 {
   "version": 1,
-  "throughDate": "2026-11-04",
+  "throughDate": "2026-11-05",
   "rejectedUrls": [],
-  "lastCheckedAt": "2026-11-04T21:51:30.918Z",
-  "lastChangedAt": "2026-11-04T21:51:30.918Z",
-  "dataHash": "780a8dc407c8ffc7b752626f792d22dac70db3c728927e1b62db6f2cc9543612",
+  "lastCheckedAt": "2026-11-05T21:58:45.873Z",
+  "lastChangedAt": "2026-11-05T21:58:45.873Z",
+  "dataHash": "d3f2bebfb2ab9d20c24d2258f9f7f9fb73c8b367681f825fa750e240dada205f",
   "articles": [
+    {
+      "id": "article-e6f36cb20b36d8ac",
+      "title": "魏平政問缺席毒駕修法 陳素月：勿炒作",
+      "url": "https://news.ltn.com.tw/news/politics/paper/1777305",
+      "source": "LTN",
+      "publishedAt": "2026-11-05",
+      "kind": "policy",
+      "status": "verified",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [],
+      "bodyHash": "98eff555c980a4b9ea578cc15a28168086d0814e7bd5c47ed5fd4126a988c087",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-00d23df058e273ea",
+      "title": "想倒車竟暴衝！台中6旬駕駛誤踩油門 母子收攤被撞「到處是便當」",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629301",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-38cb08af18f9"
+      ],
+      "city": "臺中市",
+      "issues": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "deaths_unknown",
+        "injuries_unknown"
+      ],
+      "bodyHash": "a1983e8288952fea01b92764399e3785deb961f71a48fa0a307f5b37cc18ea5b",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": "ltn-38cb08af18f9",
+          "possibleEventIds": [],
+          "issues": [
+            "unattributed_outcome:injured",
+            "deaths_not_reported",
+            "injuries_lower_bound",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-0bd9fafa79f9ae2c",
+      "title": "酒駕案參選爭議中選會抗告被駁 花蓮議員周駿宥保住參選資格",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629728",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "policy",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [],
+      "bodyHash": "710e3f642a328ee89eb81a9e82f652137e663d767db44a621de174a0fe21b90c",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-35396cd202699f81",
+      "title": "抓賊變自投羅網！車子被搶急報案 被害車主先被揪出毒駕",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5628833",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-2a6ead48bb77"
+      ],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
+      ],
+      "bodyHash": "31f75c39234d4609b3fccf0ffa1f07c98d97c890c8bd6518495bc5cc39f579c6",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": "ltn-2a6ead48bb77",
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "test_target_unresolved",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-41dc4034f5ace23f",
+      "title": "蕭淑慎丈夫梁軒安性侵案二審逆轉獲判無罪 卻因酒駕闖紅燈被起訴",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5628732",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unresolved_family_reference:丈夫",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "follow_up_requires_existing_event_link",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "8be7e23d938e4192a511e683be7dde9a52b248506fdf4ca0700121f89c7d0cde",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unresolved_family_reference:丈夫",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "alcohol_measurement_incomplete",
+            "follow_up_requires_existing_event_link",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-511abfa61aff26d9",
+      "title": "才剛判性侵無罪...梁軒安「酒駕闖紅燈逃逸」遭起訴 本人反應曝光",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5629141",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unresolved_family_reference:丈夫",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "ef54c1fa9efaaffe40f06ea0fb6d38b03f9e9e0ef135368fbaab6db4069b9070",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unresolved_family_reference:丈夫",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "alcohol_measurement_incomplete",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-5b59eabdb6786c23",
+      "title": "屏東酒駕累犯撞死女大生10萬交保 檢不服提出抗告",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629371",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unattributed_outcome:dead",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "follow_up_requires_existing_event_link",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "5c0555983c4545a2a699c4af78c3845d4b667b6f2c01870a72ab7211458e83b1",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unattributed_outcome:dead",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "follow_up_requires_existing_event_link",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-62112aafdee6a547",
+      "title": "台南警檢噪 兩小時攔查52部汽機車、逾半違規改裝",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5628667",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "f569bd7b14c8bcc5e40a5bf592ea5378a1b6efad9b79139f5f449ed9ffacc45c",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "test_target_unresolved",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-d3aadf4419e6101f",
+      "title": "和阿公同一天過世！屏東女大生返鄉奔喪遭酒駕累犯撞死",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629200",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "89cacc265a9649a99a9e2da92c5d6d0b88ede579dac089a61518cfaee2f4cb43",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-0179ea8121ff"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-d40df18f3f3a67e1",
+      "title": "魏平政追打要求說清楚毒駕立場 陳素月競總：絕對零容忍",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5628792",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "彰化縣",
+      "issues": [
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "6262785263315c5de42eba8d3f5653d34b01c76898f6a9c6e64ca6328c328435",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "injuries_not_reported",
+            "impairment_driver_link_not_checked",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-df10ee9afd60433f",
+      "title": "酒駕撞死女大生！高雄市府公開25歲酒駕累犯照 先前被抓至少3次",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629381",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-7e7a84399617"
+      ],
+      "city": null,
+      "issues": [
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ],
+      "bodyHash": "659ca41e7c14cd3de9723704e106248118a20fba1a5dcddc1e411fb3fde60030",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": "ltn-7e7a84399617",
+          "possibleEventIds": [],
+          "issues": [
+            "unattributed_outcome:dead",
+            "deaths_lower_bound",
+            "injuries_not_reported",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-e686c58d2e6eef71",
+      "title": "毒駕新制上路！楊梅警單日抓2件毒駕 今年累計破160件",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629092",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "statistics",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "multiple_events_unresolved"
+      ],
+      "bodyHash": "69835daadd58a11d928b67c0663e66d792c5ac3bc6b30513859292d42e295e71",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-e9a0a822533ca84e",
+      "title": "女大生返鄉奔喪遭休旅車撞死 肇事男酒測達0.81",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5628784",
+      "source": "LTN",
+      "publishedAt": "2026-11-04",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "屏東縣",
+      "issues": [
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "e477dc93e1520fa1c128989f772a9b991e823811c9a8bfb304adcdef1f8ad668",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unattributed_outcome:dead",
+            "deaths_lower_bound",
+            "injuries_not_reported",
+            "alcohol_measurement_incomplete",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
     {
       "id": "article-2cd804e5bf1d0d87",
       "title": "臉書常貼飲酒照 5度酒駕不悔改／冷血男又酒駕 撞死男大生肇逃",
@@ -12275,7 +12735,8 @@
       ],
       "conflicts": [],
       "issues": [
-        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/paper/1776985"
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/paper/1776985",
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5629200"
       ]
     },
     {
@@ -12445,6 +12906,124 @@
       ],
       "conflicts": [],
       "issues": []
+    },
+    {
+      "id": "ltn-2a6ead48bb77",
+      "match": {
+        "date": "2025-09-27",
+        "city": null,
+        "road": null,
+        "actorKeys": [
+          {
+            "surname": "李",
+            "age": null,
+            "gender": "male",
+            "vehicleTypes": []
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5628833",
+          "eventId": "event-1",
+          "bodyHash": "31f75c39234d4609b3fccf0ffa1f07c98d97c890c8bd6518495bc5cc39f579c6",
+          "version": "local-events-v3"
+        }
+      ],
+      "history": [
+        {
+          "versionKey": "https://news.ltn.com.tw/news/society/breakingnews/5628833:event-1:31f75c39234d4609b3fccf0ffa1f07c98d97c890c8bd6518495bc5cc39f579c6:local-events-v3",
+          "checkedAt": "2026-11-05T21:58:45.873Z",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5628833",
+          "eventId": "event-1",
+          "bodyHash": "31f75c39234d4609b3fccf0ffa1f07c98d97c890c8bd6518495bc5cc39f579c6",
+          "version": "local-events-v3",
+          "changes": [],
+          "issues": []
+        }
+      ],
+      "conflicts": [],
+      "issues": []
+    },
+    {
+      "id": "ltn-38cb08af18f9",
+      "match": {
+        "date": "2026-11-04",
+        "city": "臺中市",
+        "road": null,
+        "actorKeys": [
+          {
+            "surname": "李",
+            "age": 63,
+            "gender": "male",
+            "vehicleTypes": [
+              "car"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5629301",
+          "eventId": "event-1",
+          "bodyHash": "a1983e8288952fea01b92764399e3785deb961f71a48fa0a307f5b37cc18ea5b",
+          "version": "local-events-v3"
+        }
+      ],
+      "history": [
+        {
+          "versionKey": "https://news.ltn.com.tw/news/society/breakingnews/5629301:event-1:a1983e8288952fea01b92764399e3785deb961f71a48fa0a307f5b37cc18ea5b:local-events-v3",
+          "checkedAt": "2026-11-05T21:58:45.873Z",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5629301",
+          "eventId": "event-1",
+          "bodyHash": "a1983e8288952fea01b92764399e3785deb961f71a48fa0a307f5b37cc18ea5b",
+          "version": "local-events-v3",
+          "changes": [],
+          "issues": []
+        }
+      ],
+      "conflicts": [],
+      "issues": []
+    },
+    {
+      "id": "ltn-7e7a84399617",
+      "match": {
+        "date": "2026-11-02",
+        "city": null,
+        "road": "里港鄉三和路口",
+        "actorKeys": [
+          {
+            "surname": "詹",
+            "age": 25,
+            "gender": "male",
+            "vehicleTypes": [
+              "car"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5629381",
+          "eventId": "event-1",
+          "bodyHash": "659ca41e7c14cd3de9723704e106248118a20fba1a5dcddc1e411fb3fde60030",
+          "version": "local-events-v3"
+        }
+      ],
+      "history": [
+        {
+          "versionKey": "https://news.ltn.com.tw/news/society/breakingnews/5629381:event-1:659ca41e7c14cd3de9723704e106248118a20fba1a5dcddc1e411fb3fde60030:local-events-v3",
+          "checkedAt": "2026-11-05T21:58:45.873Z",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5629381",
+          "eventId": "event-1",
+          "bodyHash": "659ca41e7c14cd3de9723704e106248118a20fba1a5dcddc1e411fb3fde60030",
+          "version": "local-events-v3",
+          "changes": [],
+          "issues": []
+        }
+      ],
+      "conflicts": [],
+      "issues": []
     }
   ],
   "coverage": {
@@ -12452,7 +13031,7 @@
       {
         "source": "LTN",
         "from": "2026-10-27",
-        "to": "2026-11-04",
+        "to": "2026-11-05",
         "keywords": [
           "拒測",
           "毒駕",
@@ -12460,14 +13039,14 @@
           "酒測",
           "酒駕"
         ],
-        "checkedAt": "2026-11-04T21:51:30.918Z"
+        "checkedAt": "2026-11-05T21:58:45.873Z"
       }
     ],
     "recordDates": {
       "publishedFrom": "2024-05-05",
-      "publishedTo": "2026-11-03",
+      "publishedTo": "2026-11-05",
       "occurredFrom": "2023-02-07",
-      "occurredTo": "2026-11-03"
+      "occurredTo": "2026-11-04"
     },
     "historyReview": {
       "checkedAt": "2026-11-03T10:12:37.138Z",
@@ -14111,9 +14690,9 @@
       ]
     }
   },
-  "coverageHash": "f6818198f09afddfaecc99ae07d8104a8204af01a2747f07607d3817cc90ee0a",
+  "coverageHash": "0ce6e7c08cdfd2b04579aa3f47b256c72b3a268bc98a46886389619775633032",
   "api": {
-    "date": "2026-11-04",
+    "date": "2026-11-05",
     "runRequests": 0,
     "requests": 0,
     "cache": {}
@@ -14128,8 +14707,8 @@
     "toMonth": "2026-08",
     "sourceUpdatedAt": "2026-10-27",
     "notice": "112-114年、115年1-8月查詢結果為初估值",
-    "checkedAt": "2026-11-04T21:51:30.918Z",
-    "fetchedAt": "2026-11-04T21:51:30.918Z",
+    "checkedAt": "2026-11-05T21:58:45.873Z",
+    "fetchedAt": "2026-11-05T21:58:45.873Z",
     "status": "current",
     "rows": [
       {
