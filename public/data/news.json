@@ -2,6 +2,155 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-09e4d27094eabfe1",
+      "title": "台中離奇車禍！6旬翁駕無牌農機失控翻落空地 當場身亡",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5630351",
+      "source": "LTN",
+      "publishedAt": "2026-11-05",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-388f905d7731b567",
+      "title": "潮州警匪追逐警笛狂響 女毒駕飛車狂逃被捕畫面曝",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631032",
+      "source": "LTN",
+      "publishedAt": "2026-11-05",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "屏東縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-5fdf0748447db248",
+      "title": "毒駕新制！花蓮男無照騎車躲警拒快篩 開罰27萬沒收機車",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5630423",
+      "source": "LTN",
+      "publishedAt": "2026-11-05",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "花蓮縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-674dfc058b8a9f68",
+      "title": "毒駕新制上路 大溪警方全國首例沒入700萬全載拖吊車",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629984",
+      "source": "LTN",
+      "publishedAt": "2026-11-05",
+      "kind": "other",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "multiple_events_unresolved"
+      ]
+    },
+    {
+      "id": "article-98bdf4e68aa8f41a",
+      "title": "24歲男子酒駕撞路樹翻車 酒測值0.85mg/L達爛醉程度",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5630403",
+      "source": "LTN",
+      "publishedAt": "2026-11-05",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-af681ce27095ce9b",
+      "title": "高雄男急喊趕時間遇警察 原是毒駕重罰12萬元",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5629913",
+      "source": "LTN",
+      "publishedAt": "2026-11-05",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-5c2127ee100c"
+      ],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-bf12caf58c87dd12",
+      "title": "砂石車擦撞腳踏車 68歲婦受困車底",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5630633",
+      "source": "LTN",
+      "publishedAt": "2026-11-05",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-e6f36cb20b36d8ac",
       "title": "魏平政問缺席毒駕修法 陳素月：勿炒作",
       "url": "https://news.ltn.com.tw/news/politics/paper/1777305",
