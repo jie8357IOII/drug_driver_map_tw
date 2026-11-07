@@ -2,6 +2,293 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-04b08c4ee4cb0b07",
+      "title": "台中阿北恪守酒後不騎車 乖乖走路回家…隔天忘停哪急報警糗大",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631217",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-0f7c832e37f54c95",
+      "title": "酒後騎電動滑板車上路 高雄男遭警攔查送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631307",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-40a1d6915faff17b",
+      "title": "棒球》酒駕遭統一獅處極刑！ 前台灣隊長轉戰中國奪最佳九人",
+      "url": "https://sports.ltn.com.tw/news/breakingnews/5632177",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": []
+    },
+    {
+      "id": "article-54daf7a85a7e3e90",
+      "title": "服刑零用金也保不住 酒駕拒測拖４年全吐出",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631476",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-ed0aa1b4aa23"
+      ],
+      "city": "臺南市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-706addeaaa2bd426",
+      "title": "毒駕新制上路6天 狂抓433件、查扣423輛汽機車",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5632264",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-4807549f2c7d"
+      ],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-833b3cf2fb0b6107",
+      "title": "高雄男拒警攔查、闖紅燈撞汽車 警方曝逃逸原因",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631292",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-15bfdf2b4cb4"
+      ],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-93da4200729929f8",
+      "title": "潮州毒駕女衝撞警車 警拔槍喝令下車逮人",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631174",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-0053b6627a76"
+      ],
+      "city": "屏東縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-9409028f1f638f03",
+      "title": "當場嚇傻！彰化男子毒駕 500萬「陸地頭等艙」慘被沒入拍賣",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5632159",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "彰化縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-c7eb1c5be7bf77ca",
+      "title": "嘉縣布袋警強化重點路段測速執法 取締重大違規",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631369",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "嘉義縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-cdf1383ba7dad88d",
+      "title": "高雄男開車未打方向燈被攔查 警曝特殊身分",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631257",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-d2b5db31ee12d194",
+      "title": "桃園男女涉毒拒檢逃逸 逆向闖紅燈撞車遭逮",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631402",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-514b00bff253"
+      ],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-e52492359a48763e",
+      "title": "酒駕撞檳榔攤、違規迴轉挨撞 竹山2女騎士送辦、開罰",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5632082",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "南投縣",
+      "issues": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "alcohol_measurement_incomplete",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-e897e44a2ef24a5b",
+      "title": "屏東酒駕撞死女大生案 累犯詹維凱改裁羈押",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5631775",
+      "source": "LTN",
+      "publishedAt": "2026-11-06",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unattributed_outcome:dead",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "follow_up_requires_existing_event_link",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-09e4d27094eabfe1",
       "title": "台中離奇車禍！6旬翁駕無牌農機失控翻落空地 當場身亡",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5630351",
