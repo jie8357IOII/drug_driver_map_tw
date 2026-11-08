@@ -2,6 +2,182 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-0808c805e4a85d52",
+      "title": "反毒實境遊戲前進水交社 台南親子化身府城偵探學防毒",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5632843",
+      "source": "LTN",
+      "publishedAt": "2026-11-07",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-0bc09c733e6f6905",
+      "title": "毒駕500萬豪車 遭沒入拍賣",
+      "url": "https://news.ltn.com.tw/news/society/paper/1777492",
+      "source": "LTN",
+      "publishedAt": "2026-11-07",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "彰化縣",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-0f68dfa9d4fa6c96",
+      "title": "超晃阿北騎士拒唾液快篩 強制送醫+18萬紅單",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5633028",
+      "source": "LTN",
+      "publishedAt": "2026-11-07",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-0b20df213e56"
+      ],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-2319f2b54defa308",
+      "title": "黃國昌替柯志恩助選 痛批賴瑞隆是黨意立委、只幫綠營權貴修法",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5632839",
+      "source": "LTN",
+      "publishedAt": "2026-11-07",
+      "kind": "policy",
+      "status": "verified",
+      "impairmentTypes": [],
+      "eventIds": [],
+      "city": null,
+      "issues": []
+    },
+    {
+      "id": "article-337f3b0352e7e96b",
+      "title": "用大數據揪出車禍發生癥結 屏警建置交通事故應用平台",
+      "url": "https://news.ltn.com.tw/news/life/breakingnews/5632422",
+      "source": "LTN",
+      "publishedAt": "2026-11-07",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "屏東縣",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-c187fe30485ccc51",
+      "title": "酒駕不繳罰款寧入獄 服刑零用金遭追扣",
+      "url": "https://news.ltn.com.tw/news/society/paper/1777495",
+      "source": "LTN",
+      "publishedAt": "2026-11-07",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-e983ca475a266f8d",
+      "title": "毒駕重罰新制上路 嚇！平均每天逮72人",
+      "url": "https://news.ltn.com.tw/news/society/paper/1777491",
+      "source": "LTN",
+      "publishedAt": "2026-11-07",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-f2fa7526c619bbdd",
+      "title": "新店小巴失控撞銀行 駕駛乘客3人送醫",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5632741",
+      "source": "LTN",
+      "publishedAt": "2026-11-07",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-04b08c4ee4cb0b07",
       "title": "台中阿北恪守酒後不騎車 乖乖走路回家…隔天忘停哪急報警糗大",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5631217",
