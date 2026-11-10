@@ -23929,5 +23929,335 @@
         "injuries_unknown"
       ]
     }
+  },
+  {
+    "id": "ltn-b27d4456ba8b",
+    "title": "基隆男酒駕逆向撞2機車 女騎士四肢骨折昏迷搶救中",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5633743",
+    "source": "LTN",
+    "publishedAt": "2026-11-08",
+    "occurredAt": "2026-11-06",
+    "city": "基隆市",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": null,
+    "injuries": 2,
+    "summary": "基隆一名41歲陳姓男子6日下午2時許，酒後駕車行經調和街124號附近時，疑似受到酒精影響，駕車失控，直接撞上2輛機車，其中1輛還被壓在車底。 警方到場後，發現陳男散出陣陣酒味，對其進行酒測，其酒測值高達0.58毫克，隨即將他帶回偵辦。 但被撞擊的白姓女騎士送醫後，四肢骨折重傷昏迷，現仍在院搶救中。 警方調查，案發時陳男酒駕上路，車輛逆向撞上31歲白姓女騎士的",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 41,
+        "ageGroup": "35-44",
+        "gender": "male",
+        "vehicleTypes": [],
+        "allMentionedVehicleTypes": [
+          "機車"
+        ],
+        "primaryVehicleType": null,
+        "primaryVehicleLabel": null,
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "not_supported",
+        "findings": [],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "suspected",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": 0.58,
+            "unit": null,
+            "rawUnit": "毫克",
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": 0.58,
+            "unit": null,
+            "rawUnit": "毫克",
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "逆向",
+          "自摔/失控",
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": []
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "checked"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "088d1ad9430ad8f8675b2dfe7475a49ce85fc755040663c2af5802f6d88b26e1",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "基隆一名41歲陳姓男子6日下午2時許，酒後駕車行經調和街124號附近時，疑似受到酒精影響，駕車失控，直接撞上2輛機車，其中1輛還被壓在車底。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "基隆一名41歲陳姓男子6日下午2時許，酒後駕車行經調和街124號附近時，疑似受到酒精影響，駕車失控，直接撞上2輛機車，其中1輛還被壓在車底。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "基隆一名41歲陳姓男子6日下午2時許，酒後駕車行經調和街124號附近時，疑似受到酒精影響，駕車失控，直接撞上2輛機車，其中1輛還被壓在車底。"
+          },
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 116,
+            "end": 147,
+            "quote": "但被撞擊的白姓女騎士送醫後，四肢骨折重傷昏迷，現仍在院搶救中。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 148,
+            "end": 193,
+            "quote": "警方調查，案發時陳男酒駕上路，車輛逆向撞上31歲白姓女騎士的機車，波及一旁江姓騎士的機車。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 24,
+            "quote": "基隆男酒駕逆向撞2機車 女騎士四肢骨折昏迷搶救中"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "基隆一名41歲陳姓男子6日下午2時許，酒後駕車行經調和街124號附近時，疑似受到酒精影響，駕車失控，直接撞上2輛機車，其中1輛還被壓在車底。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 70,
+            "end": 116,
+            "quote": "警方到場後，發現陳男散出陣陣酒味，對其進行酒測，其酒測值高達0.58毫克，隨即將他帶回偵辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 148,
+            "end": 193,
+            "quote": "警方調查，案發時陳男酒駕上路，車輛逆向撞上31歲白姓女騎士的機車，波及一旁江姓騎士的機車。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 238,
+            "end": 303,
+            "quote": "陳男則因身上散發濃濃酒味，警方依規定進行酒測，其酒測值高達0.58毫克，當場被列為公共危險現行犯，帶回訊問，並移送基隆地檢署偵辦。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 70,
+            "quote": "基隆一名41歲陳姓男子6日下午2時許，酒後駕車行經調和街124號附近時，疑似受到酒精影響，駕車失控，直接撞上2輛機車，其中1輛還被壓在車底。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 148,
+            "end": 193,
+            "quote": "警方調查，案發時陳男酒駕上路，車輛逆向撞上31歲白姓女騎士的機車，波及一旁江姓騎士的機車。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 116,
+            "end": 147,
+            "quote": "但被撞擊的白姓女騎士送醫後，四肢骨折重傷昏迷，現仍在院搶救中。"
+          },
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 193,
+            "end": 210,
+            "quote": "白女因遭到車輛直擊，當場陷入昏迷。"
+          },
+          {
+            "sentenceId": "p2s3",
+            "field": "body",
+            "start": 210,
+            "end": 237,
+            "quote": "救護人員到場後，將擦傷的江男及重傷的白女送往醫院搶救。"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown"
+      ]
+    }
   }
 ]

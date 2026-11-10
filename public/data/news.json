@@ -2,6 +2,133 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-863042b204ceaaa8",
+      "title": "步步驚魂！又見行人地獄憾事 走斑馬線 台中婦遭輾斃",
+      "url": "https://news.ltn.com.tw/news/society/paper/1777765",
+      "source": "LTN",
+      "publishedAt": "2026-11-09",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "conflicting_alcohol_evidence",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-36a2bda714fcfd58",
+      "title": "「釜」看台灣》沖繩變天難解美軍犯罪 日「西南防衛」政策添變數",
+      "url": "https://talk.ltn.com.tw/article/breakingnews/5631992",
+      "source": "LTN",
+      "publishedAt": "2026-11-08",
+      "kind": "policy",
+      "status": "verified",
+      "impairmentTypes": [],
+      "eventIds": [],
+      "city": null,
+      "issues": []
+    },
+    {
+      "id": "article-50b7a419dd647ed1",
+      "title": "基隆男酒駕逆向撞2機車 女騎士四肢骨折昏迷搶救中",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5633743",
+      "source": "LTN",
+      "publishedAt": "2026-11-08",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-b27d4456ba8b"
+      ],
+      "city": "基隆市",
+      "issues": [
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-8dec74c78728878d",
+      "title": "新店休旅車靠邊停直行檔車追撞 32歲騎士噴飛重創不治",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5633647",
+      "source": "LTN",
+      "publishedAt": "2026-11-08",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_event_date",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-e7337143bb85f5f8",
+      "title": "沿路逼車、蛇行 林口警查獲毒駕新制首例沒入車輛",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5633587",
+      "source": "LTN",
+      "publishedAt": "2026-11-08",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-f9e784efc3437c4b",
+      "title": "台中又見行人地獄！61歲婦走行人穿越道遭撞死 檢方今相驗釐清",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5633386",
+      "source": "LTN",
+      "publishedAt": "2026-11-08",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "injuries_not_reported",
+        "conflicting_alcohol_evidence",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-0808c805e4a85d52",
       "title": "反毒實境遊戲前進水交社 台南親子化身府城偵探學防毒",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5632843",
