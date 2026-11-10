@@ -2,6 +2,76 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-09d7152f321a244b",
+      "title": "屏東雙十一聯合拍賣 恆春土地、遠洋漁船公開標售",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5634109",
+      "source": "LTN",
+      "publishedAt": "2026-11-09",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "屏東縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-2e36aa2ba06abac8",
+      "title": "道交新制10/31上路 竹市警：毒駕或拒測重罰、沒入車輛",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5634238",
+      "source": "LTN",
+      "publishedAt": "2026-11-09",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "新竹市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-86245ced2ca5bd52",
+      "title": "高雄25歲男開車自撞測出毒駕 BMW沒收同車乘客連坐挨罰",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5634124",
+      "source": "LTN",
+      "publishedAt": "2026-11-09",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-863042b204ceaaa8",
       "title": "步步驚魂！又見行人地獄憾事 走斑馬線 台中婦遭輾斃",
       "url": "https://news.ltn.com.tw/news/society/paper/1777765",
@@ -21,6 +91,27 @@
         "conflicting_alcohol_evidence",
         "impairment_driver_link_not_checked",
         "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-b33ccfc8b49b6bf2",
+      "title": "基隆女照服員路邊整理輪椅遇死劫！慘遭休旅車衝撞不治",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5634329",
+      "source": "LTN",
+      "publishedAt": "2026-11-09",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "基隆市",
+      "issues": [
+        "unresolved_family_reference:父親",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
         "injuries_unknown",
         "no_verified_event_link"
       ]

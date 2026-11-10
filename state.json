@@ -1,11 +1,136 @@
 {
   "version": 1,
-  "throughDate": "2026-11-09",
+  "throughDate": "2026-11-10",
   "rejectedUrls": [],
-  "lastCheckedAt": "2026-11-10T00:14:51.559Z",
-  "lastChangedAt": "2026-11-10T00:14:51.559Z",
-  "dataHash": "778e3e3f53308e5c83c6285e57951f6e08d1f1b713308698e46058022acc959e",
+  "lastCheckedAt": "2026-11-10T21:47:51.858Z",
+  "lastChangedAt": "2026-11-10T21:47:51.858Z",
+  "dataHash": "0a5cd8c974f4365642f55ea84212e865240e7ef84021a7675680e4747bad1471",
   "articles": [
+    {
+      "id": "article-09d7152f321a244b",
+      "title": "屏東雙十一聯合拍賣 恆春土地、遠洋漁船公開標售",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5634109",
+      "source": "LTN",
+      "publishedAt": "2026-11-09",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "屏東縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "17345b55088fab9563be4da374ea926c828133a7168c9ed7dc86d58d4d5ab055",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "impairment_driver_link_not_checked",
+            "event_date_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-2e36aa2ba06abac8",
+      "title": "道交新制10/31上路 竹市警：毒駕或拒測重罰、沒入車輛",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5634238",
+      "source": "LTN",
+      "publishedAt": "2026-11-09",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "新竹市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "e94e3193b792434d272b10b8d4e05eb98150e2c017510eede2256855ef6da003",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unknown_event_date",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "impairment_driver_link_not_checked",
+            "event_date_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-86245ced2ca5bd52",
+      "title": "高雄25歲男開車自撞測出毒駕 BMW沒收同車乘客連坐挨罰",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5634124",
+      "source": "LTN",
+      "publishedAt": "2026-11-09",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "3124fcf6e79c54f5dd82b9efa88a89e82548faa837c1862da7961e09fd4cb916",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "test_target_unresolved",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
     {
       "id": "article-863042b204ceaaa8",
       "title": "步步驚魂！又見行人地獄憾事 走斑馬線 台中婦遭輾斃",
@@ -43,6 +168,43 @@
             "conflicting_alcohol_evidence",
             "impairment_driver_link_not_checked",
             "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-b33ccfc8b49b6bf2",
+      "title": "基隆女照服員路邊整理輪椅遇死劫！慘遭休旅車衝撞不治",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5634329",
+      "source": "LTN",
+      "publishedAt": "2026-11-09",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "基隆市",
+      "issues": [
+        "unresolved_family_reference:父親",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "9974188bd077663859c17e4dc45f45acc2681c2e9fa2bf4073feef0ccfb33ed4",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unresolved_family_reference:父親",
+            "injuries_not_reported",
+            "impairment_driver_link_not_checked",
             "injuries_unknown"
           ]
         }
@@ -14659,7 +14821,7 @@
       {
         "source": "LTN",
         "from": "2026-10-27",
-        "to": "2026-11-09",
+        "to": "2026-11-10",
         "keywords": [
           "拒測",
           "毒駕",
@@ -14667,7 +14829,7 @@
           "酒測",
           "酒駕"
         ],
-        "checkedAt": "2026-11-10T00:14:51.559Z"
+        "checkedAt": "2026-11-10T21:47:51.858Z"
       }
     ],
     "recordDates": {
@@ -16318,7 +16480,7 @@
       ]
     }
   },
-  "coverageHash": "f6186f60028b159b8c01f729a810199fb70a53e6221fecd81fb8b637267fa325",
+  "coverageHash": "2a214fb420db44e4f5a600159b1f4061448ed0841903b57768124e86d376310a",
   "api": {
     "date": "2026-11-10",
     "runRequests": 0,
@@ -16335,8 +16497,8 @@
     "toMonth": "2026-08",
     "sourceUpdatedAt": "2026-10-27",
     "notice": "112-114年、115年1-8月查詢結果為初估值",
-    "checkedAt": "2026-11-10T00:14:51.559Z",
-    "fetchedAt": "2026-11-10T00:14:51.559Z",
+    "checkedAt": "2026-11-10T21:47:51.858Z",
+    "fetchedAt": "2026-11-10T21:47:51.858Z",
     "status": "current",
     "rows": [
       {
