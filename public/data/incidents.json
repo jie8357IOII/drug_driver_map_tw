@@ -24259,5 +24259,480 @@
         "deaths_unknown"
       ]
     }
+  },
+  {
+    "id": "ltn-cbbdb004c6d5",
+    "title": "高雄男見號誌變換急煞失控 打滑衝上人行道",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5635315",
+    "source": "LTN",
+    "publishedAt": "2026-11-10",
+    "occurredAt": "2026-11-09",
+    "city": "高雄市",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": null,
+    "injuries": 1,
+    "summary": "高雄市魏姓男子（29歲）駕駛轎車，沿鼓山區明誠四路（東往西方向）行駛至馬卡道路時，疑因見號誌轉換緊急煞車，導致車輛失控打滑，衝撞至路邊人行道，所幸未波及其他人車，魏男輕微擦挫傷。 鼓山分局今（10）日指出，交通分隊於昨日夜晚21時許，獲報於鼓山區明誠四路與翠華路發生交通事故，警方立即派員到場處理，並維持交通。 警方依規進行事故測繪及相關處置，現場未發現有毒、",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 29,
+        "ageGroup": "25-34",
+        "gender": "male",
+        "vehicleTypes": [
+          "汽車"
+        ],
+        "allMentionedVehicleTypes": [
+          "汽車"
+        ],
+        "primaryVehicleType": "汽車",
+        "primaryVehicleLabel": "轎車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "not_supported",
+        "findings": [],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "自摔/失控",
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "checked"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "14db5c762e6ee98e429221b0e36f0a5aba760477b7bdca1c29006c3d8a562f60",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 90,
+            "end": 155,
+            "quote": "鼓山分局今（10）日指出，交通分隊於昨日夜晚21時許，獲報於鼓山區明誠四路與翠華路發生交通事故，警方立即派員到場處理，並維持交通。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 89,
+            "quote": "高雄市魏姓男子（29歲）駕駛轎車，沿鼓山區明誠四路（東往西方向）行駛至馬卡道路時，疑因見號誌轉換緊急煞車，導致車輛失控打滑，衝撞至路邊人行道，所幸未波及其他人車，魏男輕微擦挫傷。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 89,
+            "quote": "高雄市魏姓男子（29歲）駕駛轎車，沿鼓山區明誠四路（東往西方向）行駛至馬卡道路時，疑因見號誌轉換緊急煞車，導致車輛失控打滑，衝撞至路邊人行道，所幸未波及其他人車，魏男輕微擦挫傷。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 20,
+            "quote": "高雄男見號誌變換急煞失控 打滑衝上人行道"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 201,
+            "end": 278,
+            "quote": "鼓山分局提醒，駕駛人行車時應隨時注意車前狀況，並依路況及車速保持適當安全距離，遇路口或號誌變換時應減速慢行，避免因突發狀況造成事故，共同維護道路交通安全。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 89,
+            "quote": "高雄市魏姓男子（29歲）駕駛轎車，沿鼓山區明誠四路（東往西方向）行駛至馬卡道路時，疑因見號誌轉換緊急煞車，導致車輛失控打滑，衝撞至路邊人行道，所幸未波及其他人車，魏男輕微擦挫傷。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 156,
+            "end": 200,
+            "quote": "警方依規進行事故測繪及相關處置，現場未發現有毒、酒駕情事，詳細肇事原因將進一步分析研判。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 89,
+            "quote": "高雄市魏姓男子（29歲）駕駛轎車，沿鼓山區明誠四路（東往西方向）行駛至馬卡道路時，疑因見號誌轉換緊急煞車，導致車輛失控打滑，衝撞至路邊人行道，所幸未波及其他人車，魏男輕微擦挫傷。"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    }
+  },
+  {
+    "id": "ltn-a665802a7e97",
+    "title": "未開大燈又闖紅燈 騎士被攔查竟是酒駕騎贓車",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5635425",
+    "source": "LTN",
+    "publishedAt": "2026-11-10",
+    "occurredAt": "2026-11-09",
+    "city": "",
+    "eventType": "dangerous_driving",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": null,
+    "injuries": null,
+    "summary": "郎姓男子昨天（9日）凌晨3時許，騎機車行經新北市中和區民德路時，因未開大燈又闖紅燈，被巡邏的中和分局員警發現攔下，經檢測酒測值高達1.4毫克，另查出他騎乘是偷來的贓車，詢後依公共危險、竊盜罪嫌送辦。 中和警分局調查，無業的59歲郎男有竊盜前科，平時居無定所，他本月初在桃園市龜山區，竊取一名陳姓女子的機車代步，昨晨跑到中和民德公園飲酒後，騎機車行經中和民德路時",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": null,
+        "ageGroup": null,
+        "gender": "female",
+        "vehicleTypes": [
+          "機車"
+        ],
+        "allMentionedVehicleTypes": [
+          "機車",
+          "汽車",
+          "計程車"
+        ],
+        "primaryVehicleType": "機車",
+        "primaryVehicleLabel": "機車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "not_supported",
+        "findings": [
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": 1.4,
+            "unit": null,
+            "rawUnit": "毫克",
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": "breath",
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": 1.4,
+            "unit": null,
+            "rawUnit": "毫克",
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "闖紅燈"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "警方攔查現場"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": false,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "unknown"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "b2380664b2ff11d352f4aca3a4b638ada858484cf5692392cc24cead8321b2d9",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 99,
+            "quote": "郎姓男子昨天（9日）凌晨3時許，騎機車行經新北市中和區民德路時，因未開大燈又闖紅燈，被巡邏的中和分局員警發現攔下，經檢測酒測值高達1.4毫克，另查出他騎乘是偷來的贓車，詢後依公共危險、竊盜罪嫌送辦。"
+          }
+        ],
+        "city": [],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 99,
+            "quote": "郎姓男子昨天（9日）凌晨3時許，騎機車行經新北市中和區民德路時，因未開大燈又闖紅燈，被巡邏的中和分局員警發現攔下，經檢測酒測值高達1.4毫克，另查出他騎乘是偷來的贓車，詢後依公共危險、竊盜罪嫌送辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 100,
+            "end": 208,
+            "quote": "中和警分局調查，無業的59歲郎男有竊盜前科，平時居無定所，他本月初在桃園市龜山區，竊取一名陳姓女子的機車代步，昨晨跑到中和民德公園飲酒後，騎機車行經中和民德路時闖紅燈且未開啟大燈，被巡邏的中和分局國光派出所員警攔查。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 21,
+            "quote": "未開大燈又闖紅燈 騎士被攔查竟是酒駕騎贓車"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 209,
+            "end": 307,
+            "quote": "據指出，警方聞到郎男身上散發濃厚酒味，隨即實施酒精吹氣檢測，酒測值高達1.4毫克，另查出他騎乘贓車，全案詢後依公共危險及竊盜罪嫌移請新北地檢署偵辦，另針對交通違規部分製單舉發，並聯繫失主領回車輛。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 100,
+            "end": 208,
+            "quote": "中和警分局調查，無業的59歲郎男有竊盜前科，平時居無定所，他本月初在桃園市龜山區，竊取一名陳姓女子的機車代步，昨晨跑到中和民德公園飲酒後，騎機車行經中和民德路時闖紅燈且未開啟大燈，被巡邏的中和分局國光派出所員警攔查。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 308,
+            "end": 361,
+            "quote": "警方提醒，不僅毒駕新制上路，酒駕新制亦已加重罰則，機車駕駛人酒駕罰鍰提高至18000元以上、12萬元以下；"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    }
   }
 ]

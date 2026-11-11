@@ -1,11 +1,333 @@
 {
   "version": 1,
-  "throughDate": "2026-11-10",
+  "throughDate": "2026-11-11",
   "rejectedUrls": [],
-  "lastCheckedAt": "2026-11-10T21:47:51.858Z",
-  "lastChangedAt": "2026-11-10T21:47:51.858Z",
-  "dataHash": "0a5cd8c974f4365642f55ea84212e865240e7ef84021a7675680e4747bad1471",
+  "lastCheckedAt": "2026-11-11T22:41:13.677Z",
+  "lastChangedAt": "2026-11-11T22:41:13.677Z",
+  "dataHash": "8f8575fe42876f4b64b77c6eb85e4435bbbb293530ddd43aee3878f8a6a0a024",
   "articles": [
+    {
+      "id": "article-39bddc867bcf8136",
+      "title": "抓毒駕抓到「塞車」！沒入車輛擠爆派出所",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636404",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [],
+      "bodyHash": "23e69265b93c1792880f7c038932a2d92c0520c053c3e477167ea2384846326d",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unknown_event_date",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "test_target_unresolved",
+            "driver_identity_unresolved",
+            "driver_identity_not_checked",
+            "impairment_driver_link_not_checked",
+            "concrete_driving_not_checked",
+            "event_date_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-feb1f786cc4e2857",
+      "title": "邊開車邊追劇 水泥車毒駕奪2命╱連兩天喝毒咖啡上路 尿檢毒品超標2369倍",
+      "url": "https://news.ltn.com.tw/news/society/paper/1777998",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_event_date",
+        "injuries_conflicting",
+        "test_target_unresolved",
+        "event_date_not_checked",
+        "injuries_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "df0780e1d10980d8f15922d2715df24d930ecc633a47182d2907ea6269dd8b5e",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unknown_event_date",
+            "injuries_conflicting",
+            "test_target_unresolved",
+            "event_date_not_checked",
+            "injuries_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-1d1f820613ed4e48",
+      "title": "自由開講》27分鐘送死刑闖關，藍白欠法律理由",
+      "url": "https://talk.ltn.com.tw/article/breakingnews/5630399",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_city",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "a5077d10880ac7a6afd6623aadb237e86ee76ab778c7cd228c82093afe5a2808",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unknown_city",
+            "unknown_event_date",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "test_target_unresolved",
+            "impairment_driver_link_not_checked",
+            "event_date_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-4690eb7c6c75300e",
+      "title": "花縣國高中生事故半數涉及微電車 警偕監理機關稽查",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5635592",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "64d000ebd1de91899cd61a52dc3923f0c8b43822caaee99dda90c7ee64157a1c",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-47b8b8b7bb198189",
+      "title": "高雄男見號誌變換急煞失控 打滑衝上人行道",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5635315",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-cbbdb004c6d5"
+      ],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ],
+      "bodyHash": "14db5c762e6ee98e429221b0e36f0a5aba760477b7bdca1c29006c3d8a562f60",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": "ltn-cbbdb004c6d5",
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "deaths_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-6a14920aaa8675bf",
+      "title": "未開大燈又闖紅燈 騎士被攔查竟是酒駕騎贓車",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5635425",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-a665802a7e97"
+      ],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown",
+        "injuries_unknown"
+      ],
+      "bodyHash": "b2380664b2ff11d352f4aca3a4b638ada858484cf5692392cc24cead8321b2d9",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": "ltn-a665802a7e97",
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "alcohol_measurement_incomplete",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-c0dc2b890e2e3f8d",
+      "title": "水泥車駕駛毒駕釀２死 出庭認：開車追劇",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5635623",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "unattributed_outcome:injured",
+        "unknown_event_date",
+        "injuries_conflicting",
+        "test_target_unresolved",
+        "event_date_not_checked",
+        "injuries_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "1228c0dadb6e7b94b1548f710e9d2fcdd76051f5952de6a310393803ad674119",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unattributed_outcome:injured",
+            "unknown_event_date",
+            "injuries_conflicting",
+            "test_target_unresolved",
+            "event_date_not_checked",
+            "injuries_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-fdf1d22eef2da28d",
+      "title": "美秀集團前吉他手遇路檢拒毒測 警搜出毒品殘渣送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636171",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "drug_denial_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "54e722d5339e3fa357a486a7b191121f3601bae3b4d5f4504b52c0ee9a568851",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unknown_event_date",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "test_target_unresolved",
+            "drug_denial_reported",
+            "impairment_driver_link_not_checked",
+            "event_date_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
     {
       "id": "article-09d7152f321a244b",
       "title": "屏東雙十一聯合拍賣 恆春土地、遠洋漁船公開標售",
@@ -14814,6 +15136,86 @@
       ],
       "conflicts": [],
       "issues": []
+    },
+    {
+      "id": "ltn-cbbdb004c6d5",
+      "match": {
+        "date": "2026-11-09",
+        "city": "高雄市",
+        "road": "鼓山區明誠四路與翠華路",
+        "actorKeys": [
+          {
+            "surname": "魏",
+            "age": 29,
+            "gender": "male",
+            "vehicleTypes": [
+              "car"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5635315",
+          "eventId": "event-1",
+          "bodyHash": "14db5c762e6ee98e429221b0e36f0a5aba760477b7bdca1c29006c3d8a562f60",
+          "version": "local-events-v3"
+        }
+      ],
+      "history": [
+        {
+          "versionKey": "https://news.ltn.com.tw/news/society/breakingnews/5635315:event-1:14db5c762e6ee98e429221b0e36f0a5aba760477b7bdca1c29006c3d8a562f60:local-events-v3",
+          "checkedAt": "2026-11-11T22:41:13.677Z",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5635315",
+          "eventId": "event-1",
+          "bodyHash": "14db5c762e6ee98e429221b0e36f0a5aba760477b7bdca1c29006c3d8a562f60",
+          "version": "local-events-v3",
+          "changes": [],
+          "issues": []
+        }
+      ],
+      "conflicts": [],
+      "issues": []
+    },
+    {
+      "id": "ltn-a665802a7e97",
+      "match": {
+        "date": "2026-11-09",
+        "city": null,
+        "road": "中和區民德路",
+        "actorKeys": [
+          {
+            "surname": "陳",
+            "age": null,
+            "gender": "female",
+            "vehicleTypes": [
+              "motorcycle"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5635425",
+          "eventId": "event-1",
+          "bodyHash": "b2380664b2ff11d352f4aca3a4b638ada858484cf5692392cc24cead8321b2d9",
+          "version": "local-events-v3"
+        }
+      ],
+      "history": [
+        {
+          "versionKey": "https://news.ltn.com.tw/news/society/breakingnews/5635425:event-1:b2380664b2ff11d352f4aca3a4b638ada858484cf5692392cc24cead8321b2d9:local-events-v3",
+          "checkedAt": "2026-11-11T22:41:13.677Z",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5635425",
+          "eventId": "event-1",
+          "bodyHash": "b2380664b2ff11d352f4aca3a4b638ada858484cf5692392cc24cead8321b2d9",
+          "version": "local-events-v3",
+          "changes": [],
+          "issues": []
+        }
+      ],
+      "conflicts": [],
+      "issues": []
     }
   ],
   "coverage": {
@@ -14821,7 +15223,7 @@
       {
         "source": "LTN",
         "from": "2026-10-27",
-        "to": "2026-11-10",
+        "to": "2026-11-11",
         "keywords": [
           "拒測",
           "毒駕",
@@ -14829,14 +15231,14 @@
           "酒測",
           "酒駕"
         ],
-        "checkedAt": "2026-11-10T21:47:51.858Z"
+        "checkedAt": "2026-11-11T22:41:13.677Z"
       }
     ],
     "recordDates": {
       "publishedFrom": "2024-05-05",
-      "publishedTo": "2026-11-09",
+      "publishedTo": "2026-11-11",
       "occurredFrom": "2023-02-07",
-      "occurredTo": "2026-11-06"
+      "occurredTo": "2026-11-09"
     },
     "historyReview": {
       "checkedAt": "2026-11-03T10:12:37.138Z",
@@ -16480,9 +16882,9 @@
       ]
     }
   },
-  "coverageHash": "2a214fb420db44e4f5a600159b1f4061448ed0841903b57768124e86d376310a",
+  "coverageHash": "bf8d09c172358477abf140fabf676247fc5e898493522cfea281076fe38baf67",
   "api": {
-    "date": "2026-11-10",
+    "date": "2026-11-11",
     "runRequests": 0,
     "requests": 0,
     "cache": {}
@@ -16497,8 +16899,8 @@
     "toMonth": "2026-08",
     "sourceUpdatedAt": "2026-10-27",
     "notice": "112-114年、115年1-8月查詢結果為初估值",
-    "checkedAt": "2026-11-10T21:47:51.858Z",
-    "fetchedAt": "2026-11-10T21:47:51.858Z",
+    "checkedAt": "2026-11-11T22:41:13.677Z",
+    "fetchedAt": "2026-11-11T22:41:13.677Z",
     "status": "current",
     "rows": [
       {

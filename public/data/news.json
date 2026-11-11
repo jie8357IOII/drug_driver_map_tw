@@ -2,6 +2,182 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-39bddc867bcf8136",
+      "title": "抓毒駕抓到「塞車」！沒入車輛擠爆派出所",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636404",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": []
+    },
+    {
+      "id": "article-feb1f786cc4e2857",
+      "title": "邊開車邊追劇 水泥車毒駕奪2命╱連兩天喝毒咖啡上路 尿檢毒品超標2369倍",
+      "url": "https://news.ltn.com.tw/news/society/paper/1777998",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_event_date",
+        "injuries_conflicting",
+        "test_target_unresolved",
+        "event_date_not_checked",
+        "injuries_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-1d1f820613ed4e48",
+      "title": "自由開講》27分鐘送死刑闖關，藍白欠法律理由",
+      "url": "https://talk.ltn.com.tw/article/breakingnews/5630399",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_city",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-4690eb7c6c75300e",
+      "title": "花縣國高中生事故半數涉及微電車 警偕監理機關稽查",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5635592",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-47b8b8b7bb198189",
+      "title": "高雄男見號誌變換急煞失控 打滑衝上人行道",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5635315",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-cbbdb004c6d5"
+      ],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-6a14920aaa8675bf",
+      "title": "未開大燈又闖紅燈 騎士被攔查竟是酒駕騎贓車",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5635425",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-a665802a7e97"
+      ],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-c0dc2b890e2e3f8d",
+      "title": "水泥車駕駛毒駕釀２死 出庭認：開車追劇",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5635623",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "unattributed_outcome:injured",
+        "unknown_event_date",
+        "injuries_conflicting",
+        "test_target_unresolved",
+        "event_date_not_checked",
+        "injuries_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-fdf1d22eef2da28d",
+      "title": "美秀集團前吉他手遇路檢拒毒測 警搜出毒品殘渣送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636171",
+      "source": "LTN",
+      "publishedAt": "2026-11-10",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "drug_denial_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-09d7152f321a244b",
       "title": "屏東雙十一聯合拍賣 恆春土地、遠洋漁船公開標售",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5634109",
