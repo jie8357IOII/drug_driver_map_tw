@@ -2,6 +2,49 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-20947b1e5b835887",
+      "title": "台中轎車、單車驚悚碰撞！17歲高中生連人帶車噴飛 全身多處骨折",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5637622",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-381ee29af475a8ce",
+      "title": "計程車沿路漂移以為毒駕…桃園保警攔查驚見運將急性中風送醫搶命",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636631",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-39bddc867bcf8136",
       "title": "抓毒駕抓到「塞車」！沒入車輛擠爆派出所",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5636404",
@@ -15,6 +58,210 @@
       "eventIds": [],
       "city": "臺南市",
       "issues": []
+    },
+    {
+      "id": "article-3c13bd285ea7eb5a",
+      "title": "台東男開賓士超速遭攔檢揪出毒駕 愛車慘被沒入",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636932",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺東縣",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-5f46c59bf4ff596a",
+      "title": "「5條通」嫌拒捕狂飆！逃不過塞車栽了 警再揪毒駕",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5637270",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-dc1e4bf18fde"
+      ],
+      "city": "南投縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-863c581bdb6ea015",
+      "title": "毒駕車禍害人致死 澎湖國民法庭判決6年4個月",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5637198",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "澎湖縣",
+      "issues": [
+        "injuries_not_reported",
+        "follow_up_requires_existing_event_link",
+        "event_date_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-94f26bc0e55e7aff",
+      "title": "多元計程車突急煞！乘客「緊握口袋」狂奔 遭壓制揪出大麻煙彈",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636899",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "conflicting_drug_evidence",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-9ce90efb79dc5a88",
+      "title": "騎車左右搖晃露餡！平鎮警雷霆專案攔查 騎士認了吸安後上路",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636958",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-4a401c6b5219"
+      ],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-a2ff0635e1bd2870",
+      "title": "台中酒後代駕駕駛116人獲推薦 年代駕破20萬趟次",
+      "url": "https://news.ltn.com.tw/news/life/breakingnews/5636738",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-d1f878a71d5039d3",
+      "title": "北市公布酒毒駕累犯名單 22人遭公開裁罰",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636953",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-f1d6fee79164ceee",
+      "title": "大園警雷霆除暴淨化選前治安 「通緝犯」網咖遇警想跑反被逮",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5636599",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": []
+    },
+    {
+      "id": "article-fe2b6e236fd92f66",
+      "title": "毒駕新制沒入車輛連坐開罰 新北警重磅出擊狂掃毒酒駕",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5637219",
+      "source": "LTN",
+      "publishedAt": "2026-11-11",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
     },
     {
       "id": "article-feb1f786cc4e2857",

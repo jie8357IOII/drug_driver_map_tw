@@ -1,16 +1,16 @@
 {
   "version": 1,
   "status": "ready",
-  "createdAt": "2026-11-11T22:41:13.677Z",
+  "createdAt": "2026-11-12T22:14:52.346Z",
   "mode": "live",
   "inputs": {
-    "baseSha256": "7b20f1b39db03f0aeb6fdb0edac785ac151ea05fa23a67c7bee7a439bd48a972",
-    "stateSha256": "04f1bded2506b9962d3e6c0498f0c3e1e9f278146b2bd56ccf1aaf4f31eb8bf1"
+    "baseSha256": "46310b3e58f6f31b10533f24bbdc850c7819db39186e8080a05123bedccf7385",
+    "stateSha256": "e6ced4089535c16944d5ac73150b23395ba00e2ec6b7f2d87bc259c65419f72b"
   },
   "files": {
-    "public/data/incidents.json": "46310b3e58f6f31b10533f24bbdc850c7819db39186e8080a05123bedccf7385",
-    "public/data/news.json": "8f7204cea8350f57aa017af59486c5c421435fe2cf0599e40c949b5c47626c37",
-    "public/data/news-status.json": "4f6076b34ca3648ffce8684e827fa987ec2fda73eed354e259cbdb4cfb2d16c6",
-    "state.json": "e6ced4089535c16944d5ac73150b23395ba00e2ec6b7f2d87bc259c65419f72b"
+    "public/data/incidents.json": "8773f510a169eeed99d011a170c0692aaa8d0bfa6a3b21b5e1ac5fcbec818b82",
+    "public/data/news.json": "ee4223113f7bffaa13ec66fee07d4ef78093566823dba0640adb546de085fa7d",
+    "public/data/news-status.json": "422c42315d735adeef0fe6a5a31f01e0bbb44b6e47a0841e618d75c29f48c91d",
+    "state.json": "06eff660b68db57ad9c85aa0076ba511a2f3e1dff6247166e22806804e91cd5d"
   }
 }

@@ -24734,5 +24734,492 @@
         "injuries_unknown"
       ]
     }
+  },
+  {
+    "id": "ltn-4a401c6b5219",
+    "title": "騎車左右搖晃露餡！平鎮警雷霆專案攔查 騎士認了吸安後上路",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5636958",
+    "source": "LTN",
+    "publishedAt": "2026-11-11",
+    "occurredAt": "2026-11-10",
+    "city": "桃園市",
+    "eventType": "dangerous_driving",
+    "impairmentTypes": [
+      "alcohol",
+      "drug"
+    ],
+    "deaths": null,
+    "injuries": null,
+    "summary": "桃園市平鎮警分局昨（10）日執行「全國取締酒（毒）駕暨雷霆除暴專案」勤務，強化選前治安維護，防制暴力滋事及酒（毒）駕等不法情事，龍岡所派出所於平鎮區游泳路，查獲50歲楊姓騎士涉嫌毒駕並坦承吸食安非他命，警方訊後依公共危險罪嫌將他移送桃園地檢署。 平鎮警分局雷霆除暴專案勤務，市警察局督察長許頌嘉前往督導專案勤務，除提醒執勤同仁落實各項勤務作為及加強取締不法情事",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 50,
+        "ageGroup": "45-54",
+        "gender": null,
+        "vehicleTypes": [],
+        "allMentionedVehicleTypes": [],
+        "primaryVehicleType": null,
+        "primaryVehicleLabel": null,
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [
+          "安非他命"
+        ],
+        "testMethods": [],
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [
+              {
+                "name": "安非他命",
+                "raw": "安非他命"
+              }
+            ],
+            "methods": [],
+            "status": "suspected",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "suspected",
+            "timeScope": "current"
+          },
+          {
+            "kind": "consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [
+              {
+                "name": "安非他命",
+                "raw": "安非他命"
+              }
+            ],
+            "methods": [],
+            "status": "self_reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": []
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "unknown"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "8f3c33cdd07347b952942ebfc187b6a0dd4b1ca9388295bc79cdb29bc1c326d9",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 122,
+            "quote": "桃園市平鎮警分局昨（10）日執行「全國取締酒（毒）駕暨雷霆除暴專案」勤務，強化選前治安維護，防制暴力滋事及酒（毒）駕等不法情事，龍岡所派出所於平鎮區游泳路，查獲50歲楊姓騎士涉嫌毒駕並坦承吸食安非他命，警方訊後依公共危險罪嫌將他移送桃園地檢署。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 122,
+            "quote": "桃園市平鎮警分局昨（10）日執行「全國取締酒（毒）駕暨雷霆除暴專案」勤務，強化選前治安維護，防制暴力滋事及酒（毒）駕等不法情事，龍岡所派出所於平鎮區游泳路，查獲50歲楊姓騎士涉嫌毒駕並坦承吸食安非他命，警方訊後依公共危險罪嫌將他移送桃園地檢署。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 324,
+            "end": 416,
+            "quote": "平鎮警分局表示，酒駕、毒駕均嚴重危害道路交通安全，警方將持續結合各項專案勤務，強化酒、毒駕取締及不法犯罪查緝，並針對轄內治安熱點加強巡查，嚴防暴力滋事及危險駕駛行為，確保選前治安平穩。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 122,
+            "quote": "桃園市平鎮警分局昨（10）日執行「全國取締酒（毒）駕暨雷霆除暴專案」勤務，強化選前治安維護，防制暴力滋事及酒（毒）駕等不法情事，龍岡所派出所於平鎮區游泳路，查獲50歲楊姓騎士涉嫌毒駕並坦承吸食安非他命，警方訊後依公共危險罪嫌將他移送桃園地檢署。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 236,
+            "end": 323,
+            "quote": "其中，龍岡所員警於平鎮區游泳路，發現楊姓騎士行車搖晃、左右偏移，且神情恍惚，疑似有毒駕情事，盤查時騎士坦承曾施用安非他命，員警隨即實施唾液毒品快篩，結果呈現安非他命陽性反應。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 123,
+            "end": 235,
+            "quote": "平鎮警分局雷霆除暴專案勤務，市警察局督察長許頌嘉前往督導專案勤務，除提醒執勤同仁落實各項勤務作為及加強取締不法情事，也叮囑同仁注意執勤安全，並要求各單位持續強化巡邏密度及執法強度，針對易發生治安事故及酒駕、毒駕路段加強查察。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 324,
+            "end": 416,
+            "quote": "平鎮警分局表示，酒駕、毒駕均嚴重危害道路交通安全，警方將持續結合各項專案勤務，強化酒、毒駕取締及不法犯罪查緝，並針對轄內治安熱點加強巡查，嚴防暴力滋事及危險駕駛行為，確保選前治安平穩。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 236,
+            "end": 323,
+            "quote": "其中，龍岡所員警於平鎮區游泳路，發現楊姓騎士行車搖晃、左右偏移，且神情恍惚，疑似有毒駕情事，盤查時騎士坦承曾施用安非他命，員警隨即實施唾液毒品快篩，結果呈現安非他命陽性反應。"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol",
+          "drug"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    }
+  },
+  {
+    "id": "ltn-dc1e4bf18fde",
+    "title": "「5條通」嫌拒捕狂飆！逃不過塞車栽了 警再揪毒駕",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5637270",
+    "source": "LTN",
+    "publishedAt": "2026-11-11",
+    "occurredAt": "2026-11-10",
+    "city": "南投縣",
+    "eventType": "drug_driving",
+    "impairmentTypes": [
+      "drug"
+    ],
+    "deaths": null,
+    "injuries": null,
+    "summary": "36歲背負5條通緝案的廖姓嫌犯，10日晚間在南投竹山開車出沒被警方查獲，惟廖嫌拒捕還加速狂飆，之後遇上塞車則棄車逃逸，員警見狀追捕制伏，並在廖嫌車上起獲毒品吸食器與疑似毒品粉末，毒品快篩也呈陽性，最後廖因5件通緝案與涉毒駕被移送法辦。 竹山警方表示，廖嫌因竊盜、偽造文書共有5案被通緝，昨晚開車在市區現蹤，被巡邏員警盯上尾隨，廖因形跡敗露拒捕，便駕車加速狂飆，",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": null,
+        "ageGroup": null,
+        "gender": null,
+        "vehicleTypes": [],
+        "allMentionedVehicleTypes": [],
+        "primaryVehicleType": null,
+        "primaryVehicleLabel": null,
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "possession",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "suspected",
+            "timeScope": "current"
+          },
+          {
+            "kind": "material_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "possession",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "person_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [
+              "唾液快篩/檢測"
+            ],
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "not_supported",
+        "findings": []
+      },
+      "crash": {
+        "scenarioTypes": []
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": []
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "unknown"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "59802c7fde6648ac7804d441d2f5095d8b0cc538f01b8ea4fa861e71745db649",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 117,
+            "quote": "36歲背負5條通緝案的廖姓嫌犯，10日晚間在南投竹山開車出沒被警方查獲，惟廖嫌拒捕還加速狂飆，之後遇上塞車則棄車逃逸，員警見狀追捕制伏，並在廖嫌車上起獲毒品吸食器與疑似毒品粉末，毒品快篩也呈陽性，最後廖因5件通緝案與涉毒駕被移送法辦。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 117,
+            "quote": "36歲背負5條通緝案的廖姓嫌犯，10日晚間在南投竹山開車出沒被警方查獲，惟廖嫌拒捕還加速狂飆，之後遇上塞車則棄車逃逸，員警見狀追捕制伏，並在廖嫌車上起獲毒品吸食器與疑似毒品粉末，毒品快篩也呈陽性，最後廖因5件通緝案與涉毒駕被移送法辦。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 117,
+            "quote": "36歲背負5條通緝案的廖姓嫌犯，10日晚間在南投竹山開車出沒被警方查獲，惟廖嫌拒捕還加速狂飆，之後遇上塞車則棄車逃逸，員警見狀追捕制伏，並在廖嫌車上起獲毒品吸食器與疑似毒品粉末，毒品快篩也呈陽性，最後廖因5件通緝案與涉毒駕被移送法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 118,
+            "end": 234,
+            "quote": "竹山警方表示，廖嫌因竊盜、偽造文書共有5案被通緝，昨晚開車在市區現蹤，被巡邏員警盯上尾隨，廖因形跡敗露拒捕，便駕車加速狂飆，警方一路跟到市區，廖嫌因塞在車陣乾脆棄車逃逸，員警當下也下車狂奔追捕，最後追到路旁輪胎行，順利攔截壓制逮捕。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 117,
+            "quote": "36歲背負5條通緝案的廖姓嫌犯，10日晚間在南投竹山開車出沒被警方查獲，惟廖嫌拒捕還加速狂飆，之後遇上塞車則棄車逃逸，員警見狀追捕制伏，並在廖嫌車上起獲毒品吸食器與疑似毒品粉末，毒品快篩也呈陽性，最後廖因5件通緝案與涉毒駕被移送法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 118,
+            "end": 234,
+            "quote": "竹山警方表示，廖嫌因竊盜、偽造文書共有5案被通緝，昨晚開車在市區現蹤，被巡邏員警盯上尾隨，廖因形跡敗露拒捕，便駕車加速狂飆，警方一路跟到市區，廖嫌因塞在車陣乾脆棄車逃逸，員警當下也下車狂奔追捕，最後追到路旁輪胎行，順利攔截壓制逮捕。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 235,
+            "end": 324,
+            "quote": "警方說，事後在廖嫌車上查獲毒品吸食器與不明粉末殘渣袋，廖經毒品唾液快篩則呈陽性反應，由於其本身已因5案被通緝，現又毒駕違反公共危險與毒品危害防制條例，訊後依法移送南投地檢署偵辦。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 235,
+            "end": 324,
+            "quote": "警方說，事後在廖嫌車上查獲毒品吸食器與不明粉末殘渣袋，廖經毒品唾液快篩則呈陽性反應，由於其本身已因5案被通緝，現又毒駕違反公共危險與毒品危害防制條例，訊後依法移送南投地檢署偵辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    }
   }
 ]
