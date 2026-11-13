@@ -2,6 +2,226 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-1348166c97d29d8d",
+      "title": "酒測值超標辯稱「牽」機車送瓦斯 警方無法證明酒駕行為 獲判無罪",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5637806",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "屏東縣",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-1d93b29d245d8339",
+      "title": "綠燈不動！男開奧迪毒駕昏睡路中 哀求別扣車仍吞15萬罰單",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5637886",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-e3a30a55a77b"
+      ],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-1dc683cc611a6056",
+      "title": "深夜巨響！楠梓少年騎電輔車煞車失靈 撞碎超商玻璃門",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5638045",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "conflicting_alcohol_evidence",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-3f068185e14ac282",
+      "title": "行竊娃娃機店被逮 還意外查獲毒駕",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5637838",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-63c22b22c1b65553",
+      "title": "高雄無照男紅燈右轉遭攔查 查獲吸食器涉毒駕慘了",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5638016",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-e7170f4da9ca"
+      ],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-7e64c2be3e0b96ea",
+      "title": "左轉翻車！高雄仁武22歲女無酒駕 自撞分隔島側翻",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5639000",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": []
+    },
+    {
+      "id": "article-949c0cc2fcdbc5a1",
+      "title": "NCT志晟為新戲脫了！25歲腹肌公約意外兌現 團員竟酸：你憑什麼",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5637700",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_city",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-9bd574eeddf13f5d",
+      "title": "毒駕竟栽在雙黃線！台中男雜貨店買香煙 違規迴轉遭攔查慘了",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5638170",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-747820214c09"
+      ],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-aee1fa1e9a081286",
+      "title": "驚悚瞬間！靜宜夜市前轎車「快車道鬼切右轉」 撞飛直行騎士",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5638007",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-059582c1a0b5"
+      ],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-c5e18a625e5f2519",
+      "title": "加油不熄火還咆哮逼近員工 警到場抓2男搜出K毒揭毒駕",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5638420",
+      "source": "LTN",
+      "publishedAt": "2026-11-12",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-20947b1e5b835887",
       "title": "台中轎車、單車驚悚碰撞！17歲高中生連人帶車噴飛 全身多處骨折",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5637622",
