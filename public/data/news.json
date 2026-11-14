@@ -2,6 +2,166 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-2bd5c704301936d5",
+      "title": "新北市長政見會》李四川火力全開 要法務部長為蘇巧慧妹妹曠世智能案背書",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5639496",
+      "source": "LTN",
+      "publishedAt": "2026-11-13",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": []
+    },
+    {
+      "id": "article-35d5c0e613f229ff",
+      "title": "毒駕還追劇！水泥車撞清潔車釀2死還提國賠 國民法官重判9年2月",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5639919",
+      "source": "LTN",
+      "publishedAt": "2026-11-13",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺南市",
+      "issues": [
+        "unresolved_family_reference:妻子",
+        "follow_up_requires_existing_event_link",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-44821b35a1097c87",
+      "title": "台南微電車事故年增44％ 藍營議員籲補助納入安全管理",
+      "url": "https://news.ltn.com.tw/news/life/breakingnews/5639320",
+      "source": "LTN",
+      "publishedAt": "2026-11-13",
+      "kind": "statistics",
+      "status": "verified",
+      "impairmentTypes": [],
+      "eventIds": [],
+      "city": null,
+      "issues": []
+    },
+    {
+      "id": "article-4a52f291e4fd175d",
+      "title": "韓劇導演喊「泳褲拉低一點」 成勛怒了抗議：乾脆叫我全裸！",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5639790",
+      "source": "LTN",
+      "publishedAt": "2026-11-13",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unresolved_family_reference:父親",
+        "unknown_city",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-801a20f79824e903",
+      "title": "遇警心虛狂飆！板橋男巷弄拒檢逃竄 警網包抄4分鐘逮毒駕",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5639330",
+      "source": "LTN",
+      "publishedAt": "2026-11-13",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-93446e269c2f"
+      ],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-a2a0c1277dff0532",
+      "title": "屏東潮州1週抓2毒駕！警匪追逐9公里 通緝犯沿路違規再罰8100",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5639302",
+      "source": "LTN",
+      "publishedAt": "2026-11-13",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-cfda1f073cf7"
+      ],
+      "city": "屏東縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-dd21fc1f041700e9",
+      "title": "又見毒駕！彰化警上班途中遭汽車衝撞 顱內出血緊急開刀",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5639903",
+      "source": "LTN",
+      "publishedAt": "2026-11-13",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-a1d9062b50e9"
+      ],
+      "city": "彰化縣",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-ef82413fb3a0f81a",
+      "title": "細數張善政4年執政諸多爭議 溫朗東批：政績空洞還好戰",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5639096",
+      "source": "LTN",
+      "publishedAt": "2026-11-13",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-1348166c97d29d8d",
       "title": "酒測值超標辯稱「牽」機車送瓦斯 警方無法證明酒駕行為 獲判無罪",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5637806",
