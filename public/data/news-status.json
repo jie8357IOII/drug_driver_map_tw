@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "lastCheckedAt": "2026-11-14T20:42:21.629Z",
-  "lastChangedAt": "2026-11-14T20:42:21.629Z",
+  "lastCheckedAt": "2026-11-15T21:01:57.259Z",
+  "lastChangedAt": "2026-11-15T21:01:57.259Z",
   "lastPublishedAt": null,
   "sourceCoverage": [
     "LTN"
   ],
   "status": "success",
-  "pendingCount": 225,
+  "pendingCount": 238,
   "coverage": {
     "searches": [
       {
         "source": "LTN",
         "from": "2026-10-27",
-        "to": "2026-11-14",
+        "to": "2026-11-15",
         "keywords": [
           "拒測",
           "毒駕",
@@ -21,14 +21,14 @@
           "酒測",
           "酒駕"
         ],
-        "checkedAt": "2026-11-14T20:42:21.629Z"
+        "checkedAt": "2026-11-15T21:01:57.259Z"
       }
     ],
     "recordDates": {
       "publishedFrom": "2024-05-05",
-      "publishedTo": "2026-11-13",
+      "publishedTo": "2026-11-14",
       "occurredFrom": "2023-02-07",
-      "occurredTo": "2026-11-13"
+      "occurredTo": "2026-11-14"
     },
     "historyReview": {
       "checkedAt": "2026-11-03T10:12:37.138Z",
@@ -1682,8 +1682,8 @@
     "toMonth": "2026-08",
     "sourceUpdatedAt": "2026-10-27",
     "notice": "112-114年、115年1-8月查詢結果為初估值",
-    "checkedAt": "2026-11-14T20:42:21.629Z",
-    "fetchedAt": "2026-11-14T20:42:21.629Z",
+    "checkedAt": "2026-11-15T21:01:57.259Z",
+    "fetchedAt": "2026-11-15T21:01:57.259Z",
     "status": "current",
     "rows": [
       {
