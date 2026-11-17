@@ -2,6 +2,254 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-da0decc29bdc8d7a",
+      "title": "毒駕女撞傷行人肇逃 還找人頂罪 收押",
+      "url": "https://news.ltn.com.tw/news/society/paper/1778692",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-359d71dd98a5"
+      ],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-08989b781e6c93c4",
+      "title": "酒駕找關係？ 彰化女酒測0.98辯低血糖 友嗆「找局長」反遭法官打臉",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5641794",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-3873bfb74102"
+      ],
+      "city": "彰化縣",
+      "issues": [
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-151ca00b989ae1b8",
+      "title": "疑跨雙黃線迎面撞 高雄豪華休旅車酒駕釀事故",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5641305",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-5189c3df7bc9"
+      ],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-1954512ba336340d",
+      "title": "搶攻社子票倉！ 蔣萬安罕見兩度替無黨籍站台 陳怡潔喊「先安置後開發」",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5641502",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": []
+    },
+    {
+      "id": "article-4fb4f840d36343f5",
+      "title": "女騎士越級駕駛酒測值又超標 辯吃薑母鴨仍被開單扣車",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5641378",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-5a7a44dda563c16b",
+      "title": "自由開講》濫用輔助駕駛，恐淪國道不定時炸彈",
+      "url": "https://talk.ltn.com.tw/article/breakingnews/5637363",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unresolved_family_reference:妻子",
+        "unresolved_family_reference:岳母",
+        "unknown_city",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-6f5e02b8b89b8824",
+      "title": "高雄女駕車撞無照酒駕男再撞店家釀4傷 傷男被送辦最重吞22.2萬元罰單",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5641551",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "unresolved_family_reference:母親",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_conflicting",
+        "conflicting_alcohol_evidence",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-9c7c8d0fca87f242",
+      "title": "高庚杓酒駕撞傷清潔員！親揭「藏東西」真相 認錯宣布全面停工",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5641662",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_city",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-a56791619ca624e5",
+      "title": "華江橋自撞車頭全毀 駕駛酒測毒品快篩皆有反應",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5641236",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-a9e58d32cd219090",
+      "title": "《1988》暖男大翻車！高庚杓酒駕撞傷清潔員 韓綜急展開「消失計畫」",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5641654",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_city",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-c0bba3db75e857fc",
+      "title": "惡劣！台中女毒駕斑馬線撞昏行人 竟找人冒名頂替遭羈押",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5641449",
+      "source": "LTN",
+      "publishedAt": "2026-11-15",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "follow_up_requires_existing_event_link",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-0b134046fde99e81",
       "title": "彰化25歲警上班途中遭撞飛顱內出血！毒駕男收押",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5640333",
