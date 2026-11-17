@@ -2,6 +2,177 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-0a468141ea8cbcab",
+      "title": "高雄重大車禍2騎士送醫急救 1人昏迷、1人傷重不治",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5642158",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-0fa8396537f70b12",
+      "title": "撿到警用酒測器等未歸還 男子侵占10萬餘元財物挨罰1.5萬",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5642834",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "新竹市",
+      "issues": []
+    },
+    {
+      "id": "article-15cec68a7e729d74",
+      "title": "彰化毒駕男撞警害重傷 前一天才毒駕撞車獲交保",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5642462",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "彰化縣",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-1c92cd0004ec1cff",
+      "title": "斗六仁義路轎車撞機車 19歲雲科大男大生傷重不治",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5642251",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-b37fb792c860"
+      ],
+      "city": "雲林縣",
+      "issues": [
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-43cbee96d3f2cb4b",
+      "title": "高雄女子毒駕藏毒遭攔查 毒咖啡包謊稱衛生棉",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5642034",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-07e41e6744aa"
+      ],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-8bf4c67686c37b5b",
+      "title": "6千萬超跑左轉擦撞分隔島受損 網友驚「維修費天價」",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5642151",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unresolved_family_reference:妻子",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-a76f8bb0ca2d1eb7",
+      "title": "騎電動代步車還毒駕逆向！ 被警攔查揪出判刑3個月",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5642097",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "苗栗縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "follow_up_requires_existing_event_link",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-c77b91e8b7175ff3",
+      "title": "女子毒駕撞3車 大雅警扣車移送地檢建請羈押",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5642514",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "follow_up_requires_existing_event_link",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-da0decc29bdc8d7a",
       "title": "毒駕女撞傷行人肇逃 還找人頂罪 收押",
       "url": "https://news.ltn.com.tw/news/society/paper/1778692",
@@ -19,6 +190,30 @@
       "issues": [
         "deaths_not_reported",
         "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-dd13c513ef01a23f",
+      "title": "女子吃宵夜還答非所問 高雄警方揪出毒駕第3犯",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5642074",
+      "source": "LTN",
+      "publishedAt": "2026-11-16",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
       ]
     },
     {
