@@ -29186,5 +29186,472 @@
         "injuries_unknown"
       ]
     }
+  },
+  {
+    "id": "ltn-4fe09e76b368",
+    "title": "毒蟲載通緝犯拒檢逃亡5分鐘 吃毒駕官司、吞近40萬元罰單還扣車",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5643195",
+    "source": "LTN",
+    "publishedAt": "2026-11-17",
+    "occurredAt": "2026-11-17",
+    "city": "新北市",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "drug"
+    ],
+    "deaths": null,
+    "injuries": null,
+    "summary": "新北市警察局員警巡邏途經板橋浮洲一帶，發現一輛雙載機車超過停止線，上前攔查時騎士加速逃逸，一路逆向、蛇行、闖紅燈拒捕，警方一路追捕，通報攔截圍捕，一路追到板橋體育場附近，騎士撞上加入圍捕的警車，連人帶車倒地，員警湧上逮人，赫見陳姓毒蟲搭載被通緝的游姓男子，當場起出3顆依托咪酯煙彈，毒品快篩呈現陽性反應，全案依公共危險，毒品罪嫌送辦，將游嫌驗尿並押解新北地院歸",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 33,
+        "ageGroup": "25-34",
+        "gender": null,
+        "vehicleTypes": [
+          "機車"
+        ],
+        "allMentionedVehicleTypes": [
+          "機車"
+        ],
+        "primaryVehicleType": "機車",
+        "primaryVehicleLabel": "機車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [
+          "甲基安非他命"
+        ],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "possession",
+            "actorIds": [
+              "person-2"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "person_test",
+            "actorIds": [
+              "person-2"
+            ],
+            "substances": [
+              {
+                "name": "甲基安非他命",
+                "raw": "甲基安非他命"
+              }
+            ],
+            "methods": [
+              "唾液快篩/檢測"
+            ],
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-2",
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "not_supported",
+        "findings": []
+      },
+      "crash": {
+        "scenarioTypes": [
+          "逆向",
+          "闖紅燈",
+          "拒檢逃逸",
+          "衝撞警員/警車",
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "警方攔查現場"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "unknown"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "d3fa25fb210451d4f1e932f93e991187e8323b67347cf5588c77dfc3ab0c96d5",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 305,
+            "end": 444,
+            "quote": "新北市警察局大觀所副所長陳銘峰、警員邱宇琦，今天凌晨執行巡邏勤務，巡經板橋區大觀路二段265巷口，發現一輛雙載的普通重機停等紅燈超越停止線，按喇叭告知駕駛靠邊停車受檢，但駕駛聽聞後加速逃逸，逃亡期間多次企圖衝攔查員警，警方沿路開啟警示燈、警報器並示意駕駛停車，但嫌犯仍持續亡命。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 182,
+            "quote": "新北市警察局員警巡邏途經板橋浮洲一帶，發現一輛雙載機車超過停止線，上前攔查時騎士加速逃逸，一路逆向、蛇行、闖紅燈拒捕，警方一路追捕，通報攔截圍捕，一路追到板橋體育場附近，騎士撞上加入圍捕的警車，連人帶車倒地，員警湧上逮人，赫見陳姓毒蟲搭載被通緝的游姓男子，當場起出3顆依托咪酯煙彈，毒品快篩呈現陽性反應，全案依公共危險，毒品罪嫌送辦，將游嫌驗尿並押解新北地院歸案。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 182,
+            "quote": "新北市警察局員警巡邏途經板橋浮洲一帶，發現一輛雙載機車超過停止線，上前攔查時騎士加速逃逸，一路逆向、蛇行、闖紅燈拒捕，警方一路追捕，通報攔截圍捕，一路追到板橋體育場附近，騎士撞上加入圍捕的警車，連人帶車倒地，員警湧上逮人，赫見陳姓毒蟲搭載被通緝的游姓男子，當場起出3顆依托咪酯煙彈，毒品快篩呈現陽性反應，全案依公共危險，毒品罪嫌送辦，將游嫌驗尿並押解新北地院歸案。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 183,
+            "end": 304,
+            "quote": "誇張的是，陳嫌拒捕期間，從板橋浮洲大觀路二段265巷一路逃亡，落網後警方祭出11張逆向、7張闖紅燈、4張變換車道未使用方向燈等，共36張罰單，違規總金額高達39萬7000元，毒蟲搭載通緝毒友，逃亡5分鐘代價除了扣車，還吃上高額罰單，得不償失。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 445,
+            "end": 558,
+            "quote": "警方一路追緝到板橋區體育場、海山路35號前，陳嫌騎機車蛇行，撞上支援圍捕的警車摔車，員警湧上逮捕33歲陳姓騎士及44歲游姓毒蟲，一查赫見陳嫌也是毒蟲，手提袋內查獲3顆依託咪脂煙彈，游嫌則因公共危險罪嫌被發布通緝，當場逮捕兩嫌。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 31,
+            "quote": "毒蟲載通緝犯拒檢逃亡5分鐘 吃毒駕官司、吞近40萬元罰單還扣車"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 183,
+            "end": 304,
+            "quote": "誇張的是，陳嫌拒捕期間，從板橋浮洲大觀路二段265巷一路逃亡，落網後警方祭出11張逆向、7張闖紅燈、4張變換車道未使用方向燈等，共36張罰單，違規總金額高達39萬7000元，毒蟲搭載通緝毒友，逃亡5分鐘代價除了扣車，還吃上高額罰單，得不償失。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 445,
+            "end": 558,
+            "quote": "警方一路追緝到板橋區體育場、海山路35號前，陳嫌騎機車蛇行，撞上支援圍捕的警車摔車，員警湧上逮捕33歲陳姓騎士及44歲游姓毒蟲，一查赫見陳嫌也是毒蟲，手提袋內查獲3顆依託咪脂煙彈，游嫌則因公共危險罪嫌被發布通緝，當場逮捕兩嫌。"
+          },
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 559,
+            "end": 608,
+            "quote": "警方對陳嫌實施唾液快篩，呈現鴉片類、甲基安非他命陽性反應，警方依規定製單舉發、車輛移置保管及扣牌。"
+          },
+          {
+            "sentenceId": "p6s1",
+            "field": "body",
+            "start": 609,
+            "end": 670,
+            "quote": "海山警方另對游嫌採尿送驗，將陳嫌、游嫌依涉公共危險（毒駕）、毒品條例、公共危險通緝案，移送新北地方檢察偵辦、一併押解歸案。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p5s1",
+            "field": "body",
+            "start": 559,
+            "end": 608,
+            "quote": "警方對陳嫌實施唾液快篩，呈現鴉片類、甲基安非他命陽性反應，警方依規定製單舉發、車輛移置保管及扣牌。"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-2"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    }
+  },
+  {
+    "id": "ltn-b51933ece868",
+    "title": "嘉義醉男自撞少一輪逃逸4公里「底盤磨地冒火光」 竟是雙料通緝犯",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5643823",
+    "source": "LTN",
+    "publishedAt": "2026-11-17",
+    "occurredAt": "2026-11-17",
+    "city": "",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": null,
+    "injuries": 1,
+    "summary": "邱姓男子今天酒後駕駛休旅車，凌晨3點多行經嘉義縣鹿草鄉鹿環東路時先自撞，輪胎噴飛後繼續駕車逃逸，歪斜的車輛底盤不斷與地面摩擦，沿途發出火光，開了4公里多後被警方攔下。 救護人員將受傷的邱男送醫，經警方酒測，酒測值達0.99mg/L，警方更查出邱男是雲林地檢署發布毀棄損壞通緝及雲林地方法院發布組織犯罪條例通緝的雙料通緝犯，訊後移送法辦。 嘉義縣警局水上分局今天",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": null,
+        "ageGroup": null,
+        "gender": "male",
+        "vehicleTypes": [
+          "汽車"
+        ],
+        "allMentionedVehicleTypes": [
+          "汽車"
+        ],
+        "primaryVehicleType": "汽車",
+        "primaryVehicleLabel": "休旅車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "not_supported",
+        "findings": [],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "alcohol_consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": 0.99,
+            "unit": "mg/L",
+            "rawUnit": "mg/L",
+            "specimen": null,
+            "approximate": false,
+            "status": "positive",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "肇事逃逸",
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口",
+          "警方攔查現場"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": false,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "checked"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "0c6efdecd950af3be9c894159c5e9fafc7171ff64bcf138f66e7a5e01ce166d2",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 83,
+            "quote": "邱姓男子今天酒後駕駛休旅車，凌晨3點多行經嘉義縣鹿草鄉鹿環東路時先自撞，輪胎噴飛後繼續駕車逃逸，歪斜的車輛底盤不斷與地面摩擦，沿途發出火光，開了4公里多後被警方攔下。"
+          }
+        ],
+        "city": [],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 83,
+            "quote": "邱姓男子今天酒後駕駛休旅車，凌晨3點多行經嘉義縣鹿草鄉鹿環東路時先自撞，輪胎噴飛後繼續駕車逃逸，歪斜的車輛底盤不斷與地面摩擦，沿途發出火光，開了4公里多後被警方攔下。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 168,
+            "end": 251,
+            "quote": "嘉義縣警局水上分局今天凌晨3點多獲報邱男駕車發生車禍，現場發現掉落的輪胎、排氣管等物，未發現車輛，後來在竹山村竹子腳產業道路攔查到邱男與車輛，邱男還差點將車開進農田。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 290,
+            "end": 333,
+            "quote": "警方調查，邱男駕駛休旅車自撞時，車身整個旋轉，連車尾都騰空，車輛上許多零件如輪胎噴飛。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 31,
+            "quote": "嘉義醉男自撞少一輪逃逸4公里「底盤磨地冒火光」 竟是雙料通緝犯"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 83,
+            "quote": "邱姓男子今天酒後駕駛休旅車，凌晨3點多行經嘉義縣鹿草鄉鹿環東路時先自撞，輪胎噴飛後繼續駕車逃逸，歪斜的車輛底盤不斷與地面摩擦，沿途發出火光，開了4公里多後被警方攔下。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 83,
+            "end": 167,
+            "quote": "救護人員將受傷的邱男送醫，經警方酒測，酒測值達0.99mg/L，警方更查出邱男是雲林地檢署發布毀棄損壞通緝及雲林地方法院發布組織犯罪條例通緝的雙料通緝犯，訊後移送法辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 168,
+            "end": 251,
+            "quote": "嘉義縣警局水上分局今天凌晨3點多獲報邱男駕車發生車禍，現場發現掉落的輪胎、排氣管等物，未發現車輛，後來在竹山村竹子腳產業道路攔查到邱男與車輛，邱男還差點將車開進農田。"
+          },
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 251,
+            "end": 289,
+            "quote": "邱男全身有多處擦傷，經警方通報嘉義縣消防局，由救護人員送至嘉義長庚醫院救治。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 83,
+            "end": 167,
+            "quote": "救護人員將受傷的邱男送醫，經警方酒測，酒測值達0.99mg/L，警方更查出邱男是雲林地檢署發布毀棄損壞通緝及雲林地方法院發布組織犯罪條例通緝的雙料通緝犯，訊後移送法辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 251,
+            "end": 289,
+            "quote": "邱男全身有多處擦傷，經警方通報嘉義縣消防局，由救護人員送至嘉義長庚醫院救治。"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown"
+      ]
+    }
   }
 ]
