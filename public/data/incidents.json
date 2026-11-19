@@ -29653,5 +29653,557 @@
         "deaths_unknown"
       ]
     }
+  },
+  {
+    "id": "ltn-947244115d72",
+    "title": "沒打方向燈露餡 騎士偷丟喪屍菸彈、安毒藏椅仍被抓包",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5644901",
+    "source": "LTN",
+    "publishedAt": "2026-11-18",
+    "occurredAt": "2026-11-16",
+    "city": "臺北市",
+    "eventType": "drug_driving",
+    "impairmentTypes": [
+      "drug"
+    ],
+    "deaths": null,
+    "injuries": null,
+    "summary": "49歲陳姓男子前日騎乘機車行經台北市南港區研究院路一段與富康街口時，因變換車道未依規定使用方向燈，遭巡邏員警攔查。 盤查期間眼尖員警更發現陳男在受檢時，竟偷偷將依托咪酯（俗稱喪屍菸彈）菸彈與安非他命丟棄在所坐的椅子下方，當場逮捕陳男，全案訊後依公共危險及毒品危害防制條例罪嫌移送士林地檢署偵辦。 警方調查，陳男當時正要返回位於汐止的住處，行經研究院路一段時變換",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 49,
+        "ageGroup": "45-54",
+        "gender": "male",
+        "vehicleTypes": [
+          "機車"
+        ],
+        "allMentionedVehicleTypes": [
+          "機車"
+        ],
+        "primaryVehicleType": "機車",
+        "primaryVehicleLabel": "機車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [
+          "依托咪酯",
+          "喪屍煙彈",
+          "安非他命"
+        ],
+        "testMethods": [
+          "唾液快篩/檢測"
+        ],
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "substance_mention",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [
+              {
+                "name": "依托咪酯",
+                "raw": "依托咪酯"
+              },
+              {
+                "name": "喪屍煙彈",
+                "raw": "喪屍菸彈"
+              },
+              {
+                "name": "安非他命",
+                "raw": "安非他命"
+              }
+            ],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [
+              {
+                "name": "安非他命",
+                "raw": "安非他命"
+              }
+            ],
+            "methods": [],
+            "status": "self_reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "person_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [
+              {
+                "name": "安非他命",
+                "raw": "安非他命"
+              }
+            ],
+            "methods": [
+              "唾液快篩/檢測"
+            ],
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "substance_mention",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [
+              {
+                "name": "依托咪酯",
+                "raw": "依托咪酯"
+              },
+              {
+                "name": "安非他命",
+                "raw": "安非他命"
+              }
+            ],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "unknown_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "consumption",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported_use",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ],
+        "scheduleClassifications": [
+          {
+            "keyword": "安非他命",
+            "schedule": "第二級",
+            "label": "第二級毒品",
+            "confidence": "reported",
+            "basis": "原文記載的級別，未據此確認現行法規"
+          }
+        ],
+        "scheduleLabels": [
+          "第二級毒品"
+        ],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "not_supported",
+        "findings": []
+      },
+      "crash": {
+        "scenarioTypes": []
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口",
+          "警方攔查現場"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "unknown"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "bc2146fbff0b7f1a7ecce23576fc9f4bdf552a987c034236bd8da6ebae4ad052",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 57,
+            "quote": "49歲陳姓男子前日騎乘機車行經台北市南港區研究院路一段與富康街口時，因變換車道未依規定使用方向燈，遭巡邏員警攔查。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 57,
+            "quote": "49歲陳姓男子前日騎乘機車行經台北市南港區研究院路一段與富康街口時，因變換車道未依規定使用方向燈，遭巡邏員警攔查。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 57,
+            "quote": "49歲陳姓男子前日騎乘機車行經台北市南港區研究院路一段與富康街口時，因變換車道未依規定使用方向燈，遭巡邏員警攔查。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 57,
+            "quote": "49歲陳姓男子前日騎乘機車行經台北市南港區研究院路一段與富康街口時，因變換車道未依規定使用方向燈，遭巡邏員警攔查。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 57,
+            "end": 146,
+            "quote": "盤查期間眼尖員警更發現陳男在受檢時，竟偷偷將依托咪酯（俗稱喪屍菸彈）菸彈與安非他命丟棄在所坐的椅子下方，當場逮捕陳男，全案訊後依公共危險及毒品危害防制條例罪嫌移送士林地檢署偵辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 147,
+            "end": 198,
+            "quote": "警方調查，陳男當時正要返回位於汐止的住處，行經研究院路一段時變換車道未打方向燈，員警上前將他攔停盤查。"
+          },
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 198,
+            "end": 297,
+            "quote": "員警靠近時察覺陳男神情緊繃、面露疲態，查證身分後確認為毒品列管人口，陳男自知難逃法網，主動交出一支電子菸桿，並坦承前一天晚上曾施用安非他命，隨後經陳男同意實施唾液毒品快篩，結果呈現安非他命陽性反應。"
+          }
+        ],
+        "drugDriving": [
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 198,
+            "end": 297,
+            "quote": "員警靠近時察覺陳男神情緊繃、面露疲態，查證身分後確認為毒品列管人口，陳男自知難逃法網，主動交出一支電子菸桿，並坦承前一天晚上曾施用安非他命，隨後經陳男同意實施唾液毒品快篩，結果呈現安非他命陽性反應。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 404,
+            "end": 455,
+            "quote": "陳男警詢時供稱，毒品都是向朋友購買，平時因為心情不好才會吸食紓壓，沒想到返家途中因交通違規遭警方查獲。"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "drug"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    }
+  },
+  {
+    "id": "ltn-68f4d6d3f170",
+    "title": "基隆女送貨員遭酒駕男撞死今解剖 夫獨守2歲兒：肇事者迄今未道歉",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5645437",
+    "source": "LTN",
+    "publishedAt": "2026-11-18",
+    "occurredAt": "2026-11-18",
+    "city": "基隆市",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": 2,
+    "injuries": 1,
+    "summary": "基隆市32歲白姓女外送員日前跑單途中，遭酒駕逆向41歲陳姓男子猛撞，搶救2天後不幸腦死身亡。 基隆地檢署檢察官今（18）日會同法務部法醫研究所法醫師解剖，以釐清死音。 白女丈夫在相驗室前受訪時難掩悲痛，痛斥肇事陳男案發至今未與他聯繫，連一句道歉都沒有，甚至沒到妻子靈堂上香致意，「一切交由法律處理」。 女外送員6日下午2點左右騎機車送貨行經基隆市調和街，遭酒測",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 41,
+        "ageGroup": "35-44",
+        "gender": "male",
+        "vehicleTypes": [],
+        "allMentionedVehicleTypes": [
+          "機車"
+        ],
+        "primaryVehicleType": null,
+        "primaryVehicleLabel": null,
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "not_supported",
+        "findings": [],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-2"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": 0.58,
+            "unit": "mg/L",
+            "rawUnit": "毫克",
+            "specimen": null,
+            "approximate": false,
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-2"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "逆向",
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": []
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "checked",
+        "injuries": "checked"
+      },
+      "countBasis": {
+        "deaths": "identified_people",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "8692c5265f5d10574cf30ba83083cc017ef52ddcd2a8b5cdb78987c2d0cc0e2a",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 46,
+            "end": 82,
+            "quote": "基隆地檢署檢察官今（18）日會同法務部法醫研究所法醫師解剖，以釐清死音。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 149,
+            "end": 247,
+            "quote": "女外送員6日下午2點左右騎機車送貨行經基隆市調和街，遭酒測值高達每公升0.58毫克的陳男開車逆向撞及，白女連人帶車被撞飛，壓在車底，當場四肢骨折，重傷昏迷，32歲江姓男騎士也遭波及，幸僅輕微擦傷。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 46,
+            "quote": "基隆市32歲白姓女外送員日前跑單途中，遭酒駕逆向41歲陳姓男子猛撞，搶救2天後不幸腦死身亡。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 149,
+            "end": 247,
+            "quote": "女外送員6日下午2點左右騎機車送貨行經基隆市調和街，遭酒測值高達每公升0.58毫克的陳男開車逆向撞及，白女連人帶車被撞飛，壓在車底，當場四肢骨折，重傷昏迷，32歲江姓男騎士也遭波及，幸僅輕微擦傷。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 31,
+            "quote": "基隆女送貨員遭酒駕男撞死今解剖 夫獨守2歲兒：肇事者迄今未道歉"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 46,
+            "quote": "基隆市32歲白姓女外送員日前跑單途中，遭酒駕逆向41歲陳姓男子猛撞，搶救2天後不幸腦死身亡。"
+          },
+          {
+            "sentenceId": "p1s3",
+            "field": "body",
+            "start": 82,
+            "end": 148,
+            "quote": "白女丈夫在相驗室前受訪時難掩悲痛，痛斥肇事陳男案發至今未與他聯繫，連一句道歉都沒有，甚至沒到妻子靈堂上香致意，「一切交由法律處理」。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 149,
+            "end": 247,
+            "quote": "女外送員6日下午2點左右騎機車送貨行經基隆市調和街，遭酒測值高達每公升0.58毫克的陳男開車逆向撞及，白女連人帶車被撞飛，壓在車底，當場四肢骨折，重傷昏迷，32歲江姓男騎士也遭波及，幸僅輕微擦傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 273,
+            "end": 359,
+            "quote": "面對愛妻驟逝，白女的丈夫今天下午在基隆市立殯儀館相驗室前受訪時哽咽指出，肇事的陳男自事發至今從未出面聯絡、也未曾到靈堂拜訪，感覺對方根本是不想面對，且聽聞陳男竟是酒駕累犯。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 46,
+            "quote": "基隆市32歲白姓女外送員日前跑單途中，遭酒駕逆向41歲陳姓男子猛撞，搶救2天後不幸腦死身亡。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 273,
+            "end": 359,
+            "quote": "面對愛妻驟逝，白女的丈夫今天下午在基隆市立殯儀館相驗室前受訪時哽咽指出，肇事的陳男自事發至今從未出面聯絡、也未曾到靈堂拜訪，感覺對方根本是不想面對，且聽聞陳男竟是酒駕累犯。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "p2s2",
+            "field": "body",
+            "start": 247,
+            "end": 272,
+            "quote": "白女被緊急送往加護病房搶救2天，8日宣告腦死不治。"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 46,
+            "quote": "基隆市32歲白姓女外送員日前跑單途中，遭酒駕逆向41歲陳姓男子猛撞，搶救2天後不幸腦死身亡。"
+          }
+        ],
+        "injuries": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 149,
+            "end": 247,
+            "quote": "女外送員6日下午2點左右騎機車送貨行經基隆市調和街，遭酒測值高達每公升0.58毫克的陳男開車逆向撞及，白女連人帶車被撞飛，壓在車底，當場四肢骨折，重傷昏迷，32歲江姓男騎士也遭波及，幸僅輕微擦傷。"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-2"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": [
+        "unresolved_family_reference:丈夫",
+        "unresolved_family_reference:妻子",
+        "alcohol_measurement_incomplete"
+      ]
+    }
   }
 ]
