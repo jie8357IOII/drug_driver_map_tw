@@ -2,6 +2,158 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-00adab01cc50057e",
+      "title": "好衰！代駕吸毒害200萬賓士遭沒入 車主無奈：只能法拍買回",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5646763",
+      "source": "LTN",
+      "publishedAt": "2026-11-19",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "unresolved_family_reference:母親",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-27d8ce03610f75b6",
+      "title": "怎麼飄出來的？台中酒駕男硬闖紅燈 撞飛男大生濺血送醫",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5645957",
+      "source": "LTN",
+      "publishedAt": "2026-11-19",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-3e07f932af3ff25d",
+      "title": "彰化酒駕累犯挨罰92萬、終身禁考照 執行署3度訪查助轉介戒酒",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5646321",
+      "source": "LTN",
+      "publishedAt": "2026-11-19",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "彰化縣",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-b469b7878c27db94",
+      "title": "機車男交通違規被攔下 慌張手抖被內湖警查出毒駕",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5646201",
+      "source": "LTN",
+      "publishedAt": "2026-11-19",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-bf376bfe5b9b7a36",
+      "title": "穿深藍套裝別國旗！資深歌后喊「不分藍綠」鬆口：最欣賞王世堅",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5645671",
+      "source": "LTN",
+      "publishedAt": "2026-11-19",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": []
+    },
+    {
+      "id": "article-ddb71c9e4afbe88f",
+      "title": "高雄毒駕男拒熄火遭警拉下車 車輛突滑行驚險煞停",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5645791",
+      "source": "LTN",
+      "publishedAt": "2026-11-19",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-fbcec585d4cf8fda",
+      "title": "桃小巴深夜遭逆向撞擊 肇事駕駛毒品陽性遭送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5646039",
+      "source": "LTN",
+      "publishedAt": "2026-11-19",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-575d79b6462b"
+      ],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
       "id": "article-04398a04ab05ec46",
       "title": "高雄婦路檢不排隊搶第一 這原因被移送法辦",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5644452",
