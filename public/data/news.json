@@ -2,6 +2,247 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-281262904359b191",
+      "title": "拉K+酒駕飆速奪命 找人頂罪還滅證",
+      "url": "https://news.ltn.com.tw/news/society/paper/1779289",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-327244f348b4"
+      ],
+      "city": null,
+      "issues": [
+        "injuries_not_reported",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-bf3ba93f00e83468",
+      "title": "桃園男毒駕撞進寶雅釀1死 張善政探視要求徹查",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648234",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "verified",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-58c3ad2d114d"
+      ],
+      "city": "桃園市",
+      "issues": []
+    },
+    {
+      "id": "article-0f52270321962f38",
+      "title": "繫洋流飄帶愛車停格內遭撞！車主質疑未做毒篩 警搬SOP釋疑",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5647520",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-1824fc9788791d84",
+      "title": "驚悚車禍！66歲男鬼切穿越馬路 遭直行小黃猛撞「凌空彈飛」",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5647228",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-4bea88cce93b420d",
+      "title": "又是毒駕！中壢轎車撞機車充電站7傷 1人命危送醫搶救",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648126",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-86d4f2cc14ff8dec",
+      "title": "泥醉婦騎車追撞前車 自稱喝完高粱上路",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5647596",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "conflicting_alcohol_evidence",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-a3c828b4a4290580",
+      "title": "無牌車停放豐原火車站前 中市警方：毒駕查扣車輛等候移置保管",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5647544",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺中市",
+      "issues": []
+    },
+    {
+      "id": "article-ad6802213daa8a60",
+      "title": "高雄男酒後騎電動滑板車遭攔查 酒測超標送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5647207",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-b97bbe7e2e7dbc9c",
+      "title": "普發現金2萬立院三讀蘇巧慧缺席 李競辦批對手「黨意立委」再添一樁",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5648082",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "policy",
+      "status": "verified",
+      "impairmentTypes": [],
+      "eventIds": [],
+      "city": null,
+      "issues": []
+    },
+    {
+      "id": "article-bedc5ef6d2729cab",
+      "title": "毒酒駕飆速95公里撞死騎士 男肇逃還找人頂替判11年半",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5647569",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-f965009dc3b8"
+      ],
+      "city": "臺北市",
+      "issues": [
+        "injuries_not_reported",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-c0085283fe6b612e",
+      "title": "高雄驚傳死亡車禍 老翁騎自行車遭曳引車「內輪差」撞死",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5647344",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "conflicting_alcohol_evidence",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-ebfc99d1edb93886",
+      "title": "怎麼撞的？高雄男駕車衝分隔島撞倒路燈桿趴車茫2罪送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5647146",
+      "source": "LTN",
+      "publishedAt": "2026-11-20",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-00adab01cc50057e",
       "title": "好衰！代駕吸毒害200萬賓士遭沒入 車主無奈：只能法拍買回",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5646763",
