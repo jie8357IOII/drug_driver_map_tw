@@ -1,11 +1,285 @@
 {
   "version": 1,
-  "throughDate": "2026-11-21",
+  "throughDate": "2026-11-22",
   "rejectedUrls": [],
-  "lastCheckedAt": "2026-11-21T21:38:35.709Z",
-  "lastChangedAt": "2026-11-21T21:38:35.709Z",
-  "dataHash": "814dc6b3240f6307bb7eb611b1bdae2bbeb42cca389a84c2609c53e3692e13b5",
+  "lastCheckedAt": "2026-11-22T21:44:53.551Z",
+  "lastChangedAt": "2026-11-22T21:44:53.551Z",
+  "dataHash": "9c67f28007a70df4c3178366630eca304161573acdad3d121ab060d35c61bedf",
   "articles": [
+    {
+      "id": "article-61cd0b4c41c9fbe3",
+      "title": "不到5個月又毒駕 撞死日月光女幹部",
+      "url": "https://news.ltn.com.tw/news/society/paper/1779386",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "6357ff23e98ebd67b018b1389f0a174bf106f58a535f8c1f4b664e148bce7839",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-58c3ad2d114d"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-03046c15e095a020",
+      "title": "嘉義「阮經天」認2次賣毒 買家沒付錢獲判無罪",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648655",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "c95c5d9e83f1924f6bd26d709a3209ee710f44e63563572f81f5940b836787d2",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-037c247a6db90906",
+      "title": "中壢毒駕釀1死6傷 肇事男駕駛遭法院裁定羈押",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649103",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "614d42f837eecc3da4bf6991fa6c067a6c77c8ae263002c409bbfca49a59a78f",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-58c3ad2d114d"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-048220be1b0890f5",
+      "title": "中壢毒駕男收押！衝寶雅釀1死6傷 日月光菲籍女幹部悲客死異鄉",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649127",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "8320da4af937d97b436d1629035ca6eb6ba7c6a1ce31aa5a9301a7d2d6841ad1",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-58c3ad2d114d"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-08efe5711081101b",
+      "title": "毒駕撞進桃園店家釀1死6傷 28歲男駕駛聲押",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648756",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "c431630c6f5f3d3a8d29469c19daa8379222f9e123c4809f19bd25db78f2c60e",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-58c3ad2d114d"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-0aee9841cb9f2240",
+      "title": "又是毒駕惹禍！男開車撞進寶雅騎樓釀1死6傷 死者是日月光菲籍女移工",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648382",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "51031faf0114963178563a95fc4ba86a453a95429e885722e91ba9e81f0cf472",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-58c3ad2d114d"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-1ae410cfd0f26303",
+      "title": "桃園毒駕釀1死6傷 菲女創傷性休克致死",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648864",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "272772455715ed29f3c9b9d4c607c8b69edb4d3a2e3df0c0f9f5954319103e67",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-327244f348b4"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-269c4108caeb8572",
+      "title": "酒駕撞人還能無罪？監視器一調法官反轟單車少年",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648717",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-2ab4b9ae7a5b"
+      ],
+      "city": "臺南市",
+      "issues": [
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown"
+      ],
+      "bodyHash": "70f08bb8a139483b767ef8a02825a5b31ef2ad5354cc0bb823e8727af7e27665",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": "ltn-2ab4b9ae7a5b",
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "alcohol_measurement_incomplete",
+            "deaths_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
     {
       "id": "article-281262904359b191",
       "title": "拉K+酒駕飆速奪命 找人頂罪還滅證",
@@ -42,6 +316,104 @@
       "origin": "confirmed_source"
     },
     {
+      "id": "article-94020ffdb32475bb",
+      "title": "剛離開公園就撞車被PO網 老翁騎微電車酒測高達0.70",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648614",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "conflicting_alcohol_evidence",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "87039a8de8ace75f478122f011187b21c7e527375801ae23bd740b8679740689",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "conflicting_alcohol_evidence",
+            "alcohol_measurement_incomplete",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-9e05e148199163c1",
+      "title": "來台僅1個月！日月光菲籍女幹部 中壢遭毒駕車撞上枉死",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648650",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "73615026c54afc0ae679ba296bc654eadf071f5767346f7512bfdf3b6091d159",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [
+            "ltn-58c3ad2d114d"
+          ],
+          "issues": [
+            "possible_duplicate_or_identity_conflict"
+          ]
+        },
+        {
+          "localEventId": "event-2",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "driver_identity_unresolved",
+            "driver_identity_not_checked",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
       "id": "article-bf3ba93f00e83468",
       "title": "桃園男毒駕撞進寶雅釀1死 張善政探視要求徹查",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5648234",
@@ -65,6 +437,161 @@
           "eventId": "ltn-58c3ad2d114d",
           "possibleEventIds": [],
           "issues": []
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-d167fb82c7711ebd",
+      "title": "小心用路與荷包 23日起連3天交通大執法",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5648359",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_city",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "000f0c9a7720962c2349dc1fd37c2ddce6b241640818195119afe8307c0772c7",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unknown_city",
+            "unknown_event_date",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "impairment_driver_link_not_checked",
+            "event_date_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-d5c63356e607652c",
+      "title": "蕭淑慎老公又出事1》梁軒安酒駕拒檢逃逸 車上女子告他限制行動",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5648479",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "a3f10de3dfdadb2b6d5d2d697c98f1fe95035eec34e2dd4fa9c8f14f0c9e098d",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "alcohol_measurement_incomplete",
+            "driver_identity_unresolved",
+            "driver_identity_not_checked",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-e4346118652837d0",
+      "title": "批蘇巧慧毒駕修法表決神隱 李四川競辦質疑「心中只有黨意」",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5648310",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "policy",
+      "status": "verified",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [],
+      "bodyHash": "587fe9e736bc88c5b0d83ffecc5148deb367b7af613dd9217b870d0825e84445",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-f9b893e3552363b9",
+      "title": "蕭淑慎老公又出事2》從Uber結緣到婚變傳聞 蕭淑慎夫妻路風雨不斷",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5648478",
+      "source": "LTN",
+      "publishedAt": "2026-11-21",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "unresolved_family_reference:丈夫",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "94fc057e52f79e761057f5cc1a495b346ee03571966430c2600bccf692e96a6c",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unresolved_family_reference:丈夫",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "driver_identity_unresolved",
+            "driver_identity_not_checked",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
         }
       ],
       "origin": "confirmed_source"
@@ -20269,7 +20796,14 @@
         }
       ],
       "conflicts": [],
-      "issues": []
+      "issues": [
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5648382",
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5648650",
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5648756",
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5649103",
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5649127",
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/paper/1779386"
+      ]
     },
     {
       "id": "ltn-327244f348b4",
@@ -20313,6 +20847,48 @@
         }
       ],
       "conflicts": [],
+      "issues": [
+        "possible_duplicate_or_identity_conflict:https://news.ltn.com.tw/news/society/breakingnews/5648864"
+      ]
+    },
+    {
+      "id": "ltn-2ab4b9ae7a5b",
+      "match": {
+        "date": "2025-09-05",
+        "city": "臺南市",
+        "road": "安平區的十字路口",
+        "actorKeys": [
+          {
+            "surname": "張",
+            "age": null,
+            "gender": "male",
+            "vehicleTypes": [
+              "bicycle"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5648717",
+          "eventId": "event-1",
+          "bodyHash": "70f08bb8a139483b767ef8a02825a5b31ef2ad5354cc0bb823e8727af7e27665",
+          "version": "local-events-v3"
+        }
+      ],
+      "history": [
+        {
+          "versionKey": "https://news.ltn.com.tw/news/society/breakingnews/5648717:event-1:70f08bb8a139483b767ef8a02825a5b31ef2ad5354cc0bb823e8727af7e27665:local-events-v3",
+          "checkedAt": "2026-11-22T21:44:53.551Z",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5648717",
+          "eventId": "event-1",
+          "bodyHash": "70f08bb8a139483b767ef8a02825a5b31ef2ad5354cc0bb823e8727af7e27665",
+          "version": "local-events-v3",
+          "changes": [],
+          "issues": []
+        }
+      ],
+      "conflicts": [],
       "issues": []
     }
   ],
@@ -20321,7 +20897,7 @@
       {
         "source": "LTN",
         "from": "2026-10-27",
-        "to": "2026-11-21",
+        "to": "2026-11-22",
         "keywords": [
           "拒測",
           "毒駕",
@@ -20329,12 +20905,12 @@
           "酒測",
           "酒駕"
         ],
-        "checkedAt": "2026-11-21T21:38:35.709Z"
+        "checkedAt": "2026-11-22T21:44:53.551Z"
       }
     ],
     "recordDates": {
       "publishedFrom": "2024-05-05",
-      "publishedTo": "2026-11-21",
+      "publishedTo": "2026-11-22",
       "occurredFrom": "2023-02-07",
       "occurredTo": "2026-11-21"
     },
@@ -21980,9 +22556,9 @@
       ]
     }
   },
-  "coverageHash": "a837ac10c3b56929280d2ba98adb4bc6887c9466873abc0b211302962f7d453d",
+  "coverageHash": "613c24f17e388bf56dd9560c32b97c3dd2206021f380d9bee2bad359ca34b0ec",
   "api": {
-    "date": "2026-11-21",
+    "date": "2026-11-22",
     "runRequests": 0,
     "requests": 0,
     "cache": {}
@@ -21997,8 +22573,8 @@
     "toMonth": "2026-08",
     "sourceUpdatedAt": "2026-10-27",
     "notice": "112-114年、115年1-8月查詢結果為初估值",
-    "checkedAt": "2026-11-21T21:38:35.709Z",
-    "fetchedAt": "2026-11-21T21:38:35.709Z",
+    "checkedAt": "2026-11-22T21:44:53.551Z",
+    "fetchedAt": "2026-11-22T21:44:53.551Z",
     "status": "current",
     "rows": [
       {

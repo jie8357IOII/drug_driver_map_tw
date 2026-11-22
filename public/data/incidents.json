@@ -31303,5 +31303,283 @@
         "injuries_unknown"
       ]
     }
+  },
+  {
+    "id": "ltn-2ab4b9ae7a5b",
+    "title": "酒駕撞人還能無罪？監視器一調法官反轟單車少年",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5648717",
+    "source": "LTN",
+    "publishedAt": "2026-11-21",
+    "occurredAt": "2025-09-05",
+    "city": "臺南市",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": null,
+    "injuries": 1,
+    "summary": "酒駕撞人竟獲判無罪。 張姓男子去年在台南酒後開小貨車，撞上騎腳踏車要去超商的許姓少年，法官勘驗畫面認定少年無預警左轉，事後還3度撒謊有回頭看，痛批不該讓不實說詞入人於罪，台南地方法院判決張男無罪。 去年9月5日上午，張男飲酒後開車行經安平區的十字路口，撞上同向騎在內線車道、突然左轉要去超商的許姓少年，致少年倒地擦挫傷，警方測得張男酒測值每公升0.16毫克，公",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": null,
+        "ageGroup": null,
+        "gender": "male",
+        "vehicleTypes": [
+          "自行車"
+        ],
+        "allMentionedVehicleTypes": [
+          "小貨車",
+          "自行車"
+        ],
+        "primaryVehicleType": "自行車",
+        "primaryVehicleLabel": "腳踏車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "not_supported",
+        "findings": [],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": 0.16,
+            "unit": "mg/L",
+            "rawUnit": "毫克",
+            "specimen": null,
+            "approximate": false,
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "status": "suspected",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "checked"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "70f08bb8a139483b767ef8a02825a5b31ef2ad5354cc0bb823e8727af7e27665",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 98,
+            "end": 240,
+            "quote": "去年9月5日上午，張男飲酒後開車行經安平區的十字路口，撞上同向騎在內線車道、突然左轉要去超商的許姓少年，致少年倒地擦挫傷，警方測得張男酒測值每公升0.16毫克，公共危險罪獲緩起訴，台南地檢署另依過失傷害罪聲請簡易判決，許姓少年在警詢與偵查時3度指稱，左轉去超商前有轉頭查看無車才轉彎。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 10,
+            "end": 97,
+            "quote": "張姓男子去年在台南酒後開小貨車，撞上騎腳踏車要去超商的許姓少年，法官勘驗畫面認定少年無預警左轉，事後還3度撒謊有回頭看，痛批不該讓不實說詞入人於罪，台南地方法院判決張男無罪。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 10,
+            "quote": "酒駕撞人竟獲判無罪。"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 10,
+            "end": 97,
+            "quote": "張姓男子去年在台南酒後開小貨車，撞上騎腳踏車要去超商的許姓少年，法官勘驗畫面認定少年無預警左轉，事後還3度撒謊有回頭看，痛批不該讓不實說詞入人於罪，台南地方法院判決張男無罪。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 98,
+            "end": 240,
+            "quote": "去年9月5日上午，張男飲酒後開車行經安平區的十字路口，撞上同向騎在內線車道、突然左轉要去超商的許姓少年，致少年倒地擦挫傷，警方測得張男酒測值每公升0.16毫克，公共危險罪獲緩起訴，台南地檢署另依過失傷害罪聲請簡易判決，許姓少年在警詢與偵查時3度指稱，左轉去超商前有轉頭查看無車才轉彎。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 410,
+            "end": 474,
+            "quote": "法院認為，張男雖酒駕且略跨雙黃線，但與車禍無因果關係，緊急煞閃時也無力按喇叭，事故鑑定書未考量反應時間及少年說詞不實，不予採信。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 10,
+            "end": 97,
+            "quote": "張姓男子去年在台南酒後開小貨車，撞上騎腳踏車要去超商的許姓少年，法官勘驗畫面認定少年無預警左轉，事後還3度撒謊有回頭看，痛批不該讓不實說詞入人於罪，台南地方法院判決張男無罪。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 98,
+            "end": 240,
+            "quote": "去年9月5日上午，張男飲酒後開車行經安平區的十字路口，撞上同向騎在內線車道、突然左轉要去超商的許姓少年，致少年倒地擦挫傷，警方測得張男酒測值每公升0.16毫克，公共危險罪獲緩起訴，台南地檢署另依過失傷害罪聲請簡易判決，許姓少年在警詢與偵查時3度指稱，左轉去超商前有轉頭查看無車才轉彎。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 241,
+            "end": 299,
+            "quote": "張男審理時否認過失，辯稱少年到路口突然左騎，他來不及按喇叭或閃避，且少年根本沒回頭看，偵查中卻說有看，都是大人教的。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 299,
+            "end": 359,
+            "quote": "法官勘驗監視器發現，當時少年同學騎在外線道，許姓少年卻騎在內線道，左轉前完全沒回頭、打燈或比手勢，張男反應時間僅約1秒。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 10,
+            "quote": "酒駕撞人竟獲判無罪。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 98,
+            "end": 240,
+            "quote": "去年9月5日上午，張男飲酒後開車行經安平區的十字路口，撞上同向騎在內線車道、突然左轉要去超商的許姓少年，致少年倒地擦挫傷，警方測得張男酒測值每公升0.16毫克，公共危險罪獲緩起訴，台南地檢署另依過失傷害罪聲請簡易判決，許姓少年在警詢與偵查時3度指稱，左轉去超商前有轉頭查看無車才轉彎。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 410,
+            "end": 474,
+            "quote": "法院認為，張男雖酒駕且略跨雙黃線，但與車禍無因果關係，緊急煞閃時也無力按喇叭，事故鑑定書未考量反應時間及少年說詞不實，不予採信。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 98,
+            "end": 240,
+            "quote": "去年9月5日上午，張男飲酒後開車行經安平區的十字路口，撞上同向騎在內線車道、突然左轉要去超商的許姓少年，致少年倒地擦挫傷，警方測得張男酒測值每公升0.16毫克，公共危險罪獲緩起訴，台南地檢署另依過失傷害罪聲請簡易判決，許姓少年在警詢與偵查時3度指稱，左轉去超商前有轉頭查看無車才轉彎。"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown"
+      ]
+    }
   }
 ]
