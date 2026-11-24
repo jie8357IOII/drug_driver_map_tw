@@ -31581,5 +31581,697 @@
         "deaths_unknown"
       ]
     }
+  },
+  {
+    "id": "ltn-9fdfe61bbc19",
+    "title": "男子酒駕釀3車碰撞事故！清水警依公共危險罪嫌送辦",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5649300",
+    "source": "LTN",
+    "publishedAt": "2026-11-22",
+    "occurredAt": "2026-11-21",
+    "city": "臺中市",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": null,
+    "injuries": 1,
+    "summary": "昨晚10點多，王姓男子開車行經台中市沙鹿區台灣大道七段時，撞上準備左轉的2輛轎車，造成其與另名駕駛李男四肢擦挫傷，清水警分局員警獲報到場處理，發現王男酒測值超標，依公共危險罪嫌移送台中地檢署偵辦。 清水警分局表示，車禍發生於11月21日晚上10點左右，在沙鹿區台灣大道7段391號前，王男（54歲）駕駛轎車沿台灣大道往北方向直行內側車道，與同向車道前方停等欲左",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 54,
+        "ageGroup": "45-54",
+        "gender": "male",
+        "vehicleTypes": [
+          "汽車"
+        ],
+        "allMentionedVehicleTypes": [
+          "汽車"
+        ],
+        "primaryVehicleType": "汽車",
+        "primaryVehicleLabel": "轎車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "ruled_out",
+        "findings": [],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-3"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "positive",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": []
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "checked"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "896254aad27b1d5bed229591f31c2d42e0bcbdcd73a801ea77862bbd96d87a31",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 98,
+            "quote": "昨晚10點多，王姓男子開車行經台中市沙鹿區台灣大道七段時，撞上準備左轉的2輛轎車，造成其與另名駕駛李男四肢擦挫傷，清水警分局員警獲報到場處理，發現王男酒測值超標，依公共危險罪嫌移送台中地檢署偵辦。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 98,
+            "quote": "昨晚10點多，王姓男子開車行經台中市沙鹿區台灣大道七段時，撞上準備左轉的2輛轎車，造成其與另名駕駛李男四肢擦挫傷，清水警分局員警獲報到場處理，發現王男酒測值超標，依公共危險罪嫌移送台中地檢署偵辦。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 98,
+            "quote": "昨晚10點多，王姓男子開車行經台中市沙鹿區台灣大道七段時，撞上準備左轉的2輛轎車，造成其與另名駕駛李男四肢擦挫傷，清水警分局員警獲報到場處理，發現王男酒測值超標，依公共危險罪嫌移送台中地檢署偵辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 99,
+            "end": 279,
+            "quote": "清水警分局表示，車禍發生於11月21日晚上10點左右，在沙鹿區台灣大道7段391號前，王男（54歲）駕駛轎車沿台灣大道往北方向直行內側車道，與同向車道前方停等欲左轉的2輛轎車發生碰撞，造成其及駕駛李男（56歲）四肢擦挫傷，另一名駕駛邱男（37歲）則未受傷，現場未發現毒駕跡證，但警方實施酒測，王男酒測值超過法定標準值，警方依公共危險罪嫌將他移送台中地檢署偵辦。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 24,
+            "quote": "男子酒駕釀3車碰撞事故！清水警依公共危險罪嫌送辦"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 98,
+            "quote": "昨晚10點多，王姓男子開車行經台中市沙鹿區台灣大道七段時，撞上準備左轉的2輛轎車，造成其與另名駕駛李男四肢擦挫傷，清水警分局員警獲報到場處理，發現王男酒測值超標，依公共危險罪嫌移送台中地檢署偵辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 99,
+            "end": 279,
+            "quote": "清水警分局表示，車禍發生於11月21日晚上10點左右，在沙鹿區台灣大道7段391號前，王男（54歲）駕駛轎車沿台灣大道往北方向直行內側車道，與同向車道前方停等欲左轉的2輛轎車發生碰撞，造成其及駕駛李男（56歲）四肢擦挫傷，另一名駕駛邱男（37歲）則未受傷，現場未發現毒駕跡證，但警方實施酒測，王男酒測值超過法定標準值，警方依公共危險罪嫌將他移送台中地檢署偵辦。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 98,
+            "quote": "昨晚10點多，王姓男子開車行經台中市沙鹿區台灣大道七段時，撞上準備左轉的2輛轎車，造成其與另名駕駛李男四肢擦挫傷，清水警分局員警獲報到場處理，發現王男酒測值超標，依公共危險罪嫌移送台中地檢署偵辦。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 98,
+            "quote": "昨晚10點多，王姓男子開車行經台中市沙鹿區台灣大道七段時，撞上準備左轉的2輛轎車，造成其與另名駕駛李男四肢擦挫傷，清水警分局員警獲報到場處理，發現王男酒測值超標，依公共危險罪嫌移送台中地檢署偵辦。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 99,
+            "end": 279,
+            "quote": "清水警分局表示，車禍發生於11月21日晚上10點左右，在沙鹿區台灣大道7段391號前，王男（54歲）駕駛轎車沿台灣大道往北方向直行內側車道，與同向車道前方停等欲左轉的2輛轎車發生碰撞，造成其及駕駛李男（56歲）四肢擦挫傷，另一名駕駛邱男（37歲）則未受傷，現場未發現毒駕跡證，但警方實施酒測，王男酒測值超過法定標準值，警方依公共危險罪嫌將他移送台中地檢署偵辦。"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    }
+  },
+  {
+    "id": "ltn-f638b5de30aa",
+    "title": "你累了嗎？疲勞駕駛釀禍 轎車擦撞路邊車輛翻車",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5649547",
+    "source": "LTN",
+    "publishedAt": "2026-11-22",
+    "occurredAt": "2026-11-21",
+    "city": "屏東縣",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": null,
+    "injuries": null,
+    "summary": "屏東縣內埔鄉西淇路昨天傳出有車輛翻覆，且還撞擊到對向車輛，警方到場，才發現是駕駛「疲勞駕駛」，警方強調，駕駛人駕車上路，應注意自身精神狀況，切勿有疲勞駕駛的情事。 屏縣府警察局內埔分局昨天下午3時許，接獲報案稱西淇路段有交通事故，經警方到場了解，為蕭姓男子駕駛轎車，卻因精神不佳，先擦撞停放在路旁的自小客車後翻覆。 蕭男翻覆後卻又再擦撞對向陳姓駕駛所駕駛的自小",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": null,
+        "ageGroup": null,
+        "gender": null,
+        "vehicleTypes": [],
+        "allMentionedVehicleTypes": [
+          "汽車"
+        ],
+        "primaryVehicleType": null,
+        "primaryVehicleLabel": null,
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "suspected",
+        "findings": [
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1",
+              "person-2"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1",
+              "person-2"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "unknown"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "not_reported"
+      },
+      "sourceBodyHash": "1e13c132072d7a1ccbaf896efd2def4b85b83bc7a246666a28cafb417f6740be",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 81,
+            "quote": "屏東縣內埔鄉西淇路昨天傳出有車輛翻覆，且還撞擊到對向車輛，警方到場，才發現是駕駛「疲勞駕駛」，警方強調，駕駛人駕車上路，應注意自身精神狀況，切勿有疲勞駕駛的情事。"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 81,
+            "quote": "屏東縣內埔鄉西淇路昨天傳出有車輛翻覆，且還撞擊到對向車輛，警方到場，才發現是駕駛「疲勞駕駛」，警方強調，駕駛人駕車上路，應注意自身精神狀況，切勿有疲勞駕駛的情事。"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 81,
+            "quote": "屏東縣內埔鄉西淇路昨天傳出有車輛翻覆，且還撞擊到對向車輛，警方到場，才發現是駕駛「疲勞駕駛」，警方強調，駕駛人駕車上路，應注意自身精神狀況，切勿有疲勞駕駛的情事。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 82,
+            "end": 157,
+            "quote": "屏縣府警察局內埔分局昨天下午3時許，接獲報案稱西淇路段有交通事故，經警方到場了解，為蕭姓男子駕駛轎車，卻因精神不佳，先擦撞停放在路旁的自小客車後翻覆。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 158,
+            "end": 212,
+            "quote": "蕭男翻覆後卻又再擦撞對向陳姓駕駛所駕駛的自小客車，蕭姓男子及其乘客兩人輕微擦挫傷，後續送往龍泉榮民醫院治療。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 22,
+            "quote": "你累了嗎？疲勞駕駛釀禍 轎車擦撞路邊車輛翻車"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 82,
+            "end": 157,
+            "quote": "屏縣府警察局內埔分局昨天下午3時許，接獲報案稱西淇路段有交通事故，經警方到場了解，為蕭姓男子駕駛轎車，卻因精神不佳，先擦撞停放在路旁的自小客車後翻覆。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 158,
+            "end": 212,
+            "quote": "蕭男翻覆後卻又再擦撞對向陳姓駕駛所駕駛的自小客車，蕭姓男子及其乘客兩人輕微擦挫傷，後續送往龍泉榮民醫院治療。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 212,
+            "end": 244,
+            "quote": "蕭姓男子及陳姓男子未發現有毒駕酒駕情事，詳細肇事原因持續釐清中。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 212,
+            "end": 244,
+            "quote": "蕭姓男子及陳姓男子未發現有毒駕酒駕情事，詳細肇事原因持續釐清中。"
+          }
+        ],
+        "deaths": [],
+        "injuries": []
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1",
+          "person-2"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    }
+  },
+  {
+    "id": "ltn-de23e2e70aea",
+    "title": "7旬貨車駕駛撞電動代步車又撞上行人 釀1死1傷",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5650157",
+    "source": "LTN",
+    "publishedAt": "2026-11-23",
+    "occurredAt": "2026-11-22",
+    "city": "嘉義縣",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": 1,
+    "injuries": 1,
+    "summary": "嘉義縣中埔鄉台18線25公里22日發生重大交通事故，74歲張姓男子駕駛小貨車沿著台18線由西往東行駛，途經事故路段時，不慎追撞同向駕駛醫療用電動代步車的82歲吳姓男子，代步車又碰撞62歲蔡姓行人及停放路邊轎車，導致吳男重傷，送醫後不治死亡； 蔡男受傷送醫，暫無大礙。 警方調查，張男沒有毒駕、酒駕，詳細肇事原因有待調查釐清。 警方調查，張男22日上午7點多駕駛",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 74,
+        "ageGroup": "65+",
+        "gender": "male",
+        "vehicleTypes": [
+          "小貨車"
+        ],
+        "allMentionedVehicleTypes": [
+          "小貨車",
+          "汽車"
+        ],
+        "primaryVehicleType": "小貨車",
+        "primaryVehicleLabel": "小貨車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "ruled_out",
+        "findings": [
+          {
+            "kind": "reported_drug_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "substances": [],
+            "methods": [],
+            "status": "ruled_out",
+            "timeScope": "current"
+          }
+        ],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-1"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [
+          "行人/過馬路"
+        ],
+        "vulnerableGroups": [
+          "高齡者"
+        ]
+      },
+      "context": {
+        "placeTypes": [
+          "一般道路/路口"
+        ]
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": true,
+      "needsHumanReview": false,
+      "fieldStatus": {
+        "deaths": "checked",
+        "injuries": "checked"
+      },
+      "countBasis": {
+        "deaths": "explicit_total",
+        "injuries": "explicit_total"
+      },
+      "sourceBodyHash": "56da9b303b9298b4d9f832ffb1455469330994de6a4af77c75cc1a3e18cdf144",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 162,
+            "end": 237,
+            "quote": "警方調查，張男22日上午7點多駕駛小貨車沿著台18線由西往東行駛，途經台18線約25公里處，不慎追撞同向吳男，吳男的代步車再撞到蔡男及一旁停放的轎車；"
+          }
+        ],
+        "city": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 120,
+            "quote": "嘉義縣中埔鄉台18線25公里22日發生重大交通事故，74歲張姓男子駕駛小貨車沿著台18線由西往東行駛，途經事故路段時，不慎追撞同向駕駛醫療用電動代步車的82歲吳姓男子，代步車又碰撞62歲蔡姓行人及停放路邊轎車，導致吳男重傷，送醫後不治死亡；"
+          }
+        ],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 120,
+            "quote": "嘉義縣中埔鄉台18線25公里22日發生重大交通事故，74歲張姓男子駕駛小貨車沿著台18線由西往東行駛，途經事故路段時，不慎追撞同向駕駛醫療用電動代步車的82歲吳姓男子，代步車又碰撞62歲蔡姓行人及停放路邊轎車，導致吳男重傷，送醫後不治死亡；"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 162,
+            "end": 237,
+            "quote": "警方調查，張男22日上午7點多駕駛小貨車沿著台18線由西往東行駛，途經台18線約25公里處，不慎追撞同向吳男，吳男的代步車再撞到蔡男及一旁停放的轎車；"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 237,
+            "end": 286,
+            "quote": "車禍事故造成吳男頭部、胸部嚴重擦挫傷，送醫後傷重不治，蔡男頭部、頸部、四肢受傷，所幸送醫後無大礙。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 23,
+            "quote": "7旬貨車駕駛撞電動代步車又撞上行人 釀1死1傷"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 120,
+            "quote": "嘉義縣中埔鄉台18線25公里22日發生重大交通事故，74歲張姓男子駕駛小貨車沿著台18線由西往東行駛，途經事故路段時，不慎追撞同向駕駛醫療用電動代步車的82歲吳姓男子，代步車又碰撞62歲蔡姓行人及停放路邊轎車，導致吳男重傷，送醫後不治死亡；"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 133,
+            "end": 161,
+            "quote": "警方調查，張男沒有毒駕、酒駕，詳細肇事原因有待調查釐清。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 162,
+            "end": 237,
+            "quote": "警方調查，張男22日上午7點多駕駛小貨車沿著台18線由西往東行駛，途經台18線約25公里處，不慎追撞同向吳男，吳男的代步車再撞到蔡男及一旁停放的轎車；"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 133,
+            "end": 161,
+            "quote": "警方調查，張男沒有毒駕、酒駕，詳細肇事原因有待調查釐清。"
+          }
+        ],
+        "deaths": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 23,
+            "quote": "7旬貨車駕駛撞電動代步車又撞上行人 釀1死1傷"
+          },
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 120,
+            "quote": "嘉義縣中埔鄉台18線25公里22日發生重大交通事故，74歲張姓男子駕駛小貨車沿著台18線由西往東行駛，途經事故路段時，不慎追撞同向駕駛醫療用電動代步車的82歲吳姓男子，代步車又碰撞62歲蔡姓行人及停放路邊轎車，導致吳男重傷，送醫後不治死亡；"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 237,
+            "end": 286,
+            "quote": "車禍事故造成吳男頭部、胸部嚴重擦挫傷，送醫後傷重不治，蔡男頭部、頸部、四肢受傷，所幸送醫後無大礙。"
+          }
+        ],
+        "injuries": [
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 23,
+            "quote": "7旬貨車駕駛撞電動代步車又撞上行人 釀1死1傷"
+          },
+          {
+            "sentenceId": "p1s2",
+            "field": "body",
+            "start": 120,
+            "end": 132,
+            "quote": "蔡男受傷送醫，暫無大礙。"
+          },
+          {
+            "sentenceId": "p3s2",
+            "field": "body",
+            "start": 237,
+            "end": 286,
+            "quote": "車禍事故造成吳男頭部、胸部嚴重擦挫傷，送醫後傷重不治，蔡男頭部、頸部、四肢受傷，所幸送醫後無大礙。"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-1"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": []
+    }
   }
 ]

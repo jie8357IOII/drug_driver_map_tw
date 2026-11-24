@@ -2,6 +2,144 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-53094b878ea4fbab",
+      "title": "夜開租賃車撞分隔島 駕駛酒測毒測均過關",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5650214",
+      "source": "LTN",
+      "publishedAt": "2026-11-23",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": []
+    },
+    {
+      "id": "article-7766f906d1b4014a",
+      "title": "7旬貨車駕駛撞電動代步車又撞上行人 釀1死1傷",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5650157",
+      "source": "LTN",
+      "publishedAt": "2026-11-23",
+      "kind": "incident",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-de23e2e70aea"
+      ],
+      "city": "嘉義縣",
+      "issues": []
+    },
+    {
+      "id": "article-1b656c0682bcd0f1",
+      "title": "屏東鹽埔砂石車疑閃車偏移自撞 撞斷2根電桿",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649243",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "屏東縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-1c76e44a8179e710",
+      "title": "男子酒駕釀3車碰撞事故！清水警依公共危險罪嫌送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649300",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-9fdfe61bbc19"
+      ],
+      "city": "臺中市",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-2b83a4d092669a52",
+      "title": "車停路中昏睡叫不醒 警破窗駕駛突踩油門衝撞逃逸",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649896",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-36826e14ad6b2bfa",
+      "title": "疑駕駛凌晨精神不濟 基隆七堵轎車自撞四輪朝天",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649215",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "基隆市",
+      "issues": [
+        "deaths_not_reported",
+        "conflicting_alcohol_evidence",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-5639255d3defd084",
+      "title": "支線道車疑未禮讓 金門租賃車與小黃相撞4人送醫",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649641",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "金門縣",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_conflicting",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-61cd0b4c41c9fbe3",
       "title": "不到5個月又毒駕 撞死日月光女幹部",
       "url": "https://news.ltn.com.tw/news/society/paper/1779386",
@@ -16,6 +154,81 @@
       "city": null,
       "issues": [
         "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-7e9cbe9121819d70",
+      "title": "彰化獲捐200萬專車 深入偏鄉防毒駕與偽裝電子煙",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649240",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "彰化縣",
+      "issues": []
+    },
+    {
+      "id": "article-8b49fd7ca3310772",
+      "title": "撞倒機車想逃！男騎微電車渾身酒氣強制抽血 換算0.7毫克送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649900",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "possible_duplicate_or_identity_conflict",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-dcaef7bdff042649",
+      "title": "你累了嗎？疲勞駕駛釀禍 轎車擦撞路邊車輛翻車",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649547",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-f638b5de30aa"
+      ],
+      "city": "屏東縣",
+      "issues": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-ecc5a97a5f58b203",
+      "title": "國1造橋段轎車自撞施工護欄 男駕駛傷重不治、女副駕命危搶救",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5649754",
+      "source": "LTN",
+      "publishedAt": "2026-11-22",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "苗栗縣",
+      "issues": [
+        "impairment_driver_link_not_checked",
         "no_verified_event_link"
       ]
     },
