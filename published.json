@@ -1,13 +1,13 @@
 {
   "version": 1,
   "codeSha": "7b687be265ae80c1545895513137e4774fc0ec30",
-  "snapshotId": "322bb80934c3542dde6c1bab26be7cd78f53856ab9f379c361d2c01dfb93a92b",
+  "snapshotId": "fe3353eded68d0f4b0f404e31c066f5b25915b71e37d1695b3c7ec27e275e5e9",
   "files": {
-    "public/data/incidents.json": "9d4021b90c4938a6af83d6dc87b29d049e54efa8f28165ca203170819a32f537",
-    "public/data/news.json": "e51059c45b26a6bfb7f80660eeddbf47bd507b07e56fab7933969dc5fce7518d",
-    "public/data/news-status.json": "8501f30334a91a2bd411b27381831a29acf1a4854c393492549a96bf867c426d"
+    "public/data/incidents.json": "c7ae75b7ba4ef068fb055e15d275fe27bae5345349370766b7609922504bd80d",
+    "public/data/news.json": "90e6f5a04f530226601316b7b96217f39dad8d9aae3bb0792c732a188d86a858",
+    "public/data/news-status.json": "dd9fb76d1ed993a2d89a94e5c2687901cad07b4c9e6bdabb11d8661b5aaa5c2b"
   },
-  "publishedAt": "2026-11-23T07:50:44.980Z",
+  "publishedAt": "2026-11-24T02:58:35.032Z",
   "pageUrl": "https://jie8357ioii.github.io/drug_driver_map_tw/",
-  "runId": "45133957901"
+  "runId": "45315628080"
 }
