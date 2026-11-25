@@ -17,6 +17,31 @@
       "issues": []
     },
     {
+      "id": "article-6172f8e87bf50dd8",
+      "title": "《GTA 6》熱潮席捲全球！警方憂犯罪帶到現實 玩家：只想色色",
+      "url": "https://3c.ltn.com.tw/news/68384",
+      "source": "LTN",
+      "publishedAt": "2026-11-23",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_city",
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-7766f906d1b4014a",
       "title": "7旬貨車駕駛撞電動代步車又撞上行人 釀1死1傷",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5650157",
@@ -32,6 +57,112 @@
       ],
       "city": "嘉義縣",
       "issues": []
+    },
+    {
+      "id": "article-7a3746e6d5f656e3",
+      "title": "酒測0.32判酒駕！高雄男喊「牙周病害的」 漱口水實測逆轉無罪",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5650792",
+      "source": "LTN",
+      "publishedAt": "2026-11-23",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "conflicting_alcohol_evidence",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-b0093023fd05e8cd",
+      "title": "直批毒駕、長者免健保費、普發2萬表決都缺席 柯文哲嗆沈伯洋「不要廢話」",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5650662",
+      "source": "LTN",
+      "publishedAt": "2026-11-23",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": []
+    },
+    {
+      "id": "article-caea2ea6090814ee",
+      "title": "假投資詐欺車手遭包抄落網 意外搜出安毒又毒駕",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5650377",
+      "source": "LTN",
+      "publishedAt": "2026-11-23",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-e34f65a494cb4a0e",
+      "title": "新北雙溪轎車失控衝落牡丹橋邊坡 71歲翁竟是酒駕肇事",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5650914",
+      "source": "LTN",
+      "publishedAt": "2026-11-23",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "test_target_unresolved",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-e354b9ea8fe398d7",
+      "title": "女騎士無照載母抱嬰上路 分神向蔣萬安掃街車隊打招呼 撞前車送醫",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5650349",
+      "source": "LTN",
+      "publishedAt": "2026-11-23",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-828a9cbf2d46"
+      ],
+      "city": null,
+      "issues": [
+        "unresolved_family_reference:母親",
+        "unknown_city",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
+      ]
     },
     {
       "id": "article-1b656c0682bcd0f1",

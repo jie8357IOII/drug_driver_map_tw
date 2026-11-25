@@ -32273,5 +32273,223 @@
       },
       "flags": []
     }
+  },
+  {
+    "id": "ltn-828a9cbf2d46",
+    "title": "女騎士無照載母抱嬰上路 分神向蔣萬安掃街車隊打招呼 撞前車送醫",
+    "url": "https://news.ltn.com.tw/news/society/breakingnews/5650349",
+    "source": "LTN",
+    "publishedAt": "2026-11-23",
+    "occurredAt": "2026-11-23",
+    "city": "",
+    "eventType": "collision",
+    "impairmentTypes": [
+      "alcohol"
+    ],
+    "deaths": null,
+    "injuries": 2,
+    "summary": "29歲呂姓婦人，今日上午騎機車載著母親和1名幼嬰，行經東華街、立農街一段187巷口時，因忙著和掃街車隊打招呼，不慎撞上前方的轎車摔車，市長蔣萬安及議員黃瀞瑩隨即上前關心傷患狀況，幸都僅受輕傷。 由呂婦無重機駕照，肇事責任歸屬和追究現由警方處理中。 警方表示，呂婦是今日上午10時36分騎乘機車載著51歲蔡姓母親，蔡女懷中則抱著1歲嬰兒，沿東華街東往西方向直行，",
+    "confidence": "machine_checked",
+    "extractedDetails": {
+      "driver": {
+        "age": 79,
+        "ageGroup": "65+",
+        "gender": "male",
+        "vehicleTypes": [
+          "汽車"
+        ],
+        "allMentionedVehicleTypes": [
+          "機車",
+          "汽車"
+        ],
+        "primaryVehicleType": "汽車",
+        "primaryVehicleLabel": "轎車",
+        "vehicleExtractionMethod": "actor_linked_article_text"
+      },
+      "drug": {
+        "keywords": [],
+        "testMethods": [],
+        "status": "not_supported",
+        "findings": [],
+        "scheduleClassifications": [],
+        "scheduleLabels": [],
+        "scheduleNeedsReview": true
+      },
+      "alcohol": {
+        "status": "reported_positive_or_use",
+        "findings": [
+          {
+            "kind": "alcohol_test",
+            "actorIds": [
+              "person-1",
+              "person-3"
+            ],
+            "methods": [
+              "酒精檢測（檢體未明）"
+            ],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          },
+          {
+            "kind": "reported_alcohol_driving",
+            "actorIds": [
+              "person-3"
+            ],
+            "methods": [],
+            "value": null,
+            "unit": null,
+            "rawUnit": null,
+            "specimen": null,
+            "approximate": false,
+            "status": "reported",
+            "timeScope": "current"
+          }
+        ]
+      },
+      "crash": {
+        "scenarioTypes": [
+          "碰撞"
+        ]
+      },
+      "victim": {
+        "activities": [],
+        "vulnerableGroups": []
+      },
+      "context": {
+        "placeTypes": []
+      }
+    },
+    "dataQuality": {
+      "verificationStatus": "machine_checked",
+      "eventCountValid": true,
+      "includeInStats": true,
+      "mapEligible": false,
+      "needsHumanReview": true,
+      "fieldStatus": {
+        "deaths": "unknown",
+        "injuries": "checked"
+      },
+      "countBasis": {
+        "deaths": "not_reported",
+        "injuries": "identified_people"
+      },
+      "sourceBodyHash": "e9c9e045a42f4ca486782762135cc2d71751633bf97231268abf530365e6e762",
+      "understandingVersion": "local-events-v3",
+      "evidence": {
+        "occurredAt": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 96,
+            "quote": "29歲呂姓婦人，今日上午騎機車載著母親和1名幼嬰，行經東華街、立農街一段187巷口時，因忙著和掃街車隊打招呼，不慎撞上前方的轎車摔車，市長蔣萬安及議員黃瀞瑩隨即上前關心傷患狀況，幸都僅受輕傷。"
+          }
+        ],
+        "city": [],
+        "traffic": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 96,
+            "quote": "29歲呂姓婦人，今日上午騎機車載著母親和1名幼嬰，行經東華街、立農街一段187巷口時，因忙著和掃街車隊打招呼，不慎撞上前方的轎車摔車，市長蔣萬安及議員黃瀞瑩隨即上前關心傷患狀況，幸都僅受輕傷。"
+          },
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 123,
+            "end": 238,
+            "quote": "警方表示，呂婦是今日上午10時36分騎乘機車載著51歲蔡姓母親，蔡女懷中則抱著1歲嬰兒，沿東華街東往西方向直行，當至立農街187巷口時，呂女因過於關注外側車道的掃街車隊，在呼應聲中，不慎追撞前方由79歲李男所駕駛的轎車車尾而肇事。"
+          },
+          {
+            "sentenceId": "title",
+            "field": "title",
+            "start": 0,
+            "end": 31,
+            "quote": "女騎士無照載母抱嬰上路 分神向蔣萬安掃街車隊打招呼 撞前車送醫"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 356,
+            "end": 418,
+            "quote": "警方針對事故雙方進行檢測，呂婦與李男酒測值均為0，無毒、酒駕情事，李男車、駕籍均正常，呂女無普重機駕駛執照，肇事責任釐清中。"
+          }
+        ],
+        "driver": [
+          {
+            "sentenceId": "p2s1",
+            "field": "body",
+            "start": 123,
+            "end": 238,
+            "quote": "警方表示，呂婦是今日上午10時36分騎乘機車載著51歲蔡姓母親，蔡女懷中則抱著1歲嬰兒，沿東華街東往西方向直行，當至立農街187巷口時，呂女因過於關注外側車道的掃街車隊，在呼應聲中，不慎追撞前方由79歲李男所駕駛的轎車車尾而肇事。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 239,
+            "end": 355,
+            "quote": "當時負責維護交通管制和安全勤務的北投分局警力立即反應，指揮管制避免二次事故及維持交通順暢，掃街車隊也立即停止，蔣萬安及黃瀞瑩隨即上前關心傷患狀況，呂女及其母蔡女四肢輕微擦挫傷，嬰兒未受傷，李男未受傷，呂女及蔡女送振興醫院治療無大礙。"
+          },
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 356,
+            "end": 418,
+            "quote": "警方針對事故雙方進行檢測，呂婦與李男酒測值均為0，無毒、酒駕情事，李男車、駕籍均正常，呂女無普重機駕駛執照，肇事責任釐清中。"
+          }
+        ],
+        "alcoholDriving": [
+          {
+            "sentenceId": "p4s1",
+            "field": "body",
+            "start": 356,
+            "end": 418,
+            "quote": "警方針對事故雙方進行檢測，呂婦與李男酒測值均為0，無毒、酒駕情事，李男車、駕籍均正常，呂女無普重機駕駛執照，肇事責任釐清中。"
+          }
+        ],
+        "deaths": [],
+        "injuries": [
+          {
+            "sentenceId": "p1s1",
+            "field": "body",
+            "start": 0,
+            "end": 96,
+            "quote": "29歲呂姓婦人，今日上午騎機車載著母親和1名幼嬰，行經東華街、立農街一段187巷口時，因忙著和掃街車隊打招呼，不慎撞上前方的轎車摔車，市長蔣萬安及議員黃瀞瑩隨即上前關心傷患狀況，幸都僅受輕傷。"
+          },
+          {
+            "sentenceId": "p3s1",
+            "field": "body",
+            "start": 239,
+            "end": 355,
+            "quote": "當時負責維護交通管制和安全勤務的北投分局警力立即反應，指揮管制避免二次事故及維持交通順暢，掃街車隊也立即停止，蔣萬安及黃瀞瑩隨即上前關心傷患狀況，呂女及其母蔡女四肢輕微擦挫傷，嬰兒未受傷，李男未受傷，呂女及蔡女送振興醫院治療無大礙。"
+          }
+        ]
+      },
+      "publicationChecks": {
+        "concreteDriving": true,
+        "driverLinked": true,
+        "dateChecked": true,
+        "identityConsistent": true,
+        "driverActorIds": [
+          "person-3"
+        ],
+        "impairmentTypes": [
+          "alcohol"
+        ]
+      },
+      "flags": [
+        "unresolved_family_reference:母親",
+        "unknown_city",
+        "deaths_not_reported",
+        "test_target_unresolved",
+        "deaths_unknown"
+      ]
+    }
   }
 ]
