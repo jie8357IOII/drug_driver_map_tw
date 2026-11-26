@@ -2,6 +2,256 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-141d6662155c4dce",
+      "title": "賓士撞倒整排機車落跑！埔里警圍捕揪毒駕還搜出喪屍煙彈",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5652024",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "南投縣",
+      "issues": [
+        "unknown_event_date",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-214d3d08dbbd3ff3",
+      "title": "彰化男3度酒駕無照撞死騎士逃逸 判8年定讞",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5651389",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "injuries_not_reported",
+        "follow_up_requires_existing_event_link",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-351637bb9760cd04",
+      "title": "屏東10月交通事故下降但死亡人數攀升 機車族占9成",
+      "url": "https://news.ltn.com.tw/news/life/breakingnews/5651972",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "屏東縣",
+      "issues": [
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-410ca028386533f1",
+      "title": "又是毒駕！桃園男連撞3汽機車害騎士受傷 車內搜出喪屍煙彈",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5651623",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-8dd5afd17e79"
+      ],
+      "city": "桃園市",
+      "issues": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-4bf3dda1f9dfef82",
+      "title": "國1五楊高架桃園路段4車連撞釀5傷 1駕駛酒測超標被送辦",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5651460",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "driver_identity_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-75fdb3e37e0169fa",
+      "title": "他租車酒駕綠燈直行撞迴轉小黃 酒測值飆破0.91",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5651421",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": []
+    },
+    {
+      "id": "article-7d69adf6c6915b8f",
+      "title": "新店騎士見對向小貨車左轉急煞 連人帶車自摔腿骨折",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5651386",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-7f81cd9a0aba4e52",
+      "title": "高雄酒駕又毒駕拒檢逃2公里 警2罪送辦最高罰85萬5600元",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5651253",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol",
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-abdcdbebcf44"
+      ],
+      "city": "高雄市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "alcohol_measurement_incomplete",
+        "test_target_unresolved",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-c5c89ba53ec2a6b7",
+      "title": "疑天雨打滑！台北聯營905路公車靠站 撞傷等車79歲婦人",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5652129",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unattributed_outcome:unharmed",
+        "deaths_not_reported",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-d5e29d12ac3743f3",
+      "title": "5藍委聯手批表決背離民意 何欣純嘆氣反擊：造謠抹黑不可取",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5651575",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "policy",
+      "status": "verified",
+      "impairmentTypes": [],
+      "eventIds": [],
+      "city": null,
+      "issues": []
+    },
+    {
+      "id": "article-e046510d788e76f9",
+      "title": "沿路滴血還跟警玩「躲貓貓」 醉男撞翻兩車忍痛藏水溝",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5651775",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [
+        "ltn-22a79bc40ead"
+      ],
+      "city": "臺南市",
+      "issues": [
+        "unattributed_outcome:injured",
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "alcohol_measurement_incomplete",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-f2ac7591cf45dd99",
+      "title": "特斯拉男酒駕載友昏睡停路中 見警破窗竟衝撞逃逸被聲押",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5651455",
+      "source": "LTN",
+      "publishedAt": "2026-11-24",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "deaths_not_reported",
+        "alcohol_measurement_incomplete",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
       "id": "article-53094b878ea4fbab",
       "title": "夜開租賃車撞分隔島 駕駛酒測毒測均過關",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5650214",
