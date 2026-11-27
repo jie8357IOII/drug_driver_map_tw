@@ -1,11 +1,250 @@
 {
   "version": 1,
-  "throughDate": "2026-11-25",
+  "throughDate": "2026-11-26",
   "rejectedUrls": [],
-  "lastCheckedAt": "2026-11-26T00:19:00.855Z",
-  "lastChangedAt": "2026-11-26T00:19:00.855Z",
-  "dataHash": "fc5e683dfa21fb7beddcad9aed754ac10afd2c42e5642b7d081e081e0a8b14db",
+  "lastCheckedAt": "2026-11-27T00:34:04.914Z",
+  "lastChangedAt": "2026-11-27T00:34:04.914Z",
+  "dataHash": "aa26ba7813a57994d43d6450643026e268900d8abae521812f7770e9800f431d",
   "articles": [
+    {
+      "id": "article-4248ebf51c431114",
+      "title": "張善政否認挺毒品除罪",
+      "url": "https://news.ltn.com.tw/news/politics/paper/1779951",
+      "source": "LTN",
+      "publishedAt": "2026-11-26",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "55206f465037cb6934a40af670c43ba172e61656e42f7e259cad5a385cbcccf5",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "injuries_not_reported",
+            "impairment_driver_link_not_checked",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-2f21ac07c2d906d3",
+      "title": "「運轉人生」歌手邱軍酒駕撞死人、肇逃還串證！二審維持10年重刑",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5652483",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unresolved_family_reference:母親",
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "follow_up_requires_existing_event_link",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "9f7cfdf91df0d7d8b914379850027b7932b1af0f4de4436b328f0ef85fb1f9d9",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unresolved_family_reference:母親",
+            "unattributed_outcome:dead",
+            "deaths_lower_bound",
+            "follow_up_requires_existing_event_link",
+            "driver_identity_unresolved",
+            "driver_identity_not_checked",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-467e2bd1decd2705",
+      "title": "無照男吸喪屍煙彈茫到闖紅燈 警攔下查獲開山刀、西瓜刀",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5652998",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-2780f4161223"
+      ],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "drug_denial_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ],
+      "bodyHash": "48e213da3b217c5b6331b896c4e46ed823e3fac0ca6c86bbfc9a507ee059acb9",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": "ltn-2780f4161223",
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "drug_denial_reported",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-cfb65db21d737870",
+      "title": "「運轉人生」歌手邱軍酒駕撞死運將二審仍判10年 高院判決理由曝光",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5653287",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unattributed_outcome:dead",
+        "unknown_event_date",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "follow_up_requires_existing_event_link",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "aef6fcb695f7901e850e90374d1502129821113f0e55b3de7f300f313da75bb0",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unattributed_outcome:dead",
+            "unknown_event_date",
+            "deaths_lower_bound",
+            "injuries_not_reported",
+            "follow_up_requires_existing_event_link",
+            "impairment_driver_link_not_checked",
+            "event_date_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-e17a7d3107778179",
+      "title": "​遭指主張毒品除罪化 張善政還原2019年發言強調「販毒與毒駕絕對重罰」",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5652481",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "11c9b27a236ad492268dd84fb37f450b6c7330fd93cdb7680fefb140440af4af",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "injuries_not_reported",
+            "impairment_driver_link_not_checked",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-e4c8f0e711d751fa",
+      "title": "迎「紅標」20週年 金酒公司推出巨無霸金箔版高粱酒12月上市",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5653434",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "金門縣",
+      "issues": [],
+      "bodyHash": "6f1e6803cee0dce6358d4d9feab1fc933f34ea2dabfd06ae839011f64ee485da",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "unknown_event_date",
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "driver_identity_unresolved",
+            "driver_identity_not_checked",
+            "impairment_driver_link_not_checked",
+            "concrete_driving_not_checked",
+            "event_date_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
     {
       "id": "article-141d6662155c4dce",
       "title": "賓士撞倒整排機車落跑！埔里警圍捕揪毒駕還搜出喪屍煙彈",
@@ -22274,6 +22513,46 @@
       ],
       "conflicts": [],
       "issues": []
+    },
+    {
+      "id": "ltn-2780f4161223",
+      "match": {
+        "date": "2026-11-23",
+        "city": "新北市",
+        "road": null,
+        "actorKeys": [
+          {
+            "surname": "林",
+            "age": 19,
+            "gender": "male",
+            "vehicleTypes": [
+              "car"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5652998",
+          "eventId": "event-1",
+          "bodyHash": "48e213da3b217c5b6331b896c4e46ed823e3fac0ca6c86bbfc9a507ee059acb9",
+          "version": "local-events-v3"
+        }
+      ],
+      "history": [
+        {
+          "versionKey": "https://news.ltn.com.tw/news/society/breakingnews/5652998:event-1:48e213da3b217c5b6331b896c4e46ed823e3fac0ca6c86bbfc9a507ee059acb9:local-events-v3",
+          "checkedAt": "2026-11-27T00:34:04.914Z",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5652998",
+          "eventId": "event-1",
+          "bodyHash": "48e213da3b217c5b6331b896c4e46ed823e3fac0ca6c86bbfc9a507ee059acb9",
+          "version": "local-events-v3",
+          "changes": [],
+          "issues": []
+        }
+      ],
+      "conflicts": [],
+      "issues": []
     }
   ],
   "coverage": {
@@ -22281,7 +22560,7 @@
       {
         "source": "LTN",
         "from": "2026-10-27",
-        "to": "2026-11-25",
+        "to": "2026-11-26",
         "keywords": [
           "拒測",
           "毒駕",
@@ -22289,12 +22568,12 @@
           "酒測",
           "酒駕"
         ],
-        "checkedAt": "2026-11-26T00:19:00.855Z"
+        "checkedAt": "2026-11-27T00:34:04.914Z"
       }
     ],
     "recordDates": {
       "publishedFrom": "2024-05-05",
-      "publishedTo": "2026-11-24",
+      "publishedTo": "2026-11-26",
       "occurredFrom": "2023-02-07",
       "occurredTo": "2026-11-24"
     },
@@ -23940,9 +24219,9 @@
       ]
     }
   },
-  "coverageHash": "13e32ecd5fe352de8fc8b1ee63df8e0851354d63421babe81f96abb00b60fe41",
+  "coverageHash": "0e6cf53f06887fb8dd0a9bb1317fa1e3f8c92c8e495bb68de8128aad962bcff6",
   "api": {
-    "date": "2026-11-26",
+    "date": "2026-11-27",
     "runRequests": 0,
     "requests": 0,
     "cache": {}
@@ -23957,8 +24236,8 @@
     "toMonth": "2026-08",
     "sourceUpdatedAt": "2026-10-27",
     "notice": "112-114年、115年1-8月查詢結果為初估值",
-    "checkedAt": "2026-11-26T00:19:00.855Z",
-    "fetchedAt": "2026-11-26T00:19:00.855Z",
+    "checkedAt": "2026-11-27T00:34:04.914Z",
+    "fetchedAt": "2026-11-27T00:34:04.914Z",
     "status": "current",
     "rows": [
       {

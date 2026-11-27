@@ -2,6 +2,135 @@
   "version": 1,
   "articles": [
     {
+      "id": "article-4248ebf51c431114",
+      "title": "張善政否認挺毒品除罪",
+      "url": "https://news.ltn.com.tw/news/politics/paper/1779951",
+      "source": "LTN",
+      "publishedAt": "2026-11-26",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-2f21ac07c2d906d3",
+      "title": "「運轉人生」歌手邱軍酒駕撞死人、肇逃還串證！二審維持10年重刑",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5652483",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unresolved_family_reference:母親",
+        "unattributed_outcome:dead",
+        "deaths_lower_bound",
+        "follow_up_requires_existing_event_link",
+        "driver_identity_unresolved",
+        "driver_identity_not_checked",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-467e2bd1decd2705",
+      "title": "無照男吸喪屍煙彈茫到闖紅燈 警攔下查獲開山刀、西瓜刀",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5652998",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-2780f4161223"
+      ],
+      "city": "新北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "drug_denial_reported",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
+      "id": "article-cfb65db21d737870",
+      "title": "「運轉人生」歌手邱軍酒駕撞死運將二審仍判10年 高院判決理由曝光",
+      "url": "https://ent.ltn.com.tw/news/breakingnews/5653287",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "judicial",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": null,
+      "issues": [
+        "unattributed_outcome:dead",
+        "unknown_event_date",
+        "deaths_lower_bound",
+        "injuries_not_reported",
+        "follow_up_requires_existing_event_link",
+        "impairment_driver_link_not_checked",
+        "event_date_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-e17a7d3107778179",
+      "title": "​遭指主張毒品除罪化 張善政還原2019年發言強調「販毒與毒駕絕對重罰」",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5652481",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [],
+      "city": "桃園市",
+      "issues": [
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-e4c8f0e711d751fa",
+      "title": "迎「紅標」20週年 金酒公司推出巨無霸金箔版高粱酒12月上市",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/5653434",
+      "source": "LTN",
+      "publishedAt": "2026-11-25",
+      "kind": "other",
+      "status": "verified",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "金門縣",
+      "issues": []
+    },
+    {
       "id": "article-141d6662155c4dce",
       "title": "賓士撞倒整排機車落跑！埔里警圍捕揪毒駕還搜出喪屍煙彈",
       "url": "https://news.ltn.com.tw/news/society/breakingnews/5652024",
