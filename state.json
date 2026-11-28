@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "throughDate": "2026-11-26",
+  "throughDate": "2026-11-27",
   "rejectedUrls": [],
-  "lastCheckedAt": "2026-11-27T00:34:04.914Z",
-  "lastChangedAt": "2026-11-27T00:34:04.914Z",
-  "dataHash": "aa26ba7813a57994d43d6450643026e268900d8abae521812f7770e9800f431d",
+  "lastCheckedAt": "2026-11-28T00:02:20.545Z",
+  "lastChangedAt": "2026-11-28T00:02:20.545Z",
+  "dataHash": "40158da701edd8ec481d39120a8ba1aa299f56639d15c227624fa9779ed0a779",
   "articles": [
     {
       "id": "article-4248ebf51c431114",
@@ -35,6 +35,117 @@
           "issues": [
             "injuries_not_reported",
             "impairment_driver_link_not_checked",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-5a4fa0a9d79e976b",
+      "title": "謝寒冰發文暗諷蔡康永 網怒批影射同志、周偉航酸酒駕",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5653939",
+      "source": "LTN",
+      "publishedAt": "2026-11-26",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ],
+      "bodyHash": "65e1a581894842cf3114cea5cc2f059d3b607c59ec360fbd7baff092b3ec6fd2",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": null,
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_not_reported",
+            "impairment_driver_link_not_checked",
+            "deaths_unknown",
+            "injuries_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-646a204965a205ec",
+      "title": "桃園男毒駕連撞3車 安非他命快篩呈陽性",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5654326",
+      "source": "LTN",
+      "publishedAt": "2026-11-26",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-4acc683910db"
+      ],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ],
+      "bodyHash": "a98432c82ab91367fb3253755fafbbf1d03d27b37bf9d15656f165e102dbd0b8",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": "ltn-4acc683910db",
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "deaths_unknown"
+          ]
+        }
+      ],
+      "origin": "confirmed_source"
+    },
+    {
+      "id": "article-8db7adb07ce43b29",
+      "title": "桃園男毒駕撞傷2行人逃逸 10分鐘後重返現場遭逮",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5653827",
+      "source": "LTN",
+      "publishedAt": "2026-11-26",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-94f19fa8a8fc"
+      ],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "deaths_unknown",
+        "injuries_unknown"
+      ],
+      "bodyHash": "e31f9c667b19eb8b19f6345b0d84f9570eb878060f70e6ecc638410e992d3aa6",
+      "understandingVersion": "local-events-v3",
+      "eventLinks": [
+        {
+          "localEventId": "event-1",
+          "eventId": "ltn-94f19fa8a8fc",
+          "possibleEventIds": [],
+          "issues": [
+            "deaths_not_reported",
+            "injuries_lower_bound",
+            "deaths_unknown",
             "injuries_unknown"
           ]
         }
@@ -22553,6 +22664,86 @@
       ],
       "conflicts": [],
       "issues": []
+    },
+    {
+      "id": "ltn-94f19fa8a8fc",
+      "match": {
+        "date": "2026-11-25",
+        "city": "桃園市",
+        "road": "桃園區國強一街、國豐六街口",
+        "actorKeys": [
+          {
+            "surname": "張",
+            "age": null,
+            "gender": "male",
+            "vehicleTypes": [
+              "car"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5653827",
+          "eventId": "event-1",
+          "bodyHash": "e31f9c667b19eb8b19f6345b0d84f9570eb878060f70e6ecc638410e992d3aa6",
+          "version": "local-events-v3"
+        }
+      ],
+      "history": [
+        {
+          "versionKey": "https://news.ltn.com.tw/news/society/breakingnews/5653827:event-1:e31f9c667b19eb8b19f6345b0d84f9570eb878060f70e6ecc638410e992d3aa6:local-events-v3",
+          "checkedAt": "2026-11-28T00:02:20.545Z",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5653827",
+          "eventId": "event-1",
+          "bodyHash": "e31f9c667b19eb8b19f6345b0d84f9570eb878060f70e6ecc638410e992d3aa6",
+          "version": "local-events-v3",
+          "changes": [],
+          "issues": []
+        }
+      ],
+      "conflicts": [],
+      "issues": []
+    },
+    {
+      "id": "ltn-4acc683910db",
+      "match": {
+        "date": "2026-11-24",
+        "city": "桃園市",
+        "road": "楊梅區校前路",
+        "actorKeys": [
+          {
+            "surname": "趙",
+            "age": 21,
+            "gender": "male",
+            "vehicleTypes": [
+              "car"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5654326",
+          "eventId": "event-1",
+          "bodyHash": "a98432c82ab91367fb3253755fafbbf1d03d27b37bf9d15656f165e102dbd0b8",
+          "version": "local-events-v3"
+        }
+      ],
+      "history": [
+        {
+          "versionKey": "https://news.ltn.com.tw/news/society/breakingnews/5654326:event-1:a98432c82ab91367fb3253755fafbbf1d03d27b37bf9d15656f165e102dbd0b8:local-events-v3",
+          "checkedAt": "2026-11-28T00:02:20.545Z",
+          "url": "https://news.ltn.com.tw/news/society/breakingnews/5654326",
+          "eventId": "event-1",
+          "bodyHash": "a98432c82ab91367fb3253755fafbbf1d03d27b37bf9d15656f165e102dbd0b8",
+          "version": "local-events-v3",
+          "changes": [],
+          "issues": []
+        }
+      ],
+      "conflicts": [],
+      "issues": []
     }
   ],
   "coverage": {
@@ -22560,7 +22751,7 @@
       {
         "source": "LTN",
         "from": "2026-10-27",
-        "to": "2026-11-26",
+        "to": "2026-11-27",
         "keywords": [
           "拒測",
           "毒駕",
@@ -22568,14 +22759,14 @@
           "酒測",
           "酒駕"
         ],
-        "checkedAt": "2026-11-27T00:34:04.914Z"
+        "checkedAt": "2026-11-28T00:02:20.545Z"
       }
     ],
     "recordDates": {
       "publishedFrom": "2024-05-05",
       "publishedTo": "2026-11-26",
       "occurredFrom": "2023-02-07",
-      "occurredTo": "2026-11-24"
+      "occurredTo": "2026-11-25"
     },
     "historyReview": {
       "checkedAt": "2026-11-03T10:12:37.138Z",
@@ -24219,9 +24410,9 @@
       ]
     }
   },
-  "coverageHash": "0e6cf53f06887fb8dd0a9bb1317fa1e3f8c92c8e495bb68de8128aad962bcff6",
+  "coverageHash": "b53a8ba3fbf55444e9a340e64735c348e67166b003130e251d16c0d8a9a78ec9",
   "api": {
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "runRequests": 0,
     "requests": 0,
     "cache": {}
@@ -24236,8 +24427,8 @@
     "toMonth": "2026-08",
     "sourceUpdatedAt": "2026-10-27",
     "notice": "112-114年、115年1-8月查詢結果為初估值",
-    "checkedAt": "2026-11-27T00:34:04.914Z",
-    "fetchedAt": "2026-11-27T00:34:04.914Z",
+    "checkedAt": "2026-11-28T00:02:20.545Z",
+    "fetchedAt": "2026-11-28T00:02:20.545Z",
     "status": "current",
     "rows": [
       {

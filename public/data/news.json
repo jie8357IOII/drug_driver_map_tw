@@ -22,6 +22,70 @@
       ]
     },
     {
+      "id": "article-5a4fa0a9d79e976b",
+      "title": "謝寒冰發文暗諷蔡康永 網怒批影射同志、周偉航酸酒駕",
+      "url": "https://news.ltn.com.tw/news/politics/breakingnews/5653939",
+      "source": "LTN",
+      "publishedAt": "2026-11-26",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "alcohol"
+      ],
+      "eventIds": [],
+      "city": "臺北市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_not_reported",
+        "impairment_driver_link_not_checked",
+        "deaths_unknown",
+        "injuries_unknown",
+        "no_verified_event_link"
+      ]
+    },
+    {
+      "id": "article-646a204965a205ec",
+      "title": "桃園男毒駕連撞3車 安非他命快篩呈陽性",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5654326",
+      "source": "LTN",
+      "publishedAt": "2026-11-26",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-4acc683910db"
+      ],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "deaths_unknown"
+      ]
+    },
+    {
+      "id": "article-8db7adb07ce43b29",
+      "title": "桃園男毒駕撞傷2行人逃逸 10分鐘後重返現場遭逮",
+      "url": "https://news.ltn.com.tw/news/society/breakingnews/5653827",
+      "source": "LTN",
+      "publishedAt": "2026-11-26",
+      "kind": "incident",
+      "status": "needs_clarification",
+      "impairmentTypes": [
+        "drug"
+      ],
+      "eventIds": [
+        "ltn-94f19fa8a8fc"
+      ],
+      "city": "桃園市",
+      "issues": [
+        "deaths_not_reported",
+        "injuries_lower_bound",
+        "deaths_unknown",
+        "injuries_unknown"
+      ]
+    },
+    {
       "id": "article-2f21ac07c2d906d3",
       "title": "「運轉人生」歌手邱軍酒駕撞死人、肇逃還串證！二審維持10年重刑",
       "url": "https://ent.ltn.com.tw/news/breakingnews/5652483",
